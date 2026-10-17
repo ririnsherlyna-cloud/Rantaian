@@ -37,14 +37,25 @@ struktur/momentum/osi/tekanan/meanrev). Sejak itu, perkembangan kecerdasannya **
 ## Struktur
 
 ```
-kehidupan/kromosom.json      — genom hidup (berevolusi tiap kali lebih tajam)
-kehidupan/hidup.mjs          — mesin denyut (node murni, tanpa dependensi)
-kehidupan/statistik.json     — umur, generasi, akurasi, riwayat
+Index.html                  — halaman hidup (buka: tampilan arena yang berdenyut, menyegarkan tiap 30 detik, cepat & tanpa dependensi)
+kehidupan/kromosom.json      — genom hidup (berevolusi tiap kali lebih tajam; memuat blok 'warisan' dari otak induk)
+kehidupan/hidup.mjs          — mesin denyut (node murni, tanpa dependensi; jurnal di-rapikan ke 500 denyut terakhir)
+kehidupan/statistik.json     — umur, generasi, akurasi, riwayat + blok warisan
 kehidupan/jurnal.jsonl       — buku harian denyut
 gudang-otak/                 — CADANGAN asset otak induk (sinkron dari proyek lokal;
                                MANIFEST.json berisi sha256 tiap berkas untuk verifikasi & rollback)
 .github/workflows/denyut-hidup.yml — jantung (cron tiap 10 menit)
 ```
+
+## Warisan (suntikan database otak induk)
+
+Saat lahir, kromosom Rantaian di**suntik** database otak induk yang telah berjalan lama:
+bobot faktor dipetakan dari genome induk NAIK (generasi 4, belajar 27×) — `struktur`,
+`momentum`, `tekanan` diwarisi langsung; `sr`+`perubahan` dibagi rata menjadi `osi` &
+`meanrev`. Blok `warisan` di kromosom & statistik mencatat sumbernya dengan jujur
+(tanpa mengklaim akurasi induk sebagai akurasi Rantaian sendiri). Sejak itu evolusi
+kembali murni milik GitHub. Ulang suntikan kapan pun induk maju:
+`python3 scripts/rantaian/suntik_warisan.py` (dari proyek lokal).
 
 ## Jaga-jaga (backup & rollback)
 

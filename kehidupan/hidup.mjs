@@ -204,7 +204,14 @@ function acakKromosomLama(k) { return { bobot: { ...k.bobot }, ambang: k.ambang 
 
 // ---------- tulis file ----------
 function tulisStatistik(s) { writeFileSync(F_STAT, JSON.stringify(s, null, 2) + '\n'); }
-function jurnal(obj) { appendFileSync(F_JURNAL, JSON.stringify(obj) + '\n'); }
+function jurnal(obj) {
+  try {
+    appendFileSync(F_JURNAL, JSON.stringify(obj) + '\n');
+    // rapikan: simpan 500 denyut terakhir — repo & halaman tetap ringan selamanya
+    const isi = readFileSync(F_JURNAL, 'utf8').split('\n').filter(Boolean);
+    if (isi.length > 500) writeFileSync(F_JURNAL, isi.slice(-500).join('\n') + '\n');
+  } catch {}
+}
 
 // ---------- denyut utama ----------
 async function denyut() {

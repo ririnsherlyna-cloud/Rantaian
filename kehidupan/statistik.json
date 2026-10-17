@@ -37,5 +37,27 @@
   "koinDipindai": 29,
   "titikUjian": 2016,
   "sumberData": "okx-swap",
-  "horizonJam": 3
+  "horizonJam": 3,
+  "warisan": {
+    "indukNAIK": {
+      "generasi": 4,
+      "belajar": 27,
+      "bobot": {
+        "struktur": 0.2411,
+        "momentum": 0.2734,
+        "sr": 0.1593,
+        "tekanan": 0.1764,
+        "perubahan": 0.1498
+      }
+    },
+    "indukTURUN": {
+      "generasi": 2,
+      "belajar": 20
+    },
+    "kapsulTertua": "2026-09-28T03:05:54.437Z (SARANG-MICAPROFITA, tersegel)",
+    "garisPenuh": "40+ hari menurut pemilik; kapsul tersegel tertua 2026-09-28",
+    "dipetakan": "struktur←struktur · momentum←momentum · tekanan←tekanan · sr+perubahan → (osi, meanrev) dibagi rata",
+    "sumber": "gudang-otak/otak/genome-server.json",
+    "disuntikkan": "2026-10-17T02:15:18.452068+00:00"
+  }
 }
