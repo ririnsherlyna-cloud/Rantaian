@@ -1,18 +1,18 @@
 {
- "waktu": "2026-10-17T07:42:59.910Z",
+ "waktu": "2026-10-17T07:47:14.313Z",
  "sumber": "okx-swap",
  "horizonJam": 3,
- "generasi": 5,
- "ambang": 0.17238134136663708,
- "rezim": "SIDEWAYS",
- "utcClosesInMs": 1020090,
+ "generasi": 6,
+ "ambang": 0.17644786796496592,
+ "rezim": "TREND_TURUN",
+ "utcClosesInMs": 765687,
  "koin": [
   {
    "simbol": "ETHUSDT",
    "close": 2432,
-   "last": 2432,
-   "ubah24j": null,
-   "qv": null,
+   "last": 2433.74,
+   "ubah24j": -0.7669568408391392,
+   "qv": 5798523355.66002,
    "rsi": 51.9,
    "atrPct": 0.59,
    "mom7": 0.39,
@@ -74,7 +74,7 @@
     2425.02,
     2427.75,
     2432,
-    2435.12
+    2433.74
    ],
    "rencana": {
     "entry": 2432,
@@ -85,19 +85,19 @@
     "targetPct": 1.18,
     "ambisiusPct": 1.77,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.105 · ambang 0.172"
+    "ketGuard": "skor komposit -0.105 · ambang 0.176"
    }
   },
   {
    "simbol": "BTCUSDT",
    "close": 81599.1,
-   "last": 81599.1,
-   "ubah24j": null,
-   "qv": null,
+   "last": 81629,
+   "ubah24j": -0.6801479534725319,
+   "qv": 5132742789.277,
    "rsi": 47.7,
    "atrPct": 0.41,
    "mom7": 0.02,
-   "skor": -0.1429,
+   "skor": -0.1406,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -155,7 +155,7 @@
     81506,
     81542.1,
     81599.1,
-    81685.7
+    81629
    ],
    "rencana": {
     "entry": 81599.1,
@@ -166,19 +166,19 @@
     "targetPct": 0.81,
     "ambisiusPct": 1.22,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.143 · ambang 0.172"
+    "ketGuard": "skor komposit -0.141 · ambang 0.176"
    }
   },
   {
    "simbol": "ZECUSDT",
    "close": 1162.5,
-   "last": 1162.5,
-   "ubah24j": null,
-   "qv": null,
+   "last": 1168.6,
+   "ubah24j": -4.7106501300586245,
+   "qv": 909264101.0239999,
    "rsi": 45.8,
    "atrPct": 1.45,
    "mom7": 1.23,
-   "skor": -0.1445,
+   "skor": -0.1423,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -236,7 +236,7 @@
     1156.66,
     1162.51,
     1162.5,
-    1173.14
+    1168.4
    ],
    "rencana": {
     "entry": 1162.5,
@@ -247,19 +247,19 @@
     "targetPct": 2.9,
     "ambisiusPct": 4.36,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.144 · ambang 0.172"
+    "ketGuard": "skor komposit -0.142 · ambang 0.176"
    }
   },
   {
    "simbol": "SOLUSDT",
    "close": 104.87,
-   "last": 104.87,
-   "ubah24j": null,
-   "qv": null,
+   "last": 104.99,
+   "ubah24j": -1.2509405568096321,
+   "qv": 721215365.2301,
    "rsi": 51.8,
    "atrPct": 0.75,
    "mom7": 0.45,
-   "skor": -0.0468,
+   "skor": -0.0462,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -317,7 +317,7 @@
     104.71,
     104.88,
     104.87,
-    105.12
+    104.99
    ],
    "rencana": {
     "entry": 104.87,
@@ -328,19 +328,19 @@
     "targetPct": 1.49,
     "ambisiusPct": 2.24,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.047 · ambang 0.172"
+    "ketGuard": "skor komposit -0.046 · ambang 0.176"
    }
   },
   {
    "simbol": "SNDKUSDT",
    "close": 1301.6,
-   "last": 1301.6,
-   "ubah24j": null,
-   "qv": null,
+   "last": 1300,
+   "ubah24j": -5.926622765757294,
+   "qv": 655097743.3000001,
    "rsi": 34.6,
    "atrPct": 1.02,
    "mom7": 0.52,
-   "skor": -0.2714,
+   "skor": -0.2648,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -398,7 +398,7 @@
     1301.9,
     1300.3,
     1301.6,
-    1301.4
+    1300
    ],
    "rencana": {
     "entry": 1301.6,
@@ -409,19 +409,19 @@
     "targetPct": 2.03,
     "ambisiusPct": 3.05,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.271 · ambang 0.172"
+    "ketGuard": "skor komposit -0.265 · ambang 0.176"
    }
   },
   {
    "simbol": "SOXLUSDT",
    "close": 94.78,
-   "last": 94.78,
-   "ubah24j": null,
-   "qv": null,
+   "last": 94.34,
+   "ubah24j": -11.175972130684485,
+   "qv": 365882438.9956,
    "rsi": 34.4,
    "atrPct": 1.93,
    "mom7": 0.15,
-   "skor": -0.3101,
+   "skor": -0.3036,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -479,7 +479,7 @@
     94.53,
     94.35,
     94.78,
-    94.62
+    94.34
    ],
    "rencana": {
     "entry": 94.78,
@@ -490,19 +490,19 @@
     "targetPct": 3.87,
     "ambisiusPct": 5.8,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.310 · ambang 0.172"
+    "ketGuard": "skor komposit -0.304 · ambang 0.176"
    }
   },
   {
    "simbol": "SPCXUSDT",
    "close": 146.14,
-   "last": 146.14,
-   "ubah24j": null,
-   "qv": null,
+   "last": 145.67,
+   "ubah24j": -4.522514255751464,
+   "qv": 274617842.9407,
    "rsi": 43,
    "atrPct": 0.74,
    "mom7": 0.27,
-   "skor": -0.2053,
+   "skor": -0.1996,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -560,7 +560,7 @@
     146.09,
     146.11,
     146.14,
-    145.85
+    145.67
    ],
    "rencana": {
     "entry": 146.14,
@@ -571,19 +571,19 @@
     "targetPct": 1.48,
     "ambisiusPct": 2.22,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.205 · ambang 0.172"
+    "ketGuard": "skor komposit -0.200 · ambang 0.176"
    }
   },
   {
    "simbol": "NEARUSDT",
    "close": 5.054,
-   "last": 5.054,
-   "ubah24j": null,
-   "qv": null,
+   "last": 5.104,
+   "ubah24j": -2.12847555129434,
+   "qv": 252553346.32,
    "rsi": 46.3,
    "atrPct": 1.76,
    "mom7": -0.3,
-   "skor": -0.0976,
+   "skor": -0.0975,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -641,7 +641,7 @@
     5.067,
     5.082,
     5.054,
-    5.116
+    5.104
    ],
    "rencana": {
     "entry": 5.054,
@@ -652,19 +652,19 @@
     "targetPct": 3.52,
     "ambisiusPct": 5.28,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.098 · ambang 0.172"
+    "ketGuard": "skor komposit -0.098 · ambang 0.176"
    }
   },
   {
    "simbol": "TIAUSDT",
    "close": 0.7368,
-   "last": 0.7368,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.7302,
+   "ubah24j": 9.573829531812716,
+   "qv": 226127016.52859998,
    "rsi": 70.6,
    "atrPct": 3.62,
    "mom7": 7.16,
-   "skor": 0.5305,
+   "skor": 0.5223,
    "arah": "BUY",
    "lolos": true,
    "faktor": {
@@ -722,7 +722,7 @@
     0.7495,
     0.742,
     0.7368,
-    0.7324
+    0.73
    ],
    "rencana": {
     "entry": 0.7368,
@@ -733,19 +733,19 @@
     "targetPct": 7.25,
     "ambisiusPct": 10.87,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.531 · ambang 0.172"
+    "ketGuard": "skor komposit +0.522 · ambang 0.176"
    }
   },
   {
    "simbol": "WLDUSDT",
    "close": 0.5273,
-   "last": 0.5273,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.5271,
+   "ubah24j": 4.79125248508947,
+   "qv": 216039000.7755,
    "rsi": 58.6,
    "atrPct": 2.17,
    "mom7": 2.09,
-   "skor": 0.2483,
+   "skor": 0.2437,
    "arah": "BUY",
    "lolos": true,
    "faktor": {
@@ -803,7 +803,7 @@
     0.5335,
     0.53,
     0.5273,
-    0.5293
+    0.5271
    ],
    "rencana": {
     "entry": 0.5273,
@@ -814,19 +814,19 @@
     "targetPct": 4.34,
     "ambisiusPct": 6.51,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.248 · ambang 0.172"
+    "ketGuard": "skor komposit +0.244 · ambang 0.176"
    }
   },
   {
    "simbol": "XRPUSDT",
    "close": 1.3095,
-   "last": 1.3095,
-   "ubah24j": null,
-   "qv": null,
+   "last": 1.308,
+   "ubah24j": -2.3516237402015583,
+   "qv": 205484169.61200002,
    "rsi": 44.4,
    "atrPct": 0.66,
    "mom7": -0.11,
-   "skor": -0.2298,
+   "skor": -0.2257,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -884,7 +884,7 @@
     1.3081,
     1.3095,
     1.3095,
-    1.3102
+    1.308
    ],
    "rencana": {
     "entry": 1.3095,
@@ -895,19 +895,19 @@
     "targetPct": 1.32,
     "ambisiusPct": 1.97,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.230 · ambang 0.172"
+    "ketGuard": "skor komposit -0.226 · ambang 0.176"
    }
   },
   {
    "simbol": "STRKUSDT",
    "close": 0.0708,
-   "last": 0.0708,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.07088,
+   "ubah24j": -11.972180824639834,
+   "qv": 189254081.7424,
    "rsi": 34.6,
    "atrPct": 3.15,
    "mom7": -4.47,
-   "skor": -0.5291,
+   "skor": -0.5227,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -965,7 +965,7 @@
     0.07191,
     0.07085,
     0.0708,
-    0.07101
+    0.07088
    ],
    "rencana": {
     "entry": 0.0708,
@@ -976,19 +976,19 @@
     "targetPct": 6.3,
     "ambisiusPct": 9.45,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.529 · ambang 0.172"
+    "ketGuard": "skor komposit -0.523 · ambang 0.176"
    }
   },
   {
    "simbol": "DOGEUSDT",
    "close": 0.08055,
-   "last": 0.08055,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.08057,
+   "ubah24j": -1.982968369829674,
+   "qv": 185637516.37060001,
    "rsi": 46.8,
    "atrPct": 0.78,
    "mom7": -0.42,
-   "skor": -0.2104,
+   "skor": -0.2074,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -1046,7 +1046,7 @@
     0.08041,
     0.08049,
     0.08055,
-    0.0807
+    0.08057
    ],
    "rencana": {
     "entry": 0.08055,
@@ -1057,19 +1057,19 @@
     "targetPct": 1.55,
     "ambisiusPct": 2.33,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.210 · ambang 0.172"
+    "ketGuard": "skor komposit -0.207 · ambang 0.176"
    }
   },
   {
    "simbol": "XAUUSDT",
    "close": 4170.3,
-   "last": 4170.3,
-   "ubah24j": null,
-   "qv": null,
+   "last": 4171.5,
+   "ubah24j": -0.4652827487473199,
+   "qv": 181243995.2685,
    "rsi": 47.7,
    "atrPct": 0.18,
    "mom7": 0,
-   "skor": -0.063,
+   "skor": -0.066,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -1127,7 +1127,7 @@
     4171.7,
     4169.9,
     4170.3,
-    4171.2
+    4171.5
    ],
    "rencana": {
     "entry": 4170.3,
@@ -1138,19 +1138,19 @@
     "targetPct": 0.37,
     "ambisiusPct": 0.55,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.063 · ambang 0.172"
+    "ketGuard": "skor komposit -0.066 · ambang 0.176"
    }
   },
   {
    "simbol": "PUMPUSDT",
    "close": 0.004588,
-   "last": 0.004588,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.004613,
+   "ubah24j": 1.496149614961495,
+   "qv": 159404692.181,
    "rsi": 56.6,
    "atrPct": 2.17,
    "mom7": 1.06,
-   "skor": 0.07,
+   "skor": 0.0699,
    "arah": "BUY",
    "lolos": false,
    "faktor": {
@@ -1208,7 +1208,7 @@
     0.004594,
     0.004599,
     0.004588,
-    0.004629
+    0.004613
    ],
    "rencana": {
     "entry": 0.004588,
@@ -1219,19 +1219,19 @@
     "targetPct": 4.33,
     "ambisiusPct": 6.5,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.070 · ambang 0.172"
+    "ketGuard": "skor komposit +0.070 · ambang 0.176"
    }
   },
   {
    "simbol": "CLUSDT",
    "close": 98.74,
-   "last": 98.74,
-   "ubah24j": null,
-   "qv": null,
+   "last": 98.93,
+   "ubah24j": 3.278003967011167,
+   "qv": 154842693.499,
    "rsi": 61.5,
    "atrPct": 0.6,
    "mom7": -0.11,
-   "skor": 0.1852,
+   "skor": 0.178,
    "arah": "BUY",
    "lolos": true,
    "faktor": {
@@ -1289,7 +1289,7 @@
     99.3,
     99.16,
     98.74,
-    98.9
+    98.93
    ],
    "rencana": {
     "entry": 98.74,
@@ -1300,19 +1300,19 @@
     "targetPct": 1.19,
     "ambisiusPct": 1.79,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.185 · ambang 0.172"
+    "ketGuard": "skor komposit +0.178 · ambang 0.176"
    }
   },
   {
    "simbol": "FILUSDT",
    "close": 1.1662,
-   "last": 1.1662,
-   "ubah24j": null,
-   "qv": null,
+   "last": 1.1675,
+   "ubah24j": 1.7872711421098586,
+   "qv": 147920471.664,
    "rsi": 55.6,
    "atrPct": 2.26,
    "mom7": 0.97,
-   "skor": 0.1133,
+   "skor": 0.1089,
    "arah": "BUY",
    "lolos": false,
    "faktor": {
@@ -1370,7 +1370,7 @@
     1.197,
     1.1785,
     1.1662,
-    1.1728
+    1.1668
    ],
    "rencana": {
     "entry": 1.1662,
@@ -1381,19 +1381,19 @@
     "targetPct": 4.51,
     "ambisiusPct": 6.77,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.113 · ambang 0.172"
+    "ketGuard": "skor komposit +0.109 · ambang 0.176"
    }
   },
   {
    "simbol": "HYPEUSDT",
    "close": 79.971,
-   "last": 79.971,
-   "ubah24j": null,
-   "qv": null,
+   "last": 80.247,
+   "ubah24j": -1.335251373981039,
+   "qv": 138968825.58449998,
    "rsi": 46.9,
    "atrPct": 0.81,
    "mom7": -0.46,
-   "skor": -0.1831,
+   "skor": -0.1803,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -1451,7 +1451,7 @@
     79.713,
     79.761,
     79.971,
-    80.444
+    80.247
    ],
    "rencana": {
     "entry": 79.971,
@@ -1462,19 +1462,19 @@
     "targetPct": 1.61,
     "ambisiusPct": 2.42,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.183 · ambang 0.172"
+    "ketGuard": "skor komposit -0.180 · ambang 0.176"
    }
   },
   {
    "simbol": "SKHYNIXUSDT",
    "close": 929,
-   "last": 929,
-   "ubah24j": null,
-   "qv": null,
+   "last": 926,
+   "ubah24j": -3.4108688849483704,
+   "qv": 115408002.272,
    "rsi": 42.1,
    "atrPct": 0.92,
    "mom7": 0.78,
-   "skor": -0.1997,
+   "skor": -0.1943,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -1532,7 +1532,7 @@
     926.6,
     927.8,
     929,
-    927.5
+    926
    ],
    "rencana": {
     "entry": 929,
@@ -1543,19 +1543,19 @@
     "targetPct": 1.84,
     "ambisiusPct": 2.76,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.200 · ambang 0.172"
+    "ketGuard": "skor komposit -0.194 · ambang 0.176"
    }
   },
   {
    "simbol": "MUUSDT",
    "close": 884,
-   "last": 884,
-   "ubah24j": null,
-   "qv": null,
+   "last": 882.17,
+   "ubah24j": -4.364558828312171,
+   "qv": 93852346.0685,
    "rsi": 40.3,
    "atrPct": 0.81,
    "mom7": 0.72,
-   "skor": -0.2011,
+   "skor": -0.1952,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -1613,7 +1613,7 @@
     883.11,
     882.63,
     884,
-    883.24
+    882.17
    ],
    "rencana": {
     "entry": 884,
@@ -1624,19 +1624,19 @@
     "targetPct": 1.62,
     "ambisiusPct": 2.43,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.201 · ambang 0.172"
+    "ketGuard": "skor komposit -0.195 · ambang 0.176"
    }
   },
   {
    "simbol": "INJUSDT",
    "close": 8.868,
-   "last": 8.868,
-   "ubah24j": null,
-   "qv": null,
+   "last": 8.878,
+   "ubah24j": -4.280323450134771,
+   "qv": 91703605.302,
    "rsi": 57,
    "atrPct": 2.02,
    "mom7": 1.63,
-   "skor": 0.2454,
+   "skor": 0.2396,
    "arah": "BUY",
    "lolos": true,
    "faktor": {
@@ -1694,7 +1694,7 @@
     8.895,
     8.877,
     8.868,
-    8.888
+    8.878
    ],
    "rencana": {
     "entry": 8.868,
@@ -1705,19 +1705,19 @@
     "targetPct": 4.03,
     "ambisiusPct": 6.05,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.245 · ambang 0.172"
+    "ketGuard": "skor komposit +0.240 · ambang 0.176"
    }
   },
   {
    "simbol": "UNIUSDT",
    "close": 7.308,
-   "last": 7.308,
-   "ubah24j": null,
-   "qv": null,
+   "last": 7.298,
+   "ubah24j": -2.5764250433853886,
+   "qv": 81090610.406,
    "rsi": 49.8,
    "atrPct": 1.21,
    "mom7": -0.3,
-   "skor": -0.0182,
+   "skor": -0.018,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -1775,7 +1775,7 @@
     7.308,
     7.307,
     7.308,
-    7.315
+    7.298
    ],
    "rencana": {
     "entry": 7.308,
@@ -1786,19 +1786,19 @@
     "targetPct": 2.43,
     "ambisiusPct": 3.64,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.018 · ambang 0.172"
+    "ketGuard": "skor komposit -0.018 · ambang 0.176"
    }
   },
   {
    "simbol": "PEPEUSDT",
    "close": 0.000004002,
-   "last": 0.000004002,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.000003999,
+   "ubah24j": -2.5584795321637377,
+   "qv": 80218152.447,
    "rsi": 43.6,
    "atrPct": 1.08,
    "mom7": -0.62,
-   "skor": -0.1469,
+   "skor": -0.1436,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -1856,7 +1856,7 @@
     0.000004032,
     0.000004024,
     0.000004002,
-    0.000004007
+    0.000003999
    ],
    "rencana": {
     "entry": 0.000004002,
@@ -1867,19 +1867,19 @@
     "targetPct": 2.17,
     "ambisiusPct": 3.25,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.147 · ambang 0.172"
+    "ketGuard": "skor komposit -0.144 · ambang 0.176"
    }
   },
   {
    "simbol": "SUIUSDT",
    "close": 1.0076,
-   "last": 1.0076,
-   "ubah24j": null,
-   "qv": null,
+   "last": 1.0078,
+   "ubah24j": -3.6888379204892963,
+   "qv": 77010166.2608,
    "rsi": 41.3,
    "atrPct": 1.2,
    "mom7": -1.28,
-   "skor": -0.3029,
+   "skor": -0.3004,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -1937,7 +1937,7 @@
     1.014,
     1.0116,
     1.0076,
-    1.0097
+    1.0078
    ],
    "rencana": {
     "entry": 1.0076,
@@ -1948,19 +1948,19 @@
     "targetPct": 2.41,
     "ambisiusPct": 3.61,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.303 · ambang 0.172"
+    "ketGuard": "skor komposit -0.300 · ambang 0.176"
    }
   },
   {
    "simbol": "TSLAUSDT",
    "close": 353.62,
-   "last": 353.62,
-   "ubah24j": null,
-   "qv": null,
+   "last": 353.87,
+   "ubah24j": -6.264568764568756,
+   "qv": 64746305.8132,
    "rsi": 36.8,
    "atrPct": 0.72,
    "mom7": 0.11,
-   "skor": -0.2967,
+   "skor": -0.2904,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -2029,19 +2029,19 @@
     "targetPct": 1.45,
     "ambisiusPct": 2.17,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.297 · ambang 0.172"
+    "ketGuard": "skor komposit -0.290 · ambang 0.176"
    }
   },
   {
    "simbol": "XAGUSDT",
    "close": 57.19,
    "last": 57.19,
-   "ubah24j": null,
-   "qv": null,
+   "ubah24j": -1.021114572516446,
+   "qv": 62587983.3796,
    "rsi": 45.1,
    "atrPct": 0.33,
    "mom7": -0.02,
-   "skor": -0.2394,
+   "skor": -0.237,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -2099,7 +2099,7 @@
     57.21,
     57.14,
     57.19,
-    57.19
+    57.18
    ],
    "rencana": {
     "entry": 57.19,
@@ -2110,19 +2110,19 @@
     "targetPct": 0.67,
     "ambisiusPct": 1,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.239 · ambang 0.172"
+    "ketGuard": "skor komposit -0.237 · ambang 0.176"
    }
   },
   {
    "simbol": "MSTRUSDT",
    "close": 136.93,
-   "last": 136.93,
-   "ubah24j": null,
-   "qv": null,
+   "last": 137.04,
+   "ubah24j": -7.173338752286118,
+   "qv": 62527061.2776,
    "rsi": 36.2,
    "atrPct": 1.05,
    "mom7": 0.77,
-   "skor": -0.2493,
+   "skor": -0.2428,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -2180,7 +2180,7 @@
     136.25,
     136.34,
     136.93,
-    137.2
+    137.05
    ],
    "rencana": {
     "entry": 136.93,
@@ -2191,19 +2191,19 @@
     "targetPct": 2.1,
     "ambisiusPct": 3.15,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.249 · ambang 0.172"
+    "ketGuard": "skor komposit -0.243 · ambang 0.176"
    }
   },
   {
    "simbol": "AKEUSDT",
    "close": 0.03028,
-   "last": 0.03028,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.03107,
+   "ubah24j": 2.6768010575016543,
+   "qv": 59602758.553,
    "rsi": 50.1,
    "atrPct": 4.2,
    "mom7": -1.01,
-   "skor": -0.0317,
+   "skor": -0.0333,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -2261,7 +2261,7 @@
     0.03016,
     0.0301,
     0.03028,
-    0.03121
+    0.03099
    ],
    "rencana": {
     "entry": 0.03028,
@@ -2272,19 +2272,19 @@
     "targetPct": 8.4,
     "ambisiusPct": 12.6,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.032 · ambang 0.172"
+    "ketGuard": "skor komposit -0.033 · ambang 0.176"
    }
   },
   {
    "simbol": "BZUSDT",
    "close": 106.89,
-   "last": 106.89,
-   "ubah24j": null,
-   "qv": null,
+   "last": 107.03,
+   "ubah24j": 4.155313351498635,
+   "qv": 59098156.802300006,
    "rsi": 66.7,
    "atrPct": 0.61,
    "mom7": 0.23,
-   "skor": 0.1883,
+   "skor": 0.1796,
    "arah": "BUY",
    "lolos": true,
    "faktor": {
@@ -2342,7 +2342,7 @@
     107.47,
     107.25,
     106.89,
-    106.97
+    107.03
    ],
    "rencana": {
     "entry": 106.89,
@@ -2353,19 +2353,19 @@
     "targetPct": 1.22,
     "ambisiusPct": 1.83,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.188 · ambang 0.172"
+    "ketGuard": "skor komposit +0.180 · ambang 0.176"
    }
   },
   {
    "simbol": "SKHYUSDT",
    "close": 138.16,
-   "last": 138.16,
-   "ubah24j": null,
-   "qv": null,
+   "last": 137.91,
+   "ubah24j": -3.383774695250119,
+   "qv": 52318971.864,
    "rsi": 43.4,
    "atrPct": 0.89,
    "mom7": 0.74,
-   "skor": -0.21,
+   "skor": -0.2049,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -2423,7 +2423,7 @@
     137.9,
     137.97,
     138.16,
-    138.12
+    137.91
    ],
    "rencana": {
     "entry": 138.16,
@@ -2434,19 +2434,19 @@
     "targetPct": 1.77,
     "ambisiusPct": 2.66,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.210 · ambang 0.172"
+    "ketGuard": "skor komposit -0.205 · ambang 0.176"
    }
   },
   {
    "simbol": "CRCLUSDT",
    "close": 82.4,
-   "last": 82.4,
-   "ubah24j": null,
-   "qv": null,
+   "last": 82.55,
+   "ubah24j": -3.2125688826357246,
+   "qv": 52161586.684999995,
    "rsi": 43.9,
    "atrPct": 0.93,
    "mom7": 0.11,
-   "skor": -0.1063,
+   "skor": -0.1048,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -2504,7 +2504,7 @@
     82.41,
     82.49,
     82.4,
-    82.64
+    82.52
    ],
    "rencana": {
     "entry": 82.4,
@@ -2515,19 +2515,19 @@
     "targetPct": 1.85,
     "ambisiusPct": 2.78,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.106 · ambang 0.172"
+    "ketGuard": "skor komposit -0.105 · ambang 0.176"
    }
   },
   {
    "simbol": "SNXXUSDT",
    "close": 9.1,
-   "last": 9.1,
-   "ubah24j": null,
-   "qv": null,
+   "last": 9.08,
+   "ubah24j": -12.185686653771754,
+   "qv": 48888449.74,
    "rsi": 33.2,
    "atrPct": 2.13,
    "mom7": 1,
-   "skor": -0.2531,
+   "skor": -0.2463,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -2585,7 +2585,7 @@
     9.11,
     9.09,
     9.1,
-    9.1
+    9.08
    ],
    "rencana": {
     "entry": 9.1,
@@ -2596,19 +2596,19 @@
     "targetPct": 4.27,
     "ambisiusPct": 6.4,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.253 · ambang 0.172"
+    "ketGuard": "skor komposit -0.246 · ambang 0.176"
    }
   },
   {
    "simbol": "LITUSDT",
    "close": 3.2328,
-   "last": 3.2328,
-   "ubah24j": null,
-   "qv": null,
+   "last": 3.2191,
+   "ubah24j": 6.013502387617309,
+   "qv": 46005474.7119,
    "rsi": 61,
    "atrPct": 1.82,
    "mom7": 1.71,
-   "skor": 0.1927,
+   "skor": 0.1885,
    "arah": "BUY",
    "lolos": true,
    "faktor": {
@@ -2666,7 +2666,7 @@
     3.2257,
     3.2498,
     3.2328,
-    3.2239
+    3.2197
    ],
    "rencana": {
     "entry": 3.2328,
@@ -2677,19 +2677,19 @@
     "targetPct": 3.64,
     "ambisiusPct": 5.45,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.193 · ambang 0.172"
+    "ketGuard": "skor komposit +0.188 · ambang 0.176"
    }
   },
   {
    "simbol": "ARBUSDT",
    "close": 0.18867,
-   "last": 0.18867,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.18886,
+   "ubah24j": -4.2680454176804545,
+   "qv": 45889148.40832,
    "rsi": 39.9,
    "atrPct": 1.49,
    "mom7": -1.32,
-   "skor": -0.1965,
+   "skor": -0.1972,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -2747,7 +2747,7 @@
     0.19059,
     0.18989,
     0.18867,
-    0.18938
+    0.18891
    ],
    "rencana": {
     "entry": 0.18867,
@@ -2758,19 +2758,19 @@
     "targetPct": 2.98,
     "ambisiusPct": 4.47,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.196 · ambang 0.172"
+    "ketGuard": "skor komposit -0.197 · ambang 0.176"
    }
   },
   {
    "simbol": "QQQUSDT",
    "close": 711.41,
-   "last": 711.41,
-   "ubah24j": null,
-   "qv": null,
+   "last": 711.64,
+   "ubah24j": -2.5190745585797814,
+   "qv": 44242488.006400004,
    "rsi": 29.7,
    "atrPct": 0.24,
    "mom7": 0.25,
-   "skor": -0.3036,
+   "skor": -0.2958,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -2828,7 +2828,7 @@
     711.02,
     711.26,
     711.41,
-    711.83
+    711.64
    ],
    "rencana": {
     "entry": 711.41,
@@ -2839,262 +2839,19 @@
     "targetPct": 0.49,
     "ambisiusPct": 0.73,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.304 · ambang 0.172"
-   }
-  },
-  {
-   "simbol": "ENAUSDT",
-   "close": 0.1988,
-   "last": 0.1988,
-   "ubah24j": null,
-   "qv": null,
-   "rsi": 47.5,
-   "atrPct": 1.38,
-   "mom7": 0,
-   "skor": -0.1449,
-   "arah": "SELL",
-   "lolos": false,
-   "faktor": {
-    "struktur": -0.337,
-    "momentum": 0,
-    "osi": -0.084,
-    "tekanan": -0.394,
-    "meanrev": 0.119
-   },
-   "spark": [
-    0.18699,
-    0.1866,
-    0.18475,
-    0.18659,
-    0.18562,
-    0.18627,
-    0.19383,
-    0.20008,
-    0.19913,
-    0.20178,
-    0.20096,
-    0.20425,
-    0.20277,
-    0.20431,
-    0.20468,
-    0.20492,
-    0.20692,
-    0.20317,
-    0.20251,
-    0.20336,
-    0.20358,
-    0.20368,
-    0.20604,
-    0.20491,
-    0.20526,
-    0.20412,
-    0.20377,
-    0.20605,
-    0.20515,
-    0.20609,
-    0.20452,
-    0.2001,
-    0.19956,
-    0.19696,
-    0.19775,
-    0.1982,
-    0.19784,
-    0.19701,
-    0.19849,
-    0.1988,
-    0.19741,
-    0.19724,
-    0.19731,
-    0.19899,
-    0.19824,
-    0.19934,
-    0.1988,
-    0.19882
-   ],
-   "rencana": {
-    "entry": 0.1988,
-    "stop": 0.20290371,
-    "target": 0.19332839,
-    "highAmbisius": 0.19059259,
-    "stopPct": 2.06,
-    "targetPct": 2.75,
-    "ambisiusPct": 4.13,
-    "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.145 · ambang 0.172"
-   }
-  },
-  {
-   "simbol": "KORUUSDT",
-   "close": 10.68,
-   "last": 10.68,
-   "ubah24j": null,
-   "qv": null,
-   "rsi": 37.8,
-   "atrPct": 2.11,
-   "mom7": 1.42,
-   "skor": -0.2072,
-   "arah": "SELL",
-   "lolos": true,
-   "faktor": {
-    "struktur": -0.986,
-    "momentum": 0.263,
-    "osi": -0.405,
-    "tekanan": -0.589,
-    "meanrev": 0.53
-   },
-   "spark": [
-    10.86,
-    10.71,
-    10.44,
-    10.64,
-    10.64,
-    10.71,
-    11.55,
-    11.76,
-    11.61,
-    11.78,
-    11.71,
-    12.02,
-    11.97,
-    11.89,
-    11.93,
-    11.67,
-    11.63,
-    11.62,
-    11.84,
-    12.14,
-    12.27,
-    12.01,
-    11.88,
-    11.85,
-    11.79,
-    11.8,
-    11.79,
-    11.75,
-    11.76,
-    11.29,
-    11.64,
-    11.27,
-    11.25,
-    11.03,
-    10.79,
-    10.66,
-    10.57,
-    10.42,
-    10.42,
-    10.53,
-    10.62,
-    10.62,
-    10.66,
-    10.62,
-    10.65,
-    10.65,
-    10.68,
-    10.69
-   ],
-   "rencana": {
-    "entry": 10.68,
-    "stop": 11.018522,
-    "target": 10.228637,
-    "highAmbisius": 10.002956,
-    "stopPct": 3.17,
-    "targetPct": 4.23,
-    "ambisiusPct": 6.34,
-    "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.207 · ambang 0.172"
-   }
-  },
-  {
-   "simbol": "TRUMPUSDT",
-   "close": 1.813,
-   "last": 1.813,
-   "ubah24j": null,
-   "qv": null,
-   "rsi": 41.8,
-   "atrPct": 0.92,
-   "mom7": -0.55,
-   "skor": -0.2272,
-   "arah": "SELL",
-   "lolos": true,
-   "faktor": {
-    "struktur": -0.765,
-    "momentum": -0.103,
-    "osi": -0.274,
-    "tekanan": -0.357,
-    "meanrev": 0.433
-   },
-   "spark": [
-    1.817,
-    1.815,
-    1.817,
-    1.831,
-    1.814,
-    1.8,
-    1.875,
-    1.878,
-    1.867,
-    1.876,
-    1.869,
-    1.87,
-    1.878,
-    1.888,
-    1.884,
-    1.885,
-    1.882,
-    1.861,
-    1.864,
-    1.87,
-    1.877,
-    1.872,
-    1.882,
-    1.891,
-    1.873,
-    1.875,
-    1.879,
-    1.884,
-    1.872,
-    1.857,
-    1.84,
-    1.821,
-    1.807,
-    1.797,
-    1.799,
-    1.805,
-    1.808,
-    1.804,
-    1.817,
-    1.823,
-    1.823,
-    1.811,
-    1.812,
-    1.822,
-    1.815,
-    1.818,
-    1.813,
-    1.813
-   ],
-   "rencana": {
-    "entry": 1.813,
-    "stop": 1.8381236,
-    "target": 1.7795019,
-    "highAmbisius": 1.7627529,
-    "stopPct": 1.39,
-    "targetPct": 1.85,
-    "ambisiusPct": 2.77,
-    "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.227 · ambang 0.172"
+    "ketGuard": "skor komposit -0.296 · ambang 0.176"
    }
   },
   {
    "simbol": "BATUSDT",
    "close": 0.19965,
-   "last": 0.19965,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.20492,
+   "ubah24j": 1.9553211602567178,
+   "qv": 40510149.1396,
    "rsi": 52.4,
    "atrPct": 2.98,
    "mom7": 1.53,
-   "skor": 0.1433,
+   "skor": 0.1394,
    "arah": "BUY",
    "lolos": false,
    "faktor": {
@@ -3152,7 +2909,7 @@
     0.1971,
     0.19717,
     0.19965,
-    0.20411
+    0.20491
    ],
    "rencana": {
     "entry": 0.19965,
@@ -3163,19 +2920,262 @@
     "targetPct": 5.95,
     "ambisiusPct": 8.93,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.143 · ambang 0.172"
+    "ketGuard": "skor komposit +0.139 · ambang 0.176"
+   }
+  },
+  {
+   "simbol": "KORUUSDT",
+   "close": 10.68,
+   "last": 10.66,
+   "ubah24j": -10.042194092826994,
+   "qv": 40358943.4586,
+   "rsi": 37.8,
+   "atrPct": 2.11,
+   "mom7": 1.42,
+   "skor": -0.2011,
+   "arah": "SELL",
+   "lolos": true,
+   "faktor": {
+    "struktur": -0.986,
+    "momentum": 0.263,
+    "osi": -0.405,
+    "tekanan": -0.589,
+    "meanrev": 0.53
+   },
+   "spark": [
+    10.86,
+    10.71,
+    10.44,
+    10.64,
+    10.64,
+    10.71,
+    11.55,
+    11.76,
+    11.61,
+    11.78,
+    11.71,
+    12.02,
+    11.97,
+    11.89,
+    11.93,
+    11.67,
+    11.63,
+    11.62,
+    11.84,
+    12.14,
+    12.27,
+    12.01,
+    11.88,
+    11.85,
+    11.79,
+    11.8,
+    11.79,
+    11.75,
+    11.76,
+    11.29,
+    11.64,
+    11.27,
+    11.25,
+    11.03,
+    10.79,
+    10.66,
+    10.57,
+    10.42,
+    10.42,
+    10.53,
+    10.62,
+    10.62,
+    10.66,
+    10.62,
+    10.65,
+    10.65,
+    10.68,
+    10.66
+   ],
+   "rencana": {
+    "entry": 10.68,
+    "stop": 11.018522,
+    "target": 10.228637,
+    "highAmbisius": 10.002956,
+    "stopPct": 3.17,
+    "targetPct": 4.23,
+    "ambisiusPct": 6.34,
+    "sumberTarget": "ATR14 ×2 · horizon 3 jam",
+    "ketGuard": "skor komposit -0.201 · ambang 0.176"
+   }
+  },
+  {
+   "simbol": "ENAUSDT",
+   "close": 0.1988,
+   "last": 0.19826,
+   "ubah24j": -3.46674457103906,
+   "qv": 40329079.7086,
+   "rsi": 47.5,
+   "atrPct": 1.38,
+   "mom7": 0,
+   "skor": -0.1438,
+   "arah": "SELL",
+   "lolos": false,
+   "faktor": {
+    "struktur": -0.337,
+    "momentum": 0,
+    "osi": -0.084,
+    "tekanan": -0.394,
+    "meanrev": 0.119
+   },
+   "spark": [
+    0.18699,
+    0.1866,
+    0.18475,
+    0.18659,
+    0.18562,
+    0.18627,
+    0.19383,
+    0.20008,
+    0.19913,
+    0.20178,
+    0.20096,
+    0.20425,
+    0.20277,
+    0.20431,
+    0.20468,
+    0.20492,
+    0.20692,
+    0.20317,
+    0.20251,
+    0.20336,
+    0.20358,
+    0.20368,
+    0.20604,
+    0.20491,
+    0.20526,
+    0.20412,
+    0.20377,
+    0.20605,
+    0.20515,
+    0.20609,
+    0.20452,
+    0.2001,
+    0.19956,
+    0.19696,
+    0.19775,
+    0.1982,
+    0.19784,
+    0.19701,
+    0.19849,
+    0.1988,
+    0.19741,
+    0.19724,
+    0.19731,
+    0.19899,
+    0.19824,
+    0.19934,
+    0.1988,
+    0.1983
+   ],
+   "rencana": {
+    "entry": 0.1988,
+    "stop": 0.20290371,
+    "target": 0.19332839,
+    "highAmbisius": 0.19059259,
+    "stopPct": 2.06,
+    "targetPct": 2.75,
+    "ambisiusPct": 4.13,
+    "sumberTarget": "ATR14 ×2 · horizon 3 jam",
+    "ketGuard": "skor komposit -0.144 · ambang 0.176"
+   }
+  },
+  {
+   "simbol": "TRUMPUSDT",
+   "close": 1.813,
+   "last": 1.806,
+   "ubah24j": -4.494976203067158,
+   "qv": 40220563.635,
+   "rsi": 41.8,
+   "atrPct": 0.92,
+   "mom7": -0.55,
+   "skor": -0.2221,
+   "arah": "SELL",
+   "lolos": true,
+   "faktor": {
+    "struktur": -0.765,
+    "momentum": -0.103,
+    "osi": -0.274,
+    "tekanan": -0.357,
+    "meanrev": 0.433
+   },
+   "spark": [
+    1.817,
+    1.815,
+    1.817,
+    1.831,
+    1.814,
+    1.8,
+    1.875,
+    1.878,
+    1.867,
+    1.876,
+    1.869,
+    1.87,
+    1.878,
+    1.888,
+    1.884,
+    1.885,
+    1.882,
+    1.861,
+    1.864,
+    1.87,
+    1.877,
+    1.872,
+    1.882,
+    1.891,
+    1.873,
+    1.875,
+    1.879,
+    1.884,
+    1.872,
+    1.857,
+    1.84,
+    1.821,
+    1.807,
+    1.797,
+    1.799,
+    1.805,
+    1.808,
+    1.804,
+    1.817,
+    1.823,
+    1.823,
+    1.811,
+    1.812,
+    1.822,
+    1.815,
+    1.818,
+    1.813,
+    1.806
+   ],
+   "rencana": {
+    "entry": 1.813,
+    "stop": 1.8381236,
+    "target": 1.7795019,
+    "highAmbisius": 1.7627529,
+    "stopPct": 1.39,
+    "targetPct": 1.85,
+    "ambisiusPct": 2.77,
+    "sumberTarget": "ATR14 ×2 · horizon 3 jam",
+    "ketGuard": "skor komposit -0.222 · ambang 0.176"
    }
   },
   {
    "simbol": "SOXSUSDT",
    "close": 48.82,
-   "last": 48.82,
-   "ubah24j": null,
-   "qv": null,
+   "last": 49.03,
+   "ubah24j": 10.72719060523939,
+   "qv": 38644298.698,
    "rsi": 63.5,
    "atrPct": 1.61,
    "mom7": -0.12,
-   "skor": 0.2917,
+   "skor": 0.2854,
    "arah": "BUY",
    "lolos": true,
    "faktor": {
@@ -3233,7 +3233,7 @@
     48.94,
     49.05,
     48.82,
-    48.86
+    49.01
    ],
    "rencana": {
     "entry": 48.82,
@@ -3244,19 +3244,19 @@
     "targetPct": 3.22,
     "ambisiusPct": 4.84,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.292 · ambang 0.172"
+    "ketGuard": "skor komposit +0.285 · ambang 0.176"
    }
   },
   {
    "simbol": "BCHUSDT",
    "close": 278.1,
-   "last": 278.1,
-   "ubah24j": null,
-   "qv": null,
+   "last": 277.9,
+   "ubah24j": -0.6790564689063694,
+   "qv": 38466501.15,
    "rsi": 52.2,
    "atrPct": 1,
    "mom7": 0.32,
-   "skor": 0.1063,
+   "skor": 0.1035,
    "arah": "BUY",
    "lolos": false,
    "faktor": {
@@ -3314,7 +3314,7 @@
     278.8,
     278.7,
     278.1,
-    278.4
+    277.9
    ],
    "rencana": {
     "entry": 278.1,
@@ -3325,19 +3325,19 @@
     "targetPct": 1.99,
     "ambisiusPct": 2.99,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit +0.106 · ambang 0.172"
+    "ketGuard": "skor komposit +0.104 · ambang 0.176"
    }
   },
   {
    "simbol": "AAVEUSDT",
    "close": 156.07,
-   "last": 156.07,
-   "ubah24j": null,
-   "qv": null,
+   "last": 156.5,
+   "ubah24j": -3.1259671928195676,
+   "qv": 37532222.815000005,
    "rsi": 48.3,
    "atrPct": 1,
    "mom7": 0.59,
-   "skor": -0.1552,
+   "skor": -0.1555,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -3395,7 +3395,7 @@
     155.87,
     155.74,
     156.07,
-    156.94
+    156.5
    ],
    "rencana": {
     "entry": 156.07,
@@ -3406,19 +3406,19 @@
     "targetPct": 1.99,
     "ambisiusPct": 2.99,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.155 · ambang 0.172"
+    "ketGuard": "skor komposit -0.155 · ambang 0.176"
    }
   },
   {
    "simbol": "BASEDUSDT",
    "close": 0.05077,
-   "last": 0.05077,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.05163,
+   "ubah24j": 14.301527562541505,
+   "qv": 35696608.715100005,
    "rsi": 51,
    "atrPct": 4.19,
    "mom7": -9.4,
-   "skor": -0.2052,
+   "skor": -0.2089,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -3476,7 +3476,7 @@
     0.04851,
     0.05013,
     0.05077,
-    0.05162
+    0.05159
    ],
    "rencana": {
     "entry": 0.05077,
@@ -3487,19 +3487,19 @@
     "targetPct": 8.38,
     "ambisiusPct": 12.57,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.205 · ambang 0.172"
+    "ketGuard": "skor komposit -0.209 · ambang 0.176"
    }
   },
   {
    "simbol": "CTUSDT",
    "close": 0.3482,
-   "last": 0.3482,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.3443,
+   "ubah24j": -10.431841831425604,
+   "qv": 33231174.944,
    "rsi": 32.4,
    "atrPct": 2.8,
    "mom7": -10.17,
-   "skor": -0.4385,
+   "skor": -0.4358,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -3557,7 +3557,7 @@
     0.3745,
     0.35,
     0.3482,
-    0.3451
+    0.3444
    ],
    "rencana": {
     "entry": 0.3482,
@@ -3568,19 +3568,19 @@
     "targetPct": 5.6,
     "ambisiusPct": 8.4,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.439 · ambang 0.172"
+    "ketGuard": "skor komposit -0.436 · ambang 0.176"
    }
   },
   {
    "simbol": "ADAUSDT",
    "close": 0.2239,
-   "last": 0.2239,
-   "ubah24j": null,
-   "qv": null,
+   "last": 0.2236,
+   "ubah24j": -3.287197231833905,
+   "qv": 32614074.636,
    "rsi": 39.8,
    "atrPct": 0.88,
    "mom7": -0.75,
-   "skor": -0.2762,
+   "skor": -0.2717,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -3638,7 +3638,7 @@
     0.2247,
     0.2242,
     0.2239,
-    0.2241
+    0.2236
    ],
    "rencana": {
     "entry": 0.2239,
@@ -3649,19 +3649,19 @@
     "targetPct": 1.75,
     "ambisiusPct": 2.63,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.276 · ambang 0.172"
+    "ketGuard": "skor komposit -0.272 · ambang 0.176"
    }
   },
   {
    "simbol": "AVAXUSDT",
    "close": 9.991,
-   "last": 9.991,
-   "ubah24j": null,
-   "qv": null,
+   "last": 9.975,
+   "ubah24j": -1.8595041322314043,
+   "qv": 31701565.455,
    "rsi": 47.6,
    "atrPct": 0.96,
    "mom7": 0.38,
-   "skor": -0.1249,
+   "skor": -0.1254,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -3719,7 +3719,7 @@
     9.982,
     10.01,
     9.991,
-    10.008
+    9.975
    ],
    "rencana": {
     "entry": 9.991,
@@ -3730,19 +3730,19 @@
     "targetPct": 1.91,
     "ambisiusPct": 2.87,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.125 · ambang 0.172"
+    "ketGuard": "skor komposit -0.125 · ambang 0.176"
    }
   },
   {
    "simbol": "LINKUSDT",
    "close": 12.269,
-   "last": 12.269,
-   "ubah24j": null,
-   "qv": null,
+   "last": 12.245,
+   "ubah24j": -2.507961783439505,
+   "qv": 30227386.178499997,
    "rsi": 40.9,
    "atrPct": 0.84,
    "mom7": -0.58,
-   "skor": -0.2578,
+   "skor": -0.2543,
    "arah": "SELL",
    "lolos": true,
    "faktor": {
@@ -3800,7 +3800,7 @@
     12.296,
     12.289,
     12.269,
-    12.268
+    12.245
    ],
    "rencana": {
     "entry": 12.269,
@@ -3811,19 +3811,19 @@
     "targetPct": 1.68,
     "ambisiusPct": 2.51,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.258 · ambang 0.172"
+    "ketGuard": "skor komposit -0.254 · ambang 0.176"
    }
   },
   {
    "simbol": "DOTUSDT",
    "close": 1.1655,
-   "last": 1.1655,
-   "ubah24j": null,
-   "qv": null,
+   "last": 1.1614,
+   "ubah24j": 1.1584356763348236,
+   "qv": 29149863.6214,
    "rsi": 50.8,
    "atrPct": 2,
    "mom7": -1.55,
-   "skor": -0.0461,
+   "skor": -0.0487,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -3881,7 +3881,7 @@
     1.1966,
     1.1754,
     1.1655,
-    1.1669
+    1.1618
    ],
    "rencana": {
     "entry": 1.1655,
@@ -3892,19 +3892,19 @@
     "targetPct": 4,
     "ambisiusPct": 6,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.046 · ambang 0.172"
+    "ketGuard": "skor komposit -0.049 · ambang 0.176"
    }
   },
   {
    "simbol": "TAOUSDT",
    "close": 275.3,
-   "last": 275.3,
-   "ubah24j": null,
-   "qv": null,
+   "last": 274.9,
+   "ubah24j": -4.813019390581729,
+   "qv": 27379866.812999997,
    "rsi": 45.7,
    "atrPct": 1.23,
    "mom7": -0.18,
-   "skor": -0.1153,
+   "skor": -0.1149,
    "arah": "SELL",
    "lolos": false,
    "faktor": {
@@ -3962,7 +3962,7 @@
     275.8,
     276.1,
     275.3,
-    276
+    274.9
    ],
    "rencana": {
     "entry": 275.3,
@@ -3973,7 +3973,7 @@
     "targetPct": 2.45,
     "ambisiusPct": 3.68,
     "sumberTarget": "ATR14 ×2 · horizon 3 jam",
-    "ketGuard": "skor komposit -0.115 · ambang 0.172"
+    "ketGuard": "skor komposit -0.115 · ambang 0.176"
    }
   }
  ]
