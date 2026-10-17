@@ -1,0 +1,47 @@
+name: denyut-hidup
+
+# Denyut jantung Rantaian — tiap 10 menit:
+# ujian data pasar nyata → evolusi kromosom → komit sendiri.
+# Ini kehidupan murni di GitHub: tidak butuh mesin luar, tidak butuh token pribadi
+# (memakai GITHUB_TOKEN bawaan yang otomatis tersedia untuk repo sendiri).
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: denyut-hidup
+  cancel-in-progress: false
+
+jobs:
+  hidup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Denyut — ujian pasar & evolusi kromosom
+        run: node kehidupan/hidup.mjs
+
+      - name: Komit hasil kehidupan
+        run: |
+          git config user.name  "rantaian-hidup"
+          git config user.email "rantaian-hidup[bot]@users.noreply.github.com"
+          git add kehidupan/
+          if git diff --cached --quiet; then
+            echo "denyut ini tanpa jejak baru"
+          else
+            MSG=$(node -e "const s=require('./kehidupan/statistik.json'); const a=(s.akurasiTerakhir==null)?'—':(s.akurasiTerakhir*100).toFixed(1)+'%'; console.log('denyut gen-'+s.generasi+': akurasi '+a+' · '+s.sumberData+' · denyut ke-'+s.denyut)")
+            git commit -m "$MSG"
+            git push
+          fi
