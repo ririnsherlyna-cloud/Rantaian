@@ -3,16 +3,16 @@
   "nama": "RANTAIAN-KROMOSOM",
   "keturunan": "MICAPROFITA-ARENA-OTAK · genome induk NAIK gen-4 (belajar 27) + TURUN gen-2 (belajar 20)",
   "lahir": "2026-10-17T00:00:00.000Z",
-  "generasi": 8,
+  "generasi": 9,
   "horizonJam": 3,
   "bobot": {
-    "struktur": 0.1652570436088105,
-    "momentum": 0.3183630492464679,
-    "osi": 0.1268486493514181,
-    "tekanan": 0.23299496810976622,
-    "meanrev": 0.15653628968353736
+    "struktur": 0.14655774793188708,
+    "momentum": 0.3353741499630537,
+    "osi": 0.1170681607949493,
+    "tekanan": 0.2312262686144701,
+    "meanrev": 0.1697736726956398
   },
-  "ambang": 0.1868727970294048,
+  "ambang": 0.184077350607938,
   "catatan": "database otak induk disuntikkan; sejak ini evolusi kembali murni milik GitHub",
   "warisan": {
     "indukNAIK": {
