@@ -80,7 +80,12 @@ async function sumberOkx() {
     .filter(s => (vol.get(s) || 0) >= 5_000_000 && !kotor(s.replace('-SWAP', '') + 'X'))
     .sort((a, b) => vol.get(b) - vol.get(a))
     .slice(0, 50);
-  const ticker24j = new Map(tick.data.map(t => [t.instId, { last: parseFloat(t.last), ubah24j: parseFloat(t.change24h) * 100, qv: parseFloat(t.last) * parseFloat(t.volCcy24h || 0) }]));
+  const ticker24j = new Map(tick.data.map(t => {
+    const last = parseFloat(t.last);
+    const buka = parseFloat(t.open24h || '0');
+    const ubah = isFinite(last) && buka > 0 ? (last / buka - 1) * 100 : parseFloat(t.change24h || '0') * 100;
+    return [t.instId, { last, ubah24j: isFinite(ubah) ? ubah : null, qv: last * parseFloat(t.volCcy24h || 0) }];
+  }));
   return {
     nama: 'okx-swap',
     koin,

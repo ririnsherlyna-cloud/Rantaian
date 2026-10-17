@@ -69,7 +69,7 @@ function bangunArena(krom, stat, pas, jrn) {
           rank: i + 1,
           guard: k.lolos ? 'LOLOS' : 'DITOLAK',
           guardAlasan: k.lolos ? null : `skor komposit ${k.skor >= 0 ? '+' : ''}${k.skor} di bawah ambang ${(pas.ambang || krom.ambang).toFixed(3)} — belum ada kepastian arah`,
-          raw: { mom7: k.mom7, m4h: k.ubah24j, rsi: k.rsi, atrPct: k.atrPct, qv: k.qv, close: k.close },
+          raw: { mom7: k.mom7 ?? undefined, m4h: k.ubah24j ?? undefined, rsi: k.rsi ?? undefined, atrPct: k.atrPct, qv: k.qv ?? undefined, close: k.close },
           factors: k.faktor || null,
           topReasons: [
             `struktur EMA ${(k.faktor ? k.faktor.struktur : 0).toFixed(2)} · momentum 7j ${(k.faktor ? k.faktor.momentum : 0).toFixed(2)}`,
