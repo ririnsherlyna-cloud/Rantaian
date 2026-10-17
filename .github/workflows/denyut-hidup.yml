@@ -33,11 +33,14 @@ jobs:
       - name: Denyut — ujian pasar & evolusi kromosom
         run: node kehidupan/hidup.mjs
 
+      - name: Pantulkan data UI (wujud mandiri GitHub Pages)
+        run: node kehidupan/pantulkan-ui.mjs
+
       - name: Komit hasil kehidupan
         run: |
           git config user.name  "rantaian-hidup"
           git config user.email "rantaian-hidup[bot]@users.noreply.github.com"
-          git add kehidupan/
+          git add kehidupan/ data/api/
           if git diff --cached --quiet; then
             echo "denyut ini tanpa jejak baru"
           else

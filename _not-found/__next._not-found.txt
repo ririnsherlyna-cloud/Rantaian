@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[35841,["/Rantaian/_next/static/chunks/587d18b55953e501.js","/Rantaian/_next/static/chunks/d7f2495527b14805.js","/Rantaian/_next/static/chunks/55412360e56f63d8.js"],"default"]
+3:I[95233,["/Rantaian/_next/static/chunks/587d18b55953e501.js","/Rantaian/_next/static/chunks/d7f2495527b14805.js","/Rantaian/_next/static/chunks/55412360e56f63d8.js"],"default"]
+0:{"buildId":"eKbz9LBjc0zpqqIaL-mfZ","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}

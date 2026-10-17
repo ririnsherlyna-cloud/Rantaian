@@ -24,6 +24,7 @@ const DIR_K = join(AKAR, 'kehidupan');
 const F_KROM = join(DIR_K, 'kromosom.json');
 const F_STAT = join(DIR_K, 'statistik.json');
 const F_JURNAL = join(DIR_K, 'jurnal.jsonl');
+const F_PASAR = join(DIR_K, 'pasar.json');
 
 const sekarang = () => new Date().toISOString();
 const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
@@ -57,10 +58,12 @@ async function sumberBinance() {
   const koin = [...sah]
     .filter(s => vol.get(s) >= 5_000_000 && !kotor(s))
     .sort((a, b) => vol.get(b) - vol.get(a))
-    .slice(0, 30);
+    .slice(0, 50);
+  const ticker24j = new Map(tick.map(t => [t.symbol, { last: parseFloat(t.lastPrice), ubah24j: parseFloat(t.priceChangePercent), qv: parseFloat(t.quoteVolume) }]));
   return {
     nama: 'binance-fapi',
     koin,
+    ticker24j,
     candle: async (s) => {
       const raw = await ambil(`${host}/fapi/v1/klines?symbol=${s}&interval=1h&limit=260`);
       return raw.map(k => ({ t: k[0], o: +k[1], h: +k[2], l: +k[3], c: +k[4], v: +k[5] }));
@@ -76,10 +79,12 @@ async function sumberOkx() {
   const koin = usdt
     .filter(s => (vol.get(s) || 0) >= 5_000_000 && !kotor(s.replace('-SWAP', '') + 'X'))
     .sort((a, b) => vol.get(b) - vol.get(a))
-    .slice(0, 30);
+    .slice(0, 50);
+  const ticker24j = new Map(tick.data.map(t => [t.instId, { last: parseFloat(t.last), ubah24j: parseFloat(t.change24h) * 100, qv: parseFloat(t.last) * parseFloat(t.volCcy24h || 0) }]));
   return {
     nama: 'okx-swap',
     koin,
+    ticker24j,
     candle: async (s) => {
       const raw = await ambil(`https://www.okx.com/api/v5/market/candles?instId=${s}&bar=1H&limit=280`);
       // okx mengirim menurun; balik agar naik
@@ -204,6 +209,67 @@ function acakKromosomLama(k) { return { bobot: { ...k.bobot }, ambang: k.ambang 
 
 // ---------- tulis file ----------
 function tulisStatistik(s) { writeFileSync(F_STAT, JSON.stringify(s, null, 2) + '\n'); }
+
+// pasar.json — keputusan otak atas pasar NYATA saat denyut. Semua angka dari
+// candle/ticker sesungguhnya; rencana E→T→S dihitung ATR dan TERKUNCI di komit
+// (pra-registrasi) sebelum jendela horizon berjalan. Tanpa karangan.
+function tulisPasar(sumber, koinCandles, simbolCandles, krom) {
+  const H = krom.horizonJam || 3;
+  const baris = [];
+  for (const { simbol, cnd } of simbolCandles) {
+    try {
+      if (!cnd || cnd.length < 80) continue;
+      const c = cnd.map(k => k.c);
+      const t = cnd.length - 2; // candle terakhir belum tutup — pakai yang sudah tutup
+      const pra = { e20: emaSeri(c, 20), e50: emaSeri(c, 50), rsi: rsiSeri(c, 14), atr: atrSeri(cnd, 14) };
+      const f = faktorPada(cnd, t, pra);
+      if (!f) continue;
+      const skor = skorDari(f, krom.bobot);
+      const arah = skor >= krom.ambang ? 'BUY' : skor <= -krom.ambang ? 'SELL' : (skor >= 0 ? 'BUY' : 'SELL');
+      const lolos = Math.abs(skor) >= krom.ambang;
+      const close = c[t];
+      const atrPct = pra.atr[t] / close * 100;
+      const tick = sumber.ticker24j ? sumber.ticker24j.get(simbol) : null;
+      const mom7 = c[t - 7] > 0 ? (close / c[t - 7] - 1) * 100 : null;
+      const arahN = arah === 'BUY' ? 1 : -1;
+      baris.push({
+        simbol, close,
+        last: tick && isFinite(tick.last) ? tick.last : close,
+        ubah24j: tick && isFinite(tick.ubah24j) ? tick.ubah24j : null,
+        qv: tick && isFinite(tick.qv) ? tick.qv : null,
+        rsi: isFinite(pra.rsi[t]) ? +pra.rsi[t].toFixed(1) : null,
+        atrPct: +atrPct.toFixed(2),
+        mom7: mom7 !== null ? +mom7.toFixed(2) : null,
+        skor: +skor.toFixed(4), arah, lolos,
+        faktor: { struktur: +f.struktur.toFixed(3), momentum: +f.momentum.toFixed(3), osi: +f.osi.toFixed(3), tekanan: +f.tekanan.toFixed(3), meanrev: +f.meanrev.toFixed(3) },
+        spark: c.slice(-48).map(x => +x.toPrecision(8)),
+        rencana: {
+          entry: close,
+          stop: +(close * (1 - arahN * 1.5 * atrPct / 100)).toPrecision(8),
+          target: +(close * (1 + arahN * 2 * atrPct / 100)).toPrecision(8),
+          highAmbisius: +(close * (1 + arahN * 3 * atrPct / 100)).toPrecision(8),
+          stopPct: +(1.5 * atrPct).toFixed(2),
+          targetPct: +(2 * atrPct).toFixed(2),
+          ambisiusPct: +(3 * atrPct).toFixed(2),
+          sumberTarget: `ATR14 ×2 · horizon ${H} jam`,
+          ketGuard: `skor komposit ${skor >= 0 ? '+' : ''}${skor.toFixed(3)} · ambang ${krom.ambang.toFixed(3)}`,
+        },
+      });
+    } catch {}
+  }
+  // rezim dari BTC bila ada di daftar, bila tidak: koin terkuat likuiditasnya
+  const btc = baris.find(b => b.simbol.startsWith('BTC')) || baris[0] || null;
+  let rezim = 'SIDEWAYS';
+  if (btc) rezim = btc.ubah24j !== null ? (btc.ubah24j >= 0.5 ? 'TREND_NAIK' : btc.ubah24j <= -0.5 ? 'TREND_TURUN' : 'SIDEWAYS') : 'SIDEWAYS';
+  const pascaJam = 3600000 - (Date.now() % 3600000);
+  writeFileSync(F_PASAR, JSON.stringify({
+    waktu: sekarang(), sumber: sumber.nama, horizonJam: H,
+    generasi: krom.generasi || 0, ambang: krom.ambang, rezim,
+    utcClosesInMs: pascaJam, koin: baris,
+  }, null, 1) + '\n');
+  return baris.length;
+}
+
 function jurnal(obj) {
   try {
     appendFileSync(F_JURNAL, JSON.stringify(obj) + '\n');
@@ -225,19 +291,20 @@ async function denyut() {
   };
 
   // 1. tarik data pasar
-  let sumber = null, candles = [];
+  let sumber = null, candles = [], simbolCandles = [];
   const percobaan = [sumberBinance, sumberOkx];
   for (const buat of percobaan) {
     try {
       const s = await buat();
       const hasil = [];
+      const simbolHasil = [];
       let gagal = 0;
       for (const simbol of s.koin) {
-        try { const c = await s.candle(simbol); if (c && c.length >= 80) hasil.push(c); }
+        try { const c = await s.candle(simbol); if (c && c.length >= 80) { hasil.push(c); simbolHasil.push({ simbol: s.nama === 'okx-swap' ? simbol.replace('-USDT-SWAP', 'USDT').replace('-SWAP', '') : simbol, cnd: c }); } }
         catch { gagal++; }
-        if (hasil.length >= 30) break;
+        if (hasil.length >= 50) break;
       }
-      if (hasil.length >= 10) { sumber = s; candles = hasil; break; }
+      if (hasil.length >= 10) { sumber = s; candles = hasil; simbolCandles = simbolHasil; break; }
     } catch {}
   }
 
@@ -259,7 +326,10 @@ async function denyut() {
   let mutasiDicatat = null;
 
   // 3. evolusi hanya bila ujian cukup tebal (jujur: ujian tipis = tidak belajar)
+  // mode HIDUP_TANPA_EVOLUSI=1: pindai & nilai saja — untuk pindai lab/diagnostik
+  const TANPA_EVOLUSI = process.env.HIDUP_TANPA_EVOLUSI === '1';
   if (hasilInduk.dinilai >= MIN_TEBakan) {
+    if (!TANPA_EVOLUSI) {
     let terbaik = { ...induk, hasil: hasilInduk };
     for (let a = 0; a < 4; a++) {
       const m = mutasi(krom);
@@ -278,6 +348,7 @@ async function denyut() {
       mutasiDicatat = { dari: { ...induk.bobot, ambang: induk.ambang }, ke: { ...krom.bobot, ambang: krom.ambang } };
       stat.generasi = krom.generasi;
     }
+    }
     stat.akurasiTerakhir = hasilInduk.akurasi;
     if (!stat.akurasiTerbaik || hasilInduk.akurasi > stat.akurasiTerbaik.nilai) {
       stat.akurasiTerbaik = { nilai: hasilInduk.akurasi, waktu: sekarang(), generasi: stat.generasi };
@@ -293,6 +364,9 @@ async function denyut() {
   stat.titikUjian = hasilInduk.dinilai;
   stat.sumberData = sumber.nama;
   stat.horizonJam = H;
+  // pasar: keputusan otak (kromosom final) atas pasar nyata — pra-registrasi
+  try { tulisPasar(sumber, candles, simbolCandles, krom); }
+  catch (e) { jurnal({ waktu: sekarang(), peristiwa: 'pasar-gagal', alasan: String(e && e.message || e) }); }
   stat.riwayat = [
     ...(stat.riwayat || []),
     { waktu: sekarang(), generasi: stat.generasi, akurasi: hasilInduk.dinilai > 0 ? hasilInduk.akurasi : null,
