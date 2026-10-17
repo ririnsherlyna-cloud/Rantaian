@@ -221,7 +221,7 @@ function tulisStatistik(s) { writeFileSync(F_STAT, JSON.stringify(s, null, 2) + 
 function tulisPasar(sumber, koinCandles, simbolCandles, krom) {
   const H = krom.horizonJam || 3;
   const baris = [];
-  for (const { simbol, cnd } of simbolCandles) {
+  for (const { simbol, simbolAsli, cnd } of simbolCandles) {
     try {
       if (!cnd || cnd.length < 80) continue;
       const c = cnd.map(k => k.c);
@@ -234,7 +234,7 @@ function tulisPasar(sumber, koinCandles, simbolCandles, krom) {
       const lolos = Math.abs(skor) >= krom.ambang;
       const close = c[t];
       const atrPct = pra.atr[t] / close * 100;
-      const tick = sumber.ticker24j ? sumber.ticker24j.get(simbol) : null;
+      const tick = sumber.ticker24j ? sumber.ticker24j.get(simbolAsli || simbol) : null;
       const mom7 = c[t - 7] > 0 ? (close / c[t - 7] - 1) * 100 : null;
       const arahN = arah === 'BUY' ? 1 : -1;
       baris.push({
@@ -305,7 +305,7 @@ async function denyut() {
       const simbolHasil = [];
       let gagal = 0;
       for (const simbol of s.koin) {
-        try { const c = await s.candle(simbol); if (c && c.length >= 80) { hasil.push(c); simbolHasil.push({ simbol: s.nama === 'okx-swap' ? simbol.replace('-USDT-SWAP', 'USDT').replace('-SWAP', '') : simbol, cnd: c }); } }
+        try { const c = await s.candle(simbol); if (c && c.length >= 80) { hasil.push(c); simbolHasil.push({ simbol: s.nama === 'okx-swap' ? simbol.replace('-USDT-SWAP', 'USDT').replace('-SWAP', '') : simbol, simbolAsli: simbol, cnd: c }); } }
         catch { gagal++; }
         if (hasil.length >= 50) break;
       }
