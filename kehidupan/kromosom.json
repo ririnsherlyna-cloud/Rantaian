@@ -3,15 +3,15 @@
   "nama": "RANTAIAN-KROMOSOM",
   "keturunan": "MICAPROFITA-ARENA-OTAK · genome-server NAIK generasi-4 (bobot: struktur/momentum/sr/tekanan/perubahan)",
   "lahir": "2026-10-17T00:00:00.000Z",
-  "generasi": 3,
+  "generasi": 0,
   "horizonJam": 3,
   "bobot": {
-    "struktur": 0.2107881713538842,
-    "momentum": 0.25986853277934757,
-    "osi": 0.19509103770490302,
-    "tekanan": 0.1684492766798012,
-    "meanrev": 0.16580298148206407
+    "struktur": 0.24,
+    "momentum": 0.27,
+    "osi": 0.16,
+    "tekanan": 0.18,
+    "meanrev": 0.15
   },
-  "ambang": 0.17086580070179821,
+  "ambang": 0.15,
   "catatan": "bobot awal diberahi dari otak induk di Micaprofita; dari sini evolusi murni berjalan di GitHub — ujian data pasar nyata, mutasi & seleksi, tanpa tangan manusia"
 }
