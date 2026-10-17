@@ -1,0 +1,198 @@
+{
+  "versi": "V256-MESIN-DEAL-ODDS",
+  "dihasilkan": "2026-10-06T02:17:20.732Z",
+  "siklus": 69,
+  "identitas": "deep-screening dua platform trading-AI profesional — kunci intinya diadopsi, diadaptasi ke ledger pra-registrasi SAKTI, lalu DINILAI MEDAN",
+  "sumber": [
+    {
+      "platform": "3Commas",
+      "url": "https://help.3commas.io/en/articles/16281102",
+      "kunci": "DCA bot 6-parameter: Max DCA Orders (hard cap), Price Deviation + Multiplier, Order Size Multiplier — averaging terkontrol"
+    },
+    {
+      "platform": "3Commas",
+      "url": "https://help.3commas.io/en/articles/16281110",
+      "kunci": "Move Stop Loss to Breakeven — eliminasi risiko setelah aktivasi"
+    },
+    {
+      "platform": "3Commas",
+      "url": "https://help.3commas.io/en/articles/16281163",
+      "kunci": "Trailing Stop 2-parameter: Activation + jarak trail"
+    },
+    {
+      "platform": "3Commas",
+      "url": "https://help.3commas.io/en/articles/16281055",
+      "kunci": "Global Max Open Positions — \"prevent excessive trading\""
+    },
+    {
+      "platform": "3Commas",
+      "url": "https://help.3commas.io/en/articles/16281154",
+      "kunci": "Pump Protection — memvalidasi guard kejut-pump SAKTI V249"
+    },
+    {
+      "platform": "Trade Ideas",
+      "url": "https://trade-ideas.com/features/backtesting/",
+      "kunci": "OddsMaker: event-based testing, metrics (PF/win-rate/drawdown), \"pinpoint winning filters, eliminate losing variables\""
+    },
+    {
+      "platform": "Trade Ideas",
+      "url": "https://trade-ideas.com/features/money-machine/",
+      "kunci": "Money Machine: konsentrasi top-3 momentum opportunities"
+    },
+    {
+      "platform": "Trade Ideas",
+      "url": "https://trade-ideas.com/features/ai-signals/",
+      "kunci": "Holly AI: signals dengan entry/exit + position sizing menyesuaikan kondisi (memvalidasi bias konteks V255)"
+    }
+  ],
+  "kunciDiadopsi": [
+    "MESIN DEAL 3Commas — safety orders (maxSO 2, deviasi 1.2×ATR ×1.6, volume ×1.5) + TP-dari-avg dipra-registrasi di tiap sasaran dan dinilai medan saat matang",
+    "MOVE SL TO BREAKEVEN 3Commas — aktivasi 60% jalan ke target, stop pindah ke net-nol; diukur berapa kali menyelamatkan posisi",
+    "TRAILING TAKE PROFIT 3Commas — trail dari peak 0.8×ATR setelah T1; ekstra profit terukur dari peak nyata",
+    "ODDS MAKER Trade Ideas — skor peluang 0-100 (40% MC + 25% zona + 20% metakognisi + 15% daya) meranking SEMUA kandidat tiap denyut",
+    "MONEY MACHINE Trade Ideas — hanya top-3 berodds ≥ 55 yang boleh mengunci; sisanya ditolak dengan alasan odds yang bisa diaudit",
+    "EVENT-BASED TESTING OddsMaker — 6 tag peristiwa disegel di ledger; hit-rate & net per peristiwa dihitung dari vonis matang",
+    "GLOBAL MAX OPEN POSITIONS 3Commas — posisi terbuka diukur tiap denyut melawan batas"
+  ],
+  "paramDeal": [
+    "maxSO",
+    "soDevAtr",
+    "soDevMult",
+    "soVolMult",
+    "bepAktPct",
+    "bepExecPct",
+    "trailDistAtr",
+    "oddsMin",
+    "oddsTopK",
+    "bobotOddsMC",
+    "bobotOddsZona",
+    "bobotOddsMeta",
+    "bobotOddsDaya",
+    "maxPosisiTerbuka"
+  ],
+  "paramEvent": [
+    "evt_breakout48j",
+    "evt_lonjakVolume",
+    "evt_crossEMA",
+    "evt_pullbackBB",
+    "evt_divergensiRSI",
+    "evt_searahTren4h"
+  ],
+  "oddsSiklusIni": [],
+  "ambang": 55,
+  "topK": 3,
+  "bobot": {
+    "mc": 0.4,
+    "zona": 0.25,
+    "meta": 0.2,
+    "daya": 0.15
+  },
+  "peristiwa": [
+    {
+      "peristiwa": "breakout48j",
+      "ket": "close menembus high 48 jam sebelumnya (breakout event)",
+      "n": 2,
+      "hitPct": 0,
+      "netPct": -2.12,
+      "czar": -3,
+      "status": "pemula"
+    },
+    {
+      "peristiwa": "lonjakVolume",
+      "ket": "volume 6 jam ≥ 2× rata-rata 24 jam (volume spike event)",
+      "n": 1,
+      "hitPct": 100,
+      "netPct": 1.81,
+      "czar": 0.02,
+      "status": "pemula"
+    },
+    {
+      "peristiwa": "crossEMA",
+      "ket": "EMA9 memotong EMA21 dalam 6 jam terakhir (MA cross event)",
+      "n": 8,
+      "hitPct": 37.5,
+      "netPct": -10.96,
+      "czar": -7.49,
+      "status": "pemula"
+    },
+    {
+      "peristiwa": "pullbackBB",
+      "ket": "lilin lalu menutup melampaui Bollinger 21/2.5 lalu kembali (pullback event)",
+      "n": 0,
+      "hitPct": null,
+      "netPct": 0,
+      "czar": null,
+      "status": "pemula"
+    },
+    {
+      "peristiwa": "divergensiRSI",
+      "ket": "divergensi RSI 12 jam terdeteksi (reversal event)",
+      "n": 1,
+      "hitPct": 0,
+      "netPct": -5.98,
+      "czar": -1.5,
+      "status": "pemula"
+    },
+    {
+      "peristiwa": "searahTren4h",
+      "ket": "EMA-align 1h & 4h searah dengan arah sinyal (trend-follow event)",
+      "n": 22,
+      "hitPct": 27.3,
+      "netPct": -36.91,
+      "czar": -23.9,
+      "status": "penggerus"
+    }
+  ],
+  "deal": {
+    "param": {
+      "maxSO": 2,
+      "soDevAtr": 1.2,
+      "soDevMult": 1.6,
+      "soVolMult": 1.5,
+      "bepAkt": 0.6,
+      "trailDistAtr": 0.8
+    },
+    "medan": {
+      "so": {
+        "n": 23,
+        "soKena": 42,
+        "netDenganSo": -0.33476,
+        "netTanpaSo": -0.68662,
+        "menyelamatkan": 23
+      },
+      "bep": {
+        "n": 16,
+        "aktivasiKena": 16,
+        "keluarNetNol": 16,
+        "menyelamatkan": 8
+      },
+      "trail": {
+        "n": 5,
+        "tembusT1": 5,
+        "ekstraPctJumlah": 7.95,
+        "ekstraMaksPct": 3.53
+      }
+    },
+    "ket": "semua kontingensi deal DIPRA-REGISTRASI saat kunci lalu dibandingkan dengan jalur nyata lilin pasca-kunci — net-dengan-SO vs tanpa-SO, BEP menyelamatkan?, ekstra trailing dari peak nyata; tumbuh dari ledger, bukan klaim"
+  },
+  "posisiTerbuka": {
+    "jumlah": 2,
+    "rincian": [
+      {
+        "simbol": "DOGE",
+        "jalur": "ARAH",
+        "arah": "BUY",
+        "umurJam": 19.7
+      },
+      {
+        "simbol": "ADA",
+        "jalur": "ARAH",
+        "arah": "BUY",
+        "umurJam": 0
+      }
+    ],
+    "batas": 24,
+    "ket": "Global Max Open Positions (3Commas): batas kumulatif — sinyal baru di luar batas tidak dieksekusi (guard mengikat sejak V256)"
+  },
+  "kejujuran": "rencana deal adalah KONTINGENSI yang disiplin — bukan janji hasil; statistik medan baru bermakna setelah n cukup; param konstan siklus tidak ikut memilih arah (pelajaran forensik)"
+}

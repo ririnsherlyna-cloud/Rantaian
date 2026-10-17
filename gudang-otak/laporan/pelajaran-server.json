@@ -1,0 +1,948 @@
+{
+  "diperbarui": "2026-10-06T02:17:20.732Z",
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 8,
+      "phxPisauJatuh": 19,
+      "phxTargetJauh": 13
+    },
+    "aktif": {
+      "phxMomentumWajib": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang"
+      },
+      "phxTargetMagnet": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh"
+      },
+      "arahRegimHormati": {
+        "sejak": "2026-09-30T03:50:57.250Z",
+        "teks": "Arah melawan rezim wajib keyakinan lebih rendah — potongan keyakinan dipasang di vonis komite"
+      }
+    },
+    "seedSelesai": "2026-09-30T00:38:10.647Z",
+    "polaMeta": {
+      "phxPisauJatuh": {
+        "sejak": "2026-10-01T12:13:59.697Z"
+      },
+      "arahLawanRezim": {
+        "sejak": "2026-10-02T04:37:51.298Z"
+      },
+      "phxTargetJauh": {
+        "sejak": "2026-10-03T00:38:31.774Z"
+      }
+    }
+  },
+  "daftar": [
+    {
+      "waktu": "2026-10-06T02:17:20.732Z",
+      "simbol": "AVAX",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 0.78,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-06T02:17:20.732Z",
+      "simbol": "ADA",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 5.26,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-06T02:17:20.732Z",
+      "simbol": "ADA",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 1.81,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-05T15:15:07.435Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.2,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-05T15:15:07.435Z",
+      "simbol": "BNB",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.08,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-05T06:32:59.280Z",
+      "simbol": "DOGE",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -3.35,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-05T06:32:59.280Z",
+      "simbol": "LINK",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 0.5,
+      "kenapa": [
+        "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji",
+      "kritik": {
+        "alasanGagal": "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan",
+        "yangSalah": "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "arahLawanRezim",
+        "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+      }
+    },
+    {
+      "waktu": "2026-10-05T00:51:44.400Z",
+      "simbol": "ADA",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -8.07,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-04T18:25:09.593Z",
+      "simbol": "BNB",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.1,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-04T14:45:46.038Z",
+      "simbol": "AVAX",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.49,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-04T14:45:46.038Z",
+      "simbol": "DOGE",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.43,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-04T14:45:46.038Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 1.43,
+      "kenapa": [
+        "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji",
+      "kritik": {
+        "alasanGagal": "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan",
+        "yangSalah": "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "arahLawanRezim",
+        "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+      }
+    },
+    {
+      "waktu": "2026-10-04T14:45:46.038Z",
+      "simbol": "XRP",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.27,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-04T02:44:51.898Z",
+      "simbol": "TRX",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.5,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-04T02:44:51.898Z",
+      "simbol": "NOM",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -5.98,
+      "kenapa": [
+        "dikunci saat momentum negatif (-30% — di bawah EMA9)"
+      ],
+      "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+      "kritik": {
+        "alasanGagal": "dikunci saat momentum negatif (-30% — di bawah EMA9)",
+        "yangSalah": "dikunci saat momentum negatif (-30% — di bawah EMA9)",
+        "caraLebihBaik": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+        "polaDihindari": "phxPisauJatuh",
+        "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli"
+      }
+    },
+    {
+      "waktu": "2026-10-03T23:10:30.115Z",
+      "simbol": "AVAX",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -4.58,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T13:29:06.549Z",
+      "simbol": "DOGE",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -4.72,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T11:22:09.392Z",
+      "simbol": "LINK",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -3.61,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim DATAR — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T11:22:09.392Z",
+      "simbol": "ENA",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -5.63,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T09:23:34.207Z",
+      "simbol": "XRP",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -2.85,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T09:23:34.207Z",
+      "simbol": "BNB",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -2.02,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T09:23:34.207Z",
+      "simbol": "ADA",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -4.34,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T00:38:31.774Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 0.15,
+      "kenapa": [
+        "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji",
+      "kritik": {
+        "alasanGagal": "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan",
+        "yangSalah": "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "arahLawanRezim",
+        "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+      }
+    },
+    {
+      "waktu": "2026-10-03T00:38:31.774Z",
+      "simbol": "RUNE",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -4.3,
+      "kenapa": [
+        "dikunci saat momentum negatif (-22% — di bawah EMA9)"
+      ],
+      "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+      "kritik": {
+        "alasanGagal": "dikunci saat momentum negatif (-22% — di bawah EMA9)",
+        "yangSalah": "dikunci saat momentum negatif (-22% — di bawah EMA9)",
+        "caraLebihBaik": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+        "polaDihindari": "phxPisauJatuh",
+        "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli"
+      }
+    },
+    {
+      "waktu": "2026-10-03T00:38:31.774Z",
+      "simbol": "ASTER",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -3.29,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-03T00:38:31.774Z",
+      "simbol": "HYPE",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 1.7,
+      "kenapa": [
+        "dikunci saat momentum negatif (-3% — di bawah EMA9)"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji",
+      "kritik": {
+        "alasanGagal": "dikunci saat momentum negatif (-3% — di bawah EMA9)",
+        "yangSalah": "dikunci saat momentum negatif (-3% — di bawah EMA9)",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "phxPisauJatuh",
+        "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+      }
+    },
+    {
+      "waktu": "2026-10-03T00:38:31.774Z",
+      "simbol": "ARK",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -14.19,
+      "kenapa": [
+        "dikunci saat momentum negatif (-23% — di bawah EMA9)",
+        "ujung atas diprediksi +9.7% tetapi tak pernah tersentuh (harga hanya sampai +-0.4%)"
+      ],
+      "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+      "kritik": {
+        "alasanGagal": "dikunci saat momentum negatif (-23% — di bawah EMA9)",
+        "yangSalah": "dikunci saat momentum negatif (-23% — di bawah EMA9); ujung atas diprediksi +9.7% tetapi tak pernah tersentuh (harga hanya sampai +-0.4%)",
+        "caraLebihBaik": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+        "polaDihindari": "phxPisauJatuh, phxTargetJauh",
+        "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli"
+      }
+    },
+    {
+      "waktu": "2026-10-03T00:38:31.774Z",
+      "simbol": "TRUMP",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 1.64,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim DATAR — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "BTC",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -3.72,
+      "kenapa": [
+        "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "melawan arus koin/rezim butuh bukti jauh lebih kuat — keyakinan kini dipotong bila arah melawan rezim",
+      "kritik": {
+        "alasanGagal": "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan",
+        "yangSalah": "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan",
+        "caraLebihBaik": "melawan arus koin/rezim butuh bukti jauh lebih kuat — keyakinan kini dipotong bila arah melawan rezim",
+        "polaDihindari": "arahLawanRezim",
+        "pelajaran": "melawan arus koin/rezim butuh bukti jauh lebih kuat — keyakinan kini dipotong bila arah melawan rezim"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "ETH",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -2.18,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -3.67,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "BNB",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 1.36,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "XRP",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -2.42,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "DOGE",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.99,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim DATAR — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "ADA",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -3.12,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "AVAX",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -2.81,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "LINK",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.13,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "TRX",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 0.6,
+      "kenapa": [
+        "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji",
+      "kritik": {
+        "alasanGagal": "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan",
+        "yangSalah": "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "arahLawanRezim",
+        "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "ADA",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 2.72,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "NIL",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -4.7,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim PARABOLIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "XRP",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 1.46,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "SKY",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 8.71,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "HBAR",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -1.1,
+      "kenapa": [
+        "dikunci saat momentum negatif (-8% — di bawah EMA9)"
+      ],
+      "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+      "kritik": {
+        "alasanGagal": "dikunci saat momentum negatif (-8% — di bawah EMA9)",
+        "yangSalah": "dikunci saat momentum negatif (-8% — di bawah EMA9)",
+        "caraLebihBaik": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+        "polaDihindari": "phxPisauJatuh",
+        "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli"
+      }
+    },
+    {
+      "waktu": "2026-10-02T04:37:51.298Z",
+      "simbol": "MSTRB",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 6.59,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-02T00:27:40.200Z",
+      "simbol": "ADA",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -0.52,
+      "kenapa": [
+        "dikunci saat momentum negatif (-10% — di bawah EMA9)"
+      ],
+      "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+      "kritik": {
+        "alasanGagal": "dikunci saat momentum negatif (-10% — di bawah EMA9)",
+        "yangSalah": "dikunci saat momentum negatif (-10% — di bawah EMA9)",
+        "caraLebihBaik": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+        "polaDihindari": "phxPisauJatuh",
+        "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli"
+      }
+    },
+    {
+      "waktu": "2026-10-02T00:27:40.200Z",
+      "simbol": "KORUB",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 3.04,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-01T14:23:53.637Z",
+      "simbol": "AAVE",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 2.94,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim NAIK — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
+        "polaDihindari": "—",
+        "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+      }
+    },
+    {
+      "waktu": "2026-10-01T12:13:59.697Z",
+      "simbol": "HBAR",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -2.25,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite PHOENIX kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
+    {
+      "waktu": "2026-10-01T12:13:59.697Z",
+      "simbol": "LINK",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -0.11,
+      "kenapa": [
+        "dikunci saat momentum negatif (-4% — di bawah EMA9)"
+      ],
+      "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+      "kritik": {
+        "alasanGagal": "dikunci saat momentum negatif (-4% — di bawah EMA9)",
+        "yangSalah": "dikunci saat momentum negatif (-4% — di bawah EMA9)",
+        "caraLebihBaik": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli",
+        "polaDihindari": "phxPisauJatuh",
+        "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli"
+      }
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "BTC",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.22,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "ETH",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.71,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 0.46,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "BNB",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 1.17,
+      "kenapa": [
+        "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "XRP",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.22,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "DOGE",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.25,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "ADA",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.35,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "AVAX",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -4.9,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "LINK",
+      "jalur": "ARAH",
+      "vonis": "BENAR",
+      "netPct": 0.25,
+      "kenapa": [],
+      "pelajaran": "bukti yang dipercaya terbukti — bobot pola ini diperkuat evolusi"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "TRX",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.28,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-10-01T00:43:03.328Z",
+      "simbol": "TSLAB",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -0.14,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    }
+  ]
+}

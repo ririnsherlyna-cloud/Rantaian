@@ -1,0 +1,231 @@
+{
+  "protokol": "SASARAN-MICAPROFITA",
+  "organ": "V269-TANGGAP-SELALU v6.6",
+  "dihasilkan": "2026-10-06T02:17:20.732Z",
+  "siklus": 69,
+  "mandat": "hukum pemilik 2026-10-02: KARANTINA DILARANG — yang sedang belajar harus terus belajar; berikan dia kemampuan matematika murni dan ekonomi cerdas; setiap kesalahan memberikan kemampuan baru; makin asah makin tajam; denyut 30 → 15 menit; beri dia kemampuan membaca jauh sebelum itu terjadi; sumber informasinya dilengkapi",
+  "hukumAsah": {
+    "larangan": "karantina dilarang dalam bentuk apa pun: tidak ada jalur yang diselantikan dari belajar, tidak ada suara topik yang disita",
+    "konsekuensi": [
+      "ASAH-KALIBRASI (ARAH & PHOENIX): keyakinan×faktor < 40 tidak lagi memblokir — jalur masuk MODE-ASAH (ukuran ×0.6, stop ×0.75, terkalibrasi disegel jujur) dan terus mengunci + terus dinilai",
+      "ASAH-SUARA: topik bermasalah bersuara lirih bobot 0.35 (sebelumnya 0 = disita), pulih penuh lewat bukti medan",
+      "HENTI-HARIAN: kini mode-asah — kuota belajar 2 dengan ukuran mikro ×0.3, ilmu tetap bertambah",
+      "ORGAN-BARU: setiap SALAH melahirkan mikro-aturan yang di-replay ke ledger; organ terbukti (n≥10, hit≥52%, net>0) berhak VETO"
+    ]
+  },
+  "matematikaMurni": {
+    "mesin": "mesinMate() — dihitung per kandidat dari lilin 1 jam yang ada saat itu",
+    "rumus": [
+      "Hurst R/S agregat skala [4,8,16,32] (Hurst 1951) — >0.55 tren, <0.45 pulang-keseimbangan",
+      "Half-life AR(1) log-harga (Ornstein-Uhlenbeck): t½ = ln(0.5)/ln(φ)",
+      "Drift OLS 30-bar + R² — slope per jam dieksponensialkan ke 24 jam",
+      "z-SMA20 — jarak harga dari rata-rata dalam satuan σ",
+      "Entropi Shannon arah pita 24 jam: H = −p·log₂p − (1−p)·log₂(1−p)",
+      "Volatilitas Parkinson: σ² = Σln(H/L)²/(4·ln2·n) dan Garman-Klass — ekor intrabar",
+      "Autokorelasi lag-1 return — momentum vs berbalik"
+    ]
+  },
+  "ekonomiCerdas": {
+    "mesin": "carry funding: funding positif = long membayar short (3×/hari); EV-ekonomi arah posisi = drift OLS 24j searah + carry arah − biaya putar 2×fee",
+    "ket": "ekonomi biaya-nyata: sinyal teknikal yang membayar carry lebih mahal dari drift-nya = sedang membeli barang mahal — kini terukur dan disegel"
+  },
+  "mataJauh": {
+    "identitas": "kerucut MC bootstrap 72 jam (600 lintasan, residu EWMA, drift 0) — P(naik) & median lintasan pada 24/48/72 jam",
+    "btc": {
+      "pNaik24": 0.592,
+      "pNaik48": 0.657,
+      "pNaik72": 0.7,
+      "med24": 0.26,
+      "med72": 0.98
+    },
+    "ket": "membaca jauh SEBELUM terjadi — dalam bahasa distribusi probabilitas yang bisa dipahami dan diaudit, bukan ramalan"
+  },
+  "organBaru": {
+    "total": 2,
+    "lulus": 0,
+    "daftar": [
+      {
+        "nama": "organ-carry-melawan-BUY",
+        "jenis": "carry-melawan",
+        "lahir": "2026-10-04T18:25:09.593Z",
+        "dari": "BNB-2026-10-03",
+        "replay": {
+          "n": 1,
+          "netHindaranPct": -1.43
+        },
+        "n": 0,
+        "hit": null,
+        "status": "pengamatan",
+        "ket": "JANGAN BUY saat EV-ekonomi negatif (drift+carry−biaya < 0) — lahir dari BNB SALAH (net -0.1%)"
+      },
+      {
+        "nama": "organ-carry-melawan-SELL",
+        "jenis": "carry-melawan",
+        "lahir": "2026-10-05T00:51:44.400Z",
+        "dari": "ADA-2026-10-03",
+        "replay": {
+          "n": 2,
+          "netHindaranPct": -1.32
+        },
+        "n": 0,
+        "hit": null,
+        "status": "pengamatan",
+        "ket": "JANGAN SELL saat EV-ekonomi negatif (drift+carry−biaya < 0) — lahir dari ADA SALAH (net -8.1%)"
+      }
+    ],
+    "ket": "setiap kesalahan melahirkan kemampuan: organ = mikro-aturan dari vonis SALAH, di-replay ke ledger, disekolahkan medan, lulus → berhak VETO"
+  },
+  "sumberDilengkapi": {
+    "baru": [
+      {
+        "nama": "Binance futures topLongShortPositionRatio",
+        "url": "https://fapi.binance.com/futures/data/topLongShortPositionRatio",
+        "kunci": "posisi trader BESAR (smart money) per jam"
+      },
+      {
+        "nama": "Binance futures takerlongshortRatio",
+        "url": "https://fapi.binance.com/futures/data/takerlongshortRatio",
+        "kunci": "agresor taker Binance — pendamping OKX rubik"
+      },
+      {
+        "nama": "Bybit linear tickers",
+        "url": "https://api.bybit.com/v5/market/tickers?category=linear",
+        "kunci": "cadangan funding/OI lintas-bursa (kalibrasi silang)"
+      }
+    ],
+    "lama": "klines 1h/1d Binance (+vision), premiumIndex & OI fapi, OKX SWAP tickers/funding/rubik/books, CoinGecko global, alternative.me F&G",
+    "ket": "mandat \"sumber informasinya kurang kita lengkapi\" — semuanya publik & gratis, gagal = null jujur"
+  },
+  "konstanta": {
+    "BOBOT_SUARA": 0.35,
+    "STOP_KETAT_F": 0.75,
+    "UKURAN_F": 0.6,
+    "HENTI_KUOTA": 2,
+    "HENTI_UKURAN": 0.3,
+    "HURST_WINDOW": 64,
+    "OLS_WINDOW": 30,
+    "Z_WINDOW": 20,
+    "MC_JAUH_LANGKAH": 72,
+    "MC_JAUH_LINTASAN": 600,
+    "CARRY_PER_HARI": 3,
+    "ORGAN_MAKS": 40,
+    "ORGAN_LULUS_N": 10,
+    "ORGAN_LULUS_HIT": 0.52
+  },
+  "paramMate": {
+    "kandang": [
+      "mateHurst",
+      "mateEkonomi",
+      "mateJauh"
+    ],
+    "siklus": [
+      "jauhPnaik24",
+      "jauhPnaik48",
+      "carryAktif",
+      "evEkoAktif",
+      "organAktif",
+      "organLulus"
+    ],
+    "konst": [
+      "asahBobotSuara",
+      "asahStopKetatF",
+      "asahUkuranF",
+      "asahHentiKuota",
+      "asahHentiUkuran",
+      "hurstWindow",
+      "olsWindow",
+      "zWindow",
+      "mcJauhLangkah",
+      "mcJauhLintasan",
+      "carryPerHari",
+      "organMaks",
+      "organLulusHit"
+    ],
+    "total": 22
+  },
+  "sekolahButa": {
+    "mandat": "sekolah kilat pemilik: uji cyborg dengan ratusan simulasi trading berlandas history nyata — dia tidak tahu itu simulasi; temukan dimana bodohnya, perbaiki, push ulang (tanpa menunggu hari demi hari)",
+    "ujian": {
+      "soal": 2533,
+      "metode": "penjaga.mjs ASLI dijalankan pada 306 dunia beku (T 2026-06-08 → 2026-10-02, langkah 9 jam); blind dijamin lapisan data (fetch dipotong pada T, Date dibekukan); vonis resmi = close T+24j − fee 0.002",
+      "hasil": "akurasi 40.9% · net −462.5% · PF 0.839 — BUY 43.7% (+140.6%) vs SELL 37.6% (−603.1%) — SELL = pendarah; gerbang justru menyelamatkan (menolak jawaban yang akan rugi −458.7%)",
+      "catatanJujur": "organ V265 dilatih dari ujian yang sama dengannya — perbaikan setelah ini adalah bukti in-sample; organ bersifat kalibrasi/ukuran (bukan pembalik arah) dan terus dinilai medan hidup yang belum pernah dilihatnya",
+      "bukti": "scripts/ujian-buta/ (pra_ambil, beku.cjs, orkestra, grade, bedah_sekolah) — harness lengkap untuk mengulang sekolah kilat kapan pun",
+      "putaran2": "out-of-sample 10-02 (dunia yang organ V265 belum pernah lihat): 57 soal OOS ak 3.5% + holdout 63 soal ak 0.0% net −186.9% — hari REVERSAL (barometer pra-T positif, pasar berbalik sesudahnya = buta prinsipil); bedah 2.366 soal menemukan pendarah makro sejati: SELL saat BTC<−1% (ak 30.2% net −339.3% n=397), breadth<25% (net −405.5% n=705), BUY saat BTC 0..+1% (net −155.8% n=470); draf-1 organ potong BUY-bear = SALAH TARGET (BUY-bear ak 53.9% net +80.1% terbukti untung) → organ diarahkan ulang ke bukti: sell-bear-harian + tunda-bear-SELL + buy-flat-btc",
+      "putaran3": "bedah anti-arus: BUY saat bear + saksi pantulan (ret1h BTC ≥0) = jebakan (n=77 ak 41.6% net −23.4%) vs tanpa saksi = menadah dasar untung (n=64 ak 68.8% net +103.5%) → organ buy-saksi-terbalik; BUY saat ret24 BTC ≤−2.5% jatuh pisau = net −3.8% (n=27; vs −2..−1% +83.1% — batas −2.5 tajam) → organ buy-jatuh-dalam; SELL-bear V266 terbukti di dunia bear murni (06-10T00: SELL 8/8 = 100%); JUJUR: divergensi-reversal (10-02, BTC +1.5..+3.7% & breadth 13-26%, 82 BUY 0% benar di OOS) tetap buta prinsipil — in-sample divergensi untung (+15.2% n=25) jadi organ pembalik TIDAK SAH dibuat (draf-2 dibuang, anti-overfit)",
+      "putaran4": "verifikasi-ulang horizon-penuh (2026-10-04): SEMUA panen digrade ulang dengan lilin pasca-T PENUH 24 jam (cache segar s.d. 10-04T03Z; sebelumnya dunia-dunia akhir 10-02 dinilai dengan sisa horizon) — matriks 2.490 soal unik; 8/10 organ lama SAH dgn n lebih besar (jual-lemah n=1065 ak 37.7% net −556.2%; sell-bear-harian n=613 ak 30.0% net −597.5%; buy-flat-btc n=471 ak 40.1% net −152.3%; sell-relatif-kuat n=205 ak 31.2% net −119.9%; momentum-kuat n=495 ak 43.4% net +88.9% — bonus sah; key-melawan-drift n=83 ak 37.3%; jual-pita n=14 ak 21.4%); CATATAN JUJUR: bucket organ-9 buy-saksi-terbalik kini ak 43.9% net +20.8% (n=98) pada horizon penuh — bukti potongnya melemah, namun dampener tetap rasional (ak masih 25pp di bawah tanpa-saksi 68.8%: key −8 & ukuran ×0.6 dipertahankan, terus dinilai medan); organ-10 netral (n=27 ak 51.9% net −3.8%) — dipertahankan dgn catatan; KANDIDAT ORGAN BARU: 0 SAH — semua kandidat otomatis (n≥30, |net|≥40%, hidup ≥2 keluarga) hanyalah deskripsi-ulang kelemahan SELL yang sudah dicakup organ lama → draf kosong dibuang, anti-overfit; 5 dunia beku segar (10-02T18→10-03T02 langkah 2 jam, penjaga v6.5): 0 kunci — cyborg memilih DIAM di dunia BEAR-HARIAN (ret24 BTC −0.69%, breadth 14%): organ barometer/anti-arus + gerbang peluang-skor (top odds 62.3 ditolak — skor-peluang 25<60) + tunda-bear mengikat; konservatisme terukur, bukan kerusakan — DIAM saat tak yakin adalah jawaban sekolah"
+    },
+    "organ": {
+      "JUAL_Z_MAKS": 0.5,
+      "JUAL_KEY_MAKS": 40,
+      "JUAL_SKALA_F": 0.5,
+      "JUAL_ENTROPI_MAKS": 0.85,
+      "KEY_DRIFT_F": 0.75,
+      "MOMENTUM_Z": 1.5,
+      "MOMENTUM_DRIFT": 5,
+      "MOMENTUM_ODDS_BONUS": 8,
+      "BEAR_BTC_PCT": -1.5,
+      "BEAR_BREADTH_PCT": 25,
+      "SELL_BEAR_KEY_MAKS": 40,
+      "SELL_BEAR_KUNCI_MIN": 50,
+      "SELL_BEAR_SKALA_F": 0.5,
+      "BUY_FLAT_KEY_POTONG": 8,
+      "SELL_RELATIF_KEY_MAKS": 45,
+      "KANDIDAT_KEY_MIN": 45,
+      "BUY_SAKSI_PCT": 0,
+      "BUY_SAKSI_KEY_POTONG": 8,
+      "BUY_SAKSI_SKALA_F": 0.6,
+      "BUY_JATUH_BTC_PCT": -2.5,
+      "BUY_JATUH_KEY_POTONG": 8,
+      "BUY_JATUH_SKALA_F": 0.6
+    },
+    "paramKonst": [
+      "jualZMaks",
+      "jualKeyMaks",
+      "jualSkalaF",
+      "jualEntropiMaks",
+      "keyDriftF",
+      "momentumZ",
+      "momentumDrift",
+      "momentumOddsBonus",
+      "bearBtcPct",
+      "bearBreadthPct",
+      "sellBearKeyMaks",
+      "sellBearKunciMin",
+      "sellBearSkalaF",
+      "buyFlatKeyPotong",
+      "sellRelatifKeyMaks",
+      "kandidatKeyMin",
+      "buySaksiPct",
+      "buySaksiKeyPotong",
+      "buySaksiSkalaF",
+      "buyJatuhBtcPct",
+      "buyJatuhKeyPotong",
+      "buyJatuhSkalaF"
+    ],
+    "total": 22,
+    "siklusIni": {
+      "asah": 7,
+      "veto": 0,
+      "bonus": 1
+    },
+    "registri": 307,
+    "ket": "sepuluh organ mengikat saat kunci (4 kalibrasi V265 + 3 barometer V266 + 2 anti-arus V267 + seleksi publik radar-bear) — semuanya terverifikasi ulang horizon-penuh di putaran-4; setiap denyut berikutnya terus dinilai medan hidup — kalau organ terbukti salah di medan, uji-balik akan merevisinya"
+  },
+  "siklusIni": {
+    "jauhPnaik24": 0.592,
+    "jauhPnaik48": 0.657,
+    "carryAktif": 0.0052,
+    "modeAsahCt": 0,
+    "organAktif": 2,
+    "organLulus": 0,
+    "barometer": {
+      "ret24Btc": -1.15,
+      "breadthPct": 25,
+      "bearHarian": true,
+      "ket": "V266 barometer-makro mengikat saat kunci"
+    },
+    "denyutMenit": 15
+  },
+  "kejujuran": "matematika dihitung dari data yang ada saat itu — bukan klaim gaib; kerucut MC = distribusi, bukan janji arah; organ-baru lahir dari kesalahan nyata dan harus lulus sekolah medan sebelum berhak veto; mode-asah menyusutkan ukuran, TIDAK menghentikan belajar"
+}

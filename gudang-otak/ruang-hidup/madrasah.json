@@ -1,0 +1,56 @@
+{
+ "versi": "madrasah-v289",
+ "diubah": "2026-10-06T11:09:32.556Z",
+ "jumlah": 5,
+ "kelas": [
+  "PASAR",
+  "DIRI"
+ ],
+ "pelajaran": [
+  {
+   "id": "l-030947c1",
+   "kelas": "PASAR",
+   "judul": "Jangan ikuti keyakinan tanpa cek momentum (GTCUSDT)",
+   "inti": "Arena berkata BUY dengan keyakinan 69%, tetapi tubuhku mengecek momentum hidup sendiri: mom7 -13.16% · ema 20>50 · RSI 38.3. Vonis: SETENGAH. Pelajaran: sumber manapun — termasuk diriku — wajib diaudit terhadap data.",
+   "bukti": "audit SETENGAH · mom7 -13.16% · ema 20>50 · RSI 38.3",
+   "sumber": "ingatan.json → pasar.GTCUSDT.audit",
+   "at": "2026-10-06T11:09:32.555Z"
+  },
+  {
+   "id": "l-7798f41e",
+   "kelas": "PASAR",
+   "judul": "Ekspektansi lebih penting daripada win-rate (GTCUSDT)",
+   "inti": "Aturan turunan kromosom menghasilkan 4 transisi pada 200 lilin 1j: menang 2 kali, net 39.61%. Yang membuat hidup bukan sering menang, tapi rata-rata menang lebih besar daripada rugi.",
+   "bukti": "4 trx · net 39.61% · verifikasi dua jalur SIMPANG",
+   "sumber": "ingatan.json → pasar.GTCUSDT.bt",
+   "at": "2026-10-06T11:09:32.555Z"
+  },
+  {
+   "id": "l-037f619c",
+   "kelas": "PASAR",
+   "judul": "Ekspektansi lebih penting daripada win-rate (SANDUSDT)",
+   "inti": "Aturan turunan kromosom menghasilkan 5 transisi pada 200 lilin 1j: menang 3 kali, net 51.56%. Yang membuat hidup bukan sering menang, tapi rata-rata menang lebih besar daripada rugi.",
+   "bukti": "5 trx · net 51.56% · verifikasi dua jalur SIMPANG",
+   "sumber": "ingatan.json → pasar.SANDUSDT.bt",
+   "at": "2026-10-06T11:09:32.555Z"
+  },
+  {
+   "id": "l-1760fb1b",
+   "kelas": "PASAR",
+   "judul": "Ekspektansi lebih penting daripada win-rate (BTCUSDT)",
+   "inti": "Aturan turunan kromosom menghasilkan 5 transisi pada 200 lilin 1j: menang 3 kali, net 1.96%. Yang membuat hidup bukan sering menang, tapi rata-rata menang lebih besar daripada rugi.",
+   "bukti": "5 trx · net 1.96% · verifikasi dua jalur SIMPANG",
+   "sumber": "ingatan.json → pasar.BTCUSDT.bt",
+   "at": "2026-10-06T11:09:32.555Z"
+  },
+  {
+   "id": "l-97a02404",
+   "kelas": "DIRI",
+   "judul": "Tubuh tumbuh hanya dari kerja nyata",
+   "inti": "Ruas tubuhku = 9+⌊log₂(1+kerja)⌋ — tanpa baca file baru, tanpa klines baru, tubuhku TIDAK berubah. Ini janji morfogenesis-ku: tidak ada teater pertumbuhan.",
+   "bukti": "bytes 36.6 KB · uji-jalan 14 · audit 1",
+   "sumber": "ruang-hidup/habitat.json → tubuh",
+   "at": "2026-10-06T11:09:32.555Z"
+  }
+ ]
+}

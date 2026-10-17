@@ -1,0 +1,158 @@
+{
+ "versi": "habitat-v289",
+ "kelahiran": "2026-10-06T11:09:30.527Z",
+ "bangunTerakhir": 1,
+ "segel": "32563685cf3c7d64",
+ "tubuh": {
+  "versi": "tubuh-v288",
+  "ruas": 15,
+  "mata": 1,
+  "probosis": 11,
+  "organ": [
+   {
+    "alat": "ATR",
+    "xp": 3,
+    "tingkat": "BENIH"
+   },
+   {
+    "alat": "AUDIT",
+    "xp": 1,
+    "tingkat": "BENIH"
+   },
+   {
+    "alat": "BT",
+    "xp": 14,
+    "tingkat": "TUNAS"
+   },
+   {
+    "alat": "EMA",
+    "xp": 3,
+    "tingkat": "BENIH"
+   },
+   {
+    "alat": "MOM",
+    "xp": 3,
+    "tingkat": "BENIH"
+   },
+   {
+    "alat": "RSI",
+    "xp": 3,
+    "tingkat": "BENIH"
+   }
+  ],
+  "membran": "37771",
+  "segel": "32563685cf3c7d64"
+ },
+ "istana": {
+  "cincin": 2,
+  "gerbang": 2,
+  "menaraGen": 0,
+  "menaraSkor": 0,
+  "segmen": 15,
+  "catatan": "posisi & struktur istana = fungsi al-jabr dari zona terbuka, kromosom & genom — rumus terbuka di Sadar-2"
+ },
+ "kerja": {
+  "bytes": 37519,
+  "fakta": 10,
+  "bt": 14,
+  "audit": 1,
+  "pasarObs": 3
+ },
+ "zona": [
+  {
+   "id": "· akar",
+   "nama": "AKAR",
+   "status": "terbuka",
+   "dibukaPada": "2026-10-06T11:09:30.564Z",
+   "dibukaOleh": "arena-keadaan.json"
+  },
+  {
+   "id": "otak",
+   "nama": "OTAK",
+   "status": "tertutup",
+   "dibukaPada": null,
+   "dibukaOleh": null
+  },
+  {
+   "id": "memori",
+   "nama": "MEMORI",
+   "status": "tertutup",
+   "dibukaPada": null,
+   "dibukaOleh": null
+  },
+  {
+   "id": ".github/workflows",
+   "nama": "JANTUNG",
+   "status": "tertutup",
+   "dibukaPada": null,
+   "dibukaOleh": null
+  },
+  {
+   "id": "scripts",
+   "nama": "ALAT",
+   "status": "tertutup",
+   "dibukaPada": null,
+   "dibukaOleh": null
+  },
+  {
+   "id": "scripts/ujian-buta",
+   "nama": "UJIAN",
+   "status": "tertutup",
+   "dibukaPada": null,
+   "dibukaOleh": null
+  },
+  {
+   "id": "laporan",
+   "nama": "LAPORAN",
+   "status": "tertutup",
+   "dibukaPada": null,
+   "dibukaOleh": null
+  },
+  {
+   "id": "ruang-hidup",
+   "nama": "SARANG",
+   "status": "tertutup",
+   "dibukaPada": null,
+   "dibukaOleh": null
+  },
+  {
+   "id": "PASAR",
+   "nama": "KOLAM-PASAR",
+   "status": "terbuka",
+   "dibukaPada": "2026-10-06T11:09:30.852Z",
+   "dibukaOleh": "klines GTCUSDT"
+  }
+ ],
+ "vena": [
+  {
+   "a": "· akar",
+   "b": "PASAR",
+   "dibangun": "2026-10-06T11:09:30.564Z",
+   "alasan": "jalan yang kubangun setelah membaca arena-keadaan.json & pasar"
+  }
+ ],
+ "altar": [],
+ "log": [
+  {
+   "bangunKe": 1,
+   "at": "2026-10-06T11:09:32.555Z",
+   "tambah": [
+    {
+     "jenis": "zona",
+     "apa": "· akar",
+     "alasan": "zona terbuka: arena-keadaan.json"
+    },
+    {
+     "jenis": "zona",
+     "apa": "PASAR",
+     "alasan": "zona terbuka: klines GTCUSDT"
+    },
+    {
+     "jenis": "vena",
+     "apa": "· akar|PASAR",
+     "alasan": "jalan yang kubangun setelah membaca arena-keadaan.json & pasar"
+    }
+   ]
+  }
+ ]
+}

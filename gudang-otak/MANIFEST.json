@@ -1,0 +1,183 @@
+{
+  "dibuat": "2026-10-17T01:12:25.350018+00:00",
+  "induk": "MICAPROFITA-ARENA-OTAK",
+  "jumlah_berkas": 35,
+  "catatan": "verifikasi rollback: sha256 tiap berkas; kolom 'sumber' = peta kembalikan ke proyek lokal",
+  "berkas": {
+    "arena-keadaan.json": {
+      "ukuran": 36783,
+      "sha256": "fc171406fc0feebc9a512bdd45cc58faa5ad2b69da8426f2c78c7236e4b6fa42",
+      "sumber": "hidup_repo/arena-keadaan.json"
+    },
+    "brain.json": {
+      "ukuran": 389,
+      "sha256": "f5173d43e3d33da32f400916b1308d24afa8b2303c26b9b4c92f6875c2b6423b",
+      "sumber": "hidup_repo/brain.json"
+    },
+    "laporan/epoch-2026-09-30.json": {
+      "ukuran": 1126,
+      "sha256": "ff2c45a0be745768963ab5f72dd370a9cffd2fc9de0fb53ff5a2435dd3948429",
+      "sumber": "hidup_repo/laporan/epoch-2026-09-30.json"
+    },
+    "laporan/epoch-2026-10-01.json": {
+      "ukuran": 1133,
+      "sha256": "52b167d6ae03756c344b7efef977389b66f3b4b0e113707a8161d9dae3e0352d",
+      "sumber": "hidup_repo/laporan/epoch-2026-10-01.json"
+    },
+    "laporan/epoch-2026-10-02.json": {
+      "ukuran": 1126,
+      "sha256": "1f69ad780d472cae50424b921affb8ad60dd060ba6d1b73418c6b25561068b68",
+      "sumber": "hidup_repo/laporan/epoch-2026-10-02.json"
+    },
+    "laporan/epoch-2026-10-03.json": {
+      "ukuran": 1127,
+      "sha256": "39410c3136de9ea6a0d6f1bf67f523a829ebe2909eb2b75f1f9f194cdb79f70e",
+      "sumber": "hidup_repo/laporan/epoch-2026-10-03.json"
+    },
+    "laporan/epoch-2026-10-04.json": {
+      "ukuran": 1133,
+      "sha256": "655af97284ddc65a55f8631187d914abb29201dbac4772be0dfcde041c1839fc",
+      "sumber": "hidup_repo/laporan/epoch-2026-10-04.json"
+    },
+    "laporan/epoch-2026-10-05.json": {
+      "ukuran": 1132,
+      "sha256": "00a86709036b68083243a3e92324b5416cce3fe3bd2d1cb70778657fd1394159",
+      "sumber": "hidup_repo/laporan/epoch-2026-10-05.json"
+    },
+    "laporan/epoch-2026-10-06.json": {
+      "ukuran": 1133,
+      "sha256": "e375626bd34ecfb2b00b26cfd3b5265b068ca3cc5d5ea4b47a542e67dc38549a",
+      "sumber": "hidup_repo/laporan/epoch-2026-10-06.json"
+    },
+    "laporan/forensik.json": {
+      "ukuran": 43334,
+      "sha256": "d3cad1775e89867dfee9e4dec2b3d264dced607e83b73e3761418c485ba5102a",
+      "sumber": "hidup_repo/laporan/forensik.json"
+    },
+    "laporan/jurnal-ilmu.json": {
+      "ukuran": 23927,
+      "sha256": "4057b18e7468fd0199629024611f76aff4d7e95e8e8c2bdbcc84a5c717a7a3b5",
+      "sumber": "hidup_repo/laporan/jurnal-ilmu.json"
+    },
+    "laporan/matematika.json": {
+      "ukuran": 11799,
+      "sha256": "f9e985ca8836064c3c62b581ffdd4db610e224b30be922d3025e6e55b395e5ab",
+      "sumber": "hidup_repo/laporan/matematika.json"
+    },
+    "laporan/odds.json": {
+      "ukuran": 6284,
+      "sha256": "52e5f779dce48161b49751b4cf234bfd1dcb35d746f7fcd7165f49eb7c831b18",
+      "sumber": "hidup_repo/laporan/odds.json"
+    },
+    "laporan/pelajaran-server.json": {
+      "ukuran": 42203,
+      "sha256": "59c2450446829a158385cabd0120686de65cfcf622462e6f5eb46fdc4a124197",
+      "sumber": "hidup_repo/laporan/pelajaran-server.json"
+    },
+    "laporan/wawasan.json": {
+      "ukuran": 208026,
+      "sha256": "525336b46da67980993ba19d61cac3a0fd5ed20f04f5c6809a8de6ddf3164c01",
+      "sumber": "hidup_repo/laporan/wawasan.json"
+    },
+    "memori/terkini.json": {
+      "ukuran": 831,
+      "sha256": "f07618194736d81aae6aadccb4999195de7e53f6bec1c163617c56c8789f019c",
+      "sumber": "hidup_repo/memori/terkini.json"
+    },
+    "otak-kode/cyborg/brain.ts": {
+      "ukuran": 38367,
+      "sha256": "411b0de4a4911886fd78f56c3a5a0e7ef20b743bf2fe892d8a20c408d2754dc6",
+      "sumber": "src/lib/cyborg/brain.ts"
+    },
+    "otak-kode/cyborg/evolution.ts": {
+      "ukuran": 5774,
+      "sha256": "620e3243447ae1430278536ee318eceeb043499db8c371e177bca541af1fb447",
+      "sumber": "src/lib/cyborg/evolution.ts"
+    },
+    "otak-kode/cyborg/factors.ts": {
+      "ukuran": 5230,
+      "sha256": "298eb644fce6bd6ebd026cdfa32968e684f50cc39857c3d15a21b1ac96d5722c",
+      "sumber": "src/lib/cyborg/factors.ts"
+    },
+    "otak-kode/exam/arah-brain.ts": {
+      "ukuran": 27519,
+      "sha256": "8ade320dbd07beaf1f3c3956190e61d0a329d8d52d48e6de7171ea332225cbc2",
+      "sumber": "src/lib/exam/arah-brain.ts"
+    },
+    "otak-kode/exam/beartrap-brain.ts": {
+      "ukuran": 29269,
+      "sha256": "a16839f1e8ba9ee3ad8ace117a3c1df42f72c87f57e22d3a4d2ed5a5f26900db",
+      "sumber": "src/lib/exam/beartrap-brain.ts"
+    },
+    "otak-kode/exam/bulltrap-brain.ts": {
+      "ukuran": 26739,
+      "sha256": "912f459278a714d06896c5bf62a8141965b9da8ec6abcc2d691d4538817ecb60",
+      "sumber": "src/lib/exam/bulltrap-brain.ts"
+    },
+    "otak-kode/exam/composite-brain.ts": {
+      "ukuran": 27371,
+      "sha256": "45d17f5b31ffa046ef3cf800f0b1eee83bcd414d069e3da3fa884658cf65032d",
+      "sumber": "src/lib/exam/composite-brain.ts"
+    },
+    "otak-kode/exam/fbo-brain.ts": {
+      "ukuran": 139559,
+      "sha256": "2bd55e15f4dbf40ff5d436e7a4ce531bc3bd7a7616a7f1d6beb3c473457645aa",
+      "sumber": "src/lib/exam/fbo-brain.ts"
+    },
+    "otak-kode/exam/kompleks-brain.ts": {
+      "ukuran": 32188,
+      "sha256": "e4cdb9c9515caff3d63cbadbf5b76629c3306c3e1ab362c2625438ee64bb6427",
+      "sumber": "src/lib/exam/kompleks-brain.ts"
+    },
+    "otak-kode/exam/prareg-brain.ts": {
+      "ukuran": 5347,
+      "sha256": "b22213a9b5f29cb8c3d3d49f8c80b48dcb5cbddb5c07f570240069cb9637d0b5",
+      "sumber": "src/lib/exam/prareg-brain.ts"
+    },
+    "otak-kode/exam/pumpdump-brain.ts": {
+      "ukuran": 20324,
+      "sha256": "143690bc8140515561d6373dffd8ef51ac9f82e9a5a1ab092666f37f6499f582",
+      "sumber": "src/lib/exam/pumpdump-brain.ts"
+    },
+    "otak-kode/exam/stophunt-brain.ts": {
+      "ukuran": 37471,
+      "sha256": "7d8e784ccb879283929fd11d03c37cc2318853e4d62527bdca67dc8e4cdb9b89",
+      "sumber": "src/lib/exam/stophunt-brain.ts"
+    },
+    "otak/genome-server.json": {
+      "ukuran": 19431,
+      "sha256": "e0a9bbb31b46705ed8f150dc4292b9b7dfe03b61a072c85df25d7c0b765db35b",
+      "sumber": "hidup_repo/otak/genome-server.json"
+    },
+    "otak/penjaga-keadaan.json": {
+      "ukuran": 3129,
+      "sha256": "6ef6e338342feb7230c30ec07f96ff97c409fdd84e3761086c0eecd095456531",
+      "sumber": "hidup_repo/otak/penjaga-keadaan.json"
+    },
+    "otak/performa.json": {
+      "ukuran": 626,
+      "sha256": "bede8c2bd834ce415212ef7c89002755bed6dc628664f8e3964bececd2aacd62",
+      "sumber": "hidup_repo/otak/performa.json"
+    },
+    "ruang-hidup/habitat.json": {
+      "ukuran": 2816,
+      "sha256": "707135a2399d070cbaa5acfba08b3ea66b3cd8f8a594d4ec320bbd493248a1ce",
+      "sumber": "hidup_repo/ruang-hidup/habitat.json"
+    },
+    "ruang-hidup/ingatan.json": {
+      "ukuran": 11384,
+      "sha256": "f9558a60c3c0447bb3116744f35276380d548be65e61e3d4d2ae81cb07899e3c",
+      "sumber": "hidup_repo/ruang-hidup/ingatan.json"
+    },
+    "ruang-hidup/keadaan.json": {
+      "ukuran": 22925,
+      "sha256": "bf26a080ac76e27dffa02ef9c333adf7b106f391fa3e0790528a0eb7801510fc",
+      "sumber": "hidup_repo/ruang-hidup/keadaan.json"
+    },
+    "ruang-hidup/madrasah.json": {
+      "ukuran": 2494,
+      "sha256": "eb575f6223eed20487bcb23ae376fc073f2f4a6e5a05c1b59340f196499dca96",
+      "sumber": "hidup_repo/ruang-hidup/madrasah.json"
+    }
+  }
+}

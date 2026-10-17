@@ -1,0 +1,33 @@
+{
+ "protokol": "KAPSUL-MICAPROFITA",
+ "organ": "SAKTI-SARANG",
+ "versi": "1.0",
+ "waktu": "2026-09-28T03:05:54.437Z",
+ "denyut": 24,
+ "mulai": null,
+ "rantai": {
+  "denyut": [
+   {
+    "jenis": "DENYUT",
+    "seq": 10,
+    "waktu": "2026-09-28T00:39:22.010Z",
+    "uptimeMs": 814104,
+    "tersembunyi": false,
+    "host": "",
+    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "382e0e5a7d9efb7eeaf0b6d2bc1b8ca7500041cb33d555c4be3a7e6e644e23a9"
+   },
+   {
+    "jenis": "DENYUT",
+    "seq": 20,
+    "waktu": "2026-09-28T00:48:55.368Z",
+    "uptimeMs": 1387463,
+    "tersembunyi": false,
+    "host": "",
+    "prev": "382e0e5a7d9efb7eeaf0b6d2bc1b8ca7500041cb33d555c4be3a7e6e644e23a9",
+    "hash": "eb86b7acea013d6995adcb74732a66293c5a51ed9acfb9a106f9ba1a7aa6c0d5"
+   }
+  ],
+  "prakira": []
+ }
+}

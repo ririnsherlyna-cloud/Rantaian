@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "nama": "MICAPROFITA-ARENA-OTAK",
+  "catatan": "Otak dasar PREDATOR V2 (port setia dari arena wadah). Versi berikutnya didorong dari wadah saat ada upgrade terbukti.",
+  "genome": {
+    "kBase": 3, "paraK": 60, "breadthK2": 45, "breadthK1": 32,
+    "atrCap": 16, "corrCap": 0.95, "sellOn": false, "anchorOn": true,
+    "minNorm": 0.5, "m4hReject": 0, "memVetoOn": true
+  }
+}

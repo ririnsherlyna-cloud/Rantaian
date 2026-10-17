@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "versi": "V251-RUH-GURU v4.1",
+    "tgl": "2026-10-01T01:58:12.266Z",
+    "n": 43,
+    "akurasiPct": 37.2,
+    "netPct": -28.62,
+    "pf": 0.57,
+    "ekspekPct": -0.67,
+    "menangRataPct": 2.39,
+    "rugiRataPct": -2.48,
+    "ket": "rekam jejak saat v252 lahir — titik nol perbaikan; akurasi 37.2% / PF 0.57 / ekspek -0.67% BUKAN kondisi normal"
+  },
+  "cutoff": "2026-10-01T01:58:12.266Z",
+  "target": {
+    "akurasiPct": 50,
+    "pf": 1.2,
+    "ekspekPct": 0.3,
+    "nMin": 12,
+    "ket": "PF < 1.2 & ekspek negatif dilarang dianggap wajar — ini gerbang yang harus ditembus tiap versi baru"
+  }
+}
