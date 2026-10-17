@@ -46,5 +46,6 @@ jobs:
           else
             MSG=$(node -e "const s=require('./kehidupan/statistik.json'); const a=(s.akurasiTerakhir==null)?'—':(s.akurasiTerakhir*100).toFixed(1)+'%'; console.log('denyut gen-'+s.generasi+': akurasi '+a+' · '+s.sumberData+' · denyut ke-'+s.denyut)")
             git commit -m "$MSG"
+            git pull origin main --rebase -X theirs || true
             git push
           fi
