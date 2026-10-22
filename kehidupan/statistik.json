@@ -1,13 +1,13 @@
 {
-  "diperbarui": "2026-10-21T23:44:15.869Z",
+  "diperbarui": "2026-10-22T01:55:36.641Z",
   "generasi": 31,
-  "akurasiTerakhir": 0.5250487963565387,
+  "akurasiTerakhir": 0.5240452616690241,
   "akurasiTerbaik": {
     "nilai": 0.5471311475409836,
     "waktu": "2026-10-18T21:29:18.860Z",
     "generasi": 18
   },
-  "denyut": 39,
+  "denyut": 40,
   "riwayat": [
     {
       "waktu": "2026-10-17T01:13:45.067Z",
@@ -320,10 +320,18 @@
       "dinilai": 1537,
       "sumber": "okx-swap",
       "peristiwa": "evolusi"
+    },
+    {
+      "waktu": "2026-10-22T01:55:36.694Z",
+      "generasi": 31,
+      "akurasi": 0.5240452616690241,
+      "dinilai": 1414,
+      "sumber": "okx-swap",
+      "peristiwa": "denyut"
     }
   ],
   "koinDipindai": 50,
-  "titikUjian": 1537,
+  "titikUjian": 1414,
   "sumberData": "okx-swap",
   "horizonJam": 3,
   "warisan": {
