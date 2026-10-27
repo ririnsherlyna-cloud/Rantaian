@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-HEARTBEAT MICROPROFITA GEN-7 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level.
+HEARTBEAT MICROPROFITA GEN-8 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level.
+GEN-8 PENGAMAN-BENTENG: jembatan TIDAK MENIMPA snapshot benteng yang lebih kaya
+(pelajaran 27 Okt: rollback disk #4/#5 + bootstrap otak -> snapshot kosong nyaris
+menghapus 10 sasaran bagus dari benteng; kini benteng = memori jangka panjang).
 HUKUM PEMILIK V302: XAUUSDT (emas) = KOIN WAJIB ABADI — 50 sasaran + 1 XAU;
 apa pun kondisi (regim/guard/veto/web padam), XAU tidak boleh hilang dari laporan.
 Dua otak dilaporkan BERBEDA dan JUJUR (pemilik pernah bingung kenapa koin beda):
@@ -149,6 +152,18 @@ def otak_zai():
                 "dianalisa": slot.get("dianalisa"), "lahir": slot.get("lahir"),
                 "total": len(koin) + (1 if xau else 0),
                 "picks": koin[:ZAI_JUMLAH], "xau": xau}
+        # GEN-8 PENGAMAN-CACHE: web hidup tapi picks MISKIN (otak sedang
+        # bootstrap/LLM 429 pasca-rollback) -> jangan timpa cache kaya dengan
+        # kosongan; laporkan cache terakhir dengan label jujur (V302: laporan
+        # senantiasa kumplit + kejujuran sumber tetap terjaga).
+        cache_lama = muat_json_lokal(F_ZAI_CACHE) or {}
+        lama_picks = cache_lama.get("picks") or []
+        if len(koin[:ZAI_JUMLAH]) < len(lama_picks) and cache_lama.get("sumber"):
+            snap_lama = dict(cache_lama)
+            snap_lama["waktu"] = datetime.now(timezone.utc).isoformat()
+            snap_lama["sumber"] = (f"cache(benteng-lokal) — otak web sedang pulih "
+                                   f"(web {len(koin)} picks, cache {len(lama_picks)} picks)")
+            return snap_lama, True
         simpan_json(F_ZAI_CACHE, snap)
         return snap, True
     except Exception:
@@ -217,7 +232,10 @@ def harga_xau():
 def taman_zai_ke_rantaian(snap):
     """Tanam snapshot otak z.ai ke repo Rantaian (benteng/sasaran-zai.json) agar
     lapis abadi (GitHub Actions) melaporkan OTAK YANG SAMA saat sandbox mati.
-    Hanya commit bila isi berubah. Gagal PAT/jaringan tidak boleh menggagalkan detak."""
+    Hanya commit bila isi berubah. Gagal PAT/jaringan tidak boleh menggagalkan detak.
+    GEN-8 PENGAMAN-BENTENG: commit DITOLAK bila snapshot benteng masih lebih kaya
+    (lebih banyak picks) daripada snapshot baru — mencegah otak yang sedang
+    bootstrap/429 menghapus memori sasaran bagus dari benteng."""
     if not snap:
         return "tanpa snapshot"
     pat = baca(F_PAT_RANTAIAN)
@@ -231,11 +249,22 @@ def taman_zai_ke_rantaian(snap):
     head = {"Authorization": f"Bearer {pat.strip()}", "User-Agent": "microprofita-hb",
             "Accept": "application/vnd.github+json"}
     sha = None
+    kaya_benteng = 0  # PENGAMAN-BENTENG: jumlah picks yang sudah tersimpan di benteng
     try:
         with urllib.request.urlopen(urllib.request.Request(api, headers=head), timeout=15) as r:
-            sha = json.loads(r.read().decode()).get("sha")
+            j = json.loads(r.read().decode())
+            sha = j.get("sha")
+            try:
+                isi_benteng = json.loads(base64.b64decode((j.get("content") or "").replace("\n", "")).decode("utf-8"))
+                kaya_benteng = len(isi_benteng.get("picks") or [])
+            except Exception:
+                kaya_benteng = 0
     except Exception:
         sha = None  # 404 = file belum ada -> buat baru
+    picks_baru = len((snap or {}).get("picks") or [])
+    if sha and kaya_benteng > picks_baru:
+        return (f"pengaman benteng: snapshot lama lebih kaya ({kaya_benteng} vs "
+                f"{picks_baru} picks) -> tidak menimpa; otak sedang pulih")
     body = {"message": "jembatan: sasaran otak z.ai dari heartbeat [skip ci]",
             "content": base64.b64encode(payload.encode("utf-8")).decode("ascii"),
             "committer": {"name": "microprofita-hb", "email": "hb@microprofita.local"}}
