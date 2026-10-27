@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-HEARTBEAT MICROPROFITA GEN-9 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level.
+HEARTBEAT MICROPROFITA GEN-10 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level + PELINDUNG-IP.
+V304 (27 Okt, mandat pemilik): PELINDUNG-IP — harga tidak lagi bergantung
+SATU IP/SATU bursa: rotasi 8 sumber publik (binance/bybit/okx/mexc/gate/
+bitget/kucoin/binance-futures) dengan memori kesehatan + cooldown per sumber,
+plus slot proxy pool (data/proxy_pool.json) untuk layanan rotating proxy
+pemilik. Antrean sehat 429/418/403 — bukan menembus ban.
 V303 (27 Okt): daftar 100 koin + 6 field wajib per koin teratas (entry, kini, TP,
 Jual Ambisius, Power Max Ambisius, Stop) + header FRESH tanggal + NOTIFIKASI WAJIB
 setiap koin yang mencapai Jual Ambisius / Power Max / TP / Stop hari ini.
@@ -20,7 +25,8 @@ Setiap detak (tiap 30 menit):
   2. Tanam snapshot otak z.ai ke Rantaian/benteng/sasaran-zai.json (bila berubah)
      agar lapis abadi GitHub ikut melaporkan otak yang sama saat sandbox mati
   3. Tarik sasaran-terkini.json + genome-server.json + denyut-server.jsonl (server)
-  4. Harga kini semua simbol dari Binance (data-api.binance.vision, gratis)
+  4. Harga semua simbol via ip_rotasi.py (rotasi 8 sumber publik + slot proxy pool;
+   Binance kini hanya salah satu sumber, bukan satu-satunya)
   5. Deteksi SENTUHAN level otak server: TP, JUAL AMBISIUS, POWER MAX, STOP
   6. Kirim laporan jujur ke Telegram (harga mikro tampil utuh, bukan 0)
 Hukum benteng: gap > 35 menit = MATI -> pengakuan wajib + jurnal kematian.
@@ -432,6 +438,24 @@ def harga_binance(simbol_list):
     bases = sorted({b for b in (_basis_simbol(s) for s in simbol_list) if b})
     if not bases:
         return {}, "binance"
+    # V304 PELINDUNG-IP: rotasi 8 sumber publik dulu (kesehatan per sumber,
+    # cooldown otomatis, slot proxy pool). Binance bukan lagi satu-satunya.
+    try:
+        import ip_rotasi
+        rot_map, rot_src, rot_stat = ip_rotasi.batch_harga(bases)
+        if rot_map and len(rot_map) >= max(1, len(bases) // 2):
+            hilang = [b for b in bases if b not in rot_map]
+            if hilang:
+                fut = _tickers_futures(set(hilang))
+                if fut:
+                    rot_map.update(fut)
+            print(f"PELINDUNG-IP: {rot_stat}")
+            if len(rot_map) < len(bases):
+                print(f"HARGA parsial: {len(rot_map)}/{len(bases)} ({rot_src})")
+            return rot_map, rot_src
+        print(f"PELINDUNG-IP lemah ({rot_stat}) -> jalur lama Binance\u2026")
+    except Exception as e:
+        print(f"PELINDUNG-IP tak tersedia -> jalur lama ({repr(e)[:80]})")
     hosts = (BINANCE, "https://api.binance.com/api/v3/ticker/price",
              "https://api-gcp.binance.com/api/v3/ticker/price")
     out, err_terakhir = {}, None
@@ -731,8 +755,14 @@ def main():
                  f"kini <b>GAGAL DIAMBIL</b> (semua sumber emas padam detak ini)")
         L.append("<i>XAU tetap WAJIB — harga dicoba lagi detak berikutnya; baris ini tidak pernah dihapus.</i>")
     L.append("")
-    if harga_map and sumber_harga in ("bybit+okx", "binance+futures+bybit/okx"):
-        L.append(f"💱 Harga dari <b>{html.escape(sumber_harga)}</b> — sebagian/seluruhnya dari futures Binance / bursa cadangan; beda tipis antar pasar wajar.")
+    if harga_map and (sumber_harga in ("bybit+okx", "binance+futures+bybit/okx")
+                      or str(sumber_harga).startswith("rotasi:")):
+        L.append(f"💱 Harga dari <b>{html.escape(sumber_harga)}</b> — rotasi multi-bursa / cadangan; beda tipis antar pasar wajar.")
+    try:
+        import ip_rotasi
+        L.append(f"🛡️ PELINDUNG IP: <b>{html.escape(ip_rotasi.status_ringkas())}</b> — 1 IP sandbox + rotasi 8 sumber = praktis tak tergantung 1 pintu.")
+    except Exception:
+        pass
     # ---- section OTAK Z.AI (persis seperti web) ----
     if zai_picks:
         seg_z = "live dari web" if zai_hidup else "CACHE (web sedang tak terjangkau)"
