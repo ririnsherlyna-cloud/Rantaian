@@ -41,6 +41,7 @@ jobs:
           git config user.email "benteng-abadi@users.noreply.github.com"
           git add data/penjaga_state.json 2>/dev/null || true
           git add data/death_journal.jsonl 2>/dev/null || true
+          git add data/genome_benteng.jsonl 2>/dev/null || true
           git add data/cache_sasaran.json 2>/dev/null || true
           git add data/cache_genome.json 2>/dev/null || true
           git add data/cache_denyut.json 2>/dev/null || true
