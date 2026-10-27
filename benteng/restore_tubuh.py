@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""RESTORE-TUBUH (GEN-11, strategi benteng-total): satu perintah memulihkan
+"""RESTORE-TUBUH (GEN-11.2, strategi benteng-total): satu perintah memulihkan
 SELURUH inti MicroProfita dari benteng Rantaian — dipanggil oleh heartbeat-cron
 ATAU penyelamat-cron setiap kunjungan SEBELUM mempercayai disk lokal.
 Pelajaran 27 Okt: disk lokal rollback sampai 12x/hari, tiap 30-60 menit.
@@ -9,7 +9,10 @@ PELAJARAN ROLLBACK #9/#11/#12 (28 Okt): penanda UMUM ('GEN-', 'powerMax') hidup
 di banyak generasi kode -> file lama korban rollback lolos cek dan tak ditimpa.
 FIX: penanda wajib SPESIFIK VERSI ('daftar_peluang_profit' = GEN-10,
 'daftar-100' = V305) — file lokal yang kehilangan penanda versi = PASTI revert
--> ditimpa otomatis dari benteng."""
+-> ditimpa otomatis dari benteng.
+GEN-11.2 (28 Okt): penanda BOT-CHAT naik ke v8 (rantai abadi Actions) +
+restorer kini juga MENGHIDUPKAN KEMBALI penjaga --jaga bila penanda hidupnya
+mati > 3 menit (sandbox kadang membunuh daemon antar kunjungan cron)."""
 import json, base64, os, time, urllib.request
 
 REPO = "ririnsherlyna-cloud/Rantaian"
@@ -22,7 +25,7 @@ PETA = [
     ("benteng/web/emas.ts", "/home/z/my-project/src/lib/cyborg/emas.ts", "getEmas"),
     ("benteng/web/arena.ts", "/home/z/my-project/src/lib/cyborg/arena.ts", "daftar-100"),
     ("benteng/web/brain.ts", "/home/z/my-project/src/lib/cyborg/brain.ts", "SLOT_TEMPUR"),
-    ("scripts/balas_telegram.py", "/home/z/my-project/scripts/balas_telegram.py", "BENTENG-BALAS v7"),
+    ("scripts/balas_telegram.py", "/home/z/my-project/scripts/balas_telegram.py", "BENTENG-BALAS v8"),
 ]
 
 def ambil(path):
@@ -89,9 +92,9 @@ print("RESTORE-TUBUH:")
 for h in hasil:
     print(" -", h)
 
-# ---- BOT-CHAT v7: jawab pesan Telegram pemilik yang menumpuk (LOKAL SAJA) ----
+# ---- BOT-CHAT v8: jawab pesan Telegram pemilik yang menumpuk (LOKAL SAJA) ----
 # Setiap kunjungan cron memanggil restore_tubuh -> bot menjawab dalam detik.
-# Mode Actions dilarang di sini (workflow balas tersendiri menangani 5 menitan).
+# Mode Actions dilarang di sini (workflow balas tersendiri menangani rantai abadi).
 if not os.environ.get("GITHUB_WORKSPACE"):
     try:
         import subprocess
@@ -103,3 +106,20 @@ if not os.environ.get("GITHUB_WORKSPACE"):
                 print("BOT-CHAT:", baris)
     except Exception as e:
         print("BOT-CHAT gagal:", repr(e))
+    # GEN-11.2: hidupkan kembali penjaga --jaga bila penanda hidupnya mati >3 menit
+    try:
+        nyala = 0.0
+        try:
+            nyala = float(open("/home/z/my-project/data/penjaga_nyala").read().strip())
+        except Exception:
+            pass
+        if time.time() - nyala > 180:
+            log = open("/home/z/my-project/data/bot_chat.log", "ab")
+            subprocess.Popen(["setsid", "python3", BOT, "--jaga"],
+                             stdout=log, stderr=subprocess.STDOUT,
+                             start_new_session=True)
+            print("BOT-CHAT: penjaga --jaga dihidupkan kembali (setsid)")
+        else:
+            print("BOT-CHAT: penjaga --jaga masih hidup — dibiarkan")
+    except Exception as e:
+        print("BOT-CHAT jaga gagal:", repr(e))
