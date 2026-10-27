@@ -52,7 +52,7 @@ fi
 # ── 4. Rsinkron replika (timpa penuh) ───────────────────────────────────────
 rsync -a --delete \
   --exclude node_modules/ --exclude .next/ --exclude .git/ --exclude .secrets/ \
-  --exclude .sarang/ --exclude .token-rantaian --exclude .token-telegram --exclude .token-* \
+  --exclude .sarang/ --exclude .token-rantaian --exclude .token-telegram --exclude .token-* --exclude .nyawa-b64 --exclude .secrets \
   --exclude rantaian/ --exclude skills/ --exclude research/ --exclude download/ \
   --exclude upload/ --exclude tool-results/ --exclude .ujian-build/ --exclude .z-ai-config/ \
   --exclude backup_v263/ --exclude akiomida/ --exclude hidup_repo/ --exclude io_repo_denyut/ \
