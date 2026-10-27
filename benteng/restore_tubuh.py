@@ -22,6 +22,7 @@ PETA = [
     ("benteng/web/emas.ts", "/home/z/my-project/src/lib/cyborg/emas.ts", "getEmas"),
     ("benteng/web/arena.ts", "/home/z/my-project/src/lib/cyborg/arena.ts", "daftar-100"),
     ("benteng/web/brain.ts", "/home/z/my-project/src/lib/cyborg/brain.ts", "SLOT_TEMPUR"),
+    ("scripts/balas_telegram.py", "/home/z/my-project/scripts/balas_telegram.py", "BENTENG-BALAS v7"),
 ]
 
 def ambil(path):
@@ -87,3 +88,18 @@ except Exception as e:
 print("RESTORE-TUBUH:")
 for h in hasil:
     print(" -", h)
+
+# ---- BOT-CHAT v7: jawab pesan Telegram pemilik yang menumpuk (LOKAL SAJA) ----
+# Setiap kunjungan cron memanggil restore_tubuh -> bot menjawab dalam detik.
+# Mode Actions dilarang di sini (workflow balas tersendiri menangani 5 menitan).
+if not os.environ.get("GITHUB_WORKSPACE"):
+    try:
+        import subprocess
+        BOT = "/home/z/my-project/scripts/balas_telegram.py"
+        if os.path.exists(BOT):
+            r = subprocess.run(["python3", BOT, "--sekali"],
+                               capture_output=True, text=True, timeout=110)
+            for baris in ((r.stdout or "").splitlines()[-5:]):
+                print("BOT-CHAT:", baris)
+    except Exception as e:
+        print("BOT-CHAT gagal:", repr(e))
