@@ -39,7 +39,9 @@ import {
 
 const BACKFILL_DAYS = 21
 // V301 DAFTAR TEMPUR — hukum pemilik: K slot tempur = 50 (bukan 1).
-const DAFTAR_POOL = 90 // kandidat dianalisa mendalam (sumber 50 slot tempur)
+// V303 (27 Okt) — hukum pemilik lanjutan: daftar = 100 koin + 1 XAU wajib;
+// kandidat dianalisa naik 90 -> 150 agar 100 slot tempur lahir penuh tiap hari.
+const DAFTAR_POOL = 150
 const POOL_SIZE = 120 // pool spot lebar — diperluas union universe futures
 const SNAPSHOT_SIZE = 12
 const MIN_ENSURE_INTERVAL = 45_000
