@@ -459,6 +459,16 @@ def main():
         jarak = f"{(xau_h / x_ent - 1) * 100:+.2f}%" if x_ent else "-"
         L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · "
                  f"entry {fmt_harga(x_ent)} · kini <b>{fmt_harga(xau_h)}</b> ({jarak}){chg_s}")
+        # V302-LEVEL — laporan emas KOMPLIT dari field xau jembatan
+        # (target/ambisius/stop ditambang heartbeat; tiga level berbeda).
+        x_tg, x_am, x_st = zai_xau.get("target"), zai_xau.get("ambisius"), zai_xau.get("stop")
+        if x_tg or x_am or x_st:
+            def _pct_level(v):
+                return f" ({(v / x_ent - 1) * 100:+.2f}%)" if (v and x_ent) else ""
+            L.append(f"🎯 TP sasaran: <b>{fmt_harga(x_tg)}</b>{_pct_level(x_tg)} · "
+                     f"🔥 JUAL AMBISIUS: <b>{fmt_harga(x_am)}</b>{_pct_level(x_am)} · "
+                     f"🛑 STOP: <b>{fmt_harga(x_st)}</b>{_pct_level(x_st)}")
+            L.append("<i>Tiga level berbeda — TP ≠ Jual Ambisius ≠ Stop; tiga keputusan berbeda.</i>")
         L.append(f"<i>Sumber harga: {html.escape(xau_src)} — XAU selalu ada di laporan apa pun kondisinya.</i>")
     else:
         L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · entry {fmt_harga(x_ent)} · "
