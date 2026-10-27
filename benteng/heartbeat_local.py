@@ -569,14 +569,35 @@ def pantau_level(sasaran_list, harga_map):
 
 # ---------------- kirim telegram ----------------
 def kirim_telegram(token, chat_id, text):
-    payload = urllib.parse.urlencode({
-        "chat_id": chat_id, "text": text, "parse_mode": "HTML",
-        "disable_web_page_preview": "true"}).encode()
-    req = urllib.request.Request(
-        f"https://api.telegram.org/bot{token}/sendMessage", data=payload,
-        headers={"Content-Type": "application/x-www-form-urlencoded"})
-    with urllib.request.urlopen(req, timeout=25) as r:
-        return json.loads(r.read().decode())
+    """V303: pesan panjang dipecah otomatis <= 3900 karakter per bagian
+    (batas Telegram 4096); setiap bagian dikirim berurutan, ok terakhir
+    yang dikembalikan. Parse mode tetap HTML — pemecah hanya di batas baris."""
+    bagian = []
+    if len(text) <= 3900:
+        bagian = [text]
+    else:
+        sisa = text
+        while sisa:
+            if len(sisa) <= 3900:
+                bagian.append(sisa)
+                break
+            potong = sisa.rfind("\n", 0, 3900)
+            if potong < 500:
+                potong = 3900
+            bagian.append(sisa[:potong])
+            sisa = sisa[potong:].lstrip("\n")
+    hasil = None
+    for i, b in enumerate(bagian):
+        t = b if len(bagian) == 1 else f"{b}\n<i>[bagian {i + 1}/{len(bagian)}]</i>"
+        payload = urllib.parse.urlencode({
+            "chat_id": chat_id, "text": t, "parse_mode": "HTML",
+            "disable_web_page_preview": "true"}).encode()
+        req = urllib.request.Request(
+            f"https://api.telegram.org/bot{token}/sendMessage", data=payload,
+            headers={"Content-Type": "application/x-www-form-urlencoded"})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            hasil = json.loads(r.read().decode())
+    return hasil
 
 
 def jumlah_gagal():
