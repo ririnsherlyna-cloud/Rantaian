@@ -191,56 +191,82 @@ def _tickers_okx(bases):
         return {}
 
 
+def _tickers_futures(bases):
+    """Ticker FUTURES Binance (fapi, publik) — pilihan otak z.ai sering futures-only."""
+    try:
+        req = urllib.request.Request("https://fapi.binance.com/fapi/v1/ticker/price",
+                                     headers={"User-Agent": "benteng-abadi"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            arr = json.loads(r.read().decode())
+        out = {}
+        for x in arr if isinstance(arr, list) else []:
+            s = str(x.get("symbol") or "")
+            if s.endswith("USDT") and s[:-4] in bases:
+                try:
+                    out[s[:-4]] = float(x.get("price"))
+                except (TypeError, ValueError):
+                    continue
+        return out
+    except Exception:
+        return {}
+
+
 def harga_binance(simbol_list):
-    """Resilien: normalisasi simbol + fallback per-simbol + bursa cadangan Bybit/OKX
-    — satu simbol rusak TIDAK boleh membutakan seluruh penjaga TP (pelajaran siklus
-    1235/SYNUSDT); Binance kadang memblokir IP runner GitHub 418 (pelajaran 27 Okt)."""
+    """Resilien berlapis (pelajaran 27 Okt): batch DI-CHUNK (5 simbol/chunk) agar
+    1 simbol tak-valid TIDAK mematikan seluruh batch (400) — chunk sakit diambil
+    per-simbol, sisanya diambil dari bursa cadangan Bybit/OKX bila Binance
+    memblokir IP runner (418). Normalisasi simbol: SYNUSDT->SYN."""
     if not simbol_list:
         return {}, False
     bases = sorted({b for b in (_basis_simbol(s) for s in simbol_list) if b})
     if not bases:
         return {}, False
-    pairs = [f"{b}USDT" for b in bases]
-    q = urllib.parse.quote(json.dumps(pairs, separators=(",", ":")))
-    for host in ("https://data-api.binance.vision/api/v3/ticker/price",
-                 "https://api.binance.com/api/v3/ticker/price",
-                 "https://api-gcp.binance.com/api/v3/ticker/price"):
-        try:
-            req = urllib.request.Request(f"{host}?symbols={q}", headers={"User-Agent": "benteng-abadi"})
-            with urllib.request.urlopen(req, timeout=20) as r:
-                arr = json.loads(r.read().decode())
-            if isinstance(arr, list):
-                return {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}, True
-        except Exception:
-            continue
-    # fallback per-simbol (canari 3 pertama menentukan bila IP diblokir)
-    out = {}
-    for b in bases[:3]:
-        try:
-            req = urllib.request.Request(
-                f"https://data-api.binance.vision/api/v3/ticker/price?symbol={b}USDT",
-                headers={"User-Agent": "benteng-abadi"})
-            with urllib.request.urlopen(req, timeout=10) as r:
-                out[b] = float(json.loads(r.read().decode())["price"])
-        except Exception:
-            continue
-    if out:
-        for b in bases[3:]:
+    hosts = ("https://data-api.binance.vision/api/v3/ticker/price",
+             "https://api.binance.com/api/v3/ticker/price",
+             "https://api-gcp.binance.com/api/v3/ticker/price")
+    out, err_terakhir = {}, None
+    for i in range(0, len(bases), 5):
+        chunk = bases[i:i + 5]
+        q = urllib.parse.quote(json.dumps([f"{b}USDT" for b in chunk], separators=(",", ":")))
+        dapat = None
+        for host in hosts:
             try:
-                req = urllib.request.Request(
-                    f"https://data-api.binance.vision/api/v3/ticker/price?symbol={b}USDT",
-                    headers={"User-Agent": "benteng-abadi"})
-                with urllib.request.urlopen(req, timeout=10) as r:
-                    out[b] = float(json.loads(r.read().decode())["price"])
-            except Exception:
-                continue
-        return out, True
-    # ---- bursa cadangan ----
-    gab = {**_tickers_okx(bases), **_tickers_bybit(bases)}
-    if gab:
-        print(f"HARGA_CADANGAN: {len(gab)}/{len(bases)} dari Bybit/OKX (Binance blokir IP)")
-        return gab, True
-    return {}, False
+                req = urllib.request.Request(f"{host}?symbols={q}", headers={"User-Agent": "benteng-abadi"})
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    arr = json.loads(r.read().decode())
+                if isinstance(arr, list):
+                    dapat = {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}
+                    break
+            except Exception as e:
+                err_terakhir = repr(e)
+        if dapat is None:
+            for b in chunk:
+                try:
+                    req = urllib.request.Request(
+                        f"https://data-api.binance.vision/api/v3/ticker/price?symbol={b}USDT",
+                        headers={"User-Agent": "benteng-abadi"})
+                    with urllib.request.urlopen(req, timeout=10) as r:
+                        out[b] = float(json.loads(r.read().decode())["price"])
+                except Exception as e:
+                    err_terakhir = repr(e)
+        else:
+            out.update(dapat)
+    hilang = [b for b in bases if b not in out]
+    if hilang and out:
+        fut = _tickers_futures(set(hilang))
+        if fut:
+            out.update(fut)
+            hilang = [b for b in hilang if b not in fut]
+        if hilang:
+            cad = {**_tickers_okx(set(hilang)), **_tickers_bybit(set(hilang))}
+            if cad:
+                out.update(cad)
+    elif not out:
+        gab = {**_tickers_futures(set(bases)), **_tickers_okx(set(bases)), **_tickers_bybit(set(bases))}
+        if gab:
+            print(f"HARGA_CADANGAN: {len(gab)}/{len(bases)} (Binance: {err_terakhir})")
+            return gab, True
+    return out, bool(out)
 
 
 def kirim_telegram(token, chat_id, text):
