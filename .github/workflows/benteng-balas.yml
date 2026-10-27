@@ -1,7 +1,10 @@
 # ============================================================
-# BENTENG-BALAS — pembalas pesan Telegram pemilik
-# Tiap 5 menit: getUpdates -> jawab periksa aktivasi / laporan / status /
-# daftar 50 koin. Offset disimpan di repo agar tidak dobel-balas.
+# BENTENG-BALAS v8 — pembalas pesan Telegram pemilik MicroProfita
+# RANTAI ABADI: tiap run aktif long-poll ±4,5 MENIT penuh, lalu di
+# ujung run memancing run berikutnya (langkah "Warisi hidup").
+# Penjadwal GitHub yang sering menelan cron */5 tidak lagi menentukan —
+# rantai menjawab pesan dengan latensi <= 25 detik, 24 jam, 7 hari.
+# Offset disimpan di repo agar tidak dobel-balas.
 # ============================================================
 name: BENTENG-BALAS (jawab pesan pemilik)
 
@@ -12,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: benteng-balas
@@ -20,13 +24,13 @@ concurrency:
 jobs:
   balas:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Baca & balas pesan pemilik
+      - name: Baca & balas pesan pemilik (jendela aktif ±4,5 menit)
         run: python3 scripts/balas_telegram.py
 
       - name: Simpan offset (tanpa memicu workflow lain)
@@ -43,3 +47,20 @@ jobs:
               sleep $((i * 5))
             done
           fi
+
+      - name: Warisi hidup — pancing run berikutnya (rantai abadi v8)
+        if: success() || failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 10
+          for i in 1 2 3; do
+            KODE=$(curl -s -o /tmp/dispatch.out -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/benteng-balas.yml/dispatches" \
+              -d '{"ref":"main"}')
+            echo "dispatch ke-$i: HTTP $KODE"
+            if [ "$KODE" = "204" ]; then break; fi
+            sleep $((i * 10))
+          done
