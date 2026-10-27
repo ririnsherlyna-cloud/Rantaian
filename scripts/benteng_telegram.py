@@ -260,6 +260,25 @@ def main():
                                  sim not in lama))
 
     jam = datetime.now(WIB)
+    # ---- genome-cadangan benteng: pelajaran tumbuh walau genome utama beku ----
+    pelajaran = 0
+    try:
+        F_GB = os.path.join(ROOT, "data", "genome_benteng.jsonl")
+        if kejadian:
+            os.makedirs(os.path.dirname(F_GB), exist_ok=True)
+            with open(F_GB, "a", encoding="utf-8") as f:
+                for sim, arah, nama, nilai, harga, entry, _ in kejadian:
+                    f.write(json.dumps({
+                        "waktu": datetime.now(timezone.utc).isoformat(),
+                        "simbol": sim, "arah": arah, "level": nama, "level_harga": nilai,
+                        "harga_kini": harga, "entry": entry,
+                        "pelajaran": f"{sim} {arah} menyentuh {nama} — vonis pasar datang, catat hasil"},
+                        ensure_ascii=False) + "\n")
+        if os.path.exists(F_GB):
+            with open(F_GB, "r", encoding="utf-8") as f:
+                pelajaran = sum(1 for l in f if l.strip())
+    except Exception as e:
+        print("genome-cadangan gagal:", repr(e))
     L = ["🛡️ <b>BENTENG ABADI — MICROPROFITA</b> (lapis GitHub, tanpa tidur)",
          f"🕐 {jam.strftime('%H:%M:%S WIB, %d %b %Y')}"]
     if gap_menit is None:
@@ -321,27 +340,9 @@ def main():
         err = repr(e)
 
     state_baru = {"last_run": now, "waktu_iso": datetime.now(timezone.utc).isoformat(),
-                  "prima_harga": bool(harga_map) or sudah_panas, "level": baru}
+                  "prima_harga": bool(harga_map) or sudah_panas, "level": baru,
+                  "pelajaran_genome_benteng": pelajaran}
     simpan_json(F_STATE, state_baru)
-    # ---- genome-cadangan benteng: pelajaran tumbuh walau genome utama beku ----
-    pelajaran = 0
-    try:
-        F_GB = os.path.join(ROOT, "data", "genome_benteng.jsonl")
-        if kejadian:
-            os.makedirs(os.path.dirname(F_GB), exist_ok=True)
-            with open(F_GB, "a", encoding="utf-8") as f:
-                for sim, arah, nama, nilai, harga, entry, _ in kejadian:
-                    f.write(json.dumps({
-                        "waktu": datetime.now(timezone.utc).isoformat(),
-                        "simbol": sim, "arah": arah, "level": nama, "level_harga": nilai,
-                        "harga_kini": harga, "entry": entry,
-                        "pelajaran": f"{sim} {arah} menyentuh {nama} — vonis pasar datang, catat hasil"},
-                        ensure_ascii=False) + "\n")
-        if os.path.exists(F_GB):
-            with open(F_GB, "r", encoding="utf-8") as f:
-                pelajaran = sum(1 for l in f if l.strip())
-    except Exception as e:
-        print("genome-cadangan gagal:", repr(e))
     if ok and gap_menit is not None and gap_menit > GAP_MATI_MENIT:
         jurnal({"waktu": datetime.now(timezone.utc).isoformat(), "peristiwa": "PULIH",
                 "gap_menit": round(gap_menit, 1), "lapis_penjinak": "benteng-abadi",
