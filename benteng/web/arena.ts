@@ -42,7 +42,7 @@ const BACKFILL_DAYS = 21
 // V303 (27 Okt) — hukum pemilik lanjutan: daftar = 100 koin + 1 XAU wajib;
 // kandidat dianalisa naik 90 -> 150 agar 100 slot tempur lahir penuh tiap hari.
 const DAFTAR_POOL = 150
-const POOL_SIZE = 120 // pool spot lebar — diperluas union universe futures
+const POOL_SIZE = 170 // V304: diperluas 120->170 agar 100 slot tempur selalu punya cukup kandidat (futures union sering 418 -> spot harus menutup)
 const SNAPSHOT_SIZE = 12
 const MIN_ENSURE_INTERVAL = 45_000
 // V300-ANTISTUCK — denyut arena tidak boleh mati selamanya.
@@ -1341,7 +1341,7 @@ async function runArena() {
   //   V304 (mandat pemilik): versi dinaikkan agar daftar hari ini yang lahir
   //     saat masih K=50 dibangun ulang SEKARANG menjadi 100 slot penuh —
   //     pemilik tidak perlu menunggu besok.
-  const LIVE_DECISION_VERSION = '11a-v303-daftar-100'
+  const LIVE_DECISION_VERSION = '11b-v303-daftar-100'
   if (pendingToday && (await getMeta('liveDecisionVersion')) !== LIVE_DECISION_VERSION) {
    try {
     const existingMine = await db.pick.findMany({ where: { battleDayId: pendingToday.id, competitor: 'MICAPROFITA' } })
