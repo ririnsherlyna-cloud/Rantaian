@@ -1679,9 +1679,11 @@ export async function getArenaState() {
       if (emas && !daftar.some((x) => x.symbol === 'XAUUSDT')) {
         const naik = emas.chg24hPct == null ? null : emas.chg24hPct >= 0
         const vol = Math.max(Math.abs(emas.chg24hPct ?? 0) / 100, 0.004)
-        const target = emas.price * (1 + vol)
-        const ambisius = emas.price * (1 + 2 * vol)
-        const stop = emas.price * (1 - Math.max(vol * 0.6, 0.003))
+        const sisi = naik === false ? -1 : 1
+        const target = emas.price * (1 + sisi * vol)
+        const ambisius = emas.price * (1 + sisi * 2 * vol)
+        const pmax = emas.price * (1 + sisi * 3 * vol)
+        const stop = emas.price * (1 - sisi * Math.max(vol * 0.6, 0.003))
         daftar.splice(mine.length, 0, {
           competitor: 'MICAPROFITA',
           symbol: 'XAUUSDT',
@@ -1700,12 +1702,38 @@ export async function getArenaState() {
               `Harga emas ${emas.source} · 24j ${emas.chg24hPct == null ? 'null (arah default)' : emas.chg24hPct.toFixed(2) + '%'}`,
               'Rencana level = formulasi volatilitas 24 jam (bukan ATR penuh) — jujur dilabeli',
             ],
-            rencana: { target, highAmbisius: ambisius, stop },
+            rencana: { entry: emas.price, target, highAmbisius: ambisius, powerMax: pmax, stop },
           }),
         } as (typeof daftar)[number])
       }
       return daftar.map((p) => {
         const ev = safeJson(p.evidence)
+        // V303 LEVEL-WAJIB-4 — hukum pemilik (27 Okt): setiap koin teratas
+        // WAJIB membawa entry, TP, Jual Ambisius, Power Max Ambisius, Stop.
+        if (p.competitor === 'MICAPROFITA' && p.entryClose && Number.isFinite(p.entryClose) && p.entryClose > 0) {
+          const sisi = p.direction === 'SELL' ? -1 : 1
+          let rn = ev.rencana as Record<string, unknown> | undefined
+          if (!rn || typeof rn !== 'object') {
+            const vol = 0.02
+            rn = {
+              entry: p.entryClose,
+              target: p.entryClose * (1 + sisi * vol),
+              highAmbisius: p.entryClose * (1 + sisi * 2 * vol),
+              powerMax: p.entryClose * (1 + sisi * 3 * vol),
+              stop: p.entryClose * (1 - sisi * vol * 0.6),
+              sumberTarget: 'sintesis-vol 2% (V303: level wajib tidak boleh kosong)',
+            }
+            ev.rencana = rn
+          } else if (rn.powerMax == null) {
+            const amb = Number(rn.highAmbisius)
+            if (Number.isFinite(amb) && amb > 0) {
+              rn.powerMax = +(p.entryClose + sisi * 1.5 * Math.abs(amb - p.entryClose)).toPrecision(7)
+            } else {
+              rn.powerMax = +(p.entryClose * (1 + sisi * 0.06)).toPrecision(7)
+              rn.sumberPowerMax = 'sintesis 6% (ambisius tak tersedia)'
+            }
+          }
+        }
         const rank = typeof ev.rank === 'number' ? ev.rank : 0
         if (rank > 6) for (const k of ['debat', 'kortex', 'warisan', 'daya', 'praRegistrasi']) delete ev[k]
         return {
