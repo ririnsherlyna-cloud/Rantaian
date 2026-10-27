@@ -453,7 +453,7 @@ def main():
     x_ent = zai_xau.get("entry")
     x_arah = str(zai_xau.get("arah") or "?").upper()
     x_konf = zai_xau.get("keyakinan")
-    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (50 sasaran + 1 XAU, hukum pemilik V302)")
+    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (100 sasaran + 1 XAU, hukum pemilik V302/V303)")
     if xau_h:
         chg_s = f" · 24 jam {xau_chg:+.2f}%" if xau_chg is not None else ""
         jarak = f"{(xau_h / x_ent - 1) * 100:+.2f}%" if x_ent else "-"
