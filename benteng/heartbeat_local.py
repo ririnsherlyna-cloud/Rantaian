@@ -13,7 +13,7 @@ setiap koin yang mencapai Jual Ambisius / Power Max / TP / Stop hari ini.
 GEN-8 PENGAMAN-BENTENG: jembatan TIDAK MENIMPA snapshot benteng yang lebih kaya
 (pelajaran 27 Okt: rollback disk #4/#5 + bootstrap otak -> snapshot kosong nyaris
 menghapus 10 sasaran bagus dari benteng; kini benteng = memori jangka panjang).
-HUKUM PEMILIK V302: XAUUSDT (emas) = KOIN WAJIB ABADI — 50 sasaran + 1 XAU;
+HUKUM PEMILIK V302: XAUUSDT (emas) = KOIN WAJIB ABADI — 100 sasaran + 1 XAU;
 apa pun kondisi (regim/guard/veto/web padam), XAU tidak boleh hilang dari laporan.
 Dua otak dilaporkan BERBEDA dan JUJUR (pemilik pernah bingung kenapa koin beda):
   A. OTAK Z.AI  = mesin arena di web sandbox ini (localhost:3000/api/arena,
@@ -514,6 +514,33 @@ def harga_binance(simbol_list):
     return {}, "gagal"
 
 
+# ---------------- V304 peluang profit (mandat pemilik) ----------------
+def daftar_peluang_profit(koin, harga_map, batas=10):
+    """V304 DAFTAR KEDUA (mandat pemilik 27 Okt): urutan murni dari BESARAN
+    % profit menuju Jual Ambisius (dan Power Max) menurut harga kini —
+    BUKAN peluang tercapai. Pemilik: 'yang dilihat ya murni kebesaran
+    profitnya'. BUY: (ambisius-kini)/kini; SELL: (kini-ambisius)/kini.
+    Koin tanpa harga kini / tanpa level dilewati (jujur, bukan dikarang)."""
+    rows = []
+    for p in koin or []:
+        basis = _basis_simbol(p.get("simbol") or "")
+        kini = (harga_map or {}).get(basis)
+        amb, pm = p.get("ambisius"), p.get("powermax")
+        if not (kini and isinstance(amb, (int, float)) and amb > 0):
+            continue
+        arah = str(p.get("arah") or "BUY").upper()
+        if arah == "SELL":
+            pct = (kini - amb) / kini * 100.0
+            pm_pct = ((kini - pm) / kini * 100.0) if isinstance(pm, (int, float)) and pm > 0 else None
+        else:
+            pct = (amb - kini) / kini * 100.0
+            pm_pct = ((pm - kini) / kini * 100.0) if isinstance(pm, (int, float)) and pm > 0 else None
+        if pct > 0:
+            rows.append((p.get("simbol") or basis, arah, kini, float(amb), pct, pm, pm_pct))
+    rows.sort(key=lambda r: r[4], reverse=True)
+    return rows[:batas]
+
+
 # ---------------- pemantau TP ----------------
 F_ARENA_LEVEL = os.path.join(DATA, "arena_level_state.json")
 
@@ -803,6 +830,21 @@ def main():
         L.append("<i>V303: koin teratas WAJIB 6 field (entry, kini, TP, Jual Ambisius, Power Max, Stop). "
                  "Daftar 100 penuh ada di web; sasaran otak SERVER ada di bawah.</i>")
         L.append("")
+        # V304 DAFTAR KEDUA — PELUANG PROFIT TERBESAR (mandat pemilik 27 Okt):
+        # urutan murni besaran % profit ke Jual Ambisius, dari seluruh 100 koin.
+        pel = daftar_peluang_profit(zai_picks, harga_map)
+        if pel:
+            L.append(f"💰 <b>PELUANG PROFIT TERBESAR</b> — urutan MURNI besaran % profit "
+                     f"ke Jual Ambisius dari {len(zai_picks)} koin sasaran:")
+            for i, (sim, arah, kini_p, amb, pct, pm, pm_pct) in enumerate(pel, 1):
+                pm_s = (f" · ⚡MAX {fmt_harga(pm)} (+{pm_pct:.0f}%)"
+                        if isinstance(pm, (int, float)) and pm > 0 and pm_pct and pm_pct > 0 else "")
+                L.append(f"{i}. <b>{html.escape(str(sim))}</b> ({html.escape(arah)}) "
+                         f"kini {fmt_harga(kini_p)} → 🔥 {fmt_harga(amb)} <b>+{pct:.1f}%</b>{pm_s}")
+            L.append("<i>Kriteria daftar ini murni seberapa BESAR % profitnya "
+                     "(contoh: ambisius +50% = juara) — bukan seberapa mungkin tercapai. "
+                     "Daftar teratas menurut keyakinan tetap di atas.</i>")
+            L.append("")
     else:
         L.append("🧠 Otak z.ai (web): <b>tak terjangkau detak ini dan tak ada cache</b> — saya akui jujur.")
         L.append("")
