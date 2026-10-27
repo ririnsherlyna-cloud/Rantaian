@@ -1,0 +1,24 @@
+{
+ "hari": "2026-10-27",
+ "koinTerlapor": [
+  "ASTERUSDT",
+  "ERAUSDT",
+  "BNBUSDT",
+  "SYNUSDT",
+  "NILUSDT",
+  "QNTUSDT",
+  "PEPEUSDT",
+  "DASHUSDT",
+  "CHIPUSDT",
+  "BCHUSDT",
+  "INJUSDT",
+  "ENAUSDT",
+  "ZECUSDT",
+  "PYTHUSDT"
+ ],
+ "tp": {
+  "ENAUSDT": true
+ },
+ "ambisius": {},
+ "stop": {}
+}
