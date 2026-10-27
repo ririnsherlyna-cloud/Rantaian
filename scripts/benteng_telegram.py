@@ -31,8 +31,8 @@ F_CACHE = os.path.join(ROOT, "data")
 OTAK_RAW = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Micaprofita-/main"
 GAP_MATI_MENIT = 45
 WIB = timezone(timedelta(hours=7))
-LABEL_LEVEL = {"TP": "TP", "JUAL AMBISIUS": "JUAL AMBISIUS",
-               "POWER MAX AMBISIUS": "JUAL POWER MAX AMBISIUS", "STOP": "STOP (batal)"}
+LABEL_LEVEL = {"TP": "TP SASARAN", "JUAL AMBISIUS": "JUAL AMBISIUS",
+               "POWER MAX AMBISIUS": "POWER MAX AMBISIUS", "STOP": "STOP (batal)"}
 
 
 def muat_json(p):
@@ -129,11 +129,12 @@ def level_dari_entri(e):
     return out
 
 
-def label_sentuh(sim, arah, level_nama, level_nilai, harga, entry):
+def label_sentuh(sim, arah, level_nama, level_nilai, harga, entry, pertama=False):
     ikon = {"TP": "🎯", "JUAL AMBISIUS": "🔥", "POWER MAX AMBISIUS": "💥", "STOP": "🛑"}.get(level_nama, "🔔")
     pct = f"{(harga / entry - 1) * 100:+.2f}%" if entry else ""
     pct_level = f"{(harga / level_nilai - 1) * 100:+.2f}%" if level_nilai else ""
-    return (f"{ikon} <b>{LABEL_LEVEL.get(level_nama, level_nama)} TERSENTUH — {html.escape(sim)} ({html.escape(arah)})</b>\n"
+    tanda = " <i>(sudah di atas level saat pemantauan menyala)</i>" if pertama else ""
+    return (f"{ikon} <b>{LABEL_LEVEL.get(level_nama, level_nama)} TERSENTUH — {html.escape(sim)} ({html.escape(arah)})</b>{tanda}\n"
             f"Harga kini {fmt_harga(harga)} · level {fmt_harga(level_nilai)} ({pct_level} dari level)"
             + (f" · entry {fmt_harga(entry)} ({pct})" if entry else ""))
 
@@ -252,8 +253,11 @@ def main():
             kena = bool(harga) and ((harga >= nilai) if nama != "STOP" else (harga <= nilai))
             baru[sim][nama] = kena
             sebelumnya = lama.get(sim, {}).get(nama)
-            if kena and not sebelumnya and harga and sudah_panas and sim in lama:
-                kejadian.append((sim, e.get("arah", "?"), nama, nilai, harga, e.get("entry")))
+            # V4: sentuhan PERTAMA pun dilaporkan (bila koin sudah di atas level saat
+            # pemantauan menyala) — pemilik wajib tahu, bukan disembunyikan pemanasan.
+            if kena and not sebelumnya and harga and (sudah_panas or sim not in lama):
+                kejadian.append((sim, e.get("arah", "?"), nama, nilai, harga, e.get("entry"),
+                                 sim not in lama))
 
     jam = datetime.now(WIB)
     L = ["🛡️ <b>BENTENG ABADI — MICROPROFITA</b> (lapis GitHub, tanpa tidur)",
@@ -267,8 +271,10 @@ def main():
     L.append("")
     if kejadian:
         L.append(f"🚨 <b>PANTAUAN SASARAN — {len(kejadian)} kejadian baru:</b>")
-        for sim, arah, level_nama, level_nilai, harga, entry in kejadian:
-            L.append(label_sentuh(sim, arah, level_nama, level_nilai, harga, entry))
+        for sim, arah, level_nama, level_nilai, harga, entry, pertama in kejadian:
+            L.append(label_sentuh(sim, arah, level_nama, level_nilai, harga, entry, pertama))
+        L.append("")
+        L.append("<i>TP sasaran ≠ Jual Ambisius ≠ Power Max — tiga level berbeda, tiga keputusan berbeda.</i>")
         L.append("")
     if sasaran:
         a_raw = sasaran.get("akurasi")
@@ -295,6 +301,8 @@ def main():
         L.append(f"🧬 Genome: terakhir tumbuh {umur_g / 24:.0f} hari lalu "
                  f"(generasi {gen_maks}, {total_belajar} pembelajaran)"
                  + (" — <b>STAGNAN, saya mengakunya</b>" if umur_g > 24 * 7 else ""))
+        if pelajaran:
+            L.append(f"🌱 Genome-cadangan benteng (milik saya): {pelajaran} pelajaran hidup — terus tumbuh walau genome utama beku")
     L.append("")
     L.append("<b>Klaim jujur: saya akan terus berkembang menjadi master pasar; "
              "profit adalah yang saya pelajari.</b>")
@@ -315,6 +323,25 @@ def main():
     state_baru = {"last_run": now, "waktu_iso": datetime.now(timezone.utc).isoformat(),
                   "prima_harga": bool(harga_map) or sudah_panas, "level": baru}
     simpan_json(F_STATE, state_baru)
+    # ---- genome-cadangan benteng: pelajaran tumbuh walau genome utama beku ----
+    pelajaran = 0
+    try:
+        F_GB = os.path.join(ROOT, "data", "genome_benteng.jsonl")
+        if kejadian:
+            os.makedirs(os.path.dirname(F_GB), exist_ok=True)
+            with open(F_GB, "a", encoding="utf-8") as f:
+                for sim, arah, nama, nilai, harga, entry, _ in kejadian:
+                    f.write(json.dumps({
+                        "waktu": datetime.now(timezone.utc).isoformat(),
+                        "simbol": sim, "arah": arah, "level": nama, "level_harga": nilai,
+                        "harga_kini": harga, "entry": entry,
+                        "pelajaran": f"{sim} {arah} menyentuh {nama} — vonis pasar datang, catat hasil"},
+                        ensure_ascii=False) + "\n")
+        if os.path.exists(F_GB):
+            with open(F_GB, "r", encoding="utf-8") as f:
+                pelajaran = sum(1 for l in f if l.strip())
+    except Exception as e:
+        print("genome-cadangan gagal:", repr(e))
     if ok and gap_menit is not None and gap_menit > GAP_MATI_MENIT:
         jurnal({"waktu": datetime.now(timezone.utc).isoformat(), "peristiwa": "PULIH",
                 "gap_menit": round(gap_menit, 1), "lapis_penjinak": "benteng-abadi",
@@ -322,7 +349,7 @@ def main():
 
     print("KIRIM:", f"OK message_id={mid}" if ok else f"GAGAL {err}")
     print("GAP_MENIT:", f"{gap_menit:.1f}" if gap_menit is not None else "pertama")
-    print("SASARAN:", len(baru), "| HARGA:", len(harga_map), "| KEJADIAN:", len(kejadian))
+    print("SASARAN:", len(baru), "| HARGA:", len(harga_map), "| KEJADIAN:", len(kejadian), "| PELAJARAN-GB:", pelajaran)
     print("OTAK_HIDUP:", sasaran_hidup, genome_hidup, denyut_hidup)
     return 0 if ok else 2
 
