@@ -39,7 +39,11 @@ jobs:
         run: |
           git config user.name "benteng-abadi"
           git config user.email "benteng-abadi@users.noreply.github.com"
-          git add data/penjaga_state.json data/death_journal.jsonl data/cache_*.json
+          git add data/penjaga_state.json 2>/dev/null || true
+          git add data/death_journal.jsonl 2>/dev/null || true
+          git add data/cache_sasaran.json 2>/dev/null || true
+          git add data/cache_genome.json 2>/dev/null || true
+          git add data/cache_denyut.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "state tidak berubah"
           else
