@@ -31,8 +31,8 @@ RAW = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Micaprofita-/main"
 BINANCE = "https://data-api.binance.vision/api/v3/ticker/price"
 WIB = timezone(timedelta(hours=7))
 GAP_MATI_MENIT = 35
-LABEL_LEVEL = {"TP": "TP", "JUAL AMBISIUS": "JUAL AMBISIUS",
-               "POWER MAX AMBISIUS": "JUAL POWER MAX AMBISIUS", "STOP": "STOP (batal)"}
+LABEL_LEVEL = {"TP": "TP SASARAN", "JUAL AMBISIUS": "JUAL AMBISIUS",
+               "POWER MAX AMBISIUS": "POWER MAX AMBISIUS", "STOP": "STOP (batal)"}
 
 
 # ---------------- util dasar ----------------
@@ -134,11 +134,12 @@ def level_dari_entri(e):
     return out
 
 
-def label_sentuh(sim, arah, level_nama, level_nilai, harga, entry):
+def label_sentuh(sim, arah, level_nama, level_nilai, harga, entry, pertama=False):
     ikon = {"TP": "🎯", "JUAL AMBISIUS": "🔥", "POWER MAX AMBISIUS": "💥", "STOP": "🛑"}.get(level_nama, "🔔")
     pct = f"{(harga / entry - 1) * 100:+.2f}%" if entry else ""
     pct_level = f"{(harga / level_nilai - 1) * 100:+.2f}%" if level_nilai else ""
-    return (f"{ikon} <b>{LABEL_LEVEL.get(level_nama, level_nama)} TERSSENTUH — {html.escape(sim)} ({html.escape(arah)})</b>\n"
+    tanda = " <i>(sudah di atas level saat pemantauan menyala)</i>" if pertama else ""
+    return (f"{ikon} <b>{LABEL_LEVEL.get(level_nama, level_nama)} TERSSENTUH — {html.escape(sim)} ({html.escape(arah)})</b>{tanda}\n"
             f"Harga kini {fmt_harga(harga)} · level {fmt_harga(level_nilai)} ({pct_level} dari level)"
             + (f" · entry {fmt_harga(entry)} ({pct})" if entry else ""))
 
@@ -212,8 +213,10 @@ def pantau_level(sasaran_list, harga_map):
             kena = bool(harga) and ((harga >= nilai) if nama != "STOP" else (harga <= nilai))
             baru[sim][nama] = kena
             sebelumnya = lama.get(sim, {}).get(nama)
-            if kena and not sebelumnya and harga and sudah_panas and sim in lama:
-                kejadian.append((sim, e.get("arah", "?"), nama, nilai, harga, e.get("entry")))
+            # V4: sentuhan PERTAMA pun dilaporkan — pemilik wajib tahu, bukan disembunyikan pemanasan.
+            if kena and not sebelumnya and harga and (sudah_panas or sim not in lama):
+                kejadian.append((sim, e.get("arah", "?"), nama, nilai, harga, e.get("entry"),
+                                 sim not in lama))
     simpan_json(F_SNAP, {"waktu": time.time(), "prima_harga": ada_harga_sekarang or bool(state.get("prima_harga")), "level": baru})
     return kejadian, len(baru)
 
@@ -322,8 +325,10 @@ def main():
     L.append("")
     if kejadian:
         L.append(f"🚨 <b>PANTAUAN SASARAN — {len(kejadian)} kejadian baru:</b>")
-        for sim, arah, level_nama, level_nilai, harga, entry in kejadian:
-            L.append(label_sentuh(sim, arah, level_nama, level_nilai, harga, entry))
+        for sim, arah, level_nama, level_nilai, harga, entry, pertama in kejadian:
+            L.append(label_sentuh(sim, arah, level_nama, level_nilai, harga, entry, pertama))
+        L.append("")
+        L.append("<i>TP sasaran ≠ Jual Ambisius ≠ Power Max — tiga level berbeda, tiga keputusan berbeda.</i>")
         L.append("")
 
     if sasaran:
