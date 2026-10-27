@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-HEARTBEAT MICROPROFITA GEN-6 — detak hidup + JEMBATAN OTAK Z.AI + penjaga level.
+HEARTBEAT MICROPROFITA GEN-7 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level.
+HUKUM PEMILIK V302: XAUUSDT (emas) = KOIN WAJIB ABADI — 50 sasaran + 1 XAU;
+apa pun kondisi (regim/guard/veto/web padam), XAU tidak boleh hilang dari laporan.
 Dua otak dilaporkan BERBEDA dan JUJUR (pemilik pernah bingung kenapa koin beda):
   A. OTAK Z.AI  = mesin arena di web sandbox ini (localhost:3000/api/arena,
      todayPicks kompetitor MICAPROFITA) — SAMA PERSIS dengan yang tampil di web.
@@ -104,7 +106,10 @@ def jsonl_remote_terakhir(jalur, nama_cache):
 
 def otak_zai():
     """Sasaran otak z.ai dari web arena (SUMBER SAMA dengan yang dilihat pemilik
-    di web). Web tidur -> cache detak lalu (diberi label jujur)."""
+    di web). Web tidur -> cache detak lalu (diberi label jujur).
+    V302 KOIN-WAJIB-XAU: XAUUSDT dipisah ke snap["xau"] — tidak ikut sort
+    top-10, punya section sendiri. Bila web belum membawa XAU, disintesis
+    dari harga emas langsung (gold-api/Bybit/OKX) agar WAJIB tetap hadir."""
     try:
         req = urllib.request.Request(ZAI_URL, headers={"User-Agent": "microprofita-hb"})
         with urllib.request.urlopen(req, timeout=15) as r:
@@ -118,17 +123,83 @@ def otak_zai():
                 continue
             picks.append({"simbol": str(sim).upper(), "arah": str(p.get("direction") or "?").upper(),
                           "keyakinan": p.get("confidence"), "entry": float(p.get("entryClose"))})
-        picks.sort(key=lambda x: (x.get("keyakinan") or 0), reverse=True)
+        xau = next((p for p in picks if p["simbol"] == "XAUUSDT"), None)
+        for p in picks:
+            if p["simbol"] == "XAUUSDT":
+                p["wajib"] = True
+        if xau is None:
+            xau = _xau_wajib_sintesis("web belum membawa XAU")
+        koin = [p for p in picks if p["simbol"] != "XAUUSDT"]
+        koin.sort(key=lambda x: (x.get("keyakinan") or 0), reverse=True)
         slot = d.get("slotHariIni") or {}
         snap = {"waktu": datetime.now(timezone.utc).isoformat(),
                 "sumber": "otak-zai-web(arena)", "regime": d.get("regime"),
                 "dianalisa": slot.get("dianalisa"), "lahir": slot.get("lahir"),
-                "total": len(picks), "picks": picks[:ZAI_JUMLAH]}
+                "total": len(koin) + (1 if xau else 0),
+                "picks": koin[:ZAI_JUMLAH], "xau": xau}
         simpan_json(F_ZAI_CACHE, snap)
         return snap, True
     except Exception:
         snap = muat_json_lokal(F_ZAI_CACHE)
+        if isinstance(snap, dict) and not snap.get("xau"):
+            snap["xau"] = _xau_wajib_sintesis("cache tanpa XAU")
         return snap, False
+
+
+def _xau_wajib_sintesis(ket):
+    """XAU WAJIB tidak boleh absen: bila otak z.ai tidak membawanya,
+    heartbeat mensintesiskan barisnya sendiri dari harga emas live."""
+    h, chg, src = harga_xau()
+    if h:
+        arah = "SELL" if (chg is not None and chg < 0) else "BUY"
+        return {"simbol": "XAUUSDT", "arah": arah, "keyakinan": 60, "entry": h,
+                "wajib": True, "ket": f"disintesis heartbeat ({ket}; sumber {src})"}
+    return {"simbol": "XAUUSDT", "arah": "?", "keyakinan": None, "entry": None,
+            "wajib": True, "ket": f"gagal ambil harga emas semua sumber ({ket})"}
+
+
+def harga_xau():
+    """Harga emas (XAU) rantai fallback (uji hidup 27 Okt): gold-api spot ->
+    Bybit XAUTUSDT -> OKX XAUT-USDT. Kembalikan (harga, chg24h_pct, sumber)."""
+    def _get(url, timeout=12):
+        req = urllib.request.Request(url, headers={"User-Agent": "microprofita-hb"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8", "replace"))
+    try:  # 1. gold-api: spot XAU murni
+        j = _get("https://api.gold-api.com/price/XAU")
+        p = j.get("price") if isinstance(j, dict) else None
+        if isinstance(p, (int, float)) and 100 < p < 100000:
+            chg = None
+            try:  # lengkapi momentum 24 jam dari Bybit tanpa mengganti harga spot
+                b = _get("https://api.bybit.com/v5/market/tickers?category=spot&symbol=XAUTUSDT", 10)
+                lst = ((b.get("result") or {}).get("list") or [])
+                pc = float(lst[0].get("price24hPcnt")) if lst else None
+                chg = round(pc * 100, 2) if pc is not None else None
+            except Exception:
+                pass
+            return float(p), chg, "gold-api XAU spot"
+    except Exception:
+        pass
+    try:  # 2. Bybit XAUTUSDT (Tether Gold = 1 oz emas)
+        b = _get("https://api.bybit.com/v5/market/tickers?category=spot&symbol=XAUTUSDT")
+        lst = ((b.get("result") or {}).get("list") or [])
+        if lst:
+            p = float(lst[0].get("lastPrice"))
+            pc = float(lst[0].get("price24hPcnt"))
+            return p, round(pc * 100, 2), "Bybit XAUTUSDT (emas)"
+    except Exception:
+        pass
+    try:  # 3. OKX XAUT-USDT
+        o = _get("https://www.okx.com/api/v5/market/ticker?instId=XAUT-USDT")
+        d0 = ((o.get("data") or []) or [None])[0]
+        if d0:
+            p = float(d0.get("last"))
+            op = float(d0.get("open24h") or 0)
+            chg = round((p / op - 1) * 100, 2) if op > 0 else None
+            return p, chg, "OKX XAUT-USDT (emas)"
+    except Exception:
+        pass
+    return None, None, "gagal"
 
 
 def taman_zai_ke_rantaian(snap):
@@ -478,8 +549,13 @@ def main():
     # ---- penjaga TP ----
     daftar = (sasaran or {}).get("sasaranHariIni") or []
     simbol_list = [e.get("simbol") for e in daftar if e.get("simbol")]
-    simbol_list += [p.get("simbol") for p in zai_picks if p.get("simbol")]
+    simbol_list += [p.get("simbol") for p in zai_picks if p.get("simbol") and p.get("simbol") != "XAUUSDT"]
     harga_map, sumber_harga = harga_binance(simbol_list)  # satu panggilan gabungan (hemat, tetap fallback per-simbol)
+    # V302 XAU WAJIB — harga emas rantai sendiri (Binance tak punya XAUUSDT)
+    zai_xau = (zai_snap or {}).get("xau")
+    if not isinstance(zai_xau, dict):
+        zai_xau = _xau_wajib_sintesis("snap tanpa xau")
+    xau_h, xau_chg, xau_src = harga_xau()
     kejadian, n_dipantau = [], 0
     if daftar and harga_map:
         kejadian, n_dipantau = pantau_level(daftar, harga_map)
@@ -499,6 +575,23 @@ def main():
         L.append(f"Status: <b>HIDUP</b> — {gap_menit:.0f} menit sejak detak terakhir")
 
     L.append("")
+    # ---- V302 section XAU WAJIB (TIDAK PERNAH ABSEN — hukum pemilik) ----
+    x_ent = zai_xau.get("entry")
+    x_arah = str(zai_xau.get("arah") or "?").upper()
+    x_konf = zai_xau.get("keyakinan")
+    x_kini = xau_h if xau_h else None
+    x_jarak = f"{(x_kini / x_ent - 1) * 100:+.2f}%" if (x_kini and x_ent) else "-"
+    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (50 sasaran + 1 XAU, hukum pemilik V302)")
+    if xau_h:
+        chg_s = f" · 24 jam {xau_chg:+.2f}%" if xau_chg is not None else ""
+        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · "
+                 f"entry {fmt_harga(x_ent)} · kini <b>{fmt_harga(x_kini)}</b> ({x_jarak}){chg_s}")
+        L.append(f"<i>Sumber harga: {html.escape(xau_src)} — XAU selalu ada di laporan apa pun kondisinya.</i>")
+    else:
+        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · entry {fmt_harga(x_ent)} · "
+                 f"kini <b>GAGAL DIAMBIL</b> (semua sumber emas padam detak ini)")
+        L.append("<i>XAU tetap WAJIB — harga dicoba lagi detak berikutnya; baris ini tidak pernah dihapus.</i>")
+    L.append("")
     if harga_map and sumber_harga in ("bybit+okx", "binance+futures+bybit/okx"):
         L.append(f"💱 Harga dari <b>{html.escape(sumber_harga)}</b> — sebagian/seluruhnya dari futures Binance / bursa cadangan; beda tipis antar pasar wajar.")
     # ---- section OTAK Z.AI (persis seperti web) ----
@@ -510,7 +603,8 @@ def main():
         z_tot = (zai_snap or {}).get("total") or len(zai_picks)
         L.append(f"🧠 <b>SASARAN OTAK Z.AI</b> — sumber SAMA dengan web ({seg_z})")
         L.append(f"Regim pasarnya: <b>{html.escape(str(z_reg))}</b> · {z_an} koin dianalisa · "
-                 f"{z_lh} pilihan lahir hari ini · menampilkan {len(zai_picks)} teratas dari {z_tot} (urut keyakinan)")
+                 f"{z_lh} pilihan lahir hari ini · menampilkan {len(zai_picks)} teratas dari {z_tot} sasaran "
+                 f"(50 koin + XAU wajib 🥇 di atas; urut keyakinan)")
         for i, p in enumerate(zai_picks, 1):
             basis = _basis_simbol(p["simbol"]) or p["simbol"]
             h = harga_map.get(basis)
