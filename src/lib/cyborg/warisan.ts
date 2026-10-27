@@ -110,7 +110,12 @@ export function garch11(closes: number[]): Garch11 {
 export interface McResult {
   pNaik: number
   q50: number; q75: number; q90: number
-  q50Dn: number; q75Dn: number
+  // KONVENSI CERMIN V303b (perbaikan bug lama): q75Dn/q90Dn = KEDALAMAN yang
+  // hanya ditembus 25%/10% lintasan (ku(maksTurun, 0.25/0.10)) — persis
+  // cermin q75/q90 sisi naik. Versi lama (0.75/0.9) menghasilkan level
+  // DANGKAL yang 75%/90% lintasan malu-melewati → ambisius SELL kolaps di
+  // bawah TP sendiri. q50 tetap median (simetris).
+  q50Dn: number; q75Dn: number; q90Dn: number
   pLevel: (fraksi: number) => number
   pLevelDn: (fraksi: number) => number
 }
@@ -144,7 +149,7 @@ export function monteCarlo24j(candles: Candle[], g: Garch11, seed: number,
   return {
     pNaik: +(pNaik / lintasan).toFixed(3),
     q50: +ku(maksNaik, 0.5).toFixed(4), q75: +ku(maksNaik, 0.75).toFixed(4), q90: +ku(maksNaik, 0.9).toFixed(4),
-    q50Dn: +Math.abs(ku(maksTurun, 0.5)).toFixed(4), q75Dn: +Math.abs(ku(maksTurun, 0.75)).toFixed(4),
+    q50Dn: +Math.abs(ku(maksTurun, 0.5)).toFixed(4), q75Dn: +Math.abs(ku(maksTurun, 0.25)).toFixed(4), q90Dn: +Math.abs(ku(maksTurun, 0.1)).toFixed(4),
     pLevel: (fraksi: number) => maksNaik.filter((x) => x >= Math.log(1 + fraksi)).length / lintasan,
     pLevelDn: (fraksi: number) => maksTurun.filter((x) => x <= -Math.abs(Math.log(1 - fraksi))).length / lintasan,
   }
@@ -291,17 +296,32 @@ export function mesinWarisan(candles: Candle[], btcCandles: Candle[]): WarisanRe
 }
 
 // ---------------- TANGGA HARGA + GUARD MONTE CARLO ----------------
+// V303 DOKTRIN JUAL-BERTINGKAT pemilik (27 Okt 2026):
+//   (1) JUAL AMBISIUS   — saat harga TERKENA, dipastikan turun kemudian
+//                         (q75 ekskursi maksimum: hanya 25% lintasan pernah
+//                         setinggi itu → harga terlentang, rever balik).
+//   (2) JUAL POWER MAX  — hanya DITERBITKAN bila ada PRAKIRA NYATA bahwa
+//                         jual ambisius memiliki peluang naik lagi ke target
+//                         sekian (volume menyala / momentum searah / magnet
+//                         VP di atas ambisius). Bila POWER MAX tercapai,
+//                         harga TERJUN — puncaknya butuh nafas panjang
+//                         (q90: hanya 10% lintasan pernah setinggi itu).
+//   Dua-duanya punya fundamental jelas — bukan hiasan.
 export interface Rencana {
   entry: number
   stop: number | null
   target: number | null
   highAmbisius: number | null
+  powerMaxAmbisius: number | null
   stopPct: number | null
   targetPct: number | null
   ambisiusPct: number | null
+  powerMaxPct: number | null
   pTarget: number | null
   pStop: number | null
   pAmbisius: number | null
+  pPowerMax: number | null
+  prakiraPowerMax: string | null
   targetMediana: boolean
   netUntungPct: number | null
   sumberTarget: string
@@ -310,6 +330,10 @@ export interface Rencana {
 
 /** Tangga harga arah-sadar dengan GUARD MC: target dicari di tangga
  *  magnet-VP → 1.5σ → 1.2σ → 1.0σ → 0.8σ → median; ambang MC_MIN 0.38.
+ *  V303 GERBANG KATALIS: magnet jauh yang gagal guard 0.38 tetap diterima
+ *  bila koinnya sedang LEDAKAN NYATA (volume ≥ 2× rata + momentum searah)
+ *  dan ≥ 20% lintasan Monte Carlo menjangkaunya — TP besar kembali lahir
+ *  pada koin yang memang berbakat, tanpa membuka pintu fantasi.
  *  Stop identik penjaga: sisi aman antara 1,8×ATR dan ujung rentang 24j
  *  dengan buffer 0,25×ATR (dicermin untuk SELL). */
 export function rangkaiRencana(
@@ -330,11 +354,26 @@ export function rangkaiRencana(
     { harga: sigma24 > 0 ? entry * (1 + sisi * 0.8 * sigma24) : null, nama: '0.8× sigma-24j' },
   ]
   const fraksiDari = (harga: number) => Math.abs(harga / entry - 1)
+  const momSearah = direction === 'BUY' ? war.naik6 : -war.naik6
   let target: number | null = null, pTarget: number | null = null, sumberTarget = '', targetMediana = false
   for (const t of tangga) {
     if (t.harga === null || !Number.isFinite(t.harga) || fraksiDari(t.harga) < 0.004) continue
     const p = direction === 'BUY' ? mc.pLevel(fraksiDari(t.harga)) : mc.pLevelDn(fraksiDari(t.harga))
     if (p >= WARISAN.MC_MIN) { target = t.harga; pTarget = +p.toFixed(3); sumberTarget = t.nama; break }
+  }
+  // V303 GERBANG KATALIS — doktrin pemilik: TP besar bukan fantasi bila
+  // koinnya memang sedang meledak. Magnet jauh diterima walau peluang MC
+  // di bawah 0.38, ASAL volume menyala + momentum searah + MC mengaku.
+  if (target === null && magnet !== null && Number.isFinite(magnet) && fraksiDari(magnet) >= 0.004) {
+    const ledakanNyata = war.volSpike >= 2 && momSearah > 0.005
+    if (ledakanNyata) {
+      const p = direction === 'BUY' ? mc.pLevel(fraksiDari(magnet)) : mc.pLevelDn(fraksiDari(magnet))
+      if (p >= 0.20) {
+        target = magnet; pTarget = +p.toFixed(3)
+        sumberTarget = 'magnet Volume Profile + gerbang katalis ledakan'
+        targetMediana = false
+      }
+    }
   }
   let ketGuard = ''
   if (target === null && sigma24 > 0) {
@@ -347,6 +386,8 @@ export function rangkaiRencana(
     ketGuard = `guard Monte Carlo: seluruh tangga target dinilai peluangnya < ${Math.round(WARISAN.MC_MIN * 100)}% — target turun ke median lintasan, bukan fantasi`
   } else if (sigma24 === 0) {
     ketGuard = 'sigma-24j tak tersedia (lilin kurang) — tangga target kosong, jujur tanpa angka'
+  } else if (sumberTarget.includes('katalis')) {
+    ketGuard = `gerbang katalis V303: volume ${war.volSpike.toFixed(1)}× rata + momentum 6j searah ${(momSearah * 100).toFixed(1)}% — magnet jauh diterima walau pTarget ${(pTarget! * 100).toFixed(0)}% < ${Math.round(WARISAN.MC_MIN * 100)}% (bukan fantasi: ada bukti ledakan nyata)`
   } else {
     ketGuard = `lolos guard Monte Carlo: pTarget ${(pTarget! * 100).toFixed(0)}% ≥ ${Math.round(WARISAN.MC_MIN * 100)}% (${sumberTarget})`
   }
@@ -357,13 +398,86 @@ export function rangkaiRencana(
   const pStop = +(direction === 'BUY' ? mc.pLevelDn(fraksiDari(stop)) : mc.pLevel(fraksiDari(stop))).toFixed(3)
   const ambisius = sigma24 > 0 ? +(entry * (1 + sisi * (direction === 'BUY' ? mc.q75 : mc.q75Dn))).toPrecision(6) : null
   const pAmbisius = ambisius !== null ? +(direction === 'BUY' ? mc.pLevel(fraksiDari(ambisius)) : mc.pLevelDn(fraksiDari(ambisius))).toFixed(3) : null
+  const { powerMax, pPowerMax, prakira } = juruPowerMax(direction, entry, war, mc, magnet, ambisius)
   const netUntungPct = target !== null ? +(((sisi * (target - entry)) / entry - 2 * WARISAN.FEE_PCT / 100) * 100).toFixed(2) : null
   const pct = (x: number | null) => x === null ? null : +(((x - entry) / entry) * sisi * 100).toFixed(2)
   return {
     entry: +entry.toPrecision(7),
-    stop, target, highAmbisius: ambisius,
-    stopPct: pct(stop), targetPct: pct(target), ambisiusPct: pct(ambisius),
-    pTarget, pStop, pAmbisius, targetMediana, netUntungPct, sumberTarget, ketGuard,
+    stop, target, highAmbisius: ambisius, powerMaxAmbisius: powerMax,
+    stopPct: pct(stop), targetPct: pct(target), ambisiusPct: pct(ambisius), powerMaxPct: pct(powerMax),
+    pTarget, pStop, pAmbisius, pPowerMax, prakiraPowerMax: prakira,
+    targetMediana, netUntungPct, sumberTarget, ketGuard,
+  }
+}
+
+/** V303 JURU POWER MAX — doktrin pemilik: power max hanya lahir bila ada
+ *  PRAKIRA NYATA (katalis) bahwa harga masih mampu naik LAMPAUI jual
+ *  ambisius. Kandidat terjauh diambil: magnet VP di atas ambisius vs q90
+ *  Monte Carlo. Tanpa katalis → jujur null: "ambisius adalah atap hari ini".
+ *  Bila tercapai, hanya ~10% lintasan yang pernah setinggi itu → puncak
+ *  butuh nafas panjang, terjun diperkirakan (mean reversion). */
+export function juruPowerMax(
+  direction: 'BUY' | 'SELL',
+  entry: number,
+  war: WarisanResult,
+  mc: McResult,
+  magnet: number | null,
+  ambisius: number | null,
+): { powerMax: number | null; pPowerMax: number | null; prakira: string | null } {
+  if (ambisius === null) return { powerMax: null, pPowerMax: null, prakira: null }
+  const sisi = direction === 'BUY' ? 1 : -1
+  const fraksiDari = (harga: number) => Math.abs(harga / entry - 1)
+  const momSearah = direction === 'BUY' ? war.naik6 : -war.naik6
+  const magnetLebih = magnet !== null && (direction === 'BUY' ? magnet > ambisius : magnet < ambisius)
+  const prakiraNyata = war.volSpike >= 1.2 || momSearah > 0 || magnetLebih
+  if (!prakiraNyata) {
+    return {
+      powerMax: null, pPowerMax: null,
+      prakira: `tak ada prakira nyata naik-lagi (volume ${war.volSpike.toFixed(1)}× rata, momentum 6j ${(war.naik6 * 100).toFixed(1)}% tak searah, tanpa magnet di atas ambisius) — JUAL AMBISIUS adalah atap hari ini`,
+    }
+  }
+  const q90h = entry * (1 + sisi * (direction === 'BUY' ? mc.q90 : mc.q90Dn))
+  const powerMax = +(magnetLebih && Math.abs(magnet! / entry - 1) > Math.abs(q90h / entry - 1) ? magnet! : q90h).toPrecision(6)
+  if (direction === 'BUY' ? powerMax <= ambisius : powerMax >= ambisius) {
+    return { powerMax: null, pPowerMax: null, prakira: 'kandidat power max tak melewati jual ambisius — atap tetap ambisius' }
+  }
+  const p = +(direction === 'BUY' ? mc.pLevel(fraksiDari(powerMax)) : mc.pLevelDn(fraksiDari(powerMax))).toFixed(3)
+  // GERBANG KETAHANAN V303b: power max adalah PUNCAK TERLENTANG — bila
+  // peluang sentuhnya > 15%, level itu tak layak disebut power max
+  // (masih dangkal; atap sejati = q90, peluang ~10%).
+  if (p > 0.15) {
+    return {
+      powerMax: null, pPowerMax: null,
+      prakira: `kandidat power max ternyata masih dangkal (peluang sentuh ${Math.round(p * 100)}% > 15%) — jujur: tak ada power max hari ini, atap tetap jual ambisius`,
+    }
+  }
+  return {
+    powerMax,
+    pPowerMax: p,
+    prakira: `prakira nyata: volume ${war.volSpike.toFixed(1)}× rata, momentum 6j ${(war.naik6 * 100).toFixed(1)}%${magnetLebih ? ', magnet VP di atas jual ambisius' : ''} — bila POWER MAX tersentuh, hanya ~${Math.round(p * 100)}% lintasan yang pernah setinggi itu: puncak butuh nafas panjang → terjun diperkirakan`,
+  }
+}
+
+/** V303 HEAL JUJUR — sisipkan POWER MAX ke rencana PRA-REGISTRASI yang
+ *  sudah terkunci TANPA menggeser level terkunci satu pun (target/stop/
+ *  ambisius tetap persis). MC dijalankan ulang berbibit di atas lilin yang
+ *  SAMA (tertutup sebelum waktuKunci) → hasil reproducible. */
+export function sisipkanPowerMax(
+  direction: 'BUY' | 'SELL',
+  war: WarisanResult,
+  mc: McResult,
+  rencanaTerkunci: Rencana,
+): Rencana {
+  const magnet = direction === 'BUY' ? (war.vp?.magnetAtas?.level ?? null) : (war.vp?.magnetBawah?.level ?? null)
+  const { powerMax, pPowerMax, prakira } = juruPowerMax(direction, rencanaTerkunci.entry, war, mc, magnet, rencanaTerkunci.highAmbisius)
+  const sisi = direction === 'BUY' ? 1 : -1
+  const pct = (x: number | null) => x === null ? null : +(((x - rencanaTerkunci.entry) / rencanaTerkunci.entry) * sisi * 100).toFixed(2)
+  return {
+    ...rencanaTerkunci,
+    powerMaxAmbisius: powerMax,
+    powerMaxPct: pct(powerMax),
+    pPowerMax,
+    prakiraPowerMax: prakira,
   }
 }
 
@@ -397,7 +511,7 @@ export interface WarisanBukti {
   pangkas?: string
   mc: {
     lintasan: number; langkah: number; seedHex: string
-    pTarget: number | null; pStop: number | null; pAmbisius: number | null; pNaik: number | null
+    pTarget: number | null; pStop: number | null; pAmbisius: number | null; pPowerMax: number | null; pNaik: number | null
     ket: string
   }
 }
@@ -469,7 +583,7 @@ export async function perkayaWarisan(
         kejutPump: war.kejutPump, ketKejut: war.ketKejut, posisiRentang: war.posisiRentang, volSpike: war.volSpike,
         mc: {
           lintasan: WARISAN.MC_LINTASAN, langkah: WARISAN.MC_LANGKAH, seedHex: '0x' + seed.toString(16),
-          pTarget: rencana.pTarget, pStop: rencana.pStop, pAmbisius: rencana.pAmbisius, pNaik: mc.pNaik,
+          pTarget: rencana.pTarget, pStop: rencana.pStop, pAmbisius: rencana.pAmbisius, pPowerMax: rencana.pPowerMax, pNaik: mc.pNaik,
           ket: 'peluang Monte Carlo PRA-REGISTRASI berbibit (direproduksi ulang = angka sama) — dinilai medan saat horizon habis',
         },
       }
@@ -526,7 +640,7 @@ export async function perkayaWarisan(
           kejutPump: war.kejutPump, ketKejut: war.ketKejut, posisiRentang: war.posisiRentang, volSpike: war.volSpike,
           mc: {
             lintasan: WARISAN.MC_LINTASAN, langkah: WARISAN.MC_LANGKAH, seedHex: '0x' + seed.toString(16),
-            pTarget: rencana.pTarget, pStop: rencana.pStop, pAmbisius: rencana.pAmbisius, pNaik: mc.pNaik,
+            pTarget: rencana.pTarget, pStop: rencana.pStop, pAmbisius: rencana.pAmbisius, pPowerMax: rencana.pPowerMax, pNaik: mc.pNaik,
             ket: 'peluang Monte Carlo PRA-REGISTRASI berbibit (direproduksi ulang = angka sama) — dinilai medan saat horizon habis',
           },
         }

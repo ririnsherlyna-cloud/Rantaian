@@ -120,8 +120,11 @@ function barisKoin(p) {
   if (p.guard === 'DITOLAK' || ev.guard === 'DITOLAK') out.push(`   ⛔ DITOLAK GUARD: ${p.guardAlasan || ev.guardAlasan || 'alasan tak tercatat'}`)
   if (rn) {
     out.push(`   • Entry: ${rp(rn.entry)}`)
-    out.push(`   • TP / Jual Ambisius: ${rp(rn.target)} (${pct(rn.targetPct)}) — peluang ${rn.pTarget != null ? `${Math.round(rn.pTarget * 100)}%` : '—'}`)
-    out.push(`   • JUAL POWER MAX: ${rp(rn.highAmbisius)} (${pct(rn.ambisiusPct)}) — peluang ${rn.pAmbisius != null ? `${Math.round(rn.pAmbisius * 100)}%` : '—'}`)
+    out.push(`   • TP / Sasaran: ${rp(rn.target)} (${pct(rn.targetPct)}) — peluang ${rn.pTarget != null ? `${Math.round(rn.pTarget * 100)}%` : '—'}`)
+    out.push(`   • JUAL AMBISIUS: ${rp(rn.highAmbisius)} (${pct(rn.ambisiusPct)}) — sentuh = dipastikan turun (peluang ${rn.pAmbisius != null ? `${Math.round(rn.pAmbisius * 100)}%` : '—'})`)
+    if (typeof rn.powerMaxAmbisius === 'number') {
+      out.push(`   • JUAL POWER MAX: ${rp(rn.powerMaxAmbisius)} (${pct(rn.powerMaxPct)}) — tercapai = butuh nafas panjang, terjun diperkirakan (peluang ${rn.pPowerMax != null ? `${Math.round(rn.pPowerMax * 100)}%` : '—'})`)
+    }
     out.push(`   • Stop Loss: ${rp(rn.stop)} (${pct(rn.stopPct)}) — peluang kena ${rn.pStop != null ? `${Math.round(rn.pStop * 100)}%` : '—'}`)
     if (rn.ketGuard) out.push(`   • Guard: ${String(rn.ketGuard).slice(0, 120)}`)
   } else if (p.entryClose) {
@@ -139,7 +142,7 @@ function barisKoin(p) {
 //  laporan masuk ke telegram" — Telegram = alat ukur kehidupan otak.
 // Monitor tiap 5 menit dari SUMBER SAMA (/api/arena), anti-dobel via
 // state persist db/telegram/auto_lapor.json (selamat dari restart).
-const stLapor = () => bacaJson('auto_lapor.json', { hari: '', koinTerlapor: [], tp: {}, ambisius: {}, stop: {} })
+const stLapor = () => bacaJson('auto_lapor.json', { hari: '', koinTerlapor: [], tp: {}, ambisius: {}, powerMax: {}, stop: {} })
 let autoLapor = stLapor()
 const simpanAutoLapor = () => tulisFile('auto_lapor.json', JSON.stringify(autoLapor, null, 1))
 
@@ -158,7 +161,7 @@ async function monitorArena() {
   }
   const hari = a?.today || a?.dataDay || '?'
   if (hari === '?') return
-  if (autoLapor.hari !== hari) autoLapor = { hari, koinTerlapor: [], tp: {}, ambisius: {}, stop: {} }
+  if (autoLapor.hari !== hari) autoLapor = { hari, koinTerlapor: [], tp: {}, ambisius: {}, powerMax: {}, stop: {} }
   const pulseMap = new Map((a?.pulse?.items || []).map((x) => [x.symbol, x]))
   const picks = (a?.todayPicks || []).filter((p) => p.competitor === 'MICAPROFITA')
   const gabung = picks.map((p) => ({ ...p, ...(pulseMap.get(p.symbol) || {}), evidence: { ...(p.evidence || {}), ...(pulseMap.get(p.symbol) || {}) } }))
@@ -182,11 +185,18 @@ async function monitorArena() {
     const arahBuy = p.direction === 'BUY'
     if (typeof rn.target === 'number' && !autoLapor.tp[p.symbol] && (arahBuy ? lp >= rn.target : lp <= rn.target)) {
       autoLapor.tp[p.symbol] = true
-      await siar(`✅ KENA TP — ${p.symbol} (${p.direction})\nLive ${rp(lp)} menyentuh target ${rp(rn.target)} (${pct(rn.targetPct)}).\nLevel panen berikutnya: JUAL POWER MAX ${rp(rn.highAmbisius)} (${pct(rn.ambisiusPct)}).`).catch(() => {})
+      const pm = typeof rn.powerMaxAmbisius === 'number'
+      await siar(pm
+        ? `✅ KENA TP — ${p.symbol} (${p.direction})\nLive ${rp(lp)} menyentuh target ${rp(rn.target)} (${pct(rn.targetPct)}).\nLevel panen berikutnya: JUAL AMBISIUS ${rp(rn.highAmbisius)} (${pct(rn.ambisiusPct)}) → JUAL POWER MAX ${rp(rn.powerMaxAmbisius)} (${pct(rn.powerMaxPct)}).`
+        : `✅ KENA TP — ${p.symbol} (${p.direction})\nLive ${rp(lp)} menyentuh target ${rp(rn.target)} (${pct(rn.targetPct)}).\nLevel panen berikutnya: JUAL AMBISIUS ${rp(rn.highAmbisius)} (${pct(rn.ambisiusPct)}).`).catch(() => {})
     }
     if (typeof rn.highAmbisius === 'number' && !autoLapor.ambisius[p.symbol] && (arahBuy ? lp >= rn.highAmbisius : lp <= rn.highAmbisius)) {
       autoLapor.ambisius[p.symbol] = true
-      await siar(`🔥 JUAL AMBISIUS / POWER MAX — ${p.symbol} (${p.direction})\nLive ${rp(lp)} melampaui ${rp(rn.highAmbisius)} (${pct(rn.ambisiusPct)}) — momen panen maksimal menurut rencana.`).catch(() => {})
+      await siar(`🔥 JUAL AMBISIUS Tersentuh — ${p.symbol} (${p.direction})\nLive ${rp(lp)} melampaui ${rp(rn.highAmbisius)} (${pct(rn.ambisiusPct)}) — harga terlentang: dipastikan turun kemudian${typeof rn.powerMaxAmbisius === 'number' ? ` (atap pamungkas: POWER MAX ${rp(rn.powerMaxAmbisius)})` : ''}.`).catch(() => {})
+    }
+    if (typeof rn.powerMaxAmbisius === 'number' && !autoLapor.powerMax[p.symbol] && (arahBuy ? lp >= rn.powerMaxAmbisius : lp <= rn.powerMaxAmbisius)) {
+      autoLapor.powerMax[p.symbol] = true
+      await siar(`🚀 JUAL POWER MAX AMBISIUS — ${p.symbol} (${p.direction})\nLive ${rp(lp)} melampaui ${rp(rn.powerMaxAmbisius)} (${pct(rn.powerMaxPct)}) — puncak paling terlentang: butuh nafas panjang, terjun diperkirakan.`).catch(() => {})
     }
     if (typeof rn.stop === 'number' && !autoLapor.stop[p.symbol] && (arahBuy ? lp <= rn.stop : lp >= rn.stop)) {
       autoLapor.stop[p.symbol] = true

@@ -2334,3 +2334,22 @@ Work Log:
 Stage Summary:
 - Semua mandat pemilik hidup: Telegram melapor menyala/injeksi/koin/TP/ambisius/stop; sarang menerima dorongan penuh dengan PAT baru; nyawa tak akan hilang lagi (2 rumah + self-heal di dev.sh keystone).
 - Pelajaran abadi: reset platform bisa terjadi kapan pun berulang — kebangkitan dari sarang kini PROSEDUR TERUJI 2x dalam satu malam.
+---
+Task ID: V303B-POWER-MAX-DOKTRIN
+Agent: MICAPROFITA (otak z.ai)
+Task: Pemilik bertanya: apakah prinsip JUAL AMBISIUS & JUAL POWER MAX AMBISIUS masih dipegang, dan kenapa TP kini kecil (med ~1,5% vs era 20-35%)? Telaah + kembangkan.
+
+Work Log:
+- TELAAH DATA (scripts/telea_tp.js, telea_null.js, iklim_vol.js): era TP besar (30 Sep-10 Okt) = 2 pick/hari pada koin paling gila (sigma24j 18-26%, TP max 34,7%/33%/29,4%); kini arena 50 koin, sigma median 4,4% → TP med 1,5-2% JUJUR utk koin tenang. Realvol BTC/ETH/PEPE/ZEC (Binance) stabil lintas era — penyebab utama = UNIVERS + rezim, bukan kerusakan. 13 baris atas daftar tanpa TP = pick rival (ACAK/AI_ANALIS/MOMENTUM/MEANREV) yang memang tak diberi rencana.
+- PRINSIP DIVERIFIKASI: JUAL AMBISIUS (q75 MC) tetap ada. JUAL POWER MAX sebelumnya HANYA LABEL pada level ambisius yang sama (telegram_jaga baris "JUAL POWER MAX: rn.highAmbisius") — kerancuan persis yang ditanyakan pemilik.
+- warisan.ts V303: (1) McResult +q90/q90Dn; (2) organ juruPowerMax — power max = q90 ATAU magnet VP di atas ambisius (ambil terjauh), HANYA lahir bila prakira nyata (volSpike>=1.2 ATAU momentum searah ATAU magnet di atas ambisius); gerbang ketahanan: p sentuh >15% → null jujur; (3) GERBANG KATALIS utk target: magnet jauh diterima walau p<0.38 bila volSpike>=2 + momentum searah + p>=0.20 (TP besar kembali di koin berbakat, tanpa fantasi); (4) sisipkanPowerMax() — heal jujur tanpa menggeser level terkunci.
+- BUG CERMIN SELL DIBUNUH: q75Dn/q90Dn lama = ku(maksTurun, 0.75/0.9) → level DANGKAL (75-90% lintasan malah melewatinya; contoh GTC SELL ambisius 1,61% < TP 4,4%). Kini ku(maksTurun, 0.25/0.10) = cermin sejati q75/q90 (sentuh 25%/10%).
+- UI arena-console.tsx: POWER MAX tampil di baris ringkas (amber), TanggaHarga, SalinRencana, McBar "sentuh power max"; RencanaLike +4 field.
+- telegram_jaga.mjs: laporan dipisah TP / JUAL AMBISIUS / JUAL POWER MAX; event baru "JUAL POWER MAX AMBISIUS" (auto_lapor +state powerMax).
+- HEAL HARI HIDUP (scripts/heal_rencana.cjs + tsconfig.heal.json → .heal-build): 49/50 pick hari ini disisipi power max dari MC reproduksi berbibit di lilin pra-waktuKunci — verifikasi reproduksi BUY 0 gagal (rel<0.2%); 32 ambisius SELL diselaraskan (penanda ambisiusSelarasV303b); ZEREBRO gagal lilin (jujur).
+- Build produksi + server lahir ulang via watchdog (RAM-guard sempat daur ulang; HUKUM STATIS sync jalan). /api/arena: 50 pick, 50 ambisius, 30 power max. Screenshot: download/arena_v303b_powermax.png + arena_v303b_kartu.png (SYN: E→T +5.8% P43 → AMBISIUS +9.5% sentuh 26% → POWER MAX +14.6% sentuh 12%).
+- Laporan resmi ke pemilik via Telegram (chat 8340502683) TERKIRIM.
+
+Stage Summary:
+- Doktrin jual-bertingkat pemilik kini organ sejati: TP (sasaran) → JUAL AMBISIUS (q75, sentuh→turun) → JUAL POWER MAX (q90/katalis, sentuh→terjun), semua ber-pra-registrasi berbibit + peluang sentuh terbuka.
+- TP kecil = kejujuran pasar tenang; gerbang katalis membuka TP besar saat koin benar-benar meledak; bug cermin SELL selesai; era 20-35% TP hanya mungkin di rezim sigma 20%+ DAN itu tercatat jujur dalam jawaban ke pemilik.

@@ -47,19 +47,23 @@ interface WarisanBuktiLike {
   posisiRentang: number
   volSpike: number
   pangkas?: string
-  mc: { lintasan: number; langkah: number; seedHex: string; pTarget: number | null; pStop: number | null; pAmbisius: number | null; pNaik: number | null; ket: string }
+  mc: { lintasan: number; langkah: number; seedHex: string; pTarget: number | null; pStop: number | null; pAmbisius: number | null; pPowerMax: number | null; pNaik: number | null; ket: string }
 }
 interface RencanaLike {
   entry: number
   stop: number | null
   target: number | null
   highAmbisius: number | null
+  powerMaxAmbisius?: number | null
   stopPct: number | null
   targetPct: number | null
   ambisiusPct: number | null
+  powerMaxPct?: number | null
   pTarget: number | null
   pStop: number | null
   pAmbisius: number | null
+  pPowerMax?: number | null
+  prakiraPowerMax?: string | null
   targetMediana: boolean
   netUntungPct: number | null
   sumberTarget: string
@@ -796,6 +800,17 @@ function LevelRingkas({ dir, rencana }: { dir: string; rencana: RencanaLike }) {
           )}
         </>
       )}
+      {/* V303-JUAL-POWER-MAX — atap pamungkas: hanya lahir bila ada prakira nyata naik-lagi */}
+      {rencana.powerMaxAmbisius != null && (
+        <>
+          <span className="text-zinc-600">·</span>
+          <span className="text-amber-300" data-uji="jual_power_max" title="Bila POWER MAX tercapai, harga butuh nafas panjang — terjun diperkirakan">POWER MAX</span>
+          <span className="font-semibold text-amber-300">{fmtPx(rencana.powerMaxAmbisius)}</span>
+          {rencana.powerMaxPct !== null && rencana.powerMaxPct !== undefined && (
+            <span className="text-amber-400/80">(+{rencana.powerMaxPct.toFixed(1)}%{rencana.pPowerMax != null ? ` · sentuh ${Math.round(rencana.pPowerMax * 100)}%` : ''})</span>
+          )}
+        </>
+      )}
       {rencana.netUntungPct !== null && rencana.netUntungPct !== undefined && (
         <span className={rencana.netUntungPct >= 0 ? 'text-emerald-300/90' : 'text-rose-300/90'}>· NET {rencana.netUntungPct >= 0 ? '+' : ''}{rencana.netUntungPct.toFixed(2)}%</span>
       )}
@@ -1128,6 +1143,7 @@ function CincinKeyakinan({ conf, dir }: { conf: number; dir: 'BUY' | 'SELL' }) {
 
 function TanggaHarga({ dir, rencana }: { dir: 'BUY' | 'SELL'; rencana: RencanaLike }) {
   const baris = [
+    { label: 'Power max', harga: rencana.powerMaxAmbisius ?? null, pct: rencana.powerMaxPct ?? null, cls: 'text-amber-300 border-amber-500/30', pctCls: 'text-amber-300' },
     { label: 'Jual ambisius', harga: rencana.highAmbisius, pct: rencana.ambisiusPct, cls: 'text-violet-300 border-violet-500/30', pctCls: 'text-violet-300' },
     { label: 'Sasaran', harga: rencana.target, pct: rencana.targetPct, cls: 'text-emerald-300 border-emerald-500/30', pctCls: 'text-emerald-300' },
     { label: 'Entry (kunci)', harga: rencana.entry, pct: 0, cls: 'text-cyan-300 border-cyan-500/30', pctCls: 'text-cyan-300' },
@@ -1193,7 +1209,7 @@ function SalinRencanaBtn({ symbol, dir, conf, rencana, warisan, pra }: { symbol:
     const teks = [
       `MICAPROFITA ${dir} ${symbol.replace('USDT', '')} @ ${f(rencana.entry)} — keyakinan ${Math.round(conf)}%`,
       `Stop ${f(rencana.stop)} (${rencana.stopPct ?? '—'}%) · Sasaran ${f(rencana.target)} (${rencana.targetPct ?? '—'}%, pTarget MC ${rencana.pTarget !== null ? Math.round(rencana.pTarget * 100) + '%' : '—'})`,
-      `Jual ambisius ${f(rencana.highAmbisius)} (${rencana.ambisiusPct ?? '—'}%) · NET sasaran ${rencana.netUntungPct ?? '—'}% (fee 0,2%×2)`,
+      `Jual ambisius ${f(rencana.highAmbisius)} (${rencana.ambisiusPct ?? '—'}%)${rencana.powerMaxAmbisius != null ? ` · Power max ${f(rencana.powerMaxAmbisius)} (${rencana.powerMaxPct ?? '—'}%) — tercapai = butuh nafas panjang, terjun diperkirakan` : ''} · NET sasaran ${rencana.netUntungPct ?? '—'}% (fee 0,2%×2)`,
       warisan ? `GARCH σ24j ±${warisan.sigma24jPct ?? '—'}% · beta BTC ${warisan.beta ?? '—'} (R² ${warisan.r2Beta ?? '—'}) · POC ${warisan.poc ?? '—'} · ${warisan.divRSI}` : '',
       warisan ? `MC ${warisan.mc.lintasan} lintasan × ${warisan.mc.langkah} langkah · seed ${warisan.mc.seedHex} · pNaik ${warisan.mc.pNaik ?? '—'} · pStop ${warisan.mc.pStop ?? '—'}` : '',
       pra ? `Dikunci ${pra.waktuKunci} · horizon ${pra.horizon} · fee ${pra.feePct}%/sisi wajib NET` : '',
@@ -1247,6 +1263,7 @@ function WarisanPanel({ dir, conf, symbol, rencana, warisan, daya, pra, sadardir
             <McBar label="tembus sasaran" p={rencana.pTarget} />
             <McBar label="kena stop" p={rencana.pStop} />
             <McBar label="sentuh ambisius" p={rencana.pAmbisius} />
+            {rencana.powerMaxAmbisius != null && <McBar label="sentuh power max" p={rencana.pPowerMax ?? null} />}
             {compact && <McBar label="ditutup naik" p={warisan.mc.pNaik} />}
           </div>
           {!rencana.targetMediana && !warisan.kejutPump && (
