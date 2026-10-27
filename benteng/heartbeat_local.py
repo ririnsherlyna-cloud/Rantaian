@@ -1,20 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-HEARTBEAT MICROPROFITA GEN-2 — detak hidup + penjaga TP/Jual Ambisius/Power Max.
-Sumber data: repo HIDUP ririnsherlyna-cloud/Micaprofita- (raw), fallback cache lokal.
+HEARTBEAT MICROPROFITA GEN-6 — detak hidup + JEMBATAN OTAK Z.AI + penjaga level.
+Dua otak dilaporkan BERBEDA dan JUJUR (pemilik pernah bingung kenapa koin beda):
+  A. OTAK Z.AI  = mesin arena di web sandbox ini (localhost:3000/api/arena,
+     todayPicks kompetitor MICAPROFITA) — SAMA PERSIS dengan yang tampil di web.
+  B. OTAK SERVER = penjaga repo ririnsherlyna-cloud/Micaprofita- (sasaran-terkini,
+     genome, denyut) — punya level TP / JUAL AMBISIUS / POWER MAX / STOP.
 Setiap detak (tiap 30 menit):
-  1. Tarik sasaran-terkini.json + genome-server.json + denyut-server.jsonl (remote live)
-  2. Tarik harga kini tiap sasaran dari Binance (data-api.binance.vision, gratis)
-  3. Deteksi SENTUHAN level: TP (target), JUAL AMBISIUS, POWER MAX, STOP
-     -> perubahan sejak detak lalu = notifikasi khusus
-  4. Kirim laporan jujur ke Telegram (harga mikro tampil utuh, bukan 0)
+  1. Tarik sasaran otak z.ai dari web (fallback cache) -> section utama pesan
+  2. Tanam snapshot otak z.ai ke Rantaian/benteng/sasaran-zai.json (bila berubah)
+     agar lapis abadi GitHub ikut melaporkan otak yang sama saat sandbox mati
+  3. Tarik sasaran-terkini.json + genome-server.json + denyut-server.jsonl (server)
+  4. Harga kini semua simbol dari Binance (data-api.binance.vision, gratis)
+  5. Deteksi SENTUHAN level otak server: TP, JUAL AMBISIUS, POWER MAX, STOP
+  6. Kirim laporan jujur ke Telegram (harga mikro tampil utuh, bukan 0)
 Hukum benteng: gap > 35 menit = MATI -> pengakuan wajib + jurnal kematian.
 """
 import json
 import os
 import time
 import html
+import base64
 import urllib.request
 import urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -31,6 +38,13 @@ RAW = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Micaprofita-/main"
 BINANCE = "https://data-api.binance.vision/api/v3/ticker/price"
 WIB = timezone(timedelta(hours=7))
 GAP_MATI_MENIT = 35
+# ---- jembatan otak z.ai ----
+ZAI_URL = "http://localhost:3000/api/arena"
+F_ZAI_CACHE = os.path.join(DATA, "zai_picks_last.json")
+F_ZAI_BRIDGE = os.path.join(DATA, "zai_bridge_state.json")
+F_PAT_RANTAIAN = os.path.join(BASE, ".token-rantaian")
+REPO_RANTAIAN = "ririnsherlyna-cloud/Rantaian"
+ZAI_JUMLAH = 10  # 10 teratas by keyakinan (dari ~50 pilihan lahir)
 LABEL_LEVEL = {"TP": "TP SASARAN", "JUAL AMBISIUS": "JUAL AMBISIUS",
                "POWER MAX AMBISIUS": "POWER MAX AMBISIUS", "STOP": "STOP (batal)"}
 
@@ -86,6 +100,72 @@ def jsonl_remote_terakhir(jalur, nama_cache):
         return d, True
     except Exception:
         return muat_json_lokal(cache), False
+
+
+def otak_zai():
+    """Sasaran otak z.ai dari web arena (SUMBER SAMA dengan yang dilihat pemilik
+    di web). Web tidur -> cache detak lalu (diberi label jujur)."""
+    try:
+        req = urllib.request.Request(ZAI_URL, headers={"User-Agent": "microprofita-hb"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            d = json.loads(r.read().decode("utf-8", "replace"))
+        picks = []
+        for p in d.get("todayPicks") or []:
+            if p.get("competitor") != "MICAPROFITA":
+                continue
+            sim = p.get("symbol")
+            if not sim or not p.get("entryClose"):
+                continue
+            picks.append({"simbol": str(sim).upper(), "arah": str(p.get("direction") or "?").upper(),
+                          "keyakinan": p.get("confidence"), "entry": float(p.get("entryClose"))})
+        picks.sort(key=lambda x: (x.get("keyakinan") or 0), reverse=True)
+        slot = d.get("slotHariIni") or {}
+        snap = {"waktu": datetime.now(timezone.utc).isoformat(),
+                "sumber": "otak-zai-web(arena)", "regime": d.get("regime"),
+                "dianalisa": slot.get("dianalisa"), "lahir": slot.get("lahir"),
+                "total": len(picks), "picks": picks[:ZAI_JUMLAH]}
+        simpan_json(F_ZAI_CACHE, snap)
+        return snap, True
+    except Exception:
+        snap = muat_json_lokal(F_ZAI_CACHE)
+        return snap, False
+
+
+def taman_zai_ke_rantaian(snap):
+    """Tanam snapshot otak z.ai ke repo Rantaian (benteng/sasaran-zai.json) agar
+    lapis abadi (GitHub Actions) melaporkan OTAK YANG SAMA saat sandbox mati.
+    Hanya commit bila isi berubah. Gagal PAT/jaringan tidak boleh menggagalkan detak."""
+    if not snap:
+        return "tanpa snapshot"
+    pat = baca(F_PAT_RANTAIAN)
+    if not pat:
+        return "PAT rantaian tidak ada -> jembatan dilewati (laporan lokal tetap jalan)"
+    payload = json.dumps(snap, ensure_ascii=False)
+    lama = muat_json_lokal(F_ZAI_BRIDGE) or {}
+    if lama.get("isi") == payload:
+        return "isi sama -> tanpa commit"
+    api = f"https://api.github.com/repos/{REPO_RANTAIAN}/contents/benteng/sasaran-zai.json"
+    head = {"Authorization": f"Bearer {pat.strip()}", "User-Agent": "microprofita-hb",
+            "Accept": "application/vnd.github+json"}
+    sha = None
+    try:
+        with urllib.request.urlopen(urllib.request.Request(api, headers=head), timeout=15) as r:
+            sha = json.loads(r.read().decode()).get("sha")
+    except Exception:
+        sha = None  # 404 = file belum ada -> buat baru
+    body = {"message": "jembatan: sasaran otak z.ai dari heartbeat [skip ci]",
+            "content": base64.b64encode(payload.encode("utf-8")).decode("ascii"),
+            "committer": {"name": "microprofita-hb", "email": "hb@microprofita.local"}}
+    if sha:
+        body["sha"] = sha
+    try:
+        req = urllib.request.Request(api, data=json.dumps(body).encode("utf-8"), headers={**head, "Content-Type": "application/json"}, method="PUT")
+        with urllib.request.urlopen(req, timeout=25) as r:
+            json.loads(r.read().decode())
+        simpan_json(F_ZAI_BRIDGE, {"isi": payload, "waktu": time.time()})
+        return "commit OK"
+    except Exception as e:
+        return f"gagal: {repr(e)[:120]}"
 
 
 def umur_jam(iso):
@@ -153,19 +233,62 @@ def _basis_simbol(s):
     return s if s.isalnum() else None
 
 
-def harga_binance(simbol_list):
-    """Kembalikan {basis: harga} dari Binance data-vision (publik, tanpa kunci).
-    Resilien: normalisasi simbol + fallback per-simbol — satu simbol rusak/delisted
-    TIDAK boleh membutakan seluruh penjaga TP (pelajaran siklus 1235/SYNUSDT)."""
-    if not simbol_list:
+def _tickers_bybit(bases):
+    """Ticker spot Bybit (publik, tanpa kunci) -> {basis: harga}. Bursa cadangan."""
+    try:
+        req = urllib.request.Request("https://api.bybit.com/v5/market/tickers?category=spot",
+                                     headers={"User-Agent": "microprofita-hb"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            lst = ((json.loads(r.read().decode()) or {}).get("result") or {}).get("list") or []
+        out = {}
+        for x in lst:
+            s = str(x.get("symbol") or "")
+            if s.endswith("USDT") and s[:-4] in bases:
+                try:
+                    out[s[:-4]] = float(x.get("lastPrice"))
+                except (TypeError, ValueError):
+                    continue
+        return out
+    except Exception:
         return {}
+
+
+def _tickers_okx(bases):
+    """Ticker spot OKX (publik, tanpa kunci) -> {basis: harga}. Bursa cadangan."""
+    try:
+        req = urllib.request.Request("https://www.okx.com/api/v5/market/tickers?instType=SPOT",
+                                     headers={"User-Agent": "microprofita-hb"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            lst = (json.loads(r.read().decode()) or {}).get("data") or []
+        out = {}
+        for x in lst:
+            iid = str(x.get("instId") or "")
+            if iid.endswith("-USDT") and iid[:-5] in bases:
+                try:
+                    out[iid[:-5]] = float(x.get("last"))
+                except (TypeError, ValueError):
+                    continue
+        return out
+    except Exception:
+        return {}
+
+
+def harga_binance(simbol_list):
+    """Kembalikan ({basis: harga}, sumber). Binance data-vision (publik, tanpa kunci).
+    Resilien berlapis: normalisasi simbol + fallback per-simbol + bursa cadangan
+    Bybit/OKX — satu simbol rusak TIDAK boleh membutakan penjaga TP (pelajaran
+    siklus 1235/SYNUSDT), dan Binance kadang memblokir IP sandbox dengan 418
+    (pelajaran 27 Okt) -> bursa cadangan menyelamatkan laporan."""
+    if not simbol_list:
+        return {}, "binance"
     bases = sorted({b for b in (_basis_simbol(s) for s in simbol_list) if b})
     if not bases:
-        return {}
+        return {}, "binance"
     pairs = [f"{b}USDT" for b in bases]
     q = urllib.parse.quote(json.dumps(pairs, separators=(",", ":")))
     err_terakhir = None
-    for host in (BINANCE, "https://api.binance.com/api/v3/ticker/price"):
+    for host in (BINANCE, "https://api.binance.com/api/v3/ticker/price",
+                 "https://api-gcp.binance.com/api/v3/ticker/price"):
         try:
             req = urllib.request.Request(f"{host}?symbols={q}", headers={"User-Agent": "microprofita-hb"})
             with urllib.request.urlopen(req, timeout=20) as r:
@@ -173,12 +296,12 @@ def harga_binance(simbol_list):
             if isinstance(arr, dict):
                 err_terakhir = f"body-dict: {str(arr)[:120]}"
                 continue
-            return {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}
+            return {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}, "binance"
         except Exception as e:
             err_terakhir = repr(e)
-    # fallback per-simbol
+    # canari per-simbol: 3 pertama menentukan — bila ada yang berhasil, Binance hidup
     out = {}
-    for b in bases:
+    for b in bases[:3]:
         try:
             req = urllib.request.Request(f"{BINANCE}/api/v3/ticker/price?symbol={b}USDT",
                                          headers={"User-Agent": "microprofita-hb"})
@@ -187,10 +310,23 @@ def harga_binance(simbol_list):
         except Exception:
             continue
     if out:
+        for b in bases[3:]:
+            try:
+                req = urllib.request.Request(f"{BINANCE}/api/v3/ticker/price?symbol={b}USDT",
+                                             headers={"User-Agent": "microprofita-hb"})
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    out[b] = float(json.loads(r.read().decode())["price"])
+            except Exception:
+                continue
         print(f"HARGA_FALLBACK: {len(out)}/{len(bases)} simbol (batch gagal: {err_terakhir})")
-        return out
+        return out, "binance"
+    # ---- bursa cadangan: Binance memblokir IP (418) / mati jaringan ----
+    gab = {**_tickers_okx(bases), **_tickers_bybit(bases)}
+    if gab:
+        print(f"HARGA_CADANGAN: {len(gab)}/{len(bases)} dari Bybit/OKX (Binance: {err_terakhir})")
+        return gab, "bybit+okx"
     print("HARGA_GAGAL:", err_terakhir)
-    return {}
+    return {}, "gagal"
 
 
 # ---------------- pemantau TP ----------------
@@ -281,6 +417,10 @@ def main():
             print("jurnal gagal:", repr(e))
 
     # ---- data hidup ----
+    # (A) OTAK Z.AI — web arena, sumber sama dengan yang dilihat pemilik di web
+    zai_snap, zai_hidup = otak_zai()
+    zai_picks = (zai_snap or {}).get("picks") or []
+    # (B) OTAK SERVER — penjaga repo Micaprofita-
     sasaran, sasaran_hidup = muat_json_remote("laporan/sasaran-terkini.json", "remote_sasaran.json")
     genome, genome_hidup = muat_json_remote("otak/genome-server.json", "remote_genome.json")
     denyut, denyut_hidup = jsonl_remote_terakhir("laporan/denyut-server.jsonl", "remote_denyut.json")
@@ -303,7 +443,8 @@ def main():
     # ---- penjaga TP ----
     daftar = (sasaran or {}).get("sasaranHariIni") or []
     simbol_list = [e.get("simbol") for e in daftar if e.get("simbol")]
-    harga_map = harga_binance(simbol_list)
+    simbol_list += [p.get("simbol") for p in zai_picks if p.get("simbol")]
+    harga_map, sumber_harga = harga_binance(simbol_list)  # satu panggilan gabungan (hemat, tetap fallback per-simbol)
     kejadian, n_dipantau = [], 0
     if daftar and harga_map:
         kejadian, n_dipantau = pantau_level(daftar, harga_map)
@@ -323,6 +464,31 @@ def main():
         L.append(f"Status: <b>HIDUP</b> — {gap_menit:.0f} menit sejak detak terakhir")
 
     L.append("")
+    if harga_map and sumber_harga == "bybit+okx":
+        L.append("💱 Harga dari <b>Bybit/OKX</b> (Binance sedang memblokir IP sandbox) — beda tipis antar bursa wajar.")
+    # ---- section OTAK Z.AI (persis seperti web) ----
+    if zai_picks:
+        seg_z = "live dari web" if zai_hidup else "CACHE (web sedang tak terjangkau)"
+        z_reg = (zai_snap or {}).get("regime") or "?"
+        z_an = (zai_snap or {}).get("dianalisa") or "?"
+        z_lh = (zai_snap or {}).get("lahir") or "?"
+        z_tot = (zai_snap or {}).get("total") or len(zai_picks)
+        L.append(f"🧠 <b>SASARAN OTAK Z.AI</b> — sumber SAMA dengan web ({seg_z})")
+        L.append(f"Regim pasarnya: <b>{html.escape(str(z_reg))}</b> · {z_an} koin dianalisa · "
+                 f"{z_lh} pilihan lahir hari ini · menampilkan {len(zai_picks)} teratas dari {z_tot} (urut keyakinan)")
+        for i, p in enumerate(zai_picks, 1):
+            basis = _basis_simbol(p["simbol"]) or p["simbol"]
+            h = harga_map.get(basis)
+            ent = p.get("entry")
+            jarak = f"{(h / ent - 1) * 100:+.2f}%" if (h and ent) else "-"
+            L.append(f"{i}. <b>{html.escape(basis)}</b> {html.escape(str(p.get('arah')))} "
+                     f"{p.get('keyakinan', '-')}% · entry {fmt_harga(ent)} · kini {fmt_harga(h)} ({jarak})")
+        L.append("<i>Otak z.ai = mesin arena di web ini (yang pemilik lihat di browser). "
+                 "Sasaran otak SERVER yang berbeda ada di bawah — dua otak, saya laporkan keduanya.</i>")
+        L.append("")
+    else:
+        L.append("🧠 Otak z.ai (web): <b>tak terjangkau detak ini dan tak ada cache</b> — saya akui jujur.")
+        L.append("")
     if kejadian:
         L.append(f"🚨 <b>PANTAUAN SASARAN — {len(kejadian)} kejadian baru:</b>")
         for sim, arah, level_nama, level_nilai, harga, entry, pertama in kejadian:
@@ -345,7 +511,7 @@ def main():
             except (TypeError, ValueError):
                 akur, net_k = None, None
         segar = "live" if sasaran_hidup else "cache"
-        L.append(f"📡 <b>Otak server</b> ({segar}): denyut siklus {sik}"
+        L.append(f"📡 <b>Otak SERVER</b> (penjaga repo Micaprofita-, {segar}): denyut siklus {sik}"
                  + (f" · {umur_s:.0f} jam lalu" if umur_s is not None else ""))
         L.append(f"🎯 Rezim BTC: <b>{html.escape(str(rb.get('rezim', '?')))}</b> "
                  f"@ {fmt_harga(rb.get('harga'))} · ATR {rb.get('atrPct', '-')}%")
@@ -406,8 +572,12 @@ def main():
         except Exception:
             pass
 
+    # ---- jembatan: tanam snapshot otak z.ai ke Rantaian utk lapis abadi ----
+    status_bridge = taman_zai_ke_rantaian(zai_snap)
+
     print("KIRIM:", f"OK message_id={hasil['message_id']}" if hasil["ok"] else f"GAGAL {hasil['err']}")
     print("GAP_MENIT:", f"{gap_menit:.1f}" if gap_menit is not None else "pertama")
+    print("ZAI_HIDUP:", zai_hidup, "| ZAI_PICKS:", len(zai_picks), "| JEMBATAN:", status_bridge)
     print("SASARAN_DIPANTAU:", n_dipantau, "| HARGA_TERSEDIA:", len(harga_map))
     print("KEJADIAN:", len(kejadian))
     print("SASARAN_HIDUP:", sasaran_hidup, "| GENOME_HIDUP:", genome_hidup, "| DENYUT_HIDUP:", denyut_hidup)
