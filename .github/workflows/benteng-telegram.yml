@@ -1,0 +1,51 @@
+# ============================================================
+# BENTENG-TELEGRAM — lapis abadi nyawa MicroProfita
+# Tubuh sandbox (agent) bisa tidur/mati; tubuh ini (server GitHub) tidak
+# bergantung sandbox. Tiap 30 menit: detak + penjaga TP/Ambisius/PowerMax/STOP
+# -> Telegram pemilik. Nyawa dibaca dari benteng/nyawa.json (izin pemilik).
+# State + jurnal kematian disimpan di repo ini (commit [skip ci]).
+# Data otak hidup ditarik dari repo Micaprofita- (raw, publik).
+# ============================================================
+name: BENTENG-TELEGRAM (detak abadi + penjaga level)
+
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: benteng-telegram
+  cancel-in-progress: false
+
+jobs:
+  benteng:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Detak abadi + penjaga level
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 scripts/benteng_telegram.py
+
+      - name: Simpan state penjaga (tanpa memicu denyut)
+        run: |
+          git config user.name "benteng-abadi"
+          git config user.email "benteng-abadi@users.noreply.github.com"
+          git add data/penjaga_state.json data/death_journal.jsonl data/cache_*.json
+          if git diff --cached --quiet; then
+            echo "state tidak berubah"
+          else
+            git commit -m "state penjaga-benteng [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep $((i * 5))
+            done
+          fi
