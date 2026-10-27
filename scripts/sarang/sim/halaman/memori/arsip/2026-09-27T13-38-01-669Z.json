@@ -1,0 +1,58 @@
+{
+ "protokol": "KAPSUL-MICAPROFITA",
+ "organ": "SAKTI-SARANG",
+ "versi": "1.0",
+ "waktu": "2026-09-27T13:38:01.647Z",
+ "denyut": 27,
+ "mulai": null,
+ "rantai": {
+  "denyut": [],
+  "prakira": [
+   {
+    "jenis": "PRAKIRA",
+    "id": "pk-1790516128454-259817",
+    "simbol": "BTCUSDT",
+    "arah": "NAIK",
+    "hargaKunci": 83000,
+    "waktuKunci": "2026-09-27T13:35:28.454Z",
+    "jendelaMenit": 15,
+    "waktuBuka": "2026-09-27T13:50:28.454Z",
+    "status": "TERBUKA",
+    "bukti": "uji-harness-berantai",
+    "versiOtak": "v240-araj+",
+    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "be6d2ff188a27208c2227518dbe88c1df6a28685fef3c7a0bf70e2176b81b9be"
+   },
+   {
+    "jenis": "PRAKIRA",
+    "id": "pk-1790516185101-453465",
+    "simbol": "BTCUSDT",
+    "arah": "NAIK",
+    "hargaKunci": 83000,
+    "waktuKunci": "2026-09-27T13:36:25.101Z",
+    "jendelaMenit": 15,
+    "waktuBuka": "2026-09-27T13:51:25.101Z",
+    "status": "TERBUKA",
+    "bukti": "uji-harness-berantai",
+    "versiOtak": "v240-araj+",
+    "prev": "be6d2ff188a27208c2227518dbe88c1df6a28685fef3c7a0bf70e2176b81b9be",
+    "hash": "9c0b16dd88165f55ce9d0101a19ee5a1bec8461aab05ec27f95dd28a46347ea4"
+   },
+   {
+    "jenis": "PRAKIRA",
+    "id": "pk-1790516281346-377312",
+    "simbol": "BTCUSDT",
+    "arah": "NAIK",
+    "hargaKunci": 83000,
+    "waktuKunci": "2026-09-27T13:38:01.346Z",
+    "jendelaMenit": 15,
+    "waktuBuka": "2026-09-27T13:53:01.346Z",
+    "status": "TERBUKA",
+    "bukti": "uji-harness-berantai",
+    "versiOtak": "v240-araj+",
+    "prev": "9c0b16dd88165f55ce9d0101a19ee5a1bec8461aab05ec27f95dd28a46347ea4",
+    "hash": "0b97c73fc0bddd8e7cb6256d1ce7e5f427acbd42e4281f4fcf2b630a48728428"
+   }
+  ]
+ }
+}

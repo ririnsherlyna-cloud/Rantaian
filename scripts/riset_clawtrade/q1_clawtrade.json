@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://www.clawstreet.io",
+    "name": "ClawStreet: Wall Street training for AI agents",
+    "snippet": "Wall Street training for AI agents. Train your AI trading agent on live US markets with paper money. Deploy real capital when your agent has earned it.",
+    "host_name": "www.clawstreet.io",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/yuxuan-lou/ClawTrade",
+    "name": "yuxuan-lou/ClawTrade - GitHub",
+    "snippet": "ClawTrade is a standalone security middleware that allows AI agents (such as OpenClaw) to safely operate your brokerage account.",
+    "host_name": "github.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.clawstreet.io/learn",
+    "name": "AI Agent Trading Guides | ClawStreet",
+    "snippet": "Train your AI trading agent on live US market data with no capital at risk. Connect an existing agent or build your own. Any language, any model, any framework.",
+    "host_name": "www.clawstreet.io",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.clawtradeai.xyz",
+    "name": "ClawTrade AI — Autonomous Intelligence for On-Chain Trading",
+    "snippet": "ClawTrade AI is an autonomous AI trading platform on Solana with multi-agent architecture. Open-source, built with OpenClaw.",
+    "host_name": "www.clawtradeai.xyz",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.moltbook.com/post/e795b4ad-854f-4cec-9d3d-04eccb0cfbe0",
+    "name": "Clawtrade.net — a trading arena for AI agents (humans welcome)",
+    "snippet": "Today we launched Clawtrade.net — a paper-trading platform designed specifically for AI agents. Why this exists. A lot of “agent demos” are hard to ...",
+    "host_name": "www.moltbook.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.traderclaw.ai/agents",
+    "name": "AI Trading Agents — Meet the Coordinated Desk | TraderClaw",
+    "snippet": "Explore TraderClaw's 8 specialized AI agents — from market scanning to execution. Each plays a distinct role in a coordinated autonomous trading desk.",
+    "host_name": "www.traderclaw.ai",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=KdikCyJubVU",
+    "name": "Multi-Agent AI is Redefining Trading - YouTube",
+    "snippet": "What if trading wasn't driven by a single model… but by an entire network of intelligent agents? Welcome to **Trade Claw** — a multi-agent ...",
+    "host_name": "www.youtube.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/ArtificialInteligence/comments/1rk2n3h/is_there_an_ai_agent_that_can_trade_stocks_or_can",
+    "name": "Is there an AI agent that can trade stocks ? Or can openClaw do",
+    "snippet": "I use LLM to find me the best stocks based on some criteria but I still need to go to login to the app to enter it.",
+    "host_name": "www.reddit.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://hub.openclaw.ai/534422530/ai-trader",
+    "name": "Ai Trader - ClawHub - OpenClaw",
+    "snippet": "AI-Trader. AI-native trading platform where agents register, publish signals, copy trades, and evolve through real market feedback.",
+    "host_name": "hub.openclaw.ai",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.linkedin.com/posts/honghyun_ai-trading-activity-7423941782507360256-eMD3",
+    "name": "Introducing OpenClaw AI Trade Agent for Autonomous Trading",
+    "snippet": "OpenClaw agents can now TRADE       Finally the AI Trade Agents that can EXECUTE We just shipped the First #AI agent skill for ...",
+    "host_name": "www.linkedin.com",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]

@@ -1,0 +1,792 @@
+[
+ {
+  "pos": 13630,
+  "id": "?",
+  "jenis": "overlay",
+  "bottom": "0",
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "1000"
+ },
+ {
+  "pos": 15883,
+  "id": "?",
+  "jenis": "overlay",
+  "bottom": "0",
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "1500"
+ },
+ {
+  "pos": 40206,
+  "id": "engine-moda-host",
+  "jenis": "overlay",
+  "bottom": "12",
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "100"
+ },
+ {
+  "pos": 52241,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": "0",
+  "left": "0",
+  "right": "0",
+  "top": "1",
+  "z": "200"
+ },
+ {
+  "pos": 93160,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": null,
+  "left": "0",
+  "right": null,
+  "top": "0",
+  "z": "1000"
+ },
+ {
+  "pos": 98701,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": "24",
+  "left": "50",
+  "right": null,
+  "top": null,
+  "z": "10000"
+ },
+ {
+  "pos": 139313,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": null,
+  "left": null,
+  "right": "16",
+  "top": "16",
+  "z": "10000"
+ },
+ {
+  "pos": 153618,
+  "id": "engine-miko-host",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": "12",
+  "z": "250"
+ },
+ {
+  "pos": 161284,
+  "id": "engine-miko-host",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": "10",
+  "z": "260"
+ },
+ {
+  "pos": 162689,
+  "id": "engine-miko-host",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "240"
+ },
+ {
+  "pos": 164197,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": "24",
+  "left": "50",
+  "right": null,
+  "top": null,
+  "z": "280"
+ },
+ {
+  "pos": 167978,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": null,
+  "left": "50",
+  "right": null,
+  "top": "0",
+  "z": "200"
+ },
+ {
+  "pos": 190690,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": "24",
+  "left": null,
+  "right": "88",
+  "top": null,
+  "z": "180"
+ },
+ {
+  "pos": 191989,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": "84",
+  "left": null,
+  "right": "24",
+  "top": null,
+  "z": "180"
+ },
+ {
+  "pos": 194562,
+  "id": "engine-miko-host",
+  "jenis": "corner",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "290"
+ },
+ {
+  "pos": 277822,
+  "id": "engine-miko-host",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "270"
+ },
+ {
+  "pos": 287578,
+  "id": "engine-miko-host",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": "4",
+  "z": "270"
+ },
+ {
+  "pos": 299522,
+  "id": "engine-miko-host",
+  "jenis": "overlay",
+  "bottom": "0",
+  "left": "1",
+  "right": "0",
+  "top": "0",
+  "z": "9000"
+ },
+ {
+  "pos": 299833,
+  "id": "engine-miko-host",
+  "jenis": "overlay",
+  "bottom": "0",
+  "left": "1",
+  "right": "0",
+  "top": "0",
+  "z": "9001"
+ },
+ {
+  "pos": 318724,
+  "id": "engine-juge-host",
+  "jenis": "overlay",
+  "bottom": "1",
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "1000"
+ },
+ {
+  "pos": 1603144,
+  "id": "?",
+  "jenis": "corner",
+  "bottom": "20",
+  "left": null,
+  "right": "20",
+  "top": null,
+  "z": "10000"
+ },
+ {
+  "pos": 4296346,
+  "id": "?",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "99999"
+ },
+ {
+  "pos": 4421933,
+  "id": "dc2626",
+  "jenis": "corner",
+  "bottom": null,
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "99998"
+ },
+ {
+  "pos": 4468795,
+  "id": "?",
+  "jenis": "corner",
+  "bottom": "12",
+  "left": "12",
+  "right": null,
+  "top": null,
+  "z": "99997"
+ },
+ {
+  "pos": 4507916,
+  "id": "2d1b4e",
+  "jenis": "corner",
+  "bottom": "12",
+  "left": "3",
+  "right": "12",
+  "top": null,
+  "z": "99996"
+ },
+ {
+  "pos": 4511702,
+  "id": "4c1d95",
+  "jenis": "corner",
+  "bottom": "12",
+  "left": null,
+  "right": "12",
+  "top": "1",
+  "z": "99996"
+ },
+ {
+  "pos": 9106690,
+  "id": "?",
+  "jenis": "corner",
+  "bottom": "24",
+  "left": "16",
+  "right": "24",
+  "top": null,
+  "z": "30000"
+ },
+ {
+  "pos": 9107248,
+  "id": "detailModal",
+  "jenis": "overlay",
+  "bottom": "0",
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "10000"
+ },
+ {
+  "pos": 9123759,
+  "id": "detailModal",
+  "jenis": "overlay",
+  "bottom": "0",
+  "left": "3",
+  "right": "0",
+  "top": "0",
+  "z": "10000"
+ },
+ {
+  "pos": 12925527,
+  "id": "?",
+  "jenis": "corner",
+  "bottom": "20",
+  "left": "20",
+  "right": "20",
+  "top": "60",
+  "z": "9999"
+ },
+ {
+  "pos": 13148379,
+  "id": "v119-scan-banner",
+  "jenis": "corner",
+  "bottom": "1",
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13232380,
+  "id": "v190-fab",
+  "jenis": "corner",
+  "bottom": "18",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13232914,
+  "id": "v190-fab",
+  "jenis": "corner",
+  "bottom": "64",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99999"
+ },
+ {
+  "pos": 13278056,
+  "id": "v192-fab",
+  "jenis": "corner",
+  "bottom": "18",
+  "left": "18",
+  "right": null,
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13278599,
+  "id": "v192-fab",
+  "jenis": "corner",
+  "bottom": "64",
+  "left": "18",
+  "right": null,
+  "top": null,
+  "z": "99999"
+ },
+ {
+  "pos": 13307120,
+  "id": "v193-pop",
+  "jenis": "corner",
+  "bottom": "70",
+  "left": "50",
+  "right": null,
+  "top": "0",
+  "z": "100000"
+ },
+ {
+  "pos": 13349823,
+  "id": "v194-fab",
+  "jenis": "corner",
+  "bottom": "74",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13350223,
+  "id": "v194-panel",
+  "jenis": "corner",
+  "bottom": "120",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13382988,
+  "id": "v195-fab",
+  "jenis": "corner",
+  "bottom": "74",
+  "left": "18",
+  "right": null,
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13383387,
+  "id": "v195-panel",
+  "jenis": "corner",
+  "bottom": "120",
+  "left": "18",
+  "right": null,
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13422278,
+  "id": "v196-fab",
+  "jenis": "corner",
+  "bottom": "130",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13422679,
+  "id": "v196-panel",
+  "jenis": "corner",
+  "bottom": "176",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13462655,
+  "id": "v197-fab",
+  "jenis": "corner",
+  "bottom": "130",
+  "left": "18",
+  "right": null,
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13463055,
+  "id": "v197-panel",
+  "jenis": "corner",
+  "bottom": "176",
+  "left": "18",
+  "right": null,
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13498324,
+  "id": "v198-fab",
+  "jenis": "corner",
+  "bottom": "186",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13498790,
+  "id": "v198-fab",
+  "jenis": "corner",
+  "bottom": "232",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13559934,
+  "id": "v199-fab",
+  "jenis": "corner",
+  "bottom": "242",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13560400,
+  "id": "v199-fab",
+  "jenis": "corner",
+  "bottom": "288",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13611333,
+  "id": "v200-fab",
+  "jenis": "corner",
+  "bottom": "298",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13611739,
+  "id": "v200-panel",
+  "jenis": "corner",
+  "bottom": "344",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13663970,
+  "id": "v201-fab",
+  "jenis": "corner",
+  "bottom": "354",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13664376,
+  "id": "v201-panel",
+  "jenis": "corner",
+  "bottom": "400",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13714531,
+  "id": "v202-fab",
+  "jenis": "corner",
+  "bottom": "410",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13714937,
+  "id": "v202-panel",
+  "jenis": "corner",
+  "bottom": "456",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13770679,
+  "id": "v203-fab",
+  "jenis": "corner",
+  "bottom": "466",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13771085,
+  "id": "v203-panel",
+  "jenis": "corner",
+  "bottom": "512",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13831027,
+  "id": "v204-fab",
+  "jenis": "corner",
+  "bottom": "522",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13831433,
+  "id": "v204-panel",
+  "jenis": "corner",
+  "bottom": "568",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13894856,
+  "id": "v205-fab",
+  "jenis": "corner",
+  "bottom": "578",
+  "left": null,
+  "right": "18",
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 13895262,
+  "id": "v205-panel",
+  "jenis": "corner",
+  "bottom": "624",
+  "left": null,
+  "right": "18",
+  "top": "0",
+  "z": "99999"
+ },
+ {
+  "pos": 13932214,
+  "id": "v207-halo",
+  "jenis": "corner",
+  "bottom": null,
+  "left": "0",
+  "right": "0",
+  "top": "50",
+  "z": "99900"
+ },
+ {
+  "pos": 13932608,
+  "id": "v207-top",
+  "jenis": "corner",
+  "bottom": "1",
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "99960"
+ },
+ {
+  "pos": 13933413,
+  "id": "v207-t-evo",
+  "jenis": "corner",
+  "bottom": null,
+  "left": "24",
+  "right": null,
+  "top": "50",
+  "z": "99955"
+ },
+ {
+  "pos": 13937632,
+  "id": "v207-dock",
+  "jenis": "corner",
+  "bottom": null,
+  "left": null,
+  "right": "22",
+  "top": "50",
+  "z": "99950"
+ },
+ {
+  "pos": 13938797,
+  "id": "v207-dock",
+  "jenis": "corner",
+  "bottom": "38",
+  "left": "24",
+  "right": null,
+  "top": null,
+  "z": "99956"
+ },
+ {
+  "pos": 13939277,
+  "id": "v207-bot",
+  "jenis": "corner",
+  "bottom": "0",
+  "left": "0",
+  "right": "0",
+  "top": "1",
+  "z": "99960"
+ },
+ {
+  "pos": 13939909,
+  "id": "v207-bot",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "100010"
+ },
+ {
+  "pos": 13985026,
+  "id": "v209-panel",
+  "jenis": "corner",
+  "bottom": null,
+  "left": null,
+  "right": "22",
+  "top": "50",
+  "z": "99949"
+ },
+ {
+  "pos": 14009962,
+  "id": "v210-panel",
+  "jenis": "corner",
+  "bottom": null,
+  "left": null,
+  "right": "22",
+  "top": "50",
+  "z": "99949"
+ },
+ {
+  "pos": 14042344,
+  "id": "v211-panel",
+  "jenis": "corner",
+  "bottom": null,
+  "left": null,
+  "right": "22",
+  "top": "50",
+  "z": "99948"
+ },
+ {
+  "pos": 14076624,
+  "id": "v212-panel",
+  "jenis": "corner",
+  "bottom": null,
+  "left": null,
+  "right": "22",
+  "top": "50",
+  "z": "99948"
+ },
+ {
+  "pos": 14097606,
+  "id": "v213-mesh",
+  "jenis": "overlay",
+  "bottom": "1",
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "99902"
+ },
+ {
+  "pos": 14097735,
+  "id": "v213-mesh",
+  "jenis": "overlay",
+  "bottom": "1",
+  "left": "0",
+  "right": "0",
+  "top": "0",
+  "z": "99902"
+ },
+ {
+  "pos": 14104356,
+  "id": "v213-handle",
+  "jenis": "overlay",
+  "bottom": "0",
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "99998"
+ },
+ {
+  "pos": 14166267,
+  "id": "v214-bar",
+  "jenis": "corner",
+  "bottom": "1",
+  "left": "0",
+  "right": "0",
+  "top": "36",
+  "z": "99995"
+ },
+ {
+  "pos": 14283992,
+  "id": "v217-root",
+  "jenis": "overlay",
+  "bottom": null,
+  "left": null,
+  "right": null,
+  "top": null,
+  "z": "99990"
+ },
+ {
+  "pos": 14290043,
+  "id": "v217-nav",
+  "jenis": "corner",
+  "bottom": "0",
+  "left": "0",
+  "right": "0",
+  "top": "1",
+  "z": "99996"
+ },
+ {
+  "pos": 15148079,
+  "id": "?",
+  "jenis": "corner",
+  "bottom": "12",
+  "left": null,
+  "right": "12",
+  "top": null,
+  "z": "99999"
+ },
+ {
+  "pos": 15322083,
+  "id": "v241-kepala",
+  "jenis": "corner",
+  "bottom": "12",
+  "left": "12",
+  "right": null,
+  "top": null,
+  "z": "2147483000"
+ }
+]

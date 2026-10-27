@@ -1,0 +1,63 @@
+{
+ "waktu": "2026-10-26T13:15:14.224Z",
+ "durasiMs": 3,
+ "totalSoal": 1230,
+ "benar": 1230,
+ "salah": 0,
+ "persen": 100,
+ "lulus": true,
+ "perTipe": {
+  "DETEKSI": {
+   "total": 248,
+   "benar": 248
+  },
+  "AMBANG200": {
+   "total": 158,
+   "benar": 158
+  },
+  "AMBANG500": {
+   "total": 120,
+   "benar": 120
+  },
+  "TANGGAL": {
+   "total": 90,
+   "benar": 90
+  },
+  "TAHUN": {
+   "total": 60,
+   "benar": 60
+  },
+  "TIER": {
+   "total": 120,
+   "benar": 120
+  },
+  "PERINGKAT": {
+   "total": 90,
+   "benar": 90
+  },
+  "URUTAN": {
+   "total": 60,
+   "benar": 60
+  },
+  "PARITAS": {
+   "total": 90,
+   "benar": 90
+  },
+  "GILA": {
+   "total": 60,
+   "benar": 60
+  },
+  "SUPER": {
+   "total": 60,
+   "benar": 60
+  },
+  "HARI-GANDA": {
+   "total": 74,
+   "benar": 74
+  }
+ },
+ "gagal": [],
+ "jumlahKoinCache": 494,
+ "jumlahKoinDiuji": 158,
+ "iterasiTempa": 2
+}

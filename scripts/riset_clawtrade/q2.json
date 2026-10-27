@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://github.com/clawtradeai-Agent/ClawTradeAI",
+    "name": "ClawTrade AI - GitHub",
+    "snippet": "ClawTrade AI is an open-source autonomous trading platform built on Solana using a multi-agent AI architecture. It scans, analyzes, and executes trades in ... Missing:  bot  | Show results with:",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/yuxuan-lou/ClawTrade",
+    "name": "yuxuan-lou/ClawTrade - GitHub",
+    "snippet": "ClawTrade is a standalone security middleware that allows AI agents (such as OpenClaw) to safely operate your brokerage account. Missing:  bot  | Show results with:",
+    "host_name": "github.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/seetinc10/clawdtrader",
+    "name": "seetinc10/clawdtrader: ai autonomous trader - GitHub",
+    "snippet": "An AI-assisted U.S.-equity paper-trading workbench. A desktop GUI scans the S&P 500 for an actionable session watchlist, runs a quick replay backtest on it, ...",
+    "host_name": "github.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/topics/trade?l=python",
+    "name": "trade · GitHub Topics",
+    "snippet": "Cryptocurrency trading bot with a graphical user interface with support for simulations, backtests, optimizations, and running live bots. python bot crypto ...",
+    "host_name": "github.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/openclaw/comments/1r97g5e/open_claw_trading_bot",
+    "name": "Open Claw Trading Bot : r/openclaw - Reddit",
+    "snippet": "Anyone doing this? I'd love to connect with you. There's a few people I follow running tons of trading bots and refining strategies.",
+    "host_name": "www.reddit.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@gwrx2005/top-10-ai-powered-crypto-trading-repositories-on-github-0041862546b6",
+    "name": "Top 10 AI-Powered Crypto Trading Repositories on GitHub",
+    "snippet": "I Built an Open-Source Framework That Turns Claude Into an Options Trading Analyst. How MCP, Interactive Brokers, and a lot of refactoring ... Missing:  ClawTrade  | Show results with:",
+    "host_name": "medium.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/naimkatiman/tradeclaw",
+    "name": "naimkatiman/tradeclaw - GitHub",
+    "snippet": "TradeClaw is a self-hostable research terminal for BUY/SELL signals, an inspectable PostgreSQL ledger, and the public record of what survived testing.",
+    "host_name": "github.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/topics/trade",
+    "name": "trade · GitHub Topics",
+    "snippet": "Framework for quantitative trading. Complete framework for development, backtesting, and deploying automated trading algorithms and trading bots. python trading ...",
+    "host_name": "github.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://aurpay.net/aurspace/openclaw-ai-trading-skills-complete-guide-2026",
+    "name": "OpenClaw AI Trading Skills: The Complete 2026 Guide (Setup",
+    "snippet": "OpenClaw — the open-source AI agent that topped 250,000 GitHub stars in under 60 days — has spawned an entire ecosystem of investment-focused ...",
+    "host_name": "aurpay.net",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/BlockRunAI/awesome-OpenClaw-Money-Maker",
+    "name": "BlockRunAI/awesome-OpenClaw-Money-Maker - GitHub",
+    "snippet": "Freqtrade ⭐ 53.8k - Free, open-source crypto trading bot. Supports all major exchanges (Binance, Hyperliquid, etc.). ML strategy optimization via FreqAI.",
+    "host_name": "github.com",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]

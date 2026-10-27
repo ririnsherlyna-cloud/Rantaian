@@ -1,0 +1,28 @@
+{
+  "TURUN": {
+    "bobot": {
+      "struktur": 0.2509,
+      "momentum": 0.2616,
+      "sr": 0.1461,
+      "tekanan": 0.1797,
+      "perubahan": 0.1617
+    },
+    "generasi": 1,
+    "belajar": 3,
+    "diperbarui": "2026-09-28T04:31:50.895Z"
+  },
+  "phoenix": {
+    "TURUN": {
+      "bobot": {
+        "posisi": 0.2409,
+        "sweep": 0.303,
+        "akumulasi": 0.1913,
+        "momentum": 0.1617,
+        "kompresi": 0.1031
+      },
+      "generasi": 1,
+      "belajar": 4,
+      "diperbarui": "2026-09-28T04:31:50.895Z"
+    }
+  }
+}

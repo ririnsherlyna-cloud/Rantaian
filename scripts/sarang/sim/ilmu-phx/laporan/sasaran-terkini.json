@@ -1,0 +1,759 @@
+{
+  "protokol": "SASARAN-MICAPROFITA",
+  "organ": "V247-MAJELIS-ILMU v3.0 — belajar dari jurnal ilmiah teruji + medan nyata",
+  "dihasilkan": "2026-09-30T03:45:48.470Z",
+  "siklus": 3,
+  "sumber": {
+    "host": "binance-vision",
+    "gagal": []
+  },
+  "rezimBTC": {
+    "rezim": "TURUN",
+    "harga": 83340.71,
+    "atrPct": 0.43
+  },
+  "radar": {
+    "telaah": 658,
+    "zonaPhoenix": 66,
+    "telusurDalam": 64,
+    "gerbang": {
+      "skorMin": 20,
+      "untungMinPct": 1,
+      "likuiditasMinJuta": 3
+    },
+    "catatan": "menelaah 658 pasangan USDT — 66 di zona ujung-bawah — 64 ditelusuri dalam dengan lilin 1 jam"
+  },
+  "sasaranHariIni": [
+    {
+      "simbol": "NIL",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 52,
+      "entry": 0.0802,
+      "ketKeyakinan": "dikalibrasi medan bin 60–69% (n=20, tembus 18%)",
+      "target": 0.085012,
+      "ketTarget": "puncak 24 jam — ujung atas hari ini (dibatasi +6% rezim TURUN agar realistis)",
+      "untungBersihPct": 5.8,
+      "stop": 0.0754789,
+      "skorPhoenix": 54.1,
+      "highAmbisius": null,
+      "pitaUjungAtas": {
+        "atas75Pct": 7.9,
+        "atas75Harga": 0.0865358,
+        "tengahPct": 5.25,
+        "n": 12,
+        "ket": "pita konformal 75% — dari medan sendiri, gerak naik maksimum setelah kunci melebihi level ini hanya ±25% kasus (Angelopoulos-Bates 2021)"
+      },
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.132,
+        "momentum": -0.432,
+        "sr": -0.177,
+        "tekanan": 0.383,
+        "perubahan": -1
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -5.10%",
+        "momentum": "harga kembali di atas EMA9, RSI14 45 naik",
+        "sr": "posisi 43% rentang 20-bar (hi 0.0853900 / lo 0.0763000)",
+        "tekanan": "taker-buy 55.0% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -2.872% per 10 jam",
+        "posisi": "posisi 43% rentang 24 jam (ujung tengah/atas)",
+        "sweep": "berdiri di atas lantai 3-hari 0.0763000 — tanpa sapuan segar",
+        "akumulasi": "taker-buy 12j terakhir 52.3% vs 12j sebelumnya 46.5% — beli diam-diam menguat, harga masih datar/murah",
+        "kompresi": "rentang 8 jam 39% dari rentang 2 hari — terkompresi, siap melepas",
+        "sasaran-jual": "prediksi ujung atas 0.085012 — puncak 24 jam — ujung atas hari ini (dibatasi +6% rezim TURUN agar realistis)",
+        "untung-bersih": "+5.8% setelah fee 0.2% (beli ujung bawah, jual ujung atas)",
+        "pengaman": "stop terpasang di bawah lantai 24 jam 0.0763000 — lantai jebol berarti bacaan akumulasi salah"
+      },
+      "daya": {
+        "volume": 0.31,
+        "volatilitas": 1,
+        "likuiditas": 0.82
+      }
+    },
+    {
+      "simbol": "HBAR",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 52,
+      "entry": 0.10474,
+      "ketKeyakinan": "dikalibrasi medan bin 60–69% (n=20, tembus 18%)",
+      "target": 0.1110244,
+      "ketTarget": "tengah rentang 24 jam — magnet pertama di jalan ke ujung atas",
+      "untungBersihPct": 5.8,
+      "stop": 0.100075,
+      "skorPhoenix": 50.2,
+      "highAmbisius": null,
+      "pitaUjungAtas": {
+        "atas75Pct": 7.9,
+        "atas75Harga": 0.1130145,
+        "tengahPct": 5.25,
+        "n": 12,
+        "ket": "pita konformal 75% — dari medan sendiri, gerak naik maksimum setelah kunci melebihi level ini hanya ±25% kasus (Angelopoulos-Bates 2021)"
+      },
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.058,
+        "momentum": -0.096,
+        "sr": -0.766,
+        "tekanan": 0.064,
+        "perubahan": -0.999
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -1.21%",
+        "momentum": "harga masih di bawah EMA9 (RSI14 39)",
+        "sr": "posisi 19% rentang 20-bar (hi 0.119800 / lo 0.101120)",
+        "tekanan": "taker-buy 50.8% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -2.348% per 10 jam",
+        "posisi": "posisi 18% rentang 24 jam (ujung bawah — murah hari ini)",
+        "sweep": "berdiri di atas lantai 3-hari 0.0925000 — tanpa sapuan segar",
+        "akumulasi": "taker-buy 12j terakhir 49.4% vs 12j sebelumnya 44.4% — beli diam-diam menguat, harga masih datar/murah",
+        "kompresi": "rentang 8 jam 11% dari rentang 2 hari — terkompresi, siap melepas",
+        "sasaran-jual": "prediksi ujung atas 0.1110244 — tengah rentang 24 jam — magnet pertama di jalan ke ujung atas",
+        "untung-bersih": "+5.8% setelah fee 0.2% (beli ujung bawah, jual ujung atas)",
+        "pengaman": "stop terpasang di bawah lantai 24 jam 0.101120 — lantai jebol berarti bacaan akumulasi salah"
+      },
+      "daya": {
+        "volume": 0.28,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "CELO",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 52,
+      "entry": 0.09947,
+      "ketKeyakinan": "dikalibrasi medan bin 60–69% (n=20, tembus 18%)",
+      "target": 0.1054382,
+      "ketTarget": "tengah rentang 24 jam — magnet pertama di jalan ke ujung atas",
+      "untungBersihPct": 5.8,
+      "stop": 0.0947219,
+      "skorPhoenix": 47.2,
+      "highAmbisius": null,
+      "pitaUjungAtas": {
+        "atas75Pct": 7.9,
+        "atas75Harga": 0.1073281,
+        "tengahPct": 5.25,
+        "n": 12,
+        "ket": "pita konformal 75% — dari medan sendiri, gerak naik maksimum setelah kunci melebihi level ini hanya ±25% kasus (Angelopoulos-Bates 2021)"
+      },
+      "rezim": "NAIK",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": 0.008,
+        "momentum": -0.213,
+        "sr": -1,
+        "tekanan": -0.197,
+        "perubahan": 0.161
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di atas EMA50 1.49%",
+        "momentum": "harga masih di bawah EMA9 (RSI14 45)",
+        "sr": "posisi 9% rentang 20-bar (hi 0.119930 / lo 0.0974500)",
+        "tekanan": "taker-buy 47.5% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 0.102% per 10 jam",
+        "posisi": "posisi 9% rentang 24 jam (ujung bawah — murah hari ini)",
+        "sweep": "berdiri di atas lantai 3-hari 0.0892600 — tanpa sapuan segar",
+        "akumulasi": "taker-buy 12j terakhir 48.5% vs 12j sebelumnya 47.9% — beli diam-diam menguat, harga masih datar/murah",
+        "kompresi": "rentang 8 jam 19% dari rentang 2 hari — terkompresi, siap melepas",
+        "sasaran-jual": "prediksi ujung atas 0.1054382 — tengah rentang 24 jam — magnet pertama di jalan ke ujung atas",
+        "untung-bersih": "+5.8% setelah fee 0.2% (beli ujung bawah, jual ujung atas)",
+        "pengaman": "stop terpasang di bawah lantai 24 jam 0.0974500 — lantai jebol berarti bacaan akumulasi salah"
+      },
+      "daya": {
+        "volume": 0.34,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "BTC",
+      "jalur": "ARAH",
+      "arah": "SELL",
+      "keyakinan": 52,
+      "entry": 83340.71,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.006,
+        "momentum": -0.046,
+        "sr": -0.588,
+        "tekanan": -0.363,
+        "perubahan": -0.124
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -0.13%",
+        "momentum": "mom7 -0.33%, mom30 0.15%",
+        "sr": "posisi 26% rentang 20-bar (hi 84564.0 / lo 82900.0)",
+        "tekanan": "taker-buy 45.2% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.078% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.4,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "ETH",
+      "jalur": "ARAH",
+      "arah": "SELL",
+      "keyakinan": 52,
+      "entry": 2674.05,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.006,
+        "momentum": -0.087,
+        "sr": -1,
+        "tekanan": 0.142,
+        "perubahan": -0.173
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -0.05%",
+        "momentum": "mom7 -0.57%, mom30 -0.01%",
+        "sr": "posisi 10% rentang 20-bar (hi 2748.60 / lo 2666.19)",
+        "tekanan": "taker-buy 51.8% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.109% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.41,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "arah": "BUY",
+      "keyakinan": 52,
+      "entry": 119.49,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.001,
+        "momentum": 0.101,
+        "sr": -0.02,
+        "tekanan": 0.024,
+        "perubahan": -0.111
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -0.16%",
+        "momentum": "mom7 0.37%, mom30 1.49%",
+        "sr": "posisi 49% rentang 20-bar (hi 121.690 / lo 117.360)",
+        "tekanan": "taker-buy 50.3% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.070% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.32,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    }
+  ],
+  "kandidatLain": [
+    {
+      "simbol": "BNB",
+      "jalur": "ARAH",
+      "arah": "BUY",
+      "keyakinan": 52,
+      "entry": 760.38,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.009,
+        "momentum": 0.042,
+        "sr": 0.139,
+        "tekanan": 0.319,
+        "perubahan": -0.395
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -0.40%",
+        "momentum": "mom7 0.31%, mom30 -0.19%",
+        "sr": "posisi 56% rentang 20-bar (hi 768.310 / lo 750.470)",
+        "tekanan": "taker-buy 54.1% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.261% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.38,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "XRP",
+      "jalur": "ARAH",
+      "arah": "SELL",
+      "keyakinan": 52,
+      "entry": 1.4953,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.01,
+        "momentum": 0.003,
+        "sr": -0.696,
+        "tekanan": -0.215,
+        "perubahan": -0.409
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -0.26%",
+        "momentum": "mom7 -0.10%, mom30 0.63%",
+        "sr": "posisi 22% rentang 20-bar (hi 1.56170 / lo 1.47640)",
+        "tekanan": "taker-buy 47.3% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.271% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.36,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "DOGE",
+      "jalur": "ARAH",
+      "arah": "SELL",
+      "keyakinan": 52,
+      "entry": 0.09361,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.015,
+        "momentum": -0.061,
+        "sr": -0.668,
+        "tekanan": -0.041,
+        "perubahan": -0.423
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -0.40%",
+        "momentum": "mom7 -0.48%, mom30 0.41%",
+        "sr": "posisi 23% rentang 20-bar (hi 0.0963800 / lo 0.0927700)",
+        "tekanan": "taker-buy 49.5% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.282% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.2,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "ADA",
+      "jalur": "ARAH",
+      "arah": "SELL",
+      "keyakinan": 52,
+      "entry": 0.2442,
+      "ketKeyakinan": "dikalibrasi medan bin 60–69% (n=20, tembus 18%)",
+      "rezim": "TURUN",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.023,
+        "momentum": -0.032,
+        "sr": -0.512,
+        "tekanan": -0.117,
+        "perubahan": -0.698
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di bawah EMA50 -0.64%",
+        "momentum": "mom7 -0.25%, mom30 0.21%",
+        "sr": "posisi 30% rentang 20-bar (hi 0.254700 / lo 0.239800)",
+        "tekanan": "taker-buy 48.5% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.539% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.59,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "AVAX",
+      "jalur": "ARAH",
+      "arah": "BUY",
+      "keyakinan": 52,
+      "entry": 11.265,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "NAIK",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": 0.045,
+        "momentum": -0.042,
+        "sr": -0.647,
+        "tekanan": 0.575,
+        "perubahan": 0.979
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di atas EMA50 2.01%",
+        "momentum": "mom7 -1.72%, mom30 8.74%",
+        "sr": "posisi 24% rentang 20-bar (hi 12.0080 / lo 11.0290)",
+        "tekanan": "taker-buy 58.2% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 1.418% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.36,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "LINK",
+      "jalur": "ARAH",
+      "arah": "SELL",
+      "keyakinan": 52,
+      "entry": 14.404,
+      "ketKeyakinan": "dikalibrasi medan bin 60–69% (n=20, tembus 18%)",
+      "rezim": "DATAR",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": -0.019,
+        "momentum": -0.431,
+        "sr": -1,
+        "tekanan": -0.374,
+        "perubahan": -0.525
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di atas EMA50 0.22%",
+        "momentum": "mom7 -2.03%, mom30 -4.92%",
+        "sr": "posisi 6% rentang 20-bar (hi 15.6140 / lo 14.3210)",
+        "tekanan": "taker-buy 45.1% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 -0.364% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.27,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "TRX",
+      "jalur": "ARAH",
+      "arah": "BUY",
+      "keyakinan": 52,
+      "entry": 0.3362,
+      "ketKeyakinan": "dikalibrasi medan bin 52–59% (n=12, tembus 43%)",
+      "rezim": "NAIK",
+      "dikunci": "2026-09-30T03:45:48.470Z",
+      "horizon": "24j",
+      "fee": "0.2% pulang-pergi",
+      "bukti": {
+        "struktur": 0.004,
+        "momentum": 0.055,
+        "sr": 0.95,
+        "tekanan": 0.329,
+        "perubahan": 0.01
+      },
+      "ketBukti": {
+        "struktur": "EMA20 di atas EMA50 0.01%",
+        "momentum": "mom7 0.33%, mom30 0.15%",
+        "sr": "posisi 88% rentang 20-bar (hi 0.336500 / lo 0.334000)",
+        "tekanan": "taker-buy 54.3% rata-rata 6 jam",
+        "perubahan": "kemiringan EMA50 0.006% per 10 jam"
+      },
+      "daya": {
+        "volume": 0.48,
+        "volatilitas": 1,
+        "likuiditas": 1
+      }
+    },
+    {
+      "simbol": "ALGO",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 67,
+      "entry": 0.1248,
+      "rezim": "DATAR",
+      "catatan": "lolos gerbang radar (skor 43) — di luar kuota 3 terbaik hari ini"
+    },
+    {
+      "simbol": "NMR",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 67,
+      "entry": 11.74,
+      "rezim": "NAIK",
+      "catatan": "lolos gerbang radar (skor 42.1) — di luar kuota 3 terbaik hari ini"
+    },
+    {
+      "simbol": "BNB",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 68,
+      "entry": 760.38,
+      "rezim": "TURUN",
+      "catatan": "lolos gerbang radar (skor 49.4) — di luar kuota 3 terbaik hari ini"
+    },
+    {
+      "simbol": "STRK",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 66,
+      "entry": 0.04234,
+      "rezim": "NAIK",
+      "catatan": "lolos gerbang radar (skor 45.2) — di luar kuota 3 terbaik hari ini"
+    },
+    {
+      "simbol": "W",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 64,
+      "entry": 0.01344,
+      "rezim": "TURUN",
+      "catatan": "lolos gerbang radar (skor 40.2) — di luar kuota 3 terbaik hari ini"
+    },
+    {
+      "simbol": "ZAMA",
+      "jalur": "PHOENIX",
+      "arah": "BUY",
+      "keyakinan": 63,
+      "entry": 0.07331,
+      "rezim": "TURUN",
+      "catatan": "lolos gerbang radar (skor 36) — di luar kuota 3 terbaik hari ini"
+    },
+    {
+      "simbol": "UNI",
+      "arah": "BUY",
+      "keyakinan": 33,
+      "entry": 8.772,
+      "rezim": "TURUN",
+      "catatan": "kandidat radar belum lolos gerbang (skor 33 < 34 atau daya lemah) — posisi 33% rentang 24 jam (ujung bawah — murah hari ini)"
+    },
+    {
+      "simbol": "WLD",
+      "arah": "BUY",
+      "keyakinan": 31,
+      "entry": 0.4887,
+      "rezim": "TURUN",
+      "catatan": "kandidat radar belum lolos gerbang (skor 31 < 34 atau daya lemah) — posisi 33% rentang 24 jam (ujung bawah — murah hari ini)"
+    },
+    {
+      "simbol": "ARB",
+      "arah": "BUY",
+      "keyakinan": 27,
+      "entry": 0.2028,
+      "rezim": "TURUN",
+      "catatan": "kandidat radar belum lolos gerbang (skor 27 < 34 atau daya lemah) — posisi 34% rentang 24 jam (ujung bawah — murah hari ini)"
+    },
+    {
+      "simbol": "POL",
+      "arah": "BUY",
+      "keyakinan": 34,
+      "entry": 0.11667,
+      "rezim": "NAIK",
+      "catatan": "kandidat radar belum lolos gerbang (skor 34 < 34 atau daya lemah) — posisi 29% rentang 24 jam (ujung bawah — murah hari ini)"
+    },
+    {
+      "simbol": "FIL",
+      "arah": "BUY",
+      "keyakinan": 28,
+      "entry": 1.0563,
+      "rezim": "TURUN",
+      "catatan": "kandidat radar belum lolos gerbang (skor 28 < 34 atau daya lemah) — posisi 35% rentang 24 jam (ujung tengah/atas)"
+    },
+    {
+      "simbol": "SEI",
+      "arah": "BUY",
+      "keyakinan": 30,
+      "entry": 0.0736,
+      "rezim": "TURUN",
+      "catatan": "kandidat radar belum lolos gerbang (skor 30 < 34 atau daya lemah) — posisi 43% rentang 24 jam (ujung tengah/atas)"
+    },
+    {
+      "simbol": "TIA",
+      "arah": "BUY",
+      "keyakinan": 30,
+      "entry": 0.4413,
+      "rezim": "TURUN",
+      "catatan": "kandidat radar belum lolos gerbang (skor 30 < 34 atau daya lemah) — posisi 34% rentang 24 jam (ujung bawah — murah hari ini)"
+    },
+    {
+      "simbol": "RAY",
+      "arah": "BUY",
+      "keyakinan": 26,
+      "entry": 1.8853,
+      "rezim": "TURUN",
+      "catatan": "kandidat radar belum lolos gerbang (skor 26 < 34 atau daya lemah) — posisi 37% rentang 24 jam (ujung tengah/atas)"
+    }
+  ],
+  "akurasi": {
+    "terkunci": 45,
+    "terbuka": 13,
+    "benar": 13,
+    "salah": 19,
+    "akurasiPct": 40.6,
+    "netKumulatifPct": -20.44,
+    "jendela7h": {
+      "dinilai": 32,
+      "benar": 13,
+      "akurasiPct": 40.6
+    },
+    "phoenix": {
+      "dinilai": 12,
+      "benar": 5,
+      "targetKena": 0,
+      "netKumulatifPct": -8.11
+    }
+  },
+  "pelajaran": [],
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 2,
+      "phxPisauJatuh": 12,
+      "phxTargetJauh": 12
+    },
+    "aktif": {
+      "phxMomentumWajib": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang",
+      "phxTargetMagnet": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh",
+      "arahRegimHormati": "Arah melawan rezim wajib keyakinan lebih rendah — potongan keyakinan dipasang di vonis komite"
+    },
+    "baruSiklusIni": []
+  },
+  "ilmu": {
+    "versi": "V247-MAJELIS-ILMU",
+    "fondasi": "metode teruji dipasang nyata: Hedge/MWU (Arora-Hazan-Kale 2012 · Freund-Schapire 1997) · Brier & proper scoring (Gneiting-Raftery 2007) · kalibrasi keyakinan dari medan · pita konformal 75% (Angelopoulos-Bates 2021) · triple-barrier & meta-labeling (Lopez de Prado 2018) · ingatan berlapis FinMem (Zhang dkk 2023) — rincian di laporan/jurnal-ilmu.json",
+    "brier": {
+      "arah": 0.3195,
+      "phx": 0.3223,
+      "nArah": 30,
+      "nPhx": 18,
+      "ket": "skor Brier keyakinan sebagai probabilitas — 0 sempurna, 0.25 = tebakan koin; makin kecil makin jujur"
+    },
+    "kalibrasi": [
+      {
+        "bin": "52–59%",
+        "n": 12,
+        "tembusPct": 41.7
+      },
+      {
+        "bin": "60–69%",
+        "n": 20,
+        "tembusPct": 15
+      },
+      {
+        "bin": "70–79%",
+        "n": 16,
+        "tembusPct": 50
+      },
+      {
+        "bin": "80–100%",
+        "n": 0,
+        "tembusPct": null
+      }
+    ],
+    "hedge": {
+      "arah": {
+        "struktur": 0.0755,
+        "momentum": 0.2455,
+        "sr": 0.2077,
+        "tekanan": 0.2054,
+        "perubahan": 0.2659
+      },
+      "phx": {
+        "posisi": 0.1925,
+        "sweep": 0.3783,
+        "akumulasi": 0.1985,
+        "momentum": 0.1667,
+        "kompresi": 0.0639
+      },
+      "catatan": "ilmu: belum ada vonis matang siklus ini; bobot efektif = 50% genome evolusi per rezim + 50% Hedge on-line"
+    },
+    "metaGerbang": {
+      "geser": 0,
+      "gerbangAktif": 34,
+      "bucketKuat": {
+        "n": 1,
+        "benar": 0
+      },
+      "bucketLemah": {
+        "n": 17,
+        "benar": 8
+      },
+      "catatan": "meta-labeling: bucket konfirmasi belum cukup (min 6) — gerbang tak digeser"
+    },
+    "konformal": {
+      "bawah": 0.0316,
+      "tengah": 0.0525,
+      "atas": 0.079,
+      "n": 12
+    }
+  },
+  "genome": {
+    "rezim": "TURUN",
+    "bobot": {
+      "struktur": 0.2477,
+      "momentum": 0.2606,
+      "sr": 0.1601,
+      "tekanan": 0.18,
+      "perubahan": 0.1516
+    },
+    "phoenix": {
+      "rezim": "TURUN",
+      "bobot": {
+        "posisi": 0.2474,
+        "sweep": 0.3035,
+        "akumulasi": 0.2004,
+        "momentum": 0.1506,
+        "kompresi": 0.0982
+      }
+    },
+    "semuaRezim": {
+      "NAIK": {
+        "generasi": 0,
+        "belajar": 0
+      },
+      "TURUN": {
+        "generasi": 2,
+        "belajar": 20
+      }
+    }
+  },
+  "pertumbuhan": {
+    "waktuMulai": "2026-09-30T03:43:45.549Z",
+    "siklus": 3,
+    "prediksiTerkunci": 45,
+    "prediksiDinilai": 32,
+    "evolusiCatatan": "belum cukup sampel (min 3 dinilai per siklus); radar: belum cukup sampel (min 3 dinilai per siklus)"
+  },
+  "catatanJujur": [
+    "prediksi DIKUNCI sebelum pergerakan (pra-registrasi) — dinilai otomatis setelah horizon 24 jam memakai close terkini pada siklus penilaian",
+    "RADAR PHOENIX menelaah ratusan pasangan USDT tiap siklus: mencari akumulasi di ujung bawah hari (sapuan lantai 3-hari, taker-buy menguat, kompresi) lalu memprediksi ujung atas dari level nyata — prediksi terukur, bukan jaminan",
+    "target jual phoenix wajib memberi >= 1% setelah fee 0.2%; bila seluruh pasar di puncak, radar jujur melaporkan zona kosong alih-alih memaksa beli mahal",
+    "lane PHOENIX (beli ujung bawah) dan lane ARAH (komite genome) berdiri sendiri; keduanya dinilai net P/L close-ke-close yang sama jujurnya",
+    "cron GitHub bisa mundur beberapa menit saat server padat; jadwal tetap berjalan tanpa browser",
+    "BAHAN AJAR: setiap vonis ditulis jadi pelajaran (laporan/pelajaran-server.json); pola kekalahan yang terulang >= 2 kali melahirkan ATURAN baru yang mengikat gerbang siklus berikutnya — otak tumbuh dari medan, bukan tebakan",
+    "ILMU BERJURNAL: bobot bukti belajar on-line ala Hedge dengan jaminan regret (Arora dkk 2012); keyakinan diperlakukan sebagai probabilitas — dinilai Brier (Gneiting-Raftery 2007) dan dikalibrasi dari hit-rate medan sendiri; pita ujung atas memakai jaminan cakupan konformal (Angelopoulos-Bates 2021); vonis phoenix dilabel triple-barrier dan gerbang digeser meta-labeling (Lopez de Prado 2018) — kepastian dibangun dari metode teruji + medan sendiri, bukan janji"
+  ]
+}

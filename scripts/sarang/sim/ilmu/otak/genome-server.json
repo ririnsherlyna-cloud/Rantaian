@@ -1,0 +1,154 @@
+{
+  "NAIK": {
+    "bobot": {
+      "struktur": 0.24,
+      "momentum": 0.26,
+      "sr": 0.16,
+      "tekanan": 0.18,
+      "perubahan": 0.16
+    },
+    "generasi": 0,
+    "belajar": 0,
+    "diperbarui": "2026-09-28T01:06:34.918Z"
+  },
+  "TURUN": {
+    "bobot": {
+      "struktur": 0.2543,
+      "momentum": 0.2648,
+      "sr": 0.1527,
+      "tekanan": 0.179,
+      "perubahan": 0.1493
+    },
+    "generasi": 3,
+    "belajar": 30,
+    "diperbarui": "2026-09-30T03:46:14.573Z"
+  },
+  "phoenix": {
+    "TURUN": {
+      "bobot": {
+        "posisi": 0.2474,
+        "sweep": 0.3035,
+        "akumulasi": 0.2004,
+        "momentum": 0.1506,
+        "kompresi": 0.0982
+      },
+      "generasi": 2,
+      "belajar": 12,
+      "diperbarui": "2026-09-30T03:43:45.549Z"
+    },
+    "NAIK": {
+      "bobot": {
+        "posisi": 0.25,
+        "sweep": 0.3,
+        "akumulasi": 0.2,
+        "momentum": 0.15,
+        "kompresi": 0.1
+      },
+      "generasi": 0,
+      "belajar": 0,
+      "diperbarui": "2026-09-29T15:00:14.911Z"
+    }
+  },
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 4,
+      "phxPisauJatuh": 12,
+      "phxTargetJauh": 12
+    },
+    "aktif": {
+      "phxMomentumWajib": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang"
+      },
+      "phxTargetMagnet": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh"
+      },
+      "arahRegimHormati": {
+        "sejak": "2026-09-30T03:43:45.549Z",
+        "teks": "Arah melawan rezim wajib keyakinan lebih rendah — potongan keyakinan dipasang di vonis komite"
+      }
+    },
+    "seedSelesai": "2026-09-30T00:38:10.647Z"
+  },
+  "ilmu": {
+    "hedge": {
+      "arah": {
+        "struktur": 0.0505,
+        "momentum": 0.1813,
+        "sr": 0.3607,
+        "tekanan": 0.1269,
+        "perubahan": 0.2806
+      },
+      "phx": {
+        "posisi": 0.1925,
+        "sweep": 0.3783,
+        "akumulasi": 0.1985,
+        "momentum": 0.1667,
+        "kompresi": 0.0639
+      }
+    },
+    "brier": {
+      "arah": {
+        "n": 40,
+        "jumlah": 12.843499999999999
+      },
+      "phx": {
+        "n": 18,
+        "jumlah": 5.8016
+      }
+    },
+    "kalibrasi": [
+      {
+        "low": 52,
+        "high": 60,
+        "n": 20,
+        "benar": 5
+      },
+      {
+        "low": 60,
+        "high": 70,
+        "n": 22,
+        "benar": 3
+      },
+      {
+        "low": 70,
+        "high": 80,
+        "n": 16,
+        "benar": 8
+      },
+      {
+        "low": 80,
+        "high": 101,
+        "n": 0,
+        "benar": 0
+      }
+    ],
+    "konformal": [
+      0.0129,
+      0.0817,
+      0.0525,
+      0.0316,
+      0.079,
+      0.0505,
+      0.0129,
+      0.0817,
+      0.0525,
+      0.0316,
+      0.079,
+      0.0505
+    ],
+    "meta": {
+      "kuat": {
+        "n": 1,
+        "benar": 0
+      },
+      "lemah": {
+        "n": 17,
+        "benar": 8
+      },
+      "geser": 0
+    },
+    "seedSelesai": "2026-09-30T03:43:45.549Z"
+  }
+}

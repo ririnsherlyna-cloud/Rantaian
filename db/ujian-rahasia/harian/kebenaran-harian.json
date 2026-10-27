@@ -1,0 +1,7762 @@
+{
+ "sumber": "Binance spot api.binance.com /api/v3/klines interval=1d (paginasi penuh)",
+ "caraHitung": "gainHarian(t) = (high[t]/close[t-1] - 1) x 100, round 4 desimal; hari pertama listing tak dinilai",
+ "diambil": "2026-10-26 13:14:13",
+ "jumlah": 494,
+ "koin": [
+  {
+   "gainPct": 49999900.0,
+   "tanggalPuncak": "2022-05-31",
+   "closeSebelum": 5e-05,
+   "highHari": 25.0,
+   "simbol": "LUNAUSDT",
+   "jumlahHari": 2241,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 13,
+   "hariGila": [
+    {
+     "tanggal": "2021-02-08",
+     "gainPct": 101.1681,
+     "closeSebelum": 3.082,
+     "highHari": 6.2
+    },
+    {
+     "tanggal": "2022-05-31",
+     "gainPct": 49999900.0,
+     "closeSebelum": 5e-05,
+     "highHari": 25.0
+    },
+    {
+     "tanggal": "2022-09-09",
+     "gainPct": 301.0883,
+     "closeSebelum": 1.9113,
+     "highHari": 7.666
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1287.3474,
+   "tanggalPuncak": "2022-12-10",
+   "closeSebelum": 0.901,
+   "highHari": 12.5,
+   "simbol": "OSMOUSDT",
+   "jumlahHari": 1460,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2022-12-10",
+     "gainPct": 1287.3474,
+     "closeSebelum": 0.901,
+     "highHari": 12.5
+    },
+    {
+     "tanggal": "2023-11-02",
+     "gainPct": 121.5367,
+     "closeSebelum": 0.3566,
+     "highHari": 0.79
+    },
+    {
+     "tanggal": "2026-05-11",
+     "gainPct": 156.1753,
+     "closeSebelum": 0.0502,
+     "highHari": 0.1286
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1112.4788,
+   "tanggalPuncak": "2021-11-03",
+   "closeSebelum": 8.855,
+   "highHari": 107.365,
+   "simbol": "FIDAUSDT",
+   "jumlahHari": 1853,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 12,
+   "hariGila": [
+    {
+     "tanggal": "2021-11-03",
+     "gainPct": 1112.4788,
+     "closeSebelum": 8.855,
+     "highHari": 107.365
+    },
+    {
+     "tanggal": "2022-11-20",
+     "gainPct": 576.59,
+     "closeSebelum": 0.2217,
+     "highHari": 1.5
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 540.4036,
+   "tanggalPuncak": "2021-05-20",
+   "closeSebelum": 0.5153,
+   "highHari": 3.3,
+   "simbol": "ONGUSDT",
+   "jumlahHari": 2810,
+   "jumlahHariGila100": 8,
+   "jumlahHariGila50": 19,
+   "hariGila": [
+    {
+     "tanggal": "2020-11-25",
+     "gainPct": 183.2965,
+     "closeSebelum": 0.1359,
+     "highHari": 0.385
+    },
+    {
+     "tanggal": "2021-02-21",
+     "gainPct": 153.0721,
+     "closeSebelum": 0.4492,
+     "highHari": 1.1368
+    },
+    {
+     "tanggal": "2021-05-20",
+     "gainPct": 540.4036,
+     "closeSebelum": 0.5153,
+     "highHari": 3.3
+    },
+    {
+     "tanggal": "2021-08-24",
+     "gainPct": 122.1533,
+     "closeSebelum": 0.9678,
+     "highHari": 2.15
+    },
+    {
+     "tanggal": "2022-02-13",
+     "gainPct": 159.2357,
+     "closeSebelum": 0.6594,
+     "highHari": 1.7094
+    },
+    {
+     "tanggal": "2023-07-11",
+     "gainPct": 189.0742,
+     "closeSebelum": 0.2279,
+     "highHari": 0.6588
+    },
+    {
+     "tanggal": "2026-08-20",
+     "gainPct": 222.0479,
+     "closeSebelum": 0.06055,
+     "highHari": 0.195
+    },
+    {
+     "tanggal": "2026-08-26",
+     "gainPct": 173.569,
+     "closeSebelum": 0.09504,
+     "highHari": 0.26
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 502.7728,
+   "tanggalPuncak": "2026-09-13",
+   "closeSebelum": 0.3318,
+   "highHari": 2.0,
+   "simbol": "LSKUSDT",
+   "jumlahHari": 2455,
+   "jumlahHariGila100": 4,
+   "jumlahHariGila50": 13,
+   "hariGila": [
+    {
+     "tanggal": "2025-11-11",
+     "gainPct": 111.7647,
+     "closeSebelum": 0.204,
+     "highHari": 0.432
+    },
+    {
+     "tanggal": "2026-09-12",
+     "gainPct": 158.2278,
+     "closeSebelum": 0.1422,
+     "highHari": 0.3672
+    },
+    {
+     "tanggal": "2026-09-13",
+     "gainPct": 502.7728,
+     "closeSebelum": 0.3318,
+     "highHari": 2.0
+    },
+    {
+     "tanggal": "2026-09-16",
+     "gainPct": 149.5687,
+     "closeSebelum": 0.3478,
+     "highHari": 0.868
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 466.8644,
+   "tanggalPuncak": "2025-07-10",
+   "closeSebelum": 0.118,
+   "highHari": 0.6689,
+   "simbol": "HYPERUSDT",
+   "jumlahHari": 553,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2025-07-10",
+     "gainPct": 466.8644,
+     "closeSebelum": 0.118,
+     "highHari": 0.6689
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 448.6342,
+   "tanggalPuncak": "2021-03-29",
+   "closeSebelum": 1.889,
+   "highHari": 10.3637,
+   "simbol": "MTLUSDT",
+   "jumlahHari": 2622,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 15,
+   "hariGila": [
+    {
+     "tanggal": "2021-03-29",
+     "gainPct": 448.6342,
+     "closeSebelum": 1.889,
+     "highHari": 10.3637
+    },
+    {
+     "tanggal": "2021-08-31",
+     "gainPct": 104.2332,
+     "closeSebelum": 2.693,
+     "highHari": 5.5
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 446.367,
+   "tanggalPuncak": "2024-01-03",
+   "closeSebelum": 0.01335,
+   "highHari": 0.07294,
+   "simbol": "PEOPLEUSDT",
+   "jumlahHari": 1769,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2024-01-03",
+     "gainPct": 446.367,
+     "closeSebelum": 0.01335,
+     "highHari": 0.07294
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 433.0964,
+   "tanggalPuncak": "2025-01-21",
+   "closeSebelum": 0.002251,
+   "highHari": 0.012,
+   "simbol": "VTHOUSDT",
+   "jumlahHari": 2293,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 25,
+   "hariGila": [
+    {
+     "tanggal": "2021-01-18",
+     "gainPct": 143.6471,
+     "closeSebelum": 0.00085,
+     "highHari": 0.002071
+    },
+    {
+     "tanggal": "2025-01-21",
+     "gainPct": 433.0964,
+     "closeSebelum": 0.002251,
+     "highHari": 0.012
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 427.6382,
+   "tanggalPuncak": "2022-11-28",
+   "closeSebelum": 0.0398,
+   "highHari": 0.21,
+   "simbol": "RIFUSDT",
+   "jumlahHari": 2119,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2022-07-18",
+     "gainPct": 196.1111,
+     "closeSebelum": 0.054,
+     "highHari": 0.1599
+    },
+    {
+     "tanggal": "2022-11-28",
+     "gainPct": 427.6382,
+     "closeSebelum": 0.0398,
+     "highHari": 0.21
+    },
+    {
+     "tanggal": "2023-02-21",
+     "gainPct": 101.7735,
+     "closeSebelum": 0.0733,
+     "highHari": 0.1479
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 405.7053,
+   "tanggalPuncak": "2021-01-28",
+   "closeSebelum": 0.0074124,
+   "highHari": 0.0374849,
+   "simbol": "DOGEUSDT",
+   "jumlahHari": 2671,
+   "jumlahHariGila100": 4,
+   "jumlahHariGila50": 12,
+   "hariGila": [
+    {
+     "tanggal": "2021-01-02",
+     "gainPct": 146.2676,
+     "closeSebelum": 0.00568,
+     "highHari": 0.013988
+    },
+    {
+     "tanggal": "2021-01-28",
+     "gainPct": 405.7053,
+     "closeSebelum": 0.0074124,
+     "highHari": 0.0374849
+    },
+    {
+     "tanggal": "2021-01-29",
+     "gainPct": 139.7293,
+     "closeSebelum": 0.0364995,
+     "highHari": 0.0875
+    },
+    {
+     "tanggal": "2021-04-16",
+     "gainPct": 146.7648,
+     "closeSebelum": 0.1823599,
+     "highHari": 0.45
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 378.5156,
+   "tanggalPuncak": "2021-11-25",
+   "closeSebelum": 0.2048,
+   "highHari": 0.98,
+   "simbol": "REQUSDT",
+   "jumlahHari": 1894,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 14,
+   "hariGila": [
+    {
+     "tanggal": "2021-11-25",
+     "gainPct": 378.5156,
+     "closeSebelum": 0.2048,
+     "highHari": 0.98
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 377.6768,
+   "tanggalPuncak": "2024-12-12",
+   "closeSebelum": 0.7369,
+   "highHari": 3.52,
+   "simbol": "AVAUSDT",
+   "jumlahHari": 2163,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2022-07-31",
+     "gainPct": 113.1772,
+     "closeSebelum": 0.683,
+     "highHari": 1.456
+    },
+    {
+     "tanggal": "2024-12-12",
+     "gainPct": 377.6768,
+     "closeSebelum": 0.7369,
+     "highHari": 3.52
+    },
+    {
+     "tanggal": "2026-09-17",
+     "gainPct": 113.0937,
+     "closeSebelum": 0.1558,
+     "highHari": 0.332
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 371.2585,
+   "tanggalPuncak": "2021-02-10",
+   "closeSebelum": 0.09909,
+   "highHari": 0.46697,
+   "simbol": "CTSIUSDT",
+   "jumlahHari": 2378,
+   "jumlahHariGila100": 4,
+   "jumlahHariGila50": 16,
+   "hariGila": [
+    {
+     "tanggal": "2021-02-10",
+     "gainPct": 371.2585,
+     "closeSebelum": 0.09909,
+     "highHari": 0.46697
+    },
+    {
+     "tanggal": "2021-04-04",
+     "gainPct": 140.9946,
+     "closeSebelum": 0.372,
+     "highHari": 0.8965
+    },
+    {
+     "tanggal": "2021-08-09",
+     "gainPct": 160.2032,
+     "closeSebelum": 0.48808,
+     "highHari": 1.27
+    },
+    {
+     "tanggal": "2026-04-02",
+     "gainPct": 136.1854,
+     "closeSebelum": 0.02244,
+     "highHari": 0.053
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 363.198,
+   "tanggalPuncak": "2025-11-20",
+   "closeSebelum": 0.0788,
+   "highHari": 0.365,
+   "simbol": "TNSRUSDT",
+   "jumlahHari": 932,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 6,
+   "hariGila": [
+    {
+     "tanggal": "2025-11-19",
+     "gainPct": 186.5889,
+     "closeSebelum": 0.0343,
+     "highHari": 0.0983
+    },
+    {
+     "tanggal": "2025-11-20",
+     "gainPct": 363.198,
+     "closeSebelum": 0.0788,
+     "highHari": 0.365
+    },
+    {
+     "tanggal": "2025-11-23",
+     "gainPct": 117.2067,
+     "closeSebelum": 0.0895,
+     "highHari": 0.1944
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 324.9292,
+   "tanggalPuncak": "2023-01-23",
+   "closeSebelum": 0.1412,
+   "highHari": 0.6,
+   "simbol": "ADXUSDT",
+   "jumlahHari": 1824,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2022-07-06",
+     "gainPct": 102.1362,
+     "closeSebelum": 0.1498,
+     "highHari": 0.3028
+    },
+    {
+     "tanggal": "2023-01-23",
+     "gainPct": 324.9292,
+     "closeSebelum": 0.1412,
+     "highHari": 0.6
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 320.8644,
+   "tanggalPuncak": "2024-11-13",
+   "closeSebelum": 0.4419,
+   "highHari": 1.8598,
+   "simbol": "PNUTUSDT",
+   "jumlahHari": 715,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2024-11-13",
+     "gainPct": 320.8644,
+     "closeSebelum": 0.4419,
+     "highHari": 1.8598
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 315.0859,
+   "tanggalPuncak": "2026-04-02",
+   "closeSebelum": 0.4481,
+   "highHari": 1.86,
+   "simbol": "STOUSDT",
+   "jumlahHari": 543,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2026-01-17",
+     "gainPct": 108.6614,
+     "closeSebelum": 0.0762,
+     "highHari": 0.159
+    },
+    {
+     "tanggal": "2026-04-01",
+     "gainPct": 147.5475,
+     "closeSebelum": 0.1998,
+     "highHari": 0.4946
+    },
+    {
+     "tanggal": "2026-04-02",
+     "gainPct": 315.0859,
+     "closeSebelum": 0.4481,
+     "highHari": 1.86
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 265.0899,
+   "tanggalPuncak": "2025-02-14",
+   "closeSebelum": 1.057,
+   "highHari": 3.859,
+   "simbol": "JUVUSDT",
+   "jumlahHari": 2136,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 15,
+   "hariGila": [
+    {
+     "tanggal": "2023-04-08",
+     "gainPct": 147.1475,
+     "closeSebelum": 2.787,
+     "highHari": 6.888
+    },
+    {
+     "tanggal": "2025-02-14",
+     "gainPct": 265.0899,
+     "closeSebelum": 1.057,
+     "highHari": 3.859
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 262.5914,
+   "tanggalPuncak": "2024-03-12",
+   "closeSebelum": 0.006699,
+   "highHari": 0.02429,
+   "simbol": "AMPUSDT",
+   "jumlahHari": 1799,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2024-03-12",
+     "gainPct": 262.5914,
+     "closeSebelum": 0.006699,
+     "highHari": 0.02429
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 254.4399,
+   "tanggalPuncak": "2021-10-30",
+   "closeSebelum": 1.3953,
+   "highHari": 4.9455,
+   "simbol": "MANAUSDT",
+   "jumlahHari": 2273,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2021-10-30",
+     "gainPct": 254.4399,
+     "closeSebelum": 1.3953,
+     "highHari": 4.9455
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 244.9612,
+   "tanggalPuncak": "2021-02-09",
+   "closeSebelum": 1.29,
+   "highHari": 4.45,
+   "simbol": "SFPUSDT",
+   "jumlahHari": 2087,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2021-02-09",
+     "gainPct": 244.9612,
+     "closeSebelum": 1.29,
+     "highHari": 4.45
+    },
+    {
+     "tanggal": "2021-10-13",
+     "gainPct": 179.1495,
+     "closeSebelum": 1.0206,
+     "highHari": 2.849
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 243.325,
+   "tanggalPuncak": "2022-06-08",
+   "closeSebelum": 2.809,
+   "highHari": 9.644,
+   "simbol": "ASRUSDT",
+   "jumlahHari": 2127,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 27,
+   "hariGila": [
+    {
+     "tanggal": "2022-06-08",
+     "gainPct": 243.325,
+     "closeSebelum": 2.809,
+     "highHari": 9.644
+    },
+    {
+     "tanggal": "2022-11-25",
+     "gainPct": 100.9954,
+     "closeSebelum": 2.411,
+     "highHari": 4.846
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 242.0366,
+   "tanggalPuncak": "2022-11-13",
+   "closeSebelum": 3.83,
+   "highHari": 13.1,
+   "simbol": "CVXUSDT",
+   "jumlahHari": 1769,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2022-11-13",
+     "gainPct": 242.0366,
+     "closeSebelum": 3.83,
+     "highHari": 13.1
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 229.4423,
+   "tanggalPuncak": "2026-09-25",
+   "closeSebelum": 0.001542,
+   "highHari": 0.00508,
+   "simbol": "QIUSDT",
+   "jumlahHari": 1807,
+   "jumlahHariGila100": 4,
+   "jumlahHariGila50": 16,
+   "hariGila": [
+    {
+     "tanggal": "2022-05-12",
+     "gainPct": 163.1579,
+     "closeSebelum": 0.0114,
+     "highHari": 0.03
+    },
+    {
+     "tanggal": "2023-12-11",
+     "gainPct": 107.3333,
+     "closeSebelum": 0.018,
+     "highHari": 0.03732
+    },
+    {
+     "tanggal": "2026-07-25",
+     "gainPct": 109.3245,
+     "closeSebelum": 0.001051,
+     "highHari": 0.0022
+    },
+    {
+     "tanggal": "2026-09-25",
+     "gainPct": 229.4423,
+     "closeSebelum": 0.001542,
+     "highHari": 0.00508
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 229.3789,
+   "tanggalPuncak": "2021-07-24",
+   "closeSebelum": 7.165,
+   "highHari": 23.6,
+   "simbol": "DEXEUSDT",
+   "jumlahHari": 1922,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 14,
+   "hariGila": [
+    {
+     "tanggal": "2021-07-24",
+     "gainPct": 229.3789,
+     "closeSebelum": 7.165,
+     "highHari": 23.6
+    },
+    {
+     "tanggal": "2026-07-24",
+     "gainPct": 154.6163,
+     "closeSebelum": 1.668,
+     "highHari": 4.247
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 222.9782,
+   "tanggalPuncak": "2025-03-21",
+   "closeSebelum": 1.558,
+   "highHari": 5.032,
+   "simbol": "ORCAUSDT",
+   "jumlahHari": 690,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 6,
+   "hariGila": [
+    {
+     "tanggal": "2025-03-21",
+     "gainPct": 222.9782,
+     "closeSebelum": 1.558,
+     "highHari": 5.032
+    },
+    {
+     "tanggal": "2025-04-11",
+     "gainPct": 108.9864,
+     "closeSebelum": 1.914,
+     "highHari": 4.0
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 219.9466,
+   "tanggalPuncak": "2021-09-18",
+   "closeSebelum": 0.2622,
+   "highHari": 0.8389,
+   "simbol": "CFXUSDT",
+   "jumlahHari": 2038,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2021-09-18",
+     "gainPct": 219.9466,
+     "closeSebelum": 0.2622,
+     "highHari": 0.8389
+    },
+    {
+     "tanggal": "2023-01-26",
+     "gainPct": 129.0221,
+     "closeSebelum": 0.0317,
+     "highHari": 0.0726
+    },
+    {
+     "tanggal": "2025-07-20",
+     "gainPct": 135.6268,
+     "closeSebelum": 0.1061,
+     "highHari": 0.25
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 214.628,
+   "tanggalPuncak": "2022-07-29",
+   "closeSebelum": 2.3202,
+   "highHari": 7.3,
+   "simbol": "PORTOUSDT",
+   "jumlahHari": 1806,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2022-07-29",
+     "gainPct": 214.628,
+     "closeSebelum": 2.3202,
+     "highHari": 7.3
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 214.4817,
+   "tanggalPuncak": "2026-08-09",
+   "closeSebelum": 0.01312,
+   "highHari": 0.04126,
+   "simbol": "BMTUSDT",
+   "jumlahHari": 588,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-08-09",
+     "gainPct": 214.4817,
+     "closeSebelum": 0.01312,
+     "highHari": 0.04126
+    },
+    {
+     "tanggal": "2026-10-24",
+     "gainPct": 128.4192,
+     "closeSebelum": 0.02252,
+     "highHari": 0.05144
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 214.2194,
+   "tanggalPuncak": "2021-03-13",
+   "closeSebelum": 0.005605,
+   "highHari": 0.017612,
+   "simbol": "MBLUSDT",
+   "jumlahHari": 2440,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 18,
+   "hariGila": [
+    {
+     "tanggal": "2021-03-13",
+     "gainPct": 214.2194,
+     "closeSebelum": 0.005605,
+     "highHari": 0.017612
+    },
+    {
+     "tanggal": "2022-03-06",
+     "gainPct": 126.8392,
+     "closeSebelum": 0.005913,
+     "highHari": 0.013413
+    },
+    {
+     "tanggal": "2025-10-09",
+     "gainPct": 107.5742,
+     "closeSebelum": 0.001954,
+     "highHari": 0.004056
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 212.7948,
+   "tanggalPuncak": "2024-10-07",
+   "closeSebelum": 4.58,
+   "highHari": 14.326,
+   "simbol": "OGUSDT",
+   "jumlahHari": 2127,
+   "jumlahHariGila100": 7,
+   "jumlahHariGila50": 21,
+   "hariGila": [
+    {
+     "tanggal": "2021-01-13",
+     "gainPct": 175.5693,
+     "closeSebelum": 2.591,
+     "highHari": 7.14
+    },
+    {
+     "tanggal": "2022-03-13",
+     "gainPct": 106.5574,
+     "closeSebelum": 3.05,
+     "highHari": 6.3
+    },
+    {
+     "tanggal": "2022-05-23",
+     "gainPct": 205.7554,
+     "closeSebelum": 1.946,
+     "highHari": 5.95
+    },
+    {
+     "tanggal": "2022-06-24",
+     "gainPct": 148.2682,
+     "closeSebelum": 2.685,
+     "highHari": 6.666
+    },
+    {
+     "tanggal": "2023-04-08",
+     "gainPct": 178.6677,
+     "closeSebelum": 5.419,
+     "highHari": 15.101
+    },
+    {
+     "tanggal": "2023-08-17",
+     "gainPct": 103.1661,
+     "closeSebelum": 3.19,
+     "highHari": 6.481
+    },
+    {
+     "tanggal": "2024-10-07",
+     "gainPct": 212.7948,
+     "closeSebelum": 4.58,
+     "highHari": 14.326
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 211.6343,
+   "tanggalPuncak": "2025-08-09",
+   "closeSebelum": 14.44,
+   "highHari": 45.0,
+   "simbol": "GMXUSDT",
+   "jumlahHari": 1483,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2025-08-09",
+     "gainPct": 211.6343,
+     "closeSebelum": 14.44,
+     "highHari": 45.0
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 210.1639,
+   "tanggalPuncak": "2026-08-14",
+   "closeSebelum": 0.122,
+   "highHari": 0.3784,
+   "simbol": "ACEUSDT",
+   "jumlahHari": 1044,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2026-08-06",
+     "gainPct": 100.8487,
+     "closeSebelum": 0.0707,
+     "highHari": 0.142
+    },
+    {
+     "tanggal": "2026-08-14",
+     "gainPct": 210.1639,
+     "closeSebelum": 0.122,
+     "highHari": 0.3784
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 210.101,
+   "tanggalPuncak": "2026-02-11",
+   "closeSebelum": 0.495,
+   "highHari": 1.535,
+   "simbol": "BERAUSDT",
+   "jumlahHari": 628,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2025-04-09",
+     "gainPct": 121.4839,
+     "closeSebelum": 3.612,
+     "highHari": 8.0
+    },
+    {
+     "tanggal": "2026-02-06",
+     "gainPct": 113.9037,
+     "closeSebelum": 0.374,
+     "highHari": 0.8
+    },
+    {
+     "tanggal": "2026-02-11",
+     "gainPct": 210.101,
+     "closeSebelum": 0.495,
+     "highHari": 1.535
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 204.2215,
+   "tanggalPuncak": "2026-04-17",
+   "closeSebelum": 1.445,
+   "highHari": 4.396,
+   "simbol": "MOVRUSDT",
+   "jumlahHari": 1814,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2023-12-23",
+     "gainPct": 173.8034,
+     "closeSebelum": 9.715,
+     "highHari": 26.6
+    },
+    {
+     "tanggal": "2026-04-17",
+     "gainPct": 204.2215,
+     "closeSebelum": 1.445,
+     "highHari": 4.396
+    },
+    {
+     "tanggal": "2026-04-23",
+     "gainPct": 102.0507,
+     "closeSebelum": 1.658,
+     "highHari": 3.35
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 203.9086,
+   "tanggalPuncak": "2022-06-30",
+   "closeSebelum": 13.56,
+   "highHari": 41.21,
+   "simbol": "NMRUSDT",
+   "jumlahHari": 2260,
+   "jumlahHariGila100": 4,
+   "jumlahHariGila50": 22,
+   "hariGila": [
+    {
+     "tanggal": "2022-06-29",
+     "gainPct": 120.686,
+     "closeSebelum": 9.33,
+     "highHari": 20.59
+    },
+    {
+     "tanggal": "2022-06-30",
+     "gainPct": 203.9086,
+     "closeSebelum": 13.56,
+     "highHari": 41.21
+    },
+    {
+     "tanggal": "2023-09-02",
+     "gainPct": 131.0156,
+     "closeSebelum": 10.93,
+     "highHari": 25.25
+    },
+    {
+     "tanggal": "2025-08-26",
+     "gainPct": 108.125,
+     "closeSebelum": 8.0,
+     "highHari": 16.65
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 202.3504,
+   "tanggalPuncak": "2023-11-26",
+   "closeSebelum": 0.01587194,
+   "highHari": 0.04798888,
+   "simbol": "USTCUSDT",
+   "jumlahHari": 1327,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2023-11-26",
+     "gainPct": 202.3504,
+     "closeSebelum": 0.01587194,
+     "highHari": 0.04798888
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 202.2458,
+   "tanggalPuncak": "2022-10-15",
+   "closeSebelum": 0.1603,
+   "highHari": 0.4845,
+   "simbol": "PHAUSDT",
+   "jumlahHari": 1950,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2022-10-14",
+     "gainPct": 181.6712,
+     "closeSebelum": 0.0742,
+     "highHari": 0.209
+    },
+    {
+     "tanggal": "2022-10-15",
+     "gainPct": 202.2458,
+     "closeSebelum": 0.1603,
+     "highHari": 0.4845
+    },
+    {
+     "tanggal": "2024-12-27",
+     "gainPct": 128.2251,
+     "closeSebelum": 0.2434,
+     "highHari": 0.5555
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 198.6207,
+   "tanggalPuncak": "2022-11-23",
+   "closeSebelum": 0.58,
+   "highHari": 1.732,
+   "simbol": "XNOUSDT",
+   "jumlahHari": 1733,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2022-11-23",
+     "gainPct": 198.6207,
+     "closeSebelum": 0.58,
+     "highHari": 1.732
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 195.9723,
+   "tanggalPuncak": "2026-08-08",
+   "closeSebelum": 0.03898,
+   "highHari": 0.11537,
+   "simbol": "TUTUSDT",
+   "jumlahHari": 579,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2026-08-08",
+     "gainPct": 195.9723,
+     "closeSebelum": 0.03898,
+     "highHari": 0.11537
+    },
+    {
+     "tanggal": "2026-08-09",
+     "gainPct": 180.2916,
+     "closeSebelum": 0.10904,
+     "highHari": 0.30563
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 194.8716,
+   "tanggalPuncak": "2021-01-21",
+   "closeSebelum": 0.053857,
+   "highHari": 0.158809,
+   "simbol": "SANDUSDT",
+   "jumlahHari": 2265,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2021-01-21",
+     "gainPct": 194.8716,
+     "closeSebelum": 0.053857,
+     "highHari": 0.158809
+    },
+    {
+     "tanggal": "2021-10-30",
+     "gainPct": 103.0483,
+     "closeSebelum": 1.1646,
+     "highHari": 2.3647
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 193.742,
+   "tanggalPuncak": "2023-12-18",
+   "closeSebelum": 0.0783,
+   "highHari": 0.23,
+   "simbol": "ASTRUSDT",
+   "jumlahHari": 1702,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2023-12-18",
+     "gainPct": 193.742,
+     "closeSebelum": 0.0783,
+     "highHari": 0.23
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 193.2515,
+   "tanggalPuncak": "2022-11-13",
+   "closeSebelum": 6.52,
+   "highHari": 19.12,
+   "simbol": "AXSUSDT",
+   "jumlahHari": 2183,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 13,
+   "hariGila": [
+    {
+     "tanggal": "2022-11-13",
+     "gainPct": 193.2515,
+     "closeSebelum": 6.52,
+     "highHari": 19.12
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 193.2331,
+   "tanggalPuncak": "2023-01-14",
+   "closeSebelum": 2.66,
+   "highHari": 7.8,
+   "simbol": "ATMUSDT",
+   "jumlahHari": 2127,
+   "jumlahHariGila100": 4,
+   "jumlahHariGila50": 17,
+   "hariGila": [
+    {
+     "tanggal": "2021-05-12",
+     "gainPct": 180.4964,
+     "closeSebelum": 9.911,
+     "highHari": 27.8
+    },
+    {
+     "tanggal": "2021-05-15",
+     "gainPct": 100.5466,
+     "closeSebelum": 24.333,
+     "highHari": 48.799
+    },
+    {
+     "tanggal": "2022-05-25",
+     "gainPct": 148.6567,
+     "closeSebelum": 3.35,
+     "highHari": 8.33
+    },
+    {
+     "tanggal": "2023-01-14",
+     "gainPct": 193.2331,
+     "closeSebelum": 2.66,
+     "highHari": 7.8
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 193.0313,
+   "tanggalPuncak": "2025-09-05",
+   "closeSebelum": 0.4061,
+   "highHari": 1.19,
+   "simbol": "REDUSDT",
+   "jumlahHari": 606,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2025-09-05",
+     "gainPct": 193.0313,
+     "closeSebelum": 0.4061,
+     "highHari": 1.19
+    },
+    {
+     "tanggal": "2026-04-06",
+     "gainPct": 126.57,
+     "closeSebelum": 0.1035,
+     "highHari": 0.2345
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 188.9724,
+   "tanggalPuncak": "2022-05-18",
+   "closeSebelum": 0.399,
+   "highHari": 1.153,
+   "simbol": "DIAUSDT",
+   "jumlahHari": 2244,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2022-05-18",
+     "gainPct": 188.9724,
+     "closeSebelum": 0.399,
+     "highHari": 1.153
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 188.6127,
+   "tanggalPuncak": "2026-05-31",
+   "closeSebelum": 0.01247,
+   "highHari": 0.03599,
+   "simbol": "PORTALUSDT",
+   "jumlahHari": 971,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2026-04-18",
+     "gainPct": 107.0539,
+     "closeSebelum": 0.00964,
+     "highHari": 0.01996
+    },
+    {
+     "tanggal": "2026-05-31",
+     "gainPct": 188.6127,
+     "closeSebelum": 0.01247,
+     "highHari": 0.03599
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 188.2639,
+   "tanggalPuncak": "2025-08-12",
+   "closeSebelum": 1.849,
+   "highHari": 5.33,
+   "simbol": "CYBERUSDT",
+   "jumlahHari": 1169,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2023-08-29",
+     "gainPct": 124.8974,
+     "closeSebelum": 3.655,
+     "highHari": 8.22
+    },
+    {
+     "tanggal": "2025-08-12",
+     "gainPct": 188.2639,
+     "closeSebelum": 1.849,
+     "highHari": 5.33
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 186.3158,
+   "tanggalPuncak": "2026-09-09",
+   "closeSebelum": 0.000855,
+   "highHari": 0.002448,
+   "simbol": "IOSTUSDT",
+   "jumlahHari": 2776,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2026-09-09",
+     "gainPct": 186.3158,
+     "closeSebelum": 0.000855,
+     "highHari": 0.002448
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 185.4503,
+   "tanggalPuncak": "2021-09-16",
+   "closeSebelum": 0.05141,
+   "highHari": 0.14675,
+   "simbol": "GALAUSDT",
+   "jumlahHari": 1870,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2021-09-16",
+     "gainPct": 185.4503,
+     "closeSebelum": 0.05141,
+     "highHari": 0.14675
+    },
+    {
+     "tanggal": "2021-11-17",
+     "gainPct": 143.1012,
+     "closeSebelum": 0.11473,
+     "highHari": 0.27891
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 181.5957,
+   "tanggalPuncak": "2022-08-18",
+   "closeSebelum": 5.966,
+   "highHari": 16.8,
+   "simbol": "SANTOSUSDT",
+   "jumlahHari": 1791,
+   "jumlahHariGila100": 6,
+   "jumlahHariGila50": 15,
+   "hariGila": [
+    {
+     "tanggal": "2022-02-27",
+     "gainPct": 103.7744,
+     "closeSebelum": 2.305,
+     "highHari": 4.697
+    },
+    {
+     "tanggal": "2022-03-11",
+     "gainPct": 109.178,
+     "closeSebelum": 3.236,
+     "highHari": 6.769
+    },
+    {
+     "tanggal": "2022-05-17",
+     "gainPct": 160.4155,
+     "closeSebelum": 1.733,
+     "highHari": 4.513
+    },
+    {
+     "tanggal": "2022-05-18",
+     "gainPct": 115.3748,
+     "closeSebelum": 3.148,
+     "highHari": 6.78
+    },
+    {
+     "tanggal": "2022-08-18",
+     "gainPct": 181.5957,
+     "closeSebelum": 5.966,
+     "highHari": 16.8
+    },
+    {
+     "tanggal": "2024-10-28",
+     "gainPct": 155.293,
+     "closeSebelum": 3.259,
+     "highHari": 8.32
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 181.0685,
+   "tanggalPuncak": "2026-04-16",
+   "closeSebelum": 3.444,
+   "highHari": 9.68,
+   "simbol": "ORDIUSDT",
+   "jumlahHari": 1085,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-04-16",
+     "gainPct": 181.0685,
+     "closeSebelum": 3.444,
+     "highHari": 9.68
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 179.1878,
+   "tanggalPuncak": "2025-11-07",
+   "closeSebelum": 0.0985,
+   "highHari": 0.275,
+   "simbol": "FLUXUSDT",
+   "jumlahHari": 1782,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2025-11-07",
+     "gainPct": 179.1878,
+     "closeSebelum": 0.0985,
+     "highHari": 0.275
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 176.509,
+   "tanggalPuncak": "2022-08-21",
+   "closeSebelum": 0.1226,
+   "highHari": 0.339,
+   "simbol": "DUSKUSDT",
+   "jumlahHari": 2654,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 15,
+   "hariGila": [
+    {
+     "tanggal": "2022-08-21",
+     "gainPct": 176.509,
+     "closeSebelum": 0.1226,
+     "highHari": 0.339
+    },
+    {
+     "tanggal": "2026-01-19",
+     "gainPct": 106.8339,
+     "closeSebelum": 0.1595,
+     "highHari": 0.3299
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 175.8025,
+   "tanggalPuncak": "2025-11-20",
+   "closeSebelum": 0.081,
+   "highHari": 0.2234,
+   "simbol": "DYMUSDT",
+   "jumlahHari": 994,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2025-11-20",
+     "gainPct": 175.8025,
+     "closeSebelum": 0.081,
+     "highHari": 0.2234
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 173.2815,
+   "tanggalPuncak": "2022-05-13",
+   "closeSebelum": 1.4271,
+   "highHari": 3.9,
+   "simbol": "ALPINEUSDT",
+   "jumlahHari": 1709,
+   "jumlahHariGila100": 5,
+   "jumlahHariGila50": 15,
+   "hariGila": [
+    {
+     "tanggal": "2022-03-09",
+     "gainPct": 121.9129,
+     "closeSebelum": 3.351,
+     "highHari": 7.4363
+    },
+    {
+     "tanggal": "2022-05-13",
+     "gainPct": 173.2815,
+     "closeSebelum": 1.4271,
+     "highHari": 3.9
+    },
+    {
+     "tanggal": "2023-04-08",
+     "gainPct": 144.7016,
+     "closeSebelum": 2.4026,
+     "highHari": 5.8792
+    },
+    {
+     "tanggal": "2025-09-26",
+     "gainPct": 126.7453,
+     "closeSebelum": 2.12,
+     "highHari": 4.807
+    },
+    {
+     "tanggal": "2025-09-30",
+     "gainPct": 130.3767,
+     "closeSebelum": 6.663,
+     "highHari": 15.35
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 172.549,
+   "tanggalPuncak": "2026-04-24",
+   "closeSebelum": 0.102,
+   "highHari": 0.278,
+   "simbol": "APEUSDT",
+   "jumlahHari": 1685,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2022-03-18",
+     "gainPct": 111.2874,
+     "closeSebelum": 8.5192,
+     "highHari": 18.0
+    },
+    {
+     "tanggal": "2026-04-24",
+     "gainPct": 172.549,
+     "closeSebelum": 0.102,
+     "highHari": 0.278
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 170.0643,
+   "tanggalPuncak": "2020-05-24",
+   "closeSebelum": 0.009016,
+   "highHari": 0.024349,
+   "simbol": "TFUELUSDT",
+   "jumlahHari": 2713,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2020-05-21",
+     "gainPct": 144.0277,
+     "closeSebelum": 0.003893,
+     "highHari": 0.0095
+    },
+    {
+     "tanggal": "2020-05-24",
+     "gainPct": 170.0643,
+     "closeSebelum": 0.009016,
+     "highHari": 0.024349
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 168.3363,
+   "tanggalPuncak": "2022-07-15",
+   "closeSebelum": 2.795,
+   "highHari": 7.5,
+   "simbol": "ACMUSDT",
+   "jumlahHari": 2071,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 15,
+   "hariGila": [
+    {
+     "tanggal": "2022-07-15",
+     "gainPct": 168.3363,
+     "closeSebelum": 2.795,
+     "highHari": 7.5
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 167.4955,
+   "tanggalPuncak": "2024-12-03",
+   "closeSebelum": 0.010094,
+   "highHari": 0.027001,
+   "simbol": "RSRUSDT",
+   "jumlahHari": 2252,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2024-12-03",
+     "gainPct": 167.4955,
+     "closeSebelum": 0.010094,
+     "highHari": 0.027001
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 164.3172,
+   "tanggalPuncak": "2022-11-03",
+   "closeSebelum": 1.135,
+   "highHari": 3.0,
+   "simbol": "BANDUSDT",
+   "jumlahHari": 2596,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2022-11-03",
+     "gainPct": 164.3172,
+     "closeSebelum": 1.135,
+     "highHari": 3.0
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 164.1673,
+   "tanggalPuncak": "2021-03-12",
+   "closeSebelum": 0.35769,
+   "highHari": 0.9449,
+   "simbol": "CHZUSDT",
+   "jumlahHari": 2608,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2021-03-12",
+     "gainPct": 164.1673,
+     "closeSebelum": 0.35769,
+     "highHari": 0.9449
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 163.6704,
+   "tanggalPuncak": "2022-08-05",
+   "closeSebelum": 26.7,
+   "highHari": 70.4,
+   "simbol": "DCRUSDT",
+   "jumlahHari": 2280,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 12,
+   "hariGila": [
+    {
+     "tanggal": "2022-08-05",
+     "gainPct": 163.6704,
+     "closeSebelum": 26.7,
+     "highHari": 70.4
+    },
+    {
+     "tanggal": "2025-11-04",
+     "gainPct": 154.8234,
+     "closeSebelum": 27.47,
+     "highHari": 70.0
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 162.0369,
+   "tanggalPuncak": "2025-05-30",
+   "closeSebelum": 5.479,
+   "highHari": 14.357,
+   "simbol": "LPTUSDT",
+   "jumlahHari": 1978,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2021-11-09",
+     "gainPct": 106.4071,
+     "closeSebelum": 49.32,
+     "highHari": 101.8
+    },
+    {
+     "tanggal": "2025-05-30",
+     "gainPct": 162.0369,
+     "closeSebelum": 5.479,
+     "highHari": 14.357
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 161.6301,
+   "tanggalPuncak": "2026-05-12",
+   "closeSebelum": 0.02601,
+   "highHari": 0.06805,
+   "simbol": "SAGAUSDT",
+   "jumlahHari": 931,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-05-12",
+     "gainPct": 161.6301,
+     "closeSebelum": 0.02601,
+     "highHari": 0.06805
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 159.9017,
+   "tanggalPuncak": "2021-11-26",
+   "closeSebelum": 9.564,
+   "highHari": 24.857,
+   "simbol": "GTCUSDT",
+   "jumlahHari": 1965,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2021-11-26",
+     "gainPct": 159.9017,
+     "closeSebelum": 9.564,
+     "highHari": 24.857
+    },
+    {
+     "tanggal": "2026-05-11",
+     "gainPct": 110.7843,
+     "closeSebelum": 0.102,
+     "highHari": 0.215
+    },
+    {
+     "tanggal": "2026-10-12",
+     "gainPct": 116.7439,
+     "closeSebelum": 0.18132,
+     "highHari": 0.393
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 157.8616,
+   "tanggalPuncak": "2023-07-03",
+   "closeSebelum": 0.003816,
+   "highHari": 0.00984,
+   "simbol": "XVGUSDT",
+   "jumlahHari": 1969,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2023-07-03",
+     "gainPct": 157.8616,
+     "closeSebelum": 0.003816,
+     "highHari": 0.00984
+    },
+    {
+     "tanggal": "2024-12-03",
+     "gainPct": 102.2928,
+     "closeSebelum": 0.009639,
+     "highHari": 0.019499
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 157.4692,
+   "tanggalPuncak": "2026-05-29",
+   "closeSebelum": 0.0569,
+   "highHari": 0.1465,
+   "simbol": "HEIUSDT",
+   "jumlahHari": 621,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2026-05-29",
+     "gainPct": 157.4692,
+     "closeSebelum": 0.0569,
+     "highHari": 0.1465
+    },
+    {
+     "tanggal": "2026-08-05",
+     "gainPct": 138.8244,
+     "closeSebelum": 0.1293,
+     "highHari": 0.3088
+    },
+    {
+     "tanggal": "2026-08-06",
+     "gainPct": 101.2295,
+     "closeSebelum": 0.2684,
+     "highHari": 0.5401
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 156.905,
+   "tanggalPuncak": "2021-08-30",
+   "closeSebelum": 4.265,
+   "highHari": 10.957,
+   "simbol": "CELOUSDT",
+   "jumlahHari": 2121,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2021-08-30",
+     "gainPct": 156.905,
+     "closeSebelum": 4.265,
+     "highHari": 10.957
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 156.3976,
+   "tanggalPuncak": "2024-01-19",
+   "closeSebelum": 2.626,
+   "highHari": 6.733,
+   "simbol": "UMAUSDT",
+   "jumlahHari": 2239,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 14,
+   "hariGila": [
+    {
+     "tanggal": "2020-10-09",
+     "gainPct": 101.2353,
+     "closeSebelum": 6.557,
+     "highHari": 13.195
+    },
+    {
+     "tanggal": "2021-02-03",
+     "gainPct": 120.3659,
+     "closeSebelum": 16.67,
+     "highHari": 36.735
+    },
+    {
+     "tanggal": "2024-01-19",
+     "gainPct": 156.3976,
+     "closeSebelum": 2.626,
+     "highHari": 6.733
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 156.22,
+   "tanggalPuncak": "2025-11-05",
+   "closeSebelum": 106.35,
+   "highHari": 272.49,
+   "simbol": "GIGGLEUSDT",
+   "jumlahHari": 367,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2025-11-04",
+     "gainPct": 109.1,
+     "closeSebelum": 59.78,
+     "highHari": 125.0
+    },
+    {
+     "tanggal": "2025-11-05",
+     "gainPct": 156.22,
+     "closeSebelum": 106.35,
+     "highHari": 272.49
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 155.9338,
+   "tanggalPuncak": "2025-06-05",
+   "closeSebelum": 0.01087,
+   "highHari": 0.02782,
+   "simbol": "RVNUSDT",
+   "jumlahHari": 2589,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2021-02-20",
+     "gainPct": 101.4234,
+     "closeSebelum": 0.14543,
+     "highHari": 0.29293
+    },
+    {
+     "tanggal": "2025-06-05",
+     "gainPct": 155.9338,
+     "closeSebelum": 0.01087,
+     "highHari": 0.02782
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 155.3914,
+   "tanggalPuncak": "2026-09-19",
+   "closeSebelum": 0.002031,
+   "highHari": 0.005187,
+   "simbol": "ONEUSDT",
+   "jumlahHari": 2705,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2026-09-17",
+     "gainPct": 120.4797,
+     "closeSebelum": 0.001084,
+     "highHari": 0.00239
+    },
+    {
+     "tanggal": "2026-09-19",
+     "gainPct": 155.3914,
+     "closeSebelum": 0.002031,
+     "highHari": 0.005187
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 151.5887,
+   "tanggalPuncak": "2023-11-10",
+   "closeSebelum": 2.1999,
+   "highHari": 5.5347,
+   "simbol": "FTTUSDT",
+   "jumlahHari": 2193,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2023-11-10",
+     "gainPct": 151.5887,
+     "closeSebelum": 2.1999,
+     "highHari": 5.5347
+    },
+    {
+     "tanggal": "2024-09-29",
+     "gainPct": 113.0844,
+     "closeSebelum": 1.4032,
+     "highHari": 2.99
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 148.5915,
+   "tanggalPuncak": "2022-07-31",
+   "closeSebelum": 0.426,
+   "highHari": 1.059,
+   "simbol": "PUNDIXUSDT",
+   "jumlahHari": 2027,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2022-07-31",
+     "gainPct": 148.5915,
+     "closeSebelum": 0.426,
+     "highHari": 1.059
+    },
+    {
+     "tanggal": "2022-09-13",
+     "gainPct": 100.9009,
+     "closeSebelum": 0.555,
+     "highHari": 1.115
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 148.4329,
+   "tanggalPuncak": "2020-09-18",
+   "closeSebelum": 3.4617,
+   "highHari": 8.6,
+   "simbol": "UNIUSDT",
+   "jumlahHari": 2231,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2020-09-18",
+     "gainPct": 148.4329,
+     "closeSebelum": 3.4617,
+     "highHari": 8.6
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 147.9662,
+   "tanggalPuncak": "2026-05-07",
+   "closeSebelum": 0.04376,
+   "highHari": 0.10851,
+   "simbol": "NILUSDT",
+   "jumlahHari": 582,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 2,
+   "hariGila": [
+    {
+     "tanggal": "2026-05-07",
+     "gainPct": 147.9662,
+     "closeSebelum": 0.04376,
+     "highHari": 0.10851
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 147.8155,
+   "tanggalPuncak": "2024-05-29",
+   "closeSebelum": 0.6981,
+   "highHari": 1.73,
+   "simbol": "CTKUSDT",
+   "jumlahHari": 2191,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2024-05-29",
+     "gainPct": 147.8155,
+     "closeSebelum": 0.6981,
+     "highHari": 1.73
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 147.35,
+   "tanggalPuncak": "2026-04-10",
+   "closeSebelum": 0.07132,
+   "highHari": 0.17641,
+   "simbol": "FFUSDT",
+   "jumlahHari": 393,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2026-04-10",
+     "gainPct": 147.35,
+     "closeSebelum": 0.07132,
+     "highHari": 0.17641
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 147.1186,
+   "tanggalPuncak": "2021-09-04",
+   "closeSebelum": 0.3939,
+   "highHari": 0.9734,
+   "simbol": "CVCUSDT",
+   "jumlahHari": 2465,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 16,
+   "hariGila": [
+    {
+     "tanggal": "2020-11-09",
+     "gainPct": 112.8974,
+     "closeSebelum": 0.06699,
+     "highHari": 0.14262
+    },
+    {
+     "tanggal": "2021-09-04",
+     "gainPct": 147.1186,
+     "closeSebelum": 0.3939,
+     "highHari": 0.9734
+    },
+    {
+     "tanggal": "2026-09-13",
+     "gainPct": 123.5191,
+     "closeSebelum": 0.02279,
+     "highHari": 0.05094
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 146.8931,
+   "tanggalPuncak": "2020-02-06",
+   "closeSebelum": 0.1207,
+   "highHari": 0.298,
+   "simbol": "OGNUSDT",
+   "jumlahHari": 2483,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 19,
+   "hariGila": [
+    {
+     "tanggal": "2020-02-06",
+     "gainPct": 146.8931,
+     "closeSebelum": 0.1207,
+     "highHari": 0.298
+    },
+    {
+     "tanggal": "2020-06-18",
+     "gainPct": 114.3482,
+     "closeSebelum": 0.2286,
+     "highHari": 0.49
+    },
+    {
+     "tanggal": "2026-10-08",
+     "gainPct": 133.9168,
+     "closeSebelum": 0.02285,
+     "highHari": 0.05345
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 146.7446,
+   "tanggalPuncak": "2021-04-05",
+   "closeSebelum": 1.155,
+   "highHari": 2.8499,
+   "simbol": "STXUSDT",
+   "jumlahHari": 2559,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2021-04-05",
+     "gainPct": 146.7446,
+     "closeSebelum": 1.155,
+     "highHari": 2.8499
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 146.1721,
+   "tanggalPuncak": "2026-09-27",
+   "closeSebelum": 151.52,
+   "highHari": 373.0,
+   "simbol": "QNTUSDT",
+   "jumlahHari": 1916,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 2,
+   "hariGila": [
+    {
+     "tanggal": "2026-09-27",
+     "gainPct": 146.1721,
+     "closeSebelum": 151.52,
+     "highHari": 373.0
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 145.4809,
+   "tanggalPuncak": "2024-03-04",
+   "closeSebelum": 4.481e-05,
+   "highHari": 0.00011,
+   "simbol": "XECUSDT",
+   "jumlahHari": 1880,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 6,
+   "hariGila": [
+    {
+     "tanggal": "2024-03-04",
+     "gainPct": 145.4809,
+     "closeSebelum": 4.481e-05,
+     "highHari": 0.00011
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 144.3332,
+   "tanggalPuncak": "2020-02-12",
+   "closeSebelum": 0.03397,
+   "highHari": 0.083,
+   "simbol": "HBARUSDT",
+   "jumlahHari": 2585,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2020-02-12",
+     "gainPct": 144.3332,
+     "closeSebelum": 0.03397,
+     "highHari": 0.083
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 143.7167,
+   "tanggalPuncak": "2024-11-13",
+   "closeSebelum": 1.313,
+   "highHari": 3.2,
+   "simbol": "AGLDUSDT",
+   "jumlahHari": 1848,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 12,
+   "hariGila": [
+    {
+     "tanggal": "2024-11-13",
+     "gainPct": 143.7167,
+     "closeSebelum": 1.313,
+     "highHari": 3.2
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 142.0339,
+   "tanggalPuncak": "2025-07-18",
+   "closeSebelum": 1.18,
+   "highHari": 2.856,
+   "simbol": "EPICUSDT",
+   "jumlahHari": 593,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2025-07-18",
+     "gainPct": 142.0339,
+     "closeSebelum": 1.18,
+     "highHari": 2.856
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 141.3882,
+   "tanggalPuncak": "2026-04-02",
+   "closeSebelum": 0.00389,
+   "highHari": 0.00939,
+   "simbol": "SOLVUSDT",
+   "jumlahHari": 648,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2026-04-02",
+     "gainPct": 141.3882,
+     "closeSebelum": 0.00389,
+     "highHari": 0.00939
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 140.8102,
+   "tanggalPuncak": "2021-05-09",
+   "closeSebelum": 4.9321,
+   "highHari": 11.877,
+   "simbol": "RLCUSDT",
+   "jumlahHari": 2539,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 16,
+   "hariGila": [
+    {
+     "tanggal": "2021-05-09",
+     "gainPct": 140.8102,
+     "closeSebelum": 4.9321,
+     "highHari": 11.877
+    },
+    {
+     "tanggal": "2026-10-05",
+     "gainPct": 113.1175,
+     "closeSebelum": 0.3644,
+     "highHari": 0.7766
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 140.1902,
+   "tanggalPuncak": "2026-07-01",
+   "closeSebelum": 0.000841,
+   "highHari": 0.00202,
+   "simbol": "TLMUSDT",
+   "jumlahHari": 2023,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 11,
+   "hariGila": [
+    {
+     "tanggal": "2025-12-31",
+     "gainPct": 118.3544,
+     "closeSebelum": 0.002054,
+     "highHari": 0.004485
+    },
+    {
+     "tanggal": "2026-07-01",
+     "gainPct": 140.1902,
+     "closeSebelum": 0.000841,
+     "highHari": 0.00202
+    },
+    {
+     "tanggal": "2026-07-03",
+     "gainPct": 102.1157,
+     "closeSebelum": 0.001607,
+     "highHari": 0.003248
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 140.0691,
+   "tanggalPuncak": "2026-09-08",
+   "closeSebelum": 0.00579,
+   "highHari": 0.0139,
+   "simbol": "SOPHUSDT",
+   "jumlahHari": 517,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2025-12-19",
+     "gainPct": 113.7599,
+     "closeSebelum": 0.01141,
+     "highHari": 0.02439
+    },
+    {
+     "tanggal": "2026-09-08",
+     "gainPct": 140.0691,
+     "closeSebelum": 0.00579,
+     "highHari": 0.0139
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 139.8719,
+   "tanggalPuncak": "2023-12-31",
+   "closeSebelum": 262.24,
+   "highHari": 629.04,
+   "simbol": "TRBUSDT",
+   "jumlahHari": 2250,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 14,
+   "hariGila": [
+    {
+     "tanggal": "2023-12-31",
+     "gainPct": 139.8719,
+     "closeSebelum": 262.24,
+     "highHari": 629.04
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 138.9831,
+   "tanggalPuncak": "2026-01-24",
+   "closeSebelum": 0.767,
+   "highHari": 1.833,
+   "simbol": "ENSOUSDT",
+   "jumlahHari": 378,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2026-01-24",
+     "gainPct": 138.9831,
+     "closeSebelum": 0.767,
+     "highHari": 1.833
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 137.2684,
+   "tanggalPuncak": "2021-08-11",
+   "closeSebelum": 0.052146,
+   "highHari": 0.123726,
+   "simbol": "IOTXUSDT",
+   "jumlahHari": 2539,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2021-08-11",
+     "gainPct": 137.2684,
+     "closeSebelum": 0.052146,
+     "highHari": 0.123726
+    },
+    {
+     "tanggal": "2021-11-10",
+     "gainPct": 132.1762,
+     "closeSebelum": 0.10716,
+     "highHari": 0.2488
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 135.9375,
+   "tanggalPuncak": "2025-07-12",
+   "closeSebelum": 0.32,
+   "highHari": 0.755,
+   "simbol": "KNCUSDT",
+   "jumlahHari": 2328,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2025-07-12",
+     "gainPct": 135.9375,
+     "closeSebelum": 0.32,
+     "highHari": 0.755
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 133.9915,
+   "tanggalPuncak": "2021-04-03",
+   "closeSebelum": 0.00063613,
+   "highHari": 0.00148849,
+   "simbol": "WINUSDT",
+   "jumlahHari": 2644,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2021-02-09",
+     "gainPct": 132.6977,
+     "closeSebelum": 0.00014001,
+     "highHari": 0.0003258
+    },
+    {
+     "tanggal": "2021-04-03",
+     "gainPct": 133.9915,
+     "closeSebelum": 0.00063613,
+     "highHari": 0.00148849
+    },
+    {
+     "tanggal": "2021-04-04",
+     "gainPct": 100.6199,
+     "closeSebelum": 0.00113897,
+     "highHari": 0.002285
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 133.7838,
+   "tanggalPuncak": "2020-03-26",
+   "closeSebelum": 0.00148,
+   "highHari": 0.00346,
+   "simbol": "CELRUSDT",
+   "jumlahHari": 2773,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2020-03-26",
+     "gainPct": 133.7838,
+     "closeSebelum": 0.00148,
+     "highHari": 0.00346
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 133.5234,
+   "tanggalPuncak": "2020-12-18",
+   "closeSebelum": 0.12275,
+   "highHari": 0.28665,
+   "simbol": "GRTUSDT",
+   "jumlahHari": 2140,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2020-12-18",
+     "gainPct": 133.5234,
+     "closeSebelum": 0.12275,
+     "highHari": 0.28665
+    },
+    {
+     "tanggal": "2020-12-19",
+     "gainPct": 125.825,
+     "closeSebelum": 0.26122,
+     "highHari": 0.5899
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 131.8919,
+   "tanggalPuncak": "2026-10-13",
+   "closeSebelum": 0.37,
+   "highHari": 0.858,
+   "simbol": "GNSUSDT",
+   "jumlahHari": 1348,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2025-06-22",
+     "gainPct": 105.3232,
+     "closeSebelum": 1.315,
+     "highHari": 2.7
+    },
+    {
+     "tanggal": "2026-10-13",
+     "gainPct": 131.8919,
+     "closeSebelum": 0.37,
+     "highHari": 0.858
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 130.4762,
+   "tanggalPuncak": "2022-05-29",
+   "closeSebelum": 0.525,
+   "highHari": 1.21,
+   "simbol": "BELUSDT",
+   "jumlahHari": 2233,
+   "jumlahHariGila100": 3,
+   "jumlahHariGila50": 12,
+   "hariGila": [
+    {
+     "tanggal": "2022-05-29",
+     "gainPct": 130.4762,
+     "closeSebelum": 0.525,
+     "highHari": 1.21
+    },
+    {
+     "tanggal": "2022-06-07",
+     "gainPct": 123.1719,
+     "closeSebelum": 1.053,
+     "highHari": 2.35
+    },
+    {
+     "tanggal": "2025-10-16",
+     "gainPct": 118.1619,
+     "closeSebelum": 0.3188,
+     "highHari": 0.6955
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 129.288,
+   "tanggalPuncak": "2025-04-16",
+   "closeSebelum": 0.2851,
+   "highHari": 0.6537,
+   "simbol": "WCTUSDT",
+   "jumlahHari": 560,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2025-04-16",
+     "gainPct": 129.288,
+     "closeSebelum": 0.2851,
+     "highHari": 0.6537
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 129.0951,
+   "tanggalPuncak": "2026-01-25",
+   "closeSebelum": 0.00873,
+   "highHari": 0.02,
+   "simbol": "NOMUSDT",
+   "jumlahHari": 391,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2026-01-25",
+     "gainPct": 129.0951,
+     "closeSebelum": 0.00873,
+     "highHari": 0.02
+    },
+    {
+     "tanggal": "2026-04-02",
+     "gainPct": 116.9811,
+     "closeSebelum": 0.00583,
+     "highHari": 0.01265
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 128.4672,
+   "tanggalPuncak": "2026-06-09",
+   "closeSebelum": 0.0137,
+   "highHari": 0.0313,
+   "simbol": "MOVEUSDT",
+   "jumlahHari": 687,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 6,
+   "hariGila": [
+    {
+     "tanggal": "2026-06-09",
+     "gainPct": 128.4672,
+     "closeSebelum": 0.0137,
+     "highHari": 0.0313
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 127.3986,
+   "tanggalPuncak": "2025-12-05",
+   "closeSebelum": 3.106e-05,
+   "highHari": 7.063e-05,
+   "simbol": "LUNCUSDT",
+   "jumlahHari": 1509,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 2,
+   "hariGila": [
+    {
+     "tanggal": "2025-12-05",
+     "gainPct": 127.3986,
+     "closeSebelum": 3.106e-05,
+     "highHari": 7.063e-05
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 127.3739,
+   "tanggalPuncak": "2026-05-04",
+   "closeSebelum": 0.01527,
+   "highHari": 0.03472,
+   "simbol": "TSTUSDT",
+   "jumlahHari": 625,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2026-05-04",
+     "gainPct": 127.3739,
+     "closeSebelum": 0.01527,
+     "highHari": 0.03472
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 126.9775,
+   "tanggalPuncak": "2026-06-03",
+   "closeSebelum": 0.1201,
+   "highHari": 0.2726,
+   "simbol": "OPNUSDT",
+   "jumlahHari": 236,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2026-06-03",
+     "gainPct": 126.9775,
+     "closeSebelum": 0.1201,
+     "highHari": 0.2726
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 125.9036,
+   "tanggalPuncak": "2023-02-19",
+   "closeSebelum": 66.4,
+   "highHari": 150.0,
+   "simbol": "QUICKUSDT",
+   "jumlahHari": 1898,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 13,
+   "hariGila": [
+    {
+     "tanggal": "2021-12-28",
+     "gainPct": 115.2568,
+     "closeSebelum": 264.8,
+     "highHari": 570.0
+    },
+    {
+     "tanggal": "2023-02-19",
+     "gainPct": 125.9036,
+     "closeSebelum": 66.4,
+     "highHari": 150.0
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 125.4902,
+   "tanggalPuncak": "2023-12-06",
+   "closeSebelum": 5.1e-07,
+   "highHari": 1.15e-06,
+   "simbol": "BTTCUSDT",
+   "jumlahHari": 1736,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2023-12-06",
+     "gainPct": 125.4902,
+     "closeSebelum": 5.1e-07,
+     "highHari": 1.15e-06
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 125.2599,
+   "tanggalPuncak": "2021-03-10",
+   "closeSebelum": 11.35,
+   "highHari": 25.567,
+   "simbol": "PSGUSDT",
+   "jumlahHari": 2136,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2021-03-10",
+     "gainPct": 125.2599,
+     "closeSebelum": 11.35,
+     "highHari": 25.567
+    },
+    {
+     "tanggal": "2022-05-18",
+     "gainPct": 108.1911,
+     "closeSebelum": 5.86,
+     "highHari": 12.2
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 124.7688,
+   "tanggalPuncak": "2025-07-23",
+   "closeSebelum": 0.089972,
+   "highHari": 0.202229,
+   "simbol": "SPKUSDT",
+   "jumlahHari": 497,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2025-07-21",
+     "gainPct": 117.1913,
+     "closeSebelum": 0.039136,
+     "highHari": 0.085
+    },
+    {
+     "tanggal": "2025-07-23",
+     "gainPct": 124.7688,
+     "closeSebelum": 0.089972,
+     "highHari": 0.202229
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 123.9405,
+   "tanggalPuncak": "2021-03-11",
+   "closeSebelum": 0.29803,
+   "highHari": 0.66741,
+   "simbol": "CHRUSDT",
+   "jumlahHari": 2364,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2021-03-11",
+     "gainPct": 123.9405,
+     "closeSebelum": 0.29803,
+     "highHari": 0.66741
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 123.0835,
+   "tanggalPuncak": "2021-10-06",
+   "closeSebelum": 0.7057,
+   "highHari": 1.5743,
+   "simbol": "HIVEUSDT",
+   "jumlahHari": 2374,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 16,
+   "hariGila": [
+    {
+     "tanggal": "2021-10-06",
+     "gainPct": 123.0835,
+     "closeSebelum": 0.7057,
+     "highHari": 1.5743
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 122.8864,
+   "tanggalPuncak": "2024-11-23",
+   "closeSebelum": 23.42,
+   "highHari": 52.2,
+   "simbol": "KSMUSDT",
+   "jumlahHari": 2244,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2024-11-23",
+     "gainPct": 122.8864,
+     "closeSebelum": 23.42,
+     "highHari": 52.2
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 120.2398,
+   "tanggalPuncak": "2026-02-24",
+   "closeSebelum": 0.10341,
+   "highHari": 0.22775,
+   "simbol": "ESPUSDT",
+   "jumlahHari": 257,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2026-02-24",
+     "gainPct": 120.2398,
+     "closeSebelum": 0.10341,
+     "highHari": 0.22775
+    },
+    {
+     "tanggal": "2026-04-07",
+     "gainPct": 102.3158,
+     "closeSebelum": 0.07859,
+     "highHari": 0.159
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 119.0377,
+   "tanggalPuncak": "2022-06-27",
+   "closeSebelum": 0.478,
+   "highHari": 1.047,
+   "simbol": "STRAXUSDT",
+   "jumlahHari": 2162,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2022-06-27",
+     "gainPct": 119.0377,
+     "closeSebelum": 0.478,
+     "highHari": 1.047
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 118.2952,
+   "tanggalPuncak": "2022-03-20",
+   "closeSebelum": 0.481,
+   "highHari": 1.05,
+   "simbol": "RAREUSDT",
+   "jumlahHari": 1842,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 16,
+   "hariGila": [
+    {
+     "tanggal": "2022-03-20",
+     "gainPct": 118.2952,
+     "closeSebelum": 0.481,
+     "highHari": 1.05
+    },
+    {
+     "tanggal": "2025-03-10",
+     "gainPct": 107.1429,
+     "closeSebelum": 0.07,
+     "highHari": 0.145
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 117.717,
+   "tanggalPuncak": "2026-09-16",
+   "closeSebelum": 0.10013,
+   "highHari": 0.218,
+   "simbol": "SYNUSDT",
+   "jumlahHari": 1343,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 12,
+   "hariGila": [
+    {
+     "tanggal": "2026-09-16",
+     "gainPct": 117.717,
+     "closeSebelum": 0.10013,
+     "highHari": 0.218
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 117.1508,
+   "tanggalPuncak": "2025-06-16",
+   "closeSebelum": 0.02513,
+   "highHari": 0.05457,
+   "simbol": "ALTUSDT",
+   "jumlahHari": 1006,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2025-06-16",
+     "gainPct": 117.1508,
+     "closeSebelum": 0.02513,
+     "highHari": 0.05457
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 116.761,
+   "tanggalPuncak": "2026-04-24",
+   "closeSebelum": 0.01414,
+   "highHari": 0.03065,
+   "simbol": "KATUSDT",
+   "jumlahHari": 223,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-04-24",
+     "gainPct": 116.761,
+     "closeSebelum": 0.01414,
+     "highHari": 0.03065
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 115.5444,
+   "tanggalPuncak": "2026-03-15",
+   "closeSebelum": 0.2792,
+   "highHari": 0.6018,
+   "simbol": "THEUSDT",
+   "jumlahHari": 699,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2026-03-15",
+     "gainPct": 115.5444,
+     "closeSebelum": 0.2792,
+     "highHari": 0.6018
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 114.9448,
+   "tanggalPuncak": "2026-05-10",
+   "closeSebelum": 0.0997,
+   "highHari": 0.2143,
+   "simbol": "LAYERUSDT",
+   "jumlahHari": 623,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2026-05-10",
+     "gainPct": 114.9448,
+     "closeSebelum": 0.0997,
+     "highHari": 0.2143
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 114.7959,
+   "tanggalPuncak": "2026-06-28",
+   "closeSebelum": 0.00784,
+   "highHari": 0.01684,
+   "simbol": "ACTUSDT",
+   "jumlahHari": 715,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-06-28",
+     "gainPct": 114.7959,
+     "closeSebelum": 0.00784,
+     "highHari": 0.01684
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 114.7531,
+   "tanggalPuncak": "2026-05-29",
+   "closeSebelum": 0.162,
+   "highHari": 0.3479,
+   "simbol": "ALLOUSDT",
+   "jumlahHari": 350,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2026-05-29",
+     "gainPct": 114.7531,
+     "closeSebelum": 0.162,
+     "highHari": 0.3479
+    },
+    {
+     "tanggal": "2026-06-06",
+     "gainPct": 114.1261,
+     "closeSebelum": 0.2237,
+     "highHari": 0.479
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 114.5045,
+   "tanggalPuncak": "2026-07-19",
+   "closeSebelum": 0.111,
+   "highHari": 0.2381,
+   "simbol": "BANKUSDT",
+   "jumlahHari": 348,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 6,
+   "hariGila": [
+    {
+     "tanggal": "2026-07-19",
+     "gainPct": 114.5045,
+     "closeSebelum": 0.111,
+     "highHari": 0.2381
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 113.4282,
+   "tanggalPuncak": "2022-07-09",
+   "closeSebelum": 0.2249,
+   "highHari": 0.48,
+   "simbol": "STEEMUSDT",
+   "jumlahHari": 1649,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 6,
+   "hariGila": [
+    {
+     "tanggal": "2022-07-09",
+     "gainPct": 113.4282,
+     "closeSebelum": 0.2249,
+     "highHari": 0.48
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 111.9141,
+   "tanggalPuncak": "2021-12-05",
+   "closeSebelum": 4.0347,
+   "highHari": 8.5501,
+   "simbol": "LAZIOUSDT",
+   "jumlahHari": 1832,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 12,
+   "hariGila": [
+    {
+     "tanggal": "2021-12-05",
+     "gainPct": 111.9141,
+     "closeSebelum": 4.0347,
+     "highHari": 8.5501
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 111.287,
+   "tanggalPuncak": "2026-06-19",
+   "closeSebelum": 0.4359,
+   "highHari": 0.921,
+   "simbol": "REUSDT",
+   "jumlahHari": 131,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2026-06-19",
+     "gainPct": 111.287,
+     "closeSebelum": 0.4359,
+     "highHari": 0.921
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 110.9731,
+   "tanggalPuncak": "2026-09-18",
+   "closeSebelum": 0.00483,
+   "highHari": 0.01019,
+   "simbol": "GUSDT",
+   "jumlahHari": 830,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-09-18",
+     "gainPct": 110.9731,
+     "closeSebelum": 0.00483,
+     "highHari": 0.01019
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 110.7337,
+   "tanggalPuncak": "2021-11-27",
+   "closeSebelum": 11.422,
+   "highHari": 24.07,
+   "simbol": "RADUSDT",
+   "jumlahHari": 1846,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 14,
+   "hariGila": [
+    {
+     "tanggal": "2021-11-27",
+     "gainPct": 110.7337,
+     "closeSebelum": 11.422,
+     "highHari": 24.07
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 110.2431,
+   "tanggalPuncak": "2025-08-28",
+   "closeSebelum": 0.3085,
+   "highHari": 0.6486,
+   "simbol": "TREEUSDT",
+   "jumlahHari": 455,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2025-08-28",
+     "gainPct": 110.2431,
+     "closeSebelum": 0.3085,
+     "highHari": 0.6486
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 109.9383,
+   "tanggalPuncak": "2021-03-06",
+   "closeSebelum": 0.5997,
+   "highHari": 1.259,
+   "simbol": "AUDIOUSDT",
+   "jumlahHari": 2195,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 14,
+   "hariGila": [
+    {
+     "tanggal": "2021-03-06",
+     "gainPct": 109.9383,
+     "closeSebelum": 0.5997,
+     "highHari": 1.259
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 109.8785,
+   "tanggalPuncak": "2025-11-07",
+   "closeSebelum": 1.893,
+   "highHari": 3.973,
+   "simbol": "FILUSDT",
+   "jumlahHari": 2203,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2025-11-07",
+     "gainPct": 109.8785,
+     "closeSebelum": 1.893,
+     "highHari": 3.973
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 109.6443,
+   "tanggalPuncak": "2026-04-18",
+   "closeSebelum": 0.1265,
+   "highHari": 0.2652,
+   "simbol": "ALICEUSDT",
+   "jumlahHari": 2052,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2026-04-18",
+     "gainPct": 109.6443,
+     "closeSebelum": 0.1265,
+     "highHari": 0.2652
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 108.5941,
+   "tanggalPuncak": "2023-03-18",
+   "closeSebelum": 0.2397,
+   "highHari": 0.5,
+   "simbol": "JOEUSDT",
+   "jumlahHari": 1764,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2023-03-18",
+     "gainPct": 108.5941,
+     "closeSebelum": 0.2397,
+     "highHari": 0.5
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 108.3351,
+   "tanggalPuncak": "2023-10-24",
+   "closeSebelum": 0.4631,
+   "highHari": 0.9648,
+   "simbol": "MINAUSDT",
+   "jumlahHari": 1904,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 2,
+   "hariGila": [
+    {
+     "tanggal": "2023-10-24",
+     "gainPct": 108.3351,
+     "closeSebelum": 0.4631,
+     "highHari": 0.9648
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 107.5,
+   "tanggalPuncak": "2026-04-17",
+   "closeSebelum": 0.012,
+   "highHari": 0.0249,
+   "simbol": "GLMRUSDT",
+   "jumlahHari": 1750,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2026-04-17",
+     "gainPct": 107.5,
+     "closeSebelum": 0.012,
+     "highHari": 0.0249
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 105.7232,
+   "tanggalPuncak": "2023-07-13",
+   "closeSebelum": 0.0961,
+   "highHari": 0.1977,
+   "simbol": "XLMUSDT",
+   "jumlahHari": 3071,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2021-01-06",
+     "gainPct": 102.1668,
+     "closeSebelum": 0.19291,
+     "highHari": 0.39
+    },
+    {
+     "tanggal": "2023-07-13",
+     "gainPct": 105.7232,
+     "closeSebelum": 0.0961,
+     "highHari": 0.1977
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 105.6277,
+   "tanggalPuncak": "2021-05-24",
+   "closeSebelum": 0.462,
+   "highHari": 0.95,
+   "simbol": "SUPERUSDT",
+   "jumlahHari": 2042,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 8,
+   "hariGila": [
+    {
+     "tanggal": "2021-05-24",
+     "gainPct": 105.6277,
+     "closeSebelum": 0.462,
+     "highHari": 0.95
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 104.974,
+   "tanggalPuncak": "2025-10-12",
+   "closeSebelum": 0.3659,
+   "highHari": 0.75,
+   "simbol": "ERAUSDT",
+   "jumlahHari": 467,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 6,
+   "hariGila": [
+    {
+     "tanggal": "2025-10-12",
+     "gainPct": 104.974,
+     "closeSebelum": 0.3659,
+     "highHari": 0.75
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 104.7201,
+   "tanggalPuncak": "2023-08-05",
+   "closeSebelum": 0.2733,
+   "highHari": 0.5595,
+   "simbol": "YGGUSDT",
+   "jumlahHari": 1859,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2023-08-05",
+     "gainPct": 104.7201,
+     "closeSebelum": 0.2733,
+     "highHari": 0.5595
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 104.4118,
+   "tanggalPuncak": "2025-08-28",
+   "closeSebelum": 0.1156,
+   "highHari": 0.2363,
+   "simbol": "PYTHUSDT",
+   "jumlahHari": 998,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 1,
+   "hariGila": [
+    {
+     "tanggal": "2025-08-28",
+     "gainPct": 104.4118,
+     "closeSebelum": 0.1156,
+     "highHari": 0.2363
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 104.3783,
+   "tanggalPuncak": "2025-01-27",
+   "closeSebelum": 0.02284,
+   "highHari": 0.04668,
+   "simbol": "ACHUSDT",
+   "jumlahHari": 1751,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 7,
+   "hariGila": [
+    {
+     "tanggal": "2025-01-27",
+     "gainPct": 104.3783,
+     "closeSebelum": 0.02284,
+     "highHari": 0.04668
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 103.6842,
+   "tanggalPuncak": "2026-05-05",
+   "closeSebelum": 3.8e-05,
+   "highHari": 7.74e-05,
+   "simbol": "DOGSUSDT",
+   "jumlahHari": 792,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2026-05-05",
+     "gainPct": 103.6842,
+     "closeSebelum": 3.8e-05,
+     "highHari": 7.74e-05
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 103.3937,
+   "tanggalPuncak": "2024-12-03",
+   "closeSebelum": 0.221,
+   "highHari": 0.4495,
+   "simbol": "TRXUSDT",
+   "jumlahHari": 3060,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 2,
+   "hariGila": [
+    {
+     "tanggal": "2024-12-03",
+     "gainPct": 103.3937,
+     "closeSebelum": 0.221,
+     "highHari": 0.4495
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 102.8637,
+   "tanggalPuncak": "2023-07-27",
+   "closeSebelum": 8.73,
+   "highHari": 17.71,
+   "simbol": "AUCTIONUSDT",
+   "jumlahHari": 1824,
+   "jumlahHariGila100": 2,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2022-03-19",
+     "gainPct": 100.7326,
+     "closeSebelum": 13.65,
+     "highHari": 27.4
+    },
+    {
+     "tanggal": "2023-07-27",
+     "gainPct": 102.8637,
+     "closeSebelum": 8.73,
+     "highHari": 17.71
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 102.6432,
+   "tanggalPuncak": "2026-03-11",
+   "closeSebelum": 0.00908,
+   "highHari": 0.0184,
+   "simbol": "PIXELUSDT",
+   "jumlahHari": 981,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-03-11",
+     "gainPct": 102.6432,
+     "closeSebelum": 0.00908,
+     "highHari": 0.0184
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 102.6321,
+   "tanggalPuncak": "2022-03-26",
+   "closeSebelum": 0.04787,
+   "highHari": 0.097,
+   "simbol": "ZILUSDT",
+   "jumlahHari": 2807,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2022-03-26",
+     "gainPct": 102.6321,
+     "closeSebelum": 0.04787,
+     "highHari": 0.097
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 102.5316,
+   "tanggalPuncak": "2025-03-11",
+   "closeSebelum": 11.06,
+   "highHari": 22.4,
+   "simbol": "BANANAUSDT",
+   "jumlahHari": 829,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 2,
+   "hariGila": [
+    {
+     "tanggal": "2025-03-11",
+     "gainPct": 102.5316,
+     "closeSebelum": 11.06,
+     "highHari": 22.4
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 102.1201,
+   "tanggalPuncak": "2026-02-01",
+   "closeSebelum": 0.0849,
+   "highHari": 0.1716,
+   "simbol": "ZKPUSDT",
+   "jumlahHari": 293,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2026-02-01",
+     "gainPct": 102.1201,
+     "closeSebelum": 0.0849,
+     "highHari": 0.1716
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 101.944,
+   "tanggalPuncak": "2025-04-01",
+   "closeSebelum": 39.61,
+   "highHari": 79.99,
+   "simbol": "COMPUSDT",
+   "jumlahHari": 2315,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 2,
+   "hariGila": [
+    {
+     "tanggal": "2025-04-01",
+     "gainPct": 101.944,
+     "closeSebelum": 39.61,
+     "highHari": 79.99
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 101.4995,
+   "tanggalPuncak": "2021-06-19",
+   "closeSebelum": 4.268,
+   "highHari": 8.6,
+   "simbol": "MASKUSDT",
+   "jumlahHari": 1981,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 9,
+   "hariGila": [
+    {
+     "tanggal": "2021-06-19",
+     "gainPct": 101.4995,
+     "closeSebelum": 4.268,
+     "highHari": 8.6
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 101.2202,
+   "tanggalPuncak": "2022-02-11",
+   "closeSebelum": 4.999,
+   "highHari": 10.059,
+   "simbol": "INJUSDT",
+   "jumlahHari": 2197,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2022-02-11",
+     "gainPct": 101.2202,
+     "closeSebelum": 4.999,
+     "highHari": 10.059
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 101.1664,
+   "tanggalPuncak": "2025-02-25",
+   "closeSebelum": 0.2915,
+   "highHari": 0.5864,
+   "simbol": "COWUSDT",
+   "jumlahHari": 720,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 3,
+   "hariGila": [
+    {
+     "tanggal": "2025-02-25",
+     "gainPct": 101.1664,
+     "closeSebelum": 0.2915,
+     "highHari": 0.5864
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 101.0999,
+   "tanggalPuncak": "2021-02-25",
+   "closeSebelum": 0.009092,
+   "highHari": 0.018284,
+   "simbol": "CKBUSDT",
+   "jumlahHari": 2100,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 10,
+   "hariGila": [
+    {
+     "tanggal": "2021-02-25",
+     "gainPct": 101.0999,
+     "closeSebelum": 0.009092,
+     "highHari": 0.018284
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 100.9339,
+   "tanggalPuncak": "2026-06-05",
+   "closeSebelum": 0.01285,
+   "highHari": 0.02582,
+   "simbol": "BABYUSDT",
+   "jumlahHari": 565,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2026-06-05",
+     "gainPct": 100.9339,
+     "closeSebelum": 0.01285,
+     "highHari": 0.02582
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 100.4149,
+   "tanggalPuncak": "2025-09-06",
+   "closeSebelum": 0.5784,
+   "highHari": 1.1592,
+   "simbol": "SOMIUSDT",
+   "jumlahHari": 420,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 5,
+   "hariGila": [
+    {
+     "tanggal": "2025-09-06",
+     "gainPct": 100.4149,
+     "closeSebelum": 0.5784,
+     "highHari": 1.1592
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 100.2058,
+   "tanggalPuncak": "2026-09-22",
+   "closeSebelum": 0.04373,
+   "highHari": 0.08755,
+   "simbol": "MUBARAKUSDT",
+   "jumlahHari": 579,
+   "jumlahHariGila100": 1,
+   "jumlahHariGila50": 4,
+   "hariGila": [
+    {
+     "tanggal": "2026-09-22",
+     "gainPct": 100.2058,
+     "closeSebelum": 0.04373,
+     "highHari": 0.08755
+    }
+   ],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 99.6024,
+   "tanggalPuncak": "2025-12-29",
+   "closeSebelum": 0.1006,
+   "highHari": 0.2008,
+   "simbol": "ZBTUSDT",
+   "jumlahHari": 375,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 99.4135,
+   "tanggalPuncak": "2021-11-04",
+   "closeSebelum": 0.0682,
+   "highHari": 0.136,
+   "simbol": "SLPUSDT",
+   "jumlahHari": 2006,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 8,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 99.1507,
+   "tanggalPuncak": "2023-07-13",
+   "closeSebelum": 0.471,
+   "highHari": 0.938,
+   "simbol": "XRPUSDT",
+   "jumlahHari": 3098,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 98.9497,
+   "tanggalPuncak": "2024-09-17",
+   "closeSebelum": 0.00035989,
+   "highHari": 0.000716,
+   "simbol": "NEIROUSDT",
+   "jumlahHari": 771,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 98.6189,
+   "tanggalPuncak": "2025-11-07",
+   "closeSebelum": 0.2317,
+   "highHari": 0.4602,
+   "simbol": "FETUSDT",
+   "jumlahHari": 2798,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 98.5486,
+   "tanggalPuncak": "2026-04-22",
+   "closeSebelum": 0.06132,
+   "highHari": 0.12175,
+   "simbol": "CHIPUSDT",
+   "jumlahHari": 189,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 98.5467,
+   "tanggalPuncak": "2024-02-07",
+   "closeSebelum": 0.28075,
+   "highHari": 0.55742,
+   "simbol": "IDUSDT",
+   "jumlahHari": 1315,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 98.4498,
+   "tanggalPuncak": "2024-10-25",
+   "closeSebelum": 5.354,
+   "highHari": 10.625,
+   "simbol": "PROMUSDT",
+   "jumlahHari": 1320,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 8,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 98.2004,
+   "tanggalPuncak": "2026-01-12",
+   "closeSebelum": 0.04112,
+   "highHari": 0.0815,
+   "simbol": "DOLOUSDT",
+   "jumlahHari": 426,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 97.9809,
+   "tanggalPuncak": "2025-10-12",
+   "closeSebelum": 0.941,
+   "highHari": 1.863,
+   "simbol": "SNXUSDT",
+   "jumlahHari": 2301,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 97.6271,
+   "tanggalPuncak": "2022-12-06",
+   "closeSebelum": 0.295,
+   "highHari": 0.583,
+   "simbol": "TKOUSDT",
+   "jumlahHari": 2029,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 6,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 97.4214,
+   "tanggalPuncak": "2025-07-01",
+   "closeSebelum": 0.04964,
+   "highHari": 0.098,
+   "simbol": "MAVUSDT",
+   "jumlahHari": 1217,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 97.0021,
+   "tanggalPuncak": "2026-08-22",
+   "closeSebelum": 1.868,
+   "highHari": 3.68,
+   "simbol": "TRUMPUSDT",
+   "jumlahHari": 646,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 96.3351,
+   "tanggalPuncak": "2023-02-20",
+   "closeSebelum": 0.1528,
+   "highHari": 0.3,
+   "simbol": "DODOUSDT",
+   "jumlahHari": 2076,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 8,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 95.7137,
+   "tanggalPuncak": "2022-03-12",
+   "closeSebelum": 0.15958,
+   "highHari": 0.31232,
+   "simbol": "GMTUSDT",
+   "jumlahHari": 1693,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 95.0565,
+   "tanggalPuncak": "2026-02-15",
+   "closeSebelum": 0.0708,
+   "highHari": 0.1381,
+   "simbol": "INITUSDT",
+   "jumlahHari": 551,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 94.6771,
+   "tanggalPuncak": "2025-09-14",
+   "closeSebelum": 0.2292,
+   "highHari": 0.4462,
+   "simbol": "MITOUSDT",
+   "jumlahHari": 424,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 93.9547,
+   "tanggalPuncak": "2025-08-06",
+   "closeSebelum": 0.9925,
+   "highHari": 1.925,
+   "simbol": "PROVEUSDT",
+   "jumlahHari": 448,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 93.762,
+   "tanggalPuncak": "2024-11-09",
+   "closeSebelum": 0.002613,
+   "highHari": 0.005063,
+   "simbol": "HMSTRUSDT",
+   "jumlahHari": 761,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 93.4688,
+   "tanggalPuncak": "2025-11-05",
+   "closeSebelum": 0.0689,
+   "highHari": 0.1333,
+   "simbol": "KITEUSDT",
+   "jumlahHari": 358,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 93.2981,
+   "tanggalPuncak": "2025-11-06",
+   "closeSebelum": 0.0567,
+   "highHari": 0.1096,
+   "simbol": "RESOLVUSDT",
+   "jumlahHari": 503,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 93.1034,
+   "tanggalPuncak": "2025-11-21",
+   "closeSebelum": 0.058,
+   "highHari": 0.112,
+   "simbol": "PARTIUSDT",
+   "jumlahHari": 581,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 92.4925,
+   "tanggalPuncak": "2026-10-09",
+   "closeSebelum": 0.0666,
+   "highHari": 0.1282,
+   "simbol": "MAGICUSDT",
+   "jumlahHari": 1415,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 92.3901,
+   "tanggalPuncak": "2021-12-15",
+   "closeSebelum": 9.33,
+   "highHari": 17.95,
+   "simbol": "NEARUSDT",
+   "jumlahHari": 2204,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 92.252,
+   "tanggalPuncak": "2021-02-05",
+   "closeSebelum": 1.0351,
+   "highHari": 1.99,
+   "simbol": "ZRXUSDT",
+   "jumlahHari": 2798,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 91.5913,
+   "tanggalPuncak": "2024-06-14",
+   "closeSebelum": 18.79,
+   "highHari": 36.0,
+   "simbol": "RPLUSDT",
+   "jumlahHari": 1378,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 91.3859,
+   "tanggalPuncak": "2021-05-06",
+   "closeSebelum": 93.962,
+   "highHari": 179.83,
+   "simbol": "ETCUSDT",
+   "jumlahHari": 3059,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 91.035,
+   "tanggalPuncak": "2022-01-02",
+   "closeSebelum": 0.4261,
+   "highHari": 0.814,
+   "simbol": "POWRUSDT",
+   "jumlahHari": 1805,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.9147,
+   "tanggalPuncak": "2025-02-10",
+   "closeSebelum": 0.1618,
+   "highHari": 0.3089,
+   "simbol": "COOKIEUSDT",
+   "jumlahHari": 655,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.9063,
+   "tanggalPuncak": "2021-03-13",
+   "closeSebelum": 0.0029625,
+   "highHari": 0.0056556,
+   "simbol": "HOTUSDT",
+   "jumlahHari": 2808,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.8997,
+   "tanggalPuncak": "2026-02-07",
+   "closeSebelum": 0.1934,
+   "highHari": 0.3692,
+   "simbol": "LAUSDT",
+   "jumlahHari": 475,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.7999,
+   "tanggalPuncak": "2021-10-20",
+   "closeSebelum": 0.02913,
+   "highHari": 0.05558,
+   "simbol": "SUNUSDT",
+   "jumlahHari": 2224,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 12,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.604,
+   "tanggalPuncak": "2026-07-27",
+   "closeSebelum": 0.00745,
+   "highHari": 0.0142,
+   "simbol": "COTIUSDT",
+   "jumlahHari": 2435,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 9,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.3629,
+   "tanggalPuncak": "2025-06-10",
+   "closeSebelum": 0.3362,
+   "highHari": 0.64,
+   "simbol": "AXLUSDT",
+   "jumlahHari": 970,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.3061,
+   "tanggalPuncak": "2026-06-19",
+   "closeSebelum": 0.0196,
+   "highHari": 0.0373,
+   "simbol": "BICOUSDT",
+   "jumlahHari": 1783,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 6,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.1743,
+   "tanggalPuncak": "2025-11-26",
+   "closeSebelum": 0.02524,
+   "highHari": 0.048,
+   "simbol": "PLUMEUSDT",
+   "jumlahHari": 435,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.121,
+   "tanggalPuncak": "2023-04-09",
+   "closeSebelum": 4.96,
+   "highHari": 9.43,
+   "simbol": "XVSUSDT",
+   "jumlahHari": 2212,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 13,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 89.7192,
+   "tanggalPuncak": "2026-06-28",
+   "closeSebelum": 0.08404,
+   "highHari": 0.15944,
+   "simbol": "MANTAUSDT",
+   "jumlahHari": 1013,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 89.6273,
+   "tanggalPuncak": "2023-04-20",
+   "closeSebelum": 0.161,
+   "highHari": 0.3053,
+   "simbol": "POLYXUSDT",
+   "jumlahHari": 1471,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 89.3878,
+   "tanggalPuncak": "2026-05-19",
+   "closeSebelum": 0.049,
+   "highHari": 0.0928,
+   "simbol": "EDENUSDT",
+   "jumlahHari": 392,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 89.3767,
+   "tanggalPuncak": "2021-10-13",
+   "closeSebelum": 0.08792,
+   "highHari": 0.1665,
+   "simbol": "ARPAUSDT",
+   "jumlahHari": 2547,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 11,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 89.3339,
+   "tanggalPuncak": "2023-01-23",
+   "closeSebelum": 0.02372,
+   "highHari": 0.04491,
+   "simbol": "TUSDT",
+   "jumlahHari": 1705,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 8,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 88.9243,
+   "tanggalPuncak": "2021-02-10",
+   "closeSebelum": 31.9194,
+   "highHari": 60.3035,
+   "simbol": "AVAXUSDT",
+   "jumlahHari": 2226,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 88.5299,
+   "tanggalPuncak": "2021-05-26",
+   "closeSebelum": 0.34106,
+   "highHari": 0.643,
+   "simbol": "SKLUSDT",
+   "jumlahHari": 2156,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 12,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 88.024,
+   "tanggalPuncak": "2026-04-17",
+   "closeSebelum": 3.34,
+   "highHari": 6.28,
+   "simbol": "METISUSDT",
+   "jumlahHari": 960,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 88.0058,
+   "tanggalPuncak": "2026-04-16",
+   "closeSebelum": 0.0692,
+   "highHari": 0.1301,
+   "simbol": "WALUSDT",
+   "jumlahHari": 382,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 87.7509,
+   "tanggalPuncak": "2025-11-01",
+   "closeSebelum": 0.0289,
+   "highHari": 0.05426,
+   "simbol": "ZKUSDT",
+   "jumlahHari": 862,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 87.7286,
+   "tanggalPuncak": "2025-07-23",
+   "closeSebelum": 0.08695,
+   "highHari": 0.16323,
+   "simbol": "SAHARAUSDT",
+   "jumlahHari": 488,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 87.5,
+   "tanggalPuncak": "2022-03-18",
+   "closeSebelum": 0.024,
+   "highHari": 0.045,
+   "simbol": "JASMYUSDT",
+   "jumlahHari": 1800,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 6,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 87.218,
+   "tanggalPuncak": "2025-11-07",
+   "closeSebelum": 0.133,
+   "highHari": 0.249,
+   "simbol": "LUMIAUSDT",
+   "jumlahHari": 739,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 6,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 86.9347,
+   "tanggalPuncak": "2026-08-30",
+   "closeSebelum": 0.0398,
+   "highHari": 0.0744,
+   "simbol": "ZKCUSDT",
+   "jumlahHari": 407,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 86.747,
+   "tanggalPuncak": "2026-02-09",
+   "closeSebelum": 1.494,
+   "highHari": 2.79,
+   "simbol": "VANAUSDT",
+   "jumlahHari": 680,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 86.5369,
+   "tanggalPuncak": "2023-12-16",
+   "closeSebelum": 2.466,
+   "highHari": 4.6,
+   "simbol": "WLDUSDT",
+   "jumlahHari": 1191,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 86.3232,
+   "tanggalPuncak": "2021-08-27",
+   "closeSebelum": 6.851,
+   "highHari": 12.765,
+   "simbol": "RAYUSDT",
+   "jumlahHari": 1904,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 11,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 85.7749,
+   "tanggalPuncak": "2020-09-06",
+   "closeSebelum": 1.884,
+   "highHari": 3.5,
+   "simbol": "SUSHIUSDT",
+   "jumlahHari": 2247,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 85.4509,
+   "tanggalPuncak": "2024-07-28",
+   "closeSebelum": 0.008083,
+   "highHari": 0.01499,
+   "simbol": "QKCUSDT",
+   "jumlahHari": 1320,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 6,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 85.4422,
+   "tanggalPuncak": "2024-06-02",
+   "closeSebelum": 0.015854,
+   "highHari": 0.0294,
+   "simbol": "NOTUSDT",
+   "jumlahHari": 894,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 84.1014,
+   "tanggalPuncak": "2026-08-21",
+   "closeSebelum": 0.00868,
+   "highHari": 0.01598,
+   "simbol": "HEMIUSDT",
+   "jumlahHari": 399,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 6,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 84.0871,
+   "tanggalPuncak": "2026-09-01",
+   "closeSebelum": 0.000597,
+   "highHari": 0.001099,
+   "simbol": "SCUSDT",
+   "jumlahHari": 2304,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 9,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 84.018,
+   "tanggalPuncak": "2026-06-14",
+   "closeSebelum": 0.1777,
+   "highHari": 0.327,
+   "simbol": "OPGUSDT",
+   "jumlahHari": 158,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 83.9353,
+   "tanggalPuncak": "2018-01-05",
+   "closeSebelum": 9.143,
+   "highHari": 16.8172,
+   "simbol": "BNBUSDT",
+   "jumlahHari": 3277,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 83.7838,
+   "tanggalPuncak": "2026-10-09",
+   "closeSebelum": 0.037,
+   "highHari": 0.068,
+   "simbol": "KAIAUSDT",
+   "jumlahHari": 726,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 83.4862,
+   "tanggalPuncak": "2021-10-27",
+   "closeSebelum": 4.796e-05,
+   "highHari": 8.8e-05,
+   "simbol": "SHIBUSDT",
+   "jumlahHari": 1996,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 83.2558,
+   "tanggalPuncak": "2024-03-01",
+   "closeSebelum": 5.375e-05,
+   "highHari": 9.85e-05,
+   "simbol": "FLOKIUSDT",
+   "jumlahHari": 1271,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 83.1633,
+   "tanggalPuncak": "2026-07-31",
+   "closeSebelum": 0.2548,
+   "highHari": 0.4667,
+   "simbol": "MMTUSDT",
+   "jumlahHari": 357,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.7236,
+   "tanggalPuncak": "2026-04-19",
+   "closeSebelum": 0.000492,
+   "highHari": 0.000899,
+   "simbol": "BOMEUSDT",
+   "jumlahHari": 955,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.708,
+   "tanggalPuncak": "2025-04-23",
+   "closeSebelum": 0.003065,
+   "highHari": 0.0056,
+   "simbol": "TURBOUSDT",
+   "jumlahHari": 771,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.6484,
+   "tanggalPuncak": "2025-01-17",
+   "closeSebelum": 0.0007665,
+   "highHari": 0.0014,
+   "simbol": "SPELLUSDT",
+   "jumlahHari": 1768,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.5149,
+   "tanggalPuncak": "2021-05-20",
+   "closeSebelum": 122.79,
+   "highHari": 224.11,
+   "simbol": "ICPUSDT",
+   "jumlahHari": 1995,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.4269,
+   "tanggalPuncak": "2025-07-24",
+   "closeSebelum": 0.4137,
+   "highHari": 0.7547,
+   "simbol": "NEWTUSDT",
+   "jumlahHari": 490,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.3204,
+   "tanggalPuncak": "2026-07-25",
+   "closeSebelum": 1.086,
+   "highHari": 1.98,
+   "simbol": "EULUSDT",
+   "jumlahHari": 379,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.297,
+   "tanggalPuncak": "2021-10-31",
+   "closeSebelum": 0.09987,
+   "highHari": 0.18206,
+   "simbol": "ANKRUSDT",
+   "jumlahHari": 2653,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 11,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.0957,
+   "tanggalPuncak": "2026-05-06",
+   "closeSebelum": 0.1212,
+   "highHari": 0.2207,
+   "simbol": "IOUSDT",
+   "jumlahHari": 868,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 81.7708,
+   "tanggalPuncak": "2025-11-20",
+   "closeSebelum": 0.0192,
+   "highHari": 0.0349,
+   "simbol": "XAIUSDT",
+   "jumlahHari": 1022,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 81.4224,
+   "tanggalPuncak": "2025-07-12",
+   "closeSebelum": 0.4134,
+   "highHari": 0.75,
+   "simbol": "ARKUSDT",
+   "jumlahHari": 1131,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 10,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 81.2191,
+   "tanggalPuncak": "2025-09-07",
+   "closeSebelum": 0.01214,
+   "highHari": 0.022,
+   "simbol": "GPSUSDT",
+   "jumlahHari": 602,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 6,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 80.5714,
+   "tanggalPuncak": "2026-04-29",
+   "closeSebelum": 0.0175,
+   "highHari": 0.0316,
+   "simbol": "AIUSDT",
+   "jumlahHari": 1027,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 80.2508,
+   "tanggalPuncak": "2021-11-18",
+   "closeSebelum": 1.6588,
+   "highHari": 2.99,
+   "simbol": "ALGOUSDT",
+   "jumlahHari": 2684,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 80.2469,
+   "tanggalPuncak": "2022-03-27",
+   "closeSebelum": 0.0243,
+   "highHari": 0.0438,
+   "simbol": "DGBUSDT",
+   "jumlahHari": 2290,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 80.1136,
+   "tanggalPuncak": "2024-12-20",
+   "closeSebelum": 15.84,
+   "highHari": 28.53,
+   "simbol": "ZENUSDT",
+   "jumlahHari": 2304,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 79.8942,
+   "tanggalPuncak": "2026-02-08",
+   "closeSebelum": 0.00567,
+   "highHari": 0.0102,
+   "simbol": "FUSDT",
+   "jumlahHari": 367,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 79.8113,
+   "tanggalPuncak": "2021-01-19",
+   "closeSebelum": 0.24692,
+   "highHari": 0.44399,
+   "simbol": "ENJUSDT",
+   "jumlahHari": 2749,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 15,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 79.6462,
+   "tanggalPuncak": "2019-10-27",
+   "closeSebelum": 0.6613,
+   "highHari": 1.188,
+   "simbol": "ONTUSDT",
+   "jumlahHari": 3063,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 9,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 79.2863,
+   "tanggalPuncak": "2025-12-03",
+   "closeSebelum": 0.1149,
+   "highHari": 0.206,
+   "simbol": "SAPIENUSDT",
+   "jumlahHari": 355,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 78.9795,
+   "tanggalPuncak": "2021-09-06",
+   "closeSebelum": 0.1705,
+   "highHari": 0.30516,
+   "simbol": "ROSEUSDT",
+   "jumlahHari": 2168,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 78.386,
+   "tanggalPuncak": "2025-04-18",
+   "closeSebelum": 0.001425,
+   "highHari": 0.002542,
+   "simbol": "MEMEUSDT",
+   "jumlahHari": 1089,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 78.1818,
+   "tanggalPuncak": "2026-07-02",
+   "closeSebelum": 0.0715,
+   "highHari": 0.1274,
+   "simbol": "BREVUSDT",
+   "jumlahHari": 294,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 77.494,
+   "tanggalPuncak": "2025-02-08",
+   "closeSebelum": 1.253,
+   "highHari": 2.224,
+   "simbol": "MEUSDT",
+   "jumlahHari": 686,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 77.4194,
+   "tanggalPuncak": "2023-01-08",
+   "closeSebelum": 1.488,
+   "highHari": 2.64,
+   "simbol": "LDOUSDT",
+   "jumlahHari": 1632,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 76.5799,
+   "tanggalPuncak": "2022-02-27",
+   "closeSebelum": 5.38,
+   "highHari": 9.5,
+   "simbol": "BARUSDT",
+   "jumlahHari": 2015,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 76.5448,
+   "tanggalPuncak": "2024-11-18",
+   "closeSebelum": 0.793,
+   "highHari": 1.4,
+   "simbol": "XTZUSDT",
+   "jumlahHari": 2590,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 76.5355,
+   "tanggalPuncak": "2024-03-04",
+   "closeSebelum": 2.719e-05,
+   "highHari": 4.8e-05,
+   "simbol": "BONKUSDT",
+   "jumlahHari": 1047,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 76.4286,
+   "tanggalPuncak": "2026-04-20",
+   "closeSebelum": 0.042,
+   "highHari": 0.0741,
+   "simbol": "EDUUSDT",
+   "jumlahHari": 1278,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 75.9644,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 6.74,
+   "highHari": 11.86,
+   "simbol": "SNXXBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 75.6365,
+   "tanggalPuncak": "2024-12-03",
+   "closeSebelum": 0.04006,
+   "highHari": 0.07036,
+   "simbol": "JSTUSDT",
+   "jumlahHari": 2268,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 75.5419,
+   "tanggalPuncak": "2021-02-13",
+   "closeSebelum": 169.76,
+   "highHari": 298.0,
+   "simbol": "DASHUSDT",
+   "jumlahHari": 2770,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 7,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 75.1592,
+   "tanggalPuncak": "2025-11-21",
+   "closeSebelum": 0.00628,
+   "highHari": 0.011,
+   "simbol": "ANIMEUSDT",
+   "jumlahHari": 642,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 75.0484,
+   "tanggalPuncak": "2026-04-14",
+   "closeSebelum": 0.2068,
+   "highHari": 0.362,
+   "simbol": "\u5e01\u5b89\u4eba\u751fUSDT",
+   "jumlahHari": 293,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 74.2454,
+   "tanggalPuncak": "2025-03-02",
+   "closeSebelum": 0.6593,
+   "highHari": 1.1488,
+   "simbol": "ADAUSDT",
+   "jumlahHari": 3115,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 73.8428,
+   "tanggalPuncak": "2025-10-01",
+   "closeSebelum": 74.32,
+   "highHari": 129.2,
+   "simbol": "ZECUSDT",
+   "jumlahHari": 2777,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 73.2102,
+   "tanggalPuncak": "2026-02-26",
+   "closeSebelum": 0.0866,
+   "highHari": 0.15,
+   "simbol": "MIRAUSDT",
+   "jumlahHari": 396,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 72.1369,
+   "tanggalPuncak": "2021-10-30",
+   "closeSebelum": 0.8531,
+   "highHari": 1.4685,
+   "simbol": "BATUSDT",
+   "jumlahHari": 2794,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 72.0825,
+   "tanggalPuncak": "2019-06-13",
+   "closeSebelum": 1.1448,
+   "highHari": 1.97,
+   "simbol": "LINKUSDT",
+   "jumlahHari": 2841,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 71.799,
+   "tanggalPuncak": "2025-08-07",
+   "closeSebelum": 0.0617,
+   "highHari": 0.106,
+   "simbol": "BIOUSDT",
+   "jumlahHari": 662,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 8,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 71.5816,
+   "tanggalPuncak": "2025-07-24",
+   "closeSebelum": 0.1587,
+   "highHari": 0.2723,
+   "simbol": "KERNELUSDT",
+   "jumlahHari": 561,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 71.3859,
+   "tanggalPuncak": "2025-02-19",
+   "closeSebelum": 167.4,
+   "highHari": 286.9,
+   "simbol": "GNOUSDT",
+   "jumlahHari": 1884,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 70.9117,
+   "tanggalPuncak": "2023-11-04",
+   "closeSebelum": 8.237,
+   "highHari": 14.078,
+   "simbol": "GASUSDT",
+   "jumlahHari": 1320,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 70.8664,
+   "tanggalPuncak": "2020-05-25",
+   "closeSebelum": 0.6175,
+   "highHari": 1.0551,
+   "simbol": "KAVAUSDT",
+   "jumlahHari": 2559,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 70.3226,
+   "tanggalPuncak": "2024-04-03",
+   "closeSebelum": 0.775,
+   "highHari": 1.32,
+   "simbol": "ENAUSDT",
+   "jumlahHari": 938,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 69.7933,
+   "tanggalPuncak": "2025-02-16",
+   "closeSebelum": 0.2612,
+   "highHari": 0.4435,
+   "simbol": "GLMUSDT",
+   "jumlahHari": 1320,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 69.415,
+   "tanggalPuncak": "2025-07-02",
+   "closeSebelum": 0.0547,
+   "highHari": 0.09267,
+   "simbol": "AWEUSDT",
+   "jumlahHari": 524,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 69.3427,
+   "tanggalPuncak": "2025-09-23",
+   "closeSebelum": 0.07972,
+   "highHari": 0.135,
+   "simbol": "SIGNUSDT",
+   "jumlahHari": 547,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 68.9189,
+   "tanggalPuncak": "2026-05-18",
+   "closeSebelum": 0.0888,
+   "highHari": 0.15,
+   "simbol": "RONINUSDT",
+   "jumlahHari": 995,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 68.5393,
+   "tanggalPuncak": "2026-03-14",
+   "closeSebelum": 0.0534,
+   "highHari": 0.09,
+   "simbol": "CUSDT",
+   "jumlahHari": 466,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 68.2485,
+   "tanggalPuncak": "2025-09-21",
+   "closeSebelum": 1.473,
+   "highHari": 2.4783,
+   "simbol": "AVNTUSDT",
+   "jumlahHari": 407,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 67.8633,
+   "tanggalPuncak": "2023-11-29",
+   "closeSebelum": 0.1727,
+   "highHari": 0.2899,
+   "simbol": "IOTAUSDT",
+   "jumlahHari": 3071,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 67.4781,
+   "tanggalPuncak": "2025-11-09",
+   "closeSebelum": 0.01027,
+   "highHari": 0.0172,
+   "simbol": "TOWNSUSDT",
+   "jumlahHari": 448,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 67.4074,
+   "tanggalPuncak": "2020-10-27",
+   "closeSebelum": 0.405,
+   "highHari": 0.678,
+   "simbol": "CRVUSDT",
+   "jumlahHari": 2264,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 66.9782,
+   "tanggalPuncak": "2026-03-15",
+   "closeSebelum": 0.00321,
+   "highHari": 0.00536,
+   "simbol": "REZUSDT",
+   "jumlahHari": 910,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 66.918,
+   "tanggalPuncak": "2025-12-26",
+   "closeSebelum": 0.1061,
+   "highHari": 0.1771,
+   "simbol": "ATUSDT",
+   "jumlahHari": 334,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 66.8541,
+   "tanggalPuncak": "2025-09-20",
+   "closeSebelum": 0.2667,
+   "highHari": 0.445,
+   "simbol": "LISTAUSDT",
+   "jumlahHari": 859,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 66.2708,
+   "tanggalPuncak": "2026-05-07",
+   "closeSebelum": 0.421,
+   "highHari": 0.7,
+   "simbol": "JTOUSDT",
+   "jumlahHari": 1055,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 66.2637,
+   "tanggalPuncak": "2021-08-27",
+   "closeSebelum": 25.64,
+   "highHari": 42.63,
+   "simbol": "ARUSDT",
+   "jumlahHari": 1992,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 65.6775,
+   "tanggalPuncak": "2026-06-04",
+   "closeSebelum": 0.04044,
+   "highHari": 0.067,
+   "simbol": "HOMEUSDT",
+   "jumlahHari": 502,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 65.269,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 37.92,
+   "highHari": 62.67,
+   "simbol": "AXTIBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 65.2676,
+   "tanggalPuncak": "2026-04-14",
+   "closeSebelum": 0.02597,
+   "highHari": 0.04292,
+   "simbol": "ZAMAUSDT",
+   "jumlahHari": 267,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 64.7884,
+   "tanggalPuncak": "2024-03-09",
+   "closeSebelum": 0.009406,
+   "highHari": 0.0155,
+   "simbol": "IQUSDT",
+   "jumlahHari": 1131,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 64.4101,
+   "tanggalPuncak": "2026-09-21",
+   "closeSebelum": 0.2585,
+   "highHari": 0.425,
+   "simbol": "FORMUSDT",
+   "jumlahHari": 587,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 64.0884,
+   "tanggalPuncak": "2024-02-27",
+   "closeSebelum": 1.81e-06,
+   "highHari": 2.97e-06,
+   "simbol": "PEPEUSDT",
+   "jumlahHari": 1271,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 63.6988,
+   "tanggalPuncak": "2022-03-22",
+   "closeSebelum": 0.9468,
+   "highHari": 1.5499,
+   "simbol": "TWTUSDT",
+   "jumlahHari": 2099,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 63.2614,
+   "tanggalPuncak": "2025-09-23",
+   "closeSebelum": 0.9407,
+   "highHari": 1.5358,
+   "simbol": "BARDUSDT",
+   "jumlahHari": 404,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 63.1633,
+   "tanggalPuncak": "2026-09-10",
+   "closeSebelum": 0.07859,
+   "highHari": 0.12823,
+   "simbol": "\u725b\u6765USDT",
+   "jumlahHari": 48,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 62.7093,
+   "tanggalPuncak": "2022-07-19",
+   "closeSebelum": 0.657,
+   "highHari": 1.069,
+   "simbol": "NEXOUSDT",
+   "jumlahHari": 1642,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 62.6217,
+   "tanggalPuncak": "2024-11-18",
+   "closeSebelum": 0.5134,
+   "highHari": 0.8349,
+   "simbol": "CATIUSDT",
+   "jumlahHari": 767,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 62.2944,
+   "tanggalPuncak": "2026-01-14",
+   "closeSebelum": 0.02249,
+   "highHari": 0.0365,
+   "simbol": "GUNUSDT",
+   "jumlahHari": 575,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 60.8812,
+   "tanggalPuncak": "2025-05-10",
+   "closeSebelum": 0.749,
+   "highHari": 1.205,
+   "simbol": "ETHFIUSDT",
+   "jumlahHari": 953,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 60.7785,
+   "tanggalPuncak": "2021-01-08",
+   "closeSebelum": 2.3635,
+   "highHari": 3.8,
+   "simbol": "SOLUSDT",
+   "jumlahHari": 2268,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 60.6837,
+   "tanggalPuncak": "2025-05-07",
+   "closeSebelum": 0.9683,
+   "highHari": 1.5559,
+   "simbol": "KAITOUSDT",
+   "jumlahHari": 614,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 60.6071,
+   "tanggalPuncak": "2020-08-22",
+   "closeSebelum": 2.833,
+   "highHari": 4.55,
+   "simbol": "DOTUSDT",
+   "jumlahHari": 2261,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 60.3486,
+   "tanggalPuncak": "2025-03-11",
+   "closeSebelum": 0.459,
+   "highHari": 0.736,
+   "simbol": "ARKMUSDT",
+   "jumlahHari": 1197,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 60.1012,
+   "tanggalPuncak": "2024-03-02",
+   "closeSebelum": 316.3,
+   "highHari": 506.4,
+   "simbol": "BCHUSDT",
+   "jumlahHari": 2525,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 59.6427,
+   "tanggalPuncak": "2021-05-24",
+   "closeSebelum": 32549.68,
+   "highHari": 51963.2,
+   "simbol": "YFIUSDT",
+   "jumlahHari": 2269,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 59.5774,
+   "tanggalPuncak": "2023-08-04",
+   "closeSebelum": 0.3597,
+   "highHari": 0.574,
+   "simbol": "BNTUSDT",
+   "jumlahHari": 2455,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 5,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 59.1785,
+   "tanggalPuncak": "2025-01-14",
+   "closeSebelum": 0.4309,
+   "highHari": 0.6859,
+   "simbol": "AIXBTUSDT",
+   "jumlahHari": 655,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 58.4014,
+   "tanggalPuncak": "2026-01-18",
+   "closeSebelum": 0.8207,
+   "highHari": 1.3,
+   "simbol": "FRAXUSDT",
+   "jumlahHari": 285,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 58.2317,
+   "tanggalPuncak": "2025-01-30",
+   "closeSebelum": 0.2952,
+   "highHari": 0.4671,
+   "simbol": "USUALUSDT",
+   "jumlahHari": 707,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 58.1889,
+   "tanggalPuncak": "2023-08-16",
+   "closeSebelum": 0.1789,
+   "highHari": 0.283,
+   "simbol": "SEIUSDT",
+   "jumlahHari": 1169,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 57.9221,
+   "tanggalPuncak": "2026-04-10",
+   "closeSebelum": 3.85,
+   "highHari": 6.08,
+   "simbol": "ILVUSDT",
+   "jumlahHari": 1861,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 4,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 57.6692,
+   "tanggalPuncak": "2022-06-02",
+   "closeSebelum": 0.1167,
+   "highHari": 0.184,
+   "simbol": "WAXPUSDT",
+   "jumlahHari": 1891,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 57.3134,
+   "tanggalPuncak": "2026-01-02",
+   "closeSebelum": 0.067,
+   "highHari": 0.1054,
+   "simbol": "HOLOUSDT",
+   "jumlahHari": 411,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 57.2102,
+   "tanggalPuncak": "2026-04-02",
+   "closeSebelum": 0.1061,
+   "highHari": 0.1668,
+   "simbol": "XPLUSDT",
+   "jumlahHari": 397,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 56.2724,
+   "tanggalPuncak": "2026-01-21",
+   "closeSebelum": 0.0279,
+   "highHari": 0.0436,
+   "simbol": "SXTUSDT",
+   "jumlahHari": 537,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 56.1573,
+   "tanggalPuncak": "2026-09-18",
+   "closeSebelum": 0.02899,
+   "highHari": 0.04527,
+   "simbol": "STRKUSDT",
+   "jumlahHari": 980,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 55.587,
+   "tanggalPuncak": "2019-03-14",
+   "closeSebelum": 2.121,
+   "highHari": 3.3,
+   "simbol": "QTUMUSDT",
+   "jumlahHari": 3144,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 54.8283,
+   "tanggalPuncak": "2019-06-25",
+   "closeSebelum": 0.007104,
+   "highHari": 0.010999,
+   "simbol": "VETUSDT",
+   "jumlahHari": 3016,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 54.2683,
+   "tanggalPuncak": "2022-03-07",
+   "closeSebelum": 1.148,
+   "highHari": 1.771,
+   "simbol": "IMXUSDT",
+   "jumlahHari": 1751,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 54.2491,
+   "tanggalPuncak": "2026-04-19",
+   "closeSebelum": 0.02577,
+   "highHari": 0.03975,
+   "simbol": "BLURUSDT",
+   "jumlahHari": 1068,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 3,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 53.8616,
+   "tanggalPuncak": "2025-05-08",
+   "closeSebelum": 1.3919,
+   "highHari": 2.1416,
+   "simbol": "VIRTUALUSDT",
+   "jumlahHari": 564,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 53.7097,
+   "tanggalPuncak": "2026-01-29",
+   "closeSebelum": 0.0248,
+   "highHari": 0.03812,
+   "simbol": "SENTUSDT",
+   "jumlahHari": 278,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 53.6361,
+   "tanggalPuncak": "2023-11-05",
+   "closeSebelum": 34.79,
+   "highHari": 53.45,
+   "simbol": "EGLDUSDT",
+   "jumlahHari": 2245,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 53.2903,
+   "tanggalPuncak": "2025-05-08",
+   "closeSebelum": 0.775,
+   "highHari": 1.188,
+   "simbol": "EIGENUSDT",
+   "jumlahHari": 756,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 53.2827,
+   "tanggalPuncak": "2022-08-04",
+   "closeSebelum": 1.843,
+   "highHari": 2.825,
+   "simbol": "FLOWUSDT",
+   "jumlahHari": 1915,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 53.1555,
+   "tanggalPuncak": "2023-01-25",
+   "closeSebelum": 12.3404,
+   "highHari": 18.9,
+   "simbol": "APTUSDT",
+   "jumlahHari": 1469,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 52.6957,
+   "tanggalPuncak": "2017-12-17",
+   "closeSebelum": 49.116,
+   "highHari": 74.998,
+   "simbol": "NEOUSDT",
+   "jumlahHari": 3263,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 52.6696,
+   "tanggalPuncak": "2025-11-06",
+   "closeSebelum": 0.0693,
+   "highHari": 0.1058,
+   "simbol": "HAEDALUSDT",
+   "jumlahHari": 524,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 52.6531,
+   "tanggalPuncak": "2024-03-27",
+   "closeSebelum": 2.45,
+   "highHari": 3.74,
+   "simbol": "AEVOUSDT",
+   "jumlahHari": 958,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 2,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 52.47,
+   "tanggalPuncak": "2024-11-27",
+   "closeSebelum": 22.47,
+   "highHari": 34.26,
+   "simbol": "ENSUSDT",
+   "jumlahHari": 1812,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 51.682,
+   "tanggalPuncak": "2019-12-17",
+   "closeSebelum": 0.09156,
+   "highHari": 0.13888,
+   "simbol": "THETAUSDT",
+   "jumlahHari": 2757,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 51.5432,
+   "tanggalPuncak": "2025-11-07",
+   "closeSebelum": 1.944,
+   "highHari": 2.946,
+   "simbol": "RENDERUSDT",
+   "jumlahHari": 823,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 51.0949,
+   "tanggalPuncak": "2025-03-17",
+   "closeSebelum": 1.781,
+   "highHari": 2.691,
+   "simbol": "CAKEUSDT",
+   "jumlahHari": 2076,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 50.8242,
+   "tanggalPuncak": "2026-08-27",
+   "closeSebelum": 0.001456,
+   "highHari": 0.002196,
+   "simbol": "BEAMXUSDT",
+   "jumlahHari": 1078,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 50.15,
+   "tanggalPuncak": "2026-10-15",
+   "closeSebelum": 0.2,
+   "highHari": 0.3003,
+   "simbol": "NXPCUSDT",
+   "jumlahHari": 530,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 50.0,
+   "tanggalPuncak": "2025-02-06",
+   "closeSebelum": 0.58,
+   "highHari": 0.87,
+   "simbol": "SCRUSDT",
+   "jumlahHari": 746,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 1,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 49.923,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 19.47,
+   "highHari": 29.19,
+   "simbol": "MUUBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 49.7696,
+   "tanggalPuncak": "2026-09-17",
+   "closeSebelum": 0.3038,
+   "highHari": 0.455,
+   "simbol": "GENIUSUSDT",
+   "jumlahHari": 158,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 48.6092,
+   "tanggalPuncak": "2024-11-13",
+   "closeSebelum": 3.25,
+   "highHari": 4.8298,
+   "simbol": "WIFUSDT",
+   "jumlahHari": 966,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 48.5981,
+   "tanggalPuncak": "2022-05-18",
+   "closeSebelum": 5.35,
+   "highHari": 7.95,
+   "simbol": "CITYUSDT",
+   "jumlahHari": 1812,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 48.504,
+   "tanggalPuncak": "2026-08-10",
+   "closeSebelum": 0.01738,
+   "highHari": 0.02581,
+   "simbol": "VELODROMEUSDT",
+   "jumlahHari": 683,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 48.1383,
+   "tanggalPuncak": "2023-07-13",
+   "closeSebelum": 1.128,
+   "highHari": 1.671,
+   "simbol": "LQTYUSDT",
+   "jumlahHari": 1337,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 48.0315,
+   "tanggalPuncak": "2025-08-07",
+   "closeSebelum": 0.1016,
+   "highHari": 0.1504,
+   "simbol": "BBUSDT",
+   "jumlahHari": 897,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 47.8137,
+   "tanggalPuncak": "2022-07-28",
+   "closeSebelum": 1.052,
+   "highHari": 1.555,
+   "simbol": "OPUSDT",
+   "jumlahHari": 1609,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 47.7578,
+   "tanggalPuncak": "2025-03-23",
+   "closeSebelum": 0.0892,
+   "highHari": 0.1318,
+   "simbol": "WUSDT",
+   "jumlahHari": 937,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 47.7273,
+   "tanggalPuncak": "2025-04-22",
+   "closeSebelum": 0.005016,
+   "highHari": 0.00741,
+   "simbol": "PENGUUSDT",
+   "jumlahHari": 679,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 47.693,
+   "tanggalPuncak": "2025-10-03",
+   "closeSebelum": 0.4443,
+   "highHari": 0.6562,
+   "simbol": "OPENUSDT",
+   "jumlahHari": 414,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 47.0141,
+   "tanggalPuncak": "2026-08-07",
+   "closeSebelum": 0.01842,
+   "highHari": 0.02708,
+   "simbol": "KMNOUSDT",
+   "jumlahHari": 539,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 46.9839,
+   "tanggalPuncak": "2026-06-25",
+   "closeSebelum": 0.01177,
+   "highHari": 0.0173,
+   "simbol": "FOGOUSDT",
+   "jumlahHari": 285,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 46.4781,
+   "tanggalPuncak": "2021-09-16",
+   "closeSebelum": 11.599,
+   "highHari": 16.99,
+   "simbol": "DYDXUSDT",
+   "jumlahHari": 1874,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 46.4684,
+   "tanggalPuncak": "2025-11-07",
+   "closeSebelum": 0.807,
+   "highHari": 1.182,
+   "simbol": "TIAUSDT",
+   "jumlahHari": 1092,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 46.3641,
+   "tanggalPuncak": "2021-01-13",
+   "closeSebelum": 1.2913,
+   "highHari": 1.89,
+   "simbol": "RUNEUSDT",
+   "jumlahHari": 2244,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 45.8369,
+   "tanggalPuncak": "2026-10-11",
+   "closeSebelum": 0.04732,
+   "highHari": 0.06901,
+   "simbol": "SUSDT",
+   "jumlahHari": 649,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 45.4078,
+   "tanggalPuncak": "2025-10-11",
+   "closeSebelum": 1.361,
+   "highHari": 1.979,
+   "simbol": "MORPHOUSDT",
+   "jumlahHari": 389,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 44.6783,
+   "tanggalPuncak": "2026-10-07",
+   "closeSebelum": 0.3279,
+   "highHari": 0.4744,
+   "simbol": "METUSDT",
+   "jumlahHari": 348,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 43.9361,
+   "tanggalPuncak": "2026-04-18",
+   "closeSebelum": 0.1377,
+   "highHari": 0.1982,
+   "simbol": "YBUSDT",
+   "jumlahHari": 377,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 43.6495,
+   "tanggalPuncak": "2026-02-11",
+   "closeSebelum": 1.803,
+   "highHari": 2.59,
+   "simbol": "ZROUSDT",
+   "jumlahHari": 859,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 43.3588,
+   "tanggalPuncak": "2026-08-21",
+   "closeSebelum": 0.0131,
+   "highHari": 0.01878,
+   "simbol": "ROBOUSDT",
+   "jumlahHari": 237,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 43.2787,
+   "tanggalPuncak": "2026-03-15",
+   "closeSebelum": 0.0305,
+   "highHari": 0.0437,
+   "simbol": "SHELLUSDT",
+   "jumlahHari": 607,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 42.0789,
+   "tanggalPuncak": "2024-11-07",
+   "closeSebelum": 0.2992,
+   "highHari": 0.4251,
+   "simbol": "CETUSUSDT",
+   "jumlahHari": 720,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 41.2206,
+   "tanggalPuncak": "2026-06-13",
+   "closeSebelum": 0.0467,
+   "highHari": 0.06595,
+   "simbol": "MEGAUSDT",
+   "jumlahHari": 180,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 40.7761,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 15.72,
+   "highHari": 22.13,
+   "simbol": "MVLLBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 40.7124,
+   "tanggalPuncak": "2021-02-05",
+   "closeSebelum": 9.152,
+   "highHari": 12.878,
+   "simbol": "ATOMUSDT",
+   "jumlahHari": 2738,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 40.1629,
+   "tanggalPuncak": "2024-03-13",
+   "closeSebelum": 40.51,
+   "highHari": 56.78,
+   "simbol": "SSVUSDT",
+   "jumlahHari": 1341,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.9151,
+   "tanggalPuncak": "2024-04-13",
+   "closeSebelum": 2355.0,
+   "highHari": 3295.0,
+   "simbol": "PAXGUSDT",
+   "jumlahHari": 2251,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.906,
+   "tanggalPuncak": "2024-08-08",
+   "closeSebelum": 0.6167,
+   "highHari": 0.8628,
+   "simbol": "SUIUSDT",
+   "jumlahHari": 1273,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.7299,
+   "tanggalPuncak": "2026-03-05",
+   "closeSebelum": 0.01407,
+   "highHari": 0.01966,
+   "simbol": "HUMAUSDT",
+   "jumlahHari": 519,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.7059,
+   "tanggalPuncak": "2026-09-22",
+   "closeSebelum": 0.102,
+   "highHari": 0.1425,
+   "simbol": "MARSCOINUSDT",
+   "jumlahHari": 53,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.5985,
+   "tanggalPuncak": "2021-10-27",
+   "closeSebelum": 328.8,
+   "highHari": 459.0,
+   "simbol": "AAVEUSDT",
+   "jumlahHari": 2203,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.4094,
+   "tanggalPuncak": "2026-07-05",
+   "closeSebelum": 0.02743,
+   "highHari": 0.03824,
+   "simbol": "AIGENSYNUSDT",
+   "jumlahHari": 166,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.2428,
+   "tanggalPuncak": "2026-08-06",
+   "closeSebelum": 10.83,
+   "highHari": 15.08,
+   "simbol": "FLNCBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 39.0077,
+   "tanggalPuncak": "2024-08-06",
+   "closeSebelum": 2.197,
+   "highHari": 3.054,
+   "simbol": "PENDLEUSDT",
+   "jumlahHari": 1212,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 38.8173,
+   "tanggalPuncak": "2026-09-05",
+   "closeSebelum": 0.1319,
+   "highHari": 0.1831,
+   "simbol": "ARBUSDT",
+   "jumlahHari": 1314,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 37.6729,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 12.29,
+   "highHari": 16.92,
+   "simbol": "KORUBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 37.2332,
+   "tanggalPuncak": "2025-11-10",
+   "closeSebelum": 0.1265,
+   "highHari": 0.1736,
+   "simbol": "WLFIUSDT",
+   "jumlahHari": 421,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 36.9417,
+   "tanggalPuncak": "2018-02-14",
+   "closeSebelum": 159.63,
+   "highHari": 218.6,
+   "simbol": "LTCUSDT",
+   "jumlahHari": 3240,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 36.8521,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 15.82,
+   "highHari": 21.65,
+   "simbol": "INTWBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 35.625,
+   "tanggalPuncak": "2026-07-16",
+   "closeSebelum": 0.0064,
+   "highHari": 0.00868,
+   "simbol": "MANTRAUSDT",
+   "jumlahHari": 237,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 35.0893,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 1009.34,
+   "highHari": 1363.51,
+   "simbol": "SNDKBUSDT",
+   "jumlahHari": 138,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 34.9972,
+   "tanggalPuncak": "2026-05-08",
+   "closeSebelum": 0.3526,
+   "highHari": 0.476,
+   "simbol": "ONDOUSDT",
+   "jumlahHari": 564,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 34.8782,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 92.35,
+   "highHari": 124.56,
+   "simbol": "SOXLBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 33.8798,
+   "tanggalPuncak": "2026-07-21",
+   "closeSebelum": 0.0183,
+   "highHari": 0.0245,
+   "simbol": "NIGHTUSDT",
+   "jumlahHari": 230,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 33.6437,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 166.48,
+   "highHari": 222.49,
+   "simbol": "BEBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 33.5013,
+   "tanggalPuncak": "2025-10-12",
+   "closeSebelum": 297.6,
+   "highHari": 397.3,
+   "simbol": "TAOUSDT",
+   "jumlahHari": 929,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 33.0228,
+   "tanggalPuncak": "2025-11-02",
+   "closeSebelum": 0.966,
+   "highHari": 1.285,
+   "simbol": "ASTERUSDT",
+   "jumlahHari": 386,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 32.4245,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 150.75,
+   "highHari": 199.63,
+   "simbol": "NBISBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 31.871,
+   "tanggalPuncak": "2025-11-21",
+   "closeSebelum": 0.0775,
+   "highHari": 0.1022,
+   "simbol": "TURTLEUSDT",
+   "jumlahHari": 370,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 30.7923,
+   "tanggalPuncak": "2026-08-20",
+   "closeSebelum": 0.003004,
+   "highHari": 0.003929,
+   "simbol": "PUMPUSDT",
+   "jumlahHari": 411,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 30.7095,
+   "tanggalPuncak": "2022-07-30",
+   "closeSebelum": 0.1931,
+   "highHari": 0.2524,
+   "simbol": "WOOUSDT",
+   "jumlahHari": 1722,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 30.5348,
+   "tanggalPuncak": "2021-01-03",
+   "closeSebelum": 774.56,
+   "highHari": 1011.07,
+   "simbol": "ETHUSDT",
+   "jumlahHari": 3358,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 29.0731,
+   "tanggalPuncak": "2026-08-12",
+   "closeSebelum": 56.1,
+   "highHari": 72.41,
+   "simbol": "QNTBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 28.8104,
+   "tanggalPuncak": "2026-01-24",
+   "closeSebelum": 0.00538,
+   "highHari": 0.00693,
+   "simbol": "LINEAUSDT",
+   "jumlahHari": 412,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 27.6482,
+   "tanggalPuncak": "2026-08-22",
+   "closeSebelum": 0.09516,
+   "highHari": 0.12147,
+   "simbol": "POLUSDT",
+   "jumlahHari": 774,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 27.6471,
+   "tanggalPuncak": "2026-07-14",
+   "closeSebelum": 153.0,
+   "highHari": 195.3,
+   "simbol": "SKHYBUSDT",
+   "jumlahHari": 106,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 27.5161,
+   "tanggalPuncak": "2026-04-10",
+   "closeSebelum": 0.2017,
+   "highHari": 0.2572,
+   "simbol": "CFGUSDT",
+   "jumlahHari": 225,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 27.2727,
+   "tanggalPuncak": "2026-10-15",
+   "closeSebelum": 2.42,
+   "highHari": 3.08,
+   "simbol": "CYPHBUSDT",
+   "jumlahHari": 34,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 26.7501,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 211.7,
+   "highHari": 268.33,
+   "simbol": "ARMBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 26.5253,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 76.38,
+   "highHari": 96.64,
+   "simbol": "AAOIBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 25.8555,
+   "tanggalPuncak": "2026-09-18",
+   "closeSebelum": 0.0789,
+   "highHari": 0.0993,
+   "simbol": "AUSDT",
+   "jumlahHari": 517,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 25.6636,
+   "tanggalPuncak": "2025-08-29",
+   "closeSebelum": 0.05689,
+   "highHari": 0.07149,
+   "simbol": "BIGTIMEUSDT",
+   "jumlahHari": 564,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 25.2688,
+   "tanggalPuncak": "2025-03-02",
+   "closeSebelum": 148.8,
+   "highHari": 186.4,
+   "simbol": "BNSOLUSDT",
+   "jumlahHari": 740,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 24.777,
+   "tanggalPuncak": "2026-09-25",
+   "closeSebelum": 0.695,
+   "highHari": 0.8672,
+   "simbol": "AEROUSDT",
+   "jumlahHari": 102,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 24.4503,
+   "tanggalPuncak": "2026-10-08",
+   "closeSebelum": 11.37,
+   "highHari": 14.15,
+   "simbol": "SECZBUSDT",
+   "jumlahHari": 20,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 24.1752,
+   "tanggalPuncak": "2026-05-17",
+   "closeSebelum": 0.03334,
+   "highHari": 0.0414,
+   "simbol": "CGPTUSDT",
+   "jumlahHari": 655,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 24.0625,
+   "tanggalPuncak": "2020-03-13",
+   "closeSebelum": 4800.0,
+   "highHari": 5955.0,
+   "simbol": "BTCUSDT",
+   "jumlahHari": 3358,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 23.95,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 734.99,
+   "highHari": 911.02,
+   "simbol": "MUBUSDT",
+   "jumlahHari": 138,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 23.0955,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 62.09,
+   "highHari": 76.43,
+   "simbol": "CRWVBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 23.0885,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 459.84,
+   "highHari": 566.01,
+   "simbol": "WDCBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 22.7229,
+   "tanggalPuncak": "2025-05-08",
+   "closeSebelum": 1934.44,
+   "highHari": 2374.0,
+   "simbol": "WBETHUSDT",
+   "jumlahHari": 1196,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 22.2802,
+   "tanggalPuncak": "2026-09-18",
+   "closeSebelum": 0.05938,
+   "highHari": 0.07261,
+   "simbol": "SKYUSDT",
+   "jumlahHari": 405,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 21.8115,
+   "tanggalPuncak": "2026-09-18",
+   "closeSebelum": 5.41,
+   "highHari": 6.59,
+   "simbol": "BNCBUSDT",
+   "jumlahHari": 43,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 21.2243,
+   "tanggalPuncak": "2026-10-14",
+   "closeSebelum": 37.41,
+   "highHari": 45.35,
+   "simbol": "SOXSBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.8083,
+   "tanggalPuncak": "2026-08-19",
+   "closeSebelum": 18.31,
+   "highHari": 22.12,
+   "simbol": "BMNRBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.3583,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 174.72,
+   "highHari": 210.29,
+   "simbol": "CBRSBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.1413,
+   "tanggalPuncak": "2026-06-15",
+   "closeSebelum": 168.41,
+   "highHari": 202.33,
+   "simbol": "SPCXBUSDT",
+   "jumlahHari": 137,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.0267,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 44.89,
+   "highHari": 53.88,
+   "simbol": "DRAMBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 19.9048,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 163.88,
+   "highHari": 196.5,
+   "simbol": "MRVLBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 19.8283,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 597.58,
+   "highHari": 716.07,
+   "simbol": "LITEBUSDT",
+   "jumlahHari": 119,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 19.2112,
+   "tanggalPuncak": "2026-06-05",
+   "closeSebelum": 63787.42,
+   "highHari": 76041.77,
+   "simbol": "WBTCUSDT",
+   "jumlahHari": 1278,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 18.429,
+   "tanggalPuncak": "2026-10-16",
+   "closeSebelum": 16.55,
+   "highHari": 19.6,
+   "simbol": "UVXYBUSDT",
+   "jumlahHari": 13,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 18.0611,
+   "tanggalPuncak": "2026-09-03",
+   "closeSebelum": 123.47,
+   "highHari": 145.77,
+   "simbol": "MSTRBUSDT",
+   "jumlahHari": 126,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 17.3854,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 81.39,
+   "highHari": 95.54,
+   "simbol": "INTCBUSDT",
+   "jumlahHari": 126,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.904,
+   "tanggalPuncak": "2026-10-20",
+   "closeSebelum": 32.3,
+   "highHari": 37.76,
+   "simbol": "SMCIBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.8199,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 428.54,
+   "highHari": 500.62,
+   "simbol": "AMDBUSDT",
+   "jumlahHari": 126,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.7808,
+   "tanggalPuncak": "2026-09-28",
+   "closeSebelum": 2.92,
+   "highHari": 3.41,
+   "simbol": "AMCBUSDT",
+   "jumlahHari": 34,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.4745,
+   "tanggalPuncak": "2026-07-10",
+   "closeSebelum": 63.31,
+   "highHari": 73.74,
+   "simbol": "CRCLBUSDT",
+   "jumlahHari": 138,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.0686,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 448.7,
+   "highHari": 520.8,
+   "simbol": "AMATBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.0272,
+   "tanggalPuncak": "2026-08-03",
+   "closeSebelum": 124.85,
+   "highHari": 144.86,
+   "simbol": "PLTRBUSDT",
+   "jumlahHari": 119,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 15.304,
+   "tanggalPuncak": "2026-10-23",
+   "closeSebelum": 9.54,
+   "highHari": 11.0,
+   "simbol": "USDEBUSDT",
+   "jumlahHari": 20,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 15.1229,
+   "tanggalPuncak": "2026-08-21",
+   "closeSebelum": 95.22,
+   "highHari": 109.62,
+   "simbol": "HOODBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 15.0735,
+   "tanggalPuncak": "2026-10-09",
+   "closeSebelum": 195.84,
+   "highHari": 225.36,
+   "simbol": "MRNABUSDT",
+   "jumlahHari": 55,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 14.8504,
+   "tanggalPuncak": "2026-09-14",
+   "closeSebelum": 208.21,
+   "highHari": 239.13,
+   "simbol": "CRWDBUSDT",
+   "jumlahHari": 55,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 14.0203,
+   "tanggalPuncak": "2026-08-07",
+   "closeSebelum": 343.36,
+   "highHari": 391.5,
+   "simbol": "COHRBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 13.8776,
+   "tanggalPuncak": "2026-08-21",
+   "closeSebelum": 17.15,
+   "highHari": 19.53,
+   "simbol": "USARBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 13.8698,
+   "tanggalPuncak": "2026-09-04",
+   "closeSebelum": 282.34,
+   "highHari": 321.5,
+   "simbol": "ALABBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 13.7521,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 58.9,
+   "highHari": 67.0,
+   "simbol": "RKLBBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 13.4615,
+   "tanggalPuncak": "2026-10-19",
+   "closeSebelum": 1.04,
+   "highHari": 1.18,
+   "simbol": "GPROBUSDT",
+   "jumlahHari": 41,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 13.3075,
+   "tanggalPuncak": "2026-09-18",
+   "closeSebelum": 173.06,
+   "highHari": 196.09,
+   "simbol": "COINBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.904,
+   "tanggalPuncak": "2026-08-13",
+   "closeSebelum": 43.63,
+   "highHari": 49.26,
+   "simbol": "IRENBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.885,
+   "tanggalPuncak": "2026-09-11",
+   "closeSebelum": 505.16,
+   "highHari": 570.25,
+   "simbol": "DELLBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.7565,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 123.78,
+   "highHari": 139.57,
+   "simbol": "GLWBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.6948,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 230.41,
+   "highHari": 259.66,
+   "simbol": "AMZNBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.4711,
+   "tanggalPuncak": "2026-09-02",
+   "closeSebelum": 56.21,
+   "highHari": 63.22,
+   "simbol": "ASTSBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.4347,
+   "tanggalPuncak": "2026-10-21",
+   "closeSebelum": 241.1,
+   "highHari": 271.08,
+   "simbol": "IBMBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11.9947,
+   "tanggalPuncak": "2026-09-21",
+   "closeSebelum": 671.88,
+   "highHari": 752.47,
+   "simbol": "METABUSDT",
+   "jumlahHari": 119,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11.9121,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 145.65,
+   "highHari": 163.0,
+   "simbol": "EWYBUSDT",
+   "jumlahHari": 126,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11.8192,
+   "tanggalPuncak": "2026-10-09",
+   "closeSebelum": 28.09,
+   "highHari": 31.41,
+   "simbol": "HIMSBUSDT",
+   "jumlahHari": 48,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11.323,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 8.39,
+   "highHari": 9.34,
+   "simbol": "NOKBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11.1797,
+   "tanggalPuncak": "2026-09-26",
+   "closeSebelum": 1.458,
+   "highHari": 1.621,
+   "simbol": "GRAMUSDT",
+   "jumlahHari": 117,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11.1378,
+   "tanggalPuncak": "2026-10-02",
+   "closeSebelum": 207.85,
+   "highHari": 231.0,
+   "simbol": "CRDOBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 10.3615,
+   "tanggalPuncak": "2026-08-04",
+   "closeSebelum": 68.33,
+   "highHari": 75.41,
+   "simbol": "TQQQBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 10.1662,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 374.87,
+   "highHari": 412.98,
+   "simbol": "TSMBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 10.1639,
+   "tanggalPuncak": "2026-09-29",
+   "closeSebelum": 12.2,
+   "highHari": 13.44,
+   "simbol": "AGPUBUSDT",
+   "jumlahHari": 34,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9.7452,
+   "tanggalPuncak": "2026-09-08",
+   "closeSebelum": 170.75,
+   "highHari": 187.39,
+   "simbol": "QCOMBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9.69,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 118.37,
+   "highHari": 129.84,
+   "simbol": "ORCLBUSDT",
+   "jumlahHari": 97,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9.6692,
+   "tanggalPuncak": "2026-10-02",
+   "closeSebelum": 7.86,
+   "highHari": 8.62,
+   "simbol": "FWDIBUSDT",
+   "jumlahHari": 27,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9.1575,
+   "tanggalPuncak": "2026-10-20",
+   "closeSebelum": 8.19,
+   "highHari": 8.94,
+   "simbol": "BBBUSDT",
+   "jumlahHari": 13,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.8416,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 505.45,
+   "highHari": 550.14,
+   "simbol": "SMHBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.8192,
+   "tanggalPuncak": "2026-10-14",
+   "closeSebelum": 34.13,
+   "highHari": 37.14,
+   "simbol": "SQQQBUSDT",
+   "jumlahHari": 55,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.7151,
+   "tanggalPuncak": "2026-09-08",
+   "closeSebelum": 851.51,
+   "highHari": 925.72,
+   "simbol": "STXBUSDT",
+   "jumlahHari": 55,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.5011,
+   "tanggalPuncak": "2026-10-15",
+   "closeSebelum": 147.04,
+   "highHari": 159.54,
+   "simbol": "RDDTBUSDT",
+   "jumlahHari": 41,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.3974,
+   "tanggalPuncak": "2026-06-29",
+   "closeSebelum": 381.07,
+   "highHari": 413.07,
+   "simbol": "TSLABUSDT",
+   "jumlahHari": 138,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.1611,
+   "tanggalPuncak": "2026-07-29",
+   "closeSebelum": 396.15,
+   "highHari": 428.48,
+   "simbol": "MSFTBUSDT",
+   "jumlahHari": 119,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.1529,
+   "tanggalPuncak": "2026-10-23",
+   "closeSebelum": 51.27,
+   "highHari": 55.45,
+   "simbol": "PENGBUSDT",
+   "jumlahHari": 13,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.0782,
+   "tanggalPuncak": "2026-10-19",
+   "closeSebelum": 27.11,
+   "highHari": 29.3,
+   "simbol": "SHAZBUSDT",
+   "jumlahHari": 27,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.0238,
+   "tanggalPuncak": "2026-10-23",
+   "closeSebelum": 21.81,
+   "highHari": 23.56,
+   "simbol": "BOTBUSDT",
+   "jumlahHari": 6,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7.9944,
+   "tanggalPuncak": "2026-08-04",
+   "closeSebelum": 391.65,
+   "highHari": 422.96,
+   "simbol": "AVGOBUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7.9441,
+   "tanggalPuncak": "2026-10-02",
+   "closeSebelum": 65.08,
+   "highHari": 70.25,
+   "simbol": "HPEBUSDT",
+   "jumlahHari": 27,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7.9197,
+   "tanggalPuncak": "2026-08-27",
+   "closeSebelum": 9.47,
+   "highHari": 10.22,
+   "simbol": "DJTBUSDT",
+   "jumlahHari": 62,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7.5665,
+   "tanggalPuncak": "2026-10-15",
+   "closeSebelum": 26.3,
+   "highHari": 28.29,
+   "simbol": "GMEBUSDT",
+   "jumlahHari": 76,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7.3119,
+   "tanggalPuncak": "2026-10-21",
+   "closeSebelum": 366.25,
+   "highHari": 393.03,
+   "simbol": "MDBBUSDT",
+   "jumlahHari": 13,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7.1305,
+   "tanggalPuncak": "2026-10-22",
+   "closeSebelum": 254.12,
+   "highHari": 272.24,
+   "simbol": "ADBEBUSDT",
+   "jumlahHari": 27,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6.8538,
+   "tanggalPuncak": "2026-07-31",
+   "closeSebelum": 335.87,
+   "highHari": 358.89,
+   "simbol": "GOOGLBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6.8301,
+   "tanggalPuncak": "2026-09-30",
+   "closeSebelum": 86.09,
+   "highHari": 91.97,
+   "simbol": "HYPEUSDT",
+   "jumlahHari": 33,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6.6557,
+   "tanggalPuncak": "2026-07-19",
+   "closeSebelum": 115.69,
+   "highHari": 123.39,
+   "simbol": "BABABUSDT",
+   "jumlahHari": 104,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6.3081,
+   "tanggalPuncak": "2026-09-14",
+   "closeSebelum": 245.08,
+   "highHari": 260.54,
+   "simbol": "CRMBUSDT",
+   "jumlahHari": 48,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6.2402,
+   "tanggalPuncak": "2026-10-15",
+   "closeSebelum": 6.41,
+   "highHari": 6.81,
+   "simbol": "WENBUSDT",
+   "jumlahHari": 27,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5.7333,
+   "tanggalPuncak": "2026-09-25",
+   "closeSebelum": 52.5,
+   "highHari": 55.51,
+   "simbol": "PYPLBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5.5383,
+   "tanggalPuncak": "2026-10-15",
+   "closeSebelum": 93.53,
+   "highHari": 98.71,
+   "simbol": "ZMBUSDT",
+   "jumlahHari": 27,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5.5146,
+   "tanggalPuncak": "2026-10-22",
+   "closeSebelum": 28.47,
+   "highHari": 30.04,
+   "simbol": "TMFBUSDT",
+   "jumlahHari": 6,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5.3195,
+   "tanggalPuncak": "2026-10-20",
+   "closeSebelum": 1242.6,
+   "highHari": 1308.7,
+   "simbol": "LLYBUSDT",
+   "jumlahHari": 20,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4.9556,
+   "tanggalPuncak": "2026-08-05",
+   "closeSebelum": 4060.9,
+   "highHari": 4262.14,
+   "simbol": "XAUTUSDT",
+   "jumlahHari": 215,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4.9483,
+   "tanggalPuncak": "2026-07-30",
+   "closeSebelum": 983.17,
+   "highHari": 1031.82,
+   "simbol": "GSBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4.9462,
+   "tanggalPuncak": "2026-08-27",
+   "closeSebelum": 219.36,
+   "highHari": 230.21,
+   "simbol": "NVDABUSDT",
+   "jumlahHari": 138,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4.9037,
+   "tanggalPuncak": "2026-08-13",
+   "closeSebelum": 75.25,
+   "highHari": 78.94,
+   "simbol": "NFLXBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4.8021,
+   "tanggalPuncak": "2026-10-23",
+   "closeSebelum": 18.95,
+   "highHari": 19.86,
+   "simbol": "KSTRBUSDT",
+   "jumlahHari": 6,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4.5391,
+   "tanggalPuncak": "2026-08-11",
+   "closeSebelum": 1739.1,
+   "highHari": 1818.04,
+   "simbol": "ASMLBUSDT",
+   "jumlahHari": 83,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3.8344,
+   "tanggalPuncak": "2026-10-09",
+   "closeSebelum": 78.5,
+   "highHari": 81.51,
+   "simbol": "PDDBUSDT",
+   "jumlahHari": 27,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3.4531,
+   "tanggalPuncak": "2026-08-04",
+   "closeSebelum": 701.4,
+   "highHari": 725.62,
+   "simbol": "QQQBUSDT",
+   "jumlahHari": 119,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3.1665,
+   "tanggalPuncak": "2026-09-01",
+   "closeSebelum": 317.07,
+   "highHari": 327.11,
+   "simbol": "AAPLBUSDT",
+   "jumlahHari": 90,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2.6557,
+   "tanggalPuncak": "2026-10-16",
+   "closeSebelum": 335.51,
+   "highHari": 344.42,
+   "simbol": "JPMBUSDT",
+   "jumlahHari": 20,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1.9759,
+   "tanggalPuncak": "2026-08-04",
+   "closeSebelum": 759.13,
+   "highHari": 774.13,
+   "simbol": "SPYBUSDT",
+   "jumlahHari": 112,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1.9495,
+   "tanggalPuncak": "2026-10-23",
+   "closeSebelum": 141.06,
+   "highHari": 143.81,
+   "simbol": "VSTBUSDT",
+   "jumlahHari": 6,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1.8735,
+   "tanggalPuncak": "2026-10-22",
+   "closeSebelum": 541.23,
+   "highHari": 551.37,
+   "simbol": "BRKBBUSDT",
+   "jumlahHari": 6,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1.6364,
+   "tanggalPuncak": "2026-10-05",
+   "closeSebelum": 0.011305,
+   "highHari": 0.01149,
+   "simbol": "KGSTUSDT",
+   "jumlahHari": 307,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 0.6597,
+   "tanggalPuncak": "2026-02-11",
+   "closeSebelum": 1.0004,
+   "highHari": 1.007,
+   "simbol": "UUSDT",
+   "jumlahHari": 287,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 0.3003,
+   "tanggalPuncak": "2025-10-11",
+   "closeSebelum": 0.9989,
+   "highHari": 1.0019,
+   "simbol": "BFUSDUSDT",
+   "jumlahHari": 440,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 0.2198,
+   "tanggalPuncak": "2026-07-10",
+   "closeSebelum": 1.0007,
+   "highHari": 1.0029,
+   "simbol": "RLUSDUSDT",
+   "jumlahHari": 278,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 0.03,
+   "tanggalPuncak": "2026-10-22",
+   "closeSebelum": 0.9997,
+   "highHari": 1.0,
+   "simbol": "RWUSDUSDT",
+   "jumlahHari": 14,
+   "jumlahHariGila100": 0,
+   "jumlahHariGila50": 0,
+   "hariGila": [],
+   "catatan": "ok"
+  }
+ ]
+}

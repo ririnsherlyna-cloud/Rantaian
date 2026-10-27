@@ -1,0 +1,70 @@
+{
+  "NAIK": {
+    "bobot": {
+      "struktur": 0.24,
+      "momentum": 0.26,
+      "sr": 0.16,
+      "tekanan": 0.18,
+      "perubahan": 0.16
+    },
+    "generasi": 0,
+    "belajar": 0,
+    "diperbarui": "2026-09-28T01:06:34.918Z"
+  },
+  "TURUN": {
+    "bobot": {
+      "struktur": 0.2362,
+      "momentum": 0.2607,
+      "sr": 0.1695,
+      "tekanan": 0.1777,
+      "perubahan": 0.1558
+    },
+    "generasi": 1,
+    "belajar": 10,
+    "diperbarui": "2026-09-29T01:37:50.083Z"
+  },
+  "phoenix": {
+    "TURUN": {
+      "bobot": {
+        "posisi": 0.2478,
+        "sweep": 0.303,
+        "akumulasi": 0.2005,
+        "momentum": 0.1501,
+        "kompresi": 0.0986
+      },
+      "generasi": 1,
+      "belajar": 6,
+      "diperbarui": "2026-09-29T08:08:04.774Z"
+    },
+    "NAIK": {
+      "bobot": {
+        "posisi": 0.25,
+        "sweep": 0.3,
+        "akumulasi": 0.2,
+        "momentum": 0.15,
+        "kompresi": 0.1
+      },
+      "generasi": 0,
+      "belajar": 0,
+      "diperbarui": "2026-09-29T15:00:14.911Z"
+    }
+  },
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 1,
+      "phxPisauJatuh": 6,
+      "phxTargetJauh": 6
+    },
+    "aktif": {
+      "phxMomentumWajib": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang"
+      },
+      "phxTargetMagnet": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh"
+      }
+    },
+    "seedSelesai": "2026-09-30T00:38:10.647Z"
+  }
+}

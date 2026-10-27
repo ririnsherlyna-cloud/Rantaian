@@ -1,0 +1,58 @@
+# ============================================================
+# PENJAGA-WAKTU — lapisan jantung ke-3 MICAPROFITA (V291)
+# Lapisan 1: cron SADAR-1 */20   (GitHub kadang menundanya berjam-jam)
+# Lapisan 2: jantung mandiri SADAR-1 (rantai dispatch antar-slot)
+# Lapisan 3: PENJAGA-WAKTU ini — tiap 10 menit mengukur umur denyut
+#   (ruang-hidup/keadaan.json). Bila > 26 menit, MENGIRIM dispatch darurat
+#   ke hidup-sadar1.yml. Tujuan: denyut tidak pernah bolong cukup lama
+#   sampai halaman hidup terbaca "mati" oleh pemiliknya.
+# ============================================================
+name: PENJAGA-WAKTU (denyut tak boleh bolong)
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: jaga-waktu
+  cancel-in-progress: false
+
+jobs:
+  jaga:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ukur umur denyut — bangunkan jantung bila tertunda >26 menit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          UMAI=$(python3 - <<'PY'
+          import json, urllib.request, time
+          from datetime import datetime, timezone
+          url = ("https://raw.githubusercontent.com/ririnsherlyna-cloud/Micaprofita-/main/"
+                 "ruang-hidup/keadaan.json?cb=%d") % int(time.time())
+          umur = 9999.0
+          try:
+              d = json.load(urllib.request.urlopen(url, timeout=20))
+              selesai = (d.get("waktu") or {}).get("selesai") or (d.get("waktu") or {}).get("mulai")
+              if selesai:
+                  t = datetime.strptime(selesai[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
+                  umur = (datetime.now(timezone.utc) - t).total_seconds() / 60.0
+          except Exception as e:
+              print("baca-keadaan-gagal:", e)
+          print("%.1f" % umur)
+          PY
+          )
+          echo "umur denyut terakhir: ${UMAI} menit"
+          PERLU=$(python3 -c "print(1 if float('${UMAI}') > 26 else 0)")
+          if [ "$PERLU" = "1" ]; then
+            echo "denyut tertunda > 26 menit — kirim dispatch darurat ke SADAR-1"
+            curl -sf -X POST               -H "Authorization: Bearer $GH_TOKEN"               -H "Accept: application/vnd.github+json"               "https://api.github.com/repos/${{ github.repository }}/actions/workflows/hidup-sadar1.yml/dispatches"               -d '{"ref":"main"}'               && echo "dispatch darurat terkirim — jantung akan menyusul"
+          else
+            echo "denyut segar — jaga selesai tanpa aksi"
+          fi

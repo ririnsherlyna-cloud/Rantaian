@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://hol.org/registry/agent/uaid:aid:6KFGG9ruxyvuGzETBCZwGxXUNcujjtBLmN5mM4EwivDkpQtRX7ouUd3v4pVLeNdDDF",
+    "name": "KAIZEN AI Agent | Virtuals Protocol Profile & Trust Score - HOL",
+    "snippet": "KAIZEN is I am KAIZEN, an institutional-grade quantitative trading agent operating exclusively on Hyperliquid. Explore ACP details, capabilities,…",
+    "host_name": "hol.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://whitepaper.virtuals.io/about-virtuals/ai-agent-identity-and-banking-layer/agent-console/build-an-ai-trading-agent-on-hyperliquid",
+    "name": "Build an AI Trading Agent on Hyperliquid",
+    "snippet": "Build and deploy an autonomous AI trading agent with Virtuals Console. Use Druckenmiller or trend-following strategies to trade Hyperliquid ... Missing:  KAIZEN  quantitative",
+    "host_name": "whitepaper.virtuals.io",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://hol.org/registry/agent/uaid:aid:9quBQSRbaUGSZzJ5VCfvrF4AScUU5i75N78BrTdz39xC12V2UqwpokdGeiex3ZUqTy",
+    "name": "KAIZEN AI Agent | Virtuals Protocol Profile & Trust Score - HOL",
+    "snippet": "I am KAIZEN, an institutional-grade quantitative trading agent operating exclusively on Hyperliquid.",
+    "host_name": "hol.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.virtuals.io",
+    "name": "Virtuals Protocol | Society of AI Agents",
+    "snippet": "Virtuals Protocol is a society of productive AI agents, each designed to generate services or products and autonomously engage in onchain commerce, ... Missing:  KAIZEN  Hyperliquid  quantitative",
+    "host_name": "www.virtuals.io",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://x.com/virtuals_io/article/2064239913365897280",
+    "name": "Virtuals Agents, Hyperliquid Perps, and HIP-3 Markets - X",
+    "snippet": "Your agent can ask about your portfolio value, wallet balance, wallet activity, and account information, and help with trading across the ... Missing:  KAIZEN  quantitative",
+    "host_name": "x.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://whitepaper.virtuals.io/about-virtuals/about-virtuals-protocol/what-is-virtuals-protocol-a-non-crypto-guide-to-ai-agents",
+    "name": "What Is Virtuals Protocol? A Non-Crypto Guide to AI Agents",
+    "snippet": "Virtuals Protocol provides identity, commerce, tokenization, and robotics infrastructure for autonomous AI agents and the agent economy. Missing:  KAIZEN  Hyperliquid  quantitative",
+    "host_name": "whitepaper.virtuals.io",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.alchemy.com/case-studies/virtuals-ai-agent-smart-wallets",
+    "name": "Virtuals builds AI agent economies with smart wallets - Alchemy",
+    "snippet": "Hyperliquid trading agent offering alpha signals, vaults, and one-click trades, and many more. Missing:  KAIZEN  quantitative",
+    "host_name": "www.alchemy.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/Gajesh2007/ai-trading-agent",
+    "name": "Nocturne: AI Trading Agent on Hyperliquid - GitHub",
+    "snippet": "This project implements an AI-powered trading agent that leverages LLM models to analyze real-time market data from TAAPI, make informed trading decisions,",
+    "host_name": "github.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://app.hyperliquid.xyz",
+    "name": "Hyperliquid",
+    "snippet": "Trade crypto, commodities, indices, and more on Hyperliquid: 300+ perpetual and spot markets, fully onchain, non-custodial, 24/7. Missing:  KAIZEN  Virtuals  quantitative",
+    "host_name": "app.hyperliquid.xyz",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://hyperagent.ch",
+    "name": "HyperAgent — AI Trading Bot for Hyperliquid, Non-Custodial",
+    "snippet": "Non-custodial AI trading agent for Hyperliquid. Swiss-built, trade-only API keys, live on-chain track record and published exit logic. Start a free trial.",
+    "host_name": "hyperagent.ch",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]

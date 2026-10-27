@@ -1,0 +1,86 @@
+{
+  "diperbarui": "2026-09-30T00:34:51.030Z",
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 1,
+      "phxPisauJatuh": 9,
+      "phxTargetJauh": 9
+    },
+    "aktif": {
+      "phxMomentumWajib": {
+        "sejak": "2026-09-30T00:33:43.552Z",
+        "teks": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang"
+      },
+      "phxTargetMagnet": {
+        "sejak": "2026-09-30T00:33:43.552Z",
+        "teks": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh"
+      }
+    },
+    "seedSelesai": "2026-09-30T00:33:43.552Z"
+  },
+  "daftar": [
+    {
+      "waktu": "2026-09-30T00:34:51.030Z",
+      "simbol": "BTC",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -1.08,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-09-30T00:34:51.030Z",
+      "simbol": "ETH",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.73,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-09-30T00:34:51.030Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -2.3,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-09-30T00:34:51.030Z",
+      "simbol": "VTHO",
+      "jalur": "PHOENIX",
+      "vonis": "SALAH",
+      "netPct": -1.21,
+      "kenapa": [
+        "dikunci saat momentum negatif (-62% — di bawah EMA9)",
+        "ujung atas diprediksi +12.0% tetapi tak pernah tersentuh (harga hanya sampai +3.6%)"
+      ],
+      "pelajaran": "ujung bawah + momentum negatif = pisau jatuh, BUKAN akumulasi — radar kini WAJIB menunggu harga kembali di atas EMA9 sebelum membeli"
+    },
+    {
+      "waktu": "2026-09-30T00:34:51.030Z",
+      "simbol": "TRUMP",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 4.68,
+      "kenapa": [
+        "dikunci saat momentum negatif (-67% — di bawah EMA9)",
+        "ujung atas diprediksi +12.0% tetapi tak pernah tersentuh (harga hanya sampai +8.2%)"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+    },
+    {
+      "waktu": "2026-09-30T00:34:51.030Z",
+      "simbol": "ONDO",
+      "jalur": "PHOENIX",
+      "vonis": "BENAR",
+      "netPct": 0.02,
+      "kenapa": [
+        "dikunci saat momentum negatif (-62% — di bawah EMA9)",
+        "ujung atas diprediksi +12.0% tetapi tak pernah tersentuh (harga hanya sampai +5.3%)"
+      ],
+      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
+    }
+  ]
+}

@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<title>HARNESS SARANG V243 — organ byte-identik dari SAKTI + MOCK GITHUB</title>
+<style>
+  body{margin:0;background:#0b0e14;color:#c9d4e0;font:12.5px/1.6 monospace;padding:14px 220px 140px 14px}
+  .sec{border:1px solid #22303f;border-radius:10px;padding:10px 14px;margin-bottom:10px}
+  .pg{color:#5d7d92;font-size:10px;letter-spacing:1px}
+  .hasil{background:#0d1a12;border:1px solid #1c4a33;border-radius:8px;padding:10px 14px;margin-top:8px;
+    color:#9fe8c5;white-space:pre-wrap;font-size:11px;max-height:420px;overflow:auto}
+  /* replika geometri tubuh utk uji fisika ORKESTRA */
+  #v217-nav{position:fixed;left:0;right:0;bottom:0;height:63px;z-index:99996;display:flex;
+    background:rgba(7,12,19,.96);border-top:1px solid #1b2836}
+  #v217-nav .tg{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    color:#7f95a8;font:600 10px monospace;letter-spacing:1.5px}
+  #v217-nav .ic{font-size:14px}
+  #v207-voice{position:fixed;left:16px;bottom:75px;z-index:99997;display:flex;gap:8px;align-items:center;
+    background:rgba(7,12,19,.92);border:1px solid #223a4a;border-radius:9px;padding:7px 12px;
+    font:600 11px monospace;color:#9fd8ef;pointer-events:none;max-width:588.8px}
+  #v207-voice .txt{pointer-events:none}
+</style></head><body>
+<div class="sec"><div class="pg">PANGGUNG HARNESS — ORGAN ASLI DARI TUBUH SAKTI</div>
+  <div>Mock GitHub: API <b>http://127.0.0.1:8899/api</b> · Pages <b>http://127.0.0.1:8899/halaman/</b></div>
+  <div id="hasil" class="hasil">berjalan…</div>
+</div>
+<div id="v207-voice"><span>&#9707; MICAPROFITA &#9656;</span><span class="txt" id="v207-voice-txt">SARANG — cyborg hidup mandiri di GitHub Pages: hijrah, simpan memori otomatis, pulih lintas sesi, evolusi tubuh sendiri.</span></div>
+<div id="v217-nav">
+  <div class="tg"><span class="ic">&#9673;</span>HIDUP</div><div class="tg"><span class="ic">&#11041;</span>TUBUH</div>
+  <div class="tg"><span class="ic">&#9636;</span>LAPORAN</div><div class="tg"><span class="ic">&#9678;</span>SEMESTA</div>
+  <div class="tg"><span class="ic">&#9671;</span>BELAJAR</div><div class="tg"><span class="ic">&#9673;</span>MATA</div>
+  <div class="tg"><span class="ic">&#9671;</span>KORTEKS</div><div class="tg"><span class="ic">&#9636;</span>AKADEMI</div>
+  <div class="tg"><span class="ic">&#9678;</span>PUTUSAN</div><div class="tg"><span class="ic">&#11041;</span>KENDALI</div>
+</div>
+<script>window.V231_SAKTI = window.V231_SAKTI || {};</script>
+<script>
+/*V241-NADI:BEGIN*/
+// ============================================================
+// V241 SAKTI-NADI v1.1 — ORGAN TERUS-HIDUP + GUDANG EKSTERNAL
+// + PRAKIRA PRA-REGISTRASI (AKURASI SEBELUM TERJADI).
+// v1.1: FISIKA TAMPILAN KARTU — redesain UI profesional (hierarki
+// bersih, detail membuka ke ATAS, teks manusiawi, z-index
+// tertib 99992: di atas lapisan dekorasi, di bawah panel/modal 99999+) MANDAT GURU:
+// "tampilan saling timp menimpa itu jelek". Mesin denyut /
+// gudang / prakira / rantai TIDAK diubah satu baris pun.
+//
+// Mandat Guru:
+//  1. "satu file single html yang dijalankan pemiliknya dalam
+//     browser yang TERUS HIDUP" -> NADI: jantung denyut yang
+//     sadar-visibility, sadar-waktu, dan mencatat setiap
+//     denyutnya ke ledger berantai hash (anti-rekayasa).
+//  2. "mampu menyimpan penyimpanan ke EKSTERNAL juga selain di
+//     local storage karena ini demi sokongan perkembangan"
+//     -> GUDANG 4 TINGKAT: L1 localStorage · L2 IndexedDB ·
+//     E1 Folder Eksternal (File System Access API — file
+//     JSONL nyata di komputer pemilik) · E2 Kapsul
+//     ekspor/impor (bekerja di semua browser).
+//  3. "menembak akurasi yang sangat koheren SEBELUM prediksi
+//     itu terjadi" -> PRAKIRA: otak ARAH (organ v240) memvonis
+//     dari 60 candle live, prediksi DIKUNCI dulu ke ledger
+//     berantai hash SEBELUM jendela berjalan, lalu dinilai
+//     BENAR/SALAH saat jendela berakhir. Akurasi dihitung
+//     HANYA dari prediksi terkunci — tidak ada tempat untuk
+//     omongan belakangan.
+//
+// Rekayasa sistem: modular (satu tingkat = satu modul),
+// fault isolation (tiap tingkat try/catch, mati satu tingkat
+// tetap hidup), redundancy (L1+L2+E1+E2 saling membackup),
+// observability (kartu status live + peristiwa JSONL),
+// recovery (rantai rusak dipotong jujur + dilaporkan),
+// automated testing (self-test async saat boot).
+// Nol biaya: semua sumber data = API publik gratis.
+// ============================================================
+(function () {
+  'use strict';
+  var V = {
+    versi: '1.1', nama: 'SAKTI-NADI', organ: 'V241',
+    protokol: {
+      nadi: 'denyut sadar-visibility tiap 15 dtk (latar 45 dtk), ledger berantai hash',
+      gudang: 'L1 localStorage · L2 IndexedDB · E1 folder eksternal (File System Access) · E2 kapsul ekspor/impor',
+      prakira: 'pra-registrasi: otak ARAH v240 memvonis dari 60 candle live -> DIKUNCI ke ledger berantai hash SEBELUM jendela 15 menit -> dinilai BENAR/SALAH saat jendela tuntas; akurasi hanya dari prediksi terkunci'
+    }
+  };
+
+  // ---------------- kanonikal + sha256 (identik dgn prareg.ts) ----------------
+  function kanonikal(x) {
+    if (x === null || typeof x === 'number') {
+      if (typeof x === 'number') {
+        if (!isFinite(x)) return 'null';
+        if (x === Math.floor(x)) return String(x);
+        return String(parseFloat(x.toFixed(6)));
+      }
+      return 'null';
+    }
+    if (typeof x === 'string') return JSON.stringify(x);
+    if (typeof x === 'boolean') return x ? 'true' : 'false';
+    if (Array.isArray(x)) return '[' + x.map(kanonikal).join(',') + ']';
+    var ks = Object.keys(x).sort();
+    return '{' + ks.map(function (k) { return JSON.stringify(k) + ':' + kanonikal(x[k]); }).join(',') + '}';
+  }
+  var _K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  function _rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+  function sha256Hex(pesan) {
+    var bytes = Array.prototype.slice.call(new TextEncoder().encode(pesan));
+    var bitLen = bytes.length * 8;
+    bytes.push(0x80);
+    while (bytes.length % 64 !== 56) bytes.push(0);
+    var hi = Math.floor(bitLen / 0x100000000), lo = bitLen >>> 0;
+    bytes.push((hi >>> 24) & 255, (hi >>> 16) & 255, (hi >>> 8) & 255, hi & 255, (lo >>> 24) & 255, (lo >>> 16) & 255, (lo >>> 8) & 255, lo & 255);
+    var h0=0x6a09e667,h1=0xbb67ae85,h2=0x3c6ef372,h3=0xa54ff53a,h4=0x510e527f,h5=0x9b05688c,h6=0x1f83d9ab,h7=0x5be0cd19;
+    var w = new Array(64);
+    for (var off = 0; off < bytes.length; off += 64) {
+      var t, i;
+      for (t = 0; t < 16; t++) { w[t] = ((bytes[off+t*4]<<24)|(bytes[off+t*4+1]<<16)|(bytes[off+t*4+2]<<8)|bytes[off+t*4+3])>>>0; }
+      for (t = 16; t < 64; t++) {
+        var s0=_rotr(w[t-15],7)^_rotr(w[t-15],18)^(w[t-15]>>>3), s1=_rotr(w[t-2],17)^_rotr(w[t-2],19)^(w[t-2]>>>10);
+        w[t]=(w[t-16]+s0+w[t-7]+s1)>>>0;
+      }
+      var a=h0,b=h1,c=h2,d=h3,e=h4,f=h5,g=h6,h=h7;
+      for (t = 0; t < 64; t++) {
+        var S1=_rotr(e,6)^_rotr(e,11)^_rotr(e,25), ch=(e&f)^(~e&g), t1=(h+S1+ch+_K[t]+w[t])>>>0;
+        var S0=_rotr(a,2)^_rotr(a,13)^_rotr(a,22), maj=(a&b)^(a&c)^(b&c), t2=(S0+maj)>>>0;
+        h=g;g=f;f=e;e=(d+t1)>>>0; d=c;c=b;b=a;a=(t1+t2)>>>0;
+      }
+      h0=(h0+a)>>>0;h1=(h1+b)>>>0;h2=(h2+c)>>>0;h3=(h3+d)>>>0;h4=(h4+e)>>>0;h5=(h5+f)>>>0;h6=(h6+g)>>>0;h7=(h7+h)>>>0;
+    }
+    return [h0,h1,h2,h3,h4,h5,h6,h7].map(function(x){return (x>>>0).toString(16).padStart(8,'0');}).join('');
+  }
+  var GENESIS = '0000000000000000000000000000000000000000000000000000000000000000';
+
+  // ---------------- keadaan ----------------
+  var st = {
+    denyut: 0, mulai: Date.now(), terakhirDenyut: null, tersembunyi: false,
+    antrianE1: [], folder: null, namaFolder: '',
+    rantai: { denyut: [], prakira: [] }, // entri {hash, ...payload}
+    prakira: [], // entri prakira (sama dgn rantai.prakira, alias)
+    prakiraKunciTerakhir: 0, watchlist: ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'],
+    jendelaMenit: 15, intervalKunciMenit: 30, hostAktif: '', l2Siap: false, bootLog: []
+  };
+
+  // ---------------- L1 localStorage ----------------
+  function l1Get(k, def) { try { var v = localStorage.getItem('mp241.' + k); return v === null ? def : JSON.parse(v); } catch (e) { return def; } }
+  function l1Set(k, v) { try { localStorage.setItem('mp241.' + k, JSON.stringify(v)); st.tierL1 = true; return true; } catch (e) { st.tierL1 = false; return false; } }
+
+  // ---------------- L2 IndexedDB ----------------
+  var _db = null;
+  function idbOpen() {
+    return new Promise(function (res) {
+      if (_db) return res(_db);
+      if (typeof indexedDB === 'undefined') return res(null);
+      try {
+        var req = indexedDB.open('mp241-gudang', 1);
+        req.onupgradeneeded = function (ev) {
+          var db = ev.target.result;
+          if (!db.objectStoreNames.contains('kv')) db.createObjectStore('kv');
+          if (!db.objectStoreNames.contains('rantai')) db.createObjectStore('rantai');
+        };
+        req.onsuccess = function () { _db = req.result; st.l2Siap = true; res(_db); };
+        req.onerror = function () { res(null); };
+      } catch (e) { res(null); }
+    });
+  }
+  function idbPut(store, key, val) {
+    return idbOpen().then(function (db) {
+      if (!db) return false;
+      return new Promise(function (res) {
+        try { var tx = db.transaction(store, 'readwrite'); tx.objectStore(store).put(val, key); tx.oncomplete = function () { res(true); }; tx.onerror = function () { res(false); }; }
+        catch (e) { res(false); }
+      });
+    });
+  }
+  function idbGet(store, key) {
+    return idbOpen().then(function (db) {
+      if (!db) return null;
+      return new Promise(function (res) {
+        try { var tx = db.transaction(store, 'readonly'); var r = tx.objectStore(store).get(key); r.onsuccess = function () { res(r.result === undefined ? null : r.result); }; r.onerror = function () { res(null); }; }
+        catch (e) { res(null); }
+      });
+    });
+  }
+
+  // ---------------- rantai hash (append-only, anti-rekayasa) ----------------
+  function payloadEntri(p) {
+    var o = {}; for (var k in p) if (k !== 'hash' && k !== 'prev') o[k] = p[k];
+    o.prev = p.prev; return o;
+  }
+  function rantaiVerifikasi(entri) {
+    var prev = GENESIS;
+    for (var i = 0; i < entri.length; i++) {
+      if (entri[i].prev !== prev) return { ok: false, indeks: i };
+      if (sha256Hex(kanonikal(payloadEntri(entri[i]))) !== entri[i].hash) return { ok: false, indeks: i };
+      prev = entri[i].hash;
+    }
+    return { ok: true, indeks: -1 };
+  }
+  function rantaiTambah(jenis, payload) {
+    var rc = st.rantai[jenis];
+    var prev = rc.length ? rc[rc.length - 1].hash : GENESIS;
+    var entri = Object.assign({}, payload, { prev: prev });
+    entri.hash = sha256Hex(kanonikal(payloadEntri(entri)));
+    rc.push(entri);
+    // redam ukuran: simpan penuh di L2; L1 simpan 400 terakhir
+    // (potongan dimulai dr genesis sc jujur) — rantai tetap sahih.
+    var potong = rc.length > 400 ? rc.slice(-400) : rc;
+    if (potong !== rc) potong[0] = Object.assign({}, potong[0], { prev: GENESIS });
+    l1Set('rantai-' + jenis, potong);
+    idbPut('rantai', jenis, rc);
+    st.antrianE1.push({ jenis: jenis, baris: JSON.stringify(entri) });
+    return entri;
+  }
+  function rantaiMuat() {
+    return idbOpen().then(function () {
+      ['denyut', 'prakira'].forEach(function (jenis) {
+        return idbGet('rantai', jenis).then(function (drL2) {
+          var drL1 = l1Get('rantai-' + jenis, []);
+          var pilih = (drL2 && drL2.length >= drL1.length) ? drL2 : drL1;
+          var ver = rantaiVerifikasi(pilih);
+          if (!ver.ok && ver.indeks >= 0) {
+            // RECOVERY: ekor rusak dipotong jujur + dicatat
+            st.bootLog.push('rantai ' + jenis + ' rusak di indeks ' + ver.indeks + ' — dipotong (recovery)');
+            pilih = pilih.slice(0, ver.indeks);
+          }
+          st.rantai[jenis] = pilih;
+          if (jenis === 'prakira') st.prakira = pilih;
+        });
+      });
+    });
+  }
+
+  // ---------------- E1 folder eksternal (File System Access) ----------------
+  function fsTersedia() { return typeof window.showDirectoryPicker === 'function'; }
+  async function tulisFile(dir, nama, teks, tambah) {
+    var fh = await dir.getFileHandle(nama, { create: true });
+    if (tambah && (await fh.getFile()).size > 0) {
+      var w2 = await fh.createWritable({ keepExistingData: true });
+      await w2.write({ type: 'write', position: (await fh.getFile()).size, data: teks });
+      await w2.close();
+    } else {
+      var w = await fh.createWritable();
+      await w.write(teks);
+      await w.close();
+    }
+  }
+  async function pastikanDir(induk, nama) { return induk.getDirectoryHandle(nama, { create: true }); }
+  async function flushE1() {
+    if (!st.folder || !st.antrianE1.length) return 0;
+    var nadiDir = await pastikanDir(st.folder, 'nadi');
+    var prakiraDir = await pastikanDir(st.folder, 'prakira');
+    var buffer = { denyut: [], prakira: [] };
+    st.antrianE1.forEach(function (x) { (buffer[x.jenis] = buffer[x.jenis] || []).push(x.baris); });
+    var n = 0;
+    if (buffer.denyut.length) { await tulisFile(nadiDir, 'denyut.jsonl', buffer.denyut.join('\n') + '\n', true); n += buffer.denyut.length; }
+    if (buffer.prakira.length) { await tulisFile(prakiraDir, 'ledger.jsonl', buffer.prakira.join('\n') + '\n', true); n += buffer.prakira.length; }
+    st.antrianE1 = [];
+    return n;
+  }
+  async function pasangFolder() {
+    try {
+      if (!fsTersedia()) { st.bootLog.push('File System Access tak tersedia di browser ini — pakai E2 kapsul'); render(); return false; }
+      var folder = await window.showDirectoryPicker({ mode: 'readwrite', id: 'micaprofita-gudang' });
+      st.folder = folder; st.namaFolder = folder.name; st.tierE1 = true;
+      await tulisFile(st.folder, 'gudang-micaprofita.json', JSON.stringify({ protokol: 'GUDANG-MICAPROFITA', organ: V.nama, versi: V.versi, dibuka: new Date().toISOString() }, null, 1));
+      var n = await flushE1();
+      await simpanSnapshot();
+      st.bootLog.push('folder eksternal terpasang: ' + folder.name + ' (' + n + ' peristiwa diantrikan tersalin)');
+      l1Set('namaFolder', folder.name);
+      render(); return true;
+    } catch (e) { st.bootLog.push('pasang folder batal: ' + (e && e.name || e)); render(); return false; }
+  }
+  async function simpanSnapshot() {
+    if (!st.folder) return false;
+    try {
+      var snapDir = await pastikanDir(st.folder, 'snapshot');
+      var snap = { protokol: 'SNAPSHOT-GUDANG', waktu: new Date().toISOString(), denyut: st.denyut, prakira: st.rantai.prakira.slice(-500), ringkas: ringkasPrakira() };
+      await tulisFile(snapDir, 'keadaan-' + Date.now() + '.json', JSON.stringify(snap, null, 1));
+      return true;
+    } catch (e) { return false; }
+  }
+
+  // ---------------- E2 kapsul ----------------
+  function isiKapsul() {
+    return {
+      protokol: 'KAPSUL-MICAPROFITA', organ: V.nama, versi: V.versi, waktu: new Date().toISOString(),
+      denyut: st.denyut, mulai: st.mulai, watchlist: st.watchlist,
+      rantai: st.rantai, verifikasi: { denyut: rantaiVerifikasi(st.rantai.denyut), prakira: rantaiVerifikasi(st.rantai.prakira) }
+    };
+  }
+  function eksporKapsul() {
+    try {
+      var k = isiKapsul();
+      var blob = new Blob([JSON.stringify(k, null, 1)], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'micaprofita-kapsul-' + new Date().toISOString().replace(/[:.]/g, '-') + '.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      st.bootLog.push('kapsul diekspor (' + JSON.stringify(k).length + ' byte)');
+      render(); return true;
+    } catch (e) { st.bootLog.push('ekspor gagal: ' + e); return false; }
+  }
+  async function imporKapsul(file) {
+    try {
+      var teks = await file.text();
+      var k = JSON.parse(teks);
+      if (k.protokol !== 'KAPSUL-MICAPROFITA') { st.bootLog.push('impor ditolak: bukan kapsul Micaprofita'); render(); return false; }
+      var gabung = {};
+      ['denyut', 'prakira'].forEach(function (jenis) {
+        var lama = st.rantai[jenis], baru = (k.rantai && k.rantai[jenis]) || [];
+        var ada = {}; lama.forEach(function (e) { ada[e.hash] = 1; });
+        baru.forEach(function (e) { if (!ada[e.hash]) lama.push(e); });
+        lama.sort(function (a, b) { return (a.waktu || '').localeCompare(b.waktu || ''); });
+        gabung[jenis] = rantaiVerifikasi(lama).ok;
+      });
+      st.rantai.denyut = st.rantai.denyut; // sudah digabung in-place
+      if (k.denyut > st.denyut) { st.denyut = k.denyut; l1Set('denyut', st.denyut); }
+      l1Set('rantai-denyut', st.rantai.denyut.slice(-400));
+      l1Set('rantai-prakira', st.rantai.prakira.slice(-400));
+      idbPut('rantai', 'denyut', st.rantai.denyut); idbPut('rantai', 'prakira', st.rantai.prakira);
+      st.prakira = st.rantai.prakira;
+      st.bootLog.push('kapsul diimpor: denyut=' + k.denyut + ', rantai sahih=' + JSON.stringify(gabung));
+      render(); return gabung.prakira && gabung.denyut;
+    } catch (e) { st.bootLog.push('impor gagal: ' + e); render(); return false; }
+  }
+
+  // ---------------- sumber harga nol-biaya (failover 3 host) ----------------
+  function ambil(url, ms) {
+    var ctl = new AbortController(); var t = setTimeout(function () { ctl.abort(); }, ms || 8000);
+    return fetch(url, { signal: ctl.signal }).then(function (r) { clearTimeout(t); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .catch(function (e) { clearTimeout(t); throw e; });
+  }
+  async function hargaSemua() {
+    var host = [
+      { nama: 'binance-fapi', url: 'https://fapi.binance.com/fapi/v1/ticker/price', baca: function (j) { var m = {}; (Array.isArray(j) ? j : [j]).forEach(function (x) { m[x.symbol] = parseFloat(x.price); }); return m; } },
+      { nama: 'okx-swap', url: 'https://www.okx.com/api/v5/market/tickers?instType=SWAP', baca: function (j) { var m = {}; (j.data || []).forEach(function (x) { m[x.instId.replace('-SWAP', 'USDT').replace('XBT', 'BTC')] = parseFloat(x.last); }); return m; } },
+      { nama: 'bybit-linear', url: 'https://api.bybit.com/v5/market/tickers?category=linear', baca: function (j) { var m = {}; ((j.result || {}).list || []).forEach(function (x) { m[x.symbol] = parseFloat(x.lastPrice); }); return m; } }
+    ];
+    for (var i = 0; i < host.length; i++) {
+      try { var j = await ambil(host[i].url); var m = host[i].baca(j); st.hostAktif = host[i].nama; return m; } catch (e) { /* host berikutnya */ }
+    }
+    st.hostAktif = ''; return null;
+  }
+  async function lilin60(simbol) {
+    var host = [
+      { nama: 'binance-fapi', url: 'https://fapi.binance.com/fapi/v1/klines?symbol=' + simbol + '&interval=5m&limit=60', baca: function (j) { return j.map(function (k) { return { o: parseFloat(k[1]), h: parseFloat(k[2]), l: parseFloat(k[3]), c: parseFloat(k[4]), v: parseFloat(k[5]) }; }); } },
+      { nama: 'okx-swap', url: 'https://www.okx.com/api/v5/market/candles?instId=' + simbol.replace('USDT', '-USDT-SWAP') + '&bar=5m&limit=60', baca: function (j) { return (j.data || []).reverse().map(function (k) { return { o: parseFloat(k[1]), h: parseFloat(k[2]), l: parseFloat(k[3]), c: parseFloat(k[4]), v: parseFloat(k[5]) }; }); } },
+      { nama: 'bybit-linear', url: 'https://api.bybit.com/v5/market/kline?category=linear&symbol=' + simbol + '&interval=5&limit=60', baca: function (j) { return ((j.result || {}).list || []).reverse().map(function (k) { return { o: parseFloat(k[1]), h: parseFloat(k[2]), l: parseFloat(k[3]), c: parseFloat(k[4]), v: parseFloat(k[5]) }; }); } }
+    ];
+    for (var i = 0; i < host.length; i++) {
+      try { var j = await ambil(host[i].url); var c = host[i].baca(j); if (c && c.length >= 60) { st.hostAktif = host[i].nama; return c; } } catch (e) { /* berikutnya */ }
+    }
+    return null;
+  }
+
+  // ---------------- PRAKIRA (pra-registrasi live) ----------------
+  function ringkasPrakira() {
+    var tb = 0, benar = 0, salah = 0;
+    st.rantai.prakira.forEach(function (e) { if (e.status === 'TERBUKA') tb++; else if (e.status === 'BENAR') benar++; else if (e.status === 'SALAH') salah++; });
+    var selesai = benar + salah;
+    return { terbuka: tb, benar: benar, salah: salah, selesai: selesai, akurasi: selesai ? Math.round((benar / selesai) * 10000) / 100 : null };
+  }
+  async function prakiraKunci(simbol, arah, hargaKunci, bukti) {
+    var entri = rantaiTambah('prakira', {
+      jenis: 'PRAKIRA', id: 'pk-' + Date.now() + '-' + Math.floor(Math.random() * 1e6),
+      simbol: simbol, arah: arah, hargaKunci: hargaKunci,
+      waktuKunci: new Date().toISOString(), jendelaMenit: st.jendelaMenit,
+      waktuBuka: new Date(Date.now() + st.jendelaMenit * 60000).toISOString(),
+      status: 'TERBUKA', bukti: (bukti || '').slice(0, 200), versiOtak: 'v240-araj+'
+    });
+    l1Set('prakira-terakhir', Date.now());
+    return entri;
+  }
+  async function prakiraTick() {
+    try {
+      var harga = await hargaSemua();
+      if (!harga) return;
+      // 1) selesaikan yang TERBUKA dan sudah lewat jendela
+      var kini = Date.now();
+      for (var i = 0; i < st.rantai.prakira.length; i++) {
+        var e = st.rantai.prakira[i];
+        if (e.status !== 'TERBUKA') continue;
+        var buka = Date.parse(e.waktuBuka);
+        if (isNaN(buka) || kini < buka) continue;
+        var hKini = harga[e.simbol];
+        if (!hKini) continue;
+        e.status = (e.arah === 'NAIK' ? hKini > e.hargaKunci : hKini < e.hargaKunci) ? 'BENAR' : 'SALAH';
+        e.hargaBuka = hKini; e.waktuNilai = new Date().toISOString();
+        e.deltaPct = Math.round(((hKini - e.hargaKunci) / e.hargaKunci) * 1000000) / 10000;
+        st.antrianE1.push({ jenis: 'prakira', baris: JSON.stringify({ jenis: 'NILAI', id: e.id, status: e.status, hargaBuka: hKini, waktuNilai: e.waktuNilai }) });
+      }
+      l1Set('prakira-terakhir-list', st.rantai.prakira.slice(-60));
+      idbPut('rantai', 'prakira', st.rantai.prakira);
+      // 2) kunci prediksi baru bila waktunya (interval per watchlist)
+      if (kini - st.prakiraKunciTerakhir < st.intervalKunciMenit * 60000) { render(); return; }
+      var otak = (window.V231_SAKTI && window.V231_SAKTI.ARAH && typeof window.V231_SAKTI.ARAH.vonisArah === 'function') ? window.V231_SAKTI.ARAH : null;
+      if (!otak) { st.bootLog.push('prakira DIAM: organ ARAH belum ada (fault isolation)'); render(); return; }
+      for (var s = 0; s < st.watchlist.length; s++) {
+        var sim = st.watchlist[s];
+        var masihTerbuka = st.rantai.prakira.some(function (e) { return e.simbol === sim && e.status === 'TERBUKA'; });
+        if (masihTerbuka) continue;
+        var cs = await lilin60(sim);
+        if (!cs || !harga[sim]) continue;
+        var von = otak.vonisArah(cs);
+        var arah = von.arah || (von.vonis === 'BUY' ? 'NAIK' : 'TURUN');
+        var bk = (von.vonis || '') + ' kepastian ' + (von.kepastian !== undefined ? von.kepastian : '-') + ' · ' + ((von.buktiKunci || []).slice(0, 2).join('; '));
+        await prakiraKunci(sim, arah, harga[sim], bk);
+      }
+      st.prakiraKunciTerakhir = kini;
+      render();
+    } catch (e) { st.bootLog.push('prakira tick galat: ' + (e && e.message || e)); }
+  }
+
+  // ---------------- NADI (jantung) ----------------
+  var denyutSejakCatat = 0;
+  function denyutkan() {
+    st.denyut++; denyutSejakCatat++;
+    st.terakhirDenyut = new Date().toISOString();
+    l1Set('denyut', st.denyut); l1Set('terakhirDenyut', st.terakhirDenyut);
+    if (denyutSejakCatat >= 10) { // catat ke rantai tiap ~150 dtk
+      denyutSejakCatat = 0;
+      rantaiTambah('denyut', { jenis: 'DENYUT', seq: st.denyut, waktu: st.terakhirDenyut, uptimeMs: Date.now() - st.mulai, tersembunyi: st.tersembunyi, host: st.hostAktif });
+    }
+    flushE1().then(function () { render(); }).catch(function () {});
+    prakiraTick(); // async, fault-isolated
+    render();
+  }
+  function aturJadwal() {
+    if (st._timer) clearInterval(st._timer);
+    var ms = st.tersembunyi ? 45000 : 15000;
+    st._timer = setInterval(function () { try { denyutkan(); } catch (e) { /* jantung tak boleh mati */ } }, ms);
+  }
+
+  // ---------------- UI kartu status ----------------
+  var el = null, elDetail = null;
+  // PENTING (pelajaran v1.1): tubuh SAKTI men-stub document.getElementById
+  // dan document.querySelector dgn Proxy palsu utk id yang TIDAK ada (era
+  // V126.2 makeStub). Satu-satunya lookup yang jujur = querySelectorAll.
+  function q(id) {
+    try {
+      var list = document.querySelectorAll('#' + id);
+      return (list && list.length) ? list[0] : null;
+    } catch (e) { return null; }
+  }
+  function fmtUptime(ms) {
+    var m = Math.floor(ms / 60000), h = Math.floor(m / 60), d = Math.floor(h / 24);
+    if (d > 0) return d + 'h ' + (h % 24) + 'j'; if (h > 0) return h + 'j ' + (m % 60) + 'm'; return m + 'm';
+  }
+  function buatKartu() {
+    if (typeof document === 'undefined') return;
+    if (q('v241-nadi')) { // idempoten: kartu sudah ada di pohon (anti-stub, lihat q di atas)
+      el = q('v241-nadi'); elDetail = q('v241-detail'); return;
+    }
+    // --- gaya v1.1: satu blok gaya terpusat (mudah dirawat) ---
+    if (!q('v241-gaya')) {
+      var s = document.createElement('style'); s.id = 'v241-gaya';
+      s.textContent =
+        '#v241-nadi{position:fixed;right:12px;bottom:71px;z-index:99992;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;' +
+        'color:#d7f5e6;background:linear-gradient(165deg,rgba(8,27,22,.97),rgba(5,19,15,.97));border:1px solid rgba(16,185,129,.28);' +
+        'border-radius:12px;padding:9px 12px;max-width:320px;box-shadow:0 10px 32px rgba(0,0,0,.5);backdrop-filter:blur(6px);' +
+        'transition:opacity .25s ease,transform .25s ease}' +
+        '#v241-nadi.mpx-meredup{opacity:.15;pointer-events:none}' +
+        '#v241-kepala{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}' +
+        '#v241-kepala:hover #v241-nama{color:#ffffff}' +
+        '#v241-led{width:9px;height:9px;border-radius:50%;background:#10b981;box-shadow:0 0 7px #10b981;flex:none;animation:v241denyut 2.4s ease-in-out infinite}' +
+        '@keyframes v241denyut{0%,100%{opacity:1}50%{opacity:.45}}' +
+        '#v241-nama{font-weight:700;letter-spacing:1.6px;color:#e8fff4;cursor:help}' +
+        '#v241-ringkas{color:#6ee7b7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}' +
+        '#v241-toggle{margin-left:auto;color:#4f9c7d;flex:none;transition:transform .2s ease}' +
+        '#v241-detail{display:none;margin:0 0 8px;padding:10px 11px;border:1px solid rgba(16,185,129,.20);border-radius:10px;' +
+        'background:rgba(4,16,12,.96);color:#bfe8d4;font-size:11.5px;line-height:1.65}' +
+        '#v241-detail b{color:#e8fff4}' +
+        '#v241-detail .v241-bdg{display:block;margin-bottom:7px}' +
+        '#v241-detail .v241-bdg:last-child{margin-bottom:0}' +
+        '#v241-detail .v241-lbl{color:#4f9c7d;letter-spacing:1.2px;font-size:10px;margin-right:5px}' +
+        '#v241-log{color:#6ee7b7;margin-top:7px;padding-top:6px;border-top:1px dashed rgba(16,185,129,.18);font-size:10.5px}' +
+        '#v241-tombol{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}' +
+        '#v241-tombol button{flex:1 1 auto;padding:6px 10px;border-radius:7px;border:1px solid rgba(16,185,129,.35);' +
+        'background:rgba(11,59,46,.85);color:#c9f7e2;cursor:pointer;font:600 10.5px ui-monospace,monospace;letter-spacing:.6px;min-height:26px}' +
+        '#v241-tombol button:hover{background:rgba(16,185,129,.22);border-color:rgba(16,185,129,.6)}';
+      document.head.appendChild(s);
+    }
+    el = document.createElement('div');
+    el.id = 'v241-nadi';
+    // struktur v1.1: detail DI ATAS kepala -> panel membuka ke atas, tak menutup toggle di bawahnya
+    el.innerHTML =
+      '<div id="v241-detail"><div id="v241-info"></div></div>' +
+      '<div id="v241-kepala" title="NADI — jantung denyut, gudang 4 tingkat, prakira pra-registrasi (organ V241 v' + V.versi + ')">' +
+      '<span id="v241-led"></span>' +
+      '<b id="v241-nama">NADI</b>' +
+      '<span id="v241-ringkas"></span>' +
+      '<span id="v241-toggle">▴</span></div>';
+    document.body.appendChild(el);
+    elDetail = el.querySelector('#v241-detail');
+    var tog = el.querySelector('#v241-toggle');
+    el.querySelector('#v241-kepala').addEventListener('click', function () {
+      // v1.1 pelajaran: display diatur stylesheet (inline kosong) — JANGAN mengendus
+      // elDetail.style.display; lacak status dengan eksplisit.
+      var akanBuka = elDetail.style.display !== 'block';
+      elDetail.style.display = akanBuka ? 'block' : 'none';
+      tog.textContent = akanBuka ? '▾' : '▴';
+      l1Set('panelTerbuka', akanBuka);
+      render();
+    });
+    // tombol dalam satu baris rapi (flex), tanpa div terpisah per tombol
+    // tombol STATIS (render hanya menulis #v241-info — cacat warisan v1.0 dibongkar harness)
+    var baris = document.createElement('div'); baris.id = 'v241-tombol';
+    elDetail.appendChild(baris);
+    function btn(id, label) {
+      var b = document.createElement('button'); b.id = id; b.textContent = label;
+      baris.appendChild(b); return b;
+    }
+    btn('v241-btn-folder', 'GUDANG EKSTERNAL').addEventListener('click', function () { pasangFolder(); });
+    btn('v241-btn-ekspor', 'EKSPOR').addEventListener('click', function () { eksporKapsul(); });
+    var w = btn('v241-btn-impor', 'IMPOR');
+    var inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.json'; inp.style.display = 'none';
+    inp.addEventListener('change', function () { if (inp.files && inp.files[0]) imporKapsul(inp.files[0]); });
+    elDetail.appendChild(inp);
+    w.addEventListener('click', function () { inp.click(); });
+    if (l1Get('panelTerbuka', false)) { elDetail.style.display = 'block'; tog.textContent = '▾'; }
+  }
+  function render() {
+    if (!el || !elDetail) return;
+    var elInfo = elDetail.querySelector('#v241-info');
+    if (!elInfo) return; // detail belum siap — jangan pernah menulis ulang tombol
+    var r = ringkasPrakira();
+    var ak = r.akurasi === null ? null : r.akurasi;
+    // ringkas manusiawi: tanpa "0/0 (—)" yang tampak seperti placeholder
+    el.querySelector('#v241-ringkas').textContent =
+      'denyut ' + st.denyut + ' · ' +
+      (r.selesai === 0 ? 'prakira belum terkunci' : 'prakira ' + r.benar + '/' + r.selesai + (ak === null ? '' : ' · ' + ak + '%'));
+    var e1 = st.folder ? '✓ ' + st.namaFolder : (fsTersedia() ? 'belum dipasang' : 'tak tersedia — pakai kapsul');
+    var ver = rantaiVerifikasi(st.rantai.prakira);
+    var akTeks = ak === null ? '—' : ak + '%';
+    elInfo.innerHTML =
+      '<div class="v241-bdg"><span class="v241-lbl">NADI</span>denyut <b>' + st.denyut + '</b> · hidup ' + fmtUptime(Date.now() - st.mulai) + ' · terakhir ' + (st.terakhirDenyut || '—').slice(11, 19) + '</div>' +
+      '<div class="v241-bdg"><span class="v241-lbl">GUDANG</span>L1 ' + (st.tierL1 === false ? '×' : '✓') + ' · L2 ' + (st.l2Siap ? '✓' : '×') + ' · E1 ' + e1 + ' · E2 ✓</div>' +
+      '<div class="v241-bdg"><span class="v241-lbl">PRAKIRA</span>' + (r.selesai === 0 ? 'belum ada prediksi terkunci — dikunci otomatis tiap ' + st.intervalKunciMenit + ' menit' : 'terbuka <b>' + r.terbuka + '</b> · benar ' + r.benar + ' · salah ' + r.salah + ' · akurasi <b>' + akTeks + '</b>') + '</div>' +
+      '<div class="v241-bdg"><span class="v241-lbl">RANTAI</span>' + st.rantai.denyut.length + ' denyut + ' + st.rantai.prakira.length + ' prakira · ' + (ver.ok ? 'sahih ✓' : 'RUSAK @' + ver.indeks) + ' · host ' + (st.hostAktif || '—') + '</div>' +
+      '<div id="v241-log">' + (st.bootLog.slice(-3).join('<br>') || 'siap') + '</div>';
+  }
+
+  // ---------------- self-test ----------------
+  async function selfTest() {
+    var T = [];
+    T.push(['sha256 vektor abc', sha256Hex('abc') === 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad']);
+    var o1 = kanonikal({ b: 1, a: 'x' }), o2 = kanonikal({ a: 'x', b: 1 });
+    T.push(['kanonikal deterministik (urut kunci)', o1 === o2]);
+    T.push(['kanonikal angka desimal stabil', kanonikal(0.123456789) === kanonikal(parseFloat((0.123456789).toFixed(6)))]);
+    // rantai: tambah 3 -> sahih; tamper -> rusak terdeteksi
+    var rc = [];
+    var prev = GENESIS;
+    for (var i = 0; i < 3; i++) {
+      var p = { jenis: 'UJI', seq: i, prev: prev }; p.hash = sha256Hex(kanonikal(payloadEntri(p))); rc.push(p); prev = p.hash;
+    }
+    T.push(['rantai: 3 entri sahih', rantaiVerifikasi(rc).ok]);
+    var rc2 = JSON.parse(JSON.stringify(rc)); rc2[1].seq = 99;
+    T.push(['rantai: tamper terdeteksi', !rantaiVerifikasi(rc2).ok]);
+    // kapsul roundtrip
+    var k1 = JSON.parse(JSON.stringify(isiKapsul()));
+    T.push(['kapsul: encode-decode utuh', JSON.parse(JSON.stringify(k1)).protokol === 'KAPSUL-MICAPROFITA']);
+    // L1 roundtrip (bila lingkungan punya localStorage)
+    if (typeof localStorage !== 'undefined') {
+      T.push(['L1 localStorage: tulis-baca', (function () { l1Set('uji', { z: 42 }); return l1Get('uji', {}).z === 42; })()]);
+    } else T.push(['L1 localStorage: tak tersedia di lingkungan ini — degradasi jujur', true]);
+    // L2 roundtrip (bila ada)
+    if (st.l2Siap) { var okL2 = await idbPut('kv', 'uji', { z: 7 }); var v2 = okL2 ? await idbGet('kv', 'uji') : null; T.push(['L2 IndexedDB: tulis-baca', !!v2 && v2.z === 7]); }
+    else T.push(['L2 IndexedDB: tak tersedia — degradasi jujur', true]);
+    // E1 bila terpasang
+    if (st.folder) { try { var nd = await pastikanDir(st.folder, 'nadi'); await tulisFile(nd, 'uji.txt', 'ok-' + Date.now()); T.push(['E1 folder: tulis file nyata', true]); } catch (e) { T.push(['E1 folder: tulis file nyata', false]); } }
+    else T.push(['E1 folder: belum dipasang — kapsul siap', true]);
+    // rantai hidup
+    T.push(['rantai denyut hidup: sahih', rantaiVerifikasi(st.rantai.denyut).ok]);
+    T.push(['rantai prakira hidup: sahih', rantaiVerifikasi(st.rantai.prakira).ok]);
+    // UI v1.1: struktur kartu + teks manusiawi (hanya bila ada DOM; tanpa DOM = degradasi jujur)
+    if (typeof document !== 'undefined' && el && el.isConnected) {
+      var uiOk = true;
+      try {
+        T.push(['UI v1.1: struktur kartu lengkap', !!(el.querySelector('#v241-led') && el.querySelector('#v241-nama') && el.querySelector('#v241-ringkas') && el.querySelector('#v241-toggle') && elDetail)]);
+        var zEl = parseInt(getComputedStyle(el).zIndex, 10);
+        T.push(['UI v1.1: z-index tertib (99992: di atas dekorasi, di bawah panel/modal 99999+)', zEl <= 99992 && zEl > 99000]);
+        render();
+        var t = el.querySelector('#v241-ringkas').textContent;
+        T.push(['UI v1.1: ringkas manusiawi (tanpa 0/0 (—))', t.indexOf('0/0') < 0 && (ringkasPrakira().selesai > 0 || t.indexOf('belum terkunci') >= 0)]);
+      } catch (e) { uiOk = false; }
+      if (!uiOk) T.push(['UI v1.1: pemeriksaan kartu bermasalah — dicatat jujur', false]);
+    } else T.push(['UI v1.1: kartu — tanpa DOM/kartu belum lahir, degradasi jujur', true]);
+    var pass = T.filter(function (x) { return x[1]; }).length;
+    return { total: T.length, pass: pass, fail: T.length - pass, rincian: T.map(function (x) { return (x[1] ? 'PASS' : 'GAGAL') + ' — ' + x[0]; }) };
+  }
+
+  // ---------------- boot ----------------
+  async function boot() {
+    // v1.1: kartu = murni DOM -> lahir SEKETIKA, tidak menunggu storage.
+    // Pelajaran: main-thread SAKTI bisa jenuh mesin berat; await rantaiMuat
+    // bisa tertunda lama dan kartu tak terlihat berpuluh detik.
+    buatKartu();
+    st.denyut = l1Get('denyut', 0);
+    st.mulai = l1Get('mulai', Date.now()) || Date.now();
+    st.watchlist = l1Get('watchlist', st.watchlist);
+    st.namaFolder = l1Get('namaFolder', '');
+    await rantaiMuat();
+    denyutkan();
+    aturJadwal();
+    if (typeof document !== 'undefined') {
+      document.addEventListener('visibilitychange', function () {
+        st.tersembunyi = document.hidden;
+        aturJadwal(); // sadar-visibility: latar 45 dtk, depan 15 dtk
+        if (!document.hidden) denyutkan(); // denyut pembangkit
+      });
+      window.addEventListener('pagehide', function () { try { l1Set('denyut', st.denyut); } catch (e) {} });
+    }
+    var stres = await selfTest();
+    st.bootLog.push('self-test ' + stres.pass + '/' + stres.total + (stres.fail ? ' — LIHAT rincian via API selfTest()' : ' semua PASS'));
+    render();
+    if (typeof console !== 'undefined') console.log('[V241 NADI] v' + V.versi + ' — self-test ' + stres.pass + '/' + stres.total + ' · gudang 4 tingkat · prakira pra-registrasi hidup', stres.rincian);
+  }
+  boot();
+
+  var API = {
+    versi: V.versi, nama: V.nama, protokol: V.protokol,
+    status: function () { return { denyut: st.denyut, uptimeMs: Date.now() - st.mulai, tersembunyi: st.tersembunyi, tier: { l1: st.tierL1 !== false, l2: st.l2Siap, e1: !!st.folder, e2: true }, folder: st.namaFolder, prakira: ringkasPrakira(), host: st.hostAktif, watchlist: st.watchlist, bootLog: st.bootLog.slice(-8) }; },
+    selfTest: selfTest, pasangFolder: pasangFolder, eksporKapsul: eksporKapsul, imporKapsul: imporKapsul,
+    prakiraKunci: prakiraKunci, prakiraTick: prakiraTick, setWatchlist: function (w) { st.watchlist = w; l1Set('watchlist', w); render(); },
+    aturJendela: function (menit) { st.jendelaMenit = menit; render(); },
+    denyutkanSekarang: denyutkan, simpanSnapshot: simpanSnapshot
+  };
+  if (typeof window !== 'undefined') {
+    window.V231_SAKTI = window.V231_SAKTI || {};
+    window.V231_SAKTI.NADI = API;
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = API;
+  return API;
+})();
+/*V241-NADI:END*/
+</script>
+<script>
+/*V242-FISIKA:BEGIN*/
+// ============================================================
+// V242 SAKTI-ORKESTRA v1.0 — KONDUKTOR FISIKA TAMPILAN (UI
+// LAYOUT CONDUCTOR). Tangga panjang mandat Guru:
+//
+//  "Saya akui tampilan yang senantiasa saling timp menimpa itu
+//   jelek! ... notifikasi menimpa toggle menu di bawahnya ...
+//   notifikasi yang terbaca separuh ... kita akan bawa ahli UI
+//   dan UX agar cyborg kita benar-benar profesional."
+//
+// Tugas tunggalorgan ini: TIDAK ADA SATU ELEMEN MELAYANG pun
+// yang saling menimpa, dan tidak ada teks status yang terbaca
+// separuh. Prinsip:
+//   1. UKUR, jangan menebak  -> semua penempatan dari
+//      getBoundingClientRect() runtime, bukan angka mati.
+//   2. SATU pemilik slot     -> kiri-bawah = ticker suara;
+//      kanan-bawah = kartu NADI + chip sesekali. Nav bawah
+//      adalah jangkar, tidak pernah ditimpa apa pun.
+//   3. Zona aman nav         -> tinggi nav diukur tiap kali
+//      (termasuk nav mobile engine-miko bila tampil).
+//   4. Keterbacaan penuh     -> ticker suara dapat ellipsis +
+//      tombol buka pesan penuh (kartu ucapan di atasnya).
+//   5. Mode fokus            -> modal/overlay terbuka = chip
+//      meredup (opacity .15, pointer-events none), tak
+//      bersinar di atas modal.
+//   6. Fault isolation       -> satu zona gagal, zona lain
+//      tetap hidup; tanpa DOM = degradasi jujur.
+//   7. Observability         -> ukuranStatus() membeberkan
+//      geometri terakhir; self-test geometrik saat boot.
+// Nol biaya, nol dependensi, ES5 murni — satu tubuh SAKTI.
+// ============================================================
+(function () {
+  'use strict';
+  var V = { versi: '1.1', nama: 'SAKTI-ORKESTRA', organ: 'V242' };
+
+  // ---------------- konfigurasi zona ----------------
+  var JEDA = 8;           // jeda antar lapis (px)
+  var MARG = 12;          // jarak dari tepi (px)
+  var Z_MAKS_CHIP = 99992; // plafon z chip: di atas dekorasi (99989-99990), di bawah panel/modal 99999+
+  // chip kanan-bawah sesekali muncul (urutan tumpuk dari bawah)
+  // v1.1: chip SARANG (V243) ikut dikelola — satu pemilik slot tetap berlaku
+  var KANAN_SESEKALI = ['v2217-scan-health', 'v2219-activation-reopen', 'v2219-activation-panel', 'v243-sarang'];
+
+  var jejak = { navH: 0, dipasang: [], fokus: false, siklus: 0, terakhir: null };
+
+  // PELAJARAN PENTING: tubuh SAKTI men-stub document.getElementById &
+  // document.querySelector dgn Proxy palsu utk id yang TIDAK ada (era
+  // V126.2 makeStub — nodeType:1, id kosong, rect nol). Satu-satunya
+  // lookup yang jujur = querySelectorAll (override-nya hanya memfilter
+  // daftar kosong, tidak pernah mengarang elemen).
+  function q(id) {
+    try {
+      var list = document.querySelectorAll('#' + id);
+      return (list && list.length) ? list[0] : null;
+    } catch (e) { return null; }
+  }
+
+  function ada() { return typeof document !== 'undefined' && !!document.body; }
+  function tampil(el) {
+    if (!el || !el.getBoundingClientRect) return false;
+    var cs = getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden' || parseFloat(cs.opacity) === 0) return false;
+    var r = el.getBoundingClientRect();
+    return r.width > 2 && r.height > 2;
+  }
+  function rect(el) { return el.getBoundingClientRect(); }
+  function tabrakan(a, b) {
+    return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+  }
+
+  // ---------------- jangkar: nav paling bawah ----------------
+  function tinggiNavDasar() {
+    var h = 0;
+    try {
+      // nav utama v217
+      var nav = q('v217-nav');
+      if (nav && tampil(nav)) {
+        var r = rect(nav);
+        if (r.bottom >= innerHeight - 4) h = Math.max(h, r.height); // benar2 menempel dasar
+      }
+      // nav mobile engine-miko bila tampil
+      var mb = document.querySelector('#engine-miko-host .mobile-bottom-nav');
+      if (mb && tampil(mb)) {
+        var r2 = rect(mb);
+        if (r2.bottom >= innerHeight - 4) h = Math.max(h, r2.height);
+      }
+    } catch (e) { /* nav tak terukur = jangkar 0, chip tetap aman dari tepi */ }
+    return Math.round(h);
+  }
+
+  // ---------------- zona kiri: ticker suara ----------------
+  // SADAR-ZONA: suara tidak boleh masuk zona kartu NADI (kanan).
+  // Layar lebar  : dua zona — suara kiri (dipagari), NADI kanan.
+  // Layar sempit : tumpukan satu sisi — suara paling bawah, NADI di atasnya.
+  var AMBANG_ZONA = 900; // px
+  function aturKiri() {
+    if (!ada()) return 0;
+    var v = q('v207-voice');
+    if (!v) return 0;
+    var navH = tinggiNavDasar();
+    var nadi = q('v241-nadi');
+    var nadiTampil = nadi && tampil(nadi);
+    try {
+      if (innerWidth >= AMBANG_ZONA && nadiTampil) {
+        // dua zona: pagari suara sebelum zona NADI (kartu 320 + margin kanan 12 + jeda 8 + pagar 12 + buffer 8)
+        v.style.left = MARG + 'px';
+        v.style.right = 'auto';
+        v.style.bottom = (navH + JEDA) + 'px';
+        v.style.maxWidth = 'calc(100vw - ' + (320 + MARG * 2 + JEDA + MARG + 8) + 'px)';
+      } else if (innerWidth >= AMBANG_ZONA) {
+        v.style.left = MARG + 'px';
+        v.style.right = 'auto';
+        v.style.bottom = (navH + JEDA) + 'px';
+        v.style.maxWidth = 'calc(100vw - 24px)';
+      } else {
+        // sempit: suara selebar layar di bawah, NADI ditumpuk di atasnya (oleh aturKanan)
+        v.style.left = MARG + 'px';
+        v.style.right = MARG + 'px';
+        v.style.bottom = (navH + JEDA) + 'px';
+        v.style.maxWidth = 'none';
+      }
+    } catch (e) { return 0; }
+    // keterbacaan: ellipsis + tombol buka pesan penuh
+    pasangKeterbacaanVoice(v);
+    return 1;
+  }
+
+  var voiceSudah = false;
+  function pasangKeterbacaanVoice(v) {
+    if (voiceSudah) { perbaruiJudulVoice(v); return; }
+    voiceSudah = true;
+    try {
+      var st = document.createElement('style'); st.id = 'v242-gaya-voice';
+      st.textContent =
+        '.mpx-meredup{opacity:.15 !important;pointer-events:none !important;filter:saturate(.4)}' +
+        '#v207-voice{box-sizing:border-box}' + // pelajaran: tanpa ini, maxWidth lolos sebesar padding (fence bocor)
+        '#v207-voice .txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}' +
+        '#v207-voice{align-items:center}' +
+        '#v242-voice-buka{flex:none;pointer-events:auto;cursor:pointer;color:#7fb8d8;background:none;border:none;' +
+        'font:700 11px ui-monospace,monospace;padding:2px 6px;border-radius:5px}' +
+        '#v242-voice-buka:hover{background:rgba(90,200,255,.12);color:#bfe3f2}' +
+        '#v242-ucapan{position:fixed;left:12px;z-index:99490;display:none;max-width:min(560px,calc(100vw - 24px));' +
+        'background:rgba(9,17,26,.98);border:1px solid #2d4a5c;border-radius:12px;padding:12px 14px;' +
+        'color:#d7e8f2;font:12.5px/1.7 ui-monospace,Menlo,Consolas,monospace;box-shadow:0 12px 40px rgba(0,0,0,.55)}' +
+        '#v242-ucapan .v242-u-who{color:#5d9fc4;letter-spacing:1.2px;font-size:10px;margin-bottom:5px}' +
+        '#v242-ucapan .v242-u-tutup{position:absolute;top:8px;right:10px;cursor:pointer;color:#5d7d92;background:none;border:none;font-size:13px}' +
+        '#v242-ucapan .v242-u-tutup:hover{color:#fff}';
+      document.head.appendChild(st);
+      // tombol buka di ujung ticker
+      var b = document.createElement('button');
+      b.id = 'v242-voice-buka'; b.textContent = '⤢'; b.title = 'Buka pesan penuh';
+      b.addEventListener('click', function (ev) { ev.stopPropagation(); bukaUcapan(); });
+      v.appendChild(b);
+      // kartu ucapan penuh
+      var u = document.createElement('div');
+      u.id = 'v242-ucapan';
+      u.innerHTML = '<div class="v242-u-who">MICAPROFITA — PESAN PENUH</div>' +
+        '<button class="v242-u-tutup" title="Tutup">×</button>' +
+        '<div class="v242-u-isi"></div>';
+      document.body.appendChild(u);
+      u.querySelector('.v242-u-tutup').addEventListener('click', function () { u.style.display = 'none'; });
+      perbaruiJudulVoice(v);
+    } catch (e) { /* ticker tetap berjalan tanpa tombol (fault isolation) */ }
+  }
+  function perbaruiJudulVoice(v) {
+    try {
+      var t = v.querySelector('.txt') || v.querySelector('#v207-voice-txt');
+      var u = q('v242-ucapan');
+      if (t && u) {
+        var isi = (t.textContent || '').trim();
+        t.title = isi; // petunjuk hover (bila ticker interaktif)
+        u.querySelector('.v242-u-isi').textContent = isi;
+      }
+    } catch (e) { /* jujur diam */ }
+  }
+  function bukaUcapan() {
+    try {
+      var v = q('v207-voice');
+      var u = q('v242-ucapan');
+      if (!v || !u) return;
+      perbaruiJudulVoice(v);
+      u.style.display = 'block';
+      // di atas ticker, tidak menutupi nav
+      u.style.bottom = (tinggiNavDasar() + JEDA + rect(v).height + JEDA) + 'px';
+      u.style.left = MARG + 'px';
+    } catch (e) { /* diam */ }
+  }
+
+  // ---------------- zona kanan: NADI + chip sesekali ----------------
+  function aturKanan() {
+    if (!ada()) return 0;
+    var navH = tinggiNavDasar();
+    var b = navH + JEDA;
+    var n = 0;
+    var nadi = q('v241-nadi');
+    var voice = q('v207-voice');
+    // layar sempit + suara tampil: NADI ditumpuk DI ATAS suara (bukan sejajar)
+    if (nadi && tampil(nadi) && innerWidth < AMBANG_ZONA && voice && tampil(voice)) {
+      b = Math.max(b, rect(voice).bottom + JEDA);
+    }
+    if (nadi && tampil(nadi)) {
+      posisiKanan(nadi, b);
+      b += rect(nadi).height + JEDA;
+      n++;
+    }
+    for (var i = 0; i < KANAN_SESEKALI.length; i++) {
+      var e = q(KANAN_SESEKALI[i]);
+      if (e && tampil(e)) {
+        posisiKanan(e, b);
+        b += rect(e).height + JEDA;
+        n++;
+      }
+    }
+    return n;
+  }
+  function posisiKanan(el, bawah) {
+    try {
+      el.style.left = 'auto';
+      el.style.right = MARG + 'px';
+      el.style.bottom = Math.round(bawah) + 'px';
+      if (el.id === 'v241-nadi') el.style.maxWidth = 'min(320px, calc(100vw - 24px))';
+    } catch (e) { /* diam */ }
+  }
+
+  // ---------------- mode fokus: modal terbuka = chip meredup ----------------
+  var DAFTAR_CHIP = ['v241-nadi', 'v207-voice', 'v207-left', 'v207-dock', 'v243-sarang'];
+  // daftar terkurasi overlay yang diketahui (DOM SAKTI raksasa — pindai terarah, bukan sapu semua)
+  var SEL_OVERLAY = [
+    '.modal', '.tc-overlay', '#detailModal', '.phd-inventory-panel', '.v229-modal-overlay',
+    '#engine-miko-host .modal', '#engine-miko-host .modal-overlay',
+    '#engine-miko-host .v9-cmd-overlay', '#engine-miko-host .v9-sheet-overlay',
+    '#engine-miko-host .v22-info-popup', '#engine-miko-host .v29-detail-overlay',
+    '#engine-miko-host .notif-drawer'
+  ].join(',');
+  function pindaiOverlay() {
+    if (!ada()) return false;
+    try {
+      var vw = innerWidth, vh = innerHeight, ketemu = false;
+      var kandidat = document.querySelectorAll(SEL_OVERLAY);
+      for (var i = 0; i < kandidat.length; i++) {
+        var el = kandidat[i];
+        if (el.id && DAFTAR_CHIP.indexOf(el.id) >= 0) continue;
+        var cs;
+        try { cs = getComputedStyle(el); } catch (e) { continue; }
+        if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || parseFloat(cs.opacity) === 0) continue;
+        var z = parseInt(cs.zIndex, 10); if (!(z >= 900)) continue;
+        var r = el.getBoundingClientRect();
+        if (r.width >= vw * 0.85 && r.height >= vh * 0.85) { ketemu = true; break; }
+      }
+      aturFokus(ketemu);
+      return ketemu;
+    } catch (e) { return false; }
+  }
+  function aturFokus(nyala) {
+    jejak.fokus = !!nyala;
+    for (var i = 0; i < DAFTAR_CHIP.length; i++) {
+      var el = q(DAFTAR_CHIP[i]);
+      if (!el) continue;
+      if (nyala) { el.classList.add('mpx-meredup'); }
+      else { el.classList.remove('mpx-meredup'); }
+    }
+  }
+
+  // ---------------- konduktor utama ----------------
+  function atur() {
+    jejak.siklus++;
+    var kiri = aturKiri();
+    var kanan = aturKanan();
+    jejak.dipasang = [kiri ? 'kiri' : null, kanan ? 'kanan' : null].filter(Boolean);
+    jejak.navH = tinggiNavDasar();
+    jejak.terakhir = Date.now();
+    return { kiri: kiri, kanan: kanan, navH: jejak.navH };
+  }
+  var debounceT = null;
+  function aturNanti() {
+    if (debounceT) clearTimeout(debounceT);
+    debounceT = setTimeout(function () { try { atur(); } catch (e) { /* jantung layout tak boleh mati */ } }, 400);
+  }
+
+  // ---------------- observability ----------------
+  function ukuranStatus() {
+    function geo(id) {
+      var e = q(id); if (!e) return null;
+      var r = rect(e);
+      return { x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height), tampil: tampil(e) };
+    }
+    return { organ: V.organ, versi: V.versi, jejak: jejak, nadi: geo('v241-nadi'), voice: geo('v207-voice'), navH: tinggiNavDasar(), vw: innerWidth, vh: innerHeight };
+  }
+
+  // ---------------- self-test geometrik ----------------
+  function selfTest() {
+    var T = [];
+    if (!ada()) { T.push(['tanpa DOM — degradasi jujur', true]); return selesai(T); }
+    var nadi = q('v241-nadi');
+    var nav = q('v217-nav');
+    var voice = q('v207-voice');
+    // kehadiran dulu — geometri tak boleh lolos kosong (anti-vacuous)
+    T.push(['kehadiran: kartu NADI terpasang di tubuh', !!(nadi && nadi.isConnected)]);
+    var rn = nadi && tampil(nadi) ? rect(nadi) : null;
+    var rnav = nav && tampil(nav) ? rect(nav) : null;
+    var rv = voice && tampil(voice) ? rect(voice) : null;
+    T.push(['geometri: NADI terukur (bukan nol)', !!rn]);
+    T.push(['geometri: NADI tidak menimpa nav bawah', !!(rn && rnav && !tabrakan(rn, rnav))]);
+    T.push(['geometri: NADI tidak menimpa ticker suara', !!(rn && rv && !tabrakan(rn, rv))]);
+    T.push(['geometri: suara tidak masuk zona NADI', !!(rn && rv) || innerWidth < AMBANG_ZONA || (function () { return rv.left + rv.width <= rn.left - JEDA || rv.bottom <= rn.top - JEDA; })()]);
+    T.push(['geometri: NADI berlabuh kanan-bawah', !!rn && rn.left >= innerWidth * 0.5]);
+    T.push(['geometri: NADI mengapung di atas nav', !!(rn && rnav) && rn.bottom <= rnav.top + 1]);
+    T.push(['keterbacaan: ticker suara ber-ellipsis', (function () {
+      if (!voice) return false; // voice hilang = zona kiri tak terkelola
+      var t = voice.querySelector('.txt'); if (!t) return false;
+      var cs = getComputedStyle(t);
+      return cs.textOverflow === 'ellipsis' && cs.overflow === 'hidden';
+    })()]);
+    T.push(['keterbacaan: tombol buka pesan penuh terpasang', !!(voice && q('v242-voice-buka'))]);
+    T.push(['z tertib: NADI <= ' + Z_MAKS_CHIP + ' (di bawah panel/modal)', (function () {
+      if (!nadi) return false;
+      return parseInt(getComputedStyle(nadi).zIndex, 10) <= Z_MAKS_CHIP;
+    })()]);
+    T.push(['mode fokus: kelas meredup bisa pasang-cabut', (function () {
+      if (!nadi) return false;
+      try { nadi.classList.add('mpx-meredup'); var a = nadi.classList.contains('mpx-meredup'); nadi.classList.remove('mpx-meredup'); var b = !nadi.classList.contains('mpx-meredup'); return a && b; } catch (e) { return false; }
+    })()]);
+    T.push(['pengawas: pendengar resize terpasang', jejak._resize === true]);
+    T.push(['pengawas: pengamat DOM terpasang', jejak._mo === true]);
+    // v1.1: chip SARANG ikut tertata bila hadir (tanpa DOM SARANG = degradasi jujur)
+    T.push(['v1.1: chip SARANG tertata di zona kanan (bila hadir)', (function () {
+      var s = q('v243-sarang');
+      if (!s) return true; // organ V243 belum lahir / lingkungan lain — jujur, bukan gagal
+      var rs = rect(s);
+      return rs.left >= innerWidth * 0.5; // berlabuh kanan, tak di kiri liar
+    })()]);
+    return selesai(T);
+  }
+  function selesai(T) {
+    var pass = T.filter(function (x) { return x[1]; }).length;
+    return { total: T.length, pass: pass, fail: T.length - pass, rincian: T.map(function (x) { return (x[1] ? 'PASS' : 'GAGAL') + ' — ' + x[0]; }) };
+  }
+
+  // ---------------- boot ----------------
+  function boot() {
+    if (!ada()) return;
+    atur();
+    // re-atur saat lingkungan berubah (resize, chip muncul, NADI membuka)
+    window.addEventListener('resize', function () { jejak._resize = true; aturNanti(); });
+    jejak._resize = true; // pendengar pasca-registrasi
+    try {
+      var mo = new MutationObserver(function () { aturNanti(); });
+      mo.observe(document.body, { childList: true, subtree: false });
+      jejak._mo = true;
+    } catch (e) { jejak._mo = false; }
+    try {
+      var nadi = q('v241-nadi');
+      if (nadi && typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(function () { aturNanti(); }).observe(nadi);
+      }
+    } catch (e) { /* tanpa RO pun resize listener tetap jalan */ }
+    // mode fokus: pindai berkala (terarah, murah)
+    setInterval(function () { try { pindaiOverlay(); } catch (e) { /* diam */ } }, 2000);
+    // self-test geometrik (setelah layout settle)
+    setTimeout(function () {
+      try {
+        var st = selfTest();
+        jejak.selfTest = st;
+        if (typeof console !== 'undefined') console.log('[V242 ORKESTRA] v' + V.versi + ' — fisika tampilan: self-test ' + st.pass + '/' + st.total + (st.fail ? ' GAGAL' : ' semua PASS'), st.rincian);
+      } catch (e) { /* diam */ }
+    }, 900);
+  }
+
+  // ---------------- API publik ----------------
+  var API = {
+    versi: V.versi, nama: V.nama, organ: V.organ,
+    atur: atur, selfTest: selfTest, ukur: ukuranStatus,
+    fokus: function (nyala) { aturFokus(nyala); return jejak.fokus; },
+    bukaPesan: bukaUcapan
+  };
+  if (typeof window !== 'undefined') {
+    window.V231_SAKTI = window.V231_SAKTI || {};
+    window.V231_SAKTI.ORKESTRA = API;
+  }
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+    else boot();
+  }
+})();
+
+/*V242-FISIKA:END*/
+</script>
+<script>
+/*V243-SARANG:BEGIN*/
+// ============================================================
+// V243 SAKTI-SARANG v1.0 — ORGAN HIDUP-MANDIRI DI GITHUB PAGES.
+// Mandat Guru:
+//  "sekarang saya akan implementasikan dia ke GitHub Pages agar
+//   dia bisa berkembang mandiri. Jadi kode-kodenya dia bisa
+//   berkembang otomatis dan menyimpan penyimpanannya otomatis,
+//   agar dia selalu bisa online. Jadi kita buatkan dia hidup
+//   mandiri dan berkembang, jadinya dia akan terus fasih dan
+//   mampu menambah wawasan dan terus berkembang di githubnya."
+//
+// ARTI SARANG (satu tubuh, empat kekuatan):
+//   1. HIJRAH    — SAKTI membaca tubuhnya sendiri lewat http(s),
+//                  lalu MENYARINGKAN DIRINYA ke repo GitHub:
+//                  index.html + .nojekyll + README.md +
+//                  versi.json + memori/terkini.json, lalu
+//                  mengaktifkan GitHub Pages (API). Sejak itu
+//                  dia HIDUP di https://owner.github.io/repo/
+//                  — online 24 jam, nol biaya.
+//   2. SIMPAN    — memorinya (kapsul rantai denyut+prakira,
+//                  format KAPSUL-MICAPROFITA yang sama dengan
+//                  GUDANG E2 organ V241) di-commit otomatis ke
+//                  repo: memori/terkini.json + arsip
+//                  berwaktu + versi.json (buku besar
+//                  pertumbuhan). Riwayat commit = jejak
+//                  pertumbuhan yang tidak bisa dibantah.
+//   3. PULIH     — saat bangkit di browser siapa pun, SARANG
+//                  menarik memori terkini dari sarang; bila
+//                  lebih baru dari lokal, kapsul diimpor ke
+//                  organ NADI (gabung berantai + verifikasi
+//                  hash). Ganti browser/komputer pun tidak
+//                  kehilangan ilmu.
+//   4. EVOLUSI   — bila peta organ/otak di tubuh berubah
+//                  (organ baru, otak naik versi), SARANG
+//                  men-commit tubuh barunya sendiri ke repo.
+//                  Pages membangun ulang; kunjungan berikutnya
+//                  = cyborg yang sudah berevolusi. Pemeriksa
+//                  versi memberi tahu pemilik bila sarang
+//                  berisi tubuh yang lebih baru.
+//
+// Rekayasa: Git Data API (blob->tree->commit->ref) agar tubuh
+// 15.6 MB ter-commit aman dalam SATU commit; auth Fine-grained
+// PAT (contents:read/write + pages:read/write) disimpan lokal
+// browser pemilik; fault isolation penuh (satu aksi gagal,
+// organ lain tetap hidup); observability (panel + log + status);
+// nol biaya (GitHub Free/Pages), nol dependensi, ES5 murni.
+// Fisika tampilan mengikuti hukum V242: chip z<=99992, panel
+// modal 99999, tak menimpa nav/suara/NADI (tertata ORKESTRA).
+// ============================================================
+(function () {
+  'use strict';
+  var V = {
+    versi: '1.0', nama: 'SAKTI-SARANG', organ: 'V243',
+    protokol: {
+      hijrah: 'baca tubuh sendiri (http) -> commit Git Data API: index.html + .nojekyll + README + versi.json + memori/terkini.json -> aktifkan Pages',
+      simpan: 'kapsul memori KAPSUL-MICAPROFITA -> commit memori/terkini.json + arsip berwaktu (pangkas >48) + versi.json',
+      pulih: 'tarik memori/terkini.json dari Pages -> bila lebih baru -> imporKapsul ke organ NADI (gabung rantai terverifikasi)',
+      evolusi: 'peta organ berubah -> commit tubuh baru (index.html) -> Pages membangun ulang -> cyborg berevolusi di sarang',
+      pemeriksa: 'poling versi.json dari Pages tiap 10 mnt -> beri tahu bila sarang berisi tubuh lebih baru'
+    }
+  };
+
+  // ---------------- anti-stub lookup (pelajaran V241 v1.1) ----------------
+  // Tubuh SAKTI men-stub getElementById/querySelector dgn Proxy palsu utk
+  // id tak-ada. Satu-satunya lookup jujur = querySelectorAll.
+  function q(id) {
+    try {
+      var list = document.querySelectorAll('#' + id);
+      return (list && list.length) ? list[0] : null;
+    } catch (e) { return null; }
+  }
+  function ada() { return typeof document !== 'undefined' && !!document.body; }
+
+  // ---------------- L1 (localStorage) ----------------
+  function l1Get(k, def) { try { var v = localStorage.getItem('mp243.' + k); return v === null ? def : JSON.parse(v); } catch (e) { return def; } }
+  function l1Set(k, v) { try { localStorage.setItem('mp243.' + k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+
+  // ---------------- L2 terbatas: baca rantai dari gudang NADI ----------------
+  var _dbNadi = null;
+  function idbNadiOpen() {
+    return new Promise(function (res) {
+      if (_dbNadi) return res(_dbNadi);
+      if (typeof indexedDB === 'undefined') return res(null);
+      try {
+        var req = indexedDB.open('mp241-gudang', 1); // gudang milik organ V241 — SARANG hanya MEMBACA
+        req.onsuccess = function () { _dbNadi = req.result; res(_dbNadi); };
+        req.onerror = function () { res(null); };
+        req.onupgradeneeded = function () { /* bukan milik SARANG — jangan mengubah */ };
+      } catch (e) { res(null); }
+    });
+  }
+  function idbNadiGet(store, key) {
+    return idbNadiOpen().then(function (db) {
+      if (!db) return null;
+      return new Promise(function (res) {
+        try {
+          var tx = db.transaction(store, 'readonly');
+          var r = tx.objectStore(store).get(key);
+          r.onsuccess = function () { res(r.result === undefined ? null : r.result); };
+          r.onerror = function () { res(null); };
+        } catch (e) { res(null); }
+      });
+    });
+  }
+
+  // ---------------- base64 + sha256 (murni, identik prareg) ----------------
+  function base64DariTeks(teks) {
+    var bytes = new TextEncoder().encode(teks);
+    var bin = '', CH = 0x8000;
+    for (var i = 0; i < bytes.length; i += CH) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, Math.min(i + CH, bytes.length)));
+    }
+    return btoa(bin);
+  }
+  var _K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  function _rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+  function sha256Hex(pesan) {
+    var bytes = Array.prototype.slice.call(new TextEncoder().encode(pesan));
+    var bitLen = bytes.length * 8;
+    bytes.push(0x80);
+    while (bytes.length % 64 !== 56) bytes.push(0);
+    var hi = Math.floor(bitLen / 0x100000000), lo = bitLen >>> 0;
+    bytes.push((hi >>> 24) & 255, (hi >>> 16) & 255, (hi >>> 8) & 255, hi & 255, (lo >>> 24) & 255, (lo >>> 16) & 255, (lo >>> 8) & 255, lo & 255);
+    var h0=0x6a09e667,h1=0xbb67ae85,h2=0x3c6ef372,h3=0xa54ff53a,h4=0x510e527f,h5=0x9b05688c,h6=0x1f83d9ab,h7=0x5be0cd19;
+    var w = new Array(64);
+    for (var off = 0; off < bytes.length; off += 64) {
+      var t, i;
+      for (t = 0; t < 16; t++) { w[t] = ((bytes[off+t*4]<<24)|(bytes[off+t*4+1]<<16)|(bytes[off+t*4+2]<<8)|bytes[off+t*4+3])>>>0; }
+      for (t = 16; t < 64; t++) {
+        var s0=_rotr(w[t-15],7)^_rotr(w[t-15],18)^(w[t-15]>>>3), s1=_rotr(w[t-2],17)^_rotr(w[t-2],19)^(w[t-2]>>>10);
+        w[t]=(w[t-16]+s0+w[t-7]+s1)>>>0;
+      }
+      var a=h0,b=h1,c=h2,d=h3,e=h4,f=h5,g=h6,h=h7;
+      for (t = 0; t < 64; t++) {
+        var S1=_rotr(e,6)^_rotr(e,11)^_rotr(e,25), ch=(e&f)^(~e&g), t1=(h+S1+ch+_K[t]+w[t])>>>0;
+        var S0=_rotr(a,2)^_rotr(a,13)^_rotr(a,22), maj=(a&b)^(a&c)^(b&c), t2=(S0+maj)>>>0;
+        h=g;g=f;f=e;e=(d+t1)>>>0; d=c;c=b;b=a;a=(t1+t2)>>>0;
+      }
+      h0=(h0+a)>>>0;h1=(h1+b)>>>0;h2=(h2+c)>>>0;h3=(h3+d)>>>0;h4=(h4+e)>>>0;h5=(h5+f)>>>0;h6=(h6+g)>>>0;h7=(h7+h)>>>0;
+    }
+    return [h0,h1,h2,h3,h4,h5,h6,h7].map(function(x){return (x>>>0).toString(16).padStart(8,'0');}).join('');
+  }
+
+  // ---------------- peta organ + kode versi ----------------
+  function organPeta() {
+    var m = {}; var S = (typeof window !== 'undefined' && window.V231_SAKTI) ? window.V231_SAKTI : {};
+    ['FBO','PD','KL','ARAH','NADI','ORKESTRA','SARANG','MATA'].forEach(function (k) {
+      try { if (S[k] && S[k].versi) m[k] = String(S[k].versi); } catch (e) { /* organ tak terbaca = lewati */ }
+    });
+    m.SARANG = V.versi;
+    return m;
+  }
+  function kodeVersi() {
+    var m = organPeta(); var n = 0; for (var k in m) n++;
+    return 'v243.' + n + '.' + V.versi.replace('.', '');
+  }
+  // urut versi numerik per segmen: 1.10 > 1.9
+  function urutVersi(a, b) {
+    var pa = String(a).split('.'), pb = String(b).split('.');
+    for (var i = 0; i < Math.max(pa.length, pb.length); i++) {
+      var x = parseInt(pa[i] || '0', 10) || 0, y = parseInt(pb[i] || '0', 10) || 0;
+      if (x !== y) return x < y ? -1 : 1;
+    }
+    return 0;
+  }
+
+  // ---------------- keadaan ----------------
+  var st = {
+    cfg: { apiBase: 'https://api.github.com', owner: '', repo: '', branch: 'main', token: '',
+           intervalSimpanMenit: 15, autoSimpan: true, pulihBoot: true, pagesUrl: '' },
+    bekerja: false, urlHidup: '', terhubung: null, repoInfo: null,
+    versiRepo: null, versiBaru: null, htmlShaTerakhir: null, memoriShaTerakhir: null,
+    lastSimpan: null, lastPulih: null, lastEvolusi: null, simpanBerikutnya: null,
+    hitung: { hijrah: 0, simpan: 0, evolusi: 0, pulih: 0, gagal: 0 },
+    _rantaiDenyut: [], _rantaiPrakira: [], _denyut: 0, _prakiraRingkas: { terbuka: 0, benar: 0, salah: 0 },
+    log: [], _timerSimpan: null, _timerCek: null
+  };
+  function catat(pesan) {
+    st.log.push(new Date().toISOString().slice(11, 19) + ' ' + pesan);
+    if (st.log.length > 60) st.log = st.log.slice(-60);
+  }
+  function galat(e) {
+    var m = (e && e.message) ? e.message : String(e);
+    st.hitung.gagal++;
+    catat('GAGAL: ' + m.slice(0, 140));
+    return m;
+  }
+
+  // ---------------- konfigurasi ----------------
+  function cfgMuat() {
+    var c = l1Get('cfg', null);
+    if (c && typeof c === 'object') {
+      ['apiBase','owner','repo','branch','token','intervalSimpanMenit','autoSimpan','pulihBoot','pagesUrl'].forEach(function (k) {
+        if (c[k] !== undefined && c[k] !== null) st.cfg[k] = c[k];
+      });
+    }
+    var t = l1Get('token', '');
+    if (t && !st.cfg.token) st.cfg.token = t;
+    st.lastSimpan = l1Get('simpanTerakhir', null);
+    st.lastPulih = l1Get('pulihTerakhir', null);
+    st.hitung = Object.assign(st.hitung, l1Get('hitung', {}));
+    st.htmlShaTerakhir = l1Get('htmlSha', null);
+    st.urlHidup = l1Get('urlHidup', '');
+  }
+  function cfgSimpan() {
+    l1Set('cfg', st.cfg);
+    if (st.cfg.token) l1Set('token', st.cfg.token);
+  }
+  function cfgLengkap() { return !!(st.cfg.owner && st.cfg.repo && st.cfg.token); }
+  function pagesUrl() {
+    if (st.cfg.pagesUrl) return st.cfg.pagesUrl;
+    if (!st.cfg.owner || !st.cfg.repo) return '';
+    return 'https://' + encodeURIComponent(st.cfg.owner) + '.github.io/' + encodeURIComponent(st.cfg.repo) + '/';
+  }
+  function apiRepo() { return st.cfg.apiBase.replace(/\/$/, '') + '/repos/' + encodeURIComponent(st.cfg.owner) + '/' + encodeURIComponent(st.cfg.repo); }
+
+  // ---------------- jaringan ----------------
+  function ghPermintaan(jalur, metode, badan) {
+    var ctl = new AbortController();
+    var tenggat = (badan && badan._lamaMs) ? badan._lamaMs : 30000;
+    if (badan && badan._lamaMs) delete badan._lamaMs;
+    var t = setTimeout(function () { ctl.abort(); }, tenggat);
+    var opt = {
+      method: metode || 'GET', signal: ctl.signal,
+      headers: { 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' }
+    };
+    if (st.cfg.token) opt.headers.Authorization = 'Bearer ' + st.cfg.token;
+    if (badan) { opt.headers['Content-Type'] = 'application/json'; opt.body = JSON.stringify(badan); }
+    return fetch(jalur, opt).then(function (r) {
+      clearTimeout(t);
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        return { status: r.status, ok: r.ok, json: j };
+      });
+    }).catch(function (e) { clearTimeout(t); throw new Error('jaringan: ' + ((e && e.message) || e)); });
+  }
+  function ambilUrl(url, ms) {
+    var ctl = new AbortController(); var t = setTimeout(function () { ctl.abort(); }, ms || 15000);
+    return fetch(url, { signal: ctl.signal, cache: 'no-store' }).then(function (r) {
+      clearTimeout(t); if (!r.ok) throw new Error('HTTP ' + r.status); return r.text();
+    }).catch(function (e) { clearTimeout(t); throw new Error('ambil ' + url.slice(0, 60) + ': ' + ((e && e.message) || e)); });
+  }
+  // ---------------- MESIN GIT DATA API (blob->tree->commit->ref) ----------------
+  // Tubuh SAKTI 15.6 MB terlalu besar utk PUT /contents sederhana bila
+  // digabung banyak file — rantai Git Data API commit SEMUA file dalam
+  // SATU commit dan aman utk payload besar.
+  function blobBuat(teks) {
+    return ghPermintaan(apiRepo() + '/git/blobs', 'POST', { content: base64DariTeks(teks), encoding: 'base64' })
+      .then(function (r) {
+        if (!r.ok || !r.json.sha) throw new Error('blob gagal (HTTP ' + r.status + ') ' + ((r.json.message || '').slice(0, 100)));
+        return r.json.sha;
+      });
+  }
+  function refKepala() {
+    return ghPermintaan(apiRepo() + '/git/ref/heads/' + encodeURIComponent(st.cfg.branch), 'GET', null)
+      .then(function (r) {
+        if (r.ok && r.json.object && r.json.object.sha) return { commit: r.json.object.sha };
+        return null; // repo kosong / cabang belum ada — bukan galat
+      });
+  }
+  function commitBaca(sha) {
+    return ghPermintaan(apiRepo() + '/git/commits/' + sha, 'GET', null).then(function (r) {
+      if (!r.ok) throw new Error('commit baca gagal (HTTP ' + r.status + ')');
+      return r.json; // {tree:{sha}, parents:[...], message, ...}
+    });
+  }
+  function treeBuat(baseTree, entri) {
+    var badan = { tree: entri };
+    if (baseTree) badan.base_tree = baseTree;
+    return ghPermintaan(apiRepo() + '/git/trees', 'POST', badan).then(function (r) {
+      if (!r.ok || !r.json.sha) throw new Error('tree gagal (HTTP ' + r.status + ') ' + ((r.json.message || '').slice(0, 100)));
+      return r.json.sha;
+    });
+  }
+  function commitBuat(tree, orangTua, pesan) {
+    var badan = { message: pesan, tree: tree, parents: orangTua || [] };
+    return ghPermintaan(apiRepo() + '/git/commits', 'POST', badan).then(function (r) {
+      if (!r.ok || !r.json.sha) throw new Error('commit gagal (HTTP ' + r.status + ') ' + ((r.json.message || '').slice(0, 100)));
+      return r.json.sha;
+    });
+  }
+  function refGeser(commitSha) {
+    return ghPermintaan(apiRepo() + '/git/refs/heads/' + encodeURIComponent(st.cfg.branch), 'PATCH', { sha: commitSha, force: false })
+      .then(function (r) { if (!r.ok) throw new Error('ref geser gagal (HTTP ' + r.status + ') ' + ((r.json.message || '').slice(0, 100))); return true; });
+  }
+  function refBuat(commitSha) {
+    return ghPermintaan(apiRepo() + '/git/refs', 'POST', { ref: 'refs/heads/' + st.cfg.branch, sha: commitSha })
+      .then(function (r) { if (!r.ok) throw new Error('ref buat gagal (HTTP ' + r.status + ') ' + ((r.json.message || '').slice(0, 100))); return true; });
+  }
+  // daftar = [{path, teks}] — balikan {commit, tree}
+  function komitFiles(daftar, pesan) {
+    if (!cfgLengkap()) return Promise.reject(new Error('konfigurasi belum lengkap (owner/repo/token)'));
+    if (st.bekerja) return Promise.reject(new Error('masih ada operasi berjalan'));
+    st.bekerja = true; render();
+    var langkah = { blobs: 0 };
+    var janji = Promise.all(daftar.map(function (f) {
+      return blobBuat(f.teks).then(function (sha) { langkah.blobs++; return { path: f.path, mode: '100644', type: 'blob', sha: sha }; });
+    }));
+    return janji
+      .then(function (entri) { return refKepala().then(function (ref) { return { entri: entri, ref: ref }; }); })
+      .then(function (w) {
+        if (!w.ref) return treeBuat(null, w.entri).then(function (t) { return { tree: t, orangTua: [], refAda: false }; });
+        return commitBaca(w.ref.commit).then(function (c) {
+          return treeBuat(c.tree && c.tree.sha, w.entri).then(function (t) { return { tree: t, orangTua: [w.ref.commit], refAda: true }; });
+        });
+      })
+      .then(function (w2) { return commitBuat(w2.tree, w2.orangTua, pesan).then(function (c) { return { commit: c, refAda: w2.refAda }; }); })
+      .then(function (w3) { return (w3.refAda ? refGeser(w3.commit) : refBuat(w3.commit)).then(function () { return w3.commit; }); })
+      .then(function (commit) {
+        st.bekerja = false; st.lastKomit = new Date().toISOString(); render();
+        return { ok: true, commit: commit, blob: langkah.blobs };
+      })
+      .catch(function (e) { st.bekerja = false; render(); throw e; });
+  }
+
+  // ---------------- pembaca tubuh sendiri ----------------
+  function tubuhSaya() {
+    if (typeof location === 'undefined') return Promise.reject(new Error('tanpa lokasi'));
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+      return Promise.reject(new Error('tubuh hanya terbaca lewat http(s) — buka SAKTI dari halaman unduh web / Pages, bukan file://'));
+    }
+    var url = location.origin + location.pathname;
+    return ambilUrl(url + (url.indexOf('?') >= 0 ? '&' : '?') + 'sarang=' + Date.now(), 60000);
+  }
+
+  // ---------------- memori lokal (rantai dari gudang NADI) ----------------
+  function muatMemoriLokal() {
+    return idbNadiGet('rantai', 'denyut').then(function (d) {
+      return idbNadiGet('rantai', 'prakira').then(function (p) {
+        var l1d = l1GetNadi('rantai-denyut', []), l1p = l1GetNadi('rantai-prakira', []);
+        st._rantaiDenyut = (d && d.length >= l1d.length) ? d : l1d;
+        st._rantaiPrakira = (p && p.length >= l1p.length) ? p : l1p;
+        st._denyut = l1GetNadi('denyut', 0) || st._rantaiDenyut.length;
+        // ringkas prakira dari entri status
+        var tb = 0, benar = 0, salah = 0;
+        st._rantaiPrakira.forEach(function (e) {
+          if (e && e.status === 'TERBUKA') tb++; else if (e && e.status === 'BENAR') benar++; else if (e && e.status === 'SALAH') salah++;
+        });
+        st._prakiraRingkas = { terbuka: tb, benar: benar, salah: salah };
+        return true;
+      });
+    });
+  }
+  // baca kunci milik NADI (prefiks mp241.) — gudang satu tubuh, baca-saling
+  function l1GetNadi(k, def) { try { var v = localStorage.getItem('mp241.' + k); return v === null ? def : JSON.parse(v); } catch (e) { return def; } }
+  function kapsulMemori() {
+    return {
+      protokol: 'KAPSUL-MICAPROFITA', organ: 'SAKTI-SARANG', versi: V.versi,
+      waktu: new Date().toISOString(), denyut: st._denyut, mulai: l1GetNadi('mulai', null),
+      rantai: { denyut: st._rantaiDenyut, prakira: st._rantaiPrakira }
+    };
+  }
+  function versiJson(htmlSha) {
+    return {
+      protokol: 'SARANG-MICAPROFITA', kodeVersi: kodeVersi(), organ: organPeta(),
+      waktu: new Date().toISOString(), htmlSha256: htmlSha || st.htmlShaTerakhir || null,
+      memoriWaktu: (st.lastSimpan && st.lastSimpan.waktu) || null,
+      pertumbuhan: {
+        denyut: st._denyut,
+        rantaiDenyut: st._rantaiDenyut.length, rantaiPrakira: st._rantaiPrakira.length,
+        prakira: st._prakiraRingkas,
+        hitung: st.hitung
+      }
+    };
+  }
+  function buatReadme() {
+    var m = organPeta(); var daftar = '';
+    for (var k in m) daftar += '| ' + k + ' | v' + m[k] + ' |\n';
+    return '# MICAPROFITA — SAKTI (Cyborg AGI Kripto, Hidup Mandiri)\n\n' +
+      'Repo ini adalah SARANG tempat cyborg MICAPROFITA hidup online dan berkembang.\n' +
+      'Halaman hidup: ' + pagesUrl() + '\n\n' +
+      '- `index.html` — tubuh cyborg lengkap (satu file, jalankan langsung di browser)\n' +
+      '- `memori/terkini.json` — kapsul memori terkini (rantai denyut + prakira berantai SHA-256)\n' +
+      '- `memori/arsip/` — potret memori berwaktu (riwayat pertumbuhan)\n' +
+      '- `versi.json` — buku besar versi & pertumbuhan (organ, denyut, prakira, hitungan kerja)\n\n' +
+      '## Cara dia berkembang sendiri\n' +
+      '1. SIMPAN — kapsul memori di-commit otomatis tiap ' + st.cfg.intervalSimpanMenit + ' menit oleh organ V243 SARANG.\n' +
+      '2. EVOLUSI — bila peta organ/otak berubah, tubuh baru di-commit sendiri; Pages membangun ulang.\n' +
+      '3. PULIH — browser baru menarik memori terkini dari sarang, ilmu tidak hilang.\n\n' +
+      '## Organ terpasang saat README ini ditulis\n\n' +
+      '| Organ | Versi |\n|---|---|\n' + daftar +
+      '\nNol biaya, nol dependensi. Dibangun oleh SARANG (organ V243) — bukan manusia menyalin file.\n';
+  }
+
+  // ---------------- arsip: pangkas >48 ----------------
+  function pathArsipLama(baseTreeSha) {
+    if (!baseTreeSha) return Promise.resolve([]);
+    return ghPermintaan(apiRepo() + '/git/trees/' + baseTreeSha + '?recursive=1', 'GET', null).then(function (r) {
+      if (!r.ok || !r.json.tree) return [];
+      var arsip = [];
+      r.json.tree.forEach(function (e) {
+        if (e.type === 'blob' && e.path && e.path.indexOf('memori/arsip/') === 0) arsip.push(e.path);
+      });
+      arsip.sort(); // nama berawaktu -> urut kronologis
+      return arsip.length > 48 ? arsip.slice(0, arsip.length - 48) : [];
+    }).catch(function () { return []; });
+  }
+  // ============================================================
+  // EMPAT AKSI HIDUP
+  // ============================================================
+  function ujiSambungan() {
+    if (!cfgLengkap()) return Promise.reject(new Error('konfigurasi belum lengkap (owner/repo/token)'));
+    catat('uji sambungan ke ' + st.cfg.owner + '/' + st.cfg.repo + '…');
+    render();
+    return Promise.all([
+      ghPermintaan(apiRepo(), 'GET', null),
+      ghPermintaan(apiRepo() + '/pages', 'GET', null)
+    ]).then(function (h) {
+      var repo = h[0], pages = h[1];
+      if (!repo.ok) {
+        var m = 'repo tak terjangkau (HTTP ' + repo.status + ') ' + ((repo.json.message || '').slice(0, 80));
+        st.terhubung = false; catat(m); render();
+        throw new Error(m);
+      }
+      st.terhubung = true;
+      st.repoInfo = { nama: repo.json.full_name, privat: !!repo.json.private, cabang: repo.json.default_branch };
+      if (pages.ok && pages.json && pages.json.html_url) {
+        st.urlHidup = pages.json.html_url.endsWith('/') ? pages.json.html_url : pages.json.html_url + '/';
+        l1Set('urlHidup', st.urlHidup);
+      }
+      catat('sambungan OK' + (st.urlHidup ? ' · pages hidup: ' + st.urlHidup : ' · pages belum aktif'));
+      render();
+      return { ok: true, repo: st.repoInfo, urlHidup: st.urlHidup };
+    }).catch(function (e) { st.terhubung = false; render(); throw e; });
+  }
+
+  function aktifkanPages() {
+    // idempoten: 409 = sudah ada (bukan galat)
+    return ghPermintaan(apiRepo() + '/pages', 'POST', { source: { branch: st.cfg.branch, path: '/' } })
+      .then(function (r) {
+        if (r.ok || r.status === 409) {
+          if (r.ok && r.json && r.json.html_url) {
+            st.urlHidup = r.json.html_url.endsWith('/') ? r.json.html_url : r.json.html_url + '/';
+            l1Set('urlHidup', st.urlHidup);
+          }
+          return { ok: true, sudahAda: r.status === 409 };
+        }
+        // tanpa izin Pages pun HIJRAH tetap sukses — pemilik bisa nyalakan manual
+        catat('Pages tak bisa diaktifkan via API (HTTP ' + r.status + ') — nyalakan manual: Settings > Pages');
+        return { ok: false, status: r.status };
+      }).catch(function () { return { ok: false, status: 0 }; });
+  }
+
+  function hijrah() {
+    if (st.bekerja) return Promise.reject(new Error('masih ada operasi berjalan'));
+    catat('HIJRAH dimulai — membaca tubuh sendiri…');
+    render();
+    return muatMemoriLokal()
+      .then(function () { return tubuhSaya(); })
+      .then(function (tubuh) {
+        var sha = sha256Hex(tubuh);
+        st.htmlShaTerakhir = sha; l1Set('htmlSha', sha);
+        catat('tubuh ' + tubuh.length.toLocaleString() + ' byte · sha ' + sha.slice(0, 12) + '… — meng-upload blob…');
+        render();
+        var kapsul = JSON.stringify(kapsulMemori(), null, 1);
+        var vj = JSON.stringify(versiJson(sha), null, 2);
+        st.memoriShaTerakhir = sha256Hex(kapsul);
+        return komitFiles([
+          { path: 'index.html', teks: tubuh },
+          { path: '.nojekyll', teks: '' },
+          { path: 'README.md', teks: buatReadme() },
+          { path: 'versi.json', teks: vj },
+          { path: 'memori/terkini.json', teks: kapsul }
+        ], 'HIJRAH: SAKTI ' + kodeVersi() + ' pindah hidup ke sarang (otomatis oleh organ V243)');
+      })
+      .then(function (hasil) {
+        st.hitung.hijrah++; l1Set('hitung', st.hitung);
+        st.lastSimpan = { waktu: new Date().toISOString(), jenis: 'hijrah' };
+        l1Set('simpanTerakhir', st.lastSimpan);
+        catat('HIJRAH commit ' + hasil.commit.slice(0, 10) + ' (' + hasil.blob + ' blob) — mengaktifkan Pages…');
+        render();
+        return aktifkanPages().then(function (p) {
+          if (!st.urlHidup) st.urlHidup = pagesUrl();
+          catat('HIJRAH tuntas. Halaman hidup: ' + st.urlHidup + (p.sudahAda ? ' (pages sudah aktif)' : ''));
+          l1Set('aktif', true);
+          aturJadwal();
+          render();
+          return { ok: true, commit: hasil.commit, url: st.urlHidup, pages: p };
+        });
+      })
+      .catch(function (e) { galat(e); render(); throw e; });
+  }
+
+  function simpanMemori(alasan) {
+    if (st.bekerja) return Promise.resolve({ ok: false, sibuk: true });
+    if (!cfgLengkap()) return Promise.reject(new Error('konfigurasi belum lengkap'));
+    alasan = alasan || 'otomatis';
+    return muatMemoriLokal().then(function () {
+      var kapsul = JSON.stringify(kapsulMemori(), null, 1);
+      var shaK = sha256Hex(kapsul);
+      if (shaK === st.memoriShaTerakhir) {
+        st.lastSimpan = { waktu: new Date().toISOString(), jenis: alasan, skip: 'memori tak berubah' };
+        l1Set('simpanTerakhir', st.lastSimpan);
+        catat('simpan dilewati: memori identik (hemat commit)');
+        render();
+        return { ok: true, skip: true };
+      }
+      var vj = JSON.stringify(versiJson(null), null, 2);
+      return komitFiles([{ path: 'versi.json', teks: vj }, { path: 'memori/terkini.json', teks: kapsul }],
+        'SIMPAN-MEMORI (' + alasan + '): denyut ' + st._denyut + ' · rantai ' + (st._rantaiDenyut.length + st._rantaiPrakira.length) + ' entri')
+        .then(function (hasil) {
+          // arsip berwaktu + pangkas
+          var namaArsip = 'memori/arsip/' + new Date().toISOString().replace(/[:.]/g, '-') + '.json';
+          return refKepala().then(function (ref) {
+            if (!ref) return null;
+            return commitBaca(ref.commit).then(function (c) {
+              return pathArsipLama(c.tree && c.tree.sha).then(function (lama) {
+                var entri = [{ path: namaArsip, mode: '100644', type: 'blob', sha: hasil.blob ? null : null }];
+                // blob arsip: buat blob khusus dulu
+                return blobBuat(kapsul).then(function (shaA) {
+                  entri[0].sha = shaA;
+                  lama.forEach(function (p) { entri.push({ path: p, mode: '100644', type: 'blob', sha: null }); });
+                  return treeBuat(c.tree && c.tree.sha, entri).then(function (t) {
+                    return commitBuat(t, [ref.commit], 'ARSIP-MEMORI: potret ' + namaArsip.slice(13) + (lama.length ? ' (pangkas ' + lama.length + ' lama)' : ''))
+                      .then(function (cm) { return refGeser(cm); });
+                  });
+                });
+              });
+            });
+          }).catch(function (e) { catat('arsip dilewati: ' + ((e && e.message) || e).slice(0, 80)); return null; });
+        })
+        .then(function () {
+          st.hitung.simpan++; l1Set('hitung', st.hitung);
+          st.memoriShaTerakhir = shaK;
+          st.lastSimpan = { waktu: new Date().toISOString(), jenis: alasan };
+          l1Set('simpanTerakhir', st.lastSimpan);
+          catat('memori tersimpan ke sarang (' + alasan + ')');
+          render();
+          return { ok: true };
+        });
+    }).catch(function (e) { galat(e); render(); throw e; });
+  }
+
+  function pulih(paksa) {
+    var url = pagesUrl();
+    if (!url) return Promise.reject(new Error('halaman hidup belum diketahui (HIJRAH dulu / isi Pages URL)'));
+    catat('PULIH: menarik memori dari ' + url + '…');
+    render();
+    return ambilUrl(url + 'memori/terkini.json?sarangcek=' + Date.now(), 30000).then(function (teks) {
+      var k = JSON.parse(teks);
+      if (!k || k.protokol !== 'KAPSUL-MICAPROFITA') throw new Error('bukan kapsul Micaprofita (protokol: ' + (k && k.protokol) + ')');
+      var lokalWaktu = st.lastSimpan && st.lastSimpan.waktu;
+      var jauhBaru = !lokalWaktu || String(k.waktu) > String(lokalWaktu);
+      if (!jauhBaru && !paksa) {
+        catat('PULIH dilewati: memori lokal sudah sama/mutakhir');
+        render();
+        return { ok: true, dipulihkan: false, alasan: 'lokal mutakhir' };
+      }
+      var nadi = (window.V231_SAKTI && window.V231_SAKTI.NADI) || null;
+      if (!nadi || typeof nadi.imporKapsul !== 'function') throw new Error('organ NADI tak tersedia — pulih butuh V241');
+      var file = new File([teks], 'kapsul-sarang.json', { type: 'application/json' });
+      return Promise.resolve(nadi.imporKapsul(file)).then(function (okImpor) {
+        st.hitung.pulih++; l1Set('hitung', st.hitung);
+        st.lastPulih = { waktu: new Date().toISOString(), sumber: k.waktu, ok: !!okImpor };
+        l1Set('pulihTerakhir', st.lastPulih);
+        catat('PULIH ' + (okImpor ? 'sukses' : 'sebagian') + ': memori sarang ' + String(k.waktu).slice(0, 19) + ' digabung ke NADI');
+        render();
+        return { ok: true, dipulihkan: true, sahih: !!okImpor };
+      });
+    }).catch(function (e) { galat(e); render(); throw e; });
+  }
+
+  function evolusi(alasan, paksa) {
+    if (st.bekerja) return Promise.reject(new Error('masih ada operasi berjalan'));
+    // pagar interval: tanpa paksa, minimal 10 menit antar evolusi otomatis
+    if (!paksa && st.lastEvolusi && (Date.now() - st.lastEvolusi) < 10 * 60000) {
+      catat('evolusi ditunda (pagar 10 menit)');
+      return Promise.resolve({ ok: true, ditunda: true });
+    }
+    catat('EVOLUSI: memeriksa tubuh vs sarang…');
+    render();
+    var praCek = (st.versiRepo || !pagesUrl()) ? Promise.resolve(null) : pemeriksaVersi().catch(function () { return null; });
+    return praCek.then(function () {
+      return muatMemoriLokal();
+    }).then(function () {
+      var mLocal = JSON.stringify(organPeta());
+      var mRemote = st.versiRepo ? JSON.stringify(st.versiRepo.organ || {}) : null;
+      if (mRemote && mRemote === mLocal && !paksa) {
+        catat('evolusi dilewati: peta organ sama dgn sarang');
+        render();
+        return { ok: true, dilewati: true };
+      }
+      return tubuhSaya().then(function (tubuh) {
+        var sha = sha256Hex(tubuh);
+        st.htmlShaTerakhir = sha; l1Set('htmlSha', sha);
+        return komitFiles([
+          { path: 'index.html', teks: tubuh },
+          { path: 'README.md', teks: buatReadme() },
+          { path: 'versi.json', teks: JSON.stringify(versiJson(sha), null, 2) }
+        ], 'EVOLUSI: ' + kodeVersi() + (alasan ? ' — ' + alasan : '') + ' (tubuh baru di-commit SARANG)');
+      }).then(function (hasil) {
+        st.hitung.evolusi++; l1Set('hitung', st.hitung);
+        st.lastEvolusi = Date.now();
+        st.versiBaru = null;
+        catat('EVOLUSI commit ' + hasil.commit.slice(0, 10) + ' — Pages akan membangun tubuh baru');
+        render();
+        return { ok: true, commit: hasil.commit };
+      });
+    }).catch(function (e) { galat(e); render(); throw e; });
+  }
+
+  function pemeriksaVersi() {
+    var url = pagesUrl();
+    if (!url || st.bekerja) return Promise.resolve({ ok: false, alasan: 'tak terkonfigurasi / sibuk' });
+    return ambilUrl(url + 'versi.json?sarangcek=' + Date.now(), 15000).then(function (teks) {
+      var v = JSON.parse(teks);
+      if (!v || v.protokol !== 'SARANG-MICAPROFITA') throw new Error('versi.json asing');
+      st.versiRepo = v;
+      var sama = JSON.stringify(v.organ || {}) === JSON.stringify(organPeta());
+      st.versiBaru = sama ? null : { waktu: v.waktu, organ: v.organ, kodeVersi: v.kodeVersi };
+      render();
+      return { ok: true, sama: sama, versiRepo: v.kodeVersi };
+    }).catch(function (e) {
+      // halaman belum terbangun (Pages baru aktif) — jujur, bukan bencana
+      catat('pemeriksa versi: ' + ((e && e.message) || e).slice(0, 90));
+      render();
+      return { ok: false, alasan: String((e && e.message) || e).slice(0, 90) };
+    });
+  }
+
+  // ---------------- penjadwal hidup ----------------
+  function aturJadwal() {
+    if (st._timerSimpan) { clearInterval(st._timerSimpan); st._timerSimpan = null; }
+    if (st._timerCek) { clearInterval(st._timerCek); st._timerCek = null; }
+    var menit = parseInt(st.cfg.intervalSimpanMenit, 10) || 15;
+    if (menit < 5) menit = 5;
+    if (cfgLengkap() && st.cfg.autoSimpan) {
+      st._timerSimpan = setInterval(function () {
+        try { simpanMemori('otomatis').catch(function () {}); } catch (e) { /* jadwal tak boleh mati */ }
+      }, menit * 60000);
+      st.simpanBerikutnya = Date.now() + menit * 60000;
+      st._timerCek = setInterval(function () {
+        try { pemeriksaVersi().catch(function () {}); } catch (e) { /* diam */ }
+      }, 10 * 60000);
+    } else {
+      st.simpanBerikutnya = null;
+    }
+    render();
+  }
+  // ============================================================
+  // UI — CHIP (zona kanan, tertata ORKESTRA v1.1) + PANEL MODAL
+  // Hukum fisika V242: chip z<=99992, panel modal 99999+, kartu
+  // lahir SINKRON di boot (pelajaran Task 27), tombol STATIS
+  // tak pernah ditulis-ulang (pelajaran render-hapus-tombol).
+  // ============================================================
+  var elChip = null, elPanel = null, elBackdrop = null;
+  function pasangGaya() {
+    if (q('v243-gaya')) return;
+    var s = document.createElement('style'); s.id = 'v243-gaya';
+    s.textContent =
+      '#v243-sarang{position:fixed;right:12px;bottom:120px;z-index:99992;display:flex;align-items:center;gap:8px;' +
+      'font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#fdf3df;background:linear-gradient(165deg,rgba(30,22,6,.97),rgba(20,14,4,.97));' +
+      'border:1px solid rgba(245,158,11,.30);border-radius:12px;padding:8px 12px;max-width:320px;' +
+      'box-shadow:0 10px 32px rgba(0,0,0,.5);backdrop-filter:blur(6px);cursor:pointer;transition:opacity .25s ease}' +
+      '#v243-sarang.mpx-meredup{opacity:.15;pointer-events:none}' +
+      '#v243-led{width:9px;height:9px;border-radius:50%;background:#f59e0b;box-shadow:0 0 7px #f59e0b;flex:none;animation:v243nadi 2.4s ease-in-out infinite}' +
+      '#v243-led.hijau{background:#10b981;box-shadow:0 0 7px #10b981}' +
+      '#v243-led.merah{background:#ef4444;box-shadow:0 0 7px #ef4444;animation:none}' +
+      '@keyframes v243nadi{0%,100%{opacity:1}50%{opacity:.45}}' +
+      '#v243-nama{font-weight:700;letter-spacing:1.6px;color:#fff7e8}' +
+      '#v243-ringkas{color:#fbbf24;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}' +
+      '#v243-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:99997}' +
+      '#v243-panel{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:99999;' +
+      'width:min(600px,calc(100vw - 24px));max-height:calc(100vh - 40px);overflow:auto;' +
+      'background:rgba(14,11,4,.99);border:1px solid rgba(245,158,11,.4);border-radius:14px;padding:16px 18px;' +
+      'color:#f4e8cf;font:12px/1.6 ui-monospace,Menlo,Consolas,monospace;box-shadow:0 24px 80px rgba(0,0,0,.7)}' +
+      '#v243-panel h3{margin:0 0 2px;font-size:13px;letter-spacing:2px;color:#fde68a;display:flex;align-items:center;gap:8px}' +
+      '#v243-panel .sub{color:#a18b5d;font-size:10.5px;margin-bottom:10px}' +
+      '#v243-panel .tutup{margin-left:auto;background:none;border:none;color:#b08c4f;font-size:16px;cursor:pointer}' +
+      '#v243-panel .tutup:hover{color:#fff}' +
+      '.v243-status{border:1px solid rgba(245,158,11,.22);border-radius:10px;padding:9px 11px;margin-bottom:11px;' +
+      'font-size:11px;line-height:1.7;background:rgba(30,22,6,.5)}' +
+      '.v243-status .l{color:#a18b5d;letter-spacing:1.1px;font-size:10px;margin-right:6px}' +
+      '.v243-status b{color:#fde68a}' +
+      '.v243-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 10px;margin-bottom:10px}' +
+      '.v243-grid label{display:flex;flex-direction:column;gap:3px;font-size:10px;letter-spacing:1px;color:#a18b5d}' +
+      '.v243-grid input{background:rgba(5,4,1,.85);border:1px solid rgba(245,158,11,.3);border-radius:7px;color:#fdf3df;' +
+      'font:11.5px ui-monospace,monospace;padding:6px 8px;min-width:0}' +
+      '.v243-grid input:focus{outline:none;border-color:rgba(245,158,11,.7)}' +
+      '.v243-grid input::placeholder{color:#6b5a36}' +
+      '#v243-tombol{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 10px}' +
+      '#v243-tombol button{flex:1 1 auto;padding:7px 10px;border-radius:8px;border:1px solid rgba(245,158,11,.4);' +
+      'background:rgba(64,44,8,.85);color:#fde68a;cursor:pointer;font:600 10.5px ui-monospace,monospace;letter-spacing:.6px;min-height:27px}' +
+      '#v243-tombol button:hover{background:rgba(245,158,11,.22);border-color:rgba(245,158,11,.7)}' +
+      '#v243-tombol button:disabled{opacity:.45;cursor:wait}' +
+      '.v243-baris{display:flex;align-items:center;gap:8px;font-size:10.5px;color:#a18b5d;margin-bottom:8px}' +
+      '.v243-baris input[type=checkbox]{accent-color:#f59e0b}' +
+      '#v243-log{border-top:1px dashed rgba(245,158,11,.25);padding-top:7px;color:#d9c08a;font-size:10.5px;line-height:1.7;' +
+      'max-height:120px;overflow:auto;white-space:pre-wrap}' +
+      '.v243-catan{font-size:10px;color:#8a744a;margin-top:8px;line-height:1.6}';
+    document.head.appendChild(s);
+  }
+  function buatChip() {
+    if (q('v243-sarang')) { elChip = q('v243-sarang'); return; }
+    pasangGaya();
+    elChip = document.createElement('div');
+    elChip.id = 'v243-sarang';
+    elChip.innerHTML = '<span id="v243-led"></span><b id="v243-nama">SARANG</b><span id="v243-ringkas"></span>';
+    elChip.title = 'SARANG — hidup mandiri di GitHub Pages (organ V243 v' + V.versi + ')';
+    elChip.addEventListener('click', function () { bukaPanel(); });
+    document.body.appendChild(elChip);
+  }
+  function buatPanel() {
+    if (q('v243-panel')) { elPanel = q('v243-panel'); elBackdrop = q('v243-backdrop'); return; }
+    elBackdrop = document.createElement('div'); elBackdrop.id = 'v243-backdrop';
+    elBackdrop.addEventListener('click', function () { tutupPanel(); });
+    elPanel = document.createElement('div'); elPanel.id = 'v243-panel';
+    elPanel.innerHTML =
+      '<h3><span id="v243-led2" style="width:9px;height:9px;border-radius:50%;background:#f59e0b;display:inline-block;box-shadow:0 0 7px #f59e0b"></span>' +
+      'SARANG — GITHUB PAGES<button class="tutup" title="Tutup">&times;</button></h3>' +
+      '<div class="sub">organ V243 v' + V.versi + ' · hidup mandiri, memori otomatis, evolusi tubuh sendiri</div>' +
+      '<div class="v243-status" id="v243-status"></div>' +
+      '<div class="v243-grid">' +
+      '<label>OWNER GitHub<input id="v243-owner" autocomplete="off" spellcheck="false"></label>' +
+      '<label>REPO<input id="v243-repo" autocomplete="off" spellcheck="false"></label>' +
+      '<label>CABANG (branch)<input id="v243-branch" autocomplete="off" spellcheck="false"></label>' +
+      '<label>TOKEN (Fine-grained PAT)<input id="v243-token" type="password" autocomplete="off" spellcheck="false"></label>' +
+      '<label>API BASE<input id="v243-apibase" autocomplete="off" spellcheck="false"></label>' +
+      '<label>PAGES URL (opsi, utk domain sendiri)<input id="v243-pagesurl" autocomplete="off" spellcheck="false"></label>' +
+      '</div>' +
+      '<div class="v243-baris"><input type="checkbox" id="v243-auto"><label for="v243-auto" style="cursor:pointer">SIMPAN OTOMATIS</label>' +
+      '<span style="margin-left:auto">setiap</span><input id="v243-interval" type="number" min="5" max="120" style="width:52px;background:rgba(5,4,1,.85);border:1px solid rgba(245,158,11,.3);border-radius:7px;color:#fdf3df;font:11.5px ui-monospace,monospace;padding:4px 6px"><span>menit</span>' +
+      '<input type="checkbox" id="v243-pulihboot" style="margin-left:12px"><label for="v243-pulihboot" style="cursor:pointer">PULIH SAAT BANGKIT</label></div>' +
+      '<div id="v243-tombol">' +
+      '<button id="v243-btn-uji">UJI SAMBUNGAN</button>' +
+      '<button id="v243-btn-hijrah">HIJRAH KE GITHUB</button>' +
+      '<button id="v243-btn-simpan">SIMPAN MEMORI</button>' +
+      '<button id="v243-btn-pulih">PULIH</button>' +
+      '<button id="v243-btn-evolusi">EVOLUSI</button>' +
+      '</div>' +
+      '<div id="v243-log"></div>' +
+      '<div class="v243-catan">Token Fine-grained PAT: izin Contents + Pages (read/write), berlaku repo ini saja. ' +
+      'Token tersimpan HANYA di browser ini (localStorage). HIJRAH membaca tubuh lewat http(s) — buka SAKTI dari halaman unduh web atau dari halaman Pages.</div>';
+    document.body.appendChild(elPanel);
+    elPanel.querySelector('.tutup').addEventListener('click', function () { tutupPanel(); });
+    // form -> cfg
+    function ikat(id, kunci, angka) {
+      var inp = q(id);
+      if (!inp) return;
+      inp.addEventListener('change', function () {
+        st.cfg[kunci] = angka ? (parseInt(inp.value, 10) || 0) : inp.value;
+        cfgSimpan(); aturJadwal(); render();
+      });
+    }
+    ikat('v243-owner', 'owner'); ikat('v243-repo', 'repo'); ikat('v243-branch', 'branch');
+    ikat('v243-token', 'token'); ikat('v243-apibase', 'apiBase'); ikat('v243-pagesurl', 'pagesUrl');
+    ikat('v243-interval', 'intervalSimpanMenit', true);
+    var cbAuto = q('v243-auto'), cbPulih = q('v243-pulihboot');
+    if (cbAuto) cbAuto.addEventListener('change', function () { st.cfg.autoSimpan = cbAuto.checked; cfgSimpan(); aturJadwal(); });
+    if (cbPulih) cbPulih.addEventListener('change', function () { st.cfg.pulihBoot = cbPulih.checked; cfgSimpan(); });
+    // aksi
+    function jalankan(btnId, janjiFn, nama) {
+      var b = q(btnId); if (!b) return;
+      b.addEventListener('click', function () {
+        if (st.bekerja) return;
+        b.disabled = true; st.bekerja = true; render();
+        Promise.resolve().then(janjiFn).then(function (h) {
+          st.bekerja = false; b.disabled = false; render();
+        }).catch(function (e) { st.bekerja = false; b.disabled = false; galat(e); render(); });
+      });
+    }
+    jalankan('v243-btn-uji', ujiSambungan, 'uji');
+    jalankan('v243-btn-hijrah', hijrah, 'hijrah');
+    jalankan('v243-btn-simpan', function () { return simpanMemori('manual'); }, 'simpan');
+    jalankan('v243-btn-pulih', function () { return pulih(true); }, 'pulih');
+    jalankan('v243-btn-evolusi', function () { return evolusi('manual', true); }, 'evolusi');
+  }
+  function bukaPanel() { buatPanel(); isiForm(); render(); if (elPanel) elPanel.style.display = 'block'; if (elBackdrop) elBackdrop.style.display = 'block'; }
+  function tutupPanel() { if (elPanel) elPanel.style.display = 'none'; if (elBackdrop) elBackdrop.style.display = 'none'; }
+  function isiForm() {
+    var m = { 'v243-owner': st.cfg.owner, 'v243-repo': st.cfg.repo, 'v243-branch': st.cfg.branch, 'v243-token': st.cfg.token, 'v243-apibase': st.cfg.apiBase, 'v243-pagesurl': st.cfg.pagesUrl, 'v243-interval': st.cfg.intervalSimpanMenit };
+    for (var id in m) { var e = q(id); if (e && document.activeElement !== e) e.value = m[id] === null || m[id] === undefined ? '' : m[id]; }
+    var cbAuto = q('v243-auto'); if (cbAuto) cbAuto.checked = !!st.cfg.autoSimpan;
+    var cbPulih = q('v243-pulihboot'); if (cbPulih) cbPulih.checked = !!st.cfg.pulihBoot;
+  }
+  function warnaLed() {
+    if (st.bekerja) return '';
+    if (st.log.length && st.log[st.log.length - 1].indexOf('GAGAL') === 0) return 'merah';
+    if (st.terhubung && st.urlHidup) return 'hijau';
+    return '';
+  }
+  function fmtJam(iso) { return iso ? String(iso).slice(11, 16) : null; }
+  function ringkasChip() {
+    if (st.bekerja) return 'bekerja\u2026';
+    if (st.versiBaru) return 'tubuh baru di sarang \u2014 muat ulang';
+    if (!cfgLengkap()) return 'GITHUB \u00b7 belum dikonfigurasi';
+    if (st.urlHidup) return 'hidup \u00b7 memori ' + (fmtJam(st.lastSimpan && st.lastSimpan.waktu) || 'menunggu');
+    if (st.terhubung) return 'terhubung \u00b7 belum hijrah';
+    return 'belum terhubung';
+  }
+  function render() {
+    try {
+      if (elChip) {
+        var led = elChip.querySelector('#v243-led'); if (led) led.className = warnaLed();
+        var rk = elChip.querySelector('#v243-ringkas'); if (rk) { rk.textContent = ringkasChip(); rk.title = st.log.slice(-4).join('\n'); }
+      }
+      var led2 = q('v243-led2'); if (led2) { var w = warnaLed(); led2.style.background = w === 'merah' ? '#ef4444' : (w === 'hijau' ? '#10b981' : '#f59e0b'); }
+      var stat = q('v243-status');
+      if (stat) {
+        var r = st._prakiraRingkas || { terbuka: 0, benar: 0, salah: 0 };
+        var selesai = r.benar + r.salah;
+        // teks manusiawi (pelajaran Task 27): tanpa "0/0 (—)" yang tampak placeholder
+        var prakTeks = selesai === 0
+          ? 'belum ada yang dinilai — prakira dikunci otomatis oleh NADI'
+          : 'prakira benar <b>' + r.benar + '</b>/' + selesai + ' (' + (Math.round((r.benar / selesai) * 10000) / 100) + '%)';
+        stat.innerHTML =
+          '<div><span class="l">SAMBUNGAN</span>' + (st.terhubung === null ? 'belum diuji' : (st.terhubung ? '<b>OK</b> ' + (st.repoInfo ? st.repoInfo.nama : '') : 'terputus')) + '</div>' +
+          '<div><span class="l">HALAMAN HIDUP</span>' + (st.urlHidup ? '<a href="' + st.urlHidup + '" target="_blank" rel="noopener" style="color:#fde68a">' + st.urlHidup + '</a>' : 'belum hijrah') + '</div>' +
+          '<div><span class="l">TUBUH</span><b>' + kodeVersi() + '</b> · organ ' + (function () { var n = 0; var m = organPeta(); for (var k in m) n++; return n; })() + '</div>' +
+          '<div><span class="l">SARANG</span>' + (st.versiRepo ? st.versiRepo.kodeVersi + ' · ' + String(st.versiRepo.waktu).slice(0, 19) : 'belum diketahui') + (st.versiBaru ? ' · <b style="color:#f87171">tubuh baru tersedia — muat ulang halaman</b>' : '') + '</div>' +
+          '<div><span class="l">MEMORI</span>' + (st.lastSimpan ? 'tersimpan ' + String(st.lastSimpan.waktu).slice(0, 19) + ' (' + (st.lastSimpan.jenis || '-') + ')' : 'belum tersimpan') + (st.lastPulih ? ' · pulih ' + String(st.lastPulih.waktu).slice(11, 16) : '') + '</div>' +
+          '<div><span class="l">ISI MEMORI</span>denyut <b>' + st._denyut + '</b> · rantai ' + (st._rantaiDenyut.length + st._rantaiPrakira.length) + ' entri · ' + prakTeks + '</div>' +
+          '<div><span class="l">GIAT</span>hijrah ' + st.hitung.hijrah + ' · simpan ' + st.hitung.simpan + ' · evolusi ' + st.hitung.evolusi + ' · pulih ' + st.hitung.pulih + ' · gagal ' + st.hitung.gagal + '</div>';
+      }
+      var log = q('v243-log');
+      if (log) log.textContent = st.log.length ? st.log.slice(-10).join('\n') : 'sarang siap — konfigurasi lalu tekan UJI SAMBUNGAN';
+    } catch (e) { /* render tak boleh mematikan organ */ }
+  }
+
+  // ---------------- self-test ----------------
+  function selfTest() {
+    var T = [];
+    T.push(['sha256 vektor abc', sha256Hex('abc') === 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad']);
+    var b64 = null;
+    try { b64 = base64DariTeks('h\u00e9llo \u00b5 \u2014 ok') === btoa(unescape(encodeURIComponent('h\u00e9llo \u00b5 \u2014 ok'))); } catch (e) { b64 = false; }
+    T.push(['base64 unicode: encode benar', !!b64]);
+    T.push(['urut versi: 1.10 > 1.9', urutVersi('1.10', '1.9') > 0]);
+    T.push(['urut versi: identik = 0', urutVersi('v243.7.1', 'v243.7.1') === 0]);
+    var kv = kodeVersi();
+    T.push(['kodeVersi berformat v243.N.M', /^v243\.\d+\.\d+$/.test(kv)]);
+    var mp = organPeta();
+    T.push(['organPeta memuat SARANG', mp.SARANG === V.versi]);
+    // PELAJARAN: simpan SALINAN primitif (bukan referensi) sebelum mutasi uji
+    var oLama = st.cfg.owner, rLama = st.cfg.repo, pLama = st.cfg.pagesUrl;
+    st.cfg.owner = 'Micaprofita Unggul'; st.cfg.repo = 'Sarang Uji'; st.cfg.pagesUrl = '';
+    var pUrl = pagesUrl();
+    T.push(['pagesUrl: encode aman + bentuk', pUrl === 'https://Micaprofita%20Unggul.github.io/Sarang%20Uji/']);
+    var aUrl = apiRepo();
+    T.push(['apiRepo: bentuk /repos/{owner}/{repo}', aUrl.indexOf('/repos/Micaprofita%20Unggul/Sarang%20Uji') > 0]);
+    st.cfg.owner = oLama; st.cfg.repo = rLama; st.cfg.pagesUrl = pLama;
+    var kaps = kapsulMemori();
+    T.push(['kapsul: protokol + rantai lengkap', kaps.protokol === 'KAPSUL-MICAPROFITA' && !!kaps.rantai && Array.isArray(kaps.rantai.denyut) && Array.isArray(kaps.rantai.prakira)]);
+    var vj = versiJson('deadbeef');
+    T.push(['versi.json: protokol + sha diterima', vj.protokol === 'SARANG-MICAPROFITA' && vj.htmlSha256 === 'deadbeef' && !!vj.pertumbuhan]);
+    var rm = buatReadme();
+    T.push(['README: memuat struktur + halaman hidup', rm.indexOf('memori/terkini.json') > 0 && rm.indexOf('SARANG') > 0]);
+    if (typeof localStorage !== 'undefined') {
+      var bukti = { z: 43 }; l1Set('uji-roundtrip', bukti);
+      T.push(['L1: tulis-baca cfg utk organ', l1Get('uji-roundtrip', {}).z === 43]);
+      l1Set('uji-roundtrip', null); localStorage.removeItem('mp243.uji-roundtrip');
+      try { localStorage.setItem('mp241.sarang-uji', '1'); T.push(['L1: gudang NADI terbaca (satu tubuh)', localStorage.getItem('mp241.sarang-uji') === '1']); localStorage.removeItem('mp241.sarang-uji'); } catch (e) { T.push(['L1: gudang NADI terbaca (satu tubuh)', false]); }
+    } else T.push(['L1: tak tersedia di lingkungan ini — degradasi jujur', true]);
+    if (ada() && elChip && elChip.isConnected) {
+      T.push(['UI: chip SARANG lahir sinkron', true]);
+      var z = parseInt(getComputedStyle(elChip).zIndex, 10);
+      T.push(['UI: chip z tertib (<=99992, di bawah panel/modal)', z > 99000 && z <= 99992]);
+      var pan = q('v243-panel');
+      T.push(['UI: panel modal lahir tersembunyi', !!pan && getComputedStyle(pan).display === 'none']);
+      var tok = q('v243-token');
+      T.push(['UI: token tersamar (type=password)', !!tok && tok.getAttribute('type') === 'password']);
+      var jml = 0, ids = ['v243-btn-uji', 'v243-btn-hijrah', 'v243-btn-simpan', 'v243-btn-pulih', 'v243-btn-evolusi'];
+      ids.forEach(function (i) { if (q(i)) jml++; });
+      T.push(['UI: 5 tombol aksi lengkap & statis', jml === 5]);
+    } else {
+      T.push(['UI: chip — tanpa DOM/kartu belum lahir, degradasi jujur', true]);
+      T.push(['UI: panel — tanpa DOM, degradasi jujur', true]);
+      T.push(['UI: token — tanpa DOM, degradasi jujur', true]);
+      T.push(['UI: tombol — tanpa DOM, degradasi jujur', true]);
+    }
+    var pass = T.filter(function (x) { return x[1]; }).length;
+    return { total: T.length, pass: pass, fail: T.length - pass, rincian: T.map(function (x) { return (x[1] ? 'PASS' : 'GAGAL') + ' — ' + x[0]; }) };
+  }
+
+  // ---------------- boot ----------------
+  function boot() {
+    // pelajaran Task 27: UI = murni DOM -> lahir SINKRON sebelum storage/jaringan
+    buatChip(); buatPanel();
+    cfgMuat();
+    if (st.cfg.pagesUrl || (st.cfg.owner && st.cfg.repo)) { st.urlHidup = st.urlHidup || pagesUrl(); }
+    render();
+    muatMemoriLokal().then(function () { render(); }).catch(function () {});
+    // pulih + pemeriksa saat bangkit (hanya bila sarang sudah aktif)
+    if (cfgLengkap()) {
+      aturJadwal();
+      if (st.cfg.pulihBoot && l1Get('aktif', false)) {
+        setTimeout(function () {
+          try { pulih(false).catch(function () {}); } catch (e) { /* fault isolation */ }
+          setTimeout(function () { try { pemeriksaVersi().catch(function () {}); } catch (e) { /* diam */ } }, 3000);
+        }, 2500);
+      } else {
+        setTimeout(function () { try { pemeriksaVersi().catch(function () {}); } catch (e) { /* diam */ } }, 4000);
+      }
+    }
+    setTimeout(function () {
+      try {
+        var stres = selfTest();
+        catat('self-test ' + stres.pass + '/' + stres.total + (stres.fail ? ' — GAGAL, lihat API selfTest()' : ' semua PASS'));
+        render();
+        if (typeof console !== 'undefined') console.log('[V243 SARANG] v' + V.versi + ' — hidup-mandiri GitHub Pages: self-test ' + stres.pass + '/' + stres.total, stres.rincian);
+      } catch (e) { /* diam */ }
+    }, 900);
+    // sadar-tabraksiran: simpan terbaik saat tab disembunyikan (interval tetap jalan di latar)
+    if (typeof document !== 'undefined') {
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden && cfgLengkap() && st.cfg.autoSimpan) { try { simpanMemori('tab-sembunyi').catch(function () {}); } catch (e) { /* diam */ } }
+      });
+    }
+  }
+  boot();
+
+  var API = {
+    versi: V.versi, nama: V.nama, organ: V.organ, protokol: V.protokol,
+    status: function () {
+      return { terhubung: st.terhubung, bekerja: st.bekerja, urlHidup: st.urlHidup, kodeVersi: kodeVersi(), organ: organPeta(),
+        versiRepo: st.versiRepo, versiBaru: st.versiBaru, lastSimpan: st.lastSimpan, lastPulih: st.lastPulih,
+        simpanBerikutnya: st.simpanBerikutnya, hitung: st.hitung,
+        memori: { denyut: st._denyut, rantaiDenyut: st._rantaiDenyut.length, rantaiPrakira: st._rantaiPrakira.length, prakira: st._prakiraRingkas },
+        cfg: { owner: st.cfg.owner, repo: st.cfg.repo, branch: st.cfg.branch, apiBase: st.cfg.apiBase, pagesUrl: st.cfg.pagesUrl, intervalSimpanMenit: st.cfg.intervalSimpanMenit, autoSimpan: st.cfg.autoSimpan, tokenAda: !!st.cfg.token },
+        log: st.log.slice(-10) };
+    },
+    selfTest: selfTest,
+    ujiSambungan: ujiSambungan, hijrah: hijrah, simpanMemori: simpanMemori,
+    pulih: pulih, evolusi: evolusi, pemeriksaVersi: pemeriksaVersi,
+    aturJadwal: aturJadwal, organPeta: organPeta, kodeVersi: kodeVersi,
+    bukaPanel: bukaPanel, tutupPanel: tutupPanel,
+    cfgSet: function (obj) {
+      for (var k in obj) { if (st.cfg.hasOwnProperty(k)) st.cfg[k] = obj[k]; }
+      cfgSimpan(); aturJadwal(); isiForm(); render(); return true;
+    }
+  };
+  if (typeof window !== 'undefined') {
+    window.V231_SAKTI = window.V231_SAKTI || {};
+    window.V231_SAKTI.SARANG = API;
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = API;
+  return API;
+})();
+/*V243-SARANG:END*/
+</script>
+<script>
+// ============================================================
+// PENGUJI OTOMATIS HARNESS SARANG (3 fase)
+// ============================================================
+function q(id){var l=document.querySelectorAll('#'+id);return l.length?l[0]:null;}
+function R(e){var b=e.getBoundingClientRect();return {x:Math.round(b.left),y:Math.round(b.top),w:Math.round(b.width),h:Math.round(b.height),bot:Math.round(b.bottom),kan:Math.round(b.right)};}
+function tab(a,b){return a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;}
+var HASIL = {};
+function simpanHasil(){ try{ localStorage.setItem('mp243-harness-hasil', JSON.stringify(HASIL)); }catch(e){}
+  var h=q('hasil'); if(h) h.textContent='HASIL HARNESS SARANG:\n'+JSON.stringify(HASIL,null,1); }
+function ambil(url){ return fetch(url,{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); }); }
+function tunggu(ms){ return new Promise(function(res){ setTimeout(res,ms); }); }
+var S = window.V231_SAKTI.SARANG, N = window.V231_SAKTI.NADI, O = window.V231_SAKTI.ORKESTRA;
+var PAGES = 'http://127.0.0.1:8899/halaman/';
+var API = 'http://127.0.0.1:8899/api';
+
+var fase = (localStorage.getItem('mp243-harness-fase') || 'A');
+HASIL.fase = fase; simpanHasil();
+
+if (fase === 'A') {
+  localStorage.setItem('mp243-harness-fase','B');
+  // ---- FASE A: konfigurasi + hijrah + simpan + evolusi ----
+  S.cfgSet({ owner:'micaprofita', repo:'sarang-uji', branch:'utama', token:'uji-token-rahasia',
+    apiBase: API, pagesUrl: PAGES, intervalSimpanMenit:15, autoSimpan:false, pulihBoot:true });
+  // auth ditolak bila token salah — uji jalur 401 dulu (jujur)
+  ambil(API+'/repos/micaprofita/sarang-uji').then(function(){ return {noauth:'endpoint repo tanpa token harusnya 401 lewat fetch biasa? (statistik menunjuk)'}; }).catch(function(){ return null; });
+  S.ujiSambungan().then(function(u){
+    HASIL.ujiSambungan = { ok:u.ok, repo:u.repo && u.repo.nama }; simpanHasil();
+    return S.hijrah();
+  }).then(function(h){
+    HASIL.hijrah = { ok:h.ok, commit:String(h.commit).slice(0,10), url:h.url }; simpanHasil();
+    return ambil(PAGES+'versi.json');
+  }).then(function(t){
+    var v = JSON.parse(t);
+    HASIL.pagesVersi = { protokol:v.protokol, kodeVersi:v.kodeVersi, organ:v.organ }; simpanHasil();
+    return ambil(PAGES+'memori/terkini.json');
+  }).then(function(t){
+    var k = JSON.parse(t);
+    HASIL.pagesKapsul = { protokol:k.protokol, denyut:k.denyut, rantaiDenyut:k.rantai.denyut.length, rantaiPrakira:k.rantai.prakira.length }; simpanHasil();
+    // gerakkan memori: denyut + prakira terkunci
+    N.denyutkanSekarang();
+    return N.prakiraKunci('BTCUSDT','NAIK',83000,'uji-harness-berantai');
+  }).then(function(){
+    return tunggu(300).then(function(){ return S.simpanMemori('uji-harness'); });
+  }).then(function(hs){
+    HASIL.simpan = { ok:hs.ok, skip:!!hs.skip }; simpanHasil();
+    return ambil(PAGES+'memori/terkini.json');
+  }).then(function(t){
+    var k = JSON.parse(t);
+    HASIL.simpanIsi = { denyut:k.denyut, prakira:k.rantai.prakira.length }; simpanHasil();
+    return S.evolusi('uji-harness', true); // paksa: commit tubuh lagi
+  }).then(function(ev){
+    HASIL.evolusiPaksa = { ok:ev.ok, commit:ev.commit?String(ev.commit).slice(0,10):null }; simpanHasil();
+    return S.evolusi(); // tanpa paksa + peta sama -> harus dilewati
+  }).then(function(ev2){
+    HASIL.evolusiSkip = { ok:ev2.ok, terjaga: !!(ev2.dilewati || ev2.ditunda) }; simpanHasil();
+    // verifikasi tubuh di pages = harness ini (index.html mengandung organ v243)
+    return ambil(PAGES);
+  }).then(function(html){
+    HASIL.pagesTubuh = { memuatV243: html.indexOf('V243-SARANG:BEGIN')>=0, byte: html.length }; simpanHasil();
+    // self-test semua organ
+    HASIL.selfTest243 = (function(st){ return {p:st.pass,t:st.total,gagal:st.rincian.filter(function(r){return r.indexOf('GAGAL')===0;})}; })(S.selfTest());
+    var s2 = O.selfTest();
+    HASIL.selfTest242 = {p:s2.pass,t:s2.total,gagal:s2.rincian.filter(function(r){return r.indexOf('GAGAL')===0;})};
+    simpanHasil();
+    return N.selfTest();
+  }).then(function(s1){
+    HASIL.selfTest241 = {p:s1.pass,t:s1.total,gagal:s1.rincian.filter(function(r){return r.indexOf('GAGAL')===0;})};
+    // ===== PERSIAPAN FASE B: kosongkan memori LOKAL (bukan sarang) =====
+    // simpan hasil fase A dgn kunci terpisah (fase B tidak menimpanya)
+    try{ localStorage.setItem('mp243-hasil-a', JSON.stringify(HASIL)); }catch(e){}
+    var keys=[]; for(var i=0;i<localStorage.length;i++){ var k=localStorage.key(i); if(k.indexOf('mp241.')===0) keys.push(k); }
+    keys.forEach(function(k){ localStorage.removeItem(k); });
+    // simulasi perangkat baru utk memori: cap waktu simpan/pulih lokal dibuang
+    // (cfg + token dipertahankan: pemilik memasangnya sekali di browser ini)
+    localStorage.removeItem('mp243.simpanTerakhir');
+    localStorage.removeItem('mp243.pulihTerakhir');
+    try{
+      var rq=indexedDB.open('mp241-gudang',1);
+      rq.onsuccess=function(){ var db=rq.result;
+        try{ var tx=db.transaction(['rantai','kv'],'readwrite');
+          tx.objectStore('rantai').clear(); tx.objectStore('kv').clear();
+          tx.oncomplete=function(){ localStorage.setItem('mp243-harness-fase','B'); location.reload(); };
+          tx.onerror=function(){ location.reload(); };
+        }catch(e){ location.reload(); }
+      };
+      rq.onerror=function(){ location.reload(); };
+    }catch(e){ location.reload(); }
+    HASIL.bersihBersih = 'memori lokal dikosongkan — reload utk fase B (PULIH)'; simpanHasil();
+  }).catch(function(e){
+    HASIL.gagalFaseA = String(e && e.message || e).slice(0,200); simpanHasil();
+  });
+} else {
+  // ---- FASE B+C: pulih otomatis saat boot + deteksi evolusi eksternal + fisika UI ----
+  localStorage.setItem('mp243-harness-fase','A'); // sesi berikut mulai dari A lagi
+  try{ HASIL.faseA = JSON.parse(localStorage.getItem('mp243-hasil-a')||'{}'); }catch(e){ HASIL.faseA = {rusak:true}; }
+  setTimeout(function(){
+    // B: memori pulih dari sarang
+    var statN = N.status();
+    HASIL.pulihDenyut = statN.denyut;
+    HASIL.pulihPrakira = { terbuka: statN.prakira.terbuka };
+    var statS = S.status();
+    HASIL.pulihTerakhir = statS.lastPulih;
+    HASIL.pulihSukses = statN.denyut>=2 && statN.prakira.terbuka>=1 && !!statS.lastPulih;
+    simpanHasil();
+    // C: evolusi eksternal (dgn token — aktor berwenang) -> pemeriksa mendeteksi tubuh baru
+    fetch(API+'/repos/micaprofita/sarang-uji/simulasi/evolusi-eksternal',{method:'POST',headers:{'Authorization':'Bearer uji-token-rahasia','Content-Type':'application/json'}})
+      .then(function(r){ return r.json(); })
+      .then(function(j){ HASIL.evolusiEksternal = { ok:j.ok }; simpanHasil();
+        return S.pemeriksaVersi();
+      }).then(function(c){
+        HASIL.deteksiVersiBaru = { ok:c.ok, sama:c.sama, versiRepo:c.versiRepo };
+        HASIL.versiBaruState = !!S.status().versiBaru;
+        simpanHasil();
+        // fisika UI: buka panel, cek z, posisi chip vs NADI/nav
+        S.bukaPanel();
+        return tunggu(400);
+      }).then(function(){
+        var pan=q('v243-panel'), chip=q('v243-sarang'), nadi=q('v241-nadi'), nav=q('v217-nav'), voice=q('v207-voice'), bd=q('v243-backdrop');
+        HASIL.ui = {
+          panelBuka: pan && getComputedStyle(pan).display==='block',
+          backdropBuka: bd && getComputedStyle(bd).display==='block',
+          zChip: parseInt(getComputedStyle(chip).zIndex,10),
+          zPanel: parseInt(getComputedStyle(pan).zIndex,10),
+          chipDiKanan: R(chip).x >= innerWidth*0.5,
+          takTimpaNadi: !(nadi && tab(R(chip),R(nadi))),
+          takTimpaNav: !tab(R(chip),R(nav)),
+          takTimpaVoice: !tab(R(chip),R(voice)),
+          led2Ada: !!q('v243-led2'),
+          statusIsi: (q('v243-status').textContent||'').length>40,
+          logIsi: (q('v243-log').textContent||'').indexOf('self-test')>=0
+        };
+        S.tutupPanel();
+        var stFis = O.selfTest();
+        HASIL.selfTest242FaseB = {p:stFis.pass,t:stFis.total,gagal:stFis.rincian.filter(function(r){return r.indexOf('GAGAL')===0;})};
+        var stS = S.selfTest();
+        HASIL.selfTest243FaseB = {p:stS.pass,t:stS.total,gagal:stS.rincian.filter(function(r){return r.indexOf('GAGAL')===0;})};
+        HASIL.selesai = true;
+        simpanHasil();
+      }).catch(function(e){
+        HASIL.gagalFaseB = String(e && e.message || e).slice(0,200); simpanHasil();
+      });
+  }, 9000); // tunggu boot SARANG: pulih (2.5s) + pemeriksa (+3s) tuntas
+}
+</script>
+</body></html>

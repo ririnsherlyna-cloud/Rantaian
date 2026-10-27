@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://docs.openclaw.ai/concepts/system-prompt",
+    "name": "System prompt - OpenClaw Docs",
+    "snippet": "OpenClaw builds its own system prompt for every agent run; there is no runtime default prompt. Assembly has three layers: buildAgentSystemPrompt renders the ... Missing:  trading  | Show results with:",
+    "host_name": "docs.openclaw.ai",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=IVXaLkJbC_o",
+    "name": "7 Prompts That Make OpenClaw Agents Actually Useful",
+    "snippet": "... prompts that make your OpenClaw agent smarter, cheaper to run, and more useful. I cover upgrading your memory system with QMD hybrid search ... Missing:  clawtrade  trading  strategy",
+    "host_name": "www.youtube.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.droptica.ai/blog/useful-prompts-your-openclaw-agent",
+    "name": "9 Useful Prompts for Your OpenClaw Agent - Droptica.ai",
+    "snippet": "9 Useful Prompts for Your OpenClaw Agent · Review your memory files · Build a second brain memory system · Create a skill-based shell agent.",
+    "host_name": "www.droptica.ai",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://public.com/api/docs/templates/openclaw-agent-skill",
+    "name": "Getting OpenClaw Set Up With the Public Agent Skill",
+    "snippet": "Learn how to set up OpenClaw, a self-hosted AI agent, with Public brokerage API skill to monitor positions, pull live market data, and execute stock and ... Missing:  system  | Show results with:",
+    "host_name": "public.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://chierhu.medium.com/openclaw-ai-ai-agent-framework-for-automated-trading-e30d59ababd9",
+    "name": "OpenClaw.ai: AI-Agent Framework for Automated Trading",
+    "snippet": "Traders report using OpenClaw to generate and refine strategies via LLM prompts (e.g. prompting it to code an entire multi-step strategy).",
+    "host_name": "chierhu.medium.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.tencentcloud.com/techpedia/140834",
+    "name": "A practical guide to OpenClaw trading, earning tens of",
+    "snippet": "This guide walks through how real traders are using OpenClaw deployed on Tencent Cloud Lighthouse to build, test, and run trading strategies that generate ... Missing:  system  prompt",
+    "host_name": "www.tencentcloud.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.mindstudio.ai/blog/build-ai-stock-trading-bot-openclaw",
+    "name": "How to Build an AI Stock Trading Bot With OpenClaw",
+    "snippet": "Learn how to build an autonomous stock trading agent with OpenClaw, including strategy design, cron job scheduling, and what not to do with ...",
+    "host_name": "www.mindstudio.ai",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://openclawforge.com/blog/openclaw-for-trading-complete-2026-guide-automated-trading-ai-agents",
+    "name": "The Complete 2026 Guide to Automated Trading with AI Agents",
+    "snippet": "Learn how to use OpenClaw for automated trading across stocks, crypto, and DeFi. Complete guide covering setup, strategies, backtesting, ...",
+    "host_name": "openclawforge.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

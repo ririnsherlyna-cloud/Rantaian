@@ -1,0 +1,65 @@
+# ============================================================
+# SARANG-PENJAGA — denyut server SAKTI (V244)
+# Otak cyborg hidup DI SERVER GITHUB — tanpa browser pemilik.
+# Tiap 30 menit: baca pasar nyata (nol biaya) -> kunci prediksi
+# -> nilai prediksi lama -> evolusi genome -> komit laporan.
+# Pages membangun ulang otomatis: laporan sasaran selalu segar
+# di https://ririnsherlyna-cloud.github.io/Micaprofita-/laporan/sasaran-terkini.json
+# Repo publik = Actions gratis. Komit penjaga memakai [skip ci]
+# agar tidak memicu siklus berantai.
+# ============================================================
+name: SARANG-PENJAGA (denyut server SAKTI)
+
+on:
+  push:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sarang-penjaga
+  cancel-in-progress: false
+
+jobs:
+  denyut:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Ambil isi sarang
+        uses: actions/checkout@v4
+
+      - name: Denyut otak server (tanpa browser)
+        run: node scripts/penjaga.mjs
+        env:
+          TOKEN_DENYUT: ${{ secrets.GITHUB_TOKEN }}
+          REPO_DENYUT: ${{ github.repository }}
+
+      - name: Komit pertumbuhan (jejak hidup permanen)
+        run: |
+          git config user.name  "SARANG-PENJAGA"
+          git config user.email "penjaga@micaprofita.local"
+          SIKLUS=$(python3 -c "import json;r=json.load(open('laporan/sasaran-terkini.json'));print(r['pertumbuhan']['siklus'])")
+          AKURASI=$(python3 -c "import json;r=json.load(open('laporan/sasaran-terkini.json'));a=r['akurasi']['akurasiPct'];print(f'{a}%' if a is not None else 'belum-ada')" 2>/dev/null || echo "?")
+          SASARAN=$(python3 -c "import json;r=json.load(open('laporan/sasaran-terkini.json'));print(len(r['sasaranHariIni']))" 2>/dev/null || echo "?")
+          git add laporan otak
+          if git diff --cached --quiet; then
+            echo "tanpa perubahan — tanpa komit"
+          else
+            git commit -m "SARANG-PENJAGA: denyut #${SIKLUS} — akurasi ${AKURASI} — ${SASARAN} sasaran [skip ci]"
+            git push
+          fi
+
+      - name: Tag metamorfosis harian — evolusi 24 jam (piagam pilar-5)
+        continue-on-error: true
+        run: |
+          TAG="epoch-$(date -u +%F)"
+          if git ls-remote --tags origin "refs/tags/$TAG" | grep -q "$TAG"; then
+            echo "tag $TAG sudah ada di remote — lewati"
+          else
+            git tag -a "$TAG" -m "metamorfosis 24 jam — epoch ${TAG}: resep otak disegel di laporan/epoch-${TAG}.json"
+            git push origin "$TAG"
+            echo "epoch ditandai: $TAG"
+          fi

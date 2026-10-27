@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.allora.network/research/introducing-the-czar-loss-a-tailored-objective-function-for-financial-log-return-predictions",
+    "name": "Introducing the CZAR Loss: A Tailored Objective Function for",
+    "snippet": "We introduce the CZAR loss, an objective function for financial return prediction that removes the bias toward forecasting no price movement ... Missing:  decisiveness  | Show results with:",
+    "host_name": "www.allora.network",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://x.com/i/article/2105290630322647398",
+    "name": "The CZAR Loss: Rewarding directional decisiveness in  - X",
+    "snippet": "In this new paper, we propose a loss function for return prediction called CZAR (Composite Zero-Agnostic Return). Predicting zero beats 58% ...",
+    "host_name": "x.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://x.com/AlloraNetwork/status/2105306432241340447",
+    "name": "The CZAR Loss - New paper from Allora Research - X",
+    "snippet": "We present the CZAR Loss, a new loss function solving the zero-returns bias suffered by standard loss functions in financial forecasting.",
+    "host_name": "x.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/abs/2609.36061",
+    "name": "[2609.36061] Introducing the CZAR Loss: A Tailored Objective",
+    "snippet": "CZAR-trained models reduce the `zero-returns bias' and improve directional accuracy on large-magnitude returns. Missing:  decisiveness  | Show results with:",
+    "host_name": "arxiv.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://x.com/AlloraNetwork/status/2105306434720473459",
+    "name": "Allora on X: \"Read more here https://t.co/kmb7xwIakd\" / X",
+    "snippet": "We present the CZAR Loss, a new loss function solving the zero-returns bias suffered by standard loss functions in financial forecasting.",
+    "host_name": "x.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2609.36061v1",
+    "name": "Introducing the CZAR Loss: A Tailored Objective Function for",
+    "snippet": "CZAR-trained models reduce the prediction shrinkage of L1- and L2-trained baselines and improve long–short performance and directional accuracy ... Missing:  decisiveness  | Show results with:",
+    "host_name": "arxiv.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.linkedin.com/company/allora-labs-hq",
+    "name": "Allora Labs - LinkedIn",
+    "snippet": "CZAR gives a small loss to a prediction in the right direction that overshoots a large move, and a large loss to one that undershoots or points the wrong way.",
+    "host_name": "www.linkedin.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://paper.dou.ac/p/2609.36063v1",
+    "name": "Understanding Decision-Making Mechanisms in Neural",
+    "snippet": "Autoencoder for probabilistic time series forecasting. Autoencoder with Bi-directional Attention for Time Series",
+    "host_name": "paper.dou.ac",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

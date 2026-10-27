@@ -1,0 +1,58 @@
+{
+ "nSet": 12,
+ "total": 14760,
+ "benar": 14760,
+ "perTipeAgg": {
+  "DETEKSI": {
+   "total": 2976,
+   "benar": 2976
+  },
+  "AMBANG200": {
+   "total": 1896,
+   "benar": 1896
+  },
+  "AMBANG500": {
+   "total": 1440,
+   "benar": 1440
+  },
+  "TANGGAL": {
+   "total": 1080,
+   "benar": 1080
+  },
+  "TAHUN": {
+   "total": 720,
+   "benar": 720
+  },
+  "TIER": {
+   "total": 1440,
+   "benar": 1440
+  },
+  "PERINGKAT": {
+   "total": 1080,
+   "benar": 1080
+  },
+  "URUTAN": {
+   "total": 720,
+   "benar": 720
+  },
+  "PARITAS": {
+   "total": 1080,
+   "benar": 1080
+  },
+  "GILA": {
+   "total": 720,
+   "benar": 720
+  },
+  "SUPER": {
+   "total": 720,
+   "benar": 720
+  },
+  "HARI-GANDA": {
+   "total": 888,
+   "benar": 888
+  }
+ },
+ "gagalContoh": [],
+ "persen": 100,
+ "waktu": "2026-10-26T13:14:27.922Z"
+}

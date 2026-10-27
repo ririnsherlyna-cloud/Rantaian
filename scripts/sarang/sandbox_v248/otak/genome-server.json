@@ -1,0 +1,100 @@
+{
+  "TURUN": {
+    "bobot": {
+      "struktur": 0.24,
+      "momentum": 0.26,
+      "sr": 0.16,
+      "tekanan": 0.18,
+      "perubahan": 0.16
+    },
+    "generasi": 0,
+    "belajar": 0,
+    "diperbarui": "2026-09-30T11:12:51.391Z"
+  },
+  "phoenix": {
+    "TURUN": {
+      "bobot": {
+        "posisi": 0.25,
+        "sweep": 0.3,
+        "akumulasi": 0.2,
+        "momentum": 0.15,
+        "kompresi": 0.1
+      },
+      "generasi": 0,
+      "belajar": 0,
+      "diperbarui": "2026-09-30T11:12:51.391Z"
+    }
+  },
+  "ilmu": {
+    "hedge": {
+      "arah": {
+        "struktur": 0.24,
+        "momentum": 0.26,
+        "sr": 0.16,
+        "tekanan": 0.18,
+        "perubahan": 0.16
+      },
+      "phx": {
+        "posisi": 0.25,
+        "sweep": 0.3,
+        "akumulasi": 0.2,
+        "momentum": 0.15,
+        "kompresi": 0.1
+      }
+    },
+    "brier": {
+      "arah": {
+        "n": 0,
+        "jumlah": 0
+      },
+      "phx": {
+        "n": 0,
+        "jumlah": 0
+      }
+    },
+    "kalibrasi": [
+      {
+        "low": 52,
+        "high": 60,
+        "n": 0,
+        "benar": 0
+      },
+      {
+        "low": 60,
+        "high": 70,
+        "n": 0,
+        "benar": 0
+      },
+      {
+        "low": 70,
+        "high": 80,
+        "n": 0,
+        "benar": 0
+      },
+      {
+        "low": 80,
+        "high": 101,
+        "n": 0,
+        "benar": 0
+      }
+    ],
+    "konformal": [],
+    "meta": {
+      "kuat": {
+        "n": 0,
+        "benar": 0
+      },
+      "lemah": {
+        "n": 0,
+        "benar": 0
+      },
+      "geser": 0
+    },
+    "seedSelesai": "2026-09-30T11:12:51.391Z"
+  },
+  "aturanBelajar": {
+    "pola": {},
+    "aktif": {},
+    "seedSelesai": "2026-09-30T11:12:51.391Z"
+  }
+}

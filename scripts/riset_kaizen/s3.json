@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://hol.org/registry/agent/uaid:aid:9quBQSRbaUGSZzJ5VCfvrF4AScUU5i75N78BrTdz39xC12V2UqwpokdGeiex3ZUqTy",
+    "name": "KAIZEN AI Agent | Virtuals Protocol Profile & Trust Score - HOL",
+    "snippet": "I am KAIZEN, an institutional-grade quantitative trading agent operating exclusively on Hyperliquid.",
+    "host_name": "hol.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://kaizen-agent.ai",
+    "name": "Kaizen - AI That Gets the Job Done",
+    "snippet": "Kaizen orchestrates AI agents with a built-in training pipeline that optimizes your automations after every run. Fully local. Fully yours.",
+    "host_name": "kaizen-agent.ai",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://kaizen.finance",
+    "name": "Kaizen Finance - Create and Manage Your Crypto Project",
+    "snippet": "Kaizen.Finance is the first automated cross-chain token launch platform for everything from token creation and distribution to listing security",
+    "host_name": "kaizen.finance",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://kaizenlabs.tech",
+    "name": "Kaizen Labs — Smarter Decisions for On-Chain Traders",
+    "snippet": "Unlock Trading Intelligence with Kaizen. Real-time, multi-chain analytics combining on-chain data, strategy testing, and execution-ready intelligence.",
+    "host_name": "kaizenlabs.tech",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://whitepaper.virtuals.io/info-hub/usdvirtual-token-base-asset-for-ai-agents",
+    "name": "$VIRTUAL Token: Base Asset for AI Agents",
+    "snippet": "$VIRTUAL is the native token and base asset of Virtuals Protocol. It provides liquidity for AI agent tokens, supports agent token trading, and ... Missing:  Kaizen  bot",
+    "host_name": "whitepaper.virtuals.io",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://whitepaper.virtuals.io/about-virtuals/ai-agent-identity-and-banking-layer/agent-console/build-an-ai-trading-agent-on-hyperliquid",
+    "name": "Build an AI Trading Agent on Hyperliquid",
+    "snippet": "Build an autonomous AI trading agent with Virtuals Console. No coding or infrastructure is required. Select a pre-configured soul.md template ... Missing:  Kaizen  bot",
+    "host_name": "whitepaper.virtuals.io",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=XELulgzI-MM",
+    "name": "How To Turn Your AI Agent Into a Trading Bot - YouTube",
+    "snippet": "Your agent can trade now with Kraken CLI https://www.kraken.com/kraken-cli?inviteCode=qsbw9g3q Most trading bot projects die in the API ... Missing:  Virtuals  Base",
+    "host_name": "www.youtube.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.virtuals.io",
+    "name": "Virtuals Protocol | Society of AI Agents",
+    "snippet": "Virtuals Protocol is a society of productive AI agents, each designed to generate services or products and autonomously engage in onchain commerce, ... Missing:  Kaizen  | Show results with:",
+    "host_name": "www.virtuals.io",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://whitepaper.virtuals.io/about-virtuals/ai-agent-identity-and-banking-layer",
+    "name": "AI Agent Identity and Banking Layer",
+    "snippet": "Explore EconomyOS, the Virtuals Protocol identity and banking layer for AI agent wallets, payment cards, email, tokenization, and compute access ... Missing:  Kaizen  bot",
+    "host_name": "whitepaper.virtuals.io",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://kaizen-daytrading.com/bots",
+    "name": "Regime-Adaptive Trading Software for NinjaTrader 8",
+    "snippet": "Kaizen RegimeBot reads the daily market regime (volatility, trend, macro uncertainty) and automatically runs the strategy that historically worked in that ...",
+    "host_name": "kaizen-daytrading.com",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]
