@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-BENTENG-TELEGRAM — lapis abadi MicroProfita (rumah: repo Rantaian, jalan di GitHub Actions).
+BENTENG-TELEGRAM v6 — lapis abadi MicroProfita (rumah: repo Rantaian, jalan di GitHub Actions).
+V302 KOIN-WAJIB-XAU: XAU (emas) selalu tampil di laporan apa pun kondisinya
+(sumber: jembatan benteng/sasaran-zai.json field "xau"; fallback harga emas live).
 Tubuh sandbox (agent) bisa tidur/mati; tubuh ini (server GitHub) tidak bergantung sandbox.
 Tiap 30 menit (cron 7,37):
   1. Baca nyawa (bot token + chat id) dari benteng/nyawa.json di repo sendiri
@@ -269,6 +271,59 @@ def harga_binance(simbol_list):
     return out, bool(out)
 
 
+def harga_xau():
+    """Harga emas (XAU) rantai fallback: gold-api spot -> Bybit XAUTUSDT -> OKX.
+    Kembalikan (harga, chg24h_pct, sumber). Binance tidak punya XAUUSDT spot."""
+    def _get(url, timeout=12):
+        req = urllib.request.Request(url, headers={"User-Agent": "benteng-abadi"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8", "replace"))
+    try:
+        j = _get("https://api.gold-api.com/price/XAU")
+        p = j.get("price") if isinstance(j, dict) else None
+        if isinstance(p, (int, float)) and 100 < p < 100000:
+            chg = None
+            try:
+                b = _get("https://api.bybit.com/v5/market/tickers?category=spot&symbol=XAUTUSDT", 10)
+                lst = ((b.get("result") or {}).get("list") or [])
+                pc = float(lst[0].get("price24hPcnt")) if lst else None
+                chg = round(pc * 100, 2) if pc is not None else None
+            except Exception:
+                pass
+            return float(p), chg, "gold-api XAU spot"
+    except Exception:
+        pass
+    try:
+        b = _get("https://api.bybit.com/v5/market/tickers?category=spot&symbol=XAUTUSDT")
+        lst = ((b.get("result") or {}).get("list") or [])
+        if lst:
+            return float(lst[0].get("lastPrice")), round(float(lst[0].get("price24hPcnt")) * 100, 2), "Bybit XAUTUSDT (emas)"
+    except Exception:
+        pass
+    try:
+        o = _get("https://www.okx.com/api/v5/market/ticker?instId=XAUT-USDT")
+        d0 = ((o.get("data") or []) or [None])[0]
+        if d0:
+            p = float(d0.get("last"))
+            op = float(d0.get("open24h") or 0)
+            return p, (round((p / op - 1) * 100, 2) if op > 0 else None), "OKX XAUT-USDT (emas)"
+    except Exception:
+        pass
+    return None, None, "gagal"
+
+
+def _xau_wajib_sintesis(ket):
+    """XAU WAJIB tidak boleh absen: bila jembatan belum membawa field xau,
+    benteng mensintesiskan barisnya sendiri dari harga emas live."""
+    h, chg, src = harga_xau()
+    if h:
+        return {"simbol": "XAUUSDT", "arah": ("SELL" if (chg is not None and chg < 0) else "BUY"),
+                "keyakinan": 60, "entry": h, "wajib": True,
+                "ket": f"disintesis benteng ({ket}; sumber {src})"}
+    return {"simbol": "XAUUSDT", "arah": "?", "keyakinan": None, "entry": None,
+            "wajib": True, "ket": f"gagal ambil harga emas semua sumber ({ket})"}
+
+
 def kirim_telegram(token, chat_id, text):
     payload = urllib.parse.urlencode({
         "chat_id": chat_id, "text": text, "parse_mode": "HTML",
@@ -321,6 +376,10 @@ def main():
         except Exception:
             zai = None
     zai_picks = (zai or {}).get("picks") or []
+    # V302 XAU WAJIB — emas selalu hadir; bila snapshot belum membawanya, sintesis
+    zai_xau = (zai or {}).get("xau")
+    if not isinstance(zai_xau, dict):
+        zai_xau = _xau_wajib_sintesis("jembatan tanpa xau")
 
     terbaru_iso, gen_maks, total_belajar = None, 0, 0
 
@@ -339,8 +398,9 @@ def main():
 
     daftar = (sasaran or {}).get("sasaranHariIni") or []
     simbol_list = [e.get("simbol") for e in daftar if e.get("simbol")]
-    simbol_list += [p.get("simbol") for p in zai_picks if p.get("simbol")]
+    simbol_list += [p.get("simbol") for p in zai_picks if p.get("simbol") and p.get("simbol") != "XAUUSDT"]
     harga_map, harga_hidup = harga_binance(simbol_list)
+    xau_h, xau_chg, xau_src = harga_xau()
     kejadian = []
     baru = {}
     for e in daftar:
@@ -388,6 +448,22 @@ def main():
         L.append(f"⚠️ <b>Lapis abadi sempat terhenti {gap_menit:.0f} menit (server GitHub antre) — saya akui jujur</b>")
     else:
         L.append(f"Status: <b>HIDUP</b> — {gap_menit:.0f} menit sejak detak abadi terakhir")
+    L.append("")
+    # ---- V302 section XAU WAJIB (TIDAK PERNAH ABSEN) ----
+    x_ent = zai_xau.get("entry")
+    x_arah = str(zai_xau.get("arah") or "?").upper()
+    x_konf = zai_xau.get("keyakinan")
+    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (50 sasaran + 1 XAU, hukum pemilik V302)")
+    if xau_h:
+        chg_s = f" · 24 jam {xau_chg:+.2f}%" if xau_chg is not None else ""
+        jarak = f"{(xau_h / x_ent - 1) * 100:+.2f}%" if x_ent else "-"
+        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · "
+                 f"entry {fmt_harga(x_ent)} · kini <b>{fmt_harga(xau_h)}</b> ({jarak}){chg_s}")
+        L.append(f"<i>Sumber harga: {html.escape(xau_src)} — XAU selalu ada di laporan apa pun kondisinya.</i>")
+    else:
+        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · entry {fmt_harga(x_ent)} · "
+                 f"kini <b>GAGAL DIAMBIL</b> (semua sumber emas padam detak ini)")
+        L.append("<i>XAU tetap WAJIB — baris ini tidak pernah dihapus dari laporan.</i>")
     L.append("")
     # ---- section OTAK Z.AI (jembatan: otak sama dengan web, walau sandbox mati) ----
     if zai_picks:
