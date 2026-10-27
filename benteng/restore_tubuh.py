@@ -7,7 +7,10 @@ Pelajaran 27 Okt: disk lokal rollback sampai 7x/hari, tiap 30-60 menit.
 Benteng = satu-satunya sumber kebenaran; disk lokal = serda kerja."""
 import json, base64, os, time, urllib.request
 
-BENTENG = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Rantaian/main"
+REPO = "ririnsherlyna-cloud/Rantaian"
+API = f"https://api.github.com/repos/{REPO}/contents"
+HEAD = {"Authorization": f"Bearer {open('/home/z/my-project/.token-rantaian').read().strip()}",
+        "User-Agent": "microprofita-hb", "Accept": "application/vnd.github+json"}
 PETA = [
     ("benteng/heartbeat_local.py", "/home/z/my-project/scripts/heartbeat.py", "GEN-8"),
     ("benteng/web/emas.ts", "/home/z/my-project/src/lib/cyborg/emas.ts", "getEmas"),
@@ -15,10 +18,11 @@ PETA = [
 ]
 
 def ambil(path):
-    req = urllib.request.Request(f"{BENTENG}/{path}?v={int(time.time())}",
-                                 headers={"User-Agent": "microprofita-hb"})
+    """Via API (bukan raw) agar 404/file baru tidak tertahan cache CDN."""
+    req = urllib.request.Request(f"{API}/{path}", headers=HEAD)
     with urllib.request.urlopen(req, timeout=25) as r:
-        return r.read()
+        j = json.loads(r.read().decode())
+    return base64.b64decode((j.get("content") or "").replace("\n", ""))
 
 hasil = []
 for sumber, tujuan, penanda in PETA:
