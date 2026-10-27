@@ -14,7 +14,7 @@ HEAD = {"Authorization": f"Bearer {open('/home/z/my-project/.token-rantaian').re
 PETA = [
     ("benteng/heartbeat_local.py", "/home/z/my-project/scripts/heartbeat.py", "GEN-"),
     ("benteng/web/emas.ts", "/home/z/my-project/src/lib/cyborg/emas.ts", "getEmas"),
-    ("benteng/web/arena.ts", "/home/z/my-project/src/lib/cyborg/arena.ts", "XAUUSDT"),
+    ("benteng/web/arena.ts", "/home/z/my-project/src/lib/cyborg/arena.ts", "powerMax"),
     ("benteng/web/brain.ts", "/home/z/my-project/src/lib/cyborg/brain.ts", "SLOT_TEMPUR"),
 ]
 
