@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-BENTENG-BALAS v7 "BOT-CHAT" — pembalas pesan Telegram pemilik MicroProfita.
+BENTENG-BALAS v8 "BOT-CHAT" — pembalas pesan Telegram pemilik MicroProfita.
 Dua tempat jalan sekaligus (doktrin benteng-total):
-  1. GitHub Actions tiap 5 menit (lapis abadi — selalu hidup walau sandbox tidur)
-  2. Sandbox lokal: mode --jaga (loop 10 detik) + --sekali (tiap kunjungan cron)
-     -> balasan DETIK-DETIK saat tubuh hidup; Actions menutup sisa waktunya.
+  1. GitHub Actions RANTAI ABADI: tiap run aktif long-poll ±4,5 MENIT penuh,
+     lalu di ujung run memancing run berikutnya (workflow "Warisi hidup")
+     -> penjadwal GitHub yang sering menelan cron */5 tidak lagi menentukan;
+     rantai menjawab dengan latensi <= 25 detik, 24 jam, 7 hari.
+  2. Sandbox lokal: mode --jaga (long-poll 25s + penanda hidup) + --sekali
+     (tiap kunjungan cron) -> balasan DETIK-DETIK saat tubuh hidup.
+
+v8 (28 Okt) — akar keluhan "bot mati, harus chat balik dulu": run Actions
+ternyata hanya jalan 3x dalam 10 jam (scheduler GitHub menelan jadwal */5)
+dan daemon lokal dibunuh sandbox -> fix: rantai warisi-hidup + jendela aktif
+45x lebih panjang + penanda hidup penjaga + perintah /tubuh dan /ping.
 
 v7 (28 Okt) — respons keluhan pemilik "bot lambat & tidak tanggap":
   + PERINTAH LENGKAP: /start /menu /status /laporan /harga <koin> /sasaran
-    /peluang /akurasi /bantuan — plus teks bebas ("harga btc", "menu", dst)
+    /peluang /akurasi /bantuan /tubuh /ping — plus teks bebas ("harga btc")
   + TOMBOL INLINE (menu profesional, callback dijawab + pesan diedit di tempat)
   + CEPAT: data otak & harga diambil PARALEL (thread) + cache TTL 60s,
     typing indicator segera, long-poll singkat (8s) agar tak tabrak Actions
@@ -43,10 +51,13 @@ OTAK_RAW = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Micaprofita-/m
 ZAI_RAW = f"{REPO_RAW}/benteng/sasaran-zai.json"
 WIB = timezone(timedelta(hours=7))
 PEMILIK = "8340502683"
-LIMIT_BALAS_PER_RUN = 20
+LIMIT_BALAS_PER_RUN = 40
 TTL_OTAK = 60.0
-JAGA_INTERVAL = 10
-LONG_POLL = {"actions": 25, "jaga": 8}
+JAGA_INTERVAL = 2
+LONG_POLL = {"actions": 25, "jaga": 25}
+RUN_LAMA_ACTIONS = 285.0      # jendela aktif run Actions (±4,5 menit)
+F_NYALA = "/home/z/my-project/data/penjaga_nyala"
+F_UMUM = "/home/z/my-project/data/penjaga_umum"
 
 _g = {"otak": None, "otak_at": 0.0, "token_rantaian": None,
       "offset_repo": None, "offset_repo_at": 0.0}
@@ -54,6 +65,43 @@ _g = {"otak": None, "otak_at": 0.0, "token_rantaian": None,
 
 def sekarang_wib():
     return datetime.now(WIB).strftime("%H:%M:%S WIB, %d %b %Y")
+
+
+def tulis_nyala(mode):
+    """Penanda hidup penjaga lokal: epoch tiap siklus (dibaca watchdog/restore)."""
+    try:
+        with open(F_NYALA, "w") as f:
+            f.write(str(time.time()))
+    except Exception:
+        pass
+
+
+def umur_nyala():
+    try:
+        return time.time() - float(open(F_NYALA).read().strip())
+    except Exception:
+        return None
+
+
+def umum_hidup(token):
+    """Umumkan penjaga online ke pemilik — maksimal 1x per 30 menit."""
+    try:
+        terakhir = 0.0
+        try:
+            terakhir = float(open(F_UMUM).read().strip())
+        except Exception:
+            pass
+        if time.time() - terakhir < 1800:
+            return
+        with open(F_UMUM, "w") as f:
+            f.write(str(time.time()))
+        kirim(token, PEMILIK,
+              "🛡️ <b>PENJAGA v8 ONLINE</b> — saya mendengarkan sekarang.\n"
+              "⚡ Balasan dalam hitungan detik. Ketik /menu untuk mulai.",
+              reply_markup=menu_utama())
+        print("UMUM: penjaga online diumumkan")
+    except Exception as e:
+        print("UMUM gagal:", repr(e))
 
 
 def muat_json(p):
@@ -212,6 +260,15 @@ def offset_repo(max_umur=120.0):
         if _g["offset_repo"] is None:
             _g["offset_repo"] = 0
     return _g["offset_repo"]
+
+
+def _commit_offset_cepat():
+    """Mode Actions: commit offset SEGERA setelah membalas, agar run yang
+    dibatalkan concurrency tidak membuat pesan terbalas dobel."""
+    if not os.environ.get("GITHUB_WORKSPACE"):
+        return
+    os.system("cd \"$GITHUB_WORKSPACE\" && git add data/offset_telegram.json && "
+              "git commit -m 'offset balas v8 [skip ci]' -q && git push -q || true")
 
 
 def dorong_offset_repo(offset):
@@ -451,13 +508,16 @@ def menu_utama():
          {"text": "💥 Peluang", "callback_data": "cmd:peluang"}],
         [{"text": "📈 Akurasi", "callback_data": "cmd:akurasi"},
          {"text": "🥇 Emas", "callback_data": "cmd:emas"}],
+        [{"text": "🧬 Tubuh", "callback_data": "cmd:tubuh"},
+         {"text": "🏓 Ping", "callback_data": "cmd:ping"}],
         [{"text": "❓ Bantuan", "callback_data": "cmd:bantuan"}],
     ]}
 
 
 KAKI = ("<i>Klaim jujur: saya akan terus berkembang menjadi master pasar; "
         "profit adalah yang saya pelajari.</i>\n"
-        "<i>Saat tubuh sandbox tidur, lapis abadi GitHub menjawab ≤ ±5 menit.</i>")
+        "<i>v8: lapis abadi kini rantai terus-menerus — respons ≤ ±25 detik, "
+        "24 jam, tanpa perlu chat pembangkit.</i>")
 
 
 def baris_pick(i, p, h):
@@ -487,16 +547,19 @@ def baris_pick(i, p, h):
 
 
 def cmd_start():
-    return ("🤖 <b>MICROPROFITA — BOT CHAT v7</b>\n"
+    return ("🤖 <b>MICROPROFITA — BOT CHAT v8</b>\n"
             f"🕐 {sekarang_wib()}\n\n"
-            "Saya penjaga & asisten pasar dagangmu. Ketik perintah atau pakai tombol:\n"
+            "Saya penjaga & asisten pasar dagangmu — kini mendengarkan terus. "
+            "Ketik perintah atau pakai tombol:\n"
             "• <b>status</b> — kondisi sistem sekilas\n"
             "• <b>laporan</b> — laporan lengkap\n"
             "• <b>harga BTC</b> — harga koin apa pun + 24 jam\n"
             "• <b>sasaran</b> — daftar sasaran otak (dengan 4 level)\n"
             "• <b>peluang</b> — peluang profit terbesar\n"
             "• <b>akurasi</b> — rekam jejak otak & genome\n"
-            "• <b>emas</b> — XAU (koin wajib abadi)\n\n"
+            "• <b>emas</b> — XAU (koin wajib abadi)\n"
+            "• <b>tubuh</b> — cek integritas tubuh & benteng\n"
+            "• <b>ping</b> — uji kecepatan respons\n\n"
             + KAKI)
 
 
@@ -746,8 +809,92 @@ def cmd_emas():
     return cmd_harga("xau")
 
 
+def cmd_tubuh():
+    """CEK TUBUH — integritas file inti via penanda versi (pelajaran 13x rollback).
+    Lokal dulu bila ada; bila tidak (mode Actions), cek salinan benteng di repo."""
+    baris_cek = [
+        ("🫀 heartbeat (GEN-10)", "/home/z/my-project/scripts/heartbeat.py",
+         "benteng/heartbeat_local.py", "daftar_peluang_profit"),
+        ("🛡️ ip_rotasi (PELINDUNG-IP)", "/home/z/my-project/scripts/ip_rotasi.py",
+         "benteng/ip_rotasi.py", "PELINDUNG-IP"),
+        ("🧠 arena.ts (V305)", "/home/z/my-project/src/lib/cyborg/arena.ts",
+         "benteng/web/arena.ts", "daftar-100"),
+        ("💬 balas_telegram (v8)", "/home/z/my-project/scripts/balas_telegram.py",
+         "scripts/balas_telegram.py", "BENTENG-BALAS v8"),
+        ("🏛️ restore_tubuh (GEN-11)", "/home/z/my-project/scripts/restore_tubuh.py",
+         "benteng/restore_tubuh.py", "GEN-11"),
+    ]
+    L = ["🧬 <b>CEK TUBUH MICROPROFITA</b>", f"🕐 {sekarang_wib()}", ""]
+    utuh = sakit = 0
+
+    def cek_repo(jalur_repo, penanda):
+        try:
+            req = urllib.request.Request(f"{REPO_RAW}/{jalur_repo}",
+                                         headers={"User-Agent": "benteng-balas"})
+            with urllib.request.urlopen(req, timeout=12) as r:
+                teks = r.read().decode("utf-8", "replace")
+            ada = penanda in teks
+            return ada, len(teks), "benteng(repo)"
+        except Exception:
+            return None, 0, "benteng(repo)"
+
+    for label, lokal, repo, penanda in baris_cek:
+        status, ukuran, sumber = None, 0, "lokal"
+        try:
+            isi = open(lokal, "rb").read()
+            status = penanda.encode() in isi
+            ukuran, sumber = len(isi), "lokal"
+        except Exception:
+            status, ukuran, sumber = cek_repo(repo, penanda)
+        if status is True:
+            utuh += 1
+            L.append(f"✅ {label} — penanda OK ({ukuran // 1024 or 1} KB, {sumber})")
+        elif status is False:
+            sakit += 1
+            L.append(f"❌ {label} — penanda versi HILANG (curiga rollback)")
+        else:
+            L.append(f"⚠️ {label} — tidak dapat diperiksa dari sini")
+    ny = umur_nyala()
+    if ny is not None and ny < 120:
+        L.append(f"💬 Penjaga lokal: <b>HIDUP</b> (denyut {ny:.0f}s lalu) — respons detik")
+    else:
+        L.append("💬 Penjaga lokal: sedang tidur — lapis abadi rantai GitHub yang bertugas")
+    L.append("")
+    if sakit == 0:
+        L.append(f" kesimpulan: <b>{utuh}/5 organ terverifikasi</b> — tubuh dalam bentuk tempur.")
+    else:
+        L.append(f"⚠️ kesimpulan: {sakit} organ dicurigai revert — restorer akan menanam ulang "
+                 "dari benteng pada kunjungan berikutnya.")
+    o = ambil_otak()
+    d = o.get("denyut") or {}
+    uw = d.get("waktu") or d.get("dihasilkan")
+    u = umur_jam(uw)
+    if u is not None:
+        L.append(f"💓 Denyut otak server terakhir: {u * 60:.0f} menit lalu")
+    L.append("")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_ping():
+    token, _ = nyawa()
+    t0 = time.time()
+    r = tg(token, "getMe", {}, coba=0) if token else {"ok": False}
+    ms = int((time.time() - t0) * 1000)
+    nama = ((r.get("result") or {}).get("username")) or "?"
+    ny = umur_nyala()
+    if ny is not None and ny < 120:
+        kondisi = f"💬 Penjaga lokal: <b>HIDUP</b> (denyut {ny:.0f}s lalu) — respons detik"
+    else:
+        kondisi = "💬 Penjaga lokal: tidur — lapis abadi rantai GitHub yang melayani (≤ ±25 dtk)"
+    return (f"🏓 <b>PONG!</b> — API Telegram <b>{ms} ms</b> "
+            f"({'lancar ⚡' if ms < 900 else 'agak lambat 🐢'})\n"
+            f"🤖 Bot: @{html.escape(str(nama))}\n"
+            f"🕐 {sekarang_wib()}\n\n{kondisi}\n\n" + KAKI)
+
+
 def cmd_bantuan():
-    return ("❓ <b>BANTUAN — PERINTAH BOT CHAT v7</b>\n\n"
+    return ("❓ <b>BANTUAN — PERINTAH BOT CHAT v8</b>\n\n"
             "/start · /menu — menu utama\n"
             "/status — kondisi sistem sekilas\n"
             "/laporan — laporan lengkap sasaran server\n"
@@ -755,7 +902,9 @@ def cmd_bantuan():
             "/sasaran — daftar sasaran otak z.ai + 4 level\n"
             "/peluang — peluang profit terbesar (arah-aware)\n"
             "/akurasi — rekam jejak & genome\n"
-            "/emas — harga emas XAU\n\n"
+            "/emas — harga emas XAU\n"
+            "/tubuh — cek integritas tubuh & benteng\n"
+            "/ping — uji kecepatan respons\n\n"
             "Atau ketik apa saja: <i>harga pepe</i>, <i>menu</i>, <i>status</i>.\n"
             "Saya hanya membalas chat pemilik — data jujur, tanpa angka karangan.\n\n"
             + KAKI)
@@ -789,6 +938,10 @@ def route(teks):
             return cmd_akurasi()
         if tl in ("emas", "xau", "gold"):
             return cmd_emas()
+        if tl in ("tubuh", "cektubuh", "kesehatan"):
+            return cmd_tubuh()
+        if tl in ("ping", "pong"):
+            return cmd_ping()
         if tl in ("bantuan", "help"):
             return cmd_bantuan()
         return ("⚠️ Perintah /" + html.escape(tl) + " belum kukenal.\n" + FALLBACK)
@@ -800,6 +953,10 @@ def route(teks):
     if "periksa" in tl or "aktivasi" in tl:
         return ("✅ <b>SAYA HIDUP</b> — merespons pesanmu langsung.\n"
                 f"🕐 {sekarang_wib()}\n\n" + FALLBACK)
+    if "tubuh" in tl or "sehat" in tl:
+        return cmd_tubuh()
+    if tl in ("ping", "pong", "tes", "test"):
+        return cmd_ping()
     if tl in ("menu", "mulai", "start", "halo", "hai", "hi", "assalamualaikum", "pagi", "siang", "malam"):
         return cmd_start()
     if "laporan" in tl or "status" in tl or "report" in tl:
@@ -863,8 +1020,7 @@ def jalankan(mode, lama_longpoll):
         d = tg(token, "getUpdates", {"offset": offset, "timeout": lama_longpoll, "limit": 20})
     except urllib.error.HTTPError as e:
         if e.code == 409:
-            print("GETUPDATES 409 (lapis lain sedang long-poll) — mundur sopan")
-            return 0
+            return 3
         print("GETUPDATES_GAGAL:", repr(e))
         return 2
     except Exception as e:
@@ -890,7 +1046,9 @@ def jalankan(mode, lama_longpoll):
         simpan_json(F_STATE, {"offset": baru, "waktu": time.time(),
                               "waktu_iso": datetime.now(timezone.utc).isoformat(),
                               "mode": mode})
-        if mode != "actions":
+        if mode == "actions":
+            _commit_offset_cepat()
+        else:
             dorong_offset_repo(baru)
         print(f"OFFSET -> {baru} | diproses: {diproses} | mode: {mode}")
     else:
@@ -905,13 +1063,43 @@ def main():
     elif "--sekali" in sys.argv:
         mode = "sekali"
     if mode == "jaga":
-        print(f"BOT-CHAT JAGA mulai {sekarang_wib()} — loop {JAGA_INTERVAL}s")
+        print(f"BOT-CHAT JAGA v8 mulai {sekarang_wib()} — long-poll {LONG_POLL['jaga']}s")
+        token, _ = nyawa()
+        if token:
+            umum_hidup(token)
+        siklus = 0
         while True:
+            tulis_nyala(mode)
             try:
                 jalankan(mode, LONG_POLL["jaga"])
             except Exception as e:
                 print("LOOP_ERR:", repr(e))
+            siklus += 1
+            if siklus % 15 == 0:
+                print(f"jaga hidup: siklus {siklus}")
             time.sleep(JAGA_INTERVAL)
+    if mode == "actions":
+        t0 = time.time()
+        konflik = 0
+        while time.time() - t0 < RUN_LAMA_ACTIONS:
+            sisa = RUN_LAMA_ACTIONS - (time.time() - t0)
+            try:
+                kode = jalankan("actions", max(5, min(int(LONG_POLL["actions"]), int(sisa))))
+                if kode == 3:
+                    konflik += 1
+                    print(f"409 (#{konflik}) — lapis lain sedang melayani, tunggu 45s")
+                    if konflik >= 3:
+                        print("409 3x — tubuh lokal hidup & melayani; run ini istirahat")
+                        return 0
+                    time.sleep(45)
+                    continue
+                konflik = 0
+            except Exception as e:
+                print("LOOP_ACTIONS_ERR:", repr(e))
+                time.sleep(10)
+            time.sleep(2)
+        print("JENDELA AKTIF SELESAI — run berikutnya dipancing langkah Warisi hidup")
+        return 0
     return jalankan(mode, LONG_POLL["actions"])
 
 
