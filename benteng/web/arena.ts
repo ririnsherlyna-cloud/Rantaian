@@ -299,7 +299,7 @@ interface ScoredPick {
  *  lolos/ditolak guard = pembagian di dalam daftar (tidak ada yang dibuang). */
 export interface SlotReport {
   day?: string
-  k: number // slot tempur (50 — hukum pemilik V301)
+  k: number // slot tempur (100 — hukum pemilik V301/V303)
   lahir: number // baris lahir (= masuk)
   dipindai: number | null
   dianalisa: number
@@ -914,6 +914,114 @@ async function runArena() {
   const allDaysNeeded = [...todo, ...(pendingToday ? [] : [today])]
   for (const d of allDaysNeeded) ctxCache.set(d, await buildDayContext(d, klines, btcAll, klines4h))
 
+  // 5f-PINDAH-DEPAN (V305, 27 Okt): pelajaran dev.log — runArena kerap kena
+  // batas 8 menit (watchdog) SEBELUM sempat sampai ke 5f di bawah, karena
+  // badai LLM 429 membakar waktu di langkah skor. Maka re-decide DAFTAR-100
+  // dijalankan DI SINI — konteks siap (rs/ctxCache/dipindai/qvOf), belum
+  // menyentuh langkah LLM berat. Blok asli di bawah tetap ada sebagai
+  // fallback (setelah sukses, kondisi versi membuatnya no-op).
+  if (pendingToday && (await getMeta('liveDecisionVersion')) !== '11a-v303-daftar-100') {
+   try {
+    const existingMine = await db.pick.findMany({ where: { battleDayId: pendingToday.id, competitor: 'MICAPROFITA' } })
+    const vetoMap = new Map<string, string>()
+    const vetoReport: { symbol: string; reason: string }[] = []
+    for (const p of existingMine) {
+      const ev = safeJson(p.evidence) as { verdict?: { kind?: string; note?: string } }
+      if (ev.verdict?.kind === 'VETO') {
+        const alasan = `VONIS VETO LLM (tersimpan): ${ev.verdict.note ?? ''}`
+        vetoMap.set(p.symbol, alasan)
+        vetoReport.push({ symbol: p.symbol, reason: alasan })
+      }
+    }
+    const liveCutoff = Math.floor(Date.now() / (4 * 3600_000)) * 4 * 3600_000
+    const ctx = ctxCache.get(today) ?? (await buildDayContext(today, klines, btcAll, klines4h, liveCutoff))
+    const mem = await loadMemoryLookup()
+    const rebuilt = buildAllPicks(ctx, rs, aiResults.get(today) ?? null, undefined, mem, await bukuUntukKortex(), qvOf, dipindai, vetoMap)
+    let picks = susunDaftarPicks(rebuilt.out
+      .filter((p) => p.direction === 'MICAPROFITA'))
+    let slotLive: SlotReport = rebuilt.slot
+
+    // funding info (chip, bukan filter)
+    try {
+      const fundMap = await getFundingRates(picks.map((p) => p.pick.symbol))
+      for (const p of picks) {
+        const f = fundMap.get(p.pick.symbol)
+        if (f) (p.evidence as Record<string, unknown>).funding = { rate: f.rate, pct: Math.round(f.rate * 10000) / 100, at: new Date().toISOString() }
+      }
+    } catch { /* opsional */ }
+
+    // V250 WARISAN MASUK ARENA — re-decide juga menghitung ulang warisan + tangga
+    try { await kayaWarisanHariHidup(picks, today, ctx, await getMeta('sadardiriTrimUntil'), klines) } catch (e) { console.error('[arena] warisan re-decide gagal:', e) }
+
+    // vonis ulang sasaran teratas yang belum ber-verdict (kecuali yang di-veto lama)
+    const needVonis = picks
+      .filter((p) => !vetoMap.has(p.pick.symbol))
+      .filter((p) => (p.evidence as { guard?: string }).guard !== 'DITOLAK')
+      .slice(0, 6)
+    if (needVonis.length > 0) {
+      try {
+        const vonis = await vonisLivePicks(
+          needVonis.map((p) => ({ symbol: p.pick.symbol, confidence: p.pick.confidence, topReasons: ((p.evidence.topReasons ?? []) as string[]) })),
+          ctx.regime.note,
+        )
+        const flat = needVonis.map((p) => ({ symbol: p.pick.symbol, confidence: p.pick.confidence, evidence: p.evidence, ref: p }))
+        const res = applyVonis(flat, vonis)
+        for (const f of flat) f.ref.pick.confidence = f.confidence
+        for (const v of res.vetoed) {
+          const target = flat.find((x) => x.symbol === v.symbol)
+          if (target) {
+            const ev = target.evidence as Record<string, unknown>
+            ev.guard = 'DITOLAK'
+            ev.guardAlasan = `VONIS VETO LLM (re-decide): ${v.note}`
+          }
+          await db.arenaEvent.create({
+            data: { day: today, kind: 'VONIS', text: `VONIS VETO (re-decide V301): ${v.symbol} diturunkan ke peringkat bawah (tetap tampil — hukum anti-buang) — ${v.note}` },
+          })
+        }
+        for (const w of res.warned) {
+          await db.arenaEvent.create({
+            data: { day: today, kind: 'VONIS', text: `VONIS PERINGATAN (re-decide V301): ${w.symbol} keyakinan dipangkas — ${w.note}` },
+          })
+        }
+        picks = susunDaftarPicks(picks)
+        slotLive = slotDariPicks(picks, rebuilt.daftarStats)
+      } catch (e) {
+        console.error('[arena] vonis re-decide gagal (pick kuant berdiri):', e)
+      }
+    }
+
+    // V273 PENGUAT — dedupe simbol (otak bisa menyodorkan simbol sama lewat
+    // dua slot) dan JANGAN biarkan kegagalan re-decide mematikan seluruh denyut.
+    const terlihat = new Set<string>()
+    const unik = picks.filter((p) => {
+      if (terlihat.has(p.pick.symbol)) return false
+      terlihat.add(p.pick.symbol)
+      return true
+    })
+    await db.pick.deleteMany({ where: { battleDayId: pendingToday.id, competitor: 'MICAPROFITA' } })
+    for (const p of unik) {
+      if (!Number.isFinite(p.entryClose)) continue
+      await db.pick.create({
+        data: {
+          battleDayId: pendingToday.id, competitor: 'MICAPROFITA', symbol: p.pick.symbol,
+          direction: p.pick.direction, confidence: p.pick.confidence, entryClose: p.entryClose,
+          evidence: JSON.stringify(p.evidence),
+        },
+      })
+    }
+    // V274/V301 — laporan slot ikut diterbitkan saat re-decide
+    try { await setMeta('slotHariIni', JSON.stringify({ day: today, ...slotLive, ditolak: [...vetoReport, ...slotLive.ditolak].slice(0, 12) })) } catch { /* non-vital */ }
+    await setMeta('liveDecisionVersion', '11a-v303-daftar-100')
+    await db.arenaEvent.create({
+      data: { day: today, kind: 'UPGRADE', text: `Hari hidup diputuskan ULANG dengan otak V303 DAFTAR TEMPUR 100 (PINDAH-DEPAN V305): K=${SLOT_TEMPUR} slot penuh hari ini juga (hukum pemilik V303/V304), pindaian futures penuh, guard anti-buang berlabel${vetoMap.size ? `; veto vonis lama dihormati: ${[...vetoMap.keys()].join(', ')}` : ''}.` },
+    })
+   } catch (e) {
+    // V273 PENGUAT — kegagalan re-decide TIDAK BOLEH mematikan seluruh denyut;
+    // pick lama tetap berdiri, versi tidak dinaikkan (blok asli di bawah mencoba lagi).
+    console.error('[arena] re-decide pindah-depan gagal (pick lama dipertahankan):', e)
+   }
+  }
+
   const aiJobs = allDaysNeeded.map((d) => ({ d, isToday: d === today }))
   const CONC = 4
   for (let i = 0; i < aiJobs.length; i += CONC) {
@@ -1228,9 +1336,12 @@ async function runArena() {
   //     V278: versi dinaikkan agar setiap pick hari hidup lahir lagi lewat
   //     DEBAT-AGENTIK (evidence.debat + kewajiban "Debat tim merah").
   //   V279 KORTEX-KESADARAN (evidence.kortex + kewajiban "KORTEX karangan-sendiri").
-  //   V301 DAFTAR TEMPUR: otak kuant berganti decideDaftar — K=50, guard
-  //     berlabel anti-buang, pindaian futures penuh, arah pasti per koin.
-  const LIVE_DECISION_VERSION = '10c-v301-daftar-50'
+  //   V301 DAFTAR TEMPUR: otak kuant berganti decideDaftar — K=SLOT_TEMPUR,
+  //     guard berlabel anti-buang, pindaian futures penuh, arah pasti per koin.
+  //   V304 (mandat pemilik): versi dinaikkan agar daftar hari ini yang lahir
+  //     saat masih K=50 dibangun ulang SEKARANG menjadi 100 slot penuh —
+  //     pemilik tidak perlu menunggu besok.
+  const LIVE_DECISION_VERSION = '11a-v303-daftar-100'
   if (pendingToday && (await getMeta('liveDecisionVersion')) !== LIVE_DECISION_VERSION) {
    try {
     const existingMine = await db.pick.findMany({ where: { battleDayId: pendingToday.id, competitor: 'MICAPROFITA' } })
@@ -1245,8 +1356,12 @@ async function runArena() {
       }
     }
     const liveCutoff = Math.floor(Date.now() / (4 * 3600_000)) * 4 * 3600_000
-    const ctx = ctxCache.get(today) ?? (await buildDayContext(today, klines, btcAll, klines4h, liveCutoff))
     const mem = await loadMemoryLookup()
+    // V304 KONTEKS-SEGAR: JANGAN percaya ctxCache saat re-decide versi baru.
+    // Pelajaran 27 Okt: ctx hari ini dibuat saat DAFTAR_POOL masih 90 ->
+    // dianalisa hanya 89 faktor -> 100 slot mustahil terisi dari cache basi.
+    // Konteks segar memakai pool 150 -> 100 slot lahir penuh.
+    const ctx = await buildDayContext(today, klines, btcAll, klines4h, liveCutoff)
     const rebuilt = buildAllPicks(ctx, rs, aiResults.get(today) ?? null, undefined, mem, await bukuUntukKortex(), qvOf, dipindai, vetoMap)
     let picks = susunDaftarPicks(rebuilt.out
       .filter((p) => p.direction === 'MICAPROFITA'))
@@ -1324,7 +1439,7 @@ async function runArena() {
     try { await setMeta('slotHariIni', JSON.stringify({ day: today, ...slotLive, ditolak: [...vetoReport, ...slotLive.ditolak].slice(0, 12) })) } catch { /* non-vital */ }
     await setMeta('liveDecisionVersion', LIVE_DECISION_VERSION)
     await db.arenaEvent.create({
-      data: { day: today, kind: 'UPGRADE', text: `Hari hidup diputuskan ULANG dengan otak V301 DAFTAR TEMPUR: K=50 slot (hukum pemilik), pindaian futures penuh, guard anti-buang berlabel${vetoMap.size ? `; veto vonis lama dihormati: ${[...vetoMap.keys()].join(', ')}` : ''}.` },
+      data: { day: today, kind: 'UPGRADE', text: `Hari hidup diputuskan ULANG dengan otak V303 DAFTAR TEMPUR 100: K=${SLOT_TEMPUR} slot penuh hari ini juga (hukum pemilik V303/V304), pindaian futures penuh, guard anti-buang berlabel${vetoMap.size ? `; veto vonis lama dihormati: ${[...vetoMap.keys()].join(', ')}` : ''}.` },
     })
    } catch (e) {
     // V273 PENGUAT — kegagalan re-decide TIDAK BOLEH mematikan seluruh denyut;
@@ -1669,7 +1784,7 @@ export async function getArenaState() {
     chart,
     pulse,
     climate: climate ? { fng: climate.fng, fngClass: climate.fngClass, mcapChange24h: climate.mcapChange24h === null ? null : Math.round(climate.mcapChange24h * 100) / 100, btcDominance: climate.btcDominance === null ? null : Math.round(climate.btcDominance * 10) / 10, at: climate.at } : null,
-    // V301 DAFTAR TEMPUR — 50 baris penuh (lolos + ditolak berlabel). Bukti
+    // V301/V303 DAFTAR TEMPUR — 100 baris penuh (lolos + ditolak berlabel). Bukti
     // berat (debat/kortex/warisan) hanya diterbitkan utk 6 teratas — payload
     // tetap ramping untuk polling 6 dtk; daftar TIDAK pernah dipangkas.
     todayPicks: (() => {
@@ -1700,7 +1815,7 @@ export async function getArenaState() {
             guardAlasan:
               'KOIN WAJIB pemilik: XAU (emas) selalu hadir apa pun kondisi — tidak ikut eliminasi',
             topReasons: [
-              'Hukum pemilik V302: emas = koin wajib harian (50 sasaran + 1 XAU)',
+              'Hukum pemilik V302/V303: emas = koin wajib harian (100 sasaran + 1 XAU)',
               `Harga emas ${emas.source} · 24j ${emas.chg24hPct == null ? 'null (arah default)' : emas.chg24hPct.toFixed(2) + '%'}`,
               'Rencana level = formulasi volatilitas 24 jam (bukan ATR penuh) — jujur dilabeli',
             ],
