@@ -273,58 +273,93 @@ def _tickers_okx(bases):
         return {}
 
 
+def _tickers_futures(bases):
+    """Ticker FUTURES Binance (fapi, publik, tanpa kunci). Pelajaran 27 Okt:
+    pilihan otak z.ai (arena) banyak yang futures-only (DODOX/BULLA/TAG/IRYS
+    dst) — bukan spot Binance. Harga tetap dari Binance, bukan bursa lain."""
+    try:
+        req = urllib.request.Request("https://fapi.binance.com/fapi/v1/ticker/price",
+                                     headers={"User-Agent": "microprofita-hb"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            arr = json.loads(r.read().decode())
+        out = {}
+        for x in arr if isinstance(arr, list) else []:
+            s = str(x.get("symbol") or "")
+            if s.endswith("USDT") and s[:-4] in bases:
+                try:
+                    out[s[:-4]] = float(x.get("price"))
+                except (TypeError, ValueError):
+                    continue
+        return out
+    except Exception:
+        return {}
+
+
 def harga_binance(simbol_list):
-    """Kembalikan ({basis: harga}, sumber). Binance data-vision (publik, tanpa kunci).
-    Resilien berlapis: normalisasi simbol + fallback per-simbol + bursa cadangan
-    Bybit/OKX — satu simbol rusak TIDAK boleh membutakan penjaga TP (pelajaran
-    siklus 1235/SYNUSDT), dan Binance kadang memblokir IP sandbox dengan 418
-    (pelajaran 27 Okt) -> bursa cadangan menyelamatkan laporan."""
+    """Kembalikan ({basis: harga}, sumber). Resilien berlapis (pelajaran 27 Okt):
+    batch DI-CHUNK (5 simbol/chunk) agar 1 simbol tak-valid TIDAK mematikan
+    seluruh batch (400) — chunk gagal diambil per-simbol, sisa diambil dari
+    bursa cadangan Bybit/OKX bila Binance memblokir IP (418). Normalisasi simbol
+    tetap: SYNUSDT->SYN; satu simbol rusak tak boleh membutakan penjaga TP."""
     if not simbol_list:
         return {}, "binance"
     bases = sorted({b for b in (_basis_simbol(s) for s in simbol_list) if b})
     if not bases:
         return {}, "binance"
-    pairs = [f"{b}USDT" for b in bases]
-    q = urllib.parse.quote(json.dumps(pairs, separators=(",", ":")))
-    err_terakhir = None
-    for host in (BINANCE, "https://api.binance.com/api/v3/ticker/price",
-                 "https://api-gcp.binance.com/api/v3/ticker/price"):
-        try:
-            req = urllib.request.Request(f"{host}?symbols={q}", headers={"User-Agent": "microprofita-hb"})
-            with urllib.request.urlopen(req, timeout=20) as r:
-                arr = json.loads(r.read().decode())
-            if isinstance(arr, dict):
-                err_terakhir = f"body-dict: {str(arr)[:120]}"
-                continue
-            return {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}, "binance"
-        except Exception as e:
-            err_terakhir = repr(e)
-    # canari per-simbol: 3 pertama menentukan — bila ada yang berhasil, Binance hidup
-    out = {}
-    for b in bases[:3]:
-        try:
-            req = urllib.request.Request(f"{BINANCE}/api/v3/ticker/price?symbol={b}USDT",
-                                         headers={"User-Agent": "microprofita-hb"})
-            with urllib.request.urlopen(req, timeout=10) as r:
-                out[b] = float(json.loads(r.read().decode())["price"])
-        except Exception:
-            continue
-    if out:
-        for b in bases[3:]:
+    hosts = (BINANCE, "https://api.binance.com/api/v3/ticker/price",
+             "https://api-gcp.binance.com/api/v3/ticker/price")
+    out, err_terakhir = {}, None
+    for i in range(0, len(bases), 5):
+        chunk = bases[i:i + 5]
+        pairs = [f"{b}USDT" for b in chunk]
+        q = urllib.parse.quote(json.dumps(pairs, separators=(",", ":")))
+        dapat = None
+        for host in hosts:
             try:
-                req = urllib.request.Request(f"{BINANCE}/api/v3/ticker/price?symbol={b}USDT",
-                                             headers={"User-Agent": "microprofita-hb"})
-                with urllib.request.urlopen(req, timeout=10) as r:
-                    out[b] = float(json.loads(r.read().decode())["price"])
-            except Exception:
-                continue
-        print(f"HARGA_FALLBACK: {len(out)}/{len(bases)} simbol (batch gagal: {err_terakhir})")
-        return out, "binance"
-    # ---- bursa cadangan: Binance memblokir IP (418) / mati jaringan ----
-    gab = {**_tickers_okx(bases), **_tickers_bybit(bases)}
-    if gab:
-        print(f"HARGA_CADANGAN: {len(gab)}/{len(bases)} dari Bybit/OKX (Binance: {err_terakhir})")
-        return gab, "bybit+okx"
+                req = urllib.request.Request(f"{host}?symbols={q}", headers={"User-Agent": "microprofita-hb"})
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    arr = json.loads(r.read().decode())
+                if isinstance(arr, list):
+                    dapat = {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}
+                    break
+            except Exception as e:
+                err_terakhir = repr(e)
+        if dapat is None:
+            # chunk ini sakit (simbol tak-valid / IP diblokir) -> per-simbol
+            # (BINANCE sudah memuat path /api/v3/ticker/price — JANGAN dobel path!)
+            for b in chunk:
+                try:
+                    req = urllib.request.Request(f"{BINANCE}?symbol={b}USDT",
+                                                 headers={"User-Agent": "microprofita-hb"})
+                    with urllib.request.urlopen(req, timeout=10) as r:
+                        out[b] = float(json.loads(r.read().decode())["price"])
+                except Exception as e:
+                    err_terakhir = repr(e)
+        else:
+            out.update(dapat)
+    sumber = "binance"
+    hilang = [b for b in bases if b not in out]
+    if hilang and out:
+        # 1) futures Binance (pilihan arena sering futures-only) — masih Binance
+        fut = _tickers_futures(set(hilang))
+        if fut:
+            out.update(fut)
+            hilang = [b for b in hilang if b not in fut]
+        # 2) sisa benar-benar tak ada di Binance -> bursa cadangan
+        if hilang:
+            cad = {**_tickers_okx(set(hilang)), **_tickers_bybit(set(hilang))}
+            if cad:
+                out.update(cad)
+                sumber = "binance+futures+bybit/okx"
+    elif not out:
+        gab = {**_tickers_futures(set(bases)), **_tickers_okx(set(bases)), **_tickers_bybit(set(bases))}
+        if gab:
+            print(f"HARGA_CADANGAN: {len(gab)}/{len(bases)} (Binance: {err_terakhir})")
+            return gab, "bybit+okx"
+    if out:
+        if len(out) < len(bases):
+            print(f"HARGA parsial: {len(out)}/{len(bases)} (Binance: {err_terakhir})")
+        return out, sumber
     print("HARGA_GAGAL:", err_terakhir)
     return {}, "gagal"
 
@@ -464,8 +499,8 @@ def main():
         L.append(f"Status: <b>HIDUP</b> — {gap_menit:.0f} menit sejak detak terakhir")
 
     L.append("")
-    if harga_map and sumber_harga == "bybit+okx":
-        L.append("💱 Harga dari <b>Bybit/OKX</b> (Binance sedang memblokir IP sandbox) — beda tipis antar bursa wajar.")
+    if harga_map and sumber_harga in ("bybit+okx", "binance+futures+bybit/okx"):
+        L.append(f"💱 Harga dari <b>{html.escape(sumber_harga)}</b> — sebagian/seluruhnya dari futures Binance / bursa cadangan; beda tipis antar pasar wajar.")
     # ---- section OTAK Z.AI (persis seperti web) ----
     if zai_picks:
         seg_z = "live dari web" if zai_hidup else "CACHE (web sedang tak terjangkau)"
