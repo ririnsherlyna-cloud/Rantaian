@@ -138,10 +138,23 @@ def label_sentuh(sim, arah, level_nama, level_nilai, harga, entry):
             + (f" · entry {fmt_harga(entry)} ({pct})" if entry else ""))
 
 
+def _basis_simbol(s):
+    """'IOST'->'IOST', 'SYNUSDT'->'SYN' (otak kadang menulis pasangan utuh)."""
+    s = str(s).strip().upper()
+    if s.endswith("USDT") and len(s) > 4:
+        s = s[:-4]
+    return s if s.isalnum() else None
+
+
 def harga_binance(simbol_list):
+    """Resilien: normalisasi simbol + fallback per-simbol — satu simbol rusak
+    TIDAK boleh membutakan seluruh penjaga TP (pelajaran siklus 1235/SYNUSDT)."""
     if not simbol_list:
         return {}, False
-    pairs = [f"{s}USDT" for s in simbol_list]
+    bases = sorted({b for b in (_basis_simbol(s) for s in simbol_list) if b})
+    if not bases:
+        return {}, False
+    pairs = [f"{b}USDT" for b in bases]
     q = urllib.parse.quote(json.dumps(pairs, separators=(",", ":")))
     for host in ("https://data-api.binance.vision/api/v3/ticker/price",
                  "https://api.binance.com/api/v3/ticker/price"):
@@ -153,7 +166,18 @@ def harga_binance(simbol_list):
                 return {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}, True
         except Exception:
             continue
-    return {}, False
+    # fallback per-simbol
+    out = {}
+    for b in bases:
+        try:
+            req = urllib.request.Request(
+                f"https://data-api.binance.vision/api/v3/ticker/price?symbol={b}USDT",
+                headers={"User-Agent": "benteng-abadi"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                out[b] = float(json.loads(r.read().decode())["price"])
+        except Exception:
+            continue
+    return out, bool(out)
 
 
 def kirim_telegram(token, chat_id, text):
