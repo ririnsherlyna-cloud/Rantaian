@@ -12,9 +12,10 @@ API = f"https://api.github.com/repos/{REPO}/contents"
 HEAD = {"Authorization": f"Bearer {open('/home/z/my-project/.token-rantaian').read().strip()}",
         "User-Agent": "microprofita-hb", "Accept": "application/vnd.github+json"}
 PETA = [
-    ("benteng/heartbeat_local.py", "/home/z/my-project/scripts/heartbeat.py", "GEN-8"),
+    ("benteng/heartbeat_local.py", "/home/z/my-project/scripts/heartbeat.py", "GEN-"),
     ("benteng/web/emas.ts", "/home/z/my-project/src/lib/cyborg/emas.ts", "getEmas"),
     ("benteng/web/arena.ts", "/home/z/my-project/src/lib/cyborg/arena.ts", "XAUUSDT"),
+    ("benteng/web/brain.ts", "/home/z/my-project/src/lib/cyborg/brain.ts", "SLOT_TEMPUR"),
 ]
 
 def ambil(path):
@@ -32,16 +33,26 @@ for sumber, tujuan, penanda in PETA:
         ok = penanda in teks
         try:
             os.makedirs(os.path.dirname(tujuan), exist_ok=True)
-            if not os.path.exists(tujuan) or open(tujuan, "rb").read() != isi:
+            lokal_ada = os.path.exists(tujuan)
+            lokal_isi = open(tujuan, "rb").read() if lokal_ada else b""
+            lokal_punya_penanda = penanda.encode("utf-8") in lokal_isi
+            if not lokal_ada:
                 open(tujuan, "wb").write(isi)
-                aksi = "DIPULIHKAN"
-            else:
+                aksi = "DIPULIHKAN (file hilang)"
+            elif lokal_isi == isi:
                 aksi = "sudah sama"
+            elif lokal_punya_penanda and not ok:
+                aksi = "LOKAL LEBIH BARU (punya penanda, benteng belum) -> dibiarkan; jalankan tanam_zai_bridge.py untuk sinkron"
+            elif ok and not lokal_punya_penanda:
+                open(tujuan, "wb").write(isi)
+                aksi = "DIPULIHKAN (lokal miskin, benteng kaya)"
+            else:
+                aksi = "BEDA TANPA PENANDA JELAS -> dibiarkan (jangan menimpa kerja lokal); sinkron via tanam"
+            if aksi.startswith("DIPULIHKAN") and os.path.basename(tujuan) == "heartbeat.py":
+                os.chmod(tujuan, 0o755)
         except Exception as e:
             hasil.append(f"GAGAL tulis {tujuan}: {repr(e)[:80]}")
             continue
-        if os.path.basename(tujuan) == "heartbeat.py":
-            os.chmod(tujuan, 0o755)
         hasil.append(f"{aksi} {tujuan} (penanda '{penanda}': {'OK' if ok else 'HILANG!'})")
     except Exception as e:
         hasil.append(f"GAGAL ambil {sumber}: {repr(e)[:80]}")
