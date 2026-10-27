@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-HEARTBEAT MICROPROFITA GEN-8 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level.
+HEARTBEAT MICROPROFITA GEN-9 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level.
+V303 (27 Okt): daftar 100 koin + 6 field wajib per koin teratas (entry, kini, TP,
+Jual Ambisius, Power Max Ambisius, Stop) + header FRESH tanggal + NOTIFIKASI WAJIB
+setiap koin yang mencapai Jual Ambisius / Power Max / TP / Stop hari ini.
 GEN-8 PENGAMAN-BENTENG: jembatan TIDAK MENIMPA snapshot benteng yang lebih kaya
 (pelajaran 27 Okt: rollback disk #4/#5 + bootstrap otak -> snapshot kosong nyaris
 menghapus 10 sasaran bagus dari benteng; kini benteng = memori jangka panjang).
@@ -49,7 +52,9 @@ F_ZAI_CACHE = os.path.join(DATA, "zai_picks_last.json")
 F_ZAI_BRIDGE = os.path.join(DATA, "zai_bridge_state.json")
 F_PAT_RANTAIAN = os.path.join(BASE, ".token-rantaian")
 REPO_RANTAIAN = "ririnsherlyna-cloud/Rantaian"
-ZAI_JUMLAH = 10  # 10 teratas by keyakinan (dari ~50 pilihan lahir)
+ZAI_SIMPAN = 120  # V303: simpan SEMUA pilihan (100 koin + XAU) ke snapshot & benteng
+ZAI_TAMPIL = 12   # V303: 12 teratas diperagakan penuh (6 field wajib) di laporan Telegram
+ZAI_JUMLAH = ZAI_TAMPIL  # kompatibilitas kode lama
 LABEL_LEVEL = {"TP": "TP SASARAN", "JUAL AMBISIUS": "JUAL AMBISIUS",
                "POWER MAX AMBISIUS": "POWER MAX AMBISIUS", "STOP": "STOP (batal)"}
 
@@ -126,17 +131,18 @@ def otak_zai():
                 continue
             entri = {"simbol": str(sim).upper(), "arah": str(p.get("direction") or "?").upper(),
                      "keyakinan": p.get("confidence"), "entry": float(p.get("entryClose"))}
-            # V302-LEVEL (hukum V273 + mandat pemilik "laporan senantiasa komplit"):
-            # baris XAU wajib membawa rencana lengkap TP / JUAL AMBISIUS / STOP
-            # dari bukti web — tiga level berbeda, TIDAK boleh disamakan.
+            # V303 LEVEL-WAJIB-4 — SEMUA koin membawa 4 level dari bukti web:
+            # TP (target) / Jual Ambisius (highAmbisius) / Power Max / Stop.
+            rn = ((p.get("evidence") or {}).get("rencana") or {})
+            if isinstance(rn, dict):
+                for k_sumber, k_tujuan in (("target", "target"), ("highAmbisius", "ambisius"),
+                                           ("powerMax", "powermax"), ("stop", "stop")):
+                    v = rn.get(k_sumber)
+                    if isinstance(v, (int, float)) and v > 0:
+                        entri[k_tujuan] = float(v)
+            # V302-LEVEL — baris XAU wajib membawa rencana lengkap dan ditandai wajib
             if entri["simbol"] == "XAUUSDT":
                 entri["wajib"] = True
-                rn = ((p.get("evidence") or {}).get("rencana") or {})
-                if isinstance(rn, dict):
-                    for k_sumber, k_tujuan in (("target", "target"), ("highAmbisius", "ambisius"), ("stop", "stop")):
-                        v = rn.get(k_sumber)
-                        if isinstance(v, (int, float)) and v > 0:
-                            entri[k_tujuan] = float(v)
             picks.append(entri)
         xau = next((p for p in picks if p["simbol"] == "XAUUSDT"), None)
         for p in picks:
@@ -150,15 +156,17 @@ def otak_zai():
         snap = {"waktu": datetime.now(timezone.utc).isoformat(),
                 "sumber": "otak-zai-web(arena)", "regime": d.get("regime"),
                 "dianalisa": slot.get("dianalisa"), "lahir": slot.get("lahir"),
+                # V303 DATA-FRESH — kejujuran tanggal: hari data & lag & stale
+                "hariData": d.get("dataDay"), "lag": d.get("dataLagHari"), "stale": d.get("stale"),
                 "total": len(koin) + (1 if xau else 0),
-                "picks": koin[:ZAI_JUMLAH], "xau": xau}
+                "picks": koin[:ZAI_SIMPAN], "xau": xau}
         # GEN-8 PENGAMAN-CACHE: web hidup tapi picks MISKIN (otak sedang
         # bootstrap/LLM 429 pasca-rollback) -> jangan timpa cache kaya dengan
         # kosongan; laporkan cache terakhir dengan label jujur (V302: laporan
         # senantiasa kumplit + kejujuran sumber tetap terjaga).
         cache_lama = muat_json_lokal(F_ZAI_CACHE) or {}
         lama_picks = cache_lama.get("picks") or []
-        if len(koin[:ZAI_JUMLAH]) < len(lama_picks) and cache_lama.get("sumber"):
+        if len(koin[:ZAI_SIMPAN]) < len(lama_picks) and cache_lama.get("sumber"):
             snap_lama = dict(cache_lama)
             snap_lama["waktu"] = datetime.now(timezone.utc).isoformat()
             snap_lama["sumber"] = (f"cache(benteng-lokal) — otak web sedang pulih "
@@ -175,12 +183,18 @@ def otak_zai():
 
 def _xau_wajib_sintesis(ket):
     """XAU WAJIB tidak boleh absen: bila otak z.ai tidak membawanya,
-    heartbeat mensintesiskan barisnya sendiri dari harga emas live."""
+    heartbeat mensintesiskan barisnya sendiri dari harga emas live.
+    V303: membawa 4 level (TP/Ambisius/PowerMax/Stop) formulasi-vol
+    dengan label jujur — level tidak boleh kosong."""
     h, chg, src = harga_xau()
     if h:
         arah = "SELL" if (chg is not None and chg < 0) else "BUY"
+        sisi = -1 if arah == "SELL" else 1
+        vol = max(abs(chg) / 100, 0.004) if chg is not None else 0.006
         return {"simbol": "XAUUSDT", "arah": arah, "keyakinan": 60, "entry": h,
-                "wajib": True, "ket": f"disintesis heartbeat ({ket}; sumber {src})"}
+                "target": h * (1 + sisi * vol), "ambisius": h * (1 + sisi * 2 * vol),
+                "powermax": h * (1 + sisi * 3 * vol), "stop": h * (1 - sisi * max(vol * 0.6, 0.003)),
+                "wajib": True, "ket": f"disintesis heartbeat ({ket}; sumber {src}; level formulasi-vol)"}
     return {"simbol": "XAUUSDT", "arah": "?", "keyakinan": None, "entry": None,
             "wajib": True, "ket": f"gagal ambil harga emas semua sumber ({ket})"}
 
@@ -477,6 +491,55 @@ def harga_binance(simbol_list):
 
 
 # ---------------- pemantau TP ----------------
+F_ARENA_LEVEL = os.path.join(DATA, "arena_level_state.json")
+
+
+def pantau_level_arena(picks, xau, harga_map, xau_h):
+    """V303 NOTIFIKASI WAJIB (mandat pemilik 27 Okt): setiap koin otak z.ai
+    (dan XAU) yang mencapai Jual Ambisius / Power Max / TP / Stop menurut
+    data hari ini WAJIB dinotifikasikan. Dedup via data/arena_level_state.json
+    (sekali per simbol:level; setelah rollback state bisa terhapus -> notifikasi
+    berulang = deteksi jujur ulang, bukan bohong)."""
+    if not isinstance(harga_map, dict):
+        harga_map = {}
+    state = muat_json_lokal(F_ARENA_LEVEL) or {}
+    kunci_semua, kejadian = set(), []
+    daftar = [p for p in (picks or []) if isinstance(p, dict) and p.get("entry")]
+    if isinstance(xau, dict) and xau.get("entry"):
+        daftar.append(xau)
+    for p in daftar:
+        sim = p.get("simbol")
+        if not sim:
+            continue
+        if sim == "XAUUSDT":
+            h = xau_h
+        else:
+            h = harga_map.get(_basis_simbol(sim) or sim)
+        if not h:
+            continue
+        arah = str(p.get("arah") or "BUY").upper()
+        ent = p.get("entry")
+        levels = (("TP SASARAN", p.get("target")), ("JUAL AMBISIUS", p.get("ambisius")),
+                  ("POWER MAX AMBISIUS", p.get("powermax")), ("STOP (batal)", p.get("stop")))
+        for nama, lv in levels:
+            if not isinstance(lv, (int, float)) or lv <= 0:
+                continue
+            if nama.startswith("STOP"):
+                tercapai = (h <= lv) if arah == "BUY" else (h >= lv)
+            else:
+                tercapai = (h >= lv) if arah == "BUY" else (h <= lv)
+            kunci = f"{sim}:{nama}"
+            kunci_semua.add(kunci)
+            if tercapai and kunci not in state:
+                kejadian.append((sim, arah, nama, lv, h, ent, False))
+    if kunci_semua - set(state):
+        state.update({k: datetime.now(timezone.utc).isoformat() for k in kunci_semua - set(state)})
+        if len(state) > 600:  # pangkas tertua (ISO string urut alfabet = urut waktu)
+            state = dict(sorted(state.items(), key=lambda kv: kv[1])[-500:])
+        simpan_json(F_ARENA_LEVEL, state)
+    return kejadian
+
+
 def pantau_level(sasaran_list, harga_map):
     """Bandingkan dengan snapshot detak lalu -> daftar kejadian sentuhan baru.
     Pemanasan: detak pertama berk harga / sasaran baru -> hanya dicatat, tidak diberitahu."""
@@ -603,6 +666,9 @@ def main():
     else:
         # detak pertama: tetap inisialisasi snapshot agar detak berikut membandingkan
         kejadian, n_dipantau = pantau_level(daftar, harga_map) if daftar else ([], 0)
+    # V303 NOTIFIKASI WAJIB — sentuhan level sasaran arena (100 koin + XAU):
+    kejadian_arena = pantau_level_arena(zai_picks, zai_xau, harga_map, xau_h)
+    kejadian = list(kejadian) + list(kejadian_arena)
 
     # ---- susun pesan ----
     jam = datetime.now(WIB)
@@ -622,21 +688,22 @@ def main():
     x_konf = zai_xau.get("keyakinan")
     x_kini = xau_h if xau_h else None
     x_jarak = f"{(x_kini / x_ent - 1) * 100:+.2f}%" if (x_kini and x_ent) else "-"
-    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (50 sasaran + 1 XAU, hukum pemilik V302)")
+    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (100 sasaran + 1 XAU, hukum pemilik V302+V303)")
     if xau_h:
         chg_s = f" · 24 jam {xau_chg:+.2f}%" if xau_chg is not None else ""
         L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · "
                  f"entry {fmt_harga(x_ent)} · kini <b>{fmt_harga(x_kini)}</b> ({x_jarak}){chg_s}")
-        # V302-LEVEL — laporan emas KOMPLIT: tiga level terpisah (hukum pemilik:
-        # TP sasaran ≠ Jual Ambisius — jangan pernah disamakan).
-        x_tg, x_am, x_st = zai_xau.get("target"), zai_xau.get("ambisius"), zai_xau.get("stop")
-        if x_tg or x_am or x_st:
+        # V302-LEVEL + V303 — laporan emas KOMPLIT: EMPAT level terpisah (hukum
+        # pemilik: TP sasaran ≠ Jual Ambisius ≠ Power Max ≠ Stop — jangan samakan).
+        x_tg, x_am, x_pm, x_st = zai_xau.get("target"), zai_xau.get("ambisius"), zai_xau.get("powermax"), zai_xau.get("stop")
+        if any(isinstance(v, (int, float)) and v > 0 for v in (x_tg, x_am, x_pm, x_st)):
             def _pct_level(v):
                 return f" ({(v / x_ent - 1) * 100:+.2f}%)" if (v and x_ent) else ""
             L.append(f"🎯 TP sasaran: <b>{fmt_harga(x_tg)}</b>{_pct_level(x_tg)} · "
-                     f"🔥 JUAL AMBISIUS: <b>{fmt_harga(x_am)}</b>{_pct_level(x_am)} · "
+                     f"🔥 JUAL AMBISIUS: <b>{fmt_harga(x_am)}</b>{_pct_level(x_am)}\n"
+                     f"⚡ POWER MAX AMBISIUS: <b>{fmt_harga(x_pm)}</b>{_pct_level(x_pm)} · "
                      f"🛑 STOP: <b>{fmt_harga(x_st)}</b>{_pct_level(x_st)}")
-            L.append("<i>Tiga level berbeda untuk emas — TP ≠ Jual Ambisius ≠ Stop; tiga keputusan berbeda.</i>")
+            L.append("<i>Empat level berbeda untuk emas — TP ≠ Jual Ambisius ≠ Power Max ≠ Stop; empat keputusan berbeda.</i>")
         L.append(f"<i>Sumber harga: {html.escape(xau_src)} — XAU selalu ada di laporan apa pun kondisinya.</i>")
     else:
         L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · entry {fmt_harga(x_ent)} · "
@@ -652,19 +719,38 @@ def main():
         z_an = (zai_snap or {}).get("dianalisa") or "?"
         z_lh = (zai_snap or {}).get("lahir") or "?"
         z_tot = (zai_snap or {}).get("total") or len(zai_picks)
+        # V303 DATA-FRESH — kejujuran tanggal: data hari ini atau tidak
+        hari_data = (zai_snap or {}).get("hariData")
+        lag_d = (zai_snap or {}).get("lag")
+        stale_d = (zai_snap or {}).get("stale")
+        if lag_d == 0 and not stale_d and hari_data:
+            fresh = f"📅 FRESH: data <b>{html.escape(str(hari_data))}</b> = hari ini (lag 0, tidak stale)"
+        elif hari_data:
+            fresh = (f"⚠️ DATA: hari {html.escape(str(hari_data))} · lag {lag_d} hari"
+                     + (" · STALE" if stale_d else ""))
+        else:
+            fresh = "⚠️ DATA: tanggal data tidak tersedia (saya akui jujur)"
         L.append(f"🧠 <b>SASARAN OTAK Z.AI</b> — sumber SAMA dengan web ({seg_z})")
+        L.append(fresh)
         L.append(f"Regim pasarnya: <b>{html.escape(str(z_reg))}</b> · {z_an} koin dianalisa · "
-                 f"{z_lh} pilihan lahir hari ini · menampilkan {len(zai_picks)} teratas dari {z_tot} sasaran "
-                 f"(50 koin + XAU wajib 🥇 di atas; urut keyakinan)")
-        for i, p in enumerate(zai_picks, 1):
+                 f"{z_lh} pilihan lahir hari ini · menampilkan {min(ZAI_TAMPIL, len(zai_picks))} teratas dari {z_tot} sasaran "
+                 f"(100 koin + XAU wajib 🥇 di atas; urut keyakinan)")
+        for i, p in enumerate(zai_picks[:ZAI_TAMPIL], 1):
             basis = _basis_simbol(p["simbol"]) or p["simbol"]
-            h = harga_map.get(basis)
+            h = xau_h if p["simbol"] == "XAUUSDT" else harga_map.get(basis)
             ent = p.get("entry")
             jarak = f"{(h / ent - 1) * 100:+.2f}%" if (h and ent) else "-"
+            def _lvl(v, ent=ent):
+                if not isinstance(v, (int, float)) or v <= 0:
+                    return "-"
+                pc = f" ({(v / ent - 1) * 100:+.1f}%)" if ent else ""
+                return f"{fmt_harga(v)}{pc}"
             L.append(f"{i}. <b>{html.escape(basis)}</b> {html.escape(str(p.get('arah')))} "
-                     f"{p.get('keyakinan', '-')}% · entry {fmt_harga(ent)} · kini {fmt_harga(h)} ({jarak})")
-        L.append("<i>Otak z.ai = mesin arena di web ini (yang pemilik lihat di browser). "
-                 "Sasaran otak SERVER yang berbeda ada di bawah — dua otak, saya laporkan keduanya.</i>")
+                     f"{p.get('keyakinan', '-')}% · kini <b>{fmt_harga(h)}</b> ({jarak})")
+            L.append(f"&nbsp;&nbsp;entry {fmt_harga(ent)} · 🎯TP {_lvl(p.get('target'))} · "
+                     f"🔥AMB {_lvl(p.get('ambisius'))} · ⚡MAX {_lvl(p.get('powermax'))} · 🛑STOP {_lvl(p.get('stop'))}")
+        L.append("<i>V303: koin teratas WAJIB 6 field (entry, kini, TP, Jual Ambisius, Power Max, Stop). "
+                 "Daftar 100 penuh ada di web; sasaran otak SERVER ada di bawah.</i>")
         L.append("")
     else:
         L.append("🧠 Otak z.ai (web): <b>tak terjangkau detak ini dan tak ada cache</b> — saya akui jujur.")
@@ -699,7 +785,7 @@ def main():
             baris_a = f"📊 Akurasi terkunci: <b>{float(akur):.1f}%</b>"
             if net_k is not None:
                 baris_a += f" · net kumulatif {float(net_k):+.1f}%"
-            baris_a += f" · {n_dipantau} sasaran dipantau TP/Ambisius/PowerMax"
+            baris_a += f" · {n_dipantau} sasaran server + {len(zai_picks)} sasaran arena dipantau TP/Ambisius/PowerMax"
             L.append(baris_a)
     if denyut:
         uw = denyut.get("waktu") or denyut.get("dihasilkan")
