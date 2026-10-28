@@ -172,7 +172,16 @@ def otak_zai():
         # senantiasa kumplit + kejujuran sumber tetap terjaga).
         cache_lama = muat_json_lokal(F_ZAI_CACHE) or {}
         lama_picks = cache_lama.get("picks") or []
-        if len(koin[:ZAI_SIMPAN]) < len(lama_picks) and cache_lama.get("sumber"):
+        # GEN-10 GANTI-HARI: bila web membawa hariData LEBIH BARU daripada cache,
+        # koin hari ini WAJIB menang walau jumlahnya lebih sedikit — koin kemarin
+        # tidak boleh menimpa koin hari ini (laporan pemilik 28 Okt). Pengaman
+        # jumlah hanya berlaku bila cache & web masih hari yang sama.
+        hari_web = d.get("dataDay")
+        hari_cache = cache_lama.get("hariData")
+        ganti_hari = (isinstance(hari_web, str) and isinstance(hari_cache, str)
+                      and hari_web > hari_cache)
+        if ((not ganti_hari) and len(koin[:ZAI_SIMPAN]) < len(lama_picks)
+                and cache_lama.get("sumber")):
             snap_lama = dict(cache_lama)
             snap_lama["waktu"] = datetime.now(timezone.utc).isoformat()
             snap_lama["sumber"] = (f"cache(benteng-lokal) — otak web sedang pulih "
@@ -270,6 +279,7 @@ def taman_zai_ke_rantaian(snap):
             "Accept": "application/vnd.github+json"}
     sha = None
     kaya_benteng = 0  # PENGAMAN-BENTENG: jumlah picks yang sudah tersimpan di benteng
+    isi_benteng = None
     try:
         with urllib.request.urlopen(urllib.request.Request(api, headers=head), timeout=15) as r:
             j = json.loads(r.read().decode())
@@ -282,7 +292,14 @@ def taman_zai_ke_rantaian(snap):
     except Exception:
         sha = None  # 404 = file belum ada -> buat baru
     picks_baru = len((snap or {}).get("picks") or [])
-    if sha and kaya_benteng > picks_baru:
+    # GEN-10 GANTI-HARI: snapshot dengan hariData lebih baru WAJIB menimpa benteng
+    # walau jumlah picks lebih sedikit — koin kemarin tidak boleh menimpa koin
+    # hari ini (laporan pemilik 28 Okt). Pengaman jumlah hanya berlaku di hari sama.
+    hari_baru = (snap or {}).get("hariData")
+    hari_benteng = isi_benteng.get("hariData") if isinstance(isi_benteng, dict) else None
+    ganti_hari = (isinstance(hari_baru, str) and isinstance(hari_benteng, str)
+                  and hari_baru > hari_benteng)
+    if sha and (not ganti_hari) and kaya_benteng > picks_baru:
         return (f"pengaman benteng: snapshot lama lebih kaya ({kaya_benteng} vs "
                 f"{picks_baru} picks) -> tidak menimpa; otak sedang pulih")
     body = {"message": "jembatan: sasaran otak z.ai dari heartbeat [skip ci]",
