@@ -4,3 +4,5 @@
 {"waktu": "2026-10-27T10:00:27.326353+00:00", "peristiwa": "PULIH", "gap_menit": 258.0, "lapis_penjinak": "benteng-abadi", "message_id": 204}
 {"waktu": "2026-10-28T05:24:09.225595+00:00", "peristiwa": "MATI-terdeteksi", "gap_menit": 1163.7, "lapis_penjinak": "benteng-abadi", "status_kirim": "menyusul"}
 {"waktu": "2026-10-28T05:24:51.329842+00:00", "peristiwa": "PULIH", "gap_menit": 1163.7, "lapis_penjinak": "benteng-abadi", "message_id": 326}
+{"waktu": "2026-10-28T11:33:31.750663+00:00", "peristiwa": "MATI-terdeteksi", "gap_menit": 369.4, "lapis_penjinak": "benteng-abadi", "status_kirim": "menyusul"}
+{"waktu": "2026-10-28T11:34:15.845287+00:00", "peristiwa": "PULIH", "gap_menit": 369.4, "lapis_penjinak": "benteng-abadi", "message_id": 336}
