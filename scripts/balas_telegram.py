@@ -707,9 +707,18 @@ def cmd_sasaran():
     xau = z.get("xau") or {}
     xh, xchg, xsrc = harga_xau()
     umur_z = umur_jam(z.get("waktu"))
+    # GEN-10 TANGGAL-JUJUR: tampilkan hari data sasaran; WARNING bila bukan hari ini
+    hari_data = str(z.get("hariData") or "").strip()
+    hari_ini = datetime.now(WIB).strftime("%Y-%m-%d")
+    if hari_data:
+        label_hari = (f" · 📅 data hari <b>{html.escape(hari_data)}</b>"
+                      if hari_data == hari_ini
+                      else f" · ⚠️ <b>data {html.escape(hari_data)}</b> (bukan hari ini)")
+    else:
+        label_hari = ""
     L = [f"🎯 <b>SASARAN OTAK — {len(z.get('picks') or [])} koin + XAU</b>",
          f"🧭 Regim {html.escape(str(z.get('regime') or '?'))}"
-         + (f" · snapshot {umur_z:.1f} jam lalu" if umur_z is not None else ""),
+         + (f" · snapshot {umur_z:.1f} jam lalu" if umur_z is not None else "") + label_hari,
          f"🕐 {sekarang_wib()}", "",
          "🥇 <b>XAU (EMAS) — WAJIB ABADI</b>"]
     if xau.get("entry") or xh:
