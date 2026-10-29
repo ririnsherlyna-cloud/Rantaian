@@ -91,9 +91,34 @@ def simpan_json(path, obj):
         print("gagal simpan", path, repr(e))
 
 
+REPO_API_OTAK = "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-"
+
+
+def _api_ambil(jalur):
+    """FIX ANTI-JADUL: ambil isi file repo otak lewat Contents/Blob API
+    (object store — selalu versi commit TERBARU). raw.githubusercontent
+    ternyata menyajikan snapshot usang berjam-jam untuk repo berdenyut cepat,
+    membuat laporan berisi data jadul. Token dibaca dari file, tidak dicetak."""
+    head = {"Authorization": "Bearer " + baca(F_PAT_RANTAIAN).strip(),
+            "Accept": "application/vnd.github+json", "User-Agent": "microprofita-hb"}
+    d = json.load(urllib.request.urlopen(urllib.request.Request(
+        f"{REPO_API_OTAK}/contents/{jalur}?ref=main", headers=head), timeout=25))
+    if d.get("content") is not None:
+        return base64.b64decode(d["content"])
+    b = json.load(urllib.request.urlopen(urllib.request.Request(
+        f"{REPO_API_OTAK}/git/blobs/{d['sha']}", headers=head), timeout=25))
+    return base64.b64decode(b["content"])
+
+
 def muat_json_remote(jalur, nama_cache):
-    """Ambil file dari repo hidup; gagal -> pakai cache detak lalu."""
+    """Ambil file dari repo hidup; API-first (segar), RAW cadangan, cache terakhir."""
     cache = os.path.join(DATA, nama_cache)
+    try:
+        obj = json.loads(_api_ambil(jalur).decode("utf-8", "replace"))
+        simpan_json(cache, obj)
+        return obj, True
+    except Exception:
+        pass
     try:
         req = urllib.request.Request(f"{RAW}/{jalur}", headers={"User-Agent": "microprofita-hb"})
         with urllib.request.urlopen(req, timeout=25) as r:
@@ -107,6 +132,13 @@ def muat_json_remote(jalur, nama_cache):
 
 def jsonl_remote_terakhir(jalur, nama_cache):
     cache = os.path.join(DATA, nama_cache)
+    try:
+        lines = [l for l in _api_ambil(jalur).decode("utf-8", "replace").splitlines() if l.strip()]
+        d = json.loads(lines[-1])
+        simpan_json(cache, d)
+        return d, True
+    except Exception:
+        pass
     try:
         req = urllib.request.Request(f"{RAW}/{jalur}", headers={"User-Agent": "microprofita-hb"})
         with urllib.request.urlopen(req, timeout=25) as r:
