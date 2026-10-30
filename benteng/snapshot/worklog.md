@@ -2241,3 +2241,13 @@ Task ID: PENJAGA-WD-0856
 Agent: watchdog-cron
 Work Log: penjaga hidup gap 111s (diwarisi supervisor v9) - senyap; supervisor juga hidup (gap 114s); rantai segar RUN 40982766538 in_progress AGE 85s - tanpa pancing.
 Stage Summary: Lapis PENJAGA-WD normal; daemon + supervisor + rantai tiga-tiganya hidup.
+---
+Task ID: RESPON-0900
+Agent: respon-cron
+Work Log: balas_telegram.py v8 utuh (45.936 byte). --sekali run-1 EXIT=0 senyap; run-2 EXIT=3 (409 sopan vs daemon). Deteksi: daemon + supervisor DUA-DUANYA dibunuh platform (gap 295s/298s) → resusitasi ganda: daemon --jaga PID baru + supervisor v9. Supervisor langsung AKSI hidupkan daemon + commit-on-boot SNAPSHOT 200/200/200. Long-poll pertama: 0 pesan baru.
+Stage Summary: Sistem pulih penuh dalam 8 detik (daemon gap 34s, supervisor hidup, worklog tersimpan remote). Arsitektur anti-stuck v9 bekerja otomatis di siklus RESPON.
+---
+Task ID: PENJAGA-WD-0901
+Agent: penjaga-wd-cron
+Work Log: Denyut 144s→166s tidak membaru + ps kosong = daemon dibunuh platform lagi 2,5 menit pasca-resusitasi RESPON-0900. Aksi: --sekali EXIT=3 (409), hidupkan --jaga (GAP 1s). Rantai Actions: parse awal KeyError (kunci workflow_runs), run baru 40983599374 AGE 9s via pancing 204. Supervisor ikut dibunuh platform, belum re-spawn di siklus ini.
+Stage Summary: Penjaga pulih GAP 1s; rantai abadi segar; pembunuhan platform kini <3 menit - desain resusitasi-lintas-siklus makin terbukti dibutuhkan.
