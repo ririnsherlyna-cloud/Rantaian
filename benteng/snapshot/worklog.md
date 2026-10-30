@@ -2251,3 +2251,8 @@ Task ID: PENJAGA-WD-0901
 Agent: penjaga-wd-cron
 Work Log: Denyut 144s→166s tidak membaru + ps kosong = daemon dibunuh platform lagi 2,5 menit pasca-resusitasi RESPON-0900. Aksi: --sekali EXIT=3 (409), hidupkan --jaga (GAP 1s). Rantai Actions: parse awal KeyError (kunci workflow_runs), run baru 40983599374 AGE 9s via pancing 204. Supervisor ikut dibunuh platform, belum re-spawn di siklus ini.
 Stage Summary: Penjaga pulih GAP 1s; rantai abadi segar; pembunuhan platform kini <3 menit - desain resusitasi-lintas-siklus makin terbukti dibutuhkan.
+---
+Task ID: KOREKSI-DOKTRIN-0905
+Agent: otak-z.ai
+Work Log: PERINTAH INTERDA — laporan Telegram & dashboard WAJIB hisap data dari SERVER OTAK z.ai; GitHub diturunkan jadi LEMARI CADANGAN murni (aliran otak→GitHub, tak pernah GitHub→otak). Dieksekusi: (1) scripts/jembatan_otak.py v1 — hisap data lokal murni (denyut 1401, genome_live gen 7, sumber_state 7/7 OK, jurnal kematian, worklog) → tulis snapshot kebenaran download/ruang-hidup/{keadaan,ingatan}.json + otak_pohon.json + otak_laporan.md; (2) laporan Telegram DAILY dikirim dari snapshot otak (msg 407, sumber lokal murni — NOL byte dari GitHub); (3) hidup.html disuntik: ghAmbil same-origin 'otak-z.ai' jadi GERBANG PERTAMA (GitHub api/raw/jsdelivr turun jadi cadangan), pohonAmbil baca ./otak_pohon.json dulu, label memori dinamis 'SERVER OTAK-Z.AI (sumber kebenaran)'; (4) salinan laporan data/daily_reports/.
+Stage Summary: Arah data DIBALIK permanen. Dashboard yang kau buka kini menampilkan data server otak langsung (same-origin), GitHub hanya menyimpan progress untuk jaga-jaga. Laporan Telegram = persis snapshot otak, bukan tolil ke GitHub.
