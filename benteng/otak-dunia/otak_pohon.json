@@ -1,0 +1,29 @@
+{
+ "files": [
+  {
+   "path": "worklog.md",
+   "size": 404774
+  },
+  {
+   "path": "data/remote_denyut.json",
+   "size": 2275
+  },
+  {
+   "path": "data/genome_live.json",
+   "size": 876
+  },
+  {
+   "path": "data/sumber_state.json",
+   "size": 602
+  },
+  {
+   "path": "data/sasaran_state.json",
+   "size": 269
+  },
+  {
+   "path": "data/supervisor.log",
+   "size": 536
+  }
+ ],
+ "sumber": "otak-z.ai/lokal"
+}
