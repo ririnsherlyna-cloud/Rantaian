@@ -2273,3 +2273,11 @@ Task ID: KOREKSI-RAPI-1030
 Agent: respon-cron
 Work Log: editMessageText 408 (koreksi jujur angka detak: 4 sukses = 1 tertulis + 3 terbukti jejak siklus, tulisan 3 msg musnah rollback — diakui) + 409 (format rezim dirapikan); hidup.html disinkronkan agar isi web = isi Telegram selalu identik.
 Stage Summary: Kejujuran angka dipulihara; satu sumber kebenaran server otak z.ai dijaga lintas kanal.
+---
+Task ID: SASARAN-1030
+Agent: otak-z.ai
+Work Log: PERINTAH PEMILIK — data koin pilihan WAJIB dikirim ke Telegram (kata user: ada di web preview, tak boleh "gak ada sasaran"). Dieksekusi: baca data/remote_sasaran.json SEGAR (siklus 1401, dihasilkan 30 Okt 00:35Z, organ V351-EMPU-AKURASI v6.7) → 10 sasaran: 1 jalur ARAH berencana lengkap (HYPE BUY key 38%: entry 89.98→target 117.2889 +30.3%, stop 76.609 -14.9%, Ambisius 135.0875 +50.1%, EV +0.71%, RR 1.17) + 9 KANDANG PENGAMATAN (PARTI/NFP/TOMO/INTWB/SOXSB/VIC/HYPEUSDT/VANRY/OMNI, arah+entry acuan). Terkirim msg 410 (2x editMessageText sampai rapi). Salinan: download/otak_sasaran.md + data/daily_reports/2026-10-30-sasaran.md. ATURAN BARU TERCATAT: laporan harian berikutnya WAJIB menyertakan blok koin pilihan ini (lihat scripts/laporan_harian_1030.py + kirim_sasaran_1030.py sebagai pola).
+Stage Summary: Keluhan user selesai: data koin pilihan kini terkirim ke Telegram langsung dari server otak z.ai (bukan GitHub). Web preview dan Telegram memakai sumber file yang sama (remote_sasaran.json lokal).
+---
+Task ID: PENJAGA-WD-0911
+Work Log: penjaga hidup gap 25s - senyap (proses panen platform pasca-denyut; supervisor v9 resusitasi otomatis siklus 15s)
