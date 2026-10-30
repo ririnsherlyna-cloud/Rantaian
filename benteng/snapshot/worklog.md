@@ -2256,3 +2256,20 @@ Task ID: KOREKSI-DOKTRIN-0905
 Agent: otak-z.ai
 Work Log: PERINTAH INTERDA — laporan Telegram & dashboard WAJIB hisap data dari SERVER OTAK z.ai; GitHub diturunkan jadi LEMARI CADANGAN murni (aliran otak→GitHub, tak pernah GitHub→otak). Dieksekusi: (1) scripts/jembatan_otak.py v1 — hisap data lokal murni (denyut 1401, genome_live gen 7, sumber_state 7/7 OK, jurnal kematian, worklog) → tulis snapshot kebenaran download/ruang-hidup/{keadaan,ingatan}.json + otak_pohon.json + otak_laporan.md; (2) laporan Telegram DAILY dikirim dari snapshot otak (msg 407, sumber lokal murni — NOL byte dari GitHub); (3) hidup.html disuntik: ghAmbil same-origin 'otak-z.ai' jadi GERBANG PERTAMA (GitHub api/raw/jsdelivr turun jadi cadangan), pohonAmbil baca ./otak_pohon.json dulu, label memori dinamis 'SERVER OTAK-Z.AI (sumber kebenaran)'; (4) salinan laporan data/daily_reports/.
 Stage Summary: Arah data DIBALIK permanen. Dashboard yang kau buka kini menampilkan data server otak langsung (same-origin), GitHub hanya menyimpan progress untuk jaga-jaga. Laporan Telegram = persis snapshot otak, bukan tolil ke GitHub.
+
+---
+Task ID: DAILY-1030
+Agent: daily-report-cron
+Task: laporan harian jujur
+Work Log: 2026-10-30 01:08:10 — KEBIJAKAN BARU PEMILIK diterapkan: laporan Telegram = ISI PERSIS web preview hidup.html, sumber data 100% SERVER OTAK Z.AI (lokal), GitHub turun status jadi gudang cadangan (bukan acuan). Data lokal dibaca: remote_denyut.json (siklus 1401, akurasi 39.9%, brier 0.271, kompas SELL), genome_live.json (gen 7, evolusi 6→7 hari ini 00:53Z), death_journal.jsonl (1 pengakuan MATI/gap 3,242 mnt akibat rollback), send_failures=0, bot_chat.log (0 TP/Ambisius/PowerMax). Laporan 4+e terkirim ke chat pemilik via curl sendMessage; salinan data/daily_reports/2026-10-30.md; teks identik disisipkan ke download/hidup.html (konstanta LAPORAN_HARIAN_TEKS + entri jurnal boot).
+Stage Summary: Laporan harian jujur terkirim: detak 4 sukses/0 gagal/1 pengakuan MATI (efek rollback), notifikasi TP 0, akurasi 39,9% naik +0,1 tapi EV MEMBURUK -0,363 (pasar: BTC TURUN+breadth 8,6; kalibrasi over-prediksi diakui), genome EVOLUSI lokal gen 7 (bukan lagi data jadul), klaim jujur lengkap kukuh-vs-belum. Isi Telegram = isi web = salinan lokal: SATU SUMBER KEBENARAN di server otak z.ai.
+---
+Task ID: KOIN-PILIHAN-1030
+Agent: respon-cron
+Work Log: PERINTAH PEMILIK — laporan sebelumnya keliru disebut "tidak ada notifikasi" tanpa menjabarkan koin pilihan; DILURUS: sasaranHariIni dari server otak (remote_sasaran.json siklus 1401, dihasilkan 2026-10-30T00:35Z) dijabarkan PENUH ke Telegram via balas_telegram.kirim(): 10 koin (HYPE dsb) lengkap entry/target/stop/ambisius/EV/p/RR + radar 684 telaah. Salinan data/daily_reports/koin-pilihan-1030.md.
+Stage Summary: Data koin pilihan KINI wajib-jabarkan di Telegram setiap siklus — satu sumber kebenaran server otak z.ai; kekeliruan laporan "0 sasaran" dikoreksi jujur (yang 0 adalah notifikasi TP, BUKAN sasaran: 10 sasaran hidup).
+---
+Task ID: KOREKSI-RAPI-1030
+Agent: respon-cron
+Work Log: editMessageText 408 (koreksi jujur angka detak: 4 sukses = 1 tertulis + 3 terbukti jejak siklus, tulisan 3 msg musnah rollback — diakui) + 409 (format rezim dirapikan); hidup.html disinkronkan agar isi web = isi Telegram selalu identik.
+Stage Summary: Kejujuran angka dipulihara; satu sumber kebenaran server otak z.ai dijaga lintas kanal.
