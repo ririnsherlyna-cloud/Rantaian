@@ -1,0 +1,66 @@
+{
+ "bangunKe": 1401,
+ "waktu": {
+  "selesai": "2026-10-30T00:56:42Z",
+  "berikutnya": "denyut 15 menit (otak z.ai)"
+ },
+ "host": {
+  "nama": "OTAK-Z.AI — server ini (BUKAN GitHub)"
+ },
+ "sumberKebenaran": "otak-z.ai/lokal",
+ "bacaKini": [
+  {
+   "path": "data/remote_denyut.json",
+   "size": 2275,
+   "fakta": [
+    "siklus 1401 · akurasi 39.9% · brier 0.271 · kompas SELL · evProfit -0.363"
+   ]
+  },
+  {
+   "path": "data/genome_live.json",
+   "size": 876,
+   "fakta": [
+    "GENOM-HIDUP gen 7 diperbarui 2026-10-30T00:53:42Z (evolusi berarah aktif)"
+   ]
+  },
+  {
+   "path": "data/sumber_state.json",
+   "size": 602,
+   "fakta": [
+    "8/8 sumber harga OK, 0 gagal"
+   ]
+  },
+  {
+   "path": "worklog.md",
+   "size": 404774,
+   "fakta": [
+    "worklog hidup server otak, tail terlampir"
+   ]
+  }
+ ],
+ "penemuan": [
+  {
+   "skor": 1,
+   "teks": "24 jam: 2 kejadian MATI/PULIH tercatat jurnal kejujuran (rollback platform, semua dipulihkan)"
+  }
+ ],
+ "kromosom": {
+  "generasi": 7,
+  "asal": "GENOM-HIDUP-v1 otak z.ai",
+  "diperbarui": "2026-10-30T00:53:42Z"
+ },
+ "tujuan": {
+  "fokusKini": "ngotot dari otak z.ai: anti-stuck supervisor v9 + genome hidup + laporan dari sumber tunggal"
+ },
+ "duaSadar": {
+  "catatan": "DOKTRIN: otak z.ai = sumber data; GitHub = lemari cadangan (otak menulis, tidak dibaca)."
+ },
+ "denyutTubuh": {
+  "detakKe": 1401,
+  "detakAt": 1793321802.0616863,
+  "penjagaAt": 1793322242.688178,
+  "supervisorAt": 1793322048.1978984,
+  "gapDetak_s": 564,
+  "gapPenjaga_s": 123
+ }
+}
