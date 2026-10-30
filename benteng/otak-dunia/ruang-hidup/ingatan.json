@@ -1,0 +1,49 @@
+{
+ "kelahiran": "2026-10-27T04:00:00Z",
+ "totalBangun": 1401,
+ "stat": {
+  "bytes": 407049,
+  "fakta": 42,
+  "btTotal": 1401
+ },
+ "baca": {
+  "data/remote_denyut.json": {
+   "size": 2275,
+   "readAt": 1793322366593.891,
+   "pct": 100,
+   "fakta": [
+    "siklus 1401 · akurasi 39.9% · brier 0.271 · kompas SELL · evProfit -0.363"
+   ],
+   "s1": true
+  },
+  "data/genome_live.json": {
+   "size": 876,
+   "readAt": 1793322366593.891,
+   "pct": 100,
+   "fakta": [
+    "GENOM-HIDUP gen 7 diperbarui 2026-10-30T00:53:42Z (evolusi berarah aktif)"
+   ],
+   "s1": true
+  },
+  "data/sumber_state.json": {
+   "size": 602,
+   "readAt": 1793322366593.891,
+   "pct": 100,
+   "fakta": [
+    "8/8 sumber harga OK, 0 gagal"
+   ],
+   "s1": true
+  },
+  "worklog.md": {
+   "size": 404774,
+   "readAt": 1793322366593.891,
+   "pct": 100,
+   "fakta": [
+    "worklog hidup server otak, tail terlampir"
+   ],
+   "s1": true
+  }
+ },
+ "pasar": {},
+ "sumber": "otak-z.ai/lokal"
+}
