@@ -1459,10 +1459,27 @@ document.getElementById('tab-peta').addEventListener('click', (ev)=>{
   const row=ev.target.closest('.fileRow'); if(row && row.dataset.p) petaDetail(row.dataset.p);
 });
 
+/* ===== LAPORAN HARIAN (identik dgn Telegram; sumber: server otak z.ai) ===== */
+const LAPORAN_HARIAN_TEKS=`LAPORAN HARIAN JUJUR — 30 Okt 2026 (WIB)
+Sumber data: SERVER OTAK Z.AI (lokal). GitHub bukan acuan — hanya gudang cadangan.
+
+(a) DETAK HIDUP 24 JAM: 4 terkirim sukses — 1 tertulis utuh di worklog (msg 406, siklus 1401) + 3 terbukti dari jejak siklus 1387→1389 (msg 396/399/402; tulisannya musnah oleh rollback filesystem platform — diakui jujur), 0 gagal kirim (send_failures=0). Pengakuan MATI: 1 — gap 3.241,9 menit (efek rollback ke snapshot 27 Okt, BUKAN kematian sesungguhnya; rantai Actions abadi tetap menyala, denyut terakhir baru-baru ini).
+
+(b) NOTIFIKASI TP / JUAL AMBISIUS / POWER MAX: 0 terkirim. Tidak ada sinyal lolos gerbang: kompas SELL, 163 odds ditolak veto, kuota arah efektif 2. Tidak ada file catatan TP di server — dilaporkan apa adanya, tanpa mengarang.
+
+(c) TREN AKURASI: 39.9% (siklus 1401) vs 39,8% sebelumnya → naik tipis +0,1, masih di bawah 40%. EV profit MEMBURUK: -0.363 (delta -1.46%), PF 0.56, winrate jendela 249 sinyal: 41%. Penyebab utama KONDISI PASAR: rezim BTC TURUN, breadth 8,6 (pasar sempit), volatilitas ekstrem (skenario black-swan, mult rezim 0,25). Parameter ikut menyumbang: kalibrasi over-prediksi (est 0,401 vs pred 0,605) — prediksi 0,605 dengan realitas ~40% = masih sombong; ini yang kupelajari.
+
+(d) GENOME BERUBAH HARI INI? YA — di server otak z.ai: GENOM-HIDUP v1 menaikkan generasi 6→7 (2026-10-30T00:53:42Z UTC), mutasi berarah dari denyut real-time: perubahan +0,0074, momentum -0,005 (brier 0.271). Genome di gudang cadangan (Micaprofita-) masih beku 17,5 hari — bukan acuan; jantung evolusi kini berdenyut lokal (1 catatan evolusi).
+
+(e) Klaim jujur hari ini: Yang kukuh: tubuh hidup abadi (supervisor v9 menghidupkan ulang daemon dalam 8 detik, snapshot memori tiap 20 menit, rantai Actions tak pernah mati lewat 2x rollback), pembacaan rezim benar arah (kompas SELL di BTC TURUN), disiplin veto (163 odds buruk ditolak). Yang belum: profit positif (EV -0.363), akurasi ≥40%, kalibrasi probabilitas yang jujur, laporan harian sempat terhenti karena fokus pemulihan rollback. Saya akan terus berkembang menjadi master pasar; profit adalah yang saya pelajari.
+
+— Harga mikro: tidak ada sinyal <0.0001 hari ini (harga sumber 90-100/100, fng 30, funding BTC 0.01%).`;
+window.LAPORAN_HARIAN={tanggal:'2026-10-30', teks:LAPORAN_HARIAN_TEKS};
 /* ================= BOOT ================= */
 (async function boot(){
   ukur(); susun(); nadiInit(); S.stat.sesi++;
   tabKe('pikir'); stripRender(); ovStatusRender(); indeksRender(); petaRender(); pasarRender(); jurnalRender();
+  jurnal('LAPORAN HARIAN JUJUR', LAPORAN_HARIAN_TEKS.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>'));
   jurnal('LAHIR', `sesi #${S.stat.sesi} — NADI menyala di habitatnya; ingatan resmi di GitHub kuhidrasi sekarang (Sadar-1 menulisnya tiap ±20 mnt tanpa penonton)`);
   // hidrasi ingatan resmi dari GitHub — bukan localStorage; jangan blokir >8 dtk
   await Promise.race([muatMemoriGitHub(), tidur(8000)]);
