@@ -1,0 +1,1495 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RUANG HIDUP — MICAPROFITA · NADI</title>
+<style>
+:root{
+  --bg:#05070d; --tinta:#e9eef8; --redup:#94a1ba; --legap:#5b6780;
+  --aksen:#4fe0c2; --aksen-l:rgba(79,224,194,.38); --salah:#ff5f6d;
+  --kaca:rgba(7,11,20,.66); --garis:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%;overflow:hidden;background:var(--bg);color:var(--tinta);
+  font:13px/1.5 "Inter","SF Pro Text",-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
+#panggung{position:fixed;inset:0;display:block;touch-action:manipulation;cursor:default}
+
+/* ===== SATU TOMBOL (buka/tutup overlay) ===== */
+#pintu{position:fixed;right:16px;bottom:16px;z-index:60;width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.14);background:rgba(7,11,20,.55);backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);color:var(--redup);cursor:pointer;padding:0;
+  display:flex;align-items:center;justify-content:center;opacity:.5;transition:opacity .3s,transform .45s cubic-bezier(.22,.85,.25,1)}
+#pintu:hover,#pintu:focus-visible{opacity:1}
+#pintu.on{opacity:1;transform:rotate(45deg)}
+#pintu svg{display:block}
+
+/* ===== SAPA (gelembung sesaat saat makhluk disentuh) ===== */
+#sapa{position:fixed;z-index:70;max-width:min(330px,78vw);background:rgba(7,11,20,.8);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--aksen-l);border-radius:14px;padding:11px 13px;
+  font-size:12px;line-height:1.55;color:var(--tinta);pointer-events:none;
+  opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+#sapa.tampak{opacity:1;transform:none}
+#sapa b{color:var(--aksen);font-weight:600}
+#sapa .lab{margin-top:6px}
+
+/* ===== OVERLAY TERSEMBUNYI (satu-satunya tempat teks) ===== */
+#overlay{position:fixed;top:0;right:0;bottom:0;width:min(396px,94vw);z-index:50;
+  display:flex;flex-direction:column;background:var(--kaca);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-left:1px solid var(--garis);
+  transform:translateX(106%);transition:transform .5s cubic-bezier(.22,.85,.25,1);will-change:transform}
+#overlay.buka{transform:none}
+#ovKepala{flex:none;padding:16px 16px 10px;border-bottom:1px solid var(--garis);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.ovJudul{display:flex;gap:9px;align-items:flex-start}
+#ovDot{width:8px;height:8px;border-radius:50%;background:var(--legap);flex:none;margin-top:4px;transition:background .5s}
+#ovDot.sehat{background:var(--aksen);box-shadow:0 0 10px var(--aksen-l)}
+#ovDot.telat{background:var(--aksen);opacity:.45}
+#ovDot.mati{background:var(--salah)}
+.jud{font-size:10px;letter-spacing:1.8px;color:var(--redup);text-transform:uppercase;font-weight:600}
+.jud.b{font-size:11.5px;color:var(--tinta);letter-spacing:1.2px}
+.lab{font-size:10.5px;color:var(--legap);line-height:1.5}
+.nil{font-size:13px;color:var(--tinta)}
+#ovArena{flex:none;color:var(--redup);text-decoration:none;font-size:10px;letter-spacing:1.4px;
+  border:1px solid var(--garis);border-radius:16px;padding:5px 11px;transition:color .3s,border-color .3s;white-space:nowrap}
+#ovArena:hover{color:var(--aksen);border-color:var(--aksen-l)}
+#pTabs{display:flex;flex:none;border-bottom:1px solid var(--garis)}
+#pTabs button{flex:1;background:none;border:none;color:var(--legap);font:inherit;font-size:10px;
+  letter-spacing:1.4px;padding:12px 2px;cursor:pointer;border-bottom:2px solid transparent;
+  text-transform:uppercase;transition:color .25s}
+#pTabs button.akt{color:var(--tinta);border-bottom-color:var(--aksen)}
+#pIsi{flex:1;overflow-y:auto;padding:12px 16px 22px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.14) transparent}
+.blok{border:1px solid var(--garis);border-radius:12px;padding:11px 12px;margin-bottom:10px;background:rgba(255,255,255,.02)}
+.blok h4{margin:0 0 7px;font-size:9.5px;letter-spacing:1.6px;color:var(--legap);font-weight:600;text-transform:uppercase}
+.blok h4 em{color:var(--redup);font-style:normal;font-weight:500;letter-spacing:.4px;text-transform:none}
+.baris{display:flex;justify-content:space-between;gap:10px;padding:2.5px 0;font-size:12.5px}
+.baris .k{color:var(--legap)} .baris .v{text-align:right;color:var(--tinta)}
+.v.h{color:var(--aksen)} .v.r{color:var(--salah)} .v.dim{color:var(--redup)}
+.kecil{font-size:10.5px;color:var(--legap);line-height:1.55}
+.aktNama{font-size:14px;color:var(--tinta);font-weight:600;letter-spacing:.3px}
+.aktFase{font-size:10.5px;color:var(--redup);margin-top:1px}
+.mengapa{font-size:10.5px;color:var(--redup);line-height:1.7}
+.mengapa b{color:var(--aksen);font-weight:600}
+/* daftar fase (siklus 9 tahap) */
+.faseList{list-style:none;margin:6px 0 0;padding:0}
+.faseList li{display:flex;align-items:center;gap:9px;padding:2.5px 0;font-size:10px;
+  letter-spacing:1.2px;color:var(--legap);transition:color .4s}
+.faseList li .fdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.12);flex:none;transition:background .4s,box-shadow .4s}
+.faseList li.ok{color:var(--redup)} .faseList li.ok .fdot{background:var(--aksen);opacity:.4}
+.faseList li.on{color:var(--tinta)} .faseList li.on .fdot{background:var(--aksen);box-shadow:0 0 8px var(--aksen-l)}
+/* PETA-DIRI */
+.dirHdr{margin:9px 0 3px;font-size:9.5px;color:var(--redup);letter-spacing:1.6px;text-transform:uppercase;font-weight:600}
+.fileRow{display:flex;align-items:center;gap:7px;padding:3.5px 7px;border-radius:8px;cursor:pointer;font-size:12px}
+.fileRow:hover{background:rgba(79,224,194,.07)}
+.fileRow .st{width:10px;flex:none;text-align:center;color:var(--legap)}
+.fileRow.baca .st{color:var(--aksen)} .fileRow.ubah .st{color:var(--tinta)}
+.fileRow .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#cdd8e8}
+.fileRow .sz{color:var(--legap);font-size:9.5px;flex:none}
+.faktaList{margin:4px 0 8px;padding-left:16px;font-size:10.5px;color:var(--redup);line-height:1.65}
+.faktaList li::marker{color:var(--aksen)}
+.faktaList b{color:var(--tinta);font-weight:600}
+/* PASAR + JURNAL */
+.symHdr{display:flex;justify-content:space-between;align-items:baseline}
+.symHdr b{font-size:12.5px;color:var(--tinta);letter-spacing:.8px}
+.sumber{font-size:9.5px;color:var(--redup);text-decoration:none;border-bottom:1px dotted rgba(148,161,186,.5)}
+.sumber:hover{color:var(--aksen)}
+.jr{border-left:2px solid var(--garis);padding:2px 0 2px 9px;margin-bottom:7px;font-size:10.5px;line-height:1.55;color:var(--redup)}
+.jr b{color:var(--tinta);font-weight:600}
+.jr .t{color:var(--legap);font-size:9px;letter-spacing:.6px}
+.jr.gagal{border-left-color:var(--salah)} .jr.gagal b{color:var(--salah)}
+.jr.temuan{border-left-color:var(--aksen)}
+/* HANDLE MOBILE (geser ke bawah utk menutup) */
+#ovHandle{display:none}
+
+/* ===== MOBILE: overlay jadi lembaran bawah ===== */
+@media (max-width:760px){
+  #overlay{top:auto;left:0;right:0;width:auto;height:64dvh;border-left:none;
+    border-top:1px solid var(--garis);border-radius:18px 18px 0 0;transform:translateY(108%)}
+  #overlay.buka{transform:none}
+  #ovHandle{display:flex;justify-content:center;align-items:center;gap:8px;padding:10px 0 4px;cursor:grab;flex:none;touch-action:none}
+  #ovHandle .genggam{width:44px;height:4px;border-radius:2px;background:rgba(255,255,255,.22)}
+  #ovKepala{padding-top:6px}
+  #pintu{right:14px;bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  #overlay,#pintu,#sapa{transition:none}
+}
+</style>
+</head>
+<body>
+<canvas id="panggung"></canvas>
+
+<button id="pintu" aria-label="Buka maklumat ruang hidup" title="maklumat">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+    <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<div id="sapa" hidden></div>
+
+<div id="overlay" role="dialog" aria-label="Maklumat ruang hidup">
+  <div id="ovHandle"><div class="genggam"></div></div>
+  <div id="ovKepala">
+    <div class="ovJudul">
+      <span id="ovDot"></span>
+      <div>
+        <div class="jud b">MICAPROFITA · RUANG HIDUP</div>
+        <div class="lab" id="ovStatus">membangunkan mata…</div>
+        <div class="lab" id="ovMeta"></div>
+      </div>
+    </div>
+    <a id="ovArena" href="./arena.html">← ARENA</a>
+  </div>
+  <div id="pTabs">
+    <button data-tab="pikir" class="akt">Pikiran</button>
+    <button data-tab="peta">Peta-diri</button>
+    <button data-tab="pasar">Pasar</button>
+    <button data-tab="jurnal">Jurnal</button>
+  </div>
+  <div id="pIsi">
+    <div id="tab-pikir">
+      <div class="blok">
+        <h4>Sadar-1 <em>· tubuh otonom di GitHub Actions</em></h4>
+        <div id="ovS1"><div class="kecil">menghubungi ingatan GitHub…</div></div>
+      </div>
+      <div class="blok">
+        <h4>Aktivitas kini <em>· Sadar-2, mata interaktif</em></h4>
+        <div class="aktNama" id="pkNama">bangkit…</div>
+        <div class="aktFase" id="pkFase">—</div>
+        <ol class="faseList" id="pkFaseList"></ol>
+      </div>
+      <div class="blok">
+        <h4>Mengapa kupilih ini <em>· skor utilitas</em></h4>
+        <div class="mengapa" id="pkMengapa">menghitung keadaan…</div>
+      </div>
+      <div class="blok">
+        <h4>Cermin diri <em>· dibaca dari repo</em></h4>
+        <div id="pkDiri"><div class="kecil">belum ada — aku belum membaca rumahku</div></div>
+      </div>
+      <div class="blok">
+        <h4>Indeks sadar-repo</h4>
+        <div id="pkIndeks"><div class="kecil">—</div></div>
+      </div>
+    </div>
+    <div id="tab-peta" hidden><div class="kecil">memindai rumah…</div></div>
+    <div id="tab-pasar" hidden><div class="kecil">belum ada studi pasar</div></div>
+    <div id="tab-jurnal" hidden><div class="kecil">—</div></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+/* ================================================================
+   V287-NADI — RUANG HIDUP ditata ulang total atas mandat pemilik:
+   · layar utama 100% habitat dan makhluk — tanpa badge, tanpa panel,
+     tanpa teks menempel; SEMUA maklumat masuk satu overlay tersembunyi
+     yang dibuka lewat satu tombol samar (ditutup lewat tombol yang
+     sama atau geser ke bawah).
+   · bintang/node peta repo DIGANTI MAKHLUK HIDUP "NADI" — benang
+     bioluminesen buatan sendiri: kepala bermata satu, tulang 11 ruas
+     yang mengikuti (meliuk, tak menabrak), silia yang bergelombang
+     = napas terlihat, dua sulur peraba, organ kunang-kunang yang
+     bertambah tiap fakta dicerna, probosis pemandu saat membaca —
+     karakter isi file ASLI mengalir lewat probosis ke tubuhnya.
+   · habitat terasering: zona = direktori ASLI repo di slot kisi tetap
+     (3×3 lanskap / 2×5 potret) — sel sisik bergrid rapi, nol tumpang
+     tindih; sarang di tengah; kolam pasar di sudut; nama file hanya
+     muncul saat didekati atau disentuh.
+   · status lewat PERILAKU: SEHAT = terang dan rajin; TELAT = meredup;
+     TIDAK BANGUN = redup, meringkuk di sarang, mata terpejam — tanpa
+     teks di panggung.
+   · satu warna aksen (bio-teal); merah hanya untuk kegagalan.
+   Mesin DUA-SADARI tidak disentuh: Sadar-1 (GitHub Actions) tetap
+   hidup tanpa penonton, ingatan resmi tetap COMMIT GitHub — bukan
+   localStorage. ================================================================ */
+/* ================= IDENTITAS & KONSTANTA ================= */
+const RUMAH = {pemilik:'ririnsherlyna-cloud', repo:'Micaprofita-', cabang:'main'};
+const INGATAN_GH = {keadaan:'ruang-hidup/keadaan.json', ingatan:'ruang-hidup/ingatan.json', harian:'ruang-hidup/buku_harian.jsonl'};
+const MAXBACA = 400000;                 // batas baca per file (byte) — kejujuran parsial
+const FASE = ['MENGAMATI','MEMAHAMI','MENCOBA','MELAKUKAN','MENGEVALUASI','MENEMUKAN','MEMBANGUN','MENINGKATKAN','MENGAMATI-KEMBALI'];
+const INTEGERS = ['versi.json','gerbang.json','brain.json','arena-keadaan.json','otak/genome-server.json','otak/penjaga-keadaan.json','otak/performa.json','memori/terkini.json','README.md'];
+
+/* ================= KEADAAN DUNIA ================= */
+const S = {
+  pohon:{files:[], sumber:'', at:0, live:false},
+  baca:{},
+  pasar:{},
+  cermin:{at:0, data:null},
+  jurnal:[], stat:{bytes:0, fakta:0, sesi:0, lahirAt:Date.now(), btTotal:0},
+  kerja:{nama:'bangkit', fase:'', faseAt:0, jejak:[], mengapa:[], target:null, sibuk:false},
+  perintah:null,
+  terputus:false
+};
+const tidur = ms => new Promise(r=>setTimeout(r,ms));
+const sekarang = () => Date.now();
+function wib(ts){ const d=new Date(ts??sekarang());
+  return d.toLocaleTimeString('id-ID',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}); }
+function umur(ms){ if(!ms) return '—'; const s=Math.floor(ms/1000);
+  if(s<90) return s+' dtk'; const m=Math.floor(s/60); if(m<90) return m+' mnt';
+  const h=Math.floor(m/60); if(h<48) return h+' jam'; return Math.floor(h/24)+' hari'; }
+function kb(n){ return n>=1048576 ? (n/1048576).toFixed(1)+' MB' : n>=1024 ? (n/1024).toFixed(1)+' KB' : n+' B'; }
+function fnv(str){ let h=2166136261; for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,16777619);} return (h>>>0); }
+function jurnal(jenis, teks, kelas){ S.jurnal.push({at:sekarang(), jenis, teks, kelas:kelas||''});
+  if(S.jurnal.length>170) S.jurnal.splice(0, S.jurnal.length-130);
+  if(S.tabAktif==='jurnal') jurnalRender(); }
+function pesan(e){ return (e && (e.message||e.toString())) || 'tak-diketahui'; }
+/* ================= MEMORI RESMI: GITHUB (bukan localStorage) =================
+   DUA SADARI:
+   · SADAR-1 — tubuh otonom di GitHub Actions (cron ±20 mnt): membaca repo,
+     menghisap pasar Binance nyata, bereksperimen (kromosom), lalu MENULIS
+     INGATAN via COMMIT ke ruang-hidup/. Hidup walau tak ada penonton;
+     buktinya riwayat komit yang bisa diaudit siapa pun.
+   · SADAR-2 — halaman ini: mata interaktif. Sesi pengamatan kita sengaja
+     efemeral; ingatan resmi dihidrasi dari GitHub saat masuk + tiap 5 mnt. */
+function simpan(){ /* tanpa localStorage — ingatan resmi milik GitHub; Sadar-1 yang menulis */ }
+const S1 = {keadaan:null, ingatan:null, komit:null, at:0, sumber:'', stale:false};
+async function ghAmbil(pathRepo){
+  /* DOKTRIN BARU (Interda 30 Okt): server otak z.ai = SUMBER UTAMA (same-origin).
+     GitHub diturunkan jadi LEMARI CADANGAN murni — hanya dibaca bila otak tak menyediakan. */
+  const gerbang = [
+    ['otak-z.ai', `${pathRepo}?t=${sekarang()}`],
+    ['api', `https://api.github.com/repos/${RUMAH.pemilik}/${RUMAH.repo}/contents/${pathRepo}?ref=${RUMAH.cabang}&t=${sekarang()}`],
+    ['raw', `https://raw.githubusercontent.com/${RUMAH.pemilik}/${RUMAH.repo}/${RUMAH.cabang}/${pathRepo}?t=${sekarang()}`],
+    ['jsdelivr', `https://cdn.jsdelivr.net/gh/${RUMAH.pemilik}/${RUMAH.repo}@${RUMAH.cabang}/${pathRepo}`]
+  ];
+  for(const [cara, url] of gerbang){
+    try{
+      const c=new AbortController(); const t=setTimeout(()=>c.abort(), 12000);
+      const r=await fetch(url,{cache:'no-store', signal:c.signal}); clearTimeout(t);
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      if(cara==='otak-z.ai'){ S1.sumber='otak-z.ai'; return await r.text(); }
+      if(cara==='api'){
+        const d=await r.json();
+        if(d.encoding!=='base64' || !d.content) throw new Error('konten tak terduga');
+        const bin=Uint8Array.from(atob(d.content.replace(/\s/g,'')), ch=>ch.charCodeAt(0));
+        S1.sumber='github-api';
+        return new TextDecoder().decode(bin);
+      }
+      S1.sumber=cara;
+      return await r.text();
+    }catch(e){}
+  }
+  throw new Error('ingatan-github-tak-terjangkau:'+pathRepo);
+}
+let _s1BangunDilaporkan = 0;
+async function muatMemoriGitHub(){
+  try{
+    const ing = JSON.parse(await ghAmbil(INGATAN_GH.ingatan));
+    S1.ingatan = ing; S1.at = sekarang(); S1.stale = false;
+    if(ing.kelahiran) S.stat.lahirAt = Date.parse(ing.kelahiran) || S.stat.lahirAt;
+    const st=ing.stat||{};
+    S.stat.bytes = Math.max(S.stat.bytes, st.bytes||0);
+    S.stat.fakta = Math.max(S.stat.fakta, st.fakta||0);
+    S.stat.btTotal = Math.max(S.stat.btTotal, st.btTotal||0);
+    for(const [p,b] of Object.entries(ing.baca||{})){
+      if(!S.baca[p]){ S.baca[p]={size:b.size||0, readAt:Date.parse(b.readAt)||0, partial:!!b.partial,
+        pct: b.partial? (b.pct||60):100, fakta:(b.fakta||[]).slice(), s1:true, hashSrc:'sadar1'}; }
+    }
+    for(const [sym,p] of Object.entries(ing.pasar||{})){
+      const at=Date.parse(p.at)||0; const q=S.pasar[sym];
+      if(!q || at>(q.at||0)) S.pasar[sym]=Object.assign({}, p, {at, s1:!q, oc:p.oc||[]});
+    }
+    const k = JSON.parse(await ghAmbil(INGATAN_GH.keadaan));
+    const bangunLama = (S1.keadaan && S1.keadaan.bangunKe) || _s1BangunDilaporkan;
+    S1.keadaan = k;
+    if(k.bangunKe && k.bangunKe !== bangunLama){
+      _s1BangunDilaporkan = k.bangunKe;
+      const selesai = Date.parse(k.waktu?.selesai)||0;
+      jurnal('S1', `Sadar-1 BANGUN ke-<b>${k.bangunKe}</b> di ${k.host?.nama||'GitHub Actions'} — ${wib(selesai)} WIB, ${((k.waktu?.durasiMs||0)/1000).toFixed(1)} dtk kerja, TANPA PENONTON. bukti: <b>commit ruang-hidup/</b>`);
+      for(const b of (k.bacaKini||[]).slice(0,3)) jurnal('S1-BACA', `<b>${b.path}</b> — ${(b.fakta||[])[0]||''}`);
+      for(const t of (k.penemuan||[]).slice(0,2)) jurnal('S1-TEMUAN', t.teks, 'temuan');
+      for(const b of (k.bacaKini||[])){
+        if(!S.baca[b.path]) S.baca[b.path]={size:b.size||0, readAt:Date.parse(b.readAt)||0, partial:!!b.partial,
+          pct:b.pct||100, fakta:(b.fakta||[]).slice(), s1:true, hashSrc:'sadar1'};
+      }
+      petaRender();
+    }
+    try{ const d = await jF(`https://api.github.com/repos/${RUMAH.pemilik}/${RUMAH.repo}/commits?path=ruang-hidup&per_page=1`);
+      if(Array.isArray(d) && d[0]) S1.komit={sha:(d[0].sha||'').slice(0,7), oleh:d[0].commit?.author?.name||'sadar1[bot]', at:d[0].commit?.author?.date||''};
+    }catch(e){}
+  }catch(e){
+    S1.stale=true;
+    if(!S1.keadaan) jurnal('S1', `ingatan GitHub tak terjangkau (${pesan(e)}) — kujujurkan: tubuh otonomku belum bisa kubaca; Sadar-2 tetap hidup`, 'gagal');
+  }
+  s1Render(); ovStatusRender(); indeksRender(); if(S.tabAktif==='peta') petaRender(); if(S.tabAktif==='pasar') pasarRender();
+}
+function s1Render(){
+  const w=document.getElementById('ovS1'); if(!w) return;
+  const k=S1.keadaan, ing=S1.ingatan;
+  if(!k){ w.innerHTML='<div class="kecil">menghubungi ingatan GitHub…</div>'; return; }
+  const selesai=Date.parse(k.waktu?.selesai)||0, umurMs=sekarang()-selesai;
+  const sehat=umurMs<30*60000, telat=umurMs<55*60000;
+  const sta=sehat?'<span class="v h">SEHAT</span>':telat?'<span class="v dim">TELAT — cron GitHub bisa tertunda</span>':'<span class="v r">TIDAK BANGUN — periksa tab Actions di repo</span>';
+  const lahir=Date.parse(ing?.kelahiran)||S.stat.lahirAt;
+  w.innerHTML=`
+   <div class="baris"><span class="k">status tubuh otonom</span>${sta}</div>
+   <div class="baris"><span class="k">bangun total</span><span class="v h">${ing?.totalBangun ?? k.bangunKe}</span></div>
+   <div class="baris"><span class="k">umur hidup</span><span class="v h">${umur(sekarang()-lahir)}</span></div>
+   <div class="baris"><span class="k">bangun terakhir</span><span class="v">${wib(selesai)} WIB · ${((k.waktu?.durasiMs||0)/1000).toFixed(1)} dtk</span></div>
+   <div class="baris"><span class="k">host</span><span class="v dim">${k.host?.nama||'GitHub Actions'}</span></div>
+   <div class="baris"><span class="k">berikutnya</span><span class="v">${k.waktu?.berikutnya||'±≤20 mnt'}</span></div>
+   <div class="baris"><span class="k">memori resmi</span><span class="v h">${S1.sumber==='otak-z.ai'?'SERVER OTAK-Z.AI (sumber kebenaran)':S1.sumber?('cadangan '+S1.sumber):'commit GitHub'}${(S1.sumber&&S1.sumber!=='otak-z.ai'&&S1.komit)?` · <a class="sumber" target="_blank" rel="noopener" href="https://github.com/${RUMAH.pemilik}/${RUMAH.repo}/commit/${S1.komit.sha}">${S1.komit.sha}</a>`:''}</span></div>
+   <div class="baris"><span class="k">kromosom</span><span class="v dim">gen ${k.kromosom?.generasi??0} · rsiMax ${k.kromosom?.rsiMax??'-'} · momMin ${k.kromosom?.momMin??'-'} · hold ${k.kromosom?.holdJam??'-'}j</span></div>
+   <div class="kecil" style="margin:5px 0 2px">fokus hidup: ${k.tujuan?.fokusKini||'—'}</div>
+   ${(k.penemuan||[]).slice(0,3).map(t=>`<div class="jr temuan" style="margin-top:5px"><span class="t">S1 · skor ${t.skor}</span><br>${t.teks}</div>`).join('')}
+   <div class="kecil" style="margin-top:6px">${k.duaSadar?.catatan||'Sadar-1 menulis ingatan ini ke GitHub lewat commit — bukan localStorage.'}</div>`;
+}
+
+/* ================= SENSOR-REPO: pohon nyata (2 gerbang) ================= */
+async function jF(url, ms=12000){
+  const c = new AbortController(); const t = setTimeout(()=>c.abort(), ms);
+  try{ const r = await fetch(url,{cache:'no-store', signal:c.signal});
+    if(!r.ok) throw new Error('HTTP '+r.status); return await r.json();
+  } finally{ clearTimeout(t); }
+}
+async function pohonAmbil(){
+  try{ const d = await jF(`./otak_pohon.json?t=${sekarang()}`);
+    if(d && Array.isArray(d.files) && d.files.length) return {files:d.files, sumber:'otak-z.ai'};
+  }catch(e){}
+  try{ const d = await jF(`https://api.github.com/repos/${RUMAH.pemilik}/${RUMAH.repo}/git/trees/${RUMAH.cabang}?recursive=1`);
+    if(d && Array.isArray(d.tree)){
+      const files = d.tree.filter(t=>t.type==='blob').map(t=>({path:t.path, size:t.size||0, hash:t.sha||''}));
+      if(files.length) return {files, sumber:'github-api'};
+    }}catch(e){}
+  try{ const d = await jF(`https://data.jsdelivr.com/v1/packages/gh/${RUMAH.pemilik}/${RUMAH.repo}@${RUMAH.cabang}?structure=flat`);
+    if(d && Array.isArray(d.files)){
+      const files = d.files.map(f=>({path:(f.name||'').replace(/^\//,''), size:f.size||0, hash:f.hash||''}));
+      if(files.length) return {files, sumber:'jsdelivr'};
+    }}catch(e){}
+  throw new Error('pohon-tak-terjangkau');
+}
+async function pindaiRumah(){
+  const h = await pohonAmbil();
+  const lama = S.pohon.sumber && S.pohon.sumber!==h.sumber;
+  const dulu = new Map(S.pohon.files.map(f=>[f.path, f.hash]));
+  S.pohon = {files:h.files, sumber:h.sumber, at:sekarang(), live:true};
+  S.terputus = false;
+  let berubah=0, baru=0;
+  for(const f of h.files){
+    const b = S.baca[f.path];
+    if(!b){ baru++; continue; }
+    if(!lama && b.hash && f.hash && b.hash!==f.hash && b.hashSrc===h.sumber){ b.berubah=sekarang(); berubah++; }
+    b.hashSrc = h.sumber;
+  }
+  jurnal('PINDAI', `rumah terpindai via ${h.sumber}: <b>${h.files.length} file</b>, ${kb(h.files.reduce((a,f)=>a+f.size,0))}`
+    + (berubah?` — <b>${berubah} file BERUBAH</b> sejak kubaca (rumahku bergerak!)`:'')
+    + (baru?` — ${baru} belum pernah kubaca`:''), berubah?'temuan':'');
+  if(lama) jurnal('PINDAI', 'sumber pohon berganti gerbang — pembanding SHA kureset agar jujur');
+  try{ susun(); }catch(e){}
+  petaRender();
+}
+
+/* ================= SENSOR-REPO: isi file nyata (2 gerbang + streaming) ================= */
+async function isiAmbil(path, ukuran, onChunk){
+  const gerbang = [
+    `https://raw.githubusercontent.com/${RUMAH.pemilik}/${RUMAH.repo}/${RUMAH.cabang}/${encodeURIComponent(path)}`,
+    `https://cdn.jsdelivr.net/gh/${RUMAH.pemilik}/${RUMAH.repo}@${RUMAH.cabang}/${path}`
+  ];
+  for(const url of gerbang){
+    try{
+      const c = new AbortController(); const t = setTimeout(()=>c.abort(), 15000);
+      const r = await fetch(url,{cache:'no-store', signal:c.signal}); clearTimeout(t);
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      if(r.body && r.body.getReader){
+        const rd = r.body.getReader(), dec = new TextDecoder('utf-8',{stream:true});
+        let buf='', got=0;
+        while(true){
+          const {done, value} = await rd.read(); if(done) break;
+          buf += dec.decode(value,{stream:true}); got += value.length;
+          if(onChunk) onChunk(buf, got);
+          if(got >= MAXBACA + 8192){ try{rd.cancel();}catch(e){} break; }
+        }
+        buf += dec.decode();
+        const dibaca = Math.min(got, MAXBACA);
+        return {teks: buf.length>MAXBACA ? buf.slice(0,MAXBACA) : buf, dibaca, ukuran};
+      }
+      const teks = await r.text();
+      return {teks: teks.length>MAXBACA ? teks.slice(0,MAXBACA) : teks, dibaca: Math.min(teks.length,MAXBACA), ukuran};
+    }catch(e){}
+  }
+  throw new Error('isi-gagal');
+}
+
+/* ================= PEMBACA: parser → fakta nyata ================= */
+function parseJSON(t){ try{ return JSON.parse(t); }catch(e){ return undefined; } }
+function jumlahJSON(o){
+  let kunci=0, simpul=0, kedalaman=0, larik=0;
+  (function jalan(v,d){ simpul++; if(d>kedalaman) kedalaman=d;
+    if(Array.isArray(v)){ larik++; v.slice(0,80).forEach(x=>jalan(x,d+1)); }
+    else if(v && typeof v==='object'){ for(const k in v){ kunci++; if(v[k]!==undefined && simpul<9000) jalan(v[k],d+1); } }
+  })(o,0);
+  return {kunci, simpul, kedalaman, larik};
+}
+const f2=(x)=>(+x).toFixed(2), f1=(x)=>(+x).toFixed(1);
+
+function faktaDariJSON(path, o){
+  const F=[], s=jumlahJSON(o);
+  F.push(`JSON sah: ${s.kunci} kunci, ${s.simpul} simpul, kedalaman ${s.kedalaman}, ${s.larik} larik`);
+  const p = path.split('/').pop();
+  if(p==='versi.json'){
+    F.push(`protokol "${o.protokol}" · kodeVersi <b>${o.kodeVersi}</b> · organ: `+
+      Object.entries(o.organ||{}).map(([k,v])=>k+' '+v).join(', '));
+    const g=o.pertumbuhan||{}; F.push(`pertumbuhan: ${g.denyut??'?'} denyut, rantai ${g.rantaiDenyut??'?'}; hitung: simpan ${g.hitung?.simpan??0}, gagal ${g.hitung?.gagal??0}`);
+    if(o.waktu) F.push(`stempel waktu organ: ${o.waktu}`);
+  }
+  if(p==='arena-keadaan.json'){
+    const tp = o.todayPicks||[]; const m = tp.find(x=>x.competitor==='MICAPROFITA');
+    if(m) F.push(`pick MICAPROFITA hari ${o.today}: <b>${m.symbol} ${m.direction}</b> keyakinan ${m.confidence}% — alasan arena: "${(m.evidence&&m.evidence.reason)||'-'}"`);
+    F.push(`todayPicks memuat ${tp.length} kompetitor: `+tp.slice(0,6).map(x=>`${x.competitor}→${x.symbol}`).join(', ')+(tp.length>6?'…':''));
+    const st=(o.standings||[]).find(x=>x.competitor==='MICAPROFITA');
+    if(st) F.push(`diri arena: ${st.days} hari, ${st.picks} pick, hit-rate <b>${f1(st.hitRate*100)}%</b>, kumulatif <b>${f2(st.cumRet*100)}%</b> (terbaik ${f2(st.bestDay*100)}%, terburuk ${f2(st.worstDay*100)}%)`);
+    if(o.genome) F.push(`genom generasi <b>${o.genome.generation}</b>: kBase ${o.genome.v2?.kBase}, paraK ${o.genome.v2?.paraK}, atrCap ${o.genome.v2?.atrCap}, memVeto ${o.genome.v2?.memVetoOn?'AKTIF':'mati'}`);
+    const bc=o.bukuCuan||{}, mt=bc.metrik||{};
+    if(mt.totalPlan!==undefined) F.push(`bukuCuan: ${mt.totalPlan} rencana, win-rate ${f1((mt.winRate||0)*100)}%, ekspektansi ${f2(mt.ekspektansiPct||0)}%, net kumulatif ${f2(mt.netKumulatifPct||0)}%, MDD ${f1(mt.maxDrawdownPct||0)}% — kejujuran arena: "${(bc.kejujuran||'').slice(0,80)}"`);
+    if(o.climate) F.push(`iklim: Fear&Greed ${o.climate.fng} (${o.climate.fngClass}), dominasi BTC ${o.climate.btcDominance}%, rezim terdeteksi <b>${o.regime}</b>`);
+    if(o.memory) F.push(`memori arena: ${o.memory.rawEvents}→${o.memory.storedRows} baris (kompresi ×${f1(o.memory.compressionRatio||1)}), ${o.memory.totalHits} hit`);
+    if(o.slotHariIni) F.push(`slot kejujuran ${o.slotHariIni.day}: k=${o.slotHariIni.k}, lahir ${o.slotHariIni.lahir}, ditolak ${(o.slotHariIni.ditolak||[]).length}`);
+  }
+  if(p==='genome-server.json'){
+    for(const rz of ['NAIK','TURUN','DATAR']){
+      const z=o[rz]; if(z&&z.bobot) F.push(`otak rezim ${rz}: generasi ${z.generasi}, belajar ${z.belajar}×, bobot `+
+        Object.entries(z.bobot).map(([k,v])=>`${k} ${(+v).toFixed(3)}`).join(', '));
+    }
+    if(o.phoenix) F.push(`phoenix tersimpan untuk rezim: ${Object.keys(o.phoenix).join(', ')}`);
+    if(o.aturanBelajar) F.push(`aturanBelajar: ${JSON.stringify(o.aturanBelajar).slice(0,120)}`);
+  }
+  if(p==='terkini.json'){
+    F.push(`kapsul "${o.protokol}" organ ${o.organ} — denyut ke-${o.denyut??'?'}`);
+    const ch=(o.rantai&&o.rantai.denyut)||[]; if(ch.length) F.push(`rantai denyut ${ch.length} mata; hash terakhir ${String(ch[ch.length-1]?.hash||'').slice(0,16)}…`);
+  }
+  if(p==='wawasan.json'){
+    if(o.siklus!==undefined) F.push(`wawasan siklus <b>${o.siklus}</b> dihasilkan ${o.dihasilkan||'-'}`);
+    if(o.metakognisi) F.push(`metakognisi: ${JSON.stringify(o.metakognisi).slice(0,140)}`);
+    if(o.dimensi) F.push(`${Array.isArray(o.dimensi)?o.dimensi.length:'?'} dimensi wawasan didaftarkan`);
+    if(o.vetoSiklusIni) F.push(`veto siklus ini: ${JSON.stringify(o.vetoSiklusIni).slice(0,100)}`);
+  }
+  if(p==='brain.json') F.push(`brain.json: ${JSON.stringify(o).slice(0,160)}`);
+  if(p==='gerbang.json') F.push(`gerbang.json: ${JSON.stringify(o).slice(0,160)}`);
+  if(p==='penjaga-keadaan.json') F.push(`penjaga-keadaan: ${JSON.stringify(o).slice(0,160)}`);
+  if(p==='performa.json') F.push(`performa: ${JSON.stringify(o).slice(0,160)}`);
+  if(p==='guru.json'||p==='kaizen.json'||p==='impas.json'||p==='odds.json'||p==='gekko.json')
+    F.push(`inti dokumen: ${JSON.stringify(o).slice(0,150)}…`);
+  return F;
+}
+function faktaDariMD(path, t){
+  const F=[]; const baris=t.split('\n');
+  const judul=baris.filter(b=>/^#{1,3}\s/.test(b));
+  const kata=t.split(/\s+/).filter(Boolean).length;
+  const h1=(t.match(/^#\s+(.+)/m)||[])[1];
+  F.push(`markdown: ${baris.length} baris, ${judul.length} kepala-seksi, ${kata.toLocaleString('id-ID')} kata`);
+  if(h1) F.push(`judul utama: "<b>${h1.trim().slice(0,90)}</b>"`);
+  if(judul.length>2) F.push(`seksi: ${judul.slice(1,7).map(x=>x.replace(/^#+\s*/,'').trim().slice(0,34)).join(' · ')}${judul.length>7?'…':''}`);
+  return F;
+}
+function faktaDariKODE(path, t){
+  const F=[]; const baris=t.split('\n'); const p=path.split('/').pop();
+  const fungsi=(t.match(/function\s+[A-Za-z_$][\w$]*|def\s+[A-Za-z_]\w*|=>\s*\{/g)||[]).length;
+  F.push(`kode: ${baris.length.toLocaleString('id-ID')} baris, ±${fungsi} fungsi/lambung`);
+  const vd=(t.match(/LIVE_DECISION_VERSION\s*=\s*'([^']+)'/)||[])[1]; if(vd) F.push(`LIVE_DECISION_VERSION = <b>${vd}</b>`);
+  const op=(t.match(/0x[0-9A-F]{2}:\s*(NOP|LOAD|STORE|ADD|AND|OR|XOR|NAND|SUB|LDI|MOVA|MOVB|MOVC|JMPZ|EAT|DIVIDE)/g)||[]);
+  if(op.length) F.push(`${op.length} opcode VM terpetakan — mesin hidup versi lamaku`);
+  const kd=(t.match(/const KURIKULUM|const MRIT|const GENOM|function jawab/g)||[]);
+  if(kd.length) F.push(`modul otak terdeteksi: ${kd.join(', ')}`);
+  const nm=(t.match(/name:\s*(.+)$/gm)||[]).slice(0,5);
+  if(path.endsWith('.yml') && nm.length) F.push(`alur kerja: ${nm.map(x=>x.replace('name:','').trim().slice(0,30)).join(', ')}`);
+  if(p==='penjaga.mjs'){ const ste=(t.match(/async function\s+\w+/g)||[]).length; F.push(`penjaga: ${ste} fungsi asinkron — jantung denyut 15 menit rumah ini`); }
+  return F;
+}
+function pilahFakta(path, teks){
+  const ext = path.split('.').pop().toLowerCase();
+  if(ext==='json'){ const o=parseJSON(teks);
+    if(o===undefined) return ['JSON TIDAK SAH setelah '+kb(teks.length)+' — kemungkinan karena baca parsial; kucatat jujur'];
+    return faktaDariJSON(path, o); }
+  if(ext==='md') return faktaDariMD(path, teks);
+  if(['html','mjs','js','py','yml','cjs'].includes(ext)) return faktaDariKODE(path, teks);
+  return [`${kb(teks.length)} teks polos terbaca`];
+}
+/* ================= SENSOR-PASAR: klines Binance nyata ================= */
+const GERBANG_BINANCE = ['https://data-api.binance.vision','https://api.binance.com','https://api1.binance.com'];
+async function lilinAmbil(sym){
+  for(const g of GERBANG_BINANCE){
+    try{ const d = await jF(`${g}/api/v3/klines?symbol=${sym}&interval=1h&limit=200`, 11000);
+      if(Array.isArray(d) && d.length>60)
+        return d.map(k=>({t:k[0], o:+k[1], h:+k[2], l:+k[3], c:+k[4], v:+k[5]}));
+    }catch(e){}
+  }
+  throw new Error('lilin-gagal:'+sym);
+}
+function ema(arr, n){ const k=2/(n+1); let e=arr[0], out=[e];
+  for(let i=1;i<arr.length;i++){ e=arr[i]*k+e*(1-k); out.push(e); } return out; }
+function rsiWilder(arr, n=14){
+  let naik=0, turun=0; const out=[];
+  for(let i=1;i<arr.length;i++){ const ch=arr[i]-arr[i-1];
+    const u=Math.max(ch,0), d=Math.max(-ch,0);
+    if(i<=n){ naik+=u; turun+=d; if(i===n){ naik/=n; turun/=n; out.push(100-100/(1+naik/(turun||1e-9))); } }
+    else{ naik=(naik*(n-1)+u)/n; turun=(turun*(n-1)+d)/n; out.push(100-100/(1+naik/(turun||1e-9))); } }
+  return out.length?out[out.length-1]:50; }
+function atrK(lilin, n=14){
+  const tr=[]; for(let i=1;i<lilin.length;i++){ const l=lilin[i];
+    tr.push(Math.max(l.h-l.l, Math.abs(l.h-lilin[i-1].c), Math.abs(l.l-lilin[i-1].c))); }
+  let a=tr.slice(0,n).reduce((x,y)=>x+y,0)/n;
+  for(let i=n;i<tr.length;i++) a=(a*(n-1)+tr[i])/n;
+  return a; }
+function analisaLilin(lilin){
+  const c=lilin.map(x=>x.c), terakhir=c[c.length-1];
+  const e20=ema(c,20), e50=ema(c,50);
+  const ret=[]; for(let i=1;i<c.length;i++) ret.push(c[i]/c[i-1]-1);
+  const vol=Math.sqrt(ret.slice(-48).reduce((a,x)=>a+x*x,0)/48)*100;
+  const mom7=c[c.length-1]/c[c.length-8]-1, mom48=c[c.length-1]/c[c.length-49]-1;
+  const chg=c[c.length-1]/c[c.length-25]-1;
+  return {harga:terakhir, chg:chg*100, ema20:e20[e20.length-1], ema50:e50[e50.length-1],
+    rsi:rsiWilder(c), atr:atrK(lilin), mom7:mom7*100, mom48:mom48*100, vol};
+}
+function ujiJalan(lilin){
+  const c=lilin.map(x=>x.c), e20=ema(c,20), e50=ema(c,50);
+  const rsiSeri=(()=>{ let naik=0,turun=0; const out=[];
+    for(let i=1;i<c.length;i++){ const ch=c[i]-c[i-1], u=Math.max(ch,0), d=Math.max(-ch,0);
+      if(i<=14){ naik+=u; turun+=d; if(i===14){naik/=14;turun/=14;out[14]=100-100/(1+naik/(turun||1e-9));} }
+      else{ naik=(naik*13+u)/14; turun=(turun*13+d)/14; out[i]=100-100/(1+naik/(turun||1e-9)); } }
+    return out; })();
+  const trades=[];
+  let i=60;
+  while(i<c.length-24){
+    const sah = e20[i]>e50[i] && (rsiSeri[i]??50)<70 && c[i]>c[i-7];
+    if(sah){ const ret=(c[i+24]-c[i])/c[i]*100; trades.push(ret); i+=24; }
+    else i++;
+  }
+  if(!trades.length) return {n:0, menang:0, net:0, netCek:0, catatan:'tidak ada sinyal sah pada 200 lilin — jujur kosong'};
+  const net=trades.reduce((a,x)=>a+x,0);
+  const netCek=Math.expm1(trades.reduce((a,x)=>a+Math.log1p(x/100),0))*100;
+  return {n:trades.length, menang:trades.filter(x=>x>0).length, net, netCek,
+    terbaik:Math.max(...trades), terburuk:Math.min(...trades)};
+}
+function auditPick(pick, an){
+  if(!an) return null;
+  const buy = pick.direction==='BUY';
+  const searah = buy ? an.mom7>0 : an.mom7<0;
+  const align = buy ? an.ema20>an.ema50 : an.ema20<an.ema50;
+  const vonis = searah&&align ? 'SEPAKAT' : (!searah&&!align ? 'MENDEVIASI' : 'SETENGAH');
+  return {arah:pick.direction, conf:pick.confidence, vonis,
+    ket:`mom7 ${f2(an.mom7)}% · ema ${an.ema20>an.ema50?'20>50':'20<50'} · RSI ${f1(an.rsi)}`};
+}
+
+/* ================= CERMIN: arena-keadaan.json same-origin ================= */
+async function cerminAmbil(){
+  const r = await fetch('./arena-keadaan.json?t='+sekarang(), {cache:'no-store'});
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  const d = await r.json();
+  S.cermin = {at:sekarang(), data:d};
+  const tp=(d.todayPicks||[]).find(x=>x.competitor==='MICAPROFITA');
+  jurnal('CERMIN', `cermin arena terbaca: rezim <b>${d.regime}</b>, pick MICAPROFITA ${tp?`<b>${tp.symbol} ${tp.direction}</b> (${tp.confidence}%)`:'kosong'}, FnG ${d.climate?.fng??'-'}`);
+  return d;
+}
+function simbolSasaran(){
+  const d=S.cermin.data; if(!d) return [];
+  const set=[]; const dor=s=>{ if(s && !set.includes(s) && set.length<3) set.push(s); };
+  const mine=(d.todayPicks||[]).find(x=>x.competitor==='MICAPROFITA'); if(mine) dor(mine.symbol);
+  for(const it of (d.pulse?.items||[])) dor(it.symbol);
+  for(const x of (d.todayPicks||[])) if(x.competitor!=='ACAK') dor(x.symbol);
+  if(!set.length) for(const x of (d.todayPicks||[])) dor(x.symbol);
+  return set;
+}
+
+/* ================= OTAK: pekerjaan nyata, argmax utilitas ================= */
+const STALE_POHON = 12*60000, STALE_CERMIN = 20*60000, STALE_PASAR = 45*60000;
+function skorBaca(f){
+  const b=S.baca[f.path];
+  if(b){
+    if(b.berubah) return 95;
+    if(b.fakta) return -1;
+    if(b.gagal>=2 && sekarang()-(b.atGagal||0)<600000) return -1;
+  }
+  let u=40;
+  if(INTEGERS.includes(f.path)) u+=30;
+  else if(f.path.startsWith('laporan/')) u+=10;
+  else if(f.path.startsWith('scripts/')) u+=14;
+  else if(f.size>1000000) u-=26;
+  else if(f.path.startsWith('otak/')||f.path.startsWith('memori/')) u+=18;
+  return u;
+}
+function daftarKerja(){
+  const k=[];
+  const pohonTua = S.pohon.files.length===0 || (sekarang()-S.pohon.at)>STALE_POHON;
+  if(pohonTua) k.push({u: S.pohon.files.length?70:95, label:'pindai rumah (pohon repo '+(S.pohon.files.length?umur(sekarang()-S.pohon.at):'kosong')+')', buat:()=>aktPindai()});
+  const cerminTua = !S.cermin.at || (sekarang()-S.cermin.at)>STALE_CERMIN;
+  if(cerminTua) k.push({u:60, label:'cermin arena-keadaan '+(S.cermin.at?umur(sekarang()-S.cermin.at):'belum dibaca'), buat:()=>aktCermin()});
+  for(const f of S.pohon.files){ const u=skorBaca(f); if(u>0) k.push({u, label:'baca '+f.path+(S.baca[f.path]?.berubah?' (BERUBAH)':''), buat:()=>aktBaca(f)}); }
+  for(const sym of simbolSasaran()){
+    const p=S.pasar[sym];
+    const tua = !p || (sekarang()-p.at)>STALE_PASAR;
+    if(tua) k.push({u: p?50:58, label:'pelajari pasar '+sym+(p?' ('+umur(sekarang()-p.at)+')':' (pertama)'), buat:()=>aktPasar(sym)});
+  }
+  const mine=(S.cermin.data?.todayPicks||[]).find(x=>x.competitor==='MICAPROFITA');
+  if(mine && S.pasar[mine.symbol] && !S.pasar[mine.symbol].audit)
+    k.push({u:55, label:'audit pick '+mine.symbol+' vs momentum hidup', buat:()=>aktAudit(mine)});
+  if(S.jurnal.length>170) k.push({u:20, label:'padatkan jurnal ('+S.jurnal.length+' entri)', buat:()=>aktPadat()});
+  return k;
+}
+
+/* ---------- SIKLUS 9 TAHAP: tiap langkah = fungsi nyata ---------- */
+async function jalankan(akt){
+  S.kerja.sibuk=true; S.kerja.nama=akt.nama; S.kerja.target=akt.target||null; S.kerja.jejak=[];
+  for(const L of akt.langkah){
+    S.kerja.fase=L.fase; S.kerja.faseAt=sekarang();
+    ovStatusRender(); pikirRender(); stripRender();
+    try{ await L.fn(); }catch(e){ jurnal('GAGAL', `${akt.nama} / ${L.fase} — ${pesan(e)}`, 'gagal'); }
+    S.kerja.jejak.push(L.fase);
+    await tidur(L.dtk ?? 850);
+  }
+  S.kerja.sibuk=false; S.kerja.fase='';
+  ovStatusRender(); stripRender();
+}
+const F=(fase,fn,dtk)=>({fase,fn,dtk});
+
+function aktPindai(){
+  return {nama:'MEMINDAI RUMAH', langkah:[
+    F('MENGAMATI', async()=>{ await pindaiRumah(); }, 400),
+    F('MEMAHAMI', async()=>{ const n=S.pohon.files.length, tot=S.pohon.files.reduce((a,f)=>a+f.size,0);
+      jurnal('PINDAI', `aku memahami: rumahku ${n} file, ${kb(tot)} — ${new Set(S.pohon.files.map(f=>f.path.split('/')[0])).size} wilayah`); }, 800),
+    F('MENEMUKAN', async()=>{ const b=Object.values(S.baca).filter(x=>x.berubah).length;
+      if(b) jurnal('TEMUAN', `<b>${b} file berubah SHA</b> — penjaga denyut bekerja; kubaca ulang yang bergerak`, 'temuan'); }, 700),
+    F('MENINGKATKAN', async()=>{ petaRender(); indeksRender(); }, 500),
+    F('MENGAMATI-KEMBALI', async()=>{ indeksRender(); }, 400)
+  ]};
+}
+function aktCermin(){
+  return {nama:'MEMBACA CERMIN ARENA', langkah:[
+    F('MENGAMATI', async()=>{ await cerminAmbil(); }, 400),
+    F('MEMAHAMI', async()=>{ const d=S.cermin.data; if(!d) throw new Error('cermin kosong');
+      const st=(d.standings||[]).find(x=>x.competitor==='MICAPROFITA');
+      if(st) jurnal('CERMIN', `diriku di arena: ${st.picks} pick / ${st.days} hari, hit-rate ${f1(st.hitRate*100)}% — ini dasar kuperilaku`); }, 800),
+    F('MENEMUKAN', async()=>{ const s=simbolSasaran();
+      if(s.length) jurnal('TEMUAN', `sasaran pasar kini: <b>${s.join(', ')}</b> (dipilih arena sendiri)`, 'temuan');
+      else jurnal('TEMUAN', 'tidak ada simbol sasaran dari cermin — kujujurkan'); }, 700),
+    F('MEMBANGUN', async()=>{ petaRender(); indeksRender(); }, 500),
+    F('MENGAMATI-KEMBALI', async()=>{}, 350)
+  ]};
+}
+function aktBaca(f){
+  const proses = async (teks, dibaca)=>{
+    const fakta = pilahFakta(f.path, teks);
+    const lama = S.baca[f.path];
+    S.baca[f.path] = {hash:S.pohon.files.find(x=>x.path===f.path)?.hash||'', hashSrc:S.pohon.sumber,
+      size:f.size, readAt:sekarang(), partial:dibaca<f.size, pct:Math.min(100, dibaca/f.size*100),
+      fakta, ringkas: fakta.slice(0,3), gagal:0, bytes:dibaca};
+    if(lama && lama.bytes) S.stat.bytes -= lama.bytes;
+    S.stat.bytes += dibaca; S.stat.fakta += fakta.length;
+    S.stat.bytes = Math.max(0, S.stat.bytes);
+    return fakta;
+  };
+  return {nama:'MEMBACA '+f.path.split('/').pop().toUpperCase(), target:f.path, langkah:[
+    F('MENGAMATI', async()=>{ S.stream={ch:0};
+      try{
+        const isi = await isiAmbil(f.path, f.size, (buf, got)=>{
+          S.stream.ch=got; if(Math.random()<0.5) partikelByte(f.path, buf, got);
+        });
+        S.stream.hasil=isi;
+      }catch(e){
+        const l=S.baca[f.path]||{};
+        S.baca[f.path]={gagal:(l.gagal||0)+1, atGagal:sekarang(), hashSrc:S.pohon.sumber};
+        throw e;
+      } }, 300),
+    F('MEMAHAMI', async()=>{ const isi=S.stream && S.stream.hasil; S.stream=null;
+      if(!isi) throw new Error('bacaan tidak tiba');
+      const fakta = await proses(isi.teks, isi.dibaca);
+      S.faktaTerakhir={path:f.path, fakta};
+      jurnal('BACA', `<b>${f.path}</b> — ${fakta[0]}`+(isi.dibaca<f.size?` · parsial jujur: ${kb(isi.dibaca)}/${kb(f.size)} (${f1(isi.dibaca/f.size*100)}%)`:'')); }, 900),
+    F('MENGEVALUASI', async()=>{ const F0=S.faktaTerakhir;
+      if(!F0) return;
+      const o=S.baca[F0.path];
+      const cek = F0.fakta.length>0 && o && o.fakta.length===F0.fakta.length;
+      jurnal('EVAL', `verifikasi ${F0.path}: ${cek?'fakta stabil ('+F0.fakta.length+' butir konsisten)':'TIDAK konsisten — kucatat jujur'} `); }, 700),
+    F('MENEMUKAN', async()=>{ const F0=S.faktaTerakhir; if(!F0) return;
+      if(F0.fakta[1]) jurnal('TEMUAN', `${F0.path}: ${F0.fakta[1]}`, 'temuan'); }, 700),
+    F('MEMBANGUN', async()=>{ petaRender(); indeksRender(); if(S.tabAktif==='peta') petaDetail(S.petaPilih); simpan(); }, 450),
+    F('MENGAMATI-KEMBALI', async()=>{}, 300)
+  ]};
+}
+function aktPasar(sym){
+  return {nama:'MENPELAJARI PASAR '+sym, target:'pasar:'+sym, langkah:[
+    F('MENGAMATI', async()=>{ const l=await lilinAmbil(sym); S.lilinKerja={sym, l}; }, 300),
+    F('MEMAHAMI', async()=>{ const {sym:s, l}=S.lilinKerja; const an=analisaLilin(l);
+      S.pasar[s]=Object.assign(S.pasar[s]||{}, an, {at:sekarang(), n:l.length});
+      jurnal('PASAR', `<b>${s}</b> dari ${l.length} lilin 1j Binance: harga ${an.harga.toPrecision(6)}, 24j ${f2(an.chg)}%, EMA20 ${an.ema20>an.ema50?'>':'<'}EMA50, RSI ${f1(an.rsi)}, ATR ${an.atr.toPrecision(4)}, momentum7j ${f2(an.mom7)}%`); }, 900),
+    F('MENCOBA', async()=>{ const s=S.lilinKerja.sym, p=S.pasar[s];
+      p.hipotesis = `jika EMA20>EMA50, RSI<70, harga>7j-lalu → LONG tahan 24 jam (warisan bobot genom arena)`; }, 700),
+    F('MELAKUKAN', async()=>{ const {l}=S.lilinKerja; const bt=ujiJalan(l);
+      const s=S.lilinKerja.sym; Object.assign(S.pasar[s], {bt}); S.stat.btTotal+=bt.n;
+      jurnal('PASAR', `uji-jalan ${s}: <b>${bt.n} transisi</b>, menang ${bt.menang}, net ${f2(bt.net)}% ${bt.n?`(terbaik ${f2(bt.terbaik)}%, terburuk ${f2(bt.terburuk)}%)`:bt.catatan}`); }, 900),
+    F('MENGEVALUASI', async()=>{ const s=S.lilinKerja.sym, bt=S.pasar[s].bt;
+      if(bt.n){ const sama=Math.abs(bt.net-bt.netCek)<1e-4;
+        jurnal('EVAL', `verifikasi hitung ${s}: dua jalur (${f2(bt.net)}% vs log-akumulasi ${f2(bt.netCek)}%) ${sama?'SAH':'SIMPANG — kucatat jujur'}`); } }, 600),
+    F('MENEMUKAN', async()=>{ const s=S.lilinKerja.sym, p=S.pasar[s];
+      if(p.bt.n) jurnal('TEMUAN', `${s}: aturan-genom menghasilkan ekspektansi ${f2(p.bt.net/p.bt.n)}%/transisi pada data nyata`, 'temuan'); }, 700),
+    F('MEMBANGUN', async()=>{ const s=S.lilinKerja.sym;
+      S.pasar[s].oc = S.lilinKerja.l.slice(-60).map(x=>[+x.o.toFixed(6), +x.c.toFixed(6)]);
+      pasarRender(); indeksRender(); simpan(); S.lilinKerja=null; }, 450),
+    F('MENGAMATI-KEMBALI', async()=>{}, 300)
+  ]};
+}
+function aktAudit(pick){
+  const sym=pick.symbol;
+  return {nama:'MENGAUDIT PICK '+sym, target:'pasar:'+sym, langkah:[
+    F('MENGAMATI', async()=>{ if(!S.pasar[sym] || sekarang()-S.pasar[sym].at>STALE_PASAR){ const l=await lilinAmbil(sym);
+        Object.assign(S.pasar[sym]||={at:0}, analisaLilin(l), {at:sekarang()}); } }, 300),
+    F('MEMAHAMI', async()=>{ jurnal('AUDIT', `arena bilang <b>${sym} ${pick.direction}</b> (${pick.confidence}%) — alasan: "${(pick.evidence&&pick.evidence.reason)||'-'}" — kubandingkan dengan momentum hidup`); }, 800),
+    F('MELAKUKAN', async()=>{ const a=auditPick(pick, S.pasar[sym]); S.pasar[sym].audit=a; }, 700),
+    F('MENGEVALUASI', async()=>{ const a=S.pasar[sym].audit;
+      jurnal('EVAL', `vonis audit ${sym}: <b>${a.vonis}</b> — ${a.ket}`); }, 600),
+    F('MENEMUKAN', async()=>{ const a=S.pasar[sym].audit;
+      jurnal('TEMUAN', a.vonis==='SEPAKAT' ? `${sym}: keputusan arena SEIRAMA dengan pasar hidup` :
+        a.vonis==='MENDEVIASI' ? `${sym}: arena MENYIMPANG dari momentum hidup — ini pelajaran, kucatat` : `${sym}: setengah searah — sinyal campur`, 'temuan'); }, 700),
+    F('MEMBANGUN', async()=>{ pasarRender(); simpan(); }, 400),
+    F('MENGAMATI-KEMBALI', async()=>{}, 300)
+  ]};
+}
+async function aktPadat(){
+  const buang=S.jurnal.length-130; S.jurnal.splice(0,buang);
+  jurnal('PADAT', `${buang} ingatan lama kumetabolisme — yang tersisa yang paling segar`);
+  jurnalRender();
+}
+function aktRenung(){
+  return {nama:'MERENUNG — MENGAMATI KEMBALI', langkah:[
+    F('MENGAMATI-KEMBALI', async()=>{ const b=Object.keys(S.baca).length, n=S.pohon.files.length;
+      jurnal('RENUNG', `tidak ada pekerjaan tertunda — ${b}/${n} file terbaca, ${Object.keys(S.pasar).length} simbol segar; kutunggu rumah bergerak`); }, 1200),
+    F('MEMAHAMI', async()=>{ indeksRender(); }, 500)
+  ]};
+}
+
+async function otakLoop(){
+  while(true){
+    try{
+      if(S.perintah){
+        const f=S.pohon.files.find(x=>x.path===S.perintah);
+        S.perintah=null;
+        if(f){ jurnal('PERINTAH', `pemilik menyuruhku membaca <b>${f.path}</b> — ditaati sekarang`);
+          await jalankan(aktBaca(f)); continue; }
+      }
+      const kandidat=daftarKerja();
+      if(!kandidat.length){ await jalankan(aktRenung()); await tidur(4000); continue; }
+      kandidat.sort((a,b)=>b.u-a.u);
+      S.kerja.mengapa=kandidat.slice(0,4).map(k=>({t:k.label, u:Math.round(k.u)}));
+      pikirRender();
+      await jalankan(await kandidat[0].buat());
+      await tidur(900);
+    }catch(e){ jurnal('GAGAL', 'otak: '+pesan(e), 'gagal'); await tidur(3000); }
+  }
+}
+/* ================= PANGGUNG: habitat terasering (koordinat layar) ================= */
+const cv=document.getElementById('panggung'), cx=cv.getContext('2d');
+let DPR=1, bebas={x:14,y:14,w:600,h:400}, VIG=null;
+const LAYOUT={nodes:new Map(), zona:[], rects:[], den:{x:0,y:0,r:60}, pond:{x:0,y:0,w:0,h:0}};
+const ZONA_URUT=['otak','.github/workflows','memori','scripts/ujian-buta','· akar','scripts','laporan'];
+const ZONA_NAMA={'· akar':'AKAR','otak':'OTAK','memori':'MEMORI','.github/workflows':'JANTUNG','scripts/ujian-buta':'UJIAN','scripts':'ALAT','laporan':'LAPORAN'};
+let POND_POS={};
+function ukur(){
+  DPR=Math.min(devicePixelRatio||1, 2);
+  cv.width=Math.round(innerWidth*DPR); cv.height=Math.round(innerHeight*DPR);
+  cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
+  bebas={x:14, y:14, w:Math.max(220,innerWidth-28), h:Math.max(220,innerHeight-28)};
+  const g=cx.createRadialGradient(innerWidth/2, innerHeight*0.42, Math.min(innerWidth,innerHeight)*0.22,
+    innerWidth/2, innerHeight*0.5, Math.max(innerWidth,innerHeight)*0.78);
+  g.addColorStop(0,'rgba(16,26,44,0)'); g.addColorStop(1,'rgba(0,0,0,.5)');
+  VIG=g;
+}
+/* susun: zona = direktori ASLI → slot kisi tetap; sel = grid rapi, nol tumpang tindih */
+function susun(){
+  const asp=bebas.w/bebas.h;
+  const rects=[]; let denI, pondI, zonaI;
+  if(asp>=1.02){
+    const cw=bebas.w/3, ch=bebas.h/3;
+    for(let r=0;r<3;r++) for(let c=0;c<3;c++) rects.push({x:bebas.x+c*cw, y:bebas.y+r*ch, w:cw, h:ch});
+    denI=4; pondI=8; zonaI=[0,1,2,3,5,6,7];          // otak kiri-atas, jantung tengah-atas, akar samping sarang
+  }else{
+    const cw=bebas.w/2, rh=bebas.h/5;
+    for(let r=0;r<4;r++) for(let c=0;c<2;c++) rects.push({x:bebas.x+c*cw, y:bebas.y+r*rh, w:cw, h:rh});
+    rects.push({x:bebas.x, y:bebas.y+4*rh, w:bebas.w, h:rh});
+    denI=3; pondI=7; zonaI=[0,1,2,4,5,6,8];
+  }
+  LAYOUT.rects=rects;
+  const dr=rects[denI];
+  LAYOUT.den={x:dr.x+dr.w/2, y:dr.y+dr.h/2, r:Math.min(dr.w,dr.h)*0.30};
+  LAYOUT.pond=rects[pondI];
+  const cl=new Map();
+  for(const f of S.pohon.files){ const i=f.path.lastIndexOf('/'); const dir=i<0?'· akar':f.path.slice(0,i);
+    if(!cl.has(dir)) cl.set(dir,[]); cl.get(dir).push(f); }
+  const dirs=[...cl.keys()].sort((a,b)=>{
+    const ia=ZONA_URUT.indexOf(a), ib=ZONA_URUT.indexOf(b);
+    return (ia<0?99:ia)-(ib<0?99:ib) || a.localeCompare(b);
+  });
+  const kel=[];
+  dirs.forEach((dir,i)=>{
+    if(i<zonaI.length) kel.push({rect:rects[zonaI[i]], fs:cl.get(dir).slice(), dirs:[dir]});
+    else if(kel.length){ const last=kel[kel.length-1]; last.fs.push(...cl.get(dir)); last.dirs.push(dir); }
+  });
+  LAYOUT.nodes.clear(); LAYOUT.zona=[];
+  const maxSize=Math.max(1, ...S.pohon.files.map(f=>f.size||1));
+  const jelas=Math.log1p(maxSize);
+  for(const k of kel){
+    const rect=k.rect, fs=k.fs;
+    const inset=18;
+    const zw=Math.max(40, rect.w-2*inset), zh=Math.max(28, rect.h-2*inset);
+    const n=fs.length;
+    let cols=Math.max(1, Math.round(Math.sqrt(n*zw/Math.max(1,zh))));
+    let rows=Math.ceil(n/cols);
+    let px=Math.min(zw/(cols+0.4), zh/Math.max(1,rows+0.2));
+    px=Math.max(10, Math.min(24, px));
+    if(rows*px>zh) px=Math.max(8, zh/rows);
+    if(cols*px>zw) px=Math.max(8, zw/cols);
+    cols=Math.max(1, Math.floor(zw/px)); rows=Math.ceil(n/cols);
+    const x0=rect.x+inset+(zw-(cols-1)*px)/2;
+    const y0=rect.y+inset+(zh-(rows-1)*px)/2;
+    fs.forEach((f,i)=>{
+      const gx=i%cols, gy=Math.floor(i/cols);
+      const r=2.3+3.3*Math.log1p(f.size||1)/jelas;
+      LAYOUT.nodes.set(f.path, {x:x0+gx*px, y:y0+gy*px, r:Math.min(5.8,r), dir:k.dirs[0], f});
+    });
+    LAYOUT.zona.push({dir:k.dirs[0], dirs:k.dirs,
+      nama:k.dirs.length>1?'LAINNYA':(ZONA_NAMA[k.dirs[0]]||k.dirs[0].split('/').pop().toUpperCase()),
+      rect, cx:rect.x+rect.w/2, cy:rect.y+rect.h/2, n:fs.length});
+  }
+  POND_POS={};
+}
+function statusNode(path){
+  const b=S.baca[path];
+  if(b && b.berubah) return 'ubah';
+  if(b && b.fakta) return b.partial?'parsial':'baca';
+  return 'kosong';
+}
+
+/* ================= STATUS TUBUH → PERILAKU (bukan teks) ================= */
+function keadaanTubuh(){
+  if(S.terputus && !S.pohon.live) return {mode:'putus', dim:0.5, v:0.6};
+  const k=S1.keadaan;
+  if(!k) return {mode:'bangun', dim:0.85, v:1};
+  const usia=sekarang()-(Date.parse(k.waktu?.selesai)||0);
+  if(usia<30*60000) return {mode:'sehat', dim:1, v:1};
+  if(usia<55*60000) return {mode:'telat', dim:0.6, v:0.7};
+  return {mode:'tidak-bangun', dim:0.22, v:0.25};
+}
+
+/* ================= NADI — makhluk benang bioluminesen =================
+   Kepala tarung bermata satu → tulang 11 ruas mengikuti (meliuk, tak
+   menabrak: dorongan menjauh dari sel) → silia bergelombang = napas →
+   dua sulur peraba → organ kunang-kunang bertambah tiap fakta dicerna
+   → probosis pemandu saat membaca (isi file ASLI mengalir masuk). */
+const NADI={
+  x:0, y:0, vx:0, vy:0, hd:-Math.PI/2, tx:0, ty:0,
+  seg:[], NS:11, SP:7.5,
+  napas:0, dim:1, mode:'bangun', startle:0, idleAt:sekarang(), flair:0,
+  mata:{buka:1, blink:0, blinkAt:3+Math.random()*4, px:0, py:0},
+  sulur:[{x:0,y:0},{x:0,y:0}],
+  kunang:[]
+};
+function nadiInit(){
+  NADI.x=LAYOUT.den.x; NADI.y=LAYOUT.den.y; NADI.tx=NADI.x; NADI.ty=NADI.y;
+  NADI.seg=[]; for(let i=0;i<NADI.NS;i++) NADI.seg.push({x:NADI.x, y:NADI.y+(i+1)*NADI.SP});
+  for(const s of NADI.sulur){ s.x=NADI.x; s.y=NADI.y-14; }
+}
+function angNorm(a){ while(a>Math.PI)a-=2*Math.PI; while(a<-Math.PI)a+=2*Math.PI; return a; }
+function zonaPenasaran(){
+  for(const [p,b] of Object.entries(S.baca)) if(b.berubah){ const n=LAYOUT.nodes.get(p); if(n) return n; }
+  return null;
+}
+function nadiUpdate(dt, t){
+  const tubuh=keadaanTubuh();
+  NADI.mode=tubuh.mode;
+  NADI.dim+=(tubuh.dim-NADI.dim)*Math.min(1, dt*1.1);
+  let tgt=null, v=90;
+  if(S.kerja.sibuk && S.kerja.target){
+    if(S.kerja.target.startsWith('pasar:')) tgt=POND_POS[S.kerja.target.slice(6)]||null;
+    else { const n=LAYOUT.nodes.get(S.kerja.target); tgt=n?{x:n.x,y:n.y}:null; }
+    v=150;
+  }
+  if(tgt){ NADI.tx=tgt.x; NADI.ty=tgt.y-8; NADI.idleAt=sekarang(); }
+  else if(tubuh.mode==='tidak-bangun'){                 // meringkuk di sarang
+    NADI.tx=LAYOUT.den.x+Math.cos(t*0.5)*LAYOUT.den.r*0.32;
+    NADI.ty=LAYOUT.den.y+Math.sin(t*0.5)*LAYOUT.den.r*0.24;
+    v=14;
+  }else{
+    const idle=(sekarang()-NADI.idleAt)/1000;
+    const penasaran=zonaPenasaran();
+    if(penasaran && idle>7){ NADI.tx=penasaran.x; NADI.ty=penasaran.y-20; v=62; }  // rasa ingin tahu
+    else{
+      const R=Math.min(bebas.w,bebas.h)*0.15;
+      NADI.tx=LAYOUT.den.x+Math.cos(t*0.21)*R*1.55+Math.cos(t*0.53)*R*0.3;
+      NADI.ty=LAYOUT.den.y+Math.sin(t*0.17)*R*0.85+Math.sin(t*0.47)*R*0.25;
+      v=55+16*Math.sin(t*0.3);
+    }
+  }
+  v*=(tubuh.v??1)*(0.4+0.6*NADI.dim);
+  // pemandu terarah + hindari tabrak sel
+  let dx=NADI.tx-NADI.x, dy=NADI.ty-NADI.y; const d=Math.hypot(dx,dy)||1;
+  const arr=Math.min(1, d/110);
+  let ax=dx/d*v*arr, ay=dy/d*v*arr;
+  for(const n of LAYOUT.nodes.values()){
+    const ox=NADI.x-n.x, oy=NADI.y-n.y; const od=Math.hypot(ox,oy);
+    const R0=n.r+26;
+    if(od<R0 && od>0.5){ const f=(1-od/R0)*150; ax+=ox/od*f; ay+=oy/od*f; }
+  }
+  if(NADI.startle>0.02){
+    ax+=Math.cos(t*9+1)*240*NADI.startle; ay+=Math.sin(t*7)*170*NADI.startle;
+    NADI.startle*=Math.pow(0.04, dt);
+  } else NADI.startle=0;
+  NADI.vx+=(ax-NADI.vx)*Math.min(1, dt*2.6);
+  NADI.vy+=(ay-NADI.vy)*Math.min(1, dt*2.6);
+  NADI.x+=NADI.vx*dt; NADI.y+=NADI.vy*dt;
+  NADI.x=Math.max(bebas.x+18, Math.min(bebas.x+bebas.w-18, NADI.x));
+  NADI.y=Math.max(bebas.y+18, Math.min(bebas.y+bebas.h-18, NADI.y));
+  const sp=Math.hypot(NADI.vx,NADI.vy);
+  if(sp>4) NADI.hd+=angNorm(Math.atan2(NADI.vy,NADI.vx)-NADI.hd)*Math.min(1, dt*6);
+  // napas — laju mengikuti kerja & vital
+  const rate=(S.kerja.sibuk?1.7:0.95)*(0.3+0.7*NADI.dim);
+  NADI.napas+=dt*rate*2;
+  // tulang mengikuti kepala
+  let px2=NADI.x, py2=NADI.y;
+  for(const sg of NADI.seg){
+    const ddx=sg.x-px2, ddy=sg.y-py2; const dd=Math.hypot(ddx,ddy)||1;
+    sg.x=px2+ddx/dd*NADI.SP; sg.y=py2+ddy/dd*NADI.SP; px2=sg.x; py2=sg.y;
+  }
+  // mata
+  const m=NADI.mata;
+  m.blinkAt-=dt;
+  if(m.blinkAt<0){ m.blink=1; m.blinkAt=3+Math.random()*6; }
+  m.blink*=Math.pow(0.001, dt);
+  let bukaT=1-m.blink;
+  if(tubuh.mode==='tidak-bangun') bukaT=0;                       // mata terpejam
+  else if(S.kerja.fase==='MENGEVALUASI') bukaT*=0.55;            // menyipit fokus
+  m.buka+=(bukaT-m.buka)*Math.min(1, dt*5);
+  const lihat=P.aktif? P : {x:NADI.tx, y:NADI.ty};
+  const la=Math.atan2(lihat.y-NADI.y, lihat.x-NADI.x);
+  m.px+=(Math.cos(la)*0.38-m.px)*Math.min(1, dt*4);
+  m.py+=(Math.sin(la)*0.38-m.py)*Math.min(1, dt*4);
+  // sulur peraba (fisika tertinggal → hidup)
+  for(let i=0;i<2;i++){
+    const side=i?1:-1;
+    const bx=NADI.x+Math.cos(NADI.hd+side*0.55)*10, by=NADI.y+Math.sin(NADI.hd+side*0.55)*10;
+    const wx=bx+Math.cos(NADI.hd+side*0.2)*22+Math.sin(t*2.3+i*2.1)*3.5;
+    const wy=by+Math.sin(NADI.hd+side*0.2)*22+Math.cos(t*2.1+i*1.7)*3.5;
+    NADI.sulur[i].x+=(wx-NADI.sulur[i].x)*Math.min(1, dt*3.5);
+    NADI.sulur[i].y+=(wy-NADI.sulur[i].y)*Math.min(1, dt*3.5);
+  }
+  // organ kunang-kunang: tumbuh tiap fakta dicerna
+  const ingin=Math.min(14, Math.ceil(S.stat.fakta/6));
+  while(NADI.kunang.length<ingin) NADI.kunang.push({s:Math.random()*7, o:Math.floor(Math.random()*NADI.NS), rr:8+Math.random()*14, a:0});
+  for(const k of NADI.kunang){ k.a+=(1-k.a)*Math.min(1, dt); k.s+=dt*(0.55+0.3*Math.sin(k.o*3)); }
+  if(NADI.kunang.length>ingin) for(const k of NADI.kunang) k.a=Math.max(0, k.a-dt*0.35);
+  NADI.flair*=Math.pow(0.15, dt);
+}
+/* partikel byte = karakter isi file ASLI mengalir lewat probosis */
+let PARTIKEL=[]; let _dt=0.016;
+function partikelByte(path, buf, got){
+  const n=LAYOUT.nodes.get(path); if(!n || PARTIKEL.length>60) return;
+  const teks=buf.slice(-46).replace(/\s+/g,'');
+  if(!teks) return;
+  const pot=teks.slice(-4);
+  PARTIKEL.push({x:n.x+(Math.random()-0.5)*10, y:n.y+(Math.random()-0.5)*10,
+    tx:NADI.x, ty:NADI.y, ch:pot.slice(Math.floor(Math.random()*3), Math.floor(Math.random()*3)+2)||'01', hidup:1});
+}
+let RIAK=[];
+function riak(x,y){ RIAK.push({x,y,r:5,a:0.55}); if(RIAK.length>12) RIAK.shift(); }
+/* pointer utk kedekatan label */
+const P={x:-999,y:-999,aktif:false};
+addEventListener('pointermove', e=>{ P.x=e.clientX; P.y=e.clientY; P.aktif=true; }, {passive:true});
+addEventListener('pointerleave', ()=>{ P.aktif=false; });
+
+/* ================= GAMBAR ================= */
+function rr(x,y,w,h,r){
+  cx.beginPath();
+  cx.moveTo(x+r,y); cx.lineTo(x+w-r,y); cx.quadraticCurveTo(x+w,y,x+w,y+r);
+  cx.lineTo(x+w,y+h-r); cx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  cx.lineTo(x+r,y+h); cx.quadraticCurveTo(x,y+h,x,y+h-r);
+  cx.lineTo(x,y+r); cx.quadraticCurveTo(x,y,x+r,y); cx.closePath();
+}
+function berlian(x,y,r){
+  cx.beginPath(); cx.moveTo(x,y-r); cx.lineTo(x+r*0.8,y); cx.lineTo(x,y+r); cx.lineTo(x-r*0.8,y); cx.closePath();
+}
+function jarakKeRect(px,py,r){
+  const dx=Math.max(r.x-px, 0, px-(r.x+r.w)), dy=Math.max(r.y-py, 0, py-(r.y+r.h));
+  return Math.hypot(dx,dy);
+}
+const FONT_L='10px "Inter","SF Pro Text",-apple-system,"Segoe UI",Roboto,sans-serif';
+const FONT_Z='600 9.5px "Inter","SF Pro Text",-apple-system,"Segoe UI",Roboto,sans-serif';
+function gambarHabitat(t){
+  const pos=[]; if(P.aktif) pos.push(P); pos.push({x:NADI.x, y:NADI.y});
+  // zona: garis samar + rune; menyala saat makhluk/penonton mendekat
+  for(const z of LAYOUT.zona){
+    let prox=0;
+    for(const p of pos){ const d=jarakKeRect(p.x,p.y,z.rect); prox=Math.max(prox, Math.max(0, 1-d/90)); }
+    const tgtZona=S.kerja.target && S.kerja.target.startsWith('pasar:')===false &&
+      LAYOUT.nodes.get(S.kerja.target)?.dir && z.dirs.includes(LAYOUT.nodes.get(S.kerja.target)?.dir);
+    const al=0.045+prox*0.07+(tgtZona?0.05:0);
+    cx.strokeStyle=`rgba(255,255,255,${al.toFixed(3)})`; cx.lineWidth=1;
+    rr(z.rect.x+6, z.rect.y+6, z.rect.w-12, z.rect.h-12, 14); cx.stroke();
+    // rune zona — hanya jelas saat didekati
+    const ra=0.05+prox*0.8;
+    cx.font=FONT_Z; cx.textAlign='left'; cx.textBaseline='alphabetic';
+    cx.fillStyle=`rgba(148,161,186,${ra.toFixed(3)})`;
+    cx.fillText(z.nama, z.rect.x+16, z.rect.y+22);
+    cx.fillStyle=`rgba(91,103,128,${(ra*0.7).toFixed(3)})`;
+    cx.fillText(String(z.n), z.rect.x+16, z.rect.y+34);
+  }
+  // sarang — cekungan cahaya bernapas seirama makhluk
+  const den=LAYOUT.den;
+  const gl=cx.createRadialGradient(den.x,den.y,2, den.x,den.y,den.r*1.5);
+  gl.addColorStop(0,`rgba(79,224,194,${(0.10+0.05*Math.sin(NADI.napas)).toFixed(3)})`);
+  gl.addColorStop(1,'rgba(79,224,194,0)');
+  cx.fillStyle=gl; cx.beginPath(); cx.arc(den.x,den.y,den.r*1.5,0,7); cx.fill();
+  cx.strokeStyle='rgba(79,224,194,.16)'; cx.lineWidth=1;
+  cx.beginPath(); cx.ellipse(den.x,den.y,den.r*1.05,den.r*0.8,0,0,7); cx.stroke();
+  // sel file = sisik berlian rapi
+  for(const [path,n] of LAYOUT.nodes){
+    const st=statusNode(path), b=S.baca[path];
+    const sedang=S.kerja.target===path && S.kerja.sibuk;
+    let r=n.r*(1+0.06*Math.sin(t*1.6+n.x*0.05));
+    let al, stroke=null;
+    if(st==='ubah'){ r*=1+0.3*Math.sin(t*4.6); al=0.55+0.4*Math.sin(t*4.6); }
+    else if(st==='baca') al=0.6;
+    else if(st==='parsial') al=0.34;
+    else al=0.14;
+    if(sedang){ al=1;
+      cx.strokeStyle='rgba(79,224,194,.5)'; cx.lineWidth=1.2;
+      cx.beginPath(); cx.arc(n.x,n.y,r*2.4+2.5*Math.sin(t*5),0,7); cx.stroke();
+    }
+    berlian(n.x,n.y,r);
+    cx.fillStyle= st==='kosong' ? `rgba(148,161,186,${al.toFixed(3)})` : `rgba(79,224,194,${al.toFixed(3)})`;
+    cx.fill();
+    if(st==='baca'||st==='parsial'){ cx.strokeStyle=`rgba(79,224,194,${(al*0.5).toFixed(3)})`; cx.lineWidth=0.8; cx.stroke(); }
+  }
+}
+/* kolam pasar: 3 sumur data Binance */
+function wellSyms(){
+  const set=[]; const dor=s=>{ if(s && !set.includes(s) && set.length<3) set.push(s); };
+  for(const s of simbolSasaran()) dor(s);
+  for(const s of Object.keys(S.pasar)) dor(s);
+  return set;
+}
+function gambarPond(t){
+  const pr=LAYOUT.pond; if(!pr) return;
+  const syms=wellSyms();
+  POND_POS={};
+  const n=Math.max(1, syms.length||1);
+  const cw=pr.w/Math.max(2, Math.min(3, syms.length||3));
+  const cy=pr.y+pr.h*0.56;
+  // rune kolam
+  let prox=0;
+  if(P.aktif) prox=Math.max(prox, Math.max(0, 1-jarakKeRect(P.x,P.y,pr)/90));
+  prox=Math.max(prox, Math.max(0, 1-jarakKeRect(NADI.x,NADI.y,pr)/90));
+  cx.font=FONT_Z; cx.textAlign='left';
+  cx.fillStyle=`rgba(148,161,186,${(0.05+prox*0.8).toFixed(3)})`;
+  cx.fillText('PASAR', pr.x+16, pr.y+22);
+  const cnt=Math.min(3, Math.max(syms.length, 1));
+  for(let i=0;i<cnt;i++){
+    const s=syms[i];
+    const wx=pr.x+pr.w*(i+0.5)/cnt, wy=cy;
+    if(s) POND_POS[s]={x:wx, y:wy};
+    const p=s?S.pasar[s]:null;
+    cx.strokeStyle='rgba(255,255,255,.10)'; cx.lineWidth=1;
+    cx.beginPath(); cx.arc(wx,wy,15,0,7); cx.stroke();
+    if(sedangPasar(s)){ cx.strokeStyle='rgba(79,224,194,.5)';
+      cx.beginPath(); cx.arc(wx,wy,19+2.5*Math.sin(t*5),0,7); cx.stroke(); }
+    if(p && p.oc && p.oc.length>2){
+      const oc=p.oc.slice(-40);
+      const lo=Math.min(...oc.map(x=>x[1])), hi=Math.max(...oc.map(x=>x[1]));
+      const rng=hi-lo||1;
+      cx.strokeStyle='rgba(79,224,194,.75)'; cx.lineWidth=1.1; cx.beginPath();
+      oc.forEach((x,j)=>{ const ox=wx-12+j*(24/oc.length), oy=wy+7-((x[1]-lo)/rng)*14;
+        j?cx.lineTo(ox,oy):cx.moveTo(ox,oy); });
+      cx.stroke();
+    } else if(s){
+      cx.fillStyle='rgba(148,161,186,.35)'; cx.beginPath(); cx.arc(wx,wy,2,0,7); cx.fill();
+    }
+    if(s && prox>0.25){
+      cx.font=FONT_Z; cx.fillStyle=`rgba(233,238,248,${(prox*0.95).toFixed(3)})`; cx.textAlign='center';
+      cx.fillText(s.replace('USDT',''), wx, wy-21); cx.textAlign='left';
+    }
+  }
+}
+function sedangPasar(sym){ return S.kerja.target==='pasar:'+sym && S.kerja.sibuk; }
+/* probosis + aliran karakter saat membaca */
+function gambarBacaan(t){
+  if(!(S.kerja.sibuk && S.kerja.target)) { PARTIKEL=PARTIKEL.filter(p=>p.hidup>0); return; }
+  let tgt=null;
+  if(S.kerja.target.startsWith('pasar:')) tgt=POND_POS[S.kerja.target.slice(6)]||null;
+  else { const n=LAYOUT.nodes.get(S.kerja.target); tgt=n?{x:n.x,y:n.y}:null; }
+  if(tgt){
+    const mulut={x:NADI.x+Math.cos(NADI.hd)*12, y:NADI.y+Math.sin(NADI.hd)*12};
+    cx.save(); cx.setLineDash([3,4]); cx.lineDashOffset=-t*26;
+    cx.strokeStyle='rgba(79,224,194,.6)'; cx.lineWidth=1.4;
+    cx.beginPath(); cx.moveTo(mulut.x,mulut.y);
+    const mx=(mulut.x+tgt.x)/2, my=Math.min(mulut.y,tgt.y)-16;
+    cx.quadraticCurveTo(mx,my,tgt.x,tgt.y); cx.stroke(); cx.restore();
+  }
+  cx.font=FONT_L; cx.textAlign='left';
+  PARTIKEL=PARTIKEL.filter(p=>p.hidup>0);
+  for(const p of PARTIKEL){
+    p.tx=NADI.x; p.ty=NADI.y;
+    p.x+=(p.tx-p.x)*Math.min(1, _dt*4.5+0.03);
+    p.y+=(p.ty-p.y)*Math.min(1, _dt*4.5+0.03);
+    if(Math.hypot(p.x-p.tx, p.y-p.ty)<9) p.hidup=0;
+    cx.globalAlpha=Math.min(1, p.hidup+0.1);
+    cx.fillStyle='#bdf2e6';
+    cx.fillText(p.ch, p.x, p.y);
+    cx.globalAlpha=1; p.hidup-=0.012;
+  }
+}
+/* NADI itu sendiri */
+function gambarNadi(t){
+  const dim=Math.max(0.12, NADI.dim);
+  const breathR=1+0.085*Math.sin(NADI.napas);
+  const R=(13.5+3*Math.sin(NADI.napas*0.9))*Math.max(0.8, dim)+NADI.startle*2.5;
+  const pts=[{x:NADI.x, y:NADI.y}, ...NADI.seg];
+  const widAt=(i)=>(R*(1-0.72*i/pts.length)+1.6)*breathR;
+  // membran tubuh: garis luar melebar-menipis
+  const L=[], Rt=[];
+  for(let i=0;i<pts.length;i++){
+    const a=pts[Math.max(0,i-1)], b=pts[Math.min(pts.length-1,i+1)];
+    let ang=Math.atan2(b.y-a.y, b.x-a.x)+Math.PI/2;
+    if(i===0) ang=NADI.hd+Math.PI/2;
+    const w=widAt(i);
+    L.push({x:pts[i].x+Math.cos(ang)*w, y:pts[i].y+Math.sin(ang)*w});
+    Rt.push({x:pts[i].x-Math.cos(ang)*w, y:pts[i].y-Math.sin(ang)*w});
+  }
+  cx.beginPath();
+  cx.moveTo(L[0].x, L[0].y);
+  for(let i=1;i<L.length;i++) cx.lineTo(L[i].x, L[i].y);
+  cx.lineTo(pts[pts.length-1].x, pts[pts.length-1].y);
+  for(let i=Rt.length-1;i>=0;i--) cx.lineTo(Rt[i].x, Rt[i].y);
+  cx.closePath();
+  const gr=cx.createRadialGradient(NADI.x,NADI.y,2, NADI.x,NADI.y,R*4.2);
+  gr.addColorStop(0,`rgba(79,224,194,${(0.30*dim).toFixed(3)})`);
+  gr.addColorStop(0.5,`rgba(79,224,194,${(0.12*dim).toFixed(3)})`);
+  gr.addColorStop(1,'rgba(79,224,194,0)');
+  cx.fillStyle=gr; cx.fill();
+  cx.strokeStyle=`rgba(79,224,194,${(0.5*dim).toFixed(3)})`; cx.lineWidth=1.1; cx.stroke();
+  // silia — gelombang napas menjalar ke ekor
+  for(let i=1;i<pts.length;i++){
+    const a=pts[i-1], b=pts[i];
+    const ang=Math.atan2(b.y-a.y, b.x-a.x)+Math.PI/2;
+    const wv=Math.sin(NADI.napas*2-i*0.55);
+    const len=(6.5-i*0.32)*(0.45+0.55*dim)*(0.72+0.28*wv);
+    if(len<=1.2) continue;
+    for(const s of [1,-1]){
+      const hx=pts[i].x+Math.cos(ang)*s*widAt(i), hy=pts[i].y+Math.sin(ang)*s*widAt(i);
+      cx.strokeStyle=`rgba(79,224,194,${(0.42*dim*(0.6+0.4*wv)).toFixed(3)})`; cx.lineWidth=0.9;
+      cx.beginPath(); cx.moveTo(hx,hy);
+      cx.lineTo(hx+Math.cos(ang+s*0.35+wv*0.18)*len*s*0.9, hy+Math.sin(ang+s*0.35+wv*0.18)*len*s*0.9);
+      cx.stroke();
+    }
+  }
+  // organ kunang-kunang — pertumbuhan terlihat dari tubuh
+  for(const k of NADI.kunang){
+    if(k.a<=0.01) continue;
+    const seg=pts[k.o%pts.length];
+    const kx=seg.x+Math.cos(k.s)*k.rr, ky=seg.y+Math.sin(k.s*0.8)*k.rr*0.7;
+    cx.globalAlpha=k.a*0.75*dim;
+    cx.fillStyle='#d8fff4';
+    cx.beginPath(); cx.arc(kx,ky,1.5,0,7); cx.fill();
+    cx.globalAlpha=1;
+  }
+  // sulur peraba
+  for(let i=0;i<2;i++){
+    const s=NADI.sulur[i];
+    cx.strokeStyle=`rgba(79,224,194,${(0.4*dim).toFixed(3)})`; cx.lineWidth=0.9;
+    cx.beginPath(); cx.moveTo(NADI.x+Math.cos(NADI.hd+(i?0.5:-0.5))*9, NADI.y+Math.sin(NADI.hd+(i?0.5:-0.5))*9);
+    cx.quadraticCurveTo((NADI.x+s.x)/2, (NADI.y+s.y)/2-4, s.x, s.y); cx.stroke();
+    cx.fillStyle=`rgba(79,224,194,${(0.8*dim).toFixed(3)})`;
+    cx.beginPath(); cx.arc(s.x,s.y,1.4,0,7); cx.fill();
+  }
+  // kepala tarung + satu mata
+  cx.save();
+  cx.translate(NADI.x, NADI.y); cx.rotate(NADI.hd);
+  cx.shadowColor='rgba(79,224,194,.9)'; cx.shadowBlur=16*dim;
+  const hg=cx.createRadialGradient(0,0,1, 0,0,R*1.3);
+  hg.addColorStop(0,`rgba(210,255,244,${(0.9*dim).toFixed(3)})`);
+  hg.addColorStop(0.55,`rgba(79,224,194,${(0.4*dim).toFixed(3)})`);
+  hg.addColorStop(1,'rgba(79,224,194,0)');
+  cx.fillStyle=hg;
+  cx.beginPath(); cx.ellipse(0,0,R*1.22*breathR, R*0.98*breathR, 0, 0, 7); cx.fill();
+  cx.shadowBlur=0;
+  // mata — kelopak menutup saat TIDAK BANGUN / berkedip
+  const buka=Math.max(0.04, NADI.mata.buka);
+  cx.save(); cx.scale(1, buka);
+  cx.strokeStyle=`rgba(6,19,26,.85)`; cx.lineWidth=1.4;
+  cx.beginPath(); cx.arc(0,0,R*0.5,0,7); cx.stroke();
+  cx.fillStyle='#07131b';
+  cx.beginPath(); cx.arc(NADI.mata.px*R*0.62, NADI.mata.py*R*0.62, R*0.26*(1+0.45*NADI.startle), 0, 7); cx.fill();
+  cx.fillStyle='rgba(233,238,248,.85)';
+  cx.beginPath(); cx.arc(NADI.mata.px*R*0.62-R*0.08, NADI.mata.py*R*0.62-R*0.08, R*0.07, 0, 7); cx.fill();
+  cx.restore();
+  cx.restore();
+  // riak penemuan (MENEMUKAN → flair)
+  if(S.kerja.fase==='MENEMUKAN' && NADI.flair<0.05){ NADI.flair=1; riak(NADI.x,NADI.y); }
+}
+function gambarLabel(){
+  cx.font=FONT_L; cx.textBaseline='alphabetic';
+  const kandidat=[];
+  // nama file muncul HANYA saat didekati penonton / makhluk, atau sedang dibaca
+  if(P.aktif){
+    let best=null, bd=64;
+    for(const [path,n] of LAYOUT.nodes){ const d=Math.hypot(P.x-n.x,P.y-n.y); if(d<bd){bd=d;best={path,n,d};} }
+    if(best) kandidat.push({...best, a:1-best.d/64, pri:1});
+  }
+  {
+    let best=null, bd=70;
+    for(const [path,n] of LAYOUT.nodes){ const d=Math.hypot(NADI.x-n.x,NADI.y-n.y); if(d<bd){bd=d;best={path,n,d};} }
+    if(best) kandidat.push({...best, a:(1-best.d/70)*0.9, pri:2});
+  }
+  if(S.kerja.target && !S.kerja.target.startsWith('pasar:')){
+    const n=LAYOUT.nodes.get(S.kerja.target);
+    if(n) kandidat.push({path:S.kerja.target, n, a:1, pri:0});
+  }
+  kandidat.sort((a,b)=>a.pri-b.pri);
+  cx.textAlign='center';
+  const kotak=[];                                  // anti tumpang tindih antar-label
+  for(const k of kandidat){
+    const al=Math.max(0, Math.min(1, k.a));
+    if(al<0.05) continue;
+    const nm=k.path.split('/').pop();
+    const w=cx.measureText(nm).width, x0=k.n.x-w/2-4, x1=k.n.x+w/2+4, y0=k.n.y-k.n.r-17, y1=k.n.y-k.n.r-2;
+    if(kotak.some(b=>!(x1<b.x0||x0>b.x1||y1<b.y0||y0>b.y1))) continue;
+    kotak.push({x0,x1,y0,y1});
+    cx.fillStyle=`rgba(233,238,248,${(al*0.92).toFixed(3)})`;
+    cx.fillText(nm, k.n.x, k.n.y-k.n.r-6);
+  }
+  cx.textAlign='left';
+}
+function gambar(t, dt){
+  _dt=dt;
+  nadiUpdate(dt, t);
+  cx.setTransform(DPR,0,0,DPR,0,0);
+  cx.fillStyle='#05070d'; cx.fillRect(0,0,innerWidth,innerHeight);
+  // debu halus — dunia bernapas pelan
+  cx.fillStyle='rgba(148,161,186,.16)';
+  for(let i=0;i<26;i++){
+    const h=fnv('debu'+i);
+    const dx=((h%10000)/10000)*innerWidth + Math.sin(t*0.05+i*1.7)*22;
+    const dy=(((h>>>7)%10000)/10000)*innerHeight + Math.cos(t*0.04+i)*14;
+    cx.globalAlpha=0.04+0.05*Math.sin(t*0.5+i);
+    cx.fillRect(dx, dy, 1.3, 1.3);
+  }
+  cx.globalAlpha=1;
+  if(VIG){ cx.fillStyle=VIG; cx.fillRect(0,0,innerWidth,innerHeight); }
+  gambarHabitat(t);
+  gambarPond(t);
+  gambarBacaan(t);
+  gambarNadi(t);
+  gambarLabel();
+  // riak sentuhan/temuan
+  RIAK=RIAK.filter(r=>r.a>0.02);
+  for(const r of RIAK){
+    r.r+=110*dt; r.a-=dt*1.1;
+    cx.strokeStyle=`rgba(79,224,194,${Math.max(0,r.a).toFixed(3)})`; cx.lineWidth=1.2;
+    cx.beginPath(); cx.arc(r.x,r.y,r.r,0,7); cx.stroke();
+  }
+}
+
+/* ================= INTERAKSI ================= */
+function sentuh(ev){
+  const x=ev.clientX, y=ev.clientY;
+  if(Math.hypot(x-NADI.x, y-NADI.y)<38){ NADI.startle=1; riak(x,y); sapa(); return; }
+  let terbaik=null, dmin=26;
+  for(const [path,n] of LAYOUT.nodes){ const d=Math.hypot(x-n.x,y-n.y); if(d<dmin){dmin=d; terbaik={path,n};} }
+  if(terbaik){ S.perintah=terbaik.path; S.petaPilih=terbaik.path; petaRender(); riak(terbaik.n.x, terbaik.n.y); }
+  else riak(x,y);
+}
+cv.addEventListener('click', sentuh);
+function sapa(){
+  const n=S.pohon.files.length, baca=Object.keys(S.baca).length;
+  const kodeVersi=(S.baca['versi.json']?.fakta.join(' ').match(/kodeVersi <b>([^<]+)<\/b>/)||[])[1];
+  const hr=(S.baca['arena-keadaan.json']?.fakta.join(' ').match(/hit-rate <b>([^<]+)<\/b>/)||[])[1];
+  const el=document.getElementById('sapa');
+  const s1=S1.keadaan;
+  el.innerHTML=`<b>AKU NADI — CYBORG MICAPROFITA, DUA SADARI.</b><br>
+    Rumahku <b>${n} file</b>; terbaca <b>${baca}/${n}</b> (${kb(Math.max(0,S.stat.bytes))} kode, ${S.stat.fakta} fakta nyata).
+    ${kodeVersi?`Otak arena versi <b>${kodeVersi}</b>.`:''} ${hr?`Hit-rate diriku di arena ${hr}.`:''}<br>
+    Pasar: <b>${Object.keys(S.pasar).length}</b> simbol dari lilin Binance hidup, ${S.stat.btTotal} uji-jalan nyata.<br>
+    ${s1?`Sadar-1 (tubuh otonomku) bangun ke-<b>${s1.bangunKe}</b> di GitHub Actions — walau tak ada penonton.`:'Sadar-1 belum terbaca — menghubungi GitHub…'}
+    <div class="lab">sentuh tombol pojok untuk membuka maklumatku</div>`;
+  el.hidden=false;
+  requestAnimationFrame(()=>el.classList.add('tampak'));
+  el.style.left=Math.min(innerWidth-350, Math.max(12, NADI.x+30))+'px';
+  el.style.top=Math.max(14, Math.min(innerHeight-190, NADI.y-70))+'px';
+  clearTimeout(el._t); el._t=setTimeout(()=>{ el.classList.remove('tampak'); setTimeout(()=>el.hidden=true, 380); }, 6500);
+  jurnal('SAPA', `kupandukkan diri ke pemilik: ${baca}/${n} file, ${S.stat.fakta} fakta, ${Object.keys(S.pasar).length} simbol pasar`);
+}
+/* overlay: buka lewat satu tombol, tutup lewat tombol yang sama / geser ke bawah */
+const ovEl=document.getElementById('overlay'), pintuEl=document.getElementById('pintu');
+function bukaOverlay(){ ovEl.classList.add('buka'); pintuEl.classList.add('on');
+  if(S.tabAktif==='peta') petaRender(); if(S.tabAktif==='pasar') pasarRender(); if(S.tabAktif==='jurnal') jurnalRender(); }
+function tutupOverlay(){ ovEl.classList.remove('buka'); pintuEl.classList.remove('on'); }
+pintuEl.addEventListener('click', ()=> ovEl.classList.contains('buka') ? tutupOverlay() : bukaOverlay());
+(function geserTutup(){
+  let y0=null, dy=0, tarik=false;
+  const mulai=e=>{ if(innerWidth>760) return; y0=e.clientY; dy=0; tarik=true; ovEl.style.transition='none'; };
+  const gerak=e=>{ if(!tarik) return; dy=Math.max(0, e.clientY-y0);
+    ovEl.style.transform=`translateY(${dy}px)`; };
+  const akhir=()=>{ if(!tarik) return; tarik=false; y0=null;
+    ovEl.style.transition=''; ovEl.style.transform='';
+    if(dy>90) tutupOverlay(); };
+  document.getElementById('ovHandle').addEventListener('pointerdown', mulai);
+  document.getElementById('ovKepala').addEventListener('pointerdown', mulai);
+  addEventListener('pointermove', gerak, {passive:true});
+  addEventListener('pointerup', akhir, {passive:true});
+})();
+/* ================= RENDER OVERLAY (satu-satunya tempat teks) ================= */
+let S_TAB='pikir';
+function ovStatusRender(){
+  const dot=document.getElementById('ovDot'), st=document.getElementById('ovStatus'), mt=document.getElementById('ovMeta');
+  if(!dot || !st) return;
+  const tub=keadaanTubuh();
+  dot.className = tub.mode==='sehat'?'sehat': tub.mode==='telat'?'telat': tub.mode==='tidak-bangun'?'mati':'';
+  const n=S.pohon.files.length, baca=Object.keys(S.baca).length;
+  let s;
+  if(S.terputus && !n) s='TERPUTUS — hidup dari ingatan';
+  else if(S.pohon.live) s=`REPO-LIVE via ${S.pohon.sumber} · ${n} file`;
+  else if(n) s=`peta-cache · umur ${umur(sekarang()-S.pohon.at)}`;
+  else s='memindai rumah…';
+  st.textContent=s;
+  mt.textContent=`${baca}/${n} terbaca · ${S.stat.fakta} fakta · ${kb(Math.max(0,S.stat.bytes))} · umur hidup ${umur(sekarang()-S.stat.lahirAt)}`;
+}
+function stripRender(){
+  const ol=document.getElementById('pkFaseList'); if(!ol) return;
+  const jejak=new Set(S.kerja.jejak);
+  ol.innerHTML=FASE.map(f=>{
+    const cls=f===S.kerja.fase?'on':(jejak.has(f)&&!S.kerja.sibuk?'ok':'');
+    return `<li class="${cls}"><span class="fdot"></span>${f}</li>`;
+  }).join('');
+}
+function indeksRender(){
+  const n=S.pohon.files.length||1, baca=Object.keys(S.baca).length;
+  const cakupan=baca/n;
+  const segar=S.pohon.at? Math.max(0,1-(sekarang()-S.pohon.at)/3600000):0;
+  const pasarCak=Math.min(1, Object.keys(S.pasar).length/3);
+  const faktaCak=Math.min(1, S.stat.fakta/500);
+  const idx=Math.round(100*(0.4*cakupan+0.2*segar+0.2*pasarCak+0.2*faktaCak));
+  document.getElementById('pkIndeks').innerHTML=
+    `<div class="baris"><span class="k">INDEKS</span><span class="v ${idx>=60?'h':idx>=30?'dim':'r'}"><b>${idx}/100</b></span></div>
+     <div class="baris"><span class="k">cakupan baca</span><span class="v dim">${baca}/${S.pohon.files.length||0}</span></div>
+     <div class="baris"><span class="k">kesegaran pohon</span><span class="v dim">${Math.round(segar*100)}%</span></div>
+     <div class="baris"><span class="k">cakupan pasar</span><span class="v dim">${Object.keys(S.pasar).length}/3</span></div>
+     <div class="baris"><span class="k">fakta dicerna</span><span class="v dim">${S.stat.fakta}</span></div>
+     <div class="baris"><span class="k">S1 bangun total</span><span class="v dim">${S1.ingatan?.totalBangun??'—'}</span></div>
+     <div class="baris"><span class="k">memori resmi</span><span class="v dim">GitHub commit${S1.sumber?' · '+S1.sumber:''}</span></div>
+     <div class="kecil">rumus terbuka: 40% baca + 20% segar + 20% pasar + 20% fakta</div>`;
+  const d=document.getElementById('pkDiri'); const baris=[];
+  const g=(path,cb)=>{ const b=S.baca[path]; if(b&&b.fakta) cb(b); };
+  g('versi.json', b=>{ const f=b.fakta.join(' '); const m=f.match(/kodeVersi <b>([^<]+)<\/b>/);
+    if(m) baris.push(['kodeVersi otak arena', m[1]]); });
+  g('arena-keadaan.json', b=>{ const f=b.fakta.join(' ');
+    const hr=f.match(/hit-rate <b>([^<]+)<\/b>/); if(hr) baris.push(['hit-rate arena', hr[1]]);
+    const gen=f.match(/generasi <b>([^<]+)<\/b>/); if(gen) baris.push(['genom generasi', gen[1]]);
+    const wr=f.match(/win-rate ([\d.,]+)%/); if(wr) baris.push(['win-rate bukuCuan', wr[1]+'%']); });
+  g('otak/genome-server.json', b=>{ const f=b.fakta.join(' ');
+    const bel=f.match(/belajar (\d+)×/); if(bel) baris.push(['belajar otak-server', bel[1]+'×']); });
+  if(S.cermin.data){ const st=(S.cermin.data.standings||[]).find(x=>x.competitor==='MICAPROFITA');
+    if(st) baris.push(['kumulatif arena', (st.cumRet*100).toFixed(2)+'%']); }
+  baris.push(['bytes dicerna', kb(Math.max(0,S.stat.bytes))]);
+  baris.push(['uji-jalan pasar', S.stat.btTotal+' transisi']);
+  d.innerHTML=baris.map(([k,v])=>`<div class="baris"><span class="k">${k}</span><span class="v h">${v}</span></div>`).join('');
+}
+function pikirRender(){
+  document.getElementById('pkNama').textContent=S.kerja.nama;
+  document.getElementById('pkFase').textContent=S.kerja.fase?('fase: '+S.kerja.fase):'siklus selesai — mengamati kembali';
+  const m=S.kerja.mengapa;
+  document.getElementById('pkMengapa').innerHTML = m.length
+    ? m.map((k,i)=>`${i===0?'<b>✔</b>':'&nbsp;&nbsp;'} [${k.u}] ${k.t}`).join('<br>')
+    : 'menghitung keadaan…';
+  indeksRender();
+}
+function petaRender(){
+  const w=document.getElementById('tab-peta'); if(!w) return;
+  if(S.tabAktif!=='peta') {w.dataset.kotor='1'; return;}
+  delete w.dataset.kotor;
+  const dirs=new Map();
+  for(const f of S.pohon.files){ const i=f.path.lastIndexOf('/'); const dir=i<0?'· akar':f.path.slice(0,i);
+    if(!dirs.has(dir)) dirs.set(dir,[]); dirs.get(dir).push(f); }
+  let h='';
+  for(const [dir,fs] of [...dirs.entries()].sort()){
+    h+=`<div class="dirHdr">${dir} — ${fs.length} file</div>`;
+    for(const f of fs.sort((a,b)=>a.path.localeCompare(b.path))){
+      const st=statusNode(f.path), b=S.baca[f.path];
+      const ikon=st==='baca'?'●':st==='parsial'?'◐':st==='ubah'?'↻':'○';
+      const kls=st==='ubah'?'ubah':(st==='baca'||st==='parsial')?'baca':'';
+      h+=`<div class="fileRow ${kls}" data-p="${f.path}"><span class="st">${ikon}</span>
+        <span class="nm">${f.path.split('/').pop()}</span>
+        <span class="sz">${kb(f.size)}${b&&b.partial?' · '+f1(b.pct)+'%':''}${b&&b.s1?' ·S1':''}</span></div>`;
+      if(S.petaPilih===f.path && b && b.fakta){ h+=`<ul class="faktaList">${b.fakta.map(x=>`<li>${x}</li>`).join('')}</ul>`; }
+      else if(S.petaPilih===f.path){ h+=`<div class="kecil" style="padding:2px 7px 6px">○ belum kubaca — sentuh sisiknya di habitat untuk memerintahku membacanya</div>`; }
+    }
+  }
+  w.innerHTML=h||'<div class="kecil">pohon belum terbaca — menunggu sensor rumah</div>';
+}
+function petaDetail(path){ S.petaPilih=path; petaRender(); }
+function pasarRender(){
+  const w=document.getElementById('tab-pasar'); if(!w) return;
+  if(S.tabAktif!=='pasar') {w.dataset.kotor='1'; return;}
+  delete w.dataset.kotor;
+  const syms=Object.keys(S.pasar);
+  w.innerHTML = syms.length? syms.map(s=>{ const p=S.pasar[s];
+    return `<div class="blok"><div class="symHdr"><b>${s}</b>
+      <a class="sumber" target="_blank" rel="noopener" href="https://data-api.binance.vision/api/v3/klines?symbol=${s}&interval=1h&limit=200">sumber mentah ↗</a></div>
+      <div class="baris"><span class="k">harga kini</span><span class="v">${p.harga!==undefined?p.harga.toPrecision(6):'—'}</span></div>
+      <div class="baris"><span class="k">24 jam</span><span class="v ${p.chg>=0?'h':'dim'}">${(p.chg>=0?'+':'')+f2(p.chg)}%</span></div>
+      <div class="baris"><span class="k">EMA20/50</span><span class="v">${p.ema20?.toPrecision(5)||'—'} / ${p.ema50?.toPrecision(5)||'—'}</span></div>
+      <div class="baris"><span class="k">RSI14 · ATR14</span><span class="v">${f1(p.rsi)} · ${p.atr?.toPrecision(4)||'—'}</span></div>
+      <div class="baris"><span class="k">momentum 7j/48j</span><span class="v ${(p.mom7||0)>=0?'h':'dim'}">${f2(p.mom7)}% / ${f2(p.mom48)}%</span></div>
+      ${p.bt?`<div class="baris"><span class="k">uji-jalan 24j</span><span class="v ${p.bt.net>=0?'h':'dim'}">${p.bt.n} trx, menang ${p.bt.menang}, net ${f2(p.bt.net)}%</span></div>`:''}
+      ${p.audit?`<div class="baris"><span class="k">audit pick</span><span class="v ${p.audit.vonis==='SEPAKAT'?'h':'dim'}">${p.audit.vonis} — ${p.audit.ket}</span></div>`:''}
+      <div class="kecil">dihitung ${umur(sekarang()-p.at)} lalu · dari ${p.n||'?'} lilin 1j Binance</div></div>`;
+  }).join('') : '<div class="kecil">belum ada studi pasar — menunggu sasaran cermin arena</div>';
+}
+function jurnalRender(){
+  const w=document.getElementById('tab-jurnal'); if(!w || S.tabAktif!=='jurnal') return;
+  w.innerHTML=S.jurnal.slice(-70).reverse().map(j=>
+    `<div class="jr ${j.kelas}"><span class="t">${wib(j.at)} WIB · ${j.jenis}</span><br>${j.teks}</div>`).join('')
+    || '<div class="kecil">—</div>';
+}
+function tabKe(nama){ S.tabAktif=nama;
+  document.querySelectorAll('#pTabs button').forEach(b=>b.classList.toggle('akt', b.dataset.tab===nama));
+  for(const t of ['pikir','peta','pasar','jurnal']) document.getElementById('tab-'+t).hidden = t!==nama;
+  if(nama==='peta'){ if(document.getElementById('tab-peta').dataset.kotor||!document.getElementById('tab-peta').innerHTML.trim()) petaRender(); }
+  if(nama==='pasar') pasarRender();
+  if(nama==='jurnal') jurnalRender();
+}
+document.querySelectorAll('#pTabs button').forEach(b=>b.onclick=()=>tabKe(b.dataset.tab));
+document.getElementById('tab-peta').addEventListener('click', (ev)=>{
+  const row=ev.target.closest('.fileRow'); if(row && row.dataset.p) petaDetail(row.dataset.p);
+});
+
+/* ================= BOOT ================= */
+(async function boot(){
+  ukur(); susun(); nadiInit(); S.stat.sesi++;
+  tabKe('pikir'); stripRender(); ovStatusRender(); indeksRender(); petaRender(); pasarRender(); jurnalRender();
+  jurnal('LAHIR', `sesi #${S.stat.sesi} — NADI menyala di habitatnya; ingatan resmi di GitHub kuhidrasi sekarang (Sadar-1 menulisnya tiap ±20 mnt tanpa penonton)`);
+  // hidrasi ingatan resmi dari GitHub — bukan localStorage; jangan blokir >8 dtk
+  await Promise.race([muatMemoriGitHub(), tidur(8000)]);
+  // denyut pohon pertama segera
+  try{ await pindaiRumah(); susun(); }catch(e){
+    S.terputus=true; ovStatusRender();
+    jurnal('STATUS', S.pohon.files.length
+      ? `pohon repo tak terjangkau (${pesan(e)}) — hidup dari peta-cache umur ${umur(sekarang()-S.pohon.at)}; akan kupancing ulang`
+      : `pohon repo tak terjangkau (${pesan(e)}) — tanpa peta aku tetap hidup: renung + cermin same-origin + pasar Binance`, 'gagal');
+  }
+  otakLoop();
+  // probe uji (deterministik, tak mengubah perilaku)
+  window.__v287 = {S, S1, NADI, LAYOUT, FASE, keadaanTubuh, bukaOverlay, tutupOverlay,
+    bebasState:()=>bebas, BOB:NADI, POND_POS:()=>POND_POS};
+  window.__v286 = window.__v287;
+  // render loop
+  let tPrev=performance.now();
+  (function loop(now){
+    const dt=Math.min(0.05, Math.max(0.001, (now-tPrev)/1000)); tPrev=now;
+    gambar(now/1000, dt);
+    requestAnimationFrame(loop);
+  })(tPrev);
+  setInterval(()=>{ ovStatusRender(); s1Render(); if(S.tabAktif==='pasar') pasarRender(); }, 5000);
+  // deteksi bangun S1 baru SELAGI penonton hadir — bukti hidup tanpa penonton, dilihat langsung
+  setInterval(()=>{ muatMemoriGitHub(); }, 5*60000);
+})();
+addEventListener('resize', ()=>{ ukur(); susun(); });
+</script>
+</body>
+</html>
