@@ -45,6 +45,7 @@ jobs:
           git add data/cache_sasaran.json 2>/dev/null || true
           git add data/cache_genome.json 2>/dev/null || true
           git add data/cache_denyut.json 2>/dev/null || true
+          git add data/lapor_ath_state.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "state tidak berubah"
           else
