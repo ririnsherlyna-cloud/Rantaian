@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*-
 """
 HEARTBEAT MICROPROFITA GEN-10 — detak hidup + JEMBATAN OTAK Z.AI + XAU WAJIB + penjaga level + PELINDUNG-IP.
+V305 (31 Okt, mandat pemilik): Telegram TIDAK mengirim daftar sinyal lagi.
+Isi Telegram kini hanya: (1) notif koin menyentuh TP/JUAL AMBISIUS/POWER MAX/STOP,
+(2) laporan harian koin ATH turun 70-90% yang masih hidup — dikirim oleh LAPIS
+ABADI GitHub (scripts/benteng_telegram.py, 24/7, tak bergantung sandbox/HP),
+(3) detak status pendek. Daftar 100 koin tetap hidup di web, bukan di Telegram.
 V304 (27 Okt, mandat pemilik): PELINDUNG-IP — harga tidak lagi bergantung
 SATU IP/SATU bursa: rotasi 8 sumber publik (binance/bybit/okx/mexc/gate/
 bitget/kucoin/binance-futures) dengan memori kesehatan + cooldown per sumber,
@@ -91,34 +96,9 @@ def simpan_json(path, obj):
         print("gagal simpan", path, repr(e))
 
 
-REPO_API_OTAK = "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-"
-
-
-def _api_ambil(jalur):
-    """FIX ANTI-JADUL: ambil isi file repo otak lewat Contents/Blob API
-    (object store — selalu versi commit TERBARU). raw.githubusercontent
-    ternyata menyajikan snapshot usang berjam-jam untuk repo berdenyut cepat,
-    membuat laporan berisi data jadul. Token dibaca dari file, tidak dicetak."""
-    head = {"Authorization": "Bearer " + baca(F_PAT_RANTAIAN).strip(),
-            "Accept": "application/vnd.github+json", "User-Agent": "microprofita-hb"}
-    d = json.load(urllib.request.urlopen(urllib.request.Request(
-        f"{REPO_API_OTAK}/contents/{jalur}?ref=main", headers=head), timeout=25))
-    if d.get("content") is not None:
-        return base64.b64decode(d["content"])
-    b = json.load(urllib.request.urlopen(urllib.request.Request(
-        f"{REPO_API_OTAK}/git/blobs/{d['sha']}", headers=head), timeout=25))
-    return base64.b64decode(b["content"])
-
-
 def muat_json_remote(jalur, nama_cache):
-    """Ambil file dari repo hidup; API-first (segar), RAW cadangan, cache terakhir."""
+    """Ambil file dari repo hidup; gagal -> pakai cache detak lalu."""
     cache = os.path.join(DATA, nama_cache)
-    try:
-        obj = json.loads(_api_ambil(jalur).decode("utf-8", "replace"))
-        simpan_json(cache, obj)
-        return obj, True
-    except Exception:
-        pass
     try:
         req = urllib.request.Request(f"{RAW}/{jalur}", headers={"User-Agent": "microprofita-hb"})
         with urllib.request.urlopen(req, timeout=25) as r:
@@ -132,13 +112,6 @@ def muat_json_remote(jalur, nama_cache):
 
 def jsonl_remote_terakhir(jalur, nama_cache):
     cache = os.path.join(DATA, nama_cache)
-    try:
-        lines = [l for l in _api_ambil(jalur).decode("utf-8", "replace").splitlines() if l.strip()]
-        d = json.loads(lines[-1])
-        simpan_json(cache, d)
-        return d, True
-    except Exception:
-        pass
     try:
         req = urllib.request.Request(f"{RAW}/{jalur}", headers={"User-Agent": "microprofita-hb"})
         with urllib.request.urlopen(req, timeout=25) as r:
@@ -204,16 +177,7 @@ def otak_zai():
         # senantiasa kumplit + kejujuran sumber tetap terjaga).
         cache_lama = muat_json_lokal(F_ZAI_CACHE) or {}
         lama_picks = cache_lama.get("picks") or []
-        # GEN-10 GANTI-HARI: bila web membawa hariData LEBIH BARU daripada cache,
-        # koin hari ini WAJIB menang walau jumlahnya lebih sedikit — koin kemarin
-        # tidak boleh menimpa koin hari ini (laporan pemilik 28 Okt). Pengaman
-        # jumlah hanya berlaku bila cache & web masih hari yang sama.
-        hari_web = d.get("dataDay")
-        hari_cache = cache_lama.get("hariData")
-        ganti_hari = (isinstance(hari_web, str) and isinstance(hari_cache, str)
-                      and hari_web > hari_cache)
-        if ((not ganti_hari) and len(koin[:ZAI_SIMPAN]) < len(lama_picks)
-                and cache_lama.get("sumber")):
+        if len(koin[:ZAI_SIMPAN]) < len(lama_picks) and cache_lama.get("sumber"):
             snap_lama = dict(cache_lama)
             snap_lama["waktu"] = datetime.now(timezone.utc).isoformat()
             snap_lama["sumber"] = (f"cache(benteng-lokal) — otak web sedang pulih "
@@ -311,7 +275,6 @@ def taman_zai_ke_rantaian(snap):
             "Accept": "application/vnd.github+json"}
     sha = None
     kaya_benteng = 0  # PENGAMAN-BENTENG: jumlah picks yang sudah tersimpan di benteng
-    isi_benteng = None
     try:
         with urllib.request.urlopen(urllib.request.Request(api, headers=head), timeout=15) as r:
             j = json.loads(r.read().decode())
@@ -324,14 +287,7 @@ def taman_zai_ke_rantaian(snap):
     except Exception:
         sha = None  # 404 = file belum ada -> buat baru
     picks_baru = len((snap or {}).get("picks") or [])
-    # GEN-10 GANTI-HARI: snapshot dengan hariData lebih baru WAJIB menimpa benteng
-    # walau jumlah picks lebih sedikit — koin kemarin tidak boleh menimpa koin
-    # hari ini (laporan pemilik 28 Okt). Pengaman jumlah hanya berlaku di hari sama.
-    hari_baru = (snap or {}).get("hariData")
-    hari_benteng = isi_benteng.get("hariData") if isinstance(isi_benteng, dict) else None
-    ganti_hari = (isinstance(hari_baru, str) and isinstance(hari_benteng, str)
-                  and hari_baru > hari_benteng)
-    if sha and (not ganti_hari) and kaya_benteng > picks_baru:
+    if sha and kaya_benteng > picks_baru:
         return (f"pengaman benteng: snapshot lama lebih kaya ({kaya_benteng} vs "
                 f"{picks_baru} picks) -> tidak menimpa; otak sedang pulih")
     body = {"message": "jembatan: sasaran otak z.ai dari heartbeat [skip ci]",
@@ -374,6 +330,24 @@ def fmt_harga(p):
     if p >= 1:
         return f"{p:.4f}".rstrip("0").rstrip(".")
     return format(Decimal(repr(p)).normalize(), "f")
+
+
+def jam_wib():
+    """V305 — jam WIB tahan-drift: jam kotak sandbox bisa melompat berjam-jam
+    (pelajaran 31 Okt: laporan tampak 'telat' karena jam tubuh melenceng).
+    Ambil jam NYATA dari header 'Date' internet; gagal -> jam sistem."""
+    from email.utils import parsedate_to_datetime
+    for host in ("https://www.google.com", "https://api.github.com"):
+        try:
+            req = urllib.request.Request(host, method="HEAD",
+                                         headers={"User-Agent": "denyut-tubuh"})
+            with urllib.request.urlopen(req, timeout=8) as r:
+                d = r.headers.get("Date")
+                if d:
+                    return parsedate_to_datetime(d).astimezone(WIB)
+        except Exception:
+            continue
+    return datetime.now(WIB)
 
 
 # ---------------- level sasaran ----------------
@@ -792,7 +766,7 @@ def main():
     kejadian = list(kejadian) + list(kejadian_arena)
 
     # ---- susun pesan ----
-    jam = datetime.now(WIB)
+    jam = jam_wib()
     L = ["💓 <b>DETAK HIDUP — MICROPROFITA</b>",
          f"🕐 {jam.strftime('%H:%M:%S WIB, %d %b %Y')}"]
     if gap_menit is None:
@@ -803,34 +777,9 @@ def main():
         L.append(f"Status: <b>HIDUP</b> — {gap_menit:.0f} menit sejak detak terakhir")
 
     L.append("")
-    # ---- V302 section XAU WAJIB (TIDAK PERNAH ABSEN — hukum pemilik) ----
-    x_ent = zai_xau.get("entry")
-    x_arah = str(zai_xau.get("arah") or "?").upper()
-    x_konf = zai_xau.get("keyakinan")
-    x_kini = xau_h if xau_h else None
-    x_jarak = f"{(x_kini / x_ent - 1) * 100:+.2f}%" if (x_kini and x_ent) else "-"
-    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (100 sasaran + 1 XAU, hukum pemilik V302+V303)")
-    if xau_h:
-        chg_s = f" · 24 jam {xau_chg:+.2f}%" if xau_chg is not None else ""
-        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · "
-                 f"entry {fmt_harga(x_ent)} · kini <b>{fmt_harga(x_kini)}</b> ({x_jarak}){chg_s}")
-        # V302-LEVEL + V303 — laporan emas KOMPLIT: EMPAT level terpisah (hukum
-        # pemilik: TP sasaran ≠ Jual Ambisius ≠ Power Max ≠ Stop — jangan samakan).
-        x_tg, x_am, x_pm, x_st = zai_xau.get("target"), zai_xau.get("ambisius"), zai_xau.get("powermax"), zai_xau.get("stop")
-        if any(isinstance(v, (int, float)) and v > 0 for v in (x_tg, x_am, x_pm, x_st)):
-            def _pct_level(v):
-                return f" ({(v / x_ent - 1) * 100:+.2f}%)" if (v and x_ent) else ""
-            L.append(f"🎯 TP sasaran: <b>{fmt_harga(x_tg)}</b>{_pct_level(x_tg)} · "
-                     f"🔥 JUAL AMBISIUS: <b>{fmt_harga(x_am)}</b>{_pct_level(x_am)}\n"
-                     f"⚡ POWER MAX AMBISIUS: <b>{fmt_harga(x_pm)}</b>{_pct_level(x_pm)} · "
-                     f"🛑 STOP: <b>{fmt_harga(x_st)}</b>{_pct_level(x_st)}")
-            L.append("<i>Empat level berbeda untuk emas — TP ≠ Jual Ambisius ≠ Power Max ≠ Stop; empat keputusan berbeda.</i>")
-        L.append(f"<i>Sumber harga: {html.escape(xau_src)} — XAU selalu ada di laporan apa pun kondisinya.</i>")
-    else:
-        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · entry {fmt_harga(x_ent)} · "
-                 f"kini <b>GAGAL DIAMBIL</b> (semua sumber emas padam detak ini)")
-        L.append("<i>XAU tetap WAJIB — harga dicoba lagi detak berikutnya; baris ini tidak pernah dihapus.</i>")
-    L.append("")
+    # V305 MANDAT PEMILIK 31 OKT: daftar sinyal TIDAK dikirim lagi dari Telegram.
+    # XAU tetap dipantau levelnya (sentuhan TP/Jual Ambisius/Power Max/Stop masuk
+    # notif via kejadian); harga emas tidak lagi jadi blok tetap laporan.
     if harga_map and (sumber_harga in ("bybit+okx", "binance+futures+bybit/okx")
                       or str(sumber_harga).startswith("rotasi:")):
         L.append(f"💱 Harga dari <b>{html.escape(sumber_harga)}</b> — rotasi multi-bursa / cadangan; beda tipis antar pasar wajar.")
@@ -839,64 +788,19 @@ def main():
         L.append(f"🛡️ PELINDUNG IP: <b>{html.escape(ip_rotasi.status_ringkas())}</b> — 1 IP sandbox + rotasi 8 sumber = praktis tak tergantung 1 pintu.")
     except Exception:
         pass
-    # ---- section OTAK Z.AI (persis seperti web) ----
+    # ---- V305 MANDAT PEMILIK 31 OKT: daftar sinyal TIDAK dikirim lagi ----
+    # (blok SASARAN OTAK Z.AI + PELUANG PROFIT dihapus). Koin tetap dipantau
+    # levelnya via pantau_level_arena; hanya SENTUHAN yang jadi notif.
     if zai_picks:
-        seg_z = "live dari web" if zai_hidup else "CACHE (web sedang tak terjangkau)"
         z_reg = (zai_snap or {}).get("regime") or "?"
-        z_an = (zai_snap or {}).get("dianalisa") or "?"
-        z_lh = (zai_snap or {}).get("lahir") or "?"
-        z_tot = (zai_snap or {}).get("total") or len(zai_picks)
-        # V303 DATA-FRESH — kejujuran tanggal: data hari ini atau tidak
-        hari_data = (zai_snap or {}).get("hariData")
-        lag_d = (zai_snap or {}).get("lag")
-        stale_d = (zai_snap or {}).get("stale")
-        if lag_d == 0 and not stale_d and hari_data:
-            fresh = f"📅 FRESH: data <b>{html.escape(str(hari_data))}</b> = hari ini (lag 0, tidak stale)"
-        elif hari_data:
-            fresh = (f"⚠️ DATA: hari {html.escape(str(hari_data))} · lag {lag_d} hari"
-                     + (" · STALE" if stale_d else ""))
-        else:
-            fresh = "⚠️ DATA: tanggal data tidak tersedia (saya akui jujur)"
-        L.append(f"🧠 <b>SASARAN OTAK Z.AI</b> — sumber SAMA dengan web ({seg_z})")
-        L.append(fresh)
-        L.append(f"Regim pasarnya: <b>{html.escape(str(z_reg))}</b> · {z_an} koin dianalisa · "
-                 f"{z_lh} pilihan lahir hari ini · menampilkan {min(ZAI_TAMPIL, len(zai_picks))} teratas dari {z_tot} sasaran "
-                 f"(100 koin + XAU wajib 🥇 di atas; urut keyakinan)")
-        for i, p in enumerate(zai_picks[:ZAI_TAMPIL], 1):
-            basis = _basis_simbol(p["simbol"]) or p["simbol"]
-            h = xau_h if p["simbol"] == "XAUUSDT" else harga_map.get(basis)
-            ent = p.get("entry")
-            jarak = f"{(h / ent - 1) * 100:+.2f}%" if (h and ent) else "-"
-            def _lvl(v, ent=ent):
-                if not isinstance(v, (int, float)) or v <= 0:
-                    return "-"
-                pc = f" ({(v / ent - 1) * 100:+.1f}%)" if ent else ""
-                return f"{fmt_harga(v)}{pc}"
-            L.append(f"{i}. <b>{html.escape(basis)}</b> {html.escape(str(p.get('arah')))} "
-                     f"{p.get('keyakinan', '-')}% · kini <b>{fmt_harga(h)}</b> ({jarak})")
-            L.append(f"&nbsp;&nbsp;entry {fmt_harga(ent)} · 🎯TP {_lvl(p.get('target'))} · "
-                     f"🔥AMB {_lvl(p.get('ambisius'))} · ⚡MAX {_lvl(p.get('powermax'))} · 🛑STOP {_lvl(p.get('stop'))}")
-        L.append("<i>V303: koin teratas WAJIB 6 field (entry, kini, TP, Jual Ambisius, Power Max, Stop). "
-                 "Daftar 100 penuh ada di web; sasaran otak SERVER ada di bawah.</i>")
-        L.append("")
-        # V304 DAFTAR KEDUA — PELUANG PROFIT TERBESAR (mandat pemilik 27 Okt):
-        # urutan murni besaran % profit ke Jual Ambisius, dari seluruh 100 koin.
-        pel = daftar_peluang_profit(zai_picks, harga_map)
-        if pel:
-            L.append(f"💰 <b>PELUANG PROFIT TERBESAR</b> — urutan MURNI besaran % profit "
-                     f"ke Jual Ambisius dari {len(zai_picks)} koin sasaran:")
-            for i, (sim, arah, kini_p, amb, pct, pm, pm_pct) in enumerate(pel, 1):
-                pm_s = (f" · ⚡MAX {fmt_harga(pm)} (+{pm_pct:.0f}%)"
-                        if isinstance(pm, (int, float)) and pm > 0 and pm_pct and pm_pct > 0 else "")
-                L.append(f"{i}. <b>{html.escape(str(sim))}</b> ({html.escape(arah)}) "
-                         f"kini {fmt_harga(kini_p)} → 🔥 {fmt_harga(amb)} <b>+{pct:.1f}%</b>{pm_s}")
-            L.append("<i>Kriteria daftar ini murni seberapa BESAR % profitnya "
-                     "(contoh: ambisius +50% = juara) — bukan seberapa mungkin tercapai. "
-                     "Daftar teratas menurut keyakinan tetap di atas.</i>")
-            L.append("")
+        z_an = (zai_snap or {}).get("dianalisa") or len(zai_picks)
+        seg_z = "live" if zai_hidup else "cache"
+        L.append(f"🧠 Otak z.ai ({seg_z}): regim {html.escape(str(z_reg))} · {z_an} koin dianalisa · "
+                 f"{len(zai_picks)} sasaran dipantau levelnya — daftar sinyal tidak dikirim lagi; "
+                 "notif hanya saat koin menyentuh TP/Jual Ambisius/Power Max/Stop (mandat 31 Okt).")
     else:
         L.append("🧠 Otak z.ai (web): <b>tak terjangkau detak ini dan tak ada cache</b> — saya akui jujur.")
-        L.append("")
+    L.append("")
     if kejadian:
         L.append(f"🚨 <b>PANTAUAN SASARAN — {len(kejadian)} kejadian baru:</b>")
         for sim, arah, level_nama, level_nilai, harga, entry, pertama in kejadian:
