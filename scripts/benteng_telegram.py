@@ -16,6 +16,12 @@ Tiap 30 menit (cron 7,37):
   4. Deteksi sentuhan TP / JUAL AMBISIUS / POWER MAX / STOP vs state detak lalu
   5. Kirim laporan jujur ke Telegram pemilik
   6. Simpan state + jurnal kematian ke repo (workflow commit [skip ci])
+V305 FOKUS-BARU (mandat pemilik 31 Okt 2026): Telegram TIDAK mengirim daftar
+     sinyal lagi. Isi Telegram kini hanya: (1) notif koin menyentuh TP /
+     JUAL AMBISIUS / POWER MAX / STOP, (2) laporan harian koin ATH turun 70-90%
+     yang MASIH HIDUP (volume hidup / tim belum hilang / ada gerakan — bukan
+     yang sepi total; contoh fase: MAGMA, AIN, IDOL), (3) detak status pendek.
+     Semua jalan di GitHub Actions 24/7 — tidak bergantung sandbox maupun HP.
 Hukum: gap antar detak abadi > 45 menit = lapis ini sempat terhenti -> diakui jujur.
 Harga mikro < 0.0001 WAJIB tampil utuh (contoh 0.00001234), bukan 0, bukan notasi ilmiah.
 """
@@ -37,6 +43,10 @@ OTAK_RAW = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Micaprofita-/m
 ZAI_RAW = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Rantaian/main/benteng/sasaran-zai.json"
 GAP_MATI_MENIT = 45
 WIB = timezone(timedelta(hours=7))
+F_LAPOR_ATH = os.path.join(ROOT, "data", "lapor_ath_state.json")
+ATH_MIN_PCT, ATH_MAX_PCT = -90.0, -70.0   # ATH turun 70-90% (mandat pemilik)
+VOL_HIDUP_USD = 20000.0                   # volume 24 jam minimum tanda hidup
+GERAK_MIN_PCT = 0.05                      # gerak harga 24 jam minimum tanda hidup
 LABEL_LEVEL = {"TP": "TP SASARAN", "JUAL AMBISIUS": "JUAL AMBISIUS",
                "POWER MAX AMBISIUS": "POWER MAX AMBISIUS", "STOP": "STOP (batal)"}
 
@@ -116,6 +126,32 @@ def fmt_harga(p):
     if p >= 1:
         return f"{p:.4f}".rstrip("0").rstrip(".")
     return format(Decimal(repr(p)).normalize(), "f")
+
+
+def fmt_harga_pasar(p):
+    """Harga dari API pasar (kadang 0.2069300372027519) — potong ke 8 angka
+    penting utk keterbacaan; harga mikro < 0.0001 tetap tampil UTUH (hukum)."""
+    if isinstance(p, (int, float)) and p and abs(p) >= 0.0001:
+        p = float(f"{p:.8g}")
+    return fmt_harga(p)
+
+
+def jam_wib():
+    """Jam WIB tahan-drift (pelajaran sandbox): jam kotak bisa melompat berjam-
+    jam. Ambil jam NYATA dari header 'Date' internet; gagal -> jam sistem.
+    Di GitHub Actions (jam NTP) hasilnya sama persis."""
+    from email.utils import parsedate_to_datetime
+    for host in ("https://www.google.com", "https://api.github.com"):
+        try:
+            req = urllib.request.Request(host, method="HEAD",
+                                         headers={"User-Agent": "benteng-abadi"})
+            with urllib.request.urlopen(req, timeout=8) as r:
+                d = r.headers.get("Date")
+                if d:
+                    return parsedate_to_datetime(d).astimezone(WIB)
+        except Exception:
+            continue
+    return datetime.now(WIB)
 
 
 def level_dari_entri(e):
@@ -324,7 +360,185 @@ def _xau_wajib_sintesis(ket):
             "wajib": True, "ket": f"gagal ambil harga emas semua sumber ({ket})"}
 
 
+def alam_semesta_koin(daftar, zai_picks):
+    """Alam semesta pemindaian ATH: koin sasaran server + sasaran arena (dedup)."""
+    out = []
+    for s in ([e.get("simbol") for e in (daftar or []) if isinstance(e, dict)]
+              + [p.get("simbol") for p in (zai_picks or []) if isinstance(p, dict)]):
+        b = _basis_simbol(s)
+        if b and b != "XAU" and b not in out:
+            out.append(b)
+    return out
+
+
+def pasar_paprika(bases):
+    """Data ATH/volume/gerak dari CoinPaprika (publik, 1 panggilan utk semua
+    koin). Simbol sama bisa muncul utk >1 koin -> ambil rank terbaik."""
+    want = set(bases)
+    rows = {}
+    req = urllib.request.Request("https://api.coinpaprika.com/v1/tickers",
+                                 headers={"User-Agent": "benteng-abadi"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        arr = json.loads(r.read().decode("utf-8", "replace"))
+    for c in arr if isinstance(arr, list) else []:
+        sym = str(c.get("symbol") or "").upper()
+        if sym not in want:
+            continue
+        usd = (c.get("quotes") or {}).get("USD") or {}
+        price, ath_p = usd.get("price"), c.get("ath_price")
+        pct_ath = usd.get("percent_from_price_ath")
+        if not isinstance(pct_ath, (int, float)):
+            try:
+                pct_ath = (float(price) / float(ath_p) - 1) * 100 if (ath_p and price) else None
+            except Exception:
+                pct_ath = None
+        row = {"sim": sym, "harga": price, "ath": ath_p, "ath_pct": pct_ath,
+               "vol": usd.get("volume_24h") or 0, "chg24": usd.get("percent_change_24h"),
+               "rank": c.get("rank"), "dev4w": None}
+        lama = rows.get(sym)
+        if lama is None or (row.get("rank") or 9e9) < (lama.get("rank") or 9e9):
+            rows[sym] = row
+    return rows
+
+
+def pasar_coingecko(bases):
+    """Cadangan ATH/volume dari CoinGecko (chunk 50 simbol/panggilan)."""
+    rows = {}
+    for i in range(0, len(bases), 50):
+        chunk = bases[i:i + 50]
+        q = urllib.parse.quote(",".join(chunk).lower())
+        url = ("https://api.coingecko.com/api/v3/coins/markets"
+               f"?vs_currency=usd&symbols={q}&price_change_percentage=24h&per_page=250&page=1")
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "benteng-abadi"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                arr = json.loads(r.read().decode("utf-8", "replace"))
+            for c in arr if isinstance(arr, list) else []:
+                sym = str(c.get("symbol") or "").upper()
+                if not sym:
+                    continue
+                dev = ((c.get("developer_data") or {}).get("commit_count_4_weeks") or 0)
+                rows[sym] = {"sim": sym, "harga": c.get("current_price"), "ath": c.get("ath"),
+                             "ath_pct": c.get("ath_change_percentage"),
+                             "vol": c.get("total_volume") or 0, "mcap": c.get("market_cap"),
+                             "chg24": c.get("price_change_percentage_24h"), "dev4w": dev}
+        except Exception as e:
+            print(f"COINGECKO_GAGAL chunk {i // 50 + 1}: {repr(e)}")
+        if i + 50 < len(bases):
+            time.sleep(3.0)
+    return rows
+
+
+def kaya_dev_coingecko(rows):
+    """Pengaya tanda 'tim/dev aktif' (commit 4 minggu) — HANYA utk koin yang
+    lolos filter ATH (biasanya segelintir; hemat kuota). Gagal -> lewati saja."""
+    syms = sorted({r["sim"].lower() for r in (rows.values() if isinstance(rows, dict) else rows)
+                   if isinstance(r.get("ath_pct"), (int, float))
+                   and ATH_MIN_PCT <= r["ath_pct"] <= ATH_MAX_PCT})
+    if not syms:
+        return
+    q = urllib.parse.quote(",".join(syms))
+    url = ("https://api.coingecko.com/api/v3/coins/markets"
+           f"?vs_currency=usd&symbols={q}&price_change_percentage=24h&per_page=250&page=1")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "benteng-abadi"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            arr = json.loads(r.read().decode("utf-8", "replace"))
+        dev = {}
+        for c in arr if isinstance(arr, list) else []:
+            sym = str(c.get("symbol") or "").upper()
+            dev[sym] = ((c.get("developer_data") or {}).get("commit_count_4_weeks") or 0)
+        for r in (rows.values() if isinstance(rows, dict) else rows):
+            if r["sim"] in dev:
+                r["dev4w"] = dev[r["sim"]]
+    except Exception as e:
+        print("COINGECKO_DEV_GAGAL (tanda tim/dev dilewati detak ini):", repr(e))
+
+
+def tanda_hidup(r):
+    """Tanda kehidupan (hukum pemilik: bukan yang mati sepi total)."""
+    t = []
+    if (r.get("vol") or 0) >= VOL_HIDUP_USD:
+        t.append("volume hidup")
+    chg = r.get("chg24")
+    if isinstance(chg, (int, float)) and abs(chg) >= GERAK_MIN_PCT:
+        t.append("harga bergerak")
+    if (r.get("dev4w") or 0) > 0:
+        t.append("tim/dev aktif")
+    return t
+
+
+def lapor_ath_harian(token, chat_id, daftar, zai_picks):
+    """Laporan harian (sekali sehari, mulai 08:00 WIB): koin ATH turun 70-90%
+    yang MASIH HIDUP (volume/tim/gerakan); yang sepi total dibuang (mandat 31
+    Okt). State data/lapor_ath_state.json dikomit workflow; scan gagal -> coba
+    lagi run berikutnya (state tidak ditandai terkirim)."""
+    jam = jam_wib()
+    state = muat_json(F_LAPOR_ATH) or {}
+    hari = jam.strftime("%Y-%m-%d")
+    if state.get("tanggal") == hari and state.get("dikirim"):
+        return "sudah"
+    if jam.hour < 8:
+        return "tunggu"
+    bases = alam_semesta_koin(daftar, zai_picks)
+    if not bases:
+        print("LAPOR_ATH: alam semesta kosong — coba run berikutnya")
+        return "kosong"
+    rows = pasar_paprika(bases)
+    if not rows:
+        print("LAPOR_ATH: Paprika gagal — coba CoinGecko (cadangan)")
+        rows = pasar_coingecko(bases)
+    if not rows:
+        print("LAPOR_ATH: semua sumber harga ATH gagal — coba run berikutnya (state tak ditandai)")
+        return "gagal-jaringan"
+    kaya_dev_coingecko(rows)
+    lolos = [r for r in rows.values() if isinstance(r.get("ath_pct"), (int, float))
+             and ATH_MIN_PCT <= r["ath_pct"] <= ATH_MAX_PCT]
+    hidup, mati = [], []
+    for r in lolos:
+        t = tanda_hidup(r)
+        (hidup if t else mati).append((r, t))
+    hidup.sort(key=lambda x: (x[0].get("vol") or 0), reverse=True)
+    L = ["📉 <b>LAPORAN HARIAN — KOIN ATH TURUN 70–90% YANG MASIH HIDUP</b>",
+         f"🕐 {jam.strftime('%H:%M WIB, %d %b %Y')} · mandat pemilik 31 Okt",
+         f"Alam semesta {len(bases)} koin telaah · lolos filter ATH −70..−90%: <b>{len(lolos)}</b> · "
+         f"mati sepi total (dibuang): {len(mati)} · <b>masih hidup: {len(hidup)}</b>", ""]
+    if hidup:
+        for r, t in hidup[:40]:
+            chg = r.get("chg24")
+            chg_s = f"{chg:+.2f}%" if isinstance(chg, (int, float)) else "-"
+            L.append(f"• <b>{html.escape(str(r.get('sim')))}</b> — ATH {r['ath_pct']:.1f}% · "
+                     f"kini {fmt_harga_pasar(r.get('harga'))} (puncak dulu {fmt_harga_pasar(r.get('ath'))}) · "
+                     f"vol24h ${(r.get('vol') or 0):,.0f} · 24j {chg_s}")
+            L.append(f"&nbsp;&nbsp;tanda hidup: {html.escape(', '.join(t))}")
+        if len(hidup) > 40:
+            L.append(f"&nbsp;&nbsp;… dan {len(hidup) - 40} koin hidup lainnya (urut volume terbesar).")
+        L.append("")
+        L.append("<i>Contoh fase seperti MAGMA, AIN, IDOL: runtuh dalam, tapi masih ada denyut — "
+                 "bukan yang sepi total. Yang seluruh tandanya mati dibuang dari laporan.</i>")
+    else:
+        L.append("Hari ini TIDAK ada koin ATH −70..−90% yang masih hidup — "
+                 "yang lolos filter ATH semuanya sepi total (jujur, bukan disembunyikan).")
+    text = "\n".join(L)
+    resp = kirim_telegram_panjang(token, chat_id, text)
+    ok = bool(resp.get("ok"))
+    if ok:
+        state.update({"tanggal": hari, "dikirim": True,
+                      "message_id": (resp.get("result") or {}).get("message_id"),
+                      "lolos": len(lolos), "hidup": len(hidup), "mati": len(mati),
+                      "waktu": datetime.now(timezone.utc).isoformat()})
+        simpan_json(F_LAPOR_ATH, state)
+    print(f"LAPOR_ATH: {'OK ' + str((resp.get('result') or {}).get('message_id')) if ok else 'GAGAL ' + str(resp)} "
+          f"| lolos {len(lolos)} | hidup {len(hidup)} | mati {len(mati)}")
+    return "ok" if ok else "gagal-kirim"
+
+
 def kirim_telegram(token, chat_id, text):
+    if os.environ.get("UJI_TANPA_KIRIM"):
+        print("--- TEKS PESAN (mode uji, TIDAK dikirim) ---")
+        print(text)
+        print("--- AKHIR TEKS ---")
+        return {"ok": True, "result": {"message_id": 0}}
     payload = urllib.parse.urlencode({
         "chat_id": chat_id, "text": text, "parse_mode": "HTML",
         "disable_web_page_preview": "true"}).encode()
@@ -333,6 +547,29 @@ def kirim_telegram(token, chat_id, text):
         headers={"Content-Type": "application/x-www-form-urlencoded"})
     with urllib.request.urlopen(req, timeout=25) as r:
         return json.loads(r.read().decode())
+
+
+def kirim_telegram_panjang(token, chat_id, text):
+    """Kirim teks apa pun tanpa ditolak batas 4096 karakter: pecah per baris
+    jadi beberapa pesan <= 3800 karakter, urut, berhenti bila satu gagal."""
+    if len(text) <= 3800:
+        return kirim_telegram(token, chat_id, text)
+    bagian, kini = [], ""
+    for baris in text.split("\n"):
+        if len(kini) + len(baris) + 1 > 3800 and kini:
+            bagian.append(kini)
+            kini = ""
+        kini += baris + "\n"
+    if kini.strip():
+        bagian.append(kini)
+    hasil = {"ok": False}
+    for i, b in enumerate(bagian):
+        teks = b if len(bagian) == 1 else f"({i + 1}/{len(bagian)})\n{b}"
+        hasil = kirim_telegram(token, chat_id, teks)
+        if not hasil.get("ok"):
+            break
+        time.sleep(1.5)
+    return hasil
 
 
 def main():
@@ -419,8 +656,32 @@ def main():
             if kena and not sebelumnya and harga and (sudah_panas or sim not in lama):
                 kejadian.append((sim, e.get("arah", "?"), nama, nilai, harga, e.get("entry"),
                                  sim not in lama))
+    # V305: sasaran arena (jembatan z.ai) + XAU ikut DIPANTAU levelnya — sentuhan
+    # JUAL AMBISIUS dll dari arena masuk notif, meski daftar tidak lagi ditampilkan.
+    arena = [p for p in zai_picks if isinstance(p, dict) and p.get("simbol")]
+    if isinstance(zai_xau, dict) and zai_xau.get("entry") and not any(
+            _basis_simbol(p.get("simbol")) == "XAU" for p in arena):
+        arena.append(zai_xau)
+    for p in arena:
+        sim_raw = str(p.get("simbol") or "")
+        sim = "XAUUSDT" if _basis_simbol(sim_raw) == "XAU" else (_basis_simbol(sim_raw) or sim_raw)
+        if not sim or sim in baru:
+            continue
+        harga = xau_h if sim == "XAUUSDT" else harga_map.get(sim)
+        lv = level_dari_entri({"target": p.get("target"), "ambisius": p.get("ambisius"),
+                               "powermax": p.get("powermax"), "stop": p.get("stop")})
+        if not lv:
+            continue
+        baru[sim] = {}
+        for nama, nilai in lv.items():
+            kena = bool(harga) and ((harga >= nilai) if nama != "STOP" else (harga <= nilai))
+            baru[sim][nama] = kena
+            sebelumnya = lama.get(sim, {}).get(nama)
+            if kena and not sebelumnya and harga and (sudah_panas or sim not in lama):
+                kejadian.append((sim, str(p.get("arah") or "?"), nama, nilai, harga, p.get("entry"),
+                                 sim not in lama))
 
-    jam = datetime.now(WIB)
+    jam = jam_wib()
     # ---- genome-cadangan benteng: pelajaran tumbuh walau genome utama beku ----
     pelajaran = 0
     try:
@@ -449,51 +710,15 @@ def main():
     else:
         L.append(f"Status: <b>HIDUP</b> — {gap_menit:.0f} menit sejak detak abadi terakhir")
     L.append("")
-    # ---- V302 section XAU WAJIB (TIDAK PERNAH ABSEN) ----
-    x_ent = zai_xau.get("entry")
-    x_arah = str(zai_xau.get("arah") or "?").upper()
-    x_konf = zai_xau.get("keyakinan")
-    L.append("🥇 <b>XAU (EMAS) — KOIN WAJIB ABADI</b> (100 sasaran + 1 XAU, hukum pemilik V302/V303)")
-    if xau_h:
-        chg_s = f" · 24 jam {xau_chg:+.2f}%" if xau_chg is not None else ""
-        jarak = f"{(xau_h / x_ent - 1) * 100:+.2f}%" if x_ent else "-"
-        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · "
-                 f"entry {fmt_harga(x_ent)} · kini <b>{fmt_harga(xau_h)}</b> ({jarak}){chg_s}")
-        # V302-LEVEL — laporan emas KOMPLIT dari field xau jembatan
-        # (target/ambisius/stop ditambang heartbeat; tiga level berbeda).
-        x_tg, x_am, x_st = zai_xau.get("target"), zai_xau.get("ambisius"), zai_xau.get("stop")
-        if x_tg or x_am or x_st:
-            def _pct_level(v):
-                return f" ({(v / x_ent - 1) * 100:+.2f}%)" if (v and x_ent) else ""
-            L.append(f"🎯 TP sasaran: <b>{fmt_harga(x_tg)}</b>{_pct_level(x_tg)} · "
-                     f"🔥 JUAL AMBISIUS: <b>{fmt_harga(x_am)}</b>{_pct_level(x_am)} · "
-                     f"🛑 STOP: <b>{fmt_harga(x_st)}</b>{_pct_level(x_st)}")
-            L.append("<i>Tiga level berbeda — TP ≠ Jual Ambisius ≠ Stop; tiga keputusan berbeda.</i>")
-        L.append(f"<i>Sumber harga: {html.escape(xau_src)} — XAU selalu ada di laporan apa pun kondisinya.</i>")
+    # V305 MANDAT PEMILIK 31 OKT: daftar sinyal (blok XAU + sasaran arena) TIDAK
+    # dikirim lagi. Koin tetap dipantau levelnya; hanya SENTUHAN yang jadi notif.
+    if harga_map or xau_h:
+        L.append(f"🎯 Pemantauan level aktif: <b>{len(baru)} sasaran</b> (server + arena + XAU) — "
+                 "notif hanya saat menyentuh TP/Jual Ambisius/Power Max/Stop; "
+                 "daftar sinyal tidak dikirim lagi (mandat 31 Okt).")
     else:
-        L.append(f"<b>XAUUSDT</b> {html.escape(x_arah)} {x_konf if x_konf is not None else '-'}% · entry {fmt_harga(x_ent)} · "
-                 f"kini <b>GAGAL DIAMBIL</b> (semua sumber emas padam detak ini)")
-        L.append("<i>XAU tetap WAJIB — baris ini tidak pernah dihapus dari laporan.</i>")
+        L.append("🎯 Pemantauan level aktif tapi harga gagal diambil detak ini — kejadian menyusul.")
     L.append("")
-    # ---- section OTAK Z.AI (jembatan: otak sama dengan web, walau sandbox mati) ----
-    if zai_picks:
-        umur_z = umur_jam(zai.get("waktu"))
-        z_reg = zai.get("regime") or "?"
-        L.append(f"🧠 <b>SASARAN OTAK Z.AI</b> (jembatan benteng, regim {html.escape(str(z_reg))}"
-                 + (f", snapshot {umur_z:.1f} jam lalu" if umur_z is not None else "") + "):")
-        for i, p in enumerate(zai_picks, 1):
-            basis = _basis_simbol(p.get("simbol")) or p.get("simbol")
-            h = harga_map.get(basis)
-            ent = p.get("entry")
-            jarak = f"{(h / ent - 1) * 100:+.2f}%" if (h and ent) else "-"
-            L.append(f"{i}. <b>{html.escape(str(basis))}</b> {html.escape(str(p.get('arah') or '?'))} "
-                     f"{p.get('keyakinan', '-')}% · entry {fmt_harga(ent)} · kini {fmt_harga(h)} ({jarak})")
-        L.append("<i>Sumber: otak z.ai di web (arena MICAPROFITA) — sama dengan yang dilihat pemilik; "
-                 "snapshot dibawa benteng agar tetap tampil saat sandbox mati.</i>")
-        L.append("")
-    else:
-        L.append("🧠 Otak z.ai: snapshot jembatan belum tersedia di benteng — saya akui jujur.")
-        L.append("")
     if kejadian:
         L.append(f"🚨 <b>PANTAUAN SASARAN — {len(kejadian)} kejadian baru:</b>")
         for sim, arah, level_nama, level_nilai, harga, entry, pertama in kejadian:
@@ -536,7 +761,7 @@ def main():
 
     ok, err, mid = False, None, None
     try:
-        resp = kirim_telegram(token, chat_id, text)
+        resp = kirim_telegram_panjang(token, chat_id, text)
         ok = bool(resp.get("ok"))
         if ok:
             mid = resp["result"]["message_id"]
@@ -554,11 +779,19 @@ def main():
                 "gap_menit": round(gap_menit, 1), "lapis_penjinak": "benteng-abadi",
                 "message_id": mid})
 
+    # V305 — laporan harian koin ATH turun 70-90% yang masih hidup (mandat 31 Okt);
+    # gagal apa pun di sini TIDAK boleh mengganggu detak yang sudah terkirim.
+    try:
+        hasil_ath = lapor_ath_harian(token, chat_id, daftar, zai_picks)
+    except Exception as e:
+        hasil_ath = f"exception: {repr(e)}"
+
     print("KIRIM:", f"OK message_id={mid}" if ok else f"GAGAL {err}")
     print("GAP_MENIT:", f"{gap_menit:.1f}" if gap_menit is not None else "pertama")
     print("SASARAN:", len(baru), "| HARGA:", len(harga_map), "| KEJADIAN:", len(kejadian), "| PELAJARAN-GB:", pelajaran)
     print("ZAI_PICKS:", len(zai_picks), "| ZAI_UMUR_JAM:", round((umur_jam((zai or {}).get("waktu")) or -1), 1))
     print("OTAK_HIDUP:", sasaran_hidup, genome_hidup, denyut_hidup)
+    print("LAPOR_ATH_STATUS:", hasil_ath)
     return 0 if ok else 2
 
 
