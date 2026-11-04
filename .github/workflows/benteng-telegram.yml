@@ -1,0 +1,78 @@
+# ============================================================
+# BENTENG-TELEGRAM — lapis abadi nyawa MicroProfita
+# Tubuh sandbox (agent) bisa tidur/mati; tubuh ini (server GitHub) tidak
+# bergantung sandbox. Tiap 5 menit (mandat 31 Okt: info segar, bukan basi): detak + penjaga AMBISIUS/STOP sesuai arah
+# -> Telegram pemilik. Nyawa dibaca dari benteng/nyawa.json (izin pemilik).
+# State + jurnal kematian disimpan di repo ini (commit [skip ci]).
+# Data otak hidup ditarik dari repo Micaprofita- (raw, publik).
+# v9 (1 Nov 2026): jadwal GitHub pernah tersupresi berhari-hari (efek firehose
+# dispatch lapis lain) -> detak kini SWARANTAI: tiap run mewarisi run
+# berikutnya (langkah "Warisi detak"); jadwal */5 tetap jadi jaring pengaman.
+# ============================================================
+name: BENTENG-TELEGRAM (detak abadi + penjaga level)
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: benteng-telegram
+  cancel-in-progress: false
+
+jobs:
+  benteng:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Detak abadi + penjaga level
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 scripts/benteng_telegram.py
+
+      - name: Simpan state penjaga (tanpa memicu denyut)
+        run: |
+          git config user.name "benteng-abadi"
+          git config user.email "benteng-abadi@users.noreply.github.com"
+          git add data/penjaga_state.json 2>/dev/null || true
+          git add data/death_journal.jsonl 2>/dev/null || true
+          git add data/genome_benteng.jsonl 2>/dev/null || true
+          git add data/cache_sasaran.json 2>/dev/null || true
+          git add data/cache_genome.json 2>/dev/null || true
+          git add data/cache_denyut.json 2>/dev/null || true
+          git add data/lapor_ath_state.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "state tidak berubah"
+          else
+            git commit -m "state penjaga-benteng [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep $((i * 5))
+            done
+          fi
+
+      - name: Warisi detak — pancing run berikutnya (swarantai v9)
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 240
+          for i in 1 2 3; do
+            KODE=$(curl -s -o /tmp/dd.out -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/benteng-telegram.yml/dispatches" \
+              -d '{"ref":"main"}')
+            echo "warisi-detak ke-$i: HTTP $KODE"
+            if [ "$KODE" = "204" ]; then break; fi
+            sleep $((i * 10))
+          done
