@@ -1,0 +1,3567 @@
+{
+  "sha": "f2a1c04c5e3f39177cd13a881f45ddf2f7c079d2",
+  "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/f2a1c04c5e3f39177cd13a881f45ddf2f7c079d2",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "97900a7fe36424cfc59ee428689116d1329a33f5",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/97900a7fe36424cfc59ee428689116d1329a33f5"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0ee749640594c8e4b170d467ba77bc05387d2056",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/0ee749640594c8e4b170d467ba77bc05387d2056"
+    },
+    {
+      "path": ".github/workflows/hidup-sadar1.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0db9736056ac0087c03a219b89de82d50622d045",
+      "size": 3117,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0db9736056ac0087c03a219b89de82d50622d045"
+    },
+    {
+      "path": ".github/workflows/jaga-waktu.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "622161f83cf28a9626d1782a5134ea012f602eb8",
+      "size": 6111,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/622161f83cf28a9626d1782a5134ea012f602eb8"
+    },
+    {
+      "path": ".github/workflows/sakti-denyut.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7422762f672d0aaa0a7936676f3647d6166e43a5",
+      "size": 33467,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7422762f672d0aaa0a7936676f3647d6166e43a5"
+    },
+    {
+      "path": ".nojekyll",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "size": 1,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "BAHASA",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67f420cda599125e6e722fec215b7e3942d38237",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/67f420cda599125e6e722fec215b7e3942d38237"
+    },
+    {
+      "path": "BAHASA/BINER-PAHAM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5350d5e71d2b7a717fc63f3f75755fbecbdb085a",
+      "size": 21255,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5350d5e71d2b7a717fc63f3f75755fbecbdb085a"
+    },
+    {
+      "path": "BAHASA/GRAMATIKA-EN.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7653c29a70c667a64db9da2330262a392d9919c",
+      "size": 5319,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e7653c29a70c667a64db9da2330262a392d9919c"
+    },
+    {
+      "path": "BAHASA/GRAMATIKA-ID.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bf90fe88f23e4a0e580e61d555273eb19cfd906",
+      "size": 4482,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2bf90fe88f23e4a0e580e61d555273eb19cfd906"
+    },
+    {
+      "path": "BAHASA/JURNAL-EN-100.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3450ae6c6c04abf378b513f83577239655c545d",
+      "size": 18074,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d3450ae6c6c04abf378b513f83577239655c545d"
+    },
+    {
+      "path": "BAHASA/JURNAL-ID-100.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7c6c57996995a74565ecb6fa658e739dfc3c6cb",
+      "size": 17876,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b7c6c57996995a74565ecb6fa658e739dfc3c6cb"
+    },
+    {
+      "path": "BAHASA/KODE-10000.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2860117097c74b93c866fbfa84094dbb0fc817f1",
+      "size": 1019610,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2860117097c74b93c866fbfa84094dbb0fc817f1"
+    },
+    {
+      "path": "BAHASA/KOIN.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fd6aad71a1f62df97ad3261095775c5960d81f9",
+      "size": 1874,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0fd6aad71a1f62df97ad3261095775c5960d81f9"
+    },
+    {
+      "path": "BAHASA/KOSAKATA-SUMBER.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d62ad387d43aca968429ec54aaae2c627b83db8",
+      "size": 1561,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1d62ad387d43aca968429ec54aaae2c627b83db8"
+    },
+    {
+      "path": "BAHASA/KOSAKATA.BIN",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5f97878b5709cdf2a458010327b0e11c32f7606",
+      "size": 230635,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c5f97878b5709cdf2a458010327b0e11c32f7606"
+    },
+    {
+      "path": "BAHASA/LAWAN-10K.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6becfb3af6c2ffd331ce925a5e58824779528a5",
+      "size": 2288,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e6becfb3af6c2ffd331ce925a5e58824779528a5"
+    },
+    {
+      "path": "BAHASA/LEXIKON-EN.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "389403c1293f1eb309373fe1c994bf51fc8748a2",
+      "size": 162410,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/389403c1293f1eb309373fe1c994bf51fc8748a2"
+    },
+    {
+      "path": "BAHASA/LEXIKON-ID.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9de324b7899c7136ef1e2f7d4b98e8e0c8805d5c",
+      "size": 162898,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9de324b7899c7136ef1e2f7d4b98e8e0c8805d5c"
+    },
+    {
+      "path": "BAHASA/PENGETAHUAN.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9449bc557ad8fc3e01d7d5eb5cbace733bb3307f",
+      "size": 33931,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9449bc557ad8fc3e01d7d5eb5cbace733bb3307f"
+    },
+    {
+      "path": "BAHASA/RUMUSAN-MATEMATIKA.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39780b751c4ea95ac9e644f47d1ef8a5674d036f",
+      "size": 7913,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/39780b751c4ea95ac9e644f47d1ef8a5674d036f"
+    },
+    {
+      "path": "KEBANGKITAN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fe34b6e96735f7046f90f75353ec569c8da01ce",
+      "size": 4425,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5fe34b6e96735f7046f90f75353ec569c8da01ce"
+    },
+    {
+      "path": "LAPORAN-CERMIN-100RB.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0186a7921580054c96ff80946e847e88535cb47b",
+      "size": 3378,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0186a7921580054c96ff80946e847e88535cb47b"
+    },
+    {
+      "path": "PANDUAN-GIT-PUSH.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ed16440686b947114dfae936e153afa84d4c289",
+      "size": 1648,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3ed16440686b947114dfae936e153afa84d4c289"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7301d763fa8c50ea9e2f6da4fe22f4a51006aca2",
+      "size": 1700,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7301d763fa8c50ea9e2f6da4fe22f4a51006aca2"
+    },
+    {
+      "path": "TUJUAN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c51479f19ad943c6556af2c9bc8c6785b7d68143",
+      "size": 321675,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c51479f19ad943c6556af2c9bc8c6785b7d68143"
+    },
+    {
+      "path": "arena-keadaan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af39ecc1e3dc9075b7a00567630ab7dd20798fe0",
+      "size": 79650,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/af39ecc1e3dc9075b7a00567630ab7dd20798fe0"
+    },
+    {
+      "path": "arena.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3215c2ce28066b35a50f71aafddae1986df9ee78",
+      "size": 344218,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3215c2ce28066b35a50f71aafddae1986df9ee78"
+    },
+    {
+      "path": "brain.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3697bbf4b978be3aa36a5c1ca60aa8b9f2b10e51",
+      "size": 389,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3697bbf4b978be3aa36a5c1ca60aa8b9f2b10e51"
+    },
+    {
+      "path": "gerbang.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7530001ffcde933925d3b483a4bd5493984b2111",
+      "size": 613,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7530001ffcde933925d3b483a4bd5493984b2111"
+    },
+    {
+      "path": "hidup.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "580c3a49121011f069e3251948181ba19051e4fb",
+      "size": 362899,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/580c3a49121011f069e3251948181ba19051e4fb"
+    },
+    {
+      "path": "imun",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e0c28b9c1595de524b25656dded635bd2e64c9a6",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/e0c28b9c1595de524b25656dded635bd2e64c9a6"
+    },
+    {
+      "path": "imun/cadangan",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ef65d144b7043daaa5e7d9db731a0313d0df28e4",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/ef65d144b7043daaa5e7d9db731a0313d0df28e4"
+    },
+    {
+      "path": "imun/cadangan/_github_workflows_hidup-sadar1_yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0db9736056ac0087c03a219b89de82d50622d045",
+      "size": 3117,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0db9736056ac0087c03a219b89de82d50622d045"
+    },
+    {
+      "path": "imun/cadangan/_github_workflows_jaga-waktu_yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "622161f83cf28a9626d1782a5134ea012f602eb8",
+      "size": 6111,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/622161f83cf28a9626d1782a5134ea012f602eb8"
+    },
+    {
+      "path": "imun/cadangan/_github_workflows_sakti-denyut_yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "646a404a64dfe9542d2c5aca8d339f2ecf5b1876",
+      "size": 12647,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/646a404a64dfe9542d2c5aca8d339f2ecf5b1876"
+    },
+    {
+      "path": "imun/cadangan/laporan_geladak_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa1bc3dbe56024a516e334f5f72eb4f7f4b534a4",
+      "size": 8029,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fa1bc3dbe56024a516e334f5f72eb4f7f4b534a4"
+    },
+    {
+      "path": "imun/cadangan/laporan_guru_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cf13a07eca42c1bf6fac493e5917bb5dd24469d",
+      "size": 29436,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9cf13a07eca42c1bf6fac493e5917bb5dd24469d"
+    },
+    {
+      "path": "imun/cadangan/laporan_peta-geladak_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb60d2aec4f61a60a604cd147126c2ff13251f67",
+      "size": 36137,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fb60d2aec4f61a60a604cd147126c2ff13251f67"
+    },
+    {
+      "path": "imun/cadangan/laporan_sasaran-terkini_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6a1772a82827317ba0d7c6abe51be1a3529d44b",
+      "size": 619682,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f6a1772a82827317ba0d7c6abe51be1a3529d44b"
+    },
+    {
+      "path": "imun/cadangan/laporan_tanggapan_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c375b06ed139d00a33714a71c421793506f35a00",
+      "size": 14676,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c375b06ed139d00a33714a71c421793506f35a00"
+    },
+    {
+      "path": "imun/cadangan/otak_benih-hidup_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7f1a231f634a006273f8f43ae4ea17ad217a849",
+      "size": 18598,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a7f1a231f634a006273f8f43ae4ea17ad217a849"
+    },
+    {
+      "path": "imun/cadangan/otak_genome-server_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "796a4fde2a588a3928de020fcdd3444f555ac3f6",
+      "size": 23573,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/796a4fde2a588a3928de020fcdd3444f555ac3f6"
+    },
+    {
+      "path": "imun/cadangan/otak_ingatan-biner_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d37bac07a37627611a94786acbf6dc86d0b03e07",
+      "size": 678203,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d37bac07a37627611a94786acbf6dc86d0b03e07"
+    },
+    {
+      "path": "imun/cadangan/otak_intisari-liar_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ea5e23a8912e2d774c397a0801d36cacb573d14",
+      "size": 365092,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0ea5e23a8912e2d774c397a0801d36cacb573d14"
+    },
+    {
+      "path": "imun/cadangan/otak_medan-keadaan_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94c968159d2da2fa0c9eed10e49a423a792f40a5",
+      "size": 6799,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/94c968159d2da2fa0c9eed10e49a423a792f40a5"
+    },
+    {
+      "path": "imun/cadangan/otak_parameter-cerdas_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d6888e53d13c5e3f9dbe210d2bde55c15322cfe",
+      "size": 11670,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9d6888e53d13c5e3f9dbe210d2bde55c15322cfe"
+    },
+    {
+      "path": "imun/cadangan/otak_penjaga-keadaan_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0f749cb4a73cff6fd9a59c03e2929e21bcc532b",
+      "size": 23111,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a0f749cb4a73cff6fd9a59c03e2929e21bcc532b"
+    },
+    {
+      "path": "imun/cadangan/otak_reka-bentuk_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9206231d897b42de52b1a8ae1b0849c84b3a3c73",
+      "size": 104966,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9206231d897b42de52b1a8ae1b0849c84b3a3c73"
+    },
+    {
+      "path": "imun/cadangan/otak_saraf_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db24ebfc02a1f41e4fcbea8d7deb4430d1ce1865",
+      "size": 470,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/db24ebfc02a1f41e4fcbea8d7deb4430d1ce1865"
+    },
+    {
+      "path": "imun/cadangan/otak_syaraf-pohon_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15ce4ac20a1d7b184a54eb4bf7183a2673d89c90",
+      "size": 144251,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/15ce4ac20a1d7b184a54eb4bf7183a2673d89c90"
+    },
+    {
+      "path": "imun/cadangan/otak_terabait-intisari_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66237a97ad6cff37ad3d5de426a4d4aeec23ba00",
+      "size": 4978,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/66237a97ad6cff37ad3d5de426a4d4aeec23ba00"
+    },
+    {
+      "path": "imun/cadangan/ruang-hidup_habitat_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e3117b96c736ea143d2877be518ebbccad388ae",
+      "size": 19428,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0e3117b96c736ea143d2877be518ebbccad388ae"
+    },
+    {
+      "path": "imun/cadangan/ruang-hidup_ingatan_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21fbcc2e83f6859357a021a3c4c89b136c390086",
+      "size": 62971,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/21fbcc2e83f6859357a021a3c4c89b136c390086"
+    },
+    {
+      "path": "imun/cadangan/ruang-hidup_madrasah_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c48f32bc6beb9ea1ecd19616204f569054c369c",
+      "size": 118042,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4c48f32bc6beb9ea1ecd19616204f569054c369c"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_benih-inti_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be213da8a7701eef8b1f9ebe840d458d97537fac",
+      "size": 15599,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/be213da8a7701eef8b1f9ebe840d458d97537fac"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_gerbang_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a35a2729c5eea7efa9b9b97adacecb4d381309ca",
+      "size": 2933,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a35a2729c5eea7efa9b9b97adacecb4d381309ca"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_guru-master_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e94509e6969940605a9677820851035a3acc9eb2",
+      "size": 21918,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e94509e6969940605a9677820851035a3acc9eb2"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_imun_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a3f65f036eb95f0fe376d5def84b3450440f1ec",
+      "size": 37695,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3a3f65f036eb95f0fe376d5def84b3450440f1ec"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_ingatan-biner_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17945407973a8d43078fdd260be912df89205cf3",
+      "size": 14133,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/17945407973a8d43078fdd260be912df89205cf3"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_liar_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ea96354d4825abf579fdfd9119bd557d72dbfda",
+      "size": 11193,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0ea96354d4825abf579fdfd9119bd557d72dbfda"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_medan-hayat_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60c8c9672dcd7ebe64001fca28c7ace4028190d2",
+      "size": 18710,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/60c8c9672dcd7ebe64001fca28c7ace4028190d2"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_parameter-cerdas_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e19ef53d9ccbbbd21023b2a9c93cffd147e29ea",
+      "size": 23652,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2e19ef53d9ccbbbd21023b2a9c93cffd147e29ea"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_pustaka_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1e614d49f94bf8cec537b9122ac8b6b4721e0d3",
+      "size": 10447,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d1e614d49f94bf8cec537b9122ac8b6b4721e0d3"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_reka-bentuk_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fec267b9ebfee699b3b37a0ea328422839bd089",
+      "size": 32186,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2fec267b9ebfee699b3b37a0ea328422839bd089"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_sadar1_js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "824b3d7b29368b886cb1936249ca25ca73226d1a",
+      "size": 63096,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/824b3d7b29368b886cb1936249ca25ca73226d1a"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_tambang-hidup_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6917c1539e368fb9051f060804fa44341c9f538",
+      "size": 7537,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a6917c1539e368fb9051f060804fa44341c9f538"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_tempa-hidup_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92e74a9096c550ee1ec34dff108ee34c6acc0c8e",
+      "size": 26082,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/92e74a9096c550ee1ec34dff108ee34c6acc0c8e"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_uji-ingatan-biner_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919ec349dcce531e06bf6d7936f2e18b7c9cbb98",
+      "size": 7544,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/919ec349dcce531e06bf6d7936f2e18b7c9cbb98"
+    },
+    {
+      "path": "imun/cadangan/scripts_hidup_uji-parameter-cerdas_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df548561bde1f0c357629ae8397d64dfd8315d74",
+      "size": 13352,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/df548561bde1f0c357629ae8397d64dfd8315d74"
+    },
+    {
+      "path": "imun/cadangan/scripts_penjaga_mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d99d996f085321eb3e779f22b5b1e92d15d4647",
+      "size": 561566,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6d99d996f085321eb3e779f22b5b1e92d15d4647"
+    },
+    {
+      "path": "imun/cadangan/ujian_soal-200_json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4d285fc9f6f7cde6b43ba5774ac1142e9c6a4d9",
+      "size": 459099,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c4d285fc9f6f7cde6b43ba5774ac1142e9c6a4d9"
+    },
+    {
+      "path": "imun/manifes.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2e4e1a1d231995bfd78ffeb512aab9e09104e18",
+      "size": 15958,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f2e4e1a1d231995bfd78ffeb512aab9e09104e18"
+    },
+    {
+      "path": "index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5222e8960ae0ee1326cfef1585ac652634b8314",
+      "size": 15715425,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a5222e8960ae0ee1326cfef1585ac652634b8314"
+    },
+    {
+      "path": "laporan",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "10f812788f59b76935bd5d50eaef9683323ebd95",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/10f812788f59b76935bd5d50eaef9683323ebd95"
+    },
+    {
+      "path": "laporan/LAPORAN-UJIAN-BUTA-100.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e5a69c0a8928caa7d6e8e908951460b253b415b",
+      "size": 23199,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5e5a69c0a8928caa7d6e8e908951460b253b415b"
+    },
+    {
+      "path": "laporan/arah-harian.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0e094a2ce2f5ecc8b6a64a4c3d6d506d294d580",
+      "size": 25963,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a0e094a2ce2f5ecc8b6a64a4c3d6d506d294d580"
+    },
+    {
+      "path": "laporan/audit-koin.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef28ec18b17987c2d309a93536a253aaf0d3aa3d",
+      "size": 4949,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ef28ec18b17987c2d309a93536a253aaf0d3aa3d"
+    },
+    {
+      "path": "laporan/audit-pengalihan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab0aaf3f0fd3f6841f1268bcc384733ce9682d64",
+      "size": 7050,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ab0aaf3f0fd3f6841f1268bcc384733ce9682d64"
+    },
+    {
+      "path": "laporan/autopilot.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cb27780a295f54dab673cbcdd5beae9b9d803a9",
+      "size": 29464,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5cb27780a295f54dab673cbcdd5beae9b9d803a9"
+    },
+    {
+      "path": "laporan/bedah-syaraf.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c75f50e2614efeee12fca10749dacd327b0a4fb",
+      "size": 1958,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5c75f50e2614efeee12fca10749dacd327b0a4fb"
+    },
+    {
+      "path": "laporan/bedah-tangan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa02a4f50898c463c73970fbd473e53e392051f7",
+      "size": 7089,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/aa02a4f50898c463c73970fbd473e53e392051f7"
+    },
+    {
+      "path": "laporan/buku-cuan-pelajaran.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18644c717cf89147c14aec471976da11a5b83cba",
+      "size": 1489,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/18644c717cf89147c14aec471976da11a5b83cba"
+    },
+    {
+      "path": "laporan/buku-cuan.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cad776decdacec083415a7a5bea22269b6087ecc",
+      "size": 3472557,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/cad776decdacec083415a7a5bea22269b6087ecc"
+    },
+    {
+      "path": "laporan/cermin-100rb.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e56835f41b83cd03e025b78cf7a365d3b1b07896",
+      "size": 3285,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e56835f41b83cd03e025b78cf7a365d3b1b07896"
+    },
+    {
+      "path": "laporan/cermin100rb",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "682dc0d661f02de5ce39311bc79ee865d217ce30",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/682dc0d661f02de5ce39311bc79ee865d217ce30"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-00.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a8804adc79ba4b2b62b37f5409725d7acbaeae3",
+      "size": 253175,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9a8804adc79ba4b2b62b37f5409725d7acbaeae3"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-01.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3057a5764cb2a99eaa84bac5e9d5037c849a9c3",
+      "size": 260858,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b3057a5764cb2a99eaa84bac5e9d5037c849a9c3"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-02.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3db9fd29f1cec1b3541f6ea269a1e57abdebe1fe",
+      "size": 263046,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3db9fd29f1cec1b3541f6ea269a1e57abdebe1fe"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-03.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99036628aaee132627459c98bbbc968b3bad8d30",
+      "size": 256044,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/99036628aaee132627459c98bbbc968b3bad8d30"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-04.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ce29da88277a66cdc8fd9bc1098c9f5f556abd8",
+      "size": 256054,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6ce29da88277a66cdc8fd9bc1098c9f5f556abd8"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-05.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb9337f09961f1ffbd00b63d91bfe3ab1d7655d8",
+      "size": 261442,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/eb9337f09961f1ffbd00b63d91bfe3ab1d7655d8"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-06.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ac561c68de94a55a3f5f93b4f040f6cd904c252",
+      "size": 256887,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9ac561c68de94a55a3f5f93b4f040f6cd904c252"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-07.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ae89970e98704b64bc074a904807b1d6fecf368",
+      "size": 251005,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8ae89970e98704b64bc074a904807b1d6fecf368"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-08.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43c350081e71c9979dcafd4539c191438b2b7b79",
+      "size": 250097,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/43c350081e71c9979dcafd4539c191438b2b7b79"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-09.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf22d5cfdd9d251806ea319104d1225eaa0f3656",
+      "size": 266030,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/bf22d5cfdd9d251806ea319104d1225eaa0f3656"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-dadakan-pasca.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c148a7d1df9b247fafd4783a2464519db96c876",
+      "size": 458613,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3c148a7d1df9b247fafd4783a2464519db96c876"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-dadakan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3169e82816da427b758b87f8f3da15396d7bcbb",
+      "size": 455544,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b3169e82816da427b758b87f8f3da15396d7bcbb"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-sampel.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfd149a04947dc073f1b2be571fea930bf58a14d",
+      "size": 536027,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/dfd149a04947dc073f1b2be571fea930bf58a14d"
+    },
+    {
+      "path": "laporan/cermin100rb/jawaban-verifikasi.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c5698d405193b555c740b74443dfd221a419298",
+      "size": 536031,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3c5698d405193b555c740b74443dfd221a419298"
+    },
+    {
+      "path": "laporan/clawtrade.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f11081d42f1b41a376fd6afc6dae43fcb2be50b7",
+      "size": 9552,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f11081d42f1b41a376fd6afc6dae43fcb2be50b7"
+    },
+    {
+      "path": "laporan/denyut-luka.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c774ce65c523dd777bbd39d983ba60dd34d1c694",
+      "size": 31120,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c774ce65c523dd777bbd39d983ba60dd34d1c694"
+    },
+    {
+      "path": "laporan/denyut-server.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb03a798b34added2382dc4283b969fc4eb93ca4",
+      "size": 1013449,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/cb03a798b34added2382dc4283b969fc4eb93ca4"
+    },
+    {
+      "path": "laporan/empu-belajar.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02eefb6d86fcd044729dd6a0c40085c184a9d849",
+      "size": 1542,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/02eefb6d86fcd044729dd6a0c40085c184a9d849"
+    },
+    {
+      "path": "laporan/epoch-2026-09-30.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56ecfb73b2dd261d80e287846f5d4e31d414717f",
+      "size": 1126,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/56ecfb73b2dd261d80e287846f5d4e31d414717f"
+    },
+    {
+      "path": "laporan/epoch-2026-10-01.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3eb0fb8b0566e9d26e5e07c48acc6b158b0f186",
+      "size": 1133,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f3eb0fb8b0566e9d26e5e07c48acc6b158b0f186"
+    },
+    {
+      "path": "laporan/epoch-2026-10-02.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8783463a0173cada0c7f21fc201f18e1de674ec4",
+      "size": 1126,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8783463a0173cada0c7f21fc201f18e1de674ec4"
+    },
+    {
+      "path": "laporan/epoch-2026-10-03.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "949bc46a0f0c7dcd6ecc7e4065c549c044ea11bf",
+      "size": 1127,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/949bc46a0f0c7dcd6ecc7e4065c549c044ea11bf"
+    },
+    {
+      "path": "laporan/epoch-2026-10-04.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4af00ed6df28df627c7ec6c29cde5dbaef52b6a",
+      "size": 1133,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b4af00ed6df28df627c7ec6c29cde5dbaef52b6a"
+    },
+    {
+      "path": "laporan/epoch-2026-10-05.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2a1bc7a2cbbd0e64d708d05c957082e955bcebc",
+      "size": 1132,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b2a1bc7a2cbbd0e64d708d05c957082e955bcebc"
+    },
+    {
+      "path": "laporan/epoch-2026-10-06.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28959a53033ba6f24a321f8997aac511b39b1dc0",
+      "size": 1133,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/28959a53033ba6f24a321f8997aac511b39b1dc0"
+    },
+    {
+      "path": "laporan/epoch-2026-10-07.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2159c700841cc9eeffaf0af899fd2fada630e5b",
+      "size": 1130,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a2159c700841cc9eeffaf0af899fd2fada630e5b"
+    },
+    {
+      "path": "laporan/epoch-2026-10-08.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b5edc047c6874eb18f68bf73969363f4a96e87f",
+      "size": 1512,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1b5edc047c6874eb18f68bf73969363f4a96e87f"
+    },
+    {
+      "path": "laporan/epoch-2026-10-09.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6375096ab5f51ffac6e5c76b4df8958064a1f644",
+      "size": 1135,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6375096ab5f51ffac6e5c76b4df8958064a1f644"
+    },
+    {
+      "path": "laporan/epoch-2026-10-10.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3a5c8c5f0906d1e734c3de18973a01a31b9c442",
+      "size": 1138,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a3a5c8c5f0906d1e734c3de18973a01a31b9c442"
+    },
+    {
+      "path": "laporan/epoch-2026-10-11.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79f152b14e0e3597cc31dc27771e406dc7738219",
+      "size": 1130,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/79f152b14e0e3597cc31dc27771e406dc7738219"
+    },
+    {
+      "path": "laporan/epoch-2026-10-12.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f0375b70a9c15117381da13066eb5e4cae4add6",
+      "size": 1134,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8f0375b70a9c15117381da13066eb5e4cae4add6"
+    },
+    {
+      "path": "laporan/epoch-2026-10-13.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bbb327bfae7c1714505b7760e9f9a5d3e386f9b",
+      "size": 1128,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8bbb327bfae7c1714505b7760e9f9a5d3e386f9b"
+    },
+    {
+      "path": "laporan/epoch-2026-10-14.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4032af3ccbf0208ee0f1a2d44cf8566c30bbe047",
+      "size": 1133,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4032af3ccbf0208ee0f1a2d44cf8566c30bbe047"
+    },
+    {
+      "path": "laporan/epoch-2026-10-15.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa7006c4b55754658efef1487c7e3ffc87c1ed7f",
+      "size": 1138,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fa7006c4b55754658efef1487c7e3ffc87c1ed7f"
+    },
+    {
+      "path": "laporan/epoch-2026-10-16.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91a6c7e6dd0ae43f4d45f4aa359ea1f8dc9b3eab",
+      "size": 1132,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/91a6c7e6dd0ae43f4d45f4aa359ea1f8dc9b3eab"
+    },
+    {
+      "path": "laporan/epoch-2026-10-17.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eedf6edf4d5330306ea85aa91191411fed30f359",
+      "size": 1135,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/eedf6edf4d5330306ea85aa91191411fed30f359"
+    },
+    {
+      "path": "laporan/epoch-2026-10-18.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f60802934ed1367e2eed25f681140da9c62102ab",
+      "size": 1136,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f60802934ed1367e2eed25f681140da9c62102ab"
+    },
+    {
+      "path": "laporan/epoch-2026-10-19.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b48c780d16678c5af5a381b568fe8953e3842550",
+      "size": 1137,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b48c780d16678c5af5a381b568fe8953e3842550"
+    },
+    {
+      "path": "laporan/epoch-2026-10-20.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7611cc1d86e8cbd744ff57555aad3737c999ef1e",
+      "size": 1129,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7611cc1d86e8cbd744ff57555aad3737c999ef1e"
+    },
+    {
+      "path": "laporan/epoch-2026-10-21.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cb3ebe4cde6c2b1c40203d4e88d1551d70d9699",
+      "size": 1135,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4cb3ebe4cde6c2b1c40203d4e88d1551d70d9699"
+    },
+    {
+      "path": "laporan/epoch-2026-10-22.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38d62fd684f4cd8be66eea217f41d8fb08e69cff",
+      "size": 1134,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/38d62fd684f4cd8be66eea217f41d8fb08e69cff"
+    },
+    {
+      "path": "laporan/epoch-2026-10-23.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "688b2e241b01be227e96a6e7f63c7cc061c0258d",
+      "size": 1138,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/688b2e241b01be227e96a6e7f63c7cc061c0258d"
+    },
+    {
+      "path": "laporan/epoch-2026-10-24.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d96ab66cce2eb37005c28b8e6c989dcb32aad8a",
+      "size": 1132,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6d96ab66cce2eb37005c28b8e6c989dcb32aad8a"
+    },
+    {
+      "path": "laporan/epoch-2026-10-25.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16cd9aa84acd4bbda29618ac7976306e5a3394e5",
+      "size": 1133,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/16cd9aa84acd4bbda29618ac7976306e5a3394e5"
+    },
+    {
+      "path": "laporan/epoch-2026-10-26.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d7ec4a4e3cdacae0fcd404924ad148e2972aebd",
+      "size": 1136,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8d7ec4a4e3cdacae0fcd404924ad148e2972aebd"
+    },
+    {
+      "path": "laporan/epoch-2026-10-27.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e06cd9db25025f025656dffa5663cfdad1eeca3",
+      "size": 1137,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6e06cd9db25025f025656dffa5663cfdad1eeca3"
+    },
+    {
+      "path": "laporan/epoch-2026-10-28.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c45fbc4e70a633b3c784ec4679d91b70359749f",
+      "size": 1132,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6c45fbc4e70a633b3c784ec4679d91b70359749f"
+    },
+    {
+      "path": "laporan/forensik.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85a4f42de1668bb4378773fde64607eeb894881b",
+      "size": 44749,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/85a4f42de1668bb4378773fde64607eeb894881b"
+    },
+    {
+      "path": "laporan/gali-terus.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "978e733c93dc33e317f540300e0f11e5393f4e63",
+      "size": 80218,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/978e733c93dc33e317f540300e0f11e5393f4e63"
+    },
+    {
+      "path": "laporan/gekko.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d159bb56544bbe2da5f96bcd9bdc11cb97298ee9",
+      "size": 6902,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d159bb56544bbe2da5f96bcd9bdc11cb97298ee9"
+    },
+    {
+      "path": "laporan/geladak.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49339724560513f0d9533daf3ab534536bd35e49",
+      "size": 7460,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/49339724560513f0d9533daf3ab534536bd35e49"
+    },
+    {
+      "path": "laporan/gembok.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e91a4853bfd69cfe243bd8db55fef6a64e9ded10",
+      "size": 18546,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e91a4853bfd69cfe243bd8db55fef6a64e9ded10"
+    },
+    {
+      "path": "laporan/gerbang.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c8c1bd9347eb14e02cea4dcec39e7b5315a2226",
+      "size": 139860,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1c8c1bd9347eb14e02cea4dcec39e7b5315a2226"
+    },
+    {
+      "path": "laporan/guru.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "237b84fcebac6218fc94895a2256dcf83a0c1caf",
+      "size": 29427,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/237b84fcebac6218fc94895a2256dcf83a0c1caf"
+    },
+    {
+      "path": "laporan/hidup-jaga.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "671d96c65ba1307458966d11c37e38e02b6b7985",
+      "size": 708,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/671d96c65ba1307458966d11c37e38e02b6b7985"
+    },
+    {
+      "path": "laporan/impas.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "959e4ef150470802271a8cdde5cad34dfdaf6560",
+      "size": 8750,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/959e4ef150470802271a8cdde5cad34dfdaf6560"
+    },
+    {
+      "path": "laporan/imun.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a81e7380770b9cef3116e4b7a97555a7d2c86f3",
+      "size": 5429,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6a81e7380770b9cef3116e4b7a97555a7d2c86f3"
+    },
+    {
+      "path": "laporan/imun.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e253c9bf271dc3459a457bd8f2184beb8d361c5",
+      "size": 1605240,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7e253c9bf271dc3459a457bd8f2184beb8d361c5"
+    },
+    {
+      "path": "laporan/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20e56c71d3df50e668d40d2c2a2e0ce3c441f1f9",
+      "size": 126642,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/20e56c71d3df50e668d40d2c2a2e0ce3c441f1f9"
+    },
+    {
+      "path": "laporan/ingatan-biner.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ff4b6614f99190f723c58f71c8160c929a9a8a5",
+      "size": 412496,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7ff4b6614f99190f723c58f71c8160c929a9a8a5"
+    },
+    {
+      "path": "laporan/jurnal-data.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "666fe21ff5a8a5cba95868f297e4b2c6b2b87506",
+      "size": 13994,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/666fe21ff5a8a5cba95868f297e4b2c6b2b87506"
+    },
+    {
+      "path": "laporan/jurnal-gembok.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7301cd243a30eebc0a4f700dad1fb67d29cf43fa",
+      "size": 20874,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7301cd243a30eebc0a4f700dad1fb67d29cf43fa"
+    },
+    {
+      "path": "laporan/jurnal-ilmu.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c451502112a9cde07a9eb277733b3978ba7afa0a",
+      "size": 24981,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c451502112a9cde07a9eb277733b3978ba7afa0a"
+    },
+    {
+      "path": "laporan/kaizen.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e01b9c79b1d4732d7ac1b675be40c8223c860110",
+      "size": 7941,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e01b9c79b1d4732d7ac1b675be40c8223c860110"
+    },
+    {
+      "path": "laporan/kajian-hidup.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78f35066496dea9f4e8bf3db6da9b7c23c4213de",
+      "size": 15080,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/78f35066496dea9f4e8bf3db6da9b7c23c4213de"
+    },
+    {
+      "path": "laporan/kemarau-sah.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfc2bcbe5be2fa3c1e768b877a69bab5e30cbc91",
+      "size": 16858,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/dfc2bcbe5be2fa3c1e768b877a69bab5e30cbc91"
+    },
+    {
+      "path": "laporan/lapor-otonom.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cd3243bceb51f64ab87e6f2ad0f42ccdaf32e65",
+      "size": 1322,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5cd3243bceb51f64ab87e6f2ad0f42ccdaf32e65"
+    },
+    {
+      "path": "laporan/liar.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "922fde6c3a1bfb6dd1af44a83405076cc4e9f015",
+      "size": 229,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/922fde6c3a1bfb6dd1af44a83405076cc4e9f015"
+    },
+    {
+      "path": "laporan/majelis-ledger.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59321278b770fbaf185098f033ba3363382dba52",
+      "size": 51536,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/59321278b770fbaf185098f033ba3363382dba52"
+    },
+    {
+      "path": "laporan/matematika.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3872ad3796b73093525599b10848064c4e04d6d",
+      "size": 13143,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e3872ad3796b73093525599b10848064c4e04d6d"
+    },
+    {
+      "path": "laporan/musyawarah.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "978e733c93dc33e317f540300e0f11e5393f4e63",
+      "size": 80218,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/978e733c93dc33e317f540300e0f11e5393f4e63"
+    },
+    {
+      "path": "laporan/nalar-biner.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "671ee6cd00ccd6665f68275da73db01524217a7f",
+      "size": 1935,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/671ee6cd00ccd6665f68275da73db01524217a7f"
+    },
+    {
+      "path": "laporan/nalar-llm.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cc32afcfebdb0a28cdab0157fcf334a3807308d",
+      "size": 760,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9cc32afcfebdb0a28cdab0157fcf334a3807308d"
+    },
+    {
+      "path": "laporan/odds.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11e08df3f00fbd60d67b1446175af2d500b6cd65",
+      "size": 53252,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/11e08df3f00fbd60d67b1446175af2d500b6cd65"
+    },
+    {
+      "path": "laporan/otonom.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd6bd9c057b155e03daf91b75bc4f54c04e33ac1",
+      "size": 2115,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/bd6bd9c057b155e03daf91b75bc4f54c04e33ac1"
+    },
+    {
+      "path": "laporan/otonom.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d746a1474b0c457c9a5de44b33609f705409c1f0",
+      "size": 145661,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d746a1474b0c457c9a5de44b33609f705409c1f0"
+    },
+    {
+      "path": "laporan/parameter-cerdas.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adfda2ef659dc72b4e350870f225e58978e2d965",
+      "size": 206798,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/adfda2ef659dc72b4e350870f225e58978e2d965"
+    },
+    {
+      "path": "laporan/pelajaran-server.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b92eda5f2083a0d81e5c4f30fd7c38bc0881154",
+      "size": 44620,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0b92eda5f2083a0d81e5c4f30fd7c38bc0881154"
+    },
+    {
+      "path": "laporan/pembaruan-sistem.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c8cbd94ac9d6c6744cd6748389590c500e1bfd9",
+      "size": 3058,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4c8cbd94ac9d6c6744cd6748389590c500e1bfd9"
+    },
+    {
+      "path": "laporan/pengalaman-cermin.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4fc10db1f63de0501eb53d135f7ac68ad23fcb4",
+      "size": 4716,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d4fc10db1f63de0501eb53d135f7ac68ad23fcb4"
+    },
+    {
+      "path": "laporan/peta-geladak.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "627cf5041c808e303a8243d3868d6875789e47e1",
+      "size": 36137,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/627cf5041c808e303a8243d3868d6875789e47e1"
+    },
+    {
+      "path": "laporan/prakira-server.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aae2deba382f86f8b33dc11ae30caf5398cf2644",
+      "size": 29137050,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/aae2deba382f86f8b33dc11ae30caf5398cf2644"
+    },
+    {
+      "path": "laporan/reka-bentuk.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b601645711bf3eee6171dbfcc8457d7855bd077",
+      "size": 3609,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2b601645711bf3eee6171dbfcc8457d7855bd077"
+    },
+    {
+      "path": "laporan/saluran.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b59ba28f190238450fc90cdab4871f5f27a126b4",
+      "size": 1833,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b59ba28f190238450fc90cdab4871f5f27a126b4"
+    },
+    {
+      "path": "laporan/saluran.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e4af4df4884c4d48121b0cef53ece4d80689d32",
+      "size": 207266,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1e4af4df4884c4d48121b0cef53ece4d80689d32"
+    },
+    {
+      "path": "laporan/sasaran-terkini.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e93b0346e3919c0df4f63b556782bbf913df91c9",
+      "size": 706292,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e93b0346e3919c0df4f63b556782bbf913df91c9"
+    },
+    {
+      "path": "laporan/sekolah-agi.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b7fd2ae202f02fa401ac57f7a5ec53c1bfed660",
+      "size": 14821,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0b7fd2ae202f02fa401ac57f7a5ec53c1bfed660"
+    },
+    {
+      "path": "laporan/sekolah-putaran2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e290093abe1ae7fc714891a59d078af2eead7cad",
+      "size": 3701,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e290093abe1ae7fc714891a59d078af2eead7cad"
+    },
+    {
+      "path": "laporan/sekolah-putaran3.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bbd4894fd0bf0f341a4210b1a8e10e1016e2d2d",
+      "size": 3045,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7bbd4894fd0bf0f341a4210b1a8e10e1016e2d2d"
+    },
+    {
+      "path": "laporan/sekolah-putaran4.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9b2f62d331beb4cf007d226166a86a12c190d37",
+      "size": 4177,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c9b2f62d331beb4cf007d226166a86a12c190d37"
+    },
+    {
+      "path": "laporan/studi-mandiri.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7863c6d3f444296cac3b0f8165801680adcf6a7",
+      "size": 1867,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c7863c6d3f444296cac3b0f8165801680adcf6a7"
+    },
+    {
+      "path": "laporan/studi-mandiri.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc6f7be2b74c01a16bf10741c05995283b625c08",
+      "size": 3081,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/cc6f7be2b74c01a16bf10741c05995283b625c08"
+    },
+    {
+      "path": "laporan/syaraf-final.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ce5e51bbd6956bab17f198c8c8df7fa613b92ee",
+      "size": 587,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8ce5e51bbd6956bab17f198c8c8df7fa613b92ee"
+    },
+    {
+      "path": "laporan/syaraf-lahir.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c477f7fa6c703ba3972ef2704d3a2a05974bc19",
+      "size": 135356,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8c477f7fa6c703ba3972ef2704d3a2a05974bc19"
+    },
+    {
+      "path": "laporan/tambang-cermin100rb.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c691e4a6d767a92d904e9d60b1b2364444cc34",
+      "size": 2420,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/73c691e4a6d767a92d904e9d60b1b2364444cc34"
+    },
+    {
+      "path": "laporan/tanggapan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d770712a76be15fc6f5e2956794514e69ef88105",
+      "size": 14139,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d770712a76be15fc6f5e2956794514e69ef88105"
+    },
+    {
+      "path": "laporan/tempa-altseason3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf8f30565bdda4eaa4f29f6e3d5444ad87bd0da3",
+      "size": 8566248,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/bf8f30565bdda4eaa4f29f6e3d5444ad87bd0da3"
+    },
+    {
+      "path": "laporan/tempa-breakout3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0af8a22696a4410a974b78f17ed9ab54062e9297",
+      "size": 7549108,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0af8a22696a4410a974b78f17ed9ab54062e9297"
+    },
+    {
+      "path": "laporan/tempa-cascade.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e3e09f34dde16ec7c7152e5628b4c6423143a6e",
+      "size": 1289303,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7e3e09f34dde16ec7c7152e5628b4c6423143a6e"
+    },
+    {
+      "path": "laporan/tempa-hidup.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a14222608943d56cb52974a84ece6770948c2d0",
+      "size": 3605,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8a14222608943d56cb52974a84ece6770948c2d0"
+    },
+    {
+      "path": "laporan/tempa-jejak.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "771ce0a94f45fb26b999c81205da7d57a3fef0b9",
+      "size": 1493215,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/771ce0a94f45fb26b999c81205da7d57a3fef0b9"
+    },
+    {
+      "path": "laporan/tempa-pumpspike3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d524c7460174f027bbf7938d56bf77a3aeaad000",
+      "size": 9181141,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d524c7460174f027bbf7938d56bf77a3aeaad000"
+    },
+    {
+      "path": "laporan/tempa-squeeze.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bd9ca188d2a9d54b3e95f9f063424e180adfe1e",
+      "size": 792669,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4bd9ca188d2a9d54b3e95f9f063424e180adfe1e"
+    },
+    {
+      "path": "laporan/tempa-squeeze3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed1af48485332684710a85875986003b6720f923",
+      "size": 5931951,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ed1af48485332684710a85875986003b6720f923"
+    },
+    {
+      "path": "laporan/tempa-sucker3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51f61d3eb3d6615b32e047865ec90ab9034f1e7b",
+      "size": 7267455,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/51f61d3eb3d6615b32e047865ec90ab9034f1e7b"
+    },
+    {
+      "path": "laporan/tempa-teka.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "171d95b7df517ba3c6f718156a11b07a8abf33d6",
+      "size": 322449,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/171d95b7df517ba3c6f718156a11b07a8abf33d6"
+    },
+    {
+      "path": "laporan/tempa100-kunci.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35cc0af14790c742e137caff09285fac38b66235",
+      "size": 23163,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/35cc0af14790c742e137caff09285fac38b66235"
+    },
+    {
+      "path": "laporan/tempa100.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf6c6200b2bff10e39cec8148788b8e9b8f08040",
+      "size": 89046,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/cf6c6200b2bff10e39cec8148788b8e9b8f08040"
+    },
+    {
+      "path": "laporan/tempa200.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67736a5dbfc10c7518f34887cbae914d4dfc6d3b",
+      "size": 167102,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/67736a5dbfc10c7518f34887cbae914d4dfc6d3b"
+    },
+    {
+      "path": "laporan/tempa300.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0f78ea2308792c72e8d99f02456711752d8fe62",
+      "size": 319560,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a0f78ea2308792c72e8d99f02456711752d8fe62"
+    },
+    {
+      "path": "laporan/tempa900.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a199a78523f0c295b209caf5bfcd4448768f51e2",
+      "size": 915811,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a199a78523f0c295b209caf5bfcd4448768f51e2"
+    },
+    {
+      "path": "laporan/terabait-laporan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9ab8a0ec61b06646c41581466eaebf6cfa87ad6",
+      "size": 2597,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d9ab8a0ec61b06646c41581466eaebf6cfa87ad6"
+    },
+    {
+      "path": "laporan/uji-50",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7bd21181f9fd173ff0b5de0218bda0a8ad2b64fb",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/7bd21181f9fd173ff0b5de0218bda0a8ad2b64fb"
+    },
+    {
+      "path": "laporan/uji-50/kurva.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3101031cb6ec93515f726c484caf864ba0d92541",
+      "size": 3781,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3101031cb6ec93515f726c484caf864ba0d92541"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-11.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc14a49cc42c8655ce24e690ff75d29c8d11a812",
+      "size": 102956,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/cc14a49cc42c8655ce24e690ff75d29c8d11a812"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-12.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6335d19c6f018b2e4f337f735edc2d7eb1e139d",
+      "size": 99360,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f6335d19c6f018b2e4f337f735edc2d7eb1e139d"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-13.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d084c338c7c96294168538910fa656772afcb01",
+      "size": 96713,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1d084c338c7c96294168538910fa656772afcb01"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-14.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abb88e4d10d7bae89a5a74b72883c890a3458da5",
+      "size": 47188,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/abb88e4d10d7bae89a5a74b72883c890a3458da5"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-15.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7baf5f730a440e907c610523d4548d408d8afbdd",
+      "size": 74378,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7baf5f730a440e907c610523d4548d408d8afbdd"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-16.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3945a8d1b9cf8272a39fb8a5cae34045f00cb270",
+      "size": 32339,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3945a8d1b9cf8272a39fb8a5cae34045f00cb270"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-17.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ecf8655b6f95533bc7a39e036fad72087271135",
+      "size": 42479,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9ecf8655b6f95533bc7a39e036fad72087271135"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-18.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3e90616c6c1e308a1d390b6581b9b25f30e55ed",
+      "size": 31172,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a3e90616c6c1e308a1d390b6581b9b25f30e55ed"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-19.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "523a91bbaa214609867ab7735312ac3f73993e16",
+      "size": 24397,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/523a91bbaa214609867ab7735312ac3f73993e16"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-20.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cda94bcee0c7bc98dc0fd65d680604668fb8bf4",
+      "size": 51232,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2cda94bcee0c7bc98dc0fd65d680604668fb8bf4"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-21.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "605d032fcb79c523aaeab4a0b878c746729f9e5b",
+      "size": 35875,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/605d032fcb79c523aaeab4a0b878c746729f9e5b"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-22.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e0d59af42f74a25a4b1be6c020fcc1fdaccfbd4",
+      "size": 114053,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9e0d59af42f74a25a4b1be6c020fcc1fdaccfbd4"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-23.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e59d4f259823e271c3137f9f3ca58974f0179bbf",
+      "size": 70472,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e59d4f259823e271c3137f9f3ca58974f0179bbf"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-24.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ceb9cabaf679323f890743bab35a9181c17849aa",
+      "size": 28903,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ceb9cabaf679323f890743bab35a9181c17849aa"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-25.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "641f458888cf842a98d7ec5a1aba140c432eaba2",
+      "size": 14611,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/641f458888cf842a98d7ec5a1aba140c432eaba2"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-26.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1944507d1299d535f416c542cd1eef4733f464c4",
+      "size": 48708,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1944507d1299d535f416c542cd1eef4733f464c4"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-27.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8344ea51a7354fbe5f70037bc69752b0f9a4450",
+      "size": 54792,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e8344ea51a7354fbe5f70037bc69752b0f9a4450"
+    },
+    {
+      "path": "laporan/uji-50/turnamen-2026-10-28.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "532138f516f055b87fed7e33c2ceedf1155b7daf",
+      "size": 24867,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/532138f516f055b87fed7e33c2ceedf1155b7daf"
+    },
+    {
+      "path": "laporan/uji-akurasi-400.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efab100da4bad9ac1b425071d6ad14ff34858320",
+      "size": 3529,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/efab100da4bad9ac1b425071d6ad14ff34858320"
+    },
+    {
+      "path": "laporan/uji-audit-koin.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edcfe97bfac2f42f280e9bdcea37e94ea76d1760",
+      "size": 10447,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/edcfe97bfac2f42f280e9bdcea37e94ea76d1760"
+    },
+    {
+      "path": "laporan/uji-bahasa-50000.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4e8b3f5b387842d146013264eae4ef96e81a7fa",
+      "size": 1739,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f4e8b3f5b387842d146013264eae4ef96e81a7fa"
+    },
+    {
+      "path": "laporan/uji-ingatan-biner.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "040ff80a129723f123b470f5525d7f1abc270ac7",
+      "size": 352,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/040ff80a129723f123b470f5525d7f1abc270ac7"
+    },
+    {
+      "path": "laporan/uji-jahat-jaga.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f21c55f34369353f98cc9ffee69f9536a0bfd23",
+      "size": 1614,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2f21c55f34369353f98cc9ffee69f9536a0bfd23"
+    },
+    {
+      "path": "laporan/uji-kehidupan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b72fbb2cd806451051e76de893edd985d8d0fff",
+      "size": 5248,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3b72fbb2cd806451051e76de893edd985d8d0fff"
+    },
+    {
+      "path": "laporan/uji-parameter-cerdas.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50150f634f5d13ae4591a2a2d8becfd4442b5838",
+      "size": 241,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/50150f634f5d13ae4591a2a2d8becfd4442b5838"
+    },
+    {
+      "path": "laporan/uji-tubuh.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1615d327b72691d2683ff9956991a5e099e23668",
+      "size": 9036,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1615d327b72691d2683ff9956991a5e099e23668"
+    },
+    {
+      "path": "laporan/ujian-buta.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83e073b9679c7fc5b5fc348ffc7871ef41a483b0",
+      "size": 112523,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/83e073b9679c7fc5b5fc348ffc7871ef41a483b0"
+    },
+    {
+      "path": "laporan/ujian500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73fe4937d26fe98c6b4b2fba9261f90fc0794417",
+      "size": 344245,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/73fe4937d26fe98c6b4b2fba9261f90fc0794417"
+    },
+    {
+      "path": "laporan/wawasan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f0317f7bbce026d6db346a3f36c57005d0ae27b",
+      "size": 217095,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0f0317f7bbce026d6db346a3f36c57005d0ae27b"
+    },
+    {
+      "path": "memori",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "50a31f7114eb26c0dc3cb09b6d05745869c64ce6",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/50a31f7114eb26c0dc3cb09b6d05745869c64ce6"
+    },
+    {
+      "path": "memori/terkini.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6957209246fc8896b6783f1ac71c9d7443a3ef25",
+      "size": 831,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6957209246fc8896b6783f1ac71c9d7443a3ef25"
+    },
+    {
+      "path": "napas-kemarau.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56d8f9eabf6ecf19807bc14d6c07526dfc3a00b2",
+      "size": 27604,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/56d8f9eabf6ecf19807bc14d6c07526dfc3a00b2"
+    },
+    {
+      "path": "otak-bahasa-1.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52efe7672f48f18b94cde6cc0301e27ab2c42fe5",
+      "size": 21117,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/52efe7672f48f18b94cde6cc0301e27ab2c42fe5"
+    },
+    {
+      "path": "otak-bahasa-2.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a7ced940affdd2aa78018ce12af0b4ec6eda112",
+      "size": 42384,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7a7ced940affdd2aa78018ce12af0b4ec6eda112"
+    },
+    {
+      "path": "otak-bahasa-3.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44fc8a00ef235c954480cf464b1db8a65d55a3f5",
+      "size": 57726,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/44fc8a00ef235c954480cf464b1db8a65d55a3f5"
+    },
+    {
+      "path": "otak-bahasa-uji.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5123666416868ce52e62347d1bce7955a2739f2c",
+      "size": 42583,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5123666416868ce52e62347d1bce7955a2739f2c"
+    },
+    {
+      "path": "otak-inti.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c39c29445d7dc237355bbd0f42c250fe1e2edd90",
+      "size": 42639,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c39c29445d7dc237355bbd0f42c250fe1e2edd90"
+    },
+    {
+      "path": "otak",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "acce0c2f677277fd44ad7c3585bc9a093fefb1bc",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/acce0c2f677277fd44ad7c3585bc9a093fefb1bc"
+    },
+    {
+      "path": "otak/aturan-dinamis.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "892bf8b8cf0b2816aa8c51ee481ac0047597280a",
+      "size": 47759,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/892bf8b8cf0b2816aa8c51ee481ac0047597280a"
+    },
+    {
+      "path": "otak/aturan-dinamis.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9ff095090e9d7a402b4e62aeb3a54477a951644",
+      "size": 18626,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e9ff095090e9d7a402b4e62aeb3a54477a951644"
+    },
+    {
+      "path": "otak/benih-hidup.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94bd87afffb26e497d922e51caa58d20071f676f",
+      "size": 18598,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/94bd87afffb26e497d922e51caa58d20071f676f"
+    },
+    {
+      "path": "otak/empu-bobot.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "875abe44b8851d944828586ae3a8392979979b1b",
+      "size": 384,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/875abe44b8851d944828586ae3a8392979979b1b"
+    },
+    {
+      "path": "otak/genome-server.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e3bfd142bebc82d1d91443fa5ce105eb396690c",
+      "size": 23571,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6e3bfd142bebc82d1d91443fa5ce105eb396690c"
+    },
+    {
+      "path": "otak/ingatan-biner.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44889c38fd0f0bda949f234d1c8ac5fa08caa868",
+      "size": 678573,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/44889c38fd0f0bda949f234d1c8ac5fa08caa868"
+    },
+    {
+      "path": "otak/intisari-liar.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ea5e23a8912e2d774c397a0801d36cacb573d14",
+      "size": 365092,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0ea5e23a8912e2d774c397a0801d36cacb573d14"
+    },
+    {
+      "path": "otak/medan-keadaan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc9a5ae3a3402d4a0444af96b87723327cc6c056",
+      "size": 6800,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fc9a5ae3a3402d4a0444af96b87723327cc6c056"
+    },
+    {
+      "path": "otak/otonom-bobot.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba56c894b0bd25816590bcab1ad1e44173c38ec6",
+      "size": 396,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ba56c894b0bd25816590bcab1ad1e44173c38ec6"
+    },
+    {
+      "path": "otak/parameter-cerdas.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fc8fbc222f1fd14270a762ba80ebf20c9b2d067",
+      "size": 11696,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9fc8fbc222f1fd14270a762ba80ebf20c9b2d067"
+    },
+    {
+      "path": "otak/penjaga-keadaan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6968efe80ae8f59098054d604f58bc46abe0720c",
+      "size": 23354,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6968efe80ae8f59098054d604f58bc46abe0720c"
+    },
+    {
+      "path": "otak/performa.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddfb6a71472fc0a828528efbaa2bef498de71b5a",
+      "size": 626,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ddfb6a71472fc0a828528efbaa2bef498de71b5a"
+    },
+    {
+      "path": "otak/reka-bentuk.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b9ff39ab2d8ad189eaa5c3fcbdc9f7b15dc26a8",
+      "size": 104874,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4b9ff39ab2d8ad189eaa5c3fcbdc9f7b15dc26a8"
+    },
+    {
+      "path": "otak/saluran-keadaan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b420fd68014eea72f388657898f828312ffbe2d",
+      "size": 915,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5b420fd68014eea72f388657898f828312ffbe2d"
+    },
+    {
+      "path": "otak/saraf.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db24ebfc02a1f41e4fcbea8d7deb4430d1ce1865",
+      "size": 470,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/db24ebfc02a1f41e4fcbea8d7deb4430d1ce1865"
+    },
+    {
+      "path": "otak/syaraf-pohon.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9873e208a839fb0795a64efc0bbca2743f75343",
+      "size": 144121,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a9873e208a839fb0795a64efc0bbca2743f75343"
+    },
+    {
+      "path": "otak/teka-biner.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "392676431d66f4202bb4e3776765c76c33191ab4",
+      "size": 16164,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/392676431d66f4202bb4e3776765c76c33191ab4"
+    },
+    {
+      "path": "otak/terabait-intisari.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66237a97ad6cff37ad3d5de426a4d4aeec23ba00",
+      "size": 4978,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/66237a97ad6cff37ad3d5de426a4d4aeec23ba00"
+    },
+    {
+      "path": "pustaka",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41357e8fe164e757cb71214b737489c0b2580284",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/41357e8fe164e757cb71214b737489c0b2580284"
+    },
+    {
+      "path": "pustaka/doktrin-sembilan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f673a36682c68456a1a8b3978f02fee8f6d7da30",
+      "size": 9378,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f673a36682c68456a1a8b3978f02fee8f6d7da30"
+    },
+    {
+      "path": "pustaka/doktrin.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d705e52f25722bb5d0288d146c37c5a994b13ac",
+      "size": 5872,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4d705e52f25722bb5d0288d146c37c5a994b13ac"
+    },
+    {
+      "path": "pustaka/formula-market.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bba4975db91c852b332c44ec30d933b9d9e631b",
+      "size": 19941,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0bba4975db91c852b332c44ec30d933b9d9e631b"
+    },
+    {
+      "path": "pustaka/formula.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9bc97463a881b5304b36b4e5dd42e083139f5097",
+      "size": 6843,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9bc97463a881b5304b36b4e5dd42e083139f5097"
+    },
+    {
+      "path": "pustaka/indeks.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e2e03d57c3b5419f353d411573b49be4526e2a5",
+      "size": 3569,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9e2e03d57c3b5419f353d411573b49be4526e2a5"
+    },
+    {
+      "path": "pustaka/kurikulum-mandiri.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3492a4e90d162d5f209fd924efa9024b02633bf",
+      "size": 3936,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c3492a4e90d162d5f209fd924efa9024b02633bf"
+    },
+    {
+      "path": "pustaka/msci.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa7d3efff86afd3d7b1c6379e96cc8c89d0b9cc8",
+      "size": 8676,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fa7d3efff86afd3d7b1c6379e96cc8c89d0b9cc8"
+    },
+    {
+      "path": "pustaka/pustaka.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41e982cfa0495f993a025f2f07626606468bf8f4",
+      "size": 7551046,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/41e982cfa0495f993a025f2f07626606468bf8f4"
+    },
+    {
+      "path": "ruang-hidup",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ee6f6670da6d7a220b7b5062bad4559cef87445c",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/ee6f6670da6d7a220b7b5062bad4559cef87445c"
+    },
+    {
+      "path": "ruang-hidup/arah.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0e094a2ce2f5ecc8b6a64a4c3d6d506d294d580",
+      "size": 25963,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a0e094a2ce2f5ecc8b6a64a4c3d6d506d294d580"
+    },
+    {
+      "path": "ruang-hidup/arsip",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc3267e97e2448f9da1b29fa69ec8749c53d3087",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/fc3267e97e2448f9da1b29fa69ec8749c53d3087"
+    },
+    {
+      "path": "ruang-hidup/arsip/buku_harian-2026-10.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ede2008d0fa9a322de89943d806bc599c200fcea",
+      "size": 536271,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ede2008d0fa9a322de89943d806bc599c200fcea"
+    },
+    {
+      "path": "ruang-hidup/buku_harian.jsonl",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f3bfb0e1c48b46e13eeac8a4ef5b50e1f9d1c88",
+      "size": 390596,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3f3bfb0e1c48b46e13eeac8a4ef5b50e1f9d1c88"
+    },
+    {
+      "path": "ruang-hidup/cermin.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "610d950f3277ac24d03b4c27c931178185280dc5",
+      "size": 2328,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/610d950f3277ac24d03b4c27c931178185280dc5"
+    },
+    {
+      "path": "ruang-hidup/habitat.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b914370bc872f462f4123f2e45f7dd1c3059599",
+      "size": 19430,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6b914370bc872f462f4123f2e45f7dd1c3059599"
+    },
+    {
+      "path": "ruang-hidup/ingatan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13a650fdc51a804514bf11c07edbf32b8a013e4e",
+      "size": 62643,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/13a650fdc51a804514bf11c07edbf32b8a013e4e"
+    },
+    {
+      "path": "ruang-hidup/keadaan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45b09fb7e45a829a4ce49334723448cb5ff99b3f",
+      "size": 65187,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/45b09fb7e45a829a4ce49334723448cb5ff99b3f"
+    },
+    {
+      "path": "ruang-hidup/madrasah.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2ec20f4b1ebb3c8d986328956a54c65ac9994cb",
+      "size": 118073,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b2ec20f4b1ebb3c8d986328956a54c65ac9994cb"
+    },
+    {
+      "path": "ruang-hidup/tubuh.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66ca8dc909115596ce09f73c54c38326a2a8230f",
+      "size": 2031,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/66ca8dc909115596ce09f73c54c38326a2a8230f"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4d08487c538ec5839f95de301138cd4c57be2cdd",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/4d08487c538ec5839f95de301138cd4c57be2cdd"
+    },
+    {
+      "path": "scripts/hidup",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bc984728a61bf54e5d6589aad47ae8ff137d8635",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/bc984728a61bf54e5d6589aad47ae8ff137d8635"
+    },
+    {
+      "path": "scripts/hidup/aturan-dinamis.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "42886adbd6a627dc0cf040fa075a3f73438d652e",
+      "size": 9980,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/42886adbd6a627dc0cf040fa075a3f73438d652e"
+    },
+    {
+      "path": "scripts/hidup/audit-koin.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ae4d5e7f095f28af280d51972d62b7f2308bee8",
+      "size": 31012,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5ae4d5e7f095f28af280d51972d62b7f2308bee8"
+    },
+    {
+      "path": "scripts/hidup/barui-sistem.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "374b2f480335861da0c281289532dc77a08b0c46",
+      "size": 15195,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/374b2f480335861da0c281289532dc77a08b0c46"
+    },
+    {
+      "path": "scripts/hidup/bedah-syaraf.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b8d1aeb44c19cfed69471a3d7b3bd82a4e3ad5b",
+      "size": 6846,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2b8d1aeb44c19cfed69471a3d7b3bd82a4e3ad5b"
+    },
+    {
+      "path": "scripts/hidup/benih-inti.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be213da8a7701eef8b1f9ebe840d458d97537fac",
+      "size": 15599,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/be213da8a7701eef8b1f9ebe840d458d97537fac"
+    },
+    {
+      "path": "scripts/hidup/buku-cuan.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ede70bcbfed1b5ac6597ac22fc8699c7ed5f3ebb",
+      "size": 33971,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ede70bcbfed1b5ac6597ac22fc8699c7ed5f3ebb"
+    },
+    {
+      "path": "scripts/hidup/cerna-terabait.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "518e820d0e0057ba2834773ac66b1c7c99217440",
+      "size": 18855,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/518e820d0e0057ba2834773ac66b1c7c99217440"
+    },
+    {
+      "path": "scripts/hidup/doktrin-perisiko.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05a8d0868b3228b2e5156dd64c4272dc747006ec",
+      "size": 9864,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/05a8d0868b3228b2e5156dd64c4272dc747006ec"
+    },
+    {
+      "path": "scripts/hidup/gali-terus.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3ac798829e8d05456edd181c41f412cfc53f812",
+      "size": 6280,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e3ac798829e8d05456edd181c41f412cfc53f812"
+    },
+    {
+      "path": "scripts/hidup/gembok.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d8762a16eb158b1d2de4946fee1adaefd0dc450",
+      "size": 21814,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5d8762a16eb158b1d2de4946fee1adaefd0dc450"
+    },
+    {
+      "path": "scripts/hidup/gerbang.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a35a2729c5eea7efa9b9b97adacecb4d381309ca",
+      "size": 2933,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a35a2729c5eea7efa9b9b97adacecb4d381309ca"
+    },
+    {
+      "path": "scripts/hidup/guru-master.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0662143d6f7da988cb832c3ae57e0977675d5d4",
+      "size": 24459,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c0662143d6f7da988cb832c3ae57e0977675d5d4"
+    },
+    {
+      "path": "scripts/hidup/imun.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a3f65f036eb95f0fe376d5def84b3450440f1ec",
+      "size": 37695,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3a3f65f036eb95f0fe376d5def84b3450440f1ec"
+    },
+    {
+      "path": "scripts/hidup/ingatan-biner.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17945407973a8d43078fdd260be912df89205cf3",
+      "size": 14133,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/17945407973a8d43078fdd260be912df89205cf3"
+    },
+    {
+      "path": "scripts/hidup/jawab-cermin100rb.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22d13c5a1fd5ea4d87d7c1f6bf5d783c5e53ddab",
+      "size": 13323,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/22d13c5a1fd5ea4d87d7c1f6bf5d783c5e53ddab"
+    },
+    {
+      "path": "scripts/hidup/kajian-hidup.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d7b496d8320b3953c679eb210bc843069dfd81a",
+      "size": 8189,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8d7b496d8320b3953c679eb210bc843069dfd81a"
+    },
+    {
+      "path": "scripts/hidup/kasus-altseason-sejarah.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "286c77f688780c4b1385c5a74243afbf9b4deebf",
+      "size": 18678,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/286c77f688780c4b1385c5a74243afbf9b4deebf"
+    },
+    {
+      "path": "scripts/hidup/kasus-breakout-sejarah.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ea33cc32fcf78353af898acc52f32404b0cc5a9",
+      "size": 16753,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4ea33cc32fcf78353af898acc52f32404b0cc5a9"
+    },
+    {
+      "path": "scripts/hidup/kasus-pumpspike-sejarah.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02455a2b0000d9eec4c8b9958133993192648512",
+      "size": 19415,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/02455a2b0000d9eec4c8b9958133993192648512"
+    },
+    {
+      "path": "scripts/hidup/kasus-squeeze-sejarah.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60f555dd9772389121d68dcab26758fc417c4e42",
+      "size": 13860,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/60f555dd9772389121d68dcab26758fc417c4e42"
+    },
+    {
+      "path": "scripts/hidup/kasus-sucker-sejarah.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe12a915ac301218a6da6541d684ea6e13813165",
+      "size": 15019,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fe12a915ac301218a6da6541d684ea6e13813165"
+    },
+    {
+      "path": "scripts/hidup/kasus-teka-trader.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb5c6a2921ff9e700fe6b9ac6ef0a78b5ba23611",
+      "size": 30875,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/eb5c6a2921ff9e700fe6b9ac6ef0a78b5ba23611"
+    },
+    {
+      "path": "scripts/hidup/liar.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ea96354d4825abf579fdfd9119bd557d72dbfda",
+      "size": 11193,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0ea96354d4825abf579fdfd9119bd557d72dbfda"
+    },
+    {
+      "path": "scripts/hidup/medan-hayat.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdbeec85583e1d492e4b9041114f7216f091eba5",
+      "size": 19553,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fdbeec85583e1d492e4b9041114f7216f091eba5"
+    },
+    {
+      "path": "scripts/hidup/musyawarah-inti.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df90e2dc9590da0366d4992e83d465f1b68a5453",
+      "size": 27063,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/df90e2dc9590da0366d4992e83d465f1b68a5453"
+    },
+    {
+      "path": "scripts/hidup/neurogenesis.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c0cd4afb2ab0b3cb06a177e5d16bb3cc66cc7f8",
+      "size": 24253,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3c0cd4afb2ab0b3cb06a177e5d16bb3cc66cc7f8"
+    },
+    {
+      "path": "scripts/hidup/nilai-cermin100rb.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35ccca651d68b3ba10beee90bb139a45c586bb07",
+      "size": 20710,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/35ccca651d68b3ba10beee90bb139a45c586bb07"
+    },
+    {
+      "path": "scripts/hidup/otak-llm.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41b2b021612945f71cf42573863f800e90f45b22",
+      "size": 5172,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/41b2b021612945f71cf42573863f800e90f45b22"
+    },
+    {
+      "path": "scripts/hidup/panen-gembok.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b07e7e78d94eaa5d07cf40639a0bef2f42cda2f",
+      "size": 12200,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9b07e7e78d94eaa5d07cf40639a0bef2f42cda2f"
+    },
+    {
+      "path": "scripts/hidup/parameter-cerdas.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e19ef53d9ccbbbd21023b2a9c93cffd147e29ea",
+      "size": 23652,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2e19ef53d9ccbbbd21023b2a9c93cffd147e29ea"
+    },
+    {
+      "path": "scripts/hidup/pengalaman-cermin.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4058ca6784a63143191465fe1075c49c3dd91bc3",
+      "size": 5006,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4058ca6784a63143191465fe1075c49c3dd91bc3"
+    },
+    {
+      "path": "scripts/hidup/pengawas-otonom.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93daf5406800dc43d667d9bc3c56f18062aee4b9",
+      "size": 24610,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/93daf5406800dc43d667d9bc3c56f18062aee4b9"
+    },
+    {
+      "path": "scripts/hidup/peta-geladak.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c62c226d0e93bdd4aeaf5c79d9e36097220d64b",
+      "size": 8060,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1c62c226d0e93bdd4aeaf5c79d9e36097220d64b"
+    },
+    {
+      "path": "scripts/hidup/pustaka.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1e614d49f94bf8cec537b9122ac8b6b4721e0d3",
+      "size": 10447,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d1e614d49f94bf8cec537b9122ac8b6b4721e0d3"
+    },
+    {
+      "path": "scripts/hidup/reka-bentuk.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fec267b9ebfee699b3b37a0ea328422839bd089",
+      "size": 32186,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2fec267b9ebfee699b3b37a0ea328422839bd089"
+    },
+    {
+      "path": "scripts/hidup/sadar1.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4e0dc68ad668de883814725c1f707fa445d60be",
+      "size": 82799,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a4e0dc68ad668de883814725c1f707fa445d60be"
+    },
+    {
+      "path": "scripts/hidup/saluran.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "415bded7575cdc52e50563725ff36cf6c7ea3d17",
+      "size": 15363,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/415bded7575cdc52e50563725ff36cf6c7ea3d17"
+    },
+    {
+      "path": "scripts/hidup/sembang-v344.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4b6814d55f32b2a8c5e98404902bd0d01b749a3",
+      "size": 2976,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a4b6814d55f32b2a8c5e98404902bd0d01b749a3"
+    },
+    {
+      "path": "scripts/hidup/studi-mandiri.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8277d374821f68aaae4f63c5ce380277936baf4a",
+      "size": 27958,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8277d374821f68aaae4f63c5ce380277936baf4a"
+    },
+    {
+      "path": "scripts/hidup/tambang-altseason3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b7fdb69fd8a333db3eed75848f5131e9383ba69",
+      "size": 42004,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1b7fdb69fd8a333db3eed75848f5131e9383ba69"
+    },
+    {
+      "path": "scripts/hidup/tambang-breakout3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dff64006019ee582905aaaae66c65977e70ebc6",
+      "size": 40458,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9dff64006019ee582905aaaae66c65977e70ebc6"
+    },
+    {
+      "path": "scripts/hidup/tambang-cascade.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41f3891fdd19424a43210664a5b9a8df7e30b130",
+      "size": 27130,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/41f3891fdd19424a43210664a5b9a8df7e30b130"
+    },
+    {
+      "path": "scripts/hidup/tambang-cermin100rb.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fb9c66aea58b381cc421670f3de5ad5c1cb62ad",
+      "size": 25897,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9fb9c66aea58b381cc421670f3de5ad5c1cb62ad"
+    },
+    {
+      "path": "scripts/hidup/tambang-hidup.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6917c1539e368fb9051f060804fa44341c9f538",
+      "size": 7537,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/a6917c1539e368fb9051f060804fa44341c9f538"
+    },
+    {
+      "path": "scripts/hidup/tambang-jejak.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4869f6434d94b3f0f3f670eb730b14420b823556",
+      "size": 22633,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4869f6434d94b3f0f3f670eb730b14420b823556"
+    },
+    {
+      "path": "scripts/hidup/tambang-pumpspike3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86d84c37835c3876c6f0088260ed824fe49c103b",
+      "size": 43128,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/86d84c37835c3876c6f0088260ed824fe49c103b"
+    },
+    {
+      "path": "scripts/hidup/tambang-squeeze.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc5bc99d554130f8dfa7d00161b1a6fc58d763eb",
+      "size": 20602,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/dc5bc99d554130f8dfa7d00161b1a6fc58d763eb"
+    },
+    {
+      "path": "scripts/hidup/tambang-squeeze3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83d4cdcc41f86cfa80d807062386e2bcbb99c699",
+      "size": 35562,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/83d4cdcc41f86cfa80d807062386e2bcbb99c699"
+    },
+    {
+      "path": "scripts/hidup/tambang-sucker3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6645b214199a12a960bcc853640a70560e4efddc",
+      "size": 40865,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6645b214199a12a960bcc853640a70560e4efddc"
+    },
+    {
+      "path": "scripts/hidup/tambang-terabait.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ffc0942509720dfc327488537cbedfa40aeae3a",
+      "size": 6353,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7ffc0942509720dfc327488537cbedfa40aeae3a"
+    },
+    {
+      "path": "scripts/hidup/tambang200.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb915c028eca529e06bf68f99eac2b05f2ad4650",
+      "size": 13603,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fb915c028eca529e06bf68f99eac2b05f2ad4650"
+    },
+    {
+      "path": "scripts/hidup/tambang300.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c303b1521ab045eb757e188ed6644c6866a8f2a0",
+      "size": 16990,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c303b1521ab045eb757e188ed6644c6866a8f2a0"
+    },
+    {
+      "path": "scripts/hidup/tambang500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa40e0680f9a0ad9ef47d44595a1e4f3ce44453b",
+      "size": 10868,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/aa40e0680f9a0ad9ef47d44595a1e4f3ce44453b"
+    },
+    {
+      "path": "scripts/hidup/tambang900.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cd5b6f67b7853d23cefebee6b86042204878c6a",
+      "size": 16938,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0cd5b6f67b7853d23cefebee6b86042204878c6a"
+    },
+    {
+      "path": "scripts/hidup/tempa-altseason3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "830fb1c39e9f7ab39aff2f757d70ddf6afb57eee",
+      "size": 31424,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/830fb1c39e9f7ab39aff2f757d70ddf6afb57eee"
+    },
+    {
+      "path": "scripts/hidup/tempa-breakout3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "357e4a643f09bf295c7f06cfb2260b95fc8c0683",
+      "size": 31219,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/357e4a643f09bf295c7f06cfb2260b95fc8c0683"
+    },
+    {
+      "path": "scripts/hidup/tempa-cascade.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b58de00d4fa7f9e46c8b59542c6f20494cc7f3c3",
+      "size": 20258,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b58de00d4fa7f9e46c8b59542c6f20494cc7f3c3"
+    },
+    {
+      "path": "scripts/hidup/tempa-hidup.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4785216f526bc073b41ef7076f3adfdabf61a9f9",
+      "size": 26988,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4785216f526bc073b41ef7076f3adfdabf61a9f9"
+    },
+    {
+      "path": "scripts/hidup/tempa-jejak.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "117d8933ce4bdc1d942a65f1eeef5237556742b2",
+      "size": 20701,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/117d8933ce4bdc1d942a65f1eeef5237556742b2"
+    },
+    {
+      "path": "scripts/hidup/tempa-pumpspike3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0542b8020c5c0ca01a5999574a8ce6835c53820a",
+      "size": 33962,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0542b8020c5c0ca01a5999574a8ce6835c53820a"
+    },
+    {
+      "path": "scripts/hidup/tempa-squeeze.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "129005b0056c77fb52151a7771f6b5cc6908282b",
+      "size": 18360,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/129005b0056c77fb52151a7771f6b5cc6908282b"
+    },
+    {
+      "path": "scripts/hidup/tempa-squeeze3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a9b4d4ffcb083da88e150a74e05c7cd47278768",
+      "size": 23627,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2a9b4d4ffcb083da88e150a74e05c7cd47278768"
+    },
+    {
+      "path": "scripts/hidup/tempa-sucker3500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "361e1d2c666cbb5ec5afc27c73d7d95c2b4b937e",
+      "size": 30501,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/361e1d2c666cbb5ec5afc27c73d7d95c2b4b937e"
+    },
+    {
+      "path": "scripts/hidup/tempa-teka.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd5e2ed39bb0ef46e67d0121605ca559102e8894",
+      "size": 22829,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/bd5e2ed39bb0ef46e67d0121605ca559102e8894"
+    },
+    {
+      "path": "scripts/hidup/tempa-terabait.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "599f63ed76255401e21de5f8e3ae294507f3f5c4",
+      "size": 13456,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/599f63ed76255401e21de5f8e3ae294507f3f5c4"
+    },
+    {
+      "path": "scripts/hidup/tempa100.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "636ce98ddf71ebea7a6eb77d83136bd5e07adf8b",
+      "size": 19435,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/636ce98ddf71ebea7a6eb77d83136bd5e07adf8b"
+    },
+    {
+      "path": "scripts/hidup/tempa200.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f3fb0306636a7a3b290d6ece51e85947100559f",
+      "size": 13285,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2f3fb0306636a7a3b290d6ece51e85947100559f"
+    },
+    {
+      "path": "scripts/hidup/tempa300.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f60c477bd7926f02b8cb8aea7093be07a53c742",
+      "size": 16987,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4f60c477bd7926f02b8cb8aea7093be07a53c742"
+    },
+    {
+      "path": "scripts/hidup/tempa900.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77015db3bff034802df6ede50fcd920d4ad9b192",
+      "size": 16869,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/77015db3bff034802df6ede50fcd920d4ad9b192"
+    },
+    {
+      "path": "scripts/hidup/terabait-inti.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b046d690b29eaa5d7d3d9bac74889d2688b32438",
+      "size": 4706,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b046d690b29eaa5d7d3d9bac74889d2688b32438"
+    },
+    {
+      "path": "scripts/hidup/uji-50.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79d37f8cccfdfc7da0cba22886bd43a3de50688b",
+      "size": 27310,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/79d37f8cccfdfc7da0cba22886bd43a3de50688b"
+    },
+    {
+      "path": "scripts/hidup/uji-akurasi-400.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf7adfa16e3c2374ebbcd254dd0ea600038304c8",
+      "size": 10066,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/bf7adfa16e3c2374ebbcd254dd0ea600038304c8"
+    },
+    {
+      "path": "scripts/hidup/uji-aturan-dinamis.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d5c57ba1abbdd771f5e24a190b6f76bc8117cc1",
+      "size": 7641,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0d5c57ba1abbdd771f5e24a190b6f76bc8117cc1"
+    },
+    {
+      "path": "scripts/hidup/uji-audit-koin.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87cc9dfe79366c98fc7e4dde7f797d15d67e3bf2",
+      "size": 14600,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/87cc9dfe79366c98fc7e4dde7f797d15d67e3bf2"
+    },
+    {
+      "path": "scripts/hidup/uji-bahasa-50000.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fc640f5338696ffc2e2eb9c9a47c4196a95f081",
+      "size": 4470,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/5fc640f5338696ffc2e2eb9c9a47c4196a95f081"
+    },
+    {
+      "path": "scripts/hidup/uji-ingatan-biner.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919ec349dcce531e06bf6d7936f2e18b7c9cbb98",
+      "size": 7544,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/919ec349dcce531e06bf6d7936f2e18b7c9cbb98"
+    },
+    {
+      "path": "scripts/hidup/uji-parameter-cerdas.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df548561bde1f0c357629ae8397d64dfd8315d74",
+      "size": 13352,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/df548561bde1f0c357629ae8397d64dfd8315d74"
+    },
+    {
+      "path": "scripts/hidup/ujian500.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7110ec1e111c1b0826c05efec43e2176cc099e83",
+      "size": 10841,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7110ec1e111c1b0826c05efec43e2176cc099e83"
+    },
+    {
+      "path": "scripts/penjaga.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd5a100aa93cba65ccc02074727e14b00df7d2b0",
+      "size": 586910,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/dd5a100aa93cba65ccc02074727e14b00df7d2b0"
+    },
+    {
+      "path": "scripts/uji-jahat",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5ed9a30569c33d193e3a15bacab4f54dd06531b3",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/5ed9a30569c33d193e3a15bacab4f54dd06531b3"
+    },
+    {
+      "path": "scripts/uji-jahat/serang-intisari.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2af4062c11b2c208b2d55f85fba7373b0ab223ae",
+      "size": 9544,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2af4062c11b2c208b2d55f85fba7373b0ab223ae"
+    },
+    {
+      "path": "scripts/uji-kehidupan",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "03aadb3150ff828ec09011c95125fd2418bdc844",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/03aadb3150ff828ec09011c95125fd2418bdc844"
+    },
+    {
+      "path": "scripts/uji-kehidupan/lapor-akhir.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77bfb90671c430826384bbc1be02a32a3b950161",
+      "size": 5345,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/77bfb90671c430826384bbc1be02a32a3b950161"
+    },
+    {
+      "path": "scripts/uji-kehidupan/pantau.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1ab92c48a7836aee79eb557994e18797df1f17c",
+      "size": 5159,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f1ab92c48a7836aee79eb557994e18797df1f17c"
+    },
+    {
+      "path": "scripts/uji-kehidupan/serang.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b080644664ffa491c8eb881f97311477a6f0a57",
+      "size": 3380,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1b080644664ffa491c8eb881f97311477a6f0a57"
+    },
+    {
+      "path": "scripts/uji-marker-imun.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "429e92ef2848919ed5c3cc202595c59870287407",
+      "size": 1456,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/429e92ef2848919ed5c3cc202595c59870287407"
+    },
+    {
+      "path": "scripts/uji-panen-uji50.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb6bf37e945e47c537d0c83cf04af0f4f59f7d8b",
+      "size": 1813,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/fb6bf37e945e47c537d0c83cf04af0f4f59f7d8b"
+    },
+    {
+      "path": "scripts/uji-tubuh",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8c84cb291e3c27f7c8fab7505cab3209459b0431",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/8c84cb291e3c27f7c8fab7505cab3209459b0431"
+    },
+    {
+      "path": "scripts/uji-tubuh/bedahTangan.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0a48afe8aa723019de355924d6b6110707a1570",
+      "size": 7998,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c0a48afe8aa723019de355924d6b6110707a1570"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15f7c2e5660936790d655cef63b13202b835c49f",
+      "size": 3332,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/15f7c2e5660936790d655cef63b13202b835c49f"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3c498fd62da5f6220e0da47c1765af203e8c2c3",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/a3c498fd62da5f6220e0da47c1765af203e8c2c3"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-BASELINE.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05e55b1d3c7c464f82e85a957b74a6c611dd2d09",
+      "size": 2005,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/05e55b1d3c7c464f82e85a957b74a6c611dd2d09"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L1-DENYUT-PERTAMA.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca6c890738eb3b6b622510ab871907f869e7d090",
+      "size": 1859,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ca6c890738eb3b6b622510ab871907f869e7d090"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L1-RUN217.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ac3a148eb2b1bd47b1238293390bc65f5fb032e",
+      "size": 1851,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6ac3a148eb2b1bd47b1238293390bc65f5fb032e"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L1-RUN218.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b4779076c24a002aa5b9989bcb204e84c0fd2f5",
+      "size": 1851,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7b4779076c24a002aa5b9989bcb204e84c0fd2f5"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L1-SEBELUM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ead01db5d365d272073380ee2eaa3e0a15e3e040",
+      "size": 2026,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ead01db5d365d272073380ee2eaa3e0a15e3e040"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L1-SETELAH-2RUN.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0db9ec3df5790645188c521a6d7610a769b429d5",
+      "size": 1836,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0db9ec3df5790645188c521a6d7610a769b429d5"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L2-SEBELUM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3dcd54eb9388ea9c15c48648e5095370fadd97d7",
+      "size": 1831,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/3dcd54eb9388ea9c15c48648e5095370fadd97d7"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L2-SETELAH-8MENIT.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58c8c2602317ab3c340a93ead26ebeee17f4481f",
+      "size": 1836,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/58c8c2602317ab3c340a93ead26ebeee17f4481f"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L3-SEBELUM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9598d3282cc7ea8d880f0e07a3702b7b2bb6c2c",
+      "size": 1830,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f9598d3282cc7ea8d880f0e07a3702b7b2bb6c2c"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L3-SETELAH-DENYUT.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "556be4c285509630cef8991d2dac2dab9197b548",
+      "size": 1892,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/556be4c285509630cef8991d2dac2dab9197b548"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L4-SEBELUM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d578ce9138d8c1042782a2fe95f614576fcf9118",
+      "size": 1919,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d578ce9138d8c1042782a2fe95f614576fcf9118"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-L4-SETELAH-DENYUT.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f3563eae1fe95a47c7879a2e96f65a2aa51a771",
+      "size": 1967,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8f3563eae1fe95a47c7879a2e96f65a2aa51a771"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G1-PEMULIHAN.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d9fe19f883344113c5049e5fd53db8a9ea7abf5",
+      "size": 1958,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0d9fe19f883344113c5049e5fd53db8a9ea7abf5"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G2-AMPUTASI-TANAM-SEBELUM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0ace4f99ce2b0103160d418cf46764f7c5a49a8",
+      "size": 1684,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f0ace4f99ce2b0103160d418cf46764f7c5a49a8"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G2-FINAL-SEHAT.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73963f76dcadab012bf342f53d434c44026cb8ae",
+      "size": 1916,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/73963f76dcadab012bf342f53d434c44026cb8ae"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G2-L1-SEBELUM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7513f54dc7a3e257152618cbb1d40458443fb1a9",
+      "size": 1806,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/7513f54dc7a3e257152618cbb1d40458443fb1a9"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G2-LAPOR-AKHIR.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eabc1d77a5cad901e919ac3da0497aa99d32eb62",
+      "size": 1916,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/eabc1d77a5cad901e919ac3da0497aa99d32eb62"
+    },
+    {
+      "path": "scripts/uji-tubuh/bukti/G2-SARAF-SEBELUM.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f96095460625934cb9e08d37bc6cdfe597f5d7f6",
+      "size": 2257,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f96095460625934cb9e08d37bc6cdfe597f5d7f6"
+    },
+    {
+      "path": "scripts/uji-tubuh/laporTubuh.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b00c1f5b91345bf0e8949db891e171d9f0d3eda2",
+      "size": 9206,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b00c1f5b91345bf0e8949db891e171d9f0d3eda2"
+    },
+    {
+      "path": "scripts/ujian-buta",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a986cb4920b7fe2e3c61d592b009dccd26c37572",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/a986cb4920b7fe2e3c61d592b009dccd26c37572"
+    },
+    {
+      "path": "scripts/ujian-buta/bedah_sekolah.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daba0a703343b51415fa20436f4e600d6558dcba",
+      "size": 5986,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/daba0a703343b51415fa20436f4e600d6558dcba"
+    },
+    {
+      "path": "scripts/ujian-buta/beku.cjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64fdf19179edfdf4ec9a36b1e7475cb3d07fb607",
+      "size": 8209,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/64fdf19179edfdf4ec9a36b1e7475cb3d07fb607"
+    },
+    {
+      "path": "scripts/ujian-buta/buat_laporan.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "756bbb902e7388364727af790aee6aec1f34cccd",
+      "size": 6354,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/756bbb902e7388364727af790aee6aec1f34cccd"
+    },
+    {
+      "path": "scripts/ujian-buta/grade.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f409226af713efb22c3dadfe1aa5fa9b8ee24e2e",
+      "size": 8299,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f409226af713efb22c3dadfe1aa5fa9b8ee24e2e"
+    },
+    {
+      "path": "scripts/ujian-buta/orkestra.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d999719bac2e650e099996e666a823ea5f038c67",
+      "size": 4019,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d999719bac2e650e099996e666a823ea5f038c67"
+    },
+    {
+      "path": "scripts/ujian-buta/panen_ulang.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2486eb854b17b0222ef7b7676a0475004ff11b0d",
+      "size": 2403,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/2486eb854b17b0222ef7b7676a0475004ff11b0d"
+    },
+    {
+      "path": "scripts/ujian-buta/pra_ambil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccd7a4b15df3fb936bf2e7c50b62c1788794805b",
+      "size": 4330,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ccd7a4b15df3fb936bf2e7c50b62c1788794805b"
+    },
+    {
+      "path": "tanam",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1181370dc8f2ce1797473ec46b48b07a0e31c1ff",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/1181370dc8f2ce1797473ec46b48b07a0e31c1ff"
+    },
+    {
+      "path": "tanam/BENIH.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e894f4c7f3f3da9558d9f44724044bcafae4fa36",
+      "size": 296,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e894f4c7f3f3da9558d9f44724044bcafae4fa36"
+    },
+    {
+      "path": "tanam/tangan-guru.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e94509e6969940605a9677820851035a3acc9eb2",
+      "size": 21918,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/e94509e6969940605a9677820851035a3acc9eb2"
+    },
+    {
+      "path": "tools",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5e7a7de387c8320b030e9541d71ab6b188c19d55",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/5e7a7de387c8320b030e9541d71ab6b188c19d55"
+    },
+    {
+      "path": "tools/panen-kemarau.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6548f9a10e837efb6cd5a13dacc22e09ecff8ae4",
+      "size": 10941,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6548f9a10e837efb6cd5a13dacc22e09ecff8ae4"
+    },
+    {
+      "path": "tools/studi-kemarau.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6525e7d4c4094e458e9b0e91e9c7f56e1a2bd3d5",
+      "size": 10098,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6525e7d4c4094e458e9b0e91e9c7f56e1a2bd3d5"
+    },
+    {
+      "path": "ujian",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e1233af1e4666e1eaa72287953a729c60c15fcac",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/e1233af1e4666e1eaa72287953a729c60c15fcac"
+    },
+    {
+      "path": "ujian/cermin100rb",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9c0caf9299063596e34a4e667aafd1b89975c806",
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/9c0caf9299063596e34a4e667aafd1b89975c806"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-00.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1aec2bc56b6a38a80a95eca3f8d6ef7f6c3bd2bf",
+      "size": 1446006,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1aec2bc56b6a38a80a95eca3f8d6ef7f6c3bd2bf"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-01.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80c032427434c3bae7230de72adbb3aa2fa99f38",
+      "size": 1482124,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/80c032427434c3bae7230de72adbb3aa2fa99f38"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-02.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f11dccfd7c8183c42271b04fc8479511e5972025",
+      "size": 1491808,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f11dccfd7c8183c42271b04fc8479511e5972025"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-03.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b3206f9e2d422f529cee63a942d34ae68bdac83",
+      "size": 1460283,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0b3206f9e2d422f529cee63a942d34ae68bdac83"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-04.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c54ded65dc252ecf740bfd8f5c7d49e7765f6f73",
+      "size": 1453812,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c54ded65dc252ecf740bfd8f5c7d49e7765f6f73"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-05.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f2ae482a262fcdb0a32403f725be011a8a12d6f",
+      "size": 1488936,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0f2ae482a262fcdb0a32403f725be011a8a12d6f"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-06.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16e18cfde3050d75711aea2def46178afd8e9e82",
+      "size": 1456040,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/16e18cfde3050d75711aea2def46178afd8e9e82"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-07.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50e3ab8f5f818c10ebd6f7df76509b392fbfa022",
+      "size": 1442469,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/50e3ab8f5f818c10ebd6f7df76509b392fbfa022"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-08.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "183bbf759f7d256e45a4490042029125628521b2",
+      "size": 1434421,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/183bbf759f7d256e45a4490042029125628521b2"
+    },
+    {
+      "path": "ujian/cermin100rb/bank-09.jsonl.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1213756d768090cae4663e841b65a1319a1cc50",
+      "size": 1510121,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f1213756d768090cae4663e841b65a1319a1cc50"
+    },
+    {
+      "path": "ujian/cermin100rb/segel.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb218fd992bc6e4879a665cacb1d5da0de000c3a",
+      "size": 1922,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/eb218fd992bc6e4879a665cacb1d5da0de000c3a"
+    },
+    {
+      "path": "ujian/daftar-gembok.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c84aad25ce6aa6e5b4befedbf82c59ce70ae462b",
+      "size": 44517,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c84aad25ce6aa6e5b4befedbf82c59ce70ae462b"
+    },
+    {
+      "path": "ujian/hasil-ujian-buta-grafik.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a95dbbbdec0d10150bc95b0674cc6c47939b9a6",
+      "size": 923,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/4a95dbbbdec0d10150bc95b0674cc6c47939b9a6"
+    },
+    {
+      "path": "ujian/kunci-komunitas.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47951691bf9b134a4dbfa2daba41156648a4af5d",
+      "size": 6511,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/47951691bf9b134a4dbfa2daba41156648a4af5d"
+    },
+    {
+      "path": "ujian/soal-200.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4d285fc9f6f7cde6b43ba5774ac1142e9c6a4d9",
+      "size": 459099,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/c4d285fc9f6f7cde6b43ba5774ac1142e9c6a4d9"
+    },
+    {
+      "path": "ujian/soal-300.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "396814b7bcbeda50b1cf40c78fb167ec4281808c",
+      "size": 706818,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/396814b7bcbeda50b1cf40c78fb167ec4281808c"
+    },
+    {
+      "path": "ujian/soal-500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a832be8260cd9a0f49efb4552bd7917781a1a97",
+      "size": 1138412,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9a832be8260cd9a0f49efb4552bd7917781a1a97"
+    },
+    {
+      "path": "ujian/soal-900.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c888edca8903475691b7321aee43089bc73769c",
+      "size": 2111257,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0c888edca8903475691b7321aee43089bc73769c"
+    },
+    {
+      "path": "ujian/soal-altseason-3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10749847caa2961effab06eee0353ed43aaeff94",
+      "size": 10371697,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/10749847caa2961effab06eee0353ed43aaeff94"
+    },
+    {
+      "path": "ujian/soal-altseason-dadakan-350.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0786414ba4302b409ebb99a2227be5ffb95cda3a",
+      "size": 1070276,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/0786414ba4302b409ebb99a2227be5ffb95cda3a"
+    },
+    {
+      "path": "ujian/soal-breakout-3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc8c0267985dd59df621e095cc5adfc59f331eb8",
+      "size": 10018184,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/cc8c0267985dd59df621e095cc5adfc59f331eb8"
+    },
+    {
+      "path": "ujian/soal-breakout-dadakan-350.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de9057d538483eac67a601560706bffa11afdf04",
+      "size": 1039538,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/de9057d538483eac67a601560706bffa11afdf04"
+    },
+    {
+      "path": "ujian/soal-cascade-1000.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36017b6c0b7e460442661e4e4d3ed86b44056b72",
+      "size": 2598886,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/36017b6c0b7e460442661e4e4d3ed86b44056b72"
+    },
+    {
+      "path": "ujian/soal-cascade-dadakan-100.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8041aa665dcc9c7310c3240b56f8faafbc22de1e",
+      "size": 266758,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8041aa665dcc9c7310c3240b56f8faafbc22de1e"
+    },
+    {
+      "path": "ujian/soal-cermin-dadakan-1000.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ace59d884d074ed71575c77a96dc4828427bee15",
+      "size": 1497585,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ace59d884d074ed71575c77a96dc4828427bee15"
+    },
+    {
+      "path": "ujian/soal-cermin-sampel-1200.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b89cf66cabd1986219c135895df2e2ddaa8f4c3d",
+      "size": 1786747,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b89cf66cabd1986219c135895df2e2ddaa8f4c3d"
+    },
+    {
+      "path": "ujian/soal-dadakan-30.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9011ca81ca02336514e841711d77d509e1eef692",
+      "size": 78633,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9011ca81ca02336514e841711d77d509e1eef692"
+    },
+    {
+      "path": "ujian/soal-dadakan-40.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "564e087cd3527975f06824365d70f95c33d1f4b6",
+      "size": 97893,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/564e087cd3527975f06824365d70f95c33d1f4b6"
+    },
+    {
+      "path": "ujian/soal-dadakan-90.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21d863909a1b2aafac23e7081a809d2bb078dace",
+      "size": 219297,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/21d863909a1b2aafac23e7081a809d2bb078dace"
+    },
+    {
+      "path": "ujian/soal-hidup-1000.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bc5a146d6893bd63e3075024fee3ed1a312bbc7",
+      "size": 456739,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/8bc5a146d6893bd63e3075024fee3ed1a312bbc7"
+    },
+    {
+      "path": "ujian/soal-jejak-2000.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc1319d9da5af1f50f356ff23e9c446be1ea6b00",
+      "size": 2830613,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/bc1319d9da5af1f50f356ff23e9c446be1ea6b00"
+    },
+    {
+      "path": "ujian/soal-jejak-dadakan-150.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfbe0ff52a4cc35bcce795fb7c821cdfef91be25",
+      "size": 215725,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/bfbe0ff52a4cc35bcce795fb7c821cdfef91be25"
+    },
+    {
+      "path": "ujian/soal-pumpspike-3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b78fe7b3374aea963524899062cd341c1773931",
+      "size": 10531000,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/1b78fe7b3374aea963524899062cd341c1773931"
+    },
+    {
+      "path": "ujian/soal-pumpspike-dadakan-350.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62014b8e42234540f87e393c5c8af905f63be655",
+      "size": 1089608,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/62014b8e42234540f87e393c5c8af905f63be655"
+    },
+    {
+      "path": "ujian/soal-squeeze-3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aadbe374efe5fe0921b350c81f16e19b9a02a539",
+      "size": 9712146,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/aadbe374efe5fe0921b350c81f16e19b9a02a539"
+    },
+    {
+      "path": "ujian/soal-squeeze-700.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b334c4179a2fa30438d4077d524764b246f97cb",
+      "size": 1785332,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/6b334c4179a2fa30438d4077d524764b246f97cb"
+    },
+    {
+      "path": "ujian/soal-squeeze-dadakan-350.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a2966a1a97a165855b3f65be8a5918f2298250b",
+      "size": 1002247,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9a2966a1a97a165855b3f65be8a5918f2298250b"
+    },
+    {
+      "path": "ujian/soal-squeeze-dadakan-70.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca3621bd207454c2fa6487466050b2763b052a53",
+      "size": 183628,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/ca3621bd207454c2fa6487466050b2763b052a53"
+    },
+    {
+      "path": "ujian/soal-sucker-3500.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "790acc8105cbbd55e716183988bdda24cf26df9f",
+      "size": 9754123,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/790acc8105cbbd55e716183988bdda24cf26df9f"
+    },
+    {
+      "path": "ujian/soal-sucker-dadakan-350.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b08bd0990875eddbdaf78eecbe6cc88ad9883c60",
+      "size": 1012951,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/b08bd0990875eddbdaf78eecbe6cc88ad9883c60"
+    },
+    {
+      "path": "ujian/soal-teka-dadakan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a16531a7a2a8312d329aa1dde5eb53272e8ba58",
+      "size": 6801,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/9a16531a7a2a8312d329aa1dde5eb53272e8ba58"
+    },
+    {
+      "path": "ujian/soal-teka-trader.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7913851a6c4d081102b0c4dbe266bc8e13892f7",
+      "size": 36661,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/d7913851a6c4d081102b0c4dbe266bc8e13892f7"
+    },
+    {
+      "path": "ujian/terabait-genom.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "341305434c969aa41120420dfc0284b0a5adfbe0",
+      "size": 2202,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/341305434c969aa41120420dfc0284b0a5adfbe0"
+    },
+    {
+      "path": "versi.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2bba0e58c0653e71e7426edb99ec1fc23fef14d",
+      "size": 639,
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/blobs/f2bba0e58c0653e71e7426edb99ec1fc23fef14d"
+    }
+  ],
+  "truncated": false
+}

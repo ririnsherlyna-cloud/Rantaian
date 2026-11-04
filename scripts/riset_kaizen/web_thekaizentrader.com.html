@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <script>
+   (function () {
+  var proto = XMLHttpRequest.prototype;
+  var open = proto.open, setRequestHeader = proto.setRequestHeader, send = proto.send;
+  var TOKEN_KEY = 'base44_access_token';
+  var storedTokenHeader = function () {
+    try { return 'Bearer ' + localStorage.getItem(TOKEN_KEY); } catch (e) { return null; }
+  };
+  var forgetStoredToken = function () {
+    try { localStorage.removeItem(TOKEN_KEY); localStorage.removeItem('token'); } catch (e) {}
+  };
+
+  proto.open = function (method, url) {
+    this.__b44IsAuthCheck = /\/entities\/User\/me(\?|$)/.test(url);
+    return open.apply(this, arguments);
+  };
+
+  proto.setRequestHeader = function (name, value) {
+    if (this.__b44IsAuthCheck && name.toLowerCase() === 'authorization' && value === storedTokenHeader()) {
+      this.__b44SentToken = value;
+    }
+    return setRequestHeader.call(this, name, value);
+  };
+
+  proto.send = function () {
+    this.addEventListener('loadend', function () {
+      var rejectedTokenStillStored = this.status === 401 && this.__b44SentToken === storedTokenHeader();
+      if (rejectedTokenStillStored) forgetStoredToken();
+    });
+    return send.apply(this, arguments);
+  };
+})();
+  </script>
+  <meta charset="utf-8"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18085107756">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18085107756');
+  </script>
+  <link href="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aa182748da3893ad3da626/64f5a1625_kaizentrader.png" rel="icon" type="image/svg+xml"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="/manifest.json" rel="manifest"/>
+  <title>
+   KAIZEN TRADER
+  </title>
+  <script crossorigin="" src="/assets/index-Cz6Y1cvy.js" type="module">
+  </script>
+  <link crossorigin="" href="/assets/index-3kkzcQCF.css" rel="stylesheet"/>
+  <script type="module">
+   if (window.self === window.top) {
+  let lastPath = "";
+  function getPageNameFromPath(path) {
+    const segments = path.split("/").filter(Boolean);
+    return segments[0] || null;
+  }
+  function trackPageView() {
+    const path = window.location.pathname;
+    if (path === lastPath) return;
+    lastPath = path;
+    const pageName = getPageNameFromPath(path) || "home";
+    const appId = "69aa182748da3893ad3da626";
+    if (!appId) return;
+    fetch(`/api/app-logs/${appId}/log-user-in-app/${pageName}`, {
+      method: "POST",
+    }).catch(() => {});
+  }
+  const originalPushState = history.pushState.bind(history);
+  history.pushState = function (...args) {
+    originalPushState(...args);
+    trackPageView();
+  };
+  const originalReplaceState = history.replaceState.bind(history);
+  history.replaceState = function (...args) {
+    originalReplaceState(...args);
+    trackPageView();
+  };
+  window.addEventListener("popstate", trackPageView);
+  trackPageView();
+}
+  </script>
+  <meta content="KAIZEN TRADER manages 5 data types including backtest entries. Helps you organize, track, and share your work in 1 place for teams and solo users." name="description"/>
+  <meta content="KAIZEN TRADER" property="og:title"/>
+  <meta content="KAIZEN TRADER manages 5 data types including backtest entries. Helps you organize, track, and share your work in 1 place for teams and solo users." property="og:description"/>
+  <meta content="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/render/image/public/base44-prod/public/69aa182748da3893ad3da626/64f5a1625_kaizentrader.png?width=1200&amp;height=630&amp;resize=contain" property="og:image"/>
+  <meta content="https://thekaizentrader.com" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="KAIZEN TRADER" property="og:site_name"/>
+  <meta content="KAIZEN TRADER" name="twitter:title"/>
+  <meta content="KAIZEN TRADER manages 5 data types including backtest entries. Helps you organize, track, and share your work in 1 place for teams and solo users." name="twitter:description"/>
+  <meta content="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/render/image/public/base44-prod/public/69aa182748da3893ad3da626/64f5a1625_kaizentrader.png?width=1200&amp;height=630&amp;resize=contain" name="twitter:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="https://thekaizentrader.com" name="twitter:url"/>
+  <script>
+   (function () {
+  var titles = {"/": "KAIZEN TRADER", "/login": "Login | KAIZEN TRADER", "/register": "Register | KAIZEN TRADER", "/forgot-password": "Forgot Password | KAIZEN TRADER", "/reset-password": "Reset Password | KAIZEN TRADER", "/landing": "Landing | KAIZEN TRADER", "/backtesting": "Backtesting | KAIZEN TRADER", "/mentalprep": "Mental Prep | KAIZEN TRADER", "/mental-prep": "Mental Prep | KAIZEN TRADER", "/progress": "Progress | KAIZEN TRADER", "/settings": "Settings | KAIZEN TRADER", "/tradingplan": "KAIZEN TRADER", "/trading-plan": "KAIZEN TRADER", "/pricing": "Pricing | KAIZEN TRADER", "/quiz": "Quiz | KAIZEN TRADER", "/strategy-learning": "Strategy Learning | KAIZEN TRADER", "/strategylearning": "Strategy Learning | KAIZEN TRADER", "/chartscanner": "Chart Scanner | KAIZEN TRADER", "/chart-scanner": "Chart Scanner | KAIZEN TRADER", "/courses": "Courses | KAIZEN TRADER", "/course": "Course | KAIZEN TRADER", "/psychologycourse": "Psychology Course | KAIZEN TRADER", "/psychology-course": "Psychology Course | KAIZEN TRADER", "/tradingcoach": "Trading Coach | KAIZEN TRADER", "/trading-coach": "Trading Coach | KAIZEN TRADER", "/subscription-management": "Subscription Management | KAIZEN TRADER", "/riskcalculator": "Risk Calculator | KAIZEN TRADER", "/risk-calculator": "Risk Calculator | KAIZEN TRADER", "/kaizenjournal": "KAIZEN TRADER", "/kaizen-journal": "KAIZEN TRADER"};
+  // PascalCase boundaries -> "-", mirroring _PASCAL_BOUNDARY_RE without lookbehind
+  // (old Safari fails to PARSE a lookbehind, taking the whole script down).
+  var dashed = function (s) {
+    return s.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([A-Z])([A-Z][a-z])/g, "$1-$2");
+  };
+  var decode = function (s) {
+    // A %2F inside ONE segment must not become a structural separator: /blog/foo%2Fbar is a
+    // dynamic slug, and letting it split would match a static /blog/foo/bar and write ITS title.
+    try { var d = decodeURIComponent(s); return d.indexOf("/") < 0 ? d : s; } catch (e) { return s; }
+  };
+  var segments = function (path) { return path.split("/").filter(Boolean).map(decode); };
+  var norm = function (path) {
+    var parts = segments(path).map(function (s) { return dashed(s).toLowerCase(); });
+    return parts.length ? "/" + parts.join("/") : "/";
+  };
+  var lastPath = location.pathname, written = document.title, on = true;
+  var sync = function () {
+    // Path only: a hash/query change is the same page, and the SDK strips its own auth
+    // params with replaceState -- neither must clobber a server-rendered title in place.
+    if (!on || location.pathname === lastPath) return;
+    lastPath = location.pathname;
+    if (document.title !== written) { on = false; return; }
+    // Write ONLY a title the map proves. An unmapped path is a dynamic route (/blog/:slug) the
+    // map cannot carry, and writing a placeholder there is destructive, not merely vague: the
+    // prerender worker runs no setUserAgent, so its capture browser reads as human and executes
+    // this script, and coordinator.js's settle wait explicitly tolerates a full navigation --
+    // a redirect landing on an unmapped path would bake the placeholder into the stored
+    // snapshot. Leaving the title alone degrades to today's behavior instead.
+    // Exact lookup only. A dash-stripped retry here would let a genuinely different /set-up
+    // claim /setup: the map carries a dash-free key only where a PascalCase boundary put the
+    // dashes there, and the client cannot tell the two apart. The map emits every reachable
+    // shape per segment instead (_client_url_variants).
+    var title = titles[norm(location.pathname)];
+    if (title === undefined) return;
+    document.title = title;
+    // Re-read: the setter stores verbatim but the getter strips and collapses whitespace, so
+    // keeping the assigned string would make the next sync() read our own write as the app's.
+    written = document.title;
+  };
+  var wrap = function (fn) {
+    // The history entry is already pushed by the time sync() runs, so a throw here would
+    // surface inside the host app's router and break navigation. This is injected into apps
+    // we cannot test, so it swallows rather than trusting the trace.
+    return function () {
+      var r = fn.apply(this, arguments);
+      try { sync(); } catch (e) {}
+      return r;
+    };
+  };
+  history.pushState = wrap(history.pushState);
+  history.replaceState = wrap(history.replaceState);
+  window.addEventListener("popstate", sync);
+})();
+  </script>
+  <meta content="yes" name="mobile-web-app-capable"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="KAIZEN TRADER" name="apple-mobile-web-app-title"/>
+  <link href="https://thekaizentrader.com" rel="canonical"/>
+  <script data-seo-source="builder" type="application/ld+json">
+   {"name": "KAIZEN TRADER", "@context": "https://schema.org", "@type": "WebSite", "url": "https://thekaizentrader.com"}
+  </script>
+  <script data-seo-source="builder" type="application/ld+json">
+   {"name": "KAIZEN TRADER", "logo": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aa182748da3893ad3da626/64f5a1625_kaizentrader.png", "@context": "https://schema.org", "@type": "Organization", "url": "https://thekaizentrader.com"}
+  </script>
+ </head>
+ <body>
+  <div id="root">
+   <div data-seo-source="builder" id="seo-snapshot" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    <main>
+     <header>
+      <h1>
+       KAIZEN TRADER
+      </h1>
+      <p>
+       KAIZEN TRADER manages 5 data types including backtest entries. Helps you organize, track, and share your work in 1 place for teams and solo users.
+      </p>
+     </header>
+     <nav aria-label="Pages">
+      <h2>
+       Pages
+      </h2>
+      <ul>
+       <li>
+        <a href="/login">
+         Login
+        </a>
+        — Login on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/register">
+         Register
+        </a>
+        — Register on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/forgot-password">
+         Forgot Password
+        </a>
+        — Forgot Password on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/reset-password">
+         Reset Password
+        </a>
+        — Reset Password on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/Landing">
+         Landing Page
+        </a>
+        — Landing on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/Backtesting">
+         Backtesting
+        </a>
+        — Backtesting on KAIZEN TRADER. A sophisticated trading journal and performance analytics suite designed for eli.
+       </li>
+       <li>
+        <a href="/MentalPrep">
+         Mental Prep
+        </a>
+        — Mental Prep on KAIZEN TRADER. A sophisticated trading journal and performance analytics suite designed for eli.
+       </li>
+       <li>
+        <a href="/Progress">
+         Progress
+        </a>
+        — Progress on KAIZEN TRADER. A sophisticated trading journal and performance analytics suite designed for eli.
+       </li>
+       <li>
+        <a href="/Settings">
+         Settings
+        </a>
+        — Settings on KAIZEN TRADER. A sophisticated trading journal and performance analytics suite designed for eli.
+       </li>
+       <li>
+        <a href="/TradingPlan">
+         Trading Plan
+        </a>
+        — A sophisticated trading journal and performance analytics suite designed for elite traders to track execution, analyze edge, and optimize profitability.
+       </li>
+       <li>
+        <a href="/Pricing">
+         Pricing
+        </a>
+        — Pricing on KAIZEN TRADER. A sophisticated trading journal and performance analytics suite designed for eli.
+       </li>
+       <li>
+        <a href="/Quiz">
+         Quiz Page
+        </a>
+        — Quiz on KAIZEN TRADER. A sophisticated trading journal and performance analytics suite designed for eli.
+       </li>
+       <li>
+        <a href="/StrategyLearning">
+         Strategy Learning Page
+        </a>
+        — Strategy Learning on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/ChartScanner">
+         Chart Scanner Page
+        </a>
+        — Chart Scanner on KAIZEN TRADER. A sophisticated trading journal and performance analytics suite designed for eli.
+       </li>
+       <li>
+        <a href="/Courses">
+         Courses Page
+        </a>
+        — Courses on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/Course">
+         Course Page
+        </a>
+        — Course on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/PsychologyCourse">
+         Psychology Course Page
+        </a>
+        — Psychology Course on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/TradingCoach">
+         Trading Coach Page
+        </a>
+        — Trading Coach on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/subscription-management">
+         Subscription Management Page
+        </a>
+        — Subscription Management on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/RiskCalculator">
+         Risk Calculator Page
+        </a>
+        — Risk Calculator on KAIZEN TRADER. KAIZEN TRADER manages 5 data types including backtest entries.
+       </li>
+       <li>
+        <a href="/Coaching">
+         Coaching Page
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </main>
+   </div>
+  </div>
+ </body>
+</html>

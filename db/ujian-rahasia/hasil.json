@@ -1,0 +1,51 @@
+{
+ "waktu": "2026-10-26T11:17:26.961Z",
+ "durasiMs": 3,
+ "totalSoal": 1570,
+ "benar": 1570,
+ "salah": 0,
+ "persen": 100,
+ "lulus": true,
+ "perTipe": {
+  "DETEKSI": {
+   "total": 456,
+   "benar": 456
+  },
+  "AMBANG": {
+   "total": 718,
+   "benar": 718
+  },
+  "PERINGKAT": {
+   "total": 60,
+   "benar": 60
+  },
+  "TIER": {
+   "total": 60,
+   "benar": 60
+  },
+  "PUNCAK": {
+   "total": 45,
+   "benar": 45
+  },
+  "GILA": {
+   "total": 73,
+   "benar": 73
+  },
+  "SUPER": {
+   "total": 43,
+   "benar": 43
+  },
+  "URUTAN": {
+   "total": 40,
+   "benar": 40
+  },
+  "PARITAS": {
+   "total": 75,
+   "benar": 75
+  }
+ },
+ "gagal": [],
+ "jumlahKoinCache": 492,
+ "jumlahKoinDiuji": 386,
+ "iterasiTempa": 2
+}

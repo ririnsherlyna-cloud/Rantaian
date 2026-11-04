@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://github.com/yuxuan-lou/ClawTrade",
+    "name": "yuxuan-lou/ClawTrade - GitHub",
+    "snippet": "ClawTrade is a standalone security middleware that allows AI agents (such as OpenClaw) to safely operate your brokerage account. Missing:  bot  | Show results with:",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/clawtradeai-Agent/ClawTradeAI",
+    "name": "ClawTrade AI - GitHub",
+    "snippet": "ClawTrade AI is an open-source autonomous trading platform built on Solana using a multi-agent AI architecture. It scans, analyzes, and executes trades in real ...",
+    "host_name": "github.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/seetinc10/clawdtrader",
+    "name": "seetinc10/clawdtrader: ai autonomous trader - GitHub",
+    "snippet": "An AI-assisted U.S.-equity paper-trading workbench. The bot runs in two modes with a one-way latch — fast hunting at the open, then quiet monitoring",
+    "host_name": "github.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/topics/trade?l=python",
+    "name": "trade · GitHub Topics",
+    "snippet": "Cryptocurrency trading bot with a graphical user interface with support for simulations, backtests, optimizations, and running live bots. python bot crypto ...",
+    "host_name": "github.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@gwrx2005/top-10-ai-powered-crypto-trading-repositories-on-github-0041862546b6",
+    "name": "Top 10 AI-Powered Crypto Trading Repositories on GitHub",
+    "snippet": "Freqtrade is a popular open-source crypto trading bot that supports strategy development, backtesting, and live trading. Missing:  ClawTrade  | Show results with:",
+    "host_name": "medium.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/openclaw/comments/1r97g5e/open_claw_trading_bot",
+    "name": "Open Claw Trading Bot : r/openclaw - Reddit",
+    "snippet": "Open Claw Trading Bot Discussion. Website: https://openclaw.ai Docs: ClawHub: https://www.clawhub.com GitHub: https://github.com/openclaw/ ...",
+    "host_name": "www.reddit.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://nexustrade.io/blog/too-many-idiots-are-using-openclaw-to-trade-heres-how-to-trade-with-ai-the-right-way-20260203",
+    "name": "OpenClaw Trading Bots: Risks, Failures, and a Safer Architecture",
+    "snippet": "OpenClaw trading bots fail when LLMs trade on vibes. You can build your own using open-source tools and free resources on my blog. free tool ...",
+    "host_name": "nexustrade.io",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/BlockRunAI/awesome-OpenClaw-Money-Maker",
+    "name": "BlockRunAI/awesome-OpenClaw-Money-Maker - GitHub",
+    "snippet": "Free, open-source crypto trading bot. Supports all major exchanges. Open source market making and liquidity mining bot. Supports 40+ CEXs/DEXs. Customizable ...",
+    "host_name": "github.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.octobot.cloud/en/blog/best-open-source-crypto-trading-bots",
+    "name": "5 Best Open-Source Crypto Trading Bots - OctoBot Cloud",
+    "snippet": "An open-source crypto trading bot runs on code you can inspect on GitHub, while your funds stay on your exchange. Free self-hosted versions ... Missing:  ClawTrade  | Show results with:",
+    "host_name": "www.octobot.cloud",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://openclawai.me",
+    "name": "OpenClaw - Your Personal AI Assistant | Smart Trading",
+    "snippet": "OpenClaw is an open-source, self-hosted personal AI assistant with proactive capabilities. The Heartbeat Engine monitors conditions and initiates actions ...",
+    "host_name": "openclawai.me",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]

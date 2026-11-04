@@ -1,0 +1,10 @@
+{
+  "id": "2026-10-15T08-05-58_PRA-TEMPA-V301-akurasi-menurun",
+  "label": "PRA-TEMPA-V301-akurasi-menurun",
+  "createdAt": "2026-10-15T08:05:58.381Z",
+  "gitSha": "3243d4b",
+  "catatan": "Titik pemulihan MICAPROFITA (permintaan pemilik 2026-10-15: bahan rollback abadi).",
+  "db": {
+    "customDbBytes": 618496
+  }
+}

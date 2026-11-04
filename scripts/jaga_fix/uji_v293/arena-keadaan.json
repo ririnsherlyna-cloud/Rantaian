@@ -1,0 +1,64 @@
+{
+  "today": "2026-10-07",
+  "todayPicks": [
+    {
+      "competitor": "MICAPROFITA",
+      "symbol": "VANRYUSDT",
+      "direction": "SELL",
+      "confidence": 31,
+      "entryClose": 0.00074,
+      "evidence": {
+        "reason": "VANRY dibaca dalam rezim TURUN — selaras rezim pasar · harga 0.000740000 dengan ATR14 21.62% (satu hari normal bisa melampaui ±105",
+        "sumber": "SAKTI denyut #71",
+        "jalur": "ARAH"
+      }
+    }
+  ],
+  "slotHariIni": {
+    "day": "2026-10-07",
+    "k": 1,
+    "lahir": 1,
+    "ditolak": []
+  },
+  "venaSatuRumah": {
+    "sumber": "laporan/sasaran-terkini.json",
+    "siklus": 71,
+    "dihasilkan": "2026-10-07T06:23:46.614Z",
+    "sasaran": [
+      "VANRY"
+    ],
+    "ket": "arena, laporan sasaran, dan ruang-hidup kini ditulis denyut SAKTI yang sama — satu kebenaran, bukan tiga pulau"
+  },
+  "narasiLLM": {
+    "aktif": false,
+    "model": null,
+    "narasi": null,
+    "kritik": null,
+    "ket": "kunci LLM belum dipasang di repo (Secrets LLM_URL/LLM_KEY kosong) — denyut menganalisa dengan mesin nalar lokal penuh; otak-LLM menyala otomatis begitu kunci terpasang, tanpa pura-pura"
+  },
+  "narasiBiner": {
+    "aktif": true,
+    "sumber": "matematika-murni-lokal (tanpa kunci, tanpa server luar)",
+    "narasi": "Aku menyusun nalar ini sendiri dari biner — angka mentah pasar, modal matematika murni, seperti perintis roket membaca orbit dari hitungan, bukan dari dongeng: 255 koin kuambil lilinnya tiap denyut (dulu 10 beku, kini tanpa blokir), tiap koin kubedah Hurst, half-life, drift, entropi, Monte Carlo — lalu yang benar-benar lolos hitungan jadi sasaran: VANRY SELL. Kunci luar tidak kutunggu — hitunganku jalan penuh tanpa itu; dan koin yang menang kemarin bila matematikanya masih memilih dia, ya dia dijalankan lagi — kupelajari lebih dalam, tidak kublokir.",
+    "langkah": [
+      {
+        "tahap": "biner → lilin",
+        "hasil": "255 koin ditarik lilin 1 jam mentahnya tiap denyut (OHLCV = angka murni dari pasar, bukan opini siapa pun) — dulu hanya 10 koin beku"
+      },
+      {
+        "tahap": "lilin → statistika",
+        "hasil": "BTC: Hurst 0.662 (cenderung TREN) · half-life 8 jam · drift-OLS 24j -1.45% · ret24 -1.32% · ret1h -0.18% · breadth 21% koin naik → rezim TURUN"
+      },
+      {
+        "tahap": "statistika → ekonomi",
+        "hasil": "funding BTC 0.0015% (siapa membayar siapa) · kerucut MC 72j P(naik) 62% · barometer bear-harian: organ pengikat menyala"
+      },
+      {
+        "tahap": "statistika → vonis",
+        "hasil": "VANRY SELL (key 31) — hasil bedah penuh 254 koin denyut ini"
+      }
+    ],
+    "gagal": null
+  },
+  "_eksporAt": "2026-10-07T06:23:46.614Z"
+}

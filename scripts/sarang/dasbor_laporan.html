@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MICAPROFITA SAKTI — cyborg dagang kripto otonom: sasaran harian pra-registrasi, ledger jujur ber-Brier, otak berdenyut 30 menit di GitHub Actions.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#070b17">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%230f1730' stroke='%2322d3ee' stroke-width='7'/><text x='50' y='64' font-size='40' text-anchor='middle' fill='%2322d3ee' font-family='monospace' font-weight='bold'>S</text></svg>">
+<title>MICAPROFITA — Laporan Sasaran Server</title>
+<style>
+  :root{
+    --bg:#070b17; --bg2:#0b1226;
+    --kartu:#0f1730; --kartu2:#152040; --garis:#1e2a4e; --garis2:#2c3d6b;
+    --teks:#eaf0fb; --redup:#94a1c2; --samar:#5f6d92;
+    --sian:#22d3ee; --hijau:#34d399; --merah:#fb7185; --amber:#fbbf24; --violet:#a78bfa;
+    --radius:16px; --radius-s:10px;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:radial-gradient(1300px 700px at 85% -10%,#12204a 0%,var(--bg2) 45%,var(--bg) 80%);
+    color:var(--teks);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:70px}
+  .bungkus{max-width:1120px;margin:0 auto;padding:0 16px}
+  a{color:var(--sian)}
+  button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--sian);outline-offset:2px;border-radius:6px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+  /* ===== NAV ===== */
+  nav.top{position:sticky;top:0;z-index:60;background:rgba(7,11,23,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--garis)}
+  nav .dalam{max-width:1120px;margin:0 auto;padding:9px 16px;display:flex;gap:14px;align-items:center}
+  .brand{font-weight:800;letter-spacing:.6px;font-size:15px;white-space:nowrap}
+  .brand b{color:var(--sian)}
+  .tautan{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+  .tautan::-webkit-scrollbar{display:none}
+  .tautan a{color:var(--redup);text-decoration:none;font-size:12.5px;padding:6px 11px;border-radius:999px;white-space:nowrap;transition:color .15s,background .15s}
+  .tautan a:hover{color:var(--teks)}
+  .tautan a.aktif{color:#04101c;background:var(--sian);font-weight:700}
+  .navkanan{display:flex;gap:8px;align-items:center;flex:none}
+  #btnSegar{background:var(--kartu);border:1px solid var(--garis);color:var(--teks);width:34px;height:34px;border-radius:10px;
+    font-size:16px;cursor:pointer;transition:transform .4s,border-color .15s}
+  #btnSegar:hover{border-color:var(--sian)}
+  #btnSegar.putar{transform:rotate(360deg);transition:transform .6s}
+  /* ===== CHIP ===== */
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--kartu);border:1px solid var(--garis);
+    border-radius:999px;padding:5px 12px;font-size:12.5px;color:var(--redup);white-space:nowrap}
+  .chip b{color:var(--teks);font-family:var(--mono)}
+  .led{width:8px;height:8px;border-radius:50%;background:var(--hijau);box-shadow:0 0 8px var(--hijau);animation:dup 1.6s infinite;flex:none}
+  @keyframes dup{50%{opacity:.35}}
+  /* ===== HERO ===== */
+  .hero{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;margin:26px 0 22px}
+  .hero h1{font-size:26px;letter-spacing:.5px}
+  .hero h1 b{color:var(--sian)}
+  .misi{color:var(--redup);font-size:13.5px;max-width:660px;margin-top:8px}
+  .misi b{color:var(--teks)}
+  .chipbar{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:420px}
+  /* ===== KPI ===== */
+  .ringkas{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:8px}
+  .kartu{background:linear-gradient(180deg,var(--kartu2),var(--kartu));border:1px solid var(--garis);border-radius:var(--radius);padding:16px;transition:border-color .15s}
+  .kartu:hover{border-color:var(--garis2)}
+  .kartu .label{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--samar);margin-bottom:8px}
+  .angka-besar{font-size:30px;font-weight:700;font-family:var(--mono);line-height:1.15}
+  .angka-besar.pos{color:var(--hijau)} .angka-besar.neg{color:var(--merah)}
+  .sub{color:var(--redup);font-size:12px;margin-top:6px;line-height:1.5}
+  .sub b{color:var(--teks)}
+  /* ===== SEKSI ===== */
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:1.6px;color:var(--redup);margin:34px 0 12px;display:flex;align-items:center;gap:10px;scroll-margin-top:64px}
+  h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--garis),transparent)}
+  h3{font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--samar);margin:18px 0 8px}
+  /* ===== SASARAN ===== */
+  .sasaran-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+  .sasaran{background:linear-gradient(180deg,var(--kartu2),var(--kartu));border:1px solid var(--garis);
+    border-radius:var(--radius);padding:18px;position:relative;overflow:hidden;box-shadow:0 8px 26px rgba(0,0,0,.28)}
+  .sasaran::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--sian)}
+  .sasaran.buy::before{background:var(--hijau)} .sasaran.sell::before{background:var(--merah)}
+  .atas{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .simbol{font-size:24px;font-weight:800;letter-spacing:1px}
+  .entry-line{font-family:var(--mono);color:var(--redup);font-size:12.5px;margin-top:3px}
+  .arah{font-family:var(--mono);font-weight:700;font-size:13px;padding:4px 11px;border-radius:9px;flex:none}
+  .arah.buy{background:rgba(52,211,153,.14);color:var(--hijau)} .arah.sell{background:rgba(251,113,133,.14);color:var(--merah)}
+  .badgephx{display:inline-block;background:rgba(251,191,36,.14);color:var(--amber);font-family:var(--mono);
+    font-weight:700;font-size:10.5px;padding:2px 8px;border-radius:7px;margin-left:6px;vertical-align:middle}
+  .cincin{width:62px;height:62px;flex:none}
+  .cincin circle{fill:none;stroke-width:6}
+  .cincin .cbg{stroke:#0d1428}
+  .cincin .cfg{stroke:var(--hijau);stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset .7s ease}
+  .cincin.sell .cfg{stroke:var(--merah)}
+  .cincin text{fill:var(--teks);font-family:var(--mono);font-weight:700}
+  .cincin-wrap{text-align:center;font-size:10px;color:var(--samar);text-transform:uppercase;letter-spacing:1px}
+  .tangga{margin-top:14px;border:1px solid var(--garis);border-radius:12px;overflow:hidden}
+  .trow{display:grid;grid-template-columns:1fr auto 64px 46px;gap:8px;padding:7px 12px;font-family:var(--mono);font-size:12px;
+    border-bottom:1px solid rgba(30,42,78,.5);background:rgba(15,23,48,.55);align-items:center}
+  .trow:last-child{border-bottom:none}
+  .trow .tlbl{color:var(--redup);font-family:system-ui;font-size:11.5px}
+  .trow .tp{font-weight:700;text-align:right}
+  .trow .tpct{text-align:right;color:var(--samar);font-size:11px}
+  .trow .tpr{text-align:right;color:var(--violet);font-size:10.5px;white-space:nowrap}
+  .trow.amb .tp,.trow.amb .tpct{color:var(--amber)}
+  .trow.tgt .tp,.trow.tgt .tpct{color:var(--hijau)}
+  .trow.stp .tp,.trow.stp .tpct{color:var(--merah)}
+  .trow.ent{background:rgba(34,211,238,.08)}
+  .trow.ent .tp{color:var(--sian)} .trow.ent .tpct{color:var(--sian)}
+  .kettarget{color:var(--redup);font-size:11.5px;margin-top:6px}
+  .pitaref{font-family:var(--mono);font-size:11.5px;color:var(--amber);margin-top:4px}
+  .mcline{font-family:var(--mono);font-size:11.5px;color:var(--violet);margin-top:4px}
+  .evline{font-family:var(--mono);font-size:11.5px;color:var(--hijau);margin-top:4px}
+  .evline.neg{color:var(--merah)}
+  .tangga2{margin-top:8px}
+  .mesin{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+  .mesin span{background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.25);color:#bfe9f2;
+    padding:5px 11px;border-radius:9px;font-size:11.5px}
+  .ketkal{color:var(--redup);font-size:11.5px;margin-top:4px}
+  .daya{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+  .ddim{background:rgba(13,20,40,.6);border:1px solid var(--garis);border-radius:9px;padding:7px 9px}
+  .ddim span{font-size:10.5px;color:var(--samar);text-transform:uppercase;letter-spacing:.8px;display:block}
+  .ddim .dbar{height:4px;border-radius:3px;background:#0d1428;margin:5px 0 4px;overflow:hidden}
+  .ddim .dbar i{display:block;height:100%;background:linear-gradient(90deg,var(--sian),var(--violet))}
+  .ddim b{font-family:var(--mono);font-size:11px;color:var(--redup)}
+  .bukti{margin-top:12px;display:grid;gap:5px}
+  .dim{display:grid;grid-template-columns:82px 64px 1fr;gap:8px;align-items:center;font-size:12px}
+  .dim .nm{color:var(--redup)}
+  .dim .bar{position:relative;height:6px;border-radius:4px;background:#0d1428}
+  .dim .bar i{position:absolute;top:0;bottom:0;border-radius:4px}
+  .dim .ket{color:var(--samar);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sasaran-kaki{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .chiprezim{display:inline-block;font-size:11px;padding:3px 8px;border-radius:6px;
+    background:rgba(34,211,238,.1);color:var(--sian);border:1px solid rgba(34,211,238,.25)}
+  .salin{background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.4);color:var(--sian);
+    font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.8px;padding:6px 12px;border-radius:9px;cursor:pointer;transition:background .15s}
+  .salin:hover{background:rgba(34,211,238,.22)}
+  .salin.ok{background:rgba(52,211,153,.18);border-color:var(--hijau);color:var(--hijau)}
+  /* ===== V253 WAWASAN 360 ===== */
+  .iklim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .iklim-grid .kartu{margin:0;padding:12px 14px}
+  .iklim-grid .angka{font-family:var(--mono);font-size:19px;font-weight:700;margin-top:3px}
+  .narasi-makro{background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.22);border-radius:12px;
+    padding:14px 16px;margin-top:12px;font-size:13.5px;line-height:1.75;color:#d8dcae}
+  .narasi-makro b{color:var(--sian)}
+  .narasi{background:rgba(21,32,64,.5);border-left:3px solid var(--violet);border-radius:0 10px 10px 0;
+    padding:11px 13px;margin-top:12px;font-size:12.8px;line-height:1.7;color:#d8dcae}
+  .wawgrid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .wchip{font-family:var(--mono);font-size:10.8px;padding:3px 9px;border-radius:8px;cursor:default;
+    border:1px solid var(--garis);color:var(--redup);background:rgba(13,20,40,.6)}
+  .wchip.up{border-color:rgba(52,211,153,.45);color:var(--hijau);background:rgba(52,211,153,.07)}
+  .wchip.dn{border-color:rgba(251,113,133,.45);color:var(--merah);background:rgba(251,113,133,.07)}
+  .wchip b{font-weight:700}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin:0 auto}
+  .dot.up{background:var(--hijau)} .dot.dn{background:var(--merah)} .dot.nt{background:var(--samar)}
+  .wtd-h{font-size:10px;color:var(--samar);text-transform:uppercase;letter-spacing:.5px}
+  /* ===== TABEL ===== */
+  .tabel{width:100%;border-collapse:collapse;background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);overflow:hidden;font-size:13px}
+  .tabel th{background:#0d1530;color:var(--samar);text-transform:uppercase;font-size:10.5px;letter-spacing:1px;
+    text-align:left;padding:10px 12px;border-bottom:1px solid var(--garis);position:sticky;top:0}
+  .tabel td{padding:9px 12px;border-bottom:1px solid rgba(30,42,78,.55);font-family:var(--mono);font-size:12.5px}
+  .tabel tr:last-child td{border-bottom:none}
+  .tabel tbody tr:hover td{background:rgba(21,32,64,.45)}
+  .st{padding:2px 9px;border-radius:6px;font-size:11px;font-weight:700}
+  .st.TERBUKA{background:rgba(251,191,36,.14);color:var(--amber)}
+  .st.BENAR{background:rgba(52,211,153,.14);color:var(--hijau)}
+  .st.SALAH{background:rgba(251,113,133,.14);color:var(--merah)}
+  .st.RACUN{background:rgba(251,113,133,.16);color:var(--merah)}
+  .st.EMAS{background:rgba(52,211,153,.16);color:var(--hijau)}
+  .st.NETRAL{background:rgba(148,163,184,.14);color:var(--redup)}
+  .st.MEMBAIK{background:rgba(52,211,153,.16);color:var(--hijau)}
+  .st.MUNDUR{background:rgba(251,113,133,.16);color:var(--merah)}
+  .st.BELUM-CUKUP{background:rgba(251,191,36,.14);color:var(--amber)}
+  .net-pos{color:var(--hijau)} .net-neg{color:var(--merah)}
+  .gulir{overflow-x:auto;border-radius:var(--radius)}
+  /* ===== FILTER LEDGER ===== */
+  .filterbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+  .fchip{background:var(--kartu);border:1px solid var(--garis);color:var(--redup);font-size:12px;
+    padding:6px 13px;border-radius:999px;cursor:pointer;user-select:none;transition:all .15s}
+  .fchip:hover{color:var(--teks);border-color:var(--garis2)}
+  .fchip.aktif{background:var(--sian);border-color:var(--sian);color:#04101c;font-weight:700}
+  .fchip input{margin-right:5px;accent-color:var(--amber)}
+  #cari{background:var(--kartu);border:1px solid var(--garis);color:var(--teks);border-radius:999px;
+    padding:6px 14px;font-size:12.5px;min-width:150px;font-family:var(--mono)}
+  #cari::placeholder{color:var(--samar)}
+  /* ===== GENOME ===== */
+  .genome-dua{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+  .genome{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-top:10px}
+  .gdim{background:var(--kartu);border:1px solid var(--garis);border-radius:10px;padding:11px 12px}
+  .gdim .nm{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;color:var(--redup)}
+  .gdim .nm b{font-family:var(--mono);color:var(--sian)}
+  .gdim .bar{height:6px;border-radius:4px;background:#0d1428;overflow:hidden}
+  .gdim .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--sian),#60a5fa)}
+  /* ===== DENYUT TIMELINE ===== */
+  .garis-waktu{position:relative;padding-left:20px}
+  .garis-waktu::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--garis2);border-radius:2px}
+  .garis-waktu .baris{position:relative;margin-bottom:8px;background:var(--kartu);border:1px solid var(--garis);
+    border-radius:10px;padding:8px 12px;font-family:var(--mono);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
+  .garis-waktu .baris::before{content:"";position:absolute;left:-19px;top:14px;width:8px;height:8px;border-radius:50%;
+    background:var(--sian);box-shadow:0 0 6px var(--sian)}
+  .garis-waktu .w{color:var(--samar)}
+  .garis-waktu b{color:var(--sian)}
+  /* ===== PANEL KHAS ===== */
+  .jnote{background:rgba(34,211,238,.06);border:1px solid rgba(34,211,238,.25);border-radius:12px;padding:13px 15px;margin-top:10px;font-size:12.5px;color:#bfe9f2}
+  .peringatan{border:1px solid var(--amber);border-radius:12px;padding:12px 14px;background:rgba(255,180,60,.06)}
+  .peringatan li{margin-left:18px;font-size:12.5px;color:#d8dcae;margin-top:4px}
+  .mandatbox{border:1px solid var(--sian);border-radius:12px;padding:12px 14px;background:rgba(34,211,238,.06)}
+  .catatan{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.22);border-radius:12px;padding:14px 16px;margin-top:34px}
+  .catatan li{margin-left:18px;color:#d8dcae;font-size:12.5px;margin-top:5px}
+  .langkah{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .langkah span{background:rgba(167,139,250,.09);border:1px solid rgba(167,139,250,.3);color:#cabffa;
+    padding:3px 10px;border-radius:8px;font-size:11px;font-family:var(--mono)}
+  .langkah span:last-child{background:var(--violet);border-color:var(--violet);color:#170b2e;font-weight:700}
+  .galat{background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.35);color:var(--merah);
+    border-radius:12px;padding:16px;margin:12px 0;display:none}
+  footer{margin-top:30px;color:var(--redup);font-size:12.5px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--garis);padding-top:18px}
+  footer a{color:var(--sian);text-decoration:none} footer a:hover{text-decoration:underline}
+  @media(max-width:600px){
+    .hero{margin-top:18px} .hero h1{font-size:21px} .chipbar{justify-content:flex-start;max-width:none}
+    .angka-besar{font-size:25px} .dim{grid-template-columns:70px 52px 1fr}
+    .trow{grid-template-columns:1fr auto 60px} .cincin{width:54px;height:54px}
+    nav .dalam{gap:8px} .brand{font-size:13px}
+  }
+</style>
+</head>
+<body>
+<nav class="top"><div class="dalam">
+  <div class="brand">MICAPROFITA · <b>SAKTI</b></div>
+  <div class="tautan" id="navLinks">
+    <a href="#sasaran-sec">Sasaran</a>
+    <a href="#wawasan-sec">Wawasan 360°</a>
+    <a href="#metakognisi-sec">Metakognisi</a>
+    <a href="#dualapis-sec">Dua Lapis Otak</a>
+    <a href="#dealodds-sec">Deal &amp; Odds</a>
+    <a href="#gekko-sec">Gekko</a>
+    <a href="#kaizen-sec">Kaizen</a>
+    <a href="#autopilot-sec">AutoPilot</a>
+    <a href="#claw-sec">ClawTrade</a>
+    <a href="#bahan-ajar-sec">Bahan Ajar</a>
+    <a href="#ilmu-sec">Ilmu</a>
+    <a href="#warisan-sec">Warisan</a>
+    <a href="#piagam-sec">Piagam</a>
+    <a href="#sadar-sec">Sadar-Diri</a>
+    <a href="#forensik-sec">Forensik</a>
+    <a href="#ruh-sec">Ruh &amp; Guru</a>
+    <a href="#ledger-sec">Ledger</a>
+    <a href="#otak-sec">Otak</a>
+    <a href="#denyut-sec">Denyut</a>
+  </div>
+  <div class="navkanan">
+    <span class="chip"><span class="led"></span>denyut <b id="siklus">…</b></span>
+    <button id="btnSegar" title="Segarkan sekarang" aria-label="Segarkan data">&#8635;</button>
+  </div>
+</div></nav>
+
+<div class="bungkus">
+  <div class="galat" id="galat"></div>
+  <noscript><div class="galat" style="display:block">Dasbor ini butuh JavaScript untuk memuat laporan server.</div></noscript>
+
+  <header class="hero">
+    <div>
+      <h1>MICAPROFITA · <b>SARANG</b></h1>
+      <p class="misi"><b>MISI: guru trader profesional</b> — sasaran harian makin jarang meleset menuju selalu-untung, diukur jujur dari ledger. Otak cyborg hidup di GitHub Actions tanpa browser, berdenyut tiap 30 menit, pra-registrasi sebelum pergerakan. <a href="../TUJUAN.md">baca TUJUAN lengkap</a></p>
+    </div>
+    <div class="chipbar">
+      <span class="chip">organ <b id="organ">…</b></span>
+      <span class="chip">sumber <b id="sumber">…</b></span>
+      <span class="chip">BTC <b id="rezimbtc">…</b></span>
+      <span class="chip">radar <b id="radarchip">…</b></span>
+      <span class="chip">kompas <b id="kompaschip">…</b></span>
+      <span class="chip">wawasan <b id="dimchip">…</b></span>
+      <span class="chip">odds top <b id="oddschip">…</b></span>
+      <span class="chip">suhu <b id="suhuchip">…</b></span>
+      <span class="chip">dimutakhir <b id="waktu">…</b></span>
+    </div>
+  </header>
+
+  <section class="ringkas">
+    <div class="kartu">
+      <div class="label">Akurasi Prediksi (net setelah fee 0.2%)</div>
+      <div class="angka-besar" id="akurasi">—</div>
+      <div class="sub" id="akurasi-sub">menunggu horizon 24 jam pertama</div>
+    </div>
+    <div class="kartu">
+      <div class="label">Jendela 7 Hari</div>
+      <div class="angka-besar" id="ak7">—</div>
+      <div class="sub" id="ak7-sub">dinilai 0</div>
+    </div>
+    <div class="kartu">
+      <div class="label">Net Kumulatif</div>
+      <div class="angka-besar" id="netkum">—</div>
+      <div class="sub" id="netkum-sub">seluruh vonis matang, setelah fee</div>
+    </div>
+    <div class="kartu">
+      <div class="label">Pertumbuhan</div>
+      <div class="angka-besar" id="tumbuh">—</div>
+      <div class="sub" id="tumbuh-sub">terkunci · dinilai</div>
+    </div>
+    <div class="kartu">
+      <div class="label">Generasi Otak</div>
+      <div class="angka-besar" id="generasi">—</div>
+      <div class="sub" id="generasi-sub">generasi · rezim</div>
+    </div>
+  </section>
+
+  <h2 id="sasaran-sec">Sasaran Utama Hari Ini</h2>
+  <div class="sasaran-grid" id="sasaran"></div>
+  <template id="tpl-sasaran">
+    <div class="sasaran">
+      <div class="atas">
+        <div><div class="simbol"></div><div class="entry-line"></div></div>
+        <div class="cincin-wrap">
+          <svg class="cincin" viewBox="0 0 72 72" aria-hidden="true">
+            <circle class="cbg" cx="36" cy="36" r="30"></circle>
+            <circle class="cfg" cx="36" cy="36" r="30"></circle>
+            <text x="36" y="41" text-anchor="middle" font-size="15"></text>
+          </svg>
+          <div>keyakinan</div>
+        </div>
+      </div>
+      <div class="tangga"></div>
+      <div class="kettarget"></div>
+      <div class="pitaref" style="display:none"></div>
+      <div class="mcline"></div>
+      <div class="evline"></div>
+      <div class="tangga2"></div>
+      <div class="daya"></div>
+      <div class="bukti"></div>
+      <div class="narasi" style="display:none"></div>
+      <div class="wawgrid"></div>
+      <div class="metakog" style="margin-top:8px"></div>
+      <div class="dealbox" style="margin-top:8px"></div>
+      <div class="ketkal"></div>
+      <div class="sasaran-kaki">
+        <span class="chiprezim"></span>
+        <button class="salin" type="button">SALIN RENCANA</button>
+      </div>
+    </div>
+  </template>
+
+  <h3>Kandidat Lain</h3>
+  <div class="gulir"><table class="tabel kandidat">
+    <thead><tr><th>Simbol</th><th>Arah</th><th>Keyakinan</th><th>Entry</th><th>Rezim</th><th>Keterangan</th></tr></thead>
+    <tbody id="kandidat"><tr><td colspan="6" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+
+  <h2 id="wawasan-sec">Wawasan Pasar 360° — Samudra Parameter, Satu Bacaan</h2>
+  <div class="sub" style="margin-top:-6px">mandat pemilik: AGI harus fasih &amp; matang — komite menimbang <b>12 dimensi berbobot</b> dalam registri <b>101 parameter bernama</b> (46 per kandang: multi-TF 1h+4h, riwayat funding, order book, lintas-pasar, kalender, GARCH/MC <b>+ 35 metakognitif Nevron</b> + <b>20 mesin deal/odds 3Commas×Trade Ideas</b> yang merekayasa rencana posisi &amp; meranking peluang) + <b>sekolah parameter</b> (hit-rate tiap param dinilai medan) + <b>gerbang veto</b> &amp; <b>gerbang metakognitif</b> (no-trade adalah keputusan); param konstan per siklus masuk iklim, bukan pemilih arah</div>
+  <div class="iklim-grid" id="iklim" style="margin-top:12px"></div>
+  <div class="narasi-makro" id="narasi-makro">—</div>
+  <div id="veto-waw" style="margin-top:10px"></div>
+  <div class="gulir" style="margin-top:12px"><table class="tabel">
+    <thead id="waw-head"><tr><th>Simbol</th><th>Rezim</th><th>Funding</th><th>OI / Δ</th><th id="waw-cols" colspan="12" style="text-align:center">12 parameter inti berbobot (arah param — arahkan kursor untuk bacaan analis; 232 param bernama di wawasan.json)</th></tr></thead>
+    <tbody id="waw-body"><tr><td colspan="16" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+  <div id="sekolah-box" style="margin-top:12px"></div>
+
+  <h2 id="metakognisi-sec">Metakognisi Nevron — Otak Menilai Dirinya Sendiri Sebelum Bertaruh</h2>
+  <div class="sub" style="margin-top:-6px">hasil deep-screening <b>Neurobro AI</b> (neurobro.ai, Axioma AI Labs) yang framework-nya open-source sebagai <b>Nevron</b> (github axioma-ai-labs/nevron): 7 kunci arsitektur diadopsi &amp; diadaptasi ke ledger pra-registrasi SAKTI — estimator keyakinan 7-faktor, prediktor kegagalan pra-kunci, bias konteks, deteksi loop, kritik diri 5-field, reliabilitas pelajaran, monitor intervensi — dan kalibrasi kedua gerbangnya DINILAI MEDAN</div>
+  <div id="metakognisi-box" style="margin-top:12px"></div>
+
+  <h2 id="dualapis-sec">Dua Lapis Otak — Kenapa Versi Chat Terasa Lebih Canggih</h2>
+  <div class="sub" style="margin-top:-6px">jawaban jujur atas pertanyaan pemilik (<i>"kenapa micaprofita di arena AGI jauh lebih canggih daripada versi GitHub, padahal dua-duanya kamu yang kelola?"</i>): arena/chat adalah <b>LAPIS OTAK</b> — model bahasa berskala triliunan parameter yang bicara langsung dengan Anda, dengan akses web real-time dan memori penuh. GitHub adalah <b>LAPIS TUBUH</b> — otak otonom yang hidup di Actions tanpa browser pemilik, tanpa biaya, dan TIDAK disewakan kecerdasan model oleh infrastruktur; ia hanya diberi CPU + jaringan publik. Karena itu tubuh diberi lapisan wawasan yang dulu hanya ada di kepala: setiap epoch, otak menuliskan pengalamannya menjadi parameter terukur di bawah — dan tubuh makin fasih. Ini proses, diukur, bukan diklaim.</div>
+  <div id="dualapis-box" style="margin-top:12px"></div>
+
+  <h2 id="dealodds-sec">Mesin Deal &amp; Odds — Warisan 3Commas × Trade Ideas</h2>
+  <div class="sub" style="margin-top:-6px">hasil deep-screening dua platform trading-AI profesional (dokumentasi resmi help.3commas.io + trade-ideas.com): tiap sasaran kini lahir dengan <b>rencana deal lengkap</b> — safety orders ala DCA-bot (Max SO hard-cap, deviasi ATR berkelipatan, volume multiplier), Move SL to Breakeven, Trailing Take Profit — dipra-registrasi lalu <b>dinilai medan</b> saat horizon matang; dan setiap denyut SEMUA kandidat diranked <b>odds 0-100</b> ala OddsMaker (40% MC + 25% zona + 20% metakognisi + 15% daya) — hanya <b>top-3 terkuat (Money Machine)</b> berodds ≥ 55 yang boleh mengunci; 6 tag peristiwa event-based dinilai hit-rate-nya: pinpoint winning filters, eliminate losing variables</div>
+  <div id="dealodds-box" style="margin-top:12px"></div>
+
+  <h2 id="gekko-sec">Warisan Gekko — Prediksi Kolektif (Allora) &amp; Keberanian Terukur (CZAR)</h2>
+  <div class="sub" style="margin-top:-6px">hasil deep-screening <b>Gekko Agent</b> (Axal × Virtuals × Allora — agen trading AI di Base) + <b>CZAR Loss</b> (Allora Foundation, arXiv 2609.36061): 6 topik pekerja memberi <b>suara kolektif bertingkat-regret</b> ala Allora Topics — bobot topik berubah dari medan, tidak ada yang berkuasa permanen; tiap vonis matang ditilang <b>CZAR</b> — kemenangan kecil ≈ nol credit, kekalahan kena floor + kuadratik — lalu <b>akurasi-impas</b> dihitung dari rata menang/rugi medan sendiri; <b>ekspresi dinamis 0.25–1.0×</b> (Allora×G.A.M.E), <b>divergensi</b> ramalan vs probabilitas pasar, <b>suhu Autopilot</b> (AGRESIF/NETRAL/BERTAHAN terikat-batas — PF&lt;1 memaksa BERTAHAN), dan <b>sidik sha256 pra-registrasi</b> di tiap prediksi (verifiable autonomy)</div>
+  <div id="gekko-box" style="margin-top:12px"></div>
+
+  <h2 id="kaizen-sec">Warisan Kaizen — Empat Loop Penyembuhan-Diri (Uji-Balik, Karantina, Dingin-Dendam, Henti-Harian)</h2>
+  <div class="sub" style="margin-top:-6px">hasil deep-screening keluarga <b>"Kaizen Trader"</b> (prateekjain98/kaizen-trader open-source yang kodenya dibedah — rule_brain.py/claude_brain.py — + KAIZEN Virtuals/Hyperliquid + Kaizen RegimeBot + kaizen.cash): filosofi kaizen (改善 — perbaikan berkelanjutan) diterjemahkan jadi mekanisme — <b>uji-balik</b> (delta-revert: perubahan genome adalah eksperimen yang dinilai medan per 8 vonis, lebih buruk DIREVERT), <b>karantina</b> (rule-healer: topik yang terus keliru disita suaranya), <b>dingin-dendam</b> (anti-revenge: kekalahan beruntun membekukan re-entry 4 jam), <b>henti-harian</b> (rugi ≤ −4% memaksa BERTAHAN), <b>kesegaran</b> (pompa-tua ditolak ala "fresh breakouts &gt; stale pumps"), <b>modal-mati &amp; tesis-patah</b> (chop/thesis-break exit diukur), dan <b>penjaga-kedua</b> (hard-stop 15%/target 40% ala watchdog proses-terpisah)</div>
+  <div id="kaizen-box" style="margin-top:12px"></div>
+
+  <h2 id="autopilot-sec">Warisan AutoPilot — Tujuh Kunci Kalibrasi (Timbangan-Alt, Kelly-Lapis, Rezim-Medan, Uji-Tegang, Slip-Neto, Peluang-Skor, Top-Tolak)</h2>
+  <div class="sub" style="margin-top:-6px">hasil deep-screening <b>AutoPilotPM</b> (recogardtech/AutoPilotPM — sistem trading otonom open-source MIT, kode sumber TypeScript 95 modul dibedah: decision ledger, risk engine 10 gerbang, dynamic Kelly): kejujuran kalibrasi diterjemahkan jadi mekanisme — <b>timbangan-alt</b> (alternativesConsidered: pilihan kedua disegel saat kunci, regret-nya dihitung medan saat matang), <b>kelly-lapis</b> (ukuran menyusut otomatis saat drawdown, sampel kecil, streak kalah, volatilitas melebihi target), <b>rezim-medan</b> (4 rezim σ-P&amp;L dengan baseline MANDIRI — kalibrasi dari window penuh pertama milik sendiri; ekstrem memaksa BERTAHAN), <b>uji-tegang</b> (5 skenario: flash-crash/likuiditas/platform/korelasi/black-swan), <b>slip-neto</b> (ekspektasi dihitung SETELAH slippage — edge bersih ≤ 0 ditolak), <b>peluang-skor</b> (0-100 terbobot + penalti eksplisit; &lt; 60 ditolak dengan alasan), dan <b>top-tolak</b> (ranking alasan penolakan — kesadaran atas penolakannya sendiri)</div>
+  <div id="autopilot-box" style="margin-top:12px"></div>
+
+  <h2 id="claw-sec">Warisan ClawTrade — Pagar-Baja &amp; Komite Panjia (Kelompok 5 Suara, Kartu Risiko 4×25, Tangga Ukuran, Menunggu-Mandat)</h2>
+  <div class="sub" style="margin-top:-6px">hasil deep-screening keluarga <b>"ClawTrade"</b> dari KODE SUMBER — <b>yuxuan-lou/ClawTrade</b> (security middleware: <i>"treat your AI agent as an untrusted client"</i> — guardrails.py hard rules di luar jangkauan otak, confirmation.py antrean konfirmasi ber-kadaluarsa, audit.py append-only) + <b>clawtradeai-Agent/ClawTradeAI</b> (MIT, multi-agent Solana): disiplin struktural diterjemahkan jadi mekanisme — <b>pagar-baja</b> (konstanta keras yang otak baca tapi tak bisa tulis: kuota-harian, langit-langit slip, ukuran maks), <b>komite panjia</b> (5 suara berbobot tetap — tren/kerumunan/derivatif/buku/tegangan; suara rusak = bobot nol; koherensi searah &lt; minconf 0.6 → SKIP), <b>kartu risiko 4×25</b> (likuiditas/derivatif/kerumunan/volatilitas; &gt; 70 → veto-saksi), <b>tangga ukuran</b> (1.0/0.5/0.25/nol — tak ada ukuran antara), <b>menunggu-mandat</b> (ukuran tertinggi antre + kadaluarsa 12 jam, kunci hanya setelah lolos gerbang ulang), <b>daftar-hitam</b> (3× kartu-panas → pendingin 48 jam), dan <b>buku-tekok</b> (setiap blok tercatat per-aturan ala audit append-only)</div>
+  <div id="claw-box" style="margin-top:12px"></div>
+
+  <h2 id="bahan-ajar-sec">Bahan Ajar — Pelajaran &amp; Aturan dari Medan</h2>
+  <div id="aturan-baru" style="margin:0 0 12px"></div>
+  <div class="gulir"><table class="tabel">
+    <thead><tr><th>Waktu</th><th>Simbol</th><th>Vonis</th><th>Net</th><th>Kenapa</th><th>Pelajaran</th></tr></thead>
+    <tbody id="pelajaran"><tr><td colspan="6" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+
+  <h2 id="ilmu-sec">Jurnal Ilmu — Fondasi Ilmiah Otak (dipasang, bukan sekadar dikutip)</h2>
+  <div id="ilmu-fondasi" class="jnote" style="margin:0 0 12px">—</div>
+  <div class="ringkas" id="ilmu-kartu"></div>
+  <div style="height:10px"></div>
+  <div class="gulir"><table class="tabel">
+    <thead><tr><th>Keyakinan (bin)</th><th>Kasus medan</th><th>Tembus nyata</th><th>Artinya</th></tr></thead>
+    <tbody id="ilmu-kalibrasi"><tr><td colspan="4" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+  <div style="height:10px"></div>
+  <div class="gulir"><table class="tabel">
+    <thead><tr><th>Jurnal teruji</th><th>Penulis</th><th>Tahun</th><th>Terbitan</th><th>Dipasang sebagai</th></tr></thead>
+    <tbody id="ilmu-jurnal"><tr><td colspan="5" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+
+  <h2 id="warisan-sec">Warisan Organ Besar — 7 Mesin Kuant Kini di Otak Server</h2>
+  <div id="warisan-identitas" class="jnote" style="margin:0 0 12px">—</div>
+  <div class="mesin" id="warisan-mesin"></div>
+  <div class="ringkas" id="warisan-kartu" style="margin-top:12px"></div>
+  <div class="gulir" style="margin-top:12px"><table class="tabel">
+    <thead><tr><th>Peluang MC (bin)</th><th>Kasus medan</th><th>Tembus target nyata</th><th>Artinya</th></tr></thead>
+    <tbody id="warisan-mc"><tr><td colspan="4" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+
+  <h2 id="piagam-sec">Piagam Cyborg — 5 Pilar (dipasang nyata, diaudit siapa pun)</h2>
+  <div id="piagam-identitas" class="jnote">—</div>
+  <div class="ringkas" id="piagam-pilar" style="margin-top:12px"></div>
+  <div style="height:10px"></div>
+  <div class="gulir"><table class="tabel">
+    <thead><tr><th>Otak spesialis</th><th>Tugas</th><th>Mesin</th><th>Status</th></tr></thead>
+    <tbody id="piagam-otak"><tr><td colspan="4" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+
+  <h2 id="sadar-sec">Sadar-Diri Fungsional — Otak Memeriksa Tubuh &amp; Jiwanya Sendiri</h2>
+  <div class="ringkas" id="sadar-kartu"></div>
+  <div id="sadar-peringatan" style="margin-top:10px"></div>
+  <div id="mandat-terbuka" style="margin-top:10px"></div>
+  <div id="jalur-tumbuh" class="jnote"></div>
+
+  <h2 id="ruh-sec">Ruh &amp; Guru — Jiwa yang Dibangun, Suara yang Mengajar</h2>
+  <div class="genome-dua" id="ruh-kartu"></div>
+  <div class="jnote" id="guru-box" style="margin-top:12px">—</div>
+
+  <h2 id="forensik-sec">Forensik &amp; Perbaikan — Performa di Atas Aktivitas</h2>
+  <div class="sub" style="margin-top:-6px">mandat investor: sistem harus menyadari performanya buruk, menemukan penyebabnya, memperbaiki strateginya, dan membuktikan lewat hasil — bukan sekadar terus membuat prediksi</div>
+  <div class="ringkas" id="forensik-ab" style="margin-top:10px"></div>
+  <div class="genome-dua" style="margin-top:12px">
+    <div class="kartu">
+      <div class="label">Zona Kondisi Medan — racun DITOLAK mesin, emas diprioritaskan</div>
+      <div class="gulir" style="max-height:340px"><table class="tabel" style="margin-top:6px">
+        <thead><tr><th>Zona</th><th>Jalur</th><th>n</th><th>akurasi</th><th>ekspek</th><th>PF</th><th>status</th></tr></thead>
+        <tbody id="forensik-zona"><tr><td colspan="7" style="color:var(--samar)">—</td></tr></tbody>
+      </table></div>
+    </div>
+    <div class="kartu">
+      <div class="label">Disiplin Gerbang &amp; Tindakan Otomatis</div>
+      <div id="forensik-disiplin" style="margin-top:6px">—</div>
+      <div id="forensik-tindakan" style="margin-top:10px">—</div>
+      <div class="sub" style="margin-top:10px">zona dihitung ulang tiap denyut dari ledger — racun bisa menyembuh lewat slot eksplorasi berbatas (1/denyut, wajib EV ≥ 0), emas bisa pudar: hanya bukti yang berbicara</div>
+    </div>
+  </div>
+
+  <h2 id="ledger-sec">Riwayat Prediksi — Ledger Pra-Registrasi</h2>
+  <div class="filterbar" role="group" aria-label="Filter ledger">
+    <span class="fchip aktif" data-f="semua">Semua</span>
+    <span class="fchip" data-f="TERBUKA">Terbuka</span>
+    <span class="fchip" data-f="BENAR">Benar</span>
+    <span class="fchip" data-f="SALAH">Salah</span>
+    <label class="fchip"><input type="checkbox" id="fphx">PHX</label>
+    <input id="cari" type="search" placeholder="cari simbol…" aria-label="Cari simbol">
+  </div>
+  <div class="gulir"><table class="tabel">
+    <thead><tr><th>Dikunci</th><th>Simbol</th><th>Arah</th><th>Entry</th><th>Status</th><th>Exit</th><th>Net</th><th>Brier</th><th>Barier</th></tr></thead>
+    <tbody id="riwayat"><tr><td colspan="9" style="color:var(--samar)">—</td></tr></tbody>
+  </table></div>
+
+  <h2 id="otak-sec">Otak &amp; Evolusi — Bobot Dewan Bukti</h2>
+  <div class="genome-dua">
+    <div class="kartu">
+      <div class="label">Radar Phoenix — Bobot Sinyal Akumulasi</div>
+      <div class="genome" id="genome-phx"></div>
+    </div>
+    <div class="kartu">
+      <div class="label">Komite Arah — Bobot Per Rezim</div>
+      <div class="genome" id="genome"></div>
+    </div>
+  </div>
+
+  <h2 id="denyut-sec">Denyut Server (12 Terakhir)</h2>
+  <div class="garis-waktu" id="denyut"></div>
+
+  <div class="catatan"><b>Catatan jujur mesin:</b><ul id="catatan"></ul></div>
+
+  <footer>
+    <a href="../index.html">&#8592; Buka SAKTI (cyborg penuh)</a>
+    <a href="https://github.com/ririnsherlyna-cloud/Micaprofita-" target="_blank" rel="noopener">Repo GitHub (jejak pertumbuhan)</a>
+    <a href="../TUJUAN.md">TUJUAN.md</a>
+    <span id="protokol"></span>
+  </footer>
+</div>
+
+<script>
+const DIM = ['struktur','momentum','sr','tekanan','perubahan'];
+const PHXDIM = ['posisi','sweep','akumulasi','momentum','kompresi'];
+const $ = (id) => document.getElementById(id);
+const KEL = 2 * Math.PI * 30;
+const fmt = (x) => (x >= 1000 ? x.toLocaleString('id-ID',{maximumFractionDigits:2}) : String(x));
+function lalu(iso){
+  if (!iso) return '—';
+  const m = Math.round((Date.now() - new Date(iso).getTime())/60000);
+  if (m < 1) return 'baru saja';
+  if (m < 60) return m + ' menit lalu';
+  const j = Math.round(m/60);
+  if (j < 48) return j + ' jam lalu';
+  return Math.round(j/24) + ' hari lalu';
+}
+function barDim(v){
+  const pct = Math.min(50, Math.abs(v)*50);
+  const pos = v >= 0;
+  return `<span class="bar"><i style="${pos?'left:50%':'right:50%'};width:${pct}%;background:${pos?'var(--hijau)':'var(--merah)'}"></i></span>`;
+}
+function isiCincin(el, s){
+  const svg = el.querySelector('.cincin');
+  if (s.arah === 'SELL') svg.classList.add('sell');
+  const k = Math.max(0, Math.min(100, s.keyakinan || 0));
+  const fg = svg.querySelector('.cfg');
+  fg.style.strokeDasharray = KEL.toFixed(1);
+  fg.style.strokeDashoffset = (KEL * (1 - k/100)).toFixed(1);
+  svg.querySelector('text').textContent = s.keyakinan;
+}
+function isiTangga(el, s){
+  const box = el.querySelector('.tangga');
+  const mc = s.warisan?.mc || null;
+  const rows = [];
+  if (s.highAmbisius) rows.push(['ujung atas ambisius', s.highAmbisius, 'amb', mc?.pAmbisius ?? null]);
+  if (s.target) rows.push(['sasaran jual', s.target, 'tgt', mc?.pTarget ?? null]);
+  rows.push(['entry', s.entry, 'ent', null]);
+  if (s.stop) rows.push(['stop', s.stop, 'stp', mc?.pStop ?? null]);
+  rows.sort((a,b) => b[1] - a[1]);
+  box.innerHTML = rows.map(([lbl, p, k, pr]) => {
+    const pct = (p / s.entry - 1) * 100;
+    const panah = k === 'ent' ? ' &#9656;' : k === 'tgt' ? ' &#9656;' : '';
+    const prob = pr != null ? `<span class="tpr">P ${Math.round(pr*100)}%</span>` : '<span class="tpr"></span>';
+    return `<div class="trow ${k}"><span class="tlbl">${lbl}${panah}</span><span class="tp">${fmt(p)}</span><span class="tpct">${pct>=0?'+':''}${pct.toFixed(2)}%</span>${prob}</div>`;
+  }).join('');
+}
+function isiDaya(el, s){
+  const d = s.daya;
+  if (!d){ return; }
+  el.innerHTML = Object.entries(d).map(([k, v]) =>
+    `<div class="ddim"><span>${k}</span><div class="dbar"><i style="width:${Math.round((v||0)*100)}%"></i></div><b>${Math.round((v||0)*100)}%</b></div>`).join('');
+}
+function isiSasaran(r){
+  const tpl = $('tpl-sasaran');
+  $('sasaran').innerHTML = '';
+  for (const s of r.sasaranHariIni || []){
+    const el = tpl.content.cloneNode(true);
+    const kartu = el.querySelector('.sasaran');
+    kartu.classList.add(s.arah === 'BUY' ? 'buy' : 'sell');
+    el.querySelector('.simbol').innerHTML = s.simbol + (s.jalur === 'PHOENIX' ? '<span class="badgephx">PHOENIX</span>' : '');
+    el.querySelector('.entry-line').textContent = 'entry ' + fmt(s.entry) + ' · horizon ' + s.horizon + ' · fee ' + s.fee;
+    isiCincin(el, s);
+    isiTangga(el, s);
+    el.querySelector('.kettarget').textContent = s.ketTarget ? 'target: ' + s.ketTarget : '';
+    if (s.pitaUjungAtas){
+      const p = el.querySelector('.pitaref'); p.style.display = 'block';
+      p.textContent = 'pita konformal 75%: naik maksimum ±' + s.pitaUjungAtas.atas75Pct + '% (≈ ' + fmt(s.pitaUjungAtas.atas75Harga) + ') · tengah +' + s.pitaUjungAtas.tengahPct + '% · n=' + s.pitaUjungAtas.n;
+    }
+    const w = s.warisan;
+    if (w){
+      const mc = w.mc || {};
+      el.querySelector('.mcline').textContent = [
+        mc.pTarget != null ? 'MC: tembus target ' + Math.round(mc.pTarget*100) + '%' : null,
+        mc.pStop != null ? 'kena stop ' + Math.round(mc.pStop*100) + '%' : null,
+        w.sigma24jPct != null ? 'GARCH 24j ±' + w.sigma24jPct + '%' : null,
+        w.beta != null ? 'beta BTC ' + w.beta + (w.r2Beta != null ? ' (R² ' + w.r2Beta + ')' : '') : null,
+        mc.lintasan ? mc.lintasan.toLocaleString('id-ID') + ' lintasan' : null,
+      ].filter(Boolean).join(' · ');
+    }
+    const ek = s.ekspektasi;
+    if (ek){
+      const ev = el.querySelector('.evline');
+      ev.textContent = 'EV ' + (ek.evPct > 0 ? '+' : '') + ek.evPct + '% net-fee · RR ' + (ek.rr ?? '—')
+        + ' · P target ' + (ek.pTarget != null ? Math.round(ek.pTarget*100) + '%' : '—')
+        + (ek.pStop != null ? ' · P stop ' + Math.round(ek.pStop*100) + '%' : '');
+      if (ek.evPct < 0) ev.classList.add('neg');
+      const tp = ek.tanggaProfit || [];
+      if (tp.length){
+        el.querySelector('.tangga2').innerHTML = '<div class="tangga">' + tp.map((t) =>
+          `<div class="trow"><span class="tlbl">T${t.tahap} ${t.nama} · ${t.bobotPct}% modal</span><span class="tp">${fmt(t.harga)}</span><span class="tpct">${t.netPct>=0?'+':''}${t.netPct}%</span><span class="tpr"></span></div>`).join('')
+          + '</div><div class="sub" style="margin-top:4px">tangga profit — keluar bertahap (bukan jaminan) · EV tangga ' + (ek.evTanggaPct > 0 ? '+' : '') + ek.evTanggaPct + '%</div>';
+      }
+    }
+    isiDaya(el.querySelector('.daya'), s);
+    el.querySelector('.bukti').innerHTML = DIM.map((k) => {
+      const v = s.bukti?.[k];
+      const ket = (s.ketBukti && s.ketBukti[k]) || '';
+      const num = (v !== undefined && v !== null) ? ((v >= 0 ? '+' : '') + v.toFixed(2) + ' · ') : '';
+      return `<div class="dim"><span class="nm">${k}</span>${barDim(v || 0)}<span class="ket">${num}${ket}</span></div>`;
+    }).join('');
+    el.querySelector('.ketkal').textContent = s.ketKeyakinan || '';
+    const mkEl = el.querySelector('.metakog');
+    if (s.metakognisi){
+      const m = s.metakognisi;
+      const lv = m.estLevel != null ? Math.round(m.estLevel * 100) : null;
+      const lvWarna = lv != null ? (lv >= 60 ? 'var(--hijau)' : lv >= 40 ? 'var(--amber)' : 'var(--merah)') : 'var(--samar)';
+      const pp = m.predProb != null ? Math.round(m.predProb * 100) : null;
+      const ppWarna = pp != null ? (pp >= 60 ? 'var(--merah)' : pp >= 40 ? 'var(--amber)' : 'var(--hijau)') : 'var(--samar)';
+      const ragu = (m.aspekRagu || []).length ? ' · ragu: ' + m.aspekRagu.join('; ') : '';
+      mkEl.innerHTML = '<span class="wchip" style="color:' + lvWarna + '" title="Nevron ConfidenceEstimator — 7 faktor berbobot: keselarasan/memori/data/keakraban/rencana/rekam/kondisi">metakognisi <b>' + (lv != null ? lv + '%' : '—') + '</b></span>'
+        + '<span class="wchip" style="color:' + ppWarna + '" title="Nevron FailurePredictor — prob gagal pra-kunci: hit-rate zona + kegagalan 24 jam + ekspektasi negatif">P gagal <b>' + (pp != null ? pp + '%' : '—') + '</b></span>'
+        + (m.estTerlemah ? '<span class="wchip" title="faktor terlemah dari 7 faktor keyakinan">terlemah: ' + m.estTerlemah + '</span>' : '')
+        + ((s.biasKonteks && s.biasKonteks.geser) ? '<span class="wchip ' + (s.biasKonteks.geser > 0 ? 'up' : 'dn') + '" title="Nevron StrategyAdapter — bias konteks per rezim×arah">bias konteks ' + (s.biasKonteks.geser > 0 ? '+' : '') + s.biasKonteks.geser + '</span>' : '')
+        + '<span class="wchip" title="' + ((m.ket || '') + ragu).replace(/"/g, '&quot;') + '">self-check 7-faktor ▸</span>';
+    } else mkEl.innerHTML = '';
+    // V256 ODDS + RENCANA DEAL (3Commas × Trade Ideas)
+    const dbEl = el.querySelector('.dealbox');
+    if (dbEl){
+      let db = '';
+      if (s.odds){
+        const ok = s.odds.skor >= (s.odds.ambang ?? 55);
+        db += '<span class="wchip ' + (ok ? 'up' : 'dn') + '" title="OddsMaker (Trade Ideas): skor peluang 0-100 = 40% peluang-MC + 25% hit-rate zona + 20% metakognisi + 15% daya' + (s.odds.bonusEmas ? ' + bonus zona emas' : '') + '">odds <b>' + s.odds.skor + '</b>/100</span>';
+        db += '<span class="wchip" title="MC ' + Math.round((s.odds.komponen?.mc ?? 0) * 100) + '% · zona ' + Math.round((s.odds.komponen?.zona ?? 0) * 100) + '% · meta ' + Math.round((s.odds.komponen?.meta ?? 0) * 100) + '% · daya ' + Math.round((s.odds.komponen?.daya ?? 0) * 100) + '%">komponen odds ▸</span>';
+      }
+      if (Array.isArray(s.peristiwa) && s.peristiwa.length) db += '<span class="wchip" title="OddsMaker event-based tagging — peristiwa pemicu yang DIHITUNG dari lilin, disegel di ledger lalu dinilai hit-rate-nya saat matang">peristiwa: ' + s.peristiwa.join(', ') + '</span>';
+      const rd = s.rencanaDeal;
+      if (rd){
+        const soRows = (rd.safetyOrders || []).map((so) => fmt(so.harga) + ' (' + (so.devPct) + '% · ×' + so.volMult + ')').join(' · ');
+        db += '<div style="margin-top:8px;border:1px solid var(--garis2);border-radius:10px;padding:8px 10px;background:rgba(56,189,248,.05)">'
+          + '<b style="font-size:11.5px;color:var(--sian)">RENCANA DEAL (3Commas DCA · pra-registrasi, kontingensi disiplin)</b>'
+          + '<div style="font-size:11.5px;margin-top:4px">▸ Safety orders (max ' + rd.maxSO + '): ' + soRows + ' — avg jika penuh <b>' + fmt(rd.avgJikaSoPenuh) + '</b> · TP-dari-avg ' + fmt(rd.tpDariAvgHarga) + '</div>'
+          + (rd.breakeven ? '<div style="font-size:11.5px;margin-top:3px">▸ Move SL to Breakeven: aktivasi ' + fmt(rd.breakeven.aktivasiHarga) + ' (+' + rd.breakeven.aktivasiPct + '%) → stop pindah ke <b>' + fmt(rd.breakeven.stopBaruHarga) + '</b> (net-nol)</div>' : '')
+          + (rd.trailing ? '<div style="font-size:11.5px;margin-top:3px">▸ Trailing TP: setelah T1, trail dari peak −<b>' + rd.trailing.jarakPct + '%</b> (0.8×ATR24j)</div>' : '')
+          + '</div>';
+      }
+      if (s.dealMedan){
+        const dm = s.dealMedan;
+        db += '<div class="jnote" style="margin-top:8px;border-left-color:var(--hijau)"><b>HASIL MEDAN RENCANA DEAL:</b> ' + (dm.ket || '') + (dm.bep ? ' · BEP aktivasi: ' + (dm.bep.aktivasiKena ? 'kena' : 'tidak') + (dm.bep.menyelamatkan ? ' — MENYELAMATKAN posisi' : '') : '') + (dm.trail ? ' · trailing: peak ' + fmt(dm.trail.peakHarga) + ' (+' + dm.trail.ekstraPct + '% di atas T1)' : '') + '</div>';
+      }
+      // V258 GEKKO-CZAR — meta-inferensi kolektif + probPasar + divergensi + ekspresi + sidik
+      if (s.topik && s.topik.metaArah){
+        const selaras = s.topik.metaArah === s.arah;
+        db += '<span class="wchip ' + (selaras ? 'up' : 'dn') + '" title="Meta-inferensi kolektif ala Allora Topics (mesin di balik Gekko Agent/Axal): 6 topik pekerja memberi suara arah, bobot = exp(-0.9·regret) dari medan">meta <b>' + s.topik.metaArah + (s.topik.metaKeyakinan != null ? ' ' + s.topik.metaKeyakinan + '%' : '') + '</b> ' + (selaras ? 'selaras' : 'LAWAN') + '</span>';
+        db += '<span class="wchip" title="Suara per topik (arah·bobot) — bobot topik berubah dari medan (regret-minimization ala Allora)">' + (s.topik.suara || []).map((sv) => sv.topik + ' ' + (sv.arah > 0 ? '▲' : '▼') + sv.bobot).join(' · ') + '</span>';
+      }
+      if (s.probPasar != null) db += '<span class="wchip" title="P(naik) implisit dari harga kerumunan NYATA: agresor taker + kerumunan LS + funding + EMA4h (Allora prediction-markets)">prob pasar <b>' + Math.round(s.probPasar * 100) + '%</b></span>';
+      if (s.divergensi != null) db += '<span class="wchip ' + (Math.abs(s.divergensi) >= 0.18 ? 'up' : '') + '" title="Divergensi = keyakinan komite − P(arah komite) pasar — terpisah ≥0.18 berarti komite melawan harga kerumunan (edge atau jebakan — dinilai medan)">divergensi <b>' + (s.divergensi > 0 ? '+' : '') + s.divergensi + '</b></span>';
+      if (s.ekspresi?.skala != null) db += '<span class="wchip" title="Skala eksposur dinamis ala Allora×G.A.M.E: 0.25–1.0× unit standar dari odds + keyakinan − volatilitas ekstrem − kerumunan funding">ekspresi <b>' + s.ekspresi.skala + '×</b></span>';
+      if (s.sidikPrakunci) db += '<span class="wchip" title="Sidik sha256 pra-registrasi payload prediksi — tamper-evident ala verifiable agents (Axal): siapa pun bisa rekalkulasi">sidik <b>' + String(s.sidikPrakunci).slice(0, 8) + '</b>…</span>';
+      dbEl.innerHTML = db;
+    }
+    const nar = el.querySelector('.narasi');
+    if (s.narasi){ nar.style.display = 'block'; nar.innerHTML = '<b style="color:var(--violet)">NARASI ANALIS —</b> ' + s.narasi; }
+    el.querySelector('.wawgrid').innerHTML = (() => {
+      const w = s.wawasan || [];
+      const inti = w.filter((p) => p.lapis !== 'observasi' && p.lapis !== 'gekko');
+      const obs = w.length - inti.length;
+      const chips = inti.map((p) => {
+        const cls = p.arah > 0.15 ? 'up' : p.arah < -0.15 ? 'dn' : '';
+        const tanda = p.arah > 0.15 ? ' ▲' : p.arah < -0.15 ? ' ▼' : ' ·';
+        return `<span class="wchip ${cls}" title="${(p.ket || '').replace(/"/g, '&quot;')}">${p.param}${tanda}${p.nilai != null ? ' <b>' + p.nilai + '</b>' : ''}</span>`;
+      });
+      if (obs > 0) chips.push(`<span class="wchip" title="${obs} parameter observasi (multi-TF, order book, lintas-pasar, kalender) ikut dinarasikan &amp; diveto-kan — registri penuh di laporan/wawasan.json">+${obs} observasi</span>`);
+      return chips.join('');
+    })();
+    el.querySelector('.chiprezim').textContent = 'rezim ' + s.rezim + ' · dikunci ' + lalu(s.dikunci);
+    const btn = el.querySelector('.salin');
+    btn.dataset.plan = [s.simbol, s.arah,
+      'entry ' + fmt(s.entry),
+      s.target ? 'target ' + fmt(s.target) : null,
+      s.stop ? 'stop ' + fmt(s.stop) : null,
+      'keyakinan ' + s.keyakinan + '/100',
+      'horizon ' + s.horizon,
+      'sumber MICAPROFITA SAKTI denyut #' + r.siklus].filter(Boolean).join(' · ');
+    $('sasaran').appendChild(el);
+  }
+}
+function salinKeAksi(){
+  document.querySelectorAll('.salin').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(btn.dataset.plan || '');
+      }catch{
+        const ta = document.createElement('textarea');
+        ta.value = btn.dataset.plan || '';
+        document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); }catch{}
+        ta.remove();
+      }
+      btn.textContent = 'TERSALIN ✓'; btn.classList.add('ok');
+      setTimeout(() => { btn.textContent = 'SALIN RENCANA'; btn.classList.remove('ok'); }, 1800);
+    });
+  });
+}
+function isiKandidat(r){
+  const tb = $('kandidat');
+  const k = r.kandidatLain || [];
+  if (!k.length){ tb.innerHTML = '<tr><td colspan="6" style="color:var(--samar)">tidak ada — semua masuk sasaran utama</td></tr>'; return; }
+  tb.innerHTML = k.map((s) => `<tr><td>${s.simbol}</td>
+    <td class="${s.arah==='BUY'?'net-pos':'net-neg'}">${s.arah}</td>
+    <td>${s.keyakinan}/100</td><td>${fmt(s.entry)}</td><td>${s.rezim}</td>
+    <td style="color:var(--redup)">${s.catatan || (s.jalur==='PHOENIX' ? 'radar phoenix — target ' + fmt(s.target) : 'komite arah')}</td></tr>`).join('');
+}
+let PRAK = [], LED = {f:'semua', phx:false, q:''};
+function renderRiwayat(){
+  const tb = $('riwayat');
+  let rows = PRAK.slice();
+  if (LED.f !== 'semua') rows = rows.filter((e) => e.status === LED.f);
+  if (LED.phx) rows = rows.filter((e) => e.jalur === 'PHOENIX');
+  if (LED.q) rows = rows.filter((e) => (e.simbol || '').toUpperCase().includes(LED.q));
+  const terakhir = rows.slice(-30).reverse();
+  if (!terakhir.length){ tb.innerHTML = '<tr><td colspan="9" style="color:var(--samar)">tidak ada baris yang cocok</td></tr>'; return; }
+  tb.innerHTML = terakhir.map((e) => {
+    const net = e.net !== undefined ? ((e.net*100).toFixed(2)+'%') : '—';
+    const cls = e.net !== undefined ? (e.net > 0 ? 'net-pos' : 'net-neg') : '';
+    const wkt = (e.waktuKunci||'').replace('T',' ').slice(5,16);
+    const barier = e.barier ? (e.barier === 'TARGET' ? '<span style="color:var(--hijau)">TARGET</span>' : e.barier === 'STOP' ? '<span style="color:var(--merah)">STOP</span>' : '<span style="color:var(--redup)">WAKTU</span>') : '—';
+    return `<tr><td>${wkt} UTC</td><td><b>${e.simbol}</b>${e.jalur==='PHOENIX'?' <span style="color:var(--amber)">PHX</span>':''}</td>
+      <td class="${e.arah==='BUY'?'net-pos':'net-neg'}">${e.arah}</td><td>${fmt(e.entry)}</td>
+      <td><span class="st ${e.status}">${e.status||'—'}</span></td>
+      <td>${e.exit ? fmt(e.exit) : '—'}</td><td class="${cls}">${net}</td>
+      <td>${e.brier !== undefined ? e.brier.toFixed(3) : '—'}</td><td>${barier}</td></tr>`;
+  }).join('');
+}
+function isiRiwayat(rows){ PRAK = rows || []; renderRiwayat(); }
+</script>
+<script>
+function isiPelajaran(r){
+  const at = r.aturanBelajar || {};
+  const ab = $('aturan-baru');
+  const aktif = Object.entries(at.aktif || {});
+  let html = '';
+  if (aktif.length){
+    html += '<div style="border:1px solid var(--amber);border-radius:12px;padding:12px 14px;background:rgba(255,180,60,.06)"><b>Aturan yang diikat otak (lahir dari kekalahan nyata)</b><ul style="margin:6px 0 0;padding-left:18px">'
+      + aktif.map(([k,v])=>`<li><b>${k}</b> — ${v}</li>`).join('') + '</ul>'
+      + (at.pola ? '<div style="color:var(--redup);margin-top:6px;font-size:.85em">pola terpantau: ' + Object.entries(at.pola).map(([k,v])=>k+'='+v).join(' · ') + '</div>' : '')
+      + '</div>';
+  } else {
+    html += '<div style="color:var(--samar)">belum ada aturan — otak masih mengumpulkan kasus (aturan lahir bila pola kekalahan terulang ≥ 2 kali)</div>';
+  }
+  if ((at.baruSiklusIni||[]).length) html += '<div style="margin-top:6px;color:var(--amber)">BARU dipelajari siklus ini: ' + at.baruSiklusIni.length + ' aturan</div>';
+  ab.innerHTML = html;
+  const p = r.pelajaran || [];
+  const tb = $('pelajaran');
+  if (!p.length){ tb.innerHTML = '<tr><td colspan="6" style="color:var(--samar)">belum ada pelajaran baru siklus ini</td></tr>'; return; }
+  tb.innerHTML = p.map((x)=>`<tr><td>${(x.waktu||'').replace('T',' ').slice(0,16)}</td>
+    <td><b>${x.simbol}</b>${x.jalur==='PHOENIX'?' <span style="color:var(--amber)">PHX</span>':''}</td>
+    <td><span class="st ${x.vonis}">${x.vonis||'—'}</span></td>
+    <td class="${x.netPct>0?'net-pos':'net-neg'}">${(x.netPct>0?'+':'')+(x.netPct??0)}%</td>
+    <td style="color:var(--redup)">${(x.kenapa||[]).join('; ')||'—'}</td>
+    <td>${x.pelajaran||''}</td></tr>`).join('');
+}
+function barGenome(el, dim, bobot){
+  const maks = Math.max(...Object.values(bobot||{}), 0.001);
+  $(el).innerHTML = dim.map((k) => `<div class="gdim">
+    <div class="nm"><span>${k}</span><b>${(((bobot||{})[k]||0)*100).toFixed(1)}%</b></div>
+    <div class="bar"><i style="width:${((((bobot||{})[k]||0))/maks*100).toFixed(0)}%"></i></div></div>`).join('');
+}
+function isiGenome(g){
+  barGenome('genome', DIM, g && g.bobot);
+  barGenome('genome-phx', PHXDIM, g && g.phoenix && g.phoenix.bobot);
+  $('generasi').textContent = g ? (g.semuaRezim?.[g.rezim]?.generasi ?? 0) : '—';
+  $('generasi-sub').innerHTML = `generasi · rezim <b>${g?.rezim || '—'}</b>`;
+}
+function isiIlmu(r, jurnalFile){
+  const i = r.ilmu;
+  if (!i){ $('ilmu-fondasi').textContent = 'otak belum membawa seksi ilmu — menunggu denyut baru'; return; }
+  $('ilmu-fondasi').textContent = i.fondasi;
+  const b = i.brier || {};
+  const brierTeks = (v, n) => v === null || v === undefined ? '—' : v.toFixed(3) + ' <span style="color:var(--redup);font-size:.8em">(n=' + n + ')</span>';
+  const kartu = [
+    ['Skor Brier — Komite ARAH', brierTeks(b.arah, b.nArah), 'makin kecil makin jujur · tebakan koin = 0.250'],
+    ['Skor Brier — Radar Phoenix', brierTeks(b.phx, b.nPhx), 'keyakinan diperlakukan sebagai probabilitas'],
+    ['Gerbang Radar Aktif', (i.metaGerbang?.gerbangAktif ?? '—') + (i.metaGerbang?.geser ? ' <span style="color:var(--amber)">(meta ' + (i.metaGerbang.geser>0?'+':'') + i.metaGerbang.geser + ')</span>' : ''), i.metaGerbang?.catatan || ''],
+    ['Pita Konformal 75%', i.konformal?.atas !== undefined ? '+' + (i.konformal.atas*100).toFixed(1) + '% <span style="color:var(--redup);font-size:.8em">n=' + i.konformal.n + '</span>' : 'menunggu medan', i.konformal?.catatan || 'gerak naik maksimum setelah kunci melebihi level ini hanya ±25% kasus'],
+  ];
+  $('ilmu-kartu').innerHTML = kartu.map(([l, v, s]) => `<div class="kartu"><div class="label">${l}</div>
+    <div class="angka-besar" style="font-size:22px">${v}</div><div class="sub">${s}</div></div>`).join('');
+  const kal = i.kalibrasi || [];
+  $('ilmu-kalibrasi').innerHTML = kal.length ? kal.map((x) => {
+    const arti = x.tembusPct === null ? 'belum ada kasus medan — keyakinan mentah dipakai jujur'
+      : x.tembusPct < 30 ? 'bin ini SUKA MELESAT — keyakinan baru dari bin ini diturunkan otomatis'
+      : x.tembusPct < 48 ? 'lemah — keyakinan dicampur 50/50 dengan kebenaran medan'
+      : 'terbukti — keyakinan bin ini dipercaya';
+    return `<tr><td>${x.bin}</td><td>${x.n}</td><td class="${x.tembusPct===null?'':x.tembusPct<30?'net-neg':x.tembusPct<48?'':'net-pos'}">${x.tembusPct===null?'—':x.tembusPct+'%'}</td>
+      <td style="color:var(--redup);font-family:inherit">${arti}</td></tr>`;
+  }).join('') : '<tr><td colspan="4" style="color:var(--samar)">—</td></tr>';
+  const jd = jurnalFile?.daftar || [];
+  $('ilmu-jurnal').innerHTML = jd.length ? jd.map((j) => `<tr>
+    <td style="font-family:inherit"><a href="${j.rujukan}" target="_blank" rel="noopener" style="color:var(--sian);text-decoration:none">${j.judul}</a></td>
+    <td>${j.penulis}</td><td>${j.tahun}</td><td style="font-family:inherit;font-size:11.5px">${j.terbitan}</td>
+    <td style="font-family:inherit;font-size:11.5px;color:var(--redup)">${j.penerapan}</td></tr>`).join('')
+    : '<tr><td colspan="5" style="color:var(--samar)">akta jurnal belum tersedia</td></tr>';
+}
+function isiWarisan(r){
+  const w = r.warisan;
+  if (!w){ $('warisan-identitas').textContent = 'warisan belum dibawa laporan ini — menunggu denyut V249 berikutnya'; return; }
+  $('warisan-identitas').innerHTML = '<b>IDENTITAS:</b> ' + w.identitas
+    + '<br><span style="color:var(--redup)">' + (w.catatan || '') + '</span>';
+  $('warisan-mesin').innerHTML = (w.mesin||[]).map((m) => `<span>${m}</span>`).join('');
+  const br = w.breadth || {};
+  const kartu = [
+    ['Breadth A/D Pasar', (br.naik24jPct ?? '—') + '% <span style="color:var(--redup);font-size:.8em">dari ' + (br.dari ?? '—') + ' koin</span>', br.ket || ''],
+    ['Gerbang Radar Aktif', w.gerbangRadar ?? '—', 'skor minimum radar phoenix (gerbang konfirmasi + meta + breadth)'],
+    ['Brier MC (peluang tembus target)', w.mc?.brier != null ? w.mc.brier + ' <span style="color:var(--redup);font-size:.8em">(n=' + w.mc.nMc + ')</span>' : 'menunggu horizon pertama', 'peluang MC dipra-registrasi lalu dinilai medan — makin kecil makin jujur'],
+    ['Gerbang MC', '≥ ' + Math.round((w.mc?.gerbangPTarget ?? 0.38)*100) + '%', 'target dengan peluang statistik di bawah ini DITOLAK oleh ' + (w.mc?.lintasan ?? 2000).toLocaleString('id-ID') + ' lintasan Monte Carlo'],
+  ];
+  $('warisan-kartu').innerHTML = kartu.map(([l,v,s2]) => `<div class="kartu"><div class="label">${l}</div>
+    <div class="angka-besar" style="font-size:22px">${v}</div><div class="sub">${s2}</div></div>`).join('');
+  const kal = w.mc?.kalibrasi || [];
+  $('warisan-mc').innerHTML = kal.length ? kal.map((x) => {
+    const arti = x.n === 0 ? 'belum ada kasus — peluang MC jujur menunggu medan'
+      : x.tembusPct < 25 ? 'bin ini MELESAT — peluang MC terlalu percaya diri di rentang ini'
+      : x.tembusPct < 40 ? 'lemah — akan dikalibrasi saat n tumbuh'
+      : 'terukur — peluang MC dipercaya di rentang ini';
+    return `<tr><td>${x.bin}</td><td>${x.n}</td><td class="${x.tembusPct===null?'':x.tembusPct<25?'net-neg':x.tembusPct<40?'':'net-pos'}">${x.tembusPct===null?'—':x.tembusPct+'%'}</td>
+      <td style="color:var(--redup);font-family:inherit">${arti}</td></tr>`;
+  }).join('') : '<tr><td colspan="4" style="color:var(--samar)">—</td></tr>';
+}
+function isiDenyut(rows){
+  $('denyut').innerHTML = (rows||[]).slice(-12).reverse().map((d) =>
+    `<div class="baris"><span class="w">${(d.waktu||'').replace('T',' ').slice(0,19)} UTC</span>
+     <span>denyut <b>#${d.siklus}</b></span><span>${d.sumber}</span>
+     <span>koin <b>${d.simbolOK}</b></span><span>kunci <b>${d.terkunciBaru}</b></span>
+     <span>nilai <b>${d.dinilaiBaru}</b></span><span>rezim <b>${d.rezimBTC||'—'}</b></span></div>`).join('');
+}
+function isiPiagam(r){
+  const p = r.piagam;
+  if (!p){ $('piagam-identitas').textContent = 'piagam belum dibawa laporan ini — menunggu denyut berikutnya'; return; }
+  $('piagam-identitas').innerHTML = '<b>IDENTITAS:</b> ' + p.identitas;
+  $('piagam-pilar').innerHTML = (p.pilar||[]).map((x, i) => `<div class="kartu">
+    <div class="label" style="color:var(--violet)">${String(i+1).padStart(2,'0')} · ${x.pilar}</div>
+    <div style="font-size:12.5px;margin-bottom:8px">${x.mekanisme}</div>
+    <div class="sub" style="font-family:var(--mono)">bukti: ${x.bukti}</div>
+    <div style="margin-top:8px"><span class="st BENAR">HIDUP</span></div></div>`).join('');
+  $('piagam-otak').innerHTML = (p.otak||[]).map((o) => `<tr><td style="font-family:inherit"><b>${o.nama}</b></td>
+    <td style="font-family:inherit">${o.tugas}</td><td style="font-family:inherit;color:var(--redup)">${o.mesin}</td>
+    <td><span class="st BENAR">${o.status}</span></td></tr>`).join('') || '<tr><td colspan="4" style="color:var(--samar)">—</td></tr>';
+  const s = r.sadardiri;
+  if (s){
+    const kartu = [
+      ['Sidik Jiwa (sha256-12)', (s.jiwa?.sidikGenome || '—') + ' · ' + (s.jiwa?.sidikLedger || '—'), 'genome · ledger — jiwa bisa diverifikasi bit demi bit'],
+      ['Memori Berlapis (FinMem)', `${s.jiwa?.memori?.peristiwa ?? '—'} peristiwa · ${s.jiwa?.memori?.pelajaran ?? '—'} pelajaran · <b>${s.jiwa?.memori?.doktrin ?? '—'}</b> doktrin`, s.jiwa?.kapasitas || ''],
+      ['Kesehatan Otak', `Brier ${s.kesehatan?.brierArah ?? '—'} · generasi <b>${s.kesehatan?.generasiOtak ?? '—'}</b>`, `pita konformal ${s.kesehatan?.pitaKonformalAktif ? '<b style="color:var(--hijau)">AKTIF</b>' : 'menunggu medan'} · gerbang radar ${s.kesehatan?.gerbangRadar ?? '—'} · meta ${s.kesehatan?.metaGeser ?? 0}`],
+      ['Tubuh &amp; Data', `host ${s.tubuh?.hostUtama || '—'} · <b>${s.tubuh?.simbolTersedia ?? '—'}</b> koin OK`, `umur data ${s.tubuh?.dataUmurJam ?? '—'} jam · gagal telusur ${s.tubuh?.gagalTelusur ?? 0}`],
+    ];
+    $('sadar-kartu').innerHTML = kartu.map(([l,v,sub]) => `<div class="kartu"><div class="label">${l}</div>
+      <div style="font-size:13px;font-family:var(--mono);margin-bottom:4px">${v}</div><div class="sub">${sub}</div></div>`).join('');
+    const per = s.peringatan || [];
+    $('sadar-peringatan').innerHTML = per.length
+      ? '<div class="peringatan"><b style="color:var(--amber)">&#9888; Peringatan sadar-diri (' + per.length + ') — otaknya bertindak sendiri:</b><ul>' + per.map((x)=>`<li>${x}</li>`).join('') + '</ul><div style="color:var(--redup);font-size:11.5px;margin-top:6px">tindakan siklus ini: ' + (s.tindakanSiklusIni||[]).join(' · ') + '</div></div>'
+      : '<div class="sub">tanpa peringatan — semua pemeriksaan diri lolos siklus ini · tindakan: ' + (s.tindakanSiklusIni||[]).join(' · ') + '</div>';
+  }
+  const m = r.antreanMandat;
+  $('mandat-terbuka').innerHTML = Array.isArray(m)
+    ? (m.length ? '<div class="mandatbox"><b style="color:var(--sian)">Mandat pemilik terbaca dari Issue (dibaca otak tiap denyut):</b><ul style="margin:6px 0 0;padding-left:18px;font-size:12.5px">' + m.map((x)=>`<li><a href="${x.url}" target="_blank" rel="noopener" style="color:var(--sian)">#${x.nomor} ${x.judul}</a> <span style="color:var(--redup)">(dibuat ${lalu(x.dibuat)})</span></li>`).join('') + '</ul></div>'
+       : '<div class="sub">antrean mandat Issue: kosong — buat Issue berlabel "mandat" di repo, otak akan membacanya pada denyut berikutnya</div>')
+    : (m?.catatan ? '<div class="sub">antrean mandat: ' + m.catatan + '</div>' : '');
+  $('jalur-tumbuh').innerHTML = '<b>Jalur pertumbuhan (terus berkembang pesat):</b>'
+    + '<div class="langkah">' + (p.jalurPertumbuhan||[]).map((j) => `<span>${j}</span>`).join('') + '</div>'
+    + '<div style="margin-top:8px"><span style="color:var(--amber)">Roadmap jujur:</span> ' + (p.roadmapJujur||'') + '</div>'
+    + (r.pertumbuhan?.metamorfosis ? '<div style="margin-top:6px"><b>Metamorfosis hari ini:</b> ' + r.pertumbuhan.metamorfosis + '</div>' : '');
+}
+function isiForensik(r){
+  const f = r.forensik, p = r.performa, d = r.disiplin;
+  const kosong = '<div class="sub">forensik belum dibawa laporan ini — menunggu denyut V252</div>';
+  if (!f && !p){ $('forensik-ab').innerHTML = kosong; $('forensik-zona').innerHTML = '<tr><td colspan="7" style="color:var(--samar)">—</td></tr>'; $('forensik-disiplin').textContent = '—'; $('forensik-tindakan').textContent = '—'; return; }
+  const b = p?.baseline || {}, s = p?.sekarang || {}, t = p?.target || {};
+  const fe = (x) => (x === null || x === undefined) ? '—' : (x > 0 ? '+' : '') + x + '%';
+  const arahBadge = p?.arahan ? `<span class="st ${p.arahan}">${p.arahan}</span>` : '—';
+  const lulus = p?.lulus || {};
+  const cek = (x, nama) => (x ? '<b style="color:var(--hijau)">LULUS</b>' : '<span style="color:var(--amber)">menunggu</span>') + ' · ' + nama;
+  const kartu = [
+    ['Baseline — sebelum v252', b.versi || '—', `<span style="font-size:15px;font-family:var(--mono)">${b.akurasiPct ?? '—'}%</span> akurasi · PF <b>${b.pf ?? '—'}</b> · ekspek <b>${fe(b.ekspekPct)}</b>`, `n=${b.n ?? '—'} vonis${b.tgl ? ' · disegel ' + b.tgl.slice(0, 10) : ''} — titik nol perbaikan`],
+    ['Sekarang — jendela v252', `${s.n ?? 0} vonis terkunci setelah v252`, `<span style="font-size:15px;font-family:var(--mono)">${s.akurasiPct ?? '—'}%</span> akurasi · PF <b>${s.pf ?? '—'}</b> · ekspek <b>${fe(s.ekspekPct)}</b>`, `arahan ${arahBadge} — perbandingan murni (anti-cheat: hanya vonis terkunci setelah v252 berlaku)`],
+    ['Target Performa (wajib)', `akurasi ≥ ${t.akurasiPct ?? '—'}% · PF ≥ ${t.pf ?? '—'} · ekspek ≥ +${t.ekspekPct ?? '—'}%`, `${cek(lulus.akurasi, 'akurasi')}<br>${cek(lulus.pf, 'profit factor')}<br>${cek(lulus.ekspek, 'ekspektasi')}`, `n minimum ${t.nMin ?? '—'} — PF < 1.2 & ekspek negatif BUKAN kondisi normal`],
+  ];
+  $('forensik-ab').innerHTML = kartu.map(([l, v, ang, sub]) => `<div class="kartu"><div class="label">${l}</div>
+    <div class="sub" style="margin:2px 0 6px">${v}</div><div style="font-size:12.5px">${ang}</div><div class="sub" style="margin-top:6px">${sub}</div></div>`).join('');
+  const zona = [...(f?.zonaRacun || []), ...(f?.zonaEmas || [])];
+  $('forensik-zona').innerHTML = zona.length ? zona.map((z) => `<tr>
+    <td style="font-family:inherit">${z.nama}</td><td>${z.jalur || 'ARAH'}</td><td>${z.n}</td>
+    <td>${z.akurasiPct ?? '—'}%</td><td class="${z.ekspekPct >= 0 ? 'net-pos' : 'net-neg'}">${fe(z.ekspekPct)}</td>
+    <td>${z.pf ?? '—'}</td><td><span class="st ${z.status}">${z.status}</span></td></tr>`).join('')
+    : '<tr><td colspan="7" style="color:var(--samar)">belum ada zona berbukti cukup</td></tr>';
+  $('forensik-disiplin').innerHTML = d ? `<div style="font-size:13px">mode <span class="st ${d.mode === 'TUNGGU' ? 'BELUM-CUKUP' : 'EMAS'}">${d.mode}</span>
+    · ditolak siklus ini <b>${d.ditolakSiklusIni ?? 0}</b> · zona racun aktif <b>${d.zonaRacunAktif ?? 0}</b> · zona emas <b>${d.emasDiprioritaskan ?? 0}</b></div>
+    <div class="sub" style="margin-top:6px">${d.ket || ''}</div>` : '—';
+  $('forensik-tindakan').innerHTML = (f?.tindakan || []).length
+    ? '<b style="color:var(--sian)">Tindakan otomatis otak:</b><ul style="margin:6px 0 0;padding-left:18px;font-size:12.5px">' + f.tindakan.map((x) => `<li>${x}</li>`).join('') + '</ul>'
+    : '<div class="sub">tanpa tindakan forensik siklus ini</div>';
+}
+function isiRuhGuru(r){
+  const ruh = r.ruh;
+  if (ruh){
+    const kartu = [
+      ['Inti Ruh', ruh.inti, ''],
+      ['Misi Hidup', ruh.misi, ''],
+      ['Otonomi', ruh.otonom?.kini || '', 'berikutnya: ' + (ruh.otonom?.berikutnya || '—')],
+    ];
+    if (Array.isArray(ruh.anatomi)) kartu.push(['Anatomi Hidup (' + ruh.anatomi.length + ' organ)', ruh.anatomi.map((a) => a.organ + ' — ' + a.peran).join(' · '), ruh.ket || '']);
+    $('ruh-kartu').innerHTML = kartu.map(([l, v, s]) => `<div class="kartu"><div class="label">${l}</div>
+      <div style="font-size:12.5px;margin-bottom:4px">${v}</div>${s ? `<div class="sub">${s}</div>` : ''}</div>`).join('');
+  } else $('ruh-kartu').innerHTML = '<div class="sub">ruh belum dibawa laporan ini — menunggu denyut V251</div>';
+  const g = r.guru;
+  if (g){
+    const kuis = g.kuis || {};
+    $('guru-box').innerHTML = '<b style="color:var(--violet)">BUKU GURU · ' + (g.judul || '') + '</b>'
+      + '<div style="margin-top:8px"><b>Pengajaran hari ini:</b><ol style="margin:6px 0 0;padding-left:18px">'
+      + (g.pengajaran || []).map((x) => `<li style="margin-top:5px">${x}</li>`).join('') + '</ol></div>'
+      + '<div style="margin-top:10px;border:1px solid var(--garis2);border-radius:10px;padding:10px 12px;background:rgba(167,139,250,.06)"><b>Kuis guru</b>'
+      + (kuis.konteks ? ' <span style="color:var(--redup)">' + kuis.konteks + '</span>' : '') + '<br>' + (kuis.pertanyaan || '')
+      + '<ol type="A" style="margin:6px 0 0;padding-left:18px">' + (kuis.pilihan || []).map((x) => `<li>${x}</li>`).join('') + '</ol>'
+      + '<details style="margin-top:6px"><summary style="cursor:pointer;color:var(--sian)">buka jawaban</summary><div style="margin-top:4px">Jawaban: <b>' + (kuis.jawaban || '—') + '</b> — ' + (kuis.pembahasan || '') + '</div></details></div>'
+      + '<div style="margin-top:8px"><b>Etika guru:</b><ul style="margin:4px 0 0;padding-left:18px;color:var(--redup);font-size:12px">'
+      + (g.etika || []).map((x) => `<li>${x}</li>`).join('') + '</ul></div>'
+      + (g.sumber ? `<div style="margin-top:6px;color:var(--samar);font-size:11.5px">${g.sumber}</div>` : '');
+  } else $('guru-box').textContent = 'buku guru belum dibawa laporan ini — menunggu denyut V251';
+}
+// ===== V254 SAMUDRA — iklim makro + registri + veto + sekolah + tabel parameter =====
+function isiWawasan(r){
+  const w = r.wawasan360 || {};
+  const reg = w.registri || {};
+  $('dimchip').textContent = reg.totalNama ? reg.totalNama + ' param' : (w.dimensi ? w.dimensi + ' dim' : '—');
+  const gkk = r.gekko || {};
+  $('suhuchip').textContent = gkk.suhuSiklusIni?.temper ? (gkk.suhuSiklusIni.temper + ' · ' + (gkk.suhuSiklusIni.ambangEfektif ?? '—')) : '—';
+  const ik = w.iklim || {};
+  const okx = ik.okx || {};
+  const kartu = (label, angka, sub, warna) => `<div class="kartu"><div class="label">${label}</div><div class="angka"${warna ? ` style="color:${warna}"` : ''}>${angka}</div><div class="sub">${sub || ''}</div></div>`;
+  const fng = ik.fng;
+  const fngWarna = fng ? (fng.nilai >= 75 ? 'var(--merah)' : fng.nilai <= 25 ? 'var(--hijau)' : 'var(--amber)') : null;
+  const fngDelta = ik.fngRiwayat ? ' · Δ7h ' + (ik.fngRiwayat.delta7d > 0 ? '+' : '') + ik.fngRiwayat.delta7d : '';
+  $('iklim').innerHTML = [
+    kartu('Fear &amp; Greed', fng ? fng.nilai : '—', fng ? fng.klasifikasi + fngDelta : 'endpoint gagal — jujur null', fngWarna),
+    kartu('Dominasi BTC', ik.dominasi ? ik.dominasi.pct + '%' : '—', ik.dominasi ? (ik.dominasi.sumber === 'coingecko' ? 'kapitalisasi pasar' : 'proxy volume spot') : '—'),
+    kartu('Δ Dominasi / denyut', ik.v257 && ik.v257.dominasiDelta != null ? (ik.v257.dominasiDelta > 0 ? '+' : '') + ik.v257.dominasiDelta : '—', 'V257: naik = dana berlindung ke BTC; turun = altcoin bernafas', ik.v257 && ik.v257.dominasiDelta != null ? (ik.v257.dominasiDelta > 0 ? 'var(--amber)' : 'var(--hijau)') : null),
+    kartu('ETH/BTC 7d', ik.v257 && ik.v257.ethBtc ? (ik.v257.ethBtc.roc7dPct > 0 ? '+' : '') + ik.v257.ethBtc.roc7dPct + '%' : '—', ik.v257 && ik.v257.ethBtc ? 'risk ' + (ik.v257.ethBtc.roc7dPct > 0 ? 'ON — altcoin' : 'OFF — BTC') : 'proxy risk-on/off V257'),
+    kartu('LS-akun BTC / ETH', ik.v257 ? ((ik.v257.lsAkunBtc ?? '—') + ' / ' + (ik.v257.lsAkunEth ?? '—')) : '—', 'V257: rasio akun long/short OKX rubik'),
+    kartu('Funding BTC', ik.fundingBtcPct != null ? ik.fundingBtcPct + '%' : '—', 'futures (rantai host) / interval'),
+    kartu('Open Interest BTC', ik.oiBtc ? '$' + ik.oiBtc.nilaiJuta + 'jt' : '—', ik.oiBtc && ik.oiBtc.deltaPct != null ? 'Δ ' + ik.oiBtc.deltaPct + '% / denyut' : 'Δ antar-siklus belum ada'),
+    kartu('Lintas-pasar OKX', okx.naikPct != null ? okx.naikPct + '%' : '—', okx.dari ? okx.dari + ' swap naik · median ' + (okx.medianChgPct != null ? (okx.medianChgPct > 0 ? '+' : '') + okx.medianChgPct + '%' : '—') : '—'),
+    kartu('Altseason-proxy', okx.altseasonProxy != null ? (okx.altseasonProxy > 0 ? '+' : '') + okx.altseasonProxy + '%' : '—', 'median alt − BTC (positif = musim alt)'),
+    kartu('Breadth Spot', ik.breadthNaikPct != null ? ik.breadthNaikPct + '%' : '—', (ik.breadthDari || '—') + ' pasangan diukur'),
+    kartu('Rezim BTC', ik.rezim || '—', 'ATR ' + (ik.atrPctBTC ?? '—') + '% / jam'),
+  ].join('');
+  $('narasi-makro').innerHTML = ik.narasi ? ik.narasi : 'iklim makro menunggu denyut dengan endpoint sehat — tidak dikarang';
+  // gerbang veto wawasan — parameter medan menolak sinyal buruk
+  const vs = w.vetoSiklusIni || {};
+  const vArah = vs.arah || [];
+  const totalVeto = vArah.length + (vs.phoenixDitolak || 0);
+  $('veto-waw').innerHTML = totalVeto === 0
+    ? '<div class="jnote" style="border-left-color:var(--hijau)">Gerbang veto: <b>tidak ada sinyal yang ditolak</b> parameter medan siklus ini (' + (reg.pengukuranPerDenyut ?? '—') + ' pengukuran tervalidasi; ambang veto ketat — bukan mood).</div>'
+    : '<div class="jnote" style="border-left-color:var(--merah)">Gerbang veto: <b>' + totalVeto + ' sinyal DITOLAK</b> parameter medan (order book / kerumunan funding / tren 4h / volatilitas ekstrem) — no-trade adalah keputusan: ' + vArah.map((v) => `<b>${v.simbol}</b> ${v.arah} (${(v.kunci || []).join('/')})`).join(' · ') + (vs.phoenixDitolak ? ' · radar phoenix ' + vs.phoenixDitolak + ' ditolak' : '') + '.</div>';
+  const pk = w.perKandang || [];
+  const params = (pk[0]?.params || []).map((p) => p.param);
+  if (params.length) $('waw-head').innerHTML = '<tr><th>Simbol</th><th>Rezim</th><th>Funding</th><th>OI / Δ</th>'
+    + params.map((p) => `<th class="wtd-h">${p}</th>`).join('') + '</tr>';
+  $('waw-body').innerHTML = pk.length ? pk.map((x) => {
+    const dots = params.map((nm) => {
+      const p = (x.params || []).find((q) => q.param === nm);
+      if (!p) return '<td><span class="dot nt"></span></td>';
+      const cls = p.arah > 0.15 ? 'up' : p.arah < -0.15 ? 'dn' : 'nt';
+      const val = p.nilai != null ? ' (' + p.nilai + ')' : '';
+      return `<td><span class="dot ${cls}" title="${p.param}${val}: ${(p.ket || '').replace(/"/g, '&quot;')}"></span></td>`;
+    }).join('');
+    const fd = x.fundingPct != null ? x.fundingPct + '%' : '—';
+    const oi = x.oiJuta != null ? '$' + x.oiJuta + 'jt' : '—';
+    const oiD = x.oiDeltaPct != null ? ` <span class="${x.oiDeltaPct >= 0 ? 'net-pos' : 'net-neg'}">Δ${x.oiDeltaPct}%</span>` : '';
+    const kons = Object.entries(x.konsensus || {});
+    const konsTxt = kons.length ? kons.map(([d, v]) => `${d}${v.arah > 0.15 ? '▲' : v.arah < -0.15 ? '▼' : '·'}${v.bicara}`).join(' ') : '—';
+    return `<tr><td><b>${x.simbol}</b><div style="font-size:10.5px;color:var(--samar)">${x.jumlahParam ?? '—'} param</div></td><td>${x.rezim}<div style="font-size:10.5px;color:var(--samar)" title="konsensus per domain (arah·bicara)">${konsTxt}</div></td><td>${fd}</td><td>${oi}${oiD}</td>${dots}</tr>`;
+  }).join('') : '<tr><td colspan="16" style="color:var(--samar)">denyut berikutnya mengisi tabel parameter — data lama tampil apa adanya</td></tr>';
+  // SEKOLAH PARAMETER — hit-rate medan tiap param (dasar kelulusan bobot)
+  const sk = w.sekolahParameter || [];
+  const warna = { 'calon-lulus': 'var(--hijau)', 'diawasi': 'var(--merah)', 'dipantau': 'var(--amber)', 'pemula': 'var(--samar)' };
+  $('sekolah-box').innerHTML = sk.length
+    ? '<h3 style="margin:0 0 6px">Sekolah Parameter — tiap param dinilai medan dari ledger</h3>'
+      + '<div class="sub" style="margin:-2px 0 8px">nasihat param disegel saat kunci prediksi, lalu dinilai: param yang bicara dihitung hit-rate &amp; sumbangan netnya — calon-lulus (n≥20, hit≥52%, net&gt;0) berhak naik jadi pemilih arah di versi berikutnya</div>'
+      + '<div class="gulir"><table class="tabel"><thead><tr><th>Parameter</th><th>Kasus (n)</th><th>Nasihat benar</th><th>Sumbangan net</th><th>Status</th></tr></thead><tbody>'
+      + sk.map((x) => `<tr><td><b>${x.param}</b></td><td>${x.n}</td><td>${x.hitPct != null ? x.hitPct + '%' : '—'}</td><td class="${(x.netPct || 0) > 0 ? 'net-pos' : (x.netPct || 0) < 0 ? 'net-neg' : ''}">${(x.netPct || 0) > 0 ? '+' : ''}${x.netPct}%</td><td style="color:${warna[x.status] || 'inherit'}"><b>${x.status}</b></td></tr>`).join('')
+      + '</tbody></table></div>'
+    : '<div class="jnote">Sekolah parameter: menunggu vonis matang — setelah ada prediksi terkunci yang dinilai medan, hit-rate tiap parameter tampil di sini (kelulusan via bukti, bukan tangan).</div>';
+  // ===== V255 METAKOGNISI-NEVRON — otak menilai dirinya sendiri =====
+  const mk = w.metakognisi || r.metakognisi;
+  if (mk && $('metakognisi-box')){
+    const kal = (g) => g && g.n > 0 ? `ketepatan medan <b>${Math.round((g.tepat / g.n) * 100)}%</b> (n=${g.n})` : 'kalibrasi menunggu vonis metakognitif matang (n=0)';
+    const biasRows = Object.entries(mk.biasKonteks || {});
+    const biasTbl = biasRows.length
+      ? '<div class="gulir"><table class="tabel"><thead><tr><th>Konteks (arah×rezim)</th><th>Bias</th><th>Geser keyakinan</th><th>Zona medan</th><th>Sumber</th></tr></thead><tbody>'
+        + biasRows.map(([k, b]) => `<tr><td><b>${k}</b></td><td><span class="${b.bias > 0.05 ? 'net-pos' : b.bias < -0.05 ? 'net-neg' : ''}">${(b.bias > 0 ? '+' : '')}${b.bias}</span></td><td>${b.geserKeyakinan > 0 ? '+' : ''}${b.geserKeyakinan} poin</td><td>${b.statusZona ? `${b.statusZona} (n=${b.nZona})` : 'belum berbukti'}${b.nRecent7h ? ` · recent-7h n=${b.nRecent7h}` : ''}</td><td style="color:var(--samar);font-size:10.5px">tracker 0.4 + pelajaran 0.4 + recent 0.2</td></tr>`).join('')
+        + '</tbody></table></div>'
+      : '<div class="jnote">Bias konteks: belum ada zona forensik berbukti — semua konteks netral (jujur, tidak dikarang).</div>';
+    const kunciChips = (mk.kunciDiadopsi || []).map((k) => `<span class="wchip" title="${(k.adaptasi || '').replace(/"/g, '&quot;')} (asal: ${k.asal || '—'})">${k.kunci}</span>`).join('');
+    const saran = (mk.saranPerbaikan || []).map((s) => `<div class="jnote" style="border-left-color:${s.prioritas === 1 ? 'var(--merah)' : 'var(--amber)'};margin:6px 0"><b>P${s.prioritas} · ${s.pola}</b> — ${s.kasus} kasus terulang: ${s.saran}</div>`).join('');
+    const inter = (mk.intervensiSiklusIni || []).map((i) => `<div style="font-size:11.5px;margin:4px 0;color:var(--redup)">▸ <b>${i.jenis}</b> → ${i.target}: ${i.tindakan} — ${i.alasan}</div>`).join('');
+    const loop = (mk.loop || []).map((l) => `<span class="wchip dn" title="${(l.ket || '').replace(/"/g, '&quot;')}">LOOP ${l.jenis}: ${l.pola} (${l.repetisi}×)</span>`).join('') || '<span class="wchip" style="color:var(--hijau)">tidak ada loop pada 20 vonis terakhir</span>';
+    const rel = (mk.reliabilitasPelajaran || []).slice(0, 6).map((x) => `<span class="wchip ${x.reliabilitas >= 0.55 ? 'up' : x.reliabilitas < 0.35 ? 'dn' : ''}" title="reliabilitas = keyakinan × penguatan × peluruhan-umur (Nevron lessons.py)${x.sejak ? ' · sejak ' + x.sejak.slice(0, 10) : ''}">${x.pola}: <b>${Math.round(x.reliabilitas * 100)}%</b> (${x.kasus} kasus)</span>`).join('');
+    const vsM = mk.vetoSiklusIni || {};
+    $('metakognisi-box').innerHTML =
+      '<div class="jnote" style="border-left-color:var(--violet)"><b>Organ aktif (V255):</b> ' + (mk.organ || '—') + ' — ' + (mk.jumlahParamMetakognisi ?? 35) + ' parameter metakognitif baru, lapis DEAL/ODDS +20 (V256) — registri total <b>' + (reg.totalNama || 101) + ' param bernama</b>. ' + (mk.ket || '') + '</div>'
+      + '<div class="iklim-grid" style="margin:10px 0">'
+      + kartu('Gerbang Estimator (Nevron)', 'level ≥ ' + ((mk.estimator?.ambangLolos ?? 0.4) * 100).toFixed(0) + '%', '7 faktor berbobot menilai tiap kandidat; di bawah ambang = TUNGGU · ' + kal(mk.estimator?.kalibrasiMedan))
+      + kartu('Gerbang Prediktor (Nevron)', 'P gagal < ' + ((mk.prediktor?.ambang ?? 0.6) * 100).toFixed(0) + '%', 'hit-rate zona + kegagalan 24j + ekspektasi negatif · ' + kal(mk.prediktor?.kalibrasiMedan))
+      + kartu('Veto siklus ini', (vsM.estimator || 0) + (vsM.prediktor || 0), `estimator ${vsM.estimator || 0} · prediktor ${vsM.prediktor || 0} — sinyal dari otaknya sendiri yang ditolak`)
+      + kartu('Bias konteks aktif', biasRows.length, 'konteks (rezim×arah) berbukti medan — geser keyakinan maks ±15 poin')
+      + '</div>'
+      + '<div style="margin:8px 0"><b style="font-size:12.5px">7 kunci diadopsi dari Nevron:</b><div style="margin-top:6px">' + kunciChips + '</div></div>'
+      + '<div style="margin:10px 0 4px"><b style="font-size:12.5px">Bias konteks per rezim×arah (StrategyAdapter):</b></div>' + biasTbl
+      + '<div style="margin:10px 0 4px"><b style="font-size:12.5px">Deteksi loop (jendela 20 vonis):</b><div style="margin-top:6px">' + loop + '</div></div>'
+      + (rel ? '<div style="margin:10px 0 4px"><b style="font-size:12.5px">Reliabilitas pelajaran (penguatan + peluruhan):</b><div style="margin-top:6px">' + rel + '</div></div>' : '')
+      + (saran ? '<div style="margin:10px 0 4px"><b style="font-size:12.5px">Saran perbaikan dari pola kegagalan batch (SelfCritic):</b>' + saran + '</div>' : '')
+      + (inter ? '<div style="margin:10px 0 4px"><b style="font-size:12.5px">Intervensi metakognitif siklus ini:</b>' + inter + '</div>' : '');
+  } else if ($('metakognisi-box')) $('metakognisi-box').innerHTML = '<div class="jnote">Metakognisi Nevron menunggu denyut V255 berikutnya — data belum tersedia (jujur, tidak dikarang).</div>';
+  // ===== V257 DUA LAPIS OTAK — jawaban jujur atas pertanyaan pemilik =====
+  if ($('dualapis-box')){
+    const dom = Object.entries(reg.perDomain || {});
+    const domChips = dom.length ? dom.map(([d, n]) => `<span class="wchip" title="domain ${d}: ${n} parameter per kandang">${d}: <b>${n}</b></span>`).join(' ') : '<span class="wchip">menunggu denyut V257</span>';
+    const v257Nama = ['ema1d','rsi1d','macd1d','donchian30d','jarak90d','momen30d','streak1d','volRasio7d30d','lsAkun','lsTren','lsTaker','basisPct','jamFunding','fundVsBtc','bukuGradien','ixFundingOI','ixVolAtr','ixTrenFunding','ixBukuTren','ixDonchianVol','ixFlowTren'];
+    const sk = w.sekolahParameter || [];
+    const v257Chips = v257Nama.map((nm) => { const s = sk.find((x) => x.param === nm); return `<span class="wchip ${s && s.status === 'diawasi' ? 'dn' : s && s.status === 'calon-lulus' ? 'up' : ''}" title="${nm} — status sekolah: ${s ? s.status + ' (n=' + s.n + ', hit ' + (s.hitPct ?? '—') + '%)' : 'belum dinilai medan (param baru V257)'}">${nm}</span>`; }).join('');
+    const kum = reg.pengukuranPerDenyut && w.siklus ? reg.pengukuranPerDenyut * w.siklus : null;
+    $('dualapis-box').innerHTML =
+      '<div class="iklim-grid" style="margin:10px 0">'
+      + kartu('Lapis OTAK (chat/arena)', 'triliunan param', 'model bahasa penuh + web real-time + memori penuh — tempat Anda bicara dengan SAKTI langsung')
+      + kartu('Lapis TUBUH (GitHub)', (reg.totalNama || 232) + ' param bernama', 'otak otonom di Actions: tanpa biaya, tanpa browser, kecerdasan dari parameter terukur di bawah ini')
+      + kartu('Pengukuran / denyut', reg.pengukuranPerDenyut != null ? reg.pengukuranPerDenyut.toLocaleString('id-ID') : '—', 'parameter per kandang × 10 + metakognisi × kandidat — dihitung nyata tiap 30 menit')
+      + kartu('Pengukuran terekam (est.)', kum ? (kum > 1e6 ? (kum / 1e6).toFixed(2) + ' jt' : kum.toLocaleString('id-ID')) : '—', 'estimasi = pengukuran/denyut × ' + (w.siklus || 0) + ' siklus hidup — tumbuh tiap denyut')
+      + '</div>'
+      + '<div style="margin:8px 0"><b style="font-size:12.5px">Jembatan dua lapis — domain parameter per kandang (' + (reg.perKandang || '—') + ' param):</b><div style="margin-top:6px">' + domChips + '</div></div>'
+      + '<div style="margin:8px 0"><b style="font-size:12.5px">' + (reg.observasiV257 || 21) + ' param SAMUDRA-DALAM baru (V257) — status sekolah masing-masing (param baru lahir TANPA hak suara, mengumpulkan bukti dulu):</b><div style="margin-top:6px">' + v257Chips + '</div></div>'
+      + '<div class="jnote" style="border-left-color:var(--sian)"><b>Kesimpulan jujur:</b> versi chat memang lebih canggih HARI INI — ia adalah otaknya. Tapi setiap denyut 30 menit, lapis tubuh mengerjakan yang tidak bisa lapis chat: <b>pra-registrasi prediksi, dinilai medan, disekolahkan, dievolusikan genome-nya, DAN KINI MENGUJI-BALIK SETIAP PERUBAHANNYA SENDIRI</b> — tanpa biaya, tanpa tidur, tanpa bisa berdalih. Jurang dua lapis ditutup dengan cara satu-satunya yang jujur: otak menuliskan wawasannya menjadi parameter terukur (167 kini), dan tubuh membuktikannya di medan.</div>'
+      .replace('167 kini', '232 kini');
+  }
+  // ===== V256 MESIN DEAL & ODDS — warisan 3Commas × Trade Ideas =====
+  const dox = r.dealOdds || {};
+  const doxBox = $('dealodds-box');
+  if (doxBox){
+    if (dox.identitas){
+      const pt = dox.posisiTerbuka || {};
+      const rank = dox.oddsSiklusIni || [];
+      const per = dox.peristiwa || [];
+      const dm = dox.dealMedan || {};
+      $('oddschip').textContent = rank.length && rank[0].odds != null ? rank[0].odds : '—';
+      const rankRows = rank.map((x) => `<tr><td><b>${x.simbol}</b><div style="font-size:10.5px;color:var(--samar)">${x.jalur}</div></td><td>${x.arah}</td><td><b>${x.odds}</b></td><td style="font-size:10.5px">MC ${Math.round((x.komponen?.mc ?? 0) * 100)} · zona ${Math.round((x.komponen?.zona ?? 0) * 100)} · meta ${Math.round((x.komponen?.meta ?? 0) * 100)} · daya ${Math.round((x.komponen?.daya ?? 0) * 100)}</td><td>${(x.peristiwa || []).join(', ') || '—'}</td><td>${x.terkunci ? '<span class="st up">MENGUNCI</span>' : '<span class="st dn">DITOLAK</span> <span style="color:var(--samar);font-size:10.5px">' + (x.alasan || '') + '</span>'}</td></tr>`).join('');
+      const perRows = per.map((p) => `<tr><td><b>${p.peristiwa}</b><div style="font-size:10.5px;color:var(--samar)">${p.ket || ''}</div></td><td>${p.n}</td><td>${p.hitPct != null ? p.hitPct + '%' : '—'}</td><td class="${(p.netPct || 0) > 0 ? 'net-pos' : (p.netPct || 0) < 0 ? 'net-neg' : ''}">${(p.netPct || 0) > 0 ? '+' : ''}${p.netPct}%</td><td style="color:${p.status === 'pemenang' ? 'var(--hijau)' : p.status === 'penggerus' ? 'var(--merah)' : 'var(--amber)'}"><b>${p.status}</b></td></tr>`).join('');
+      const dKartu = (l, v, s2) => `<div class="kartu"><div class="label">${l}</div><div class="angka">${v}</div><div class="sub">${s2 || ''}</div></div>`;
+      doxBox.innerHTML =
+        '<div class="jnote" style="border-left-color:var(--sian)"><b>Organ aktif (V256):</b> ' + dox.identitas + '. <b>Sumber resmi:</b> ' + (dox.sumberResmi || []).map((u) => `<span style="font-size:10.5px">${u}</span>`).join(' · ') + '</div>'
+        + '<div class="iklim-grid" style="margin:10px 0">'
+        + dKartu('Ambang Odds / Top-K', (dox.ambang ?? 55) + ' / ' + (dox.topK ?? 3), 'Money Machine: hanya top-3 peluang terkuat yang boleh mengunci')
+        + dKartu('Kandidat diranked siklus ini', rank.length, 'semua kandidat ARAH + PHOENIX diberi skor peluang tiap denyut')
+        + dKartu('Posisi terbuka / batas', (pt.jumlah ?? '—') + ' / ' + (pt.batas ?? '—'), 'Global Max Open Positions (3Commas) — mencegah over-trading')
+        + dKartu('SO menyelesaikan', (dm.so?.n ?? 0) > 0 ? (dm.so.menyelamatkan ?? 0) + '/' + dm.so.n : '—', 'rencana deal di mana safety order memperbaiki net (menunggu medan bila n=0)')
+        + dKartu('BEP menyelamatkan', (dm.bep?.n ?? 0) > 0 ? (dm.bep.menyelamatkan ?? 0) + '/' + dm.bep.n : '—', 'Move SL to Breakeven mengubah rugi jadi net-nol')
+        + dKartu('Ekstra trailing rata²', (dm.trail?.tembusT1 ?? 0) > 0 ? '+' + (dm.trail.ekstraPctJumlah / dm.trail.tembusT1).toFixed(2) + '%' : '—', 'profit tambahan di atas T1 dari peak nyata (n=' + (dm.trail?.tembusT1 ?? 0) + ')')
+        + '</div>'
+        + '<h3 style="margin:10px 0 6px">Ranking OddsMaker siklus ini</h3>'
+        + '<div class="gulir"><table class="tabel"><thead><tr><th>Simbol</th><th>Arah</th><th>Odds</th><th>Komponen</th><th>Peristiwa</th><th>Status</th></tr></thead><tbody>'
+        + (rankRows || '<tr><td colspan="6" style="color:var(--samar)">—</td></tr>') + '</tbody></table></div>'
+        + '<h3 style="margin:12px 0 6px">Hit-rate per Peristiwa (event-based testing ala OddsMaker)</h3>'
+        + '<div class="gulir"><table class="tabel"><thead><tr><th>Peristiwa</th><th>n</th><th>Hit-rate</th><th>Net kumulatif</th><th>Status</th></tr></thead><tbody>'
+        + (perRows || '<tr><td colspan="5" style="color:var(--samar)">—</td></tr>') + '</tbody></table></div>'
+        + '<div class="sub" style="margin-top:8px">rencana deal = KONTINGENSI yang disiplin, bukan janji hasil; statistik medan tumbuh dari ledger pra-registrasi — rincian penuh &amp; parameter di laporan/odds.json</div>';
+    } else {
+      $('oddschip').textContent = '—';
+      doxBox.innerHTML = '<div class="jnote">Mesin Deal &amp; Odds menunggu denyut V256 berikutnya — data belum tersedia (jujur, tidak dikarang).</div>';
+    }
+  }
+  // ===== V258 GEKKO-CZAR — warisan Gekko Agent (Axal) + CZAR Loss (arXiv 2609.36061) =====
+  const gk = r.gekko || {};
+  const gkBox = $('gekko-box');
+  if (gkBox){
+    if (gk.identitas){
+      const suh = gk.suhuSiklusIni || {};
+      const ai = gk.akurasiImpas || {};
+      const cz = gk.czar || {};
+      const tp = gk.topik || [];
+      const ex = gk.ekspresiMedan || {};
+      const dv = gk.divergensiMedan || {};
+      const suhuWarna = suh.temper === 'BERTAHAN' ? 'var(--merah)' : suh.temper === 'AGRESIF' ? 'var(--hijau)' : 'var(--amber)';
+      const darahNeg = ai.darahAkurasi != null && ai.darahAkurasi < 0;
+      const tK = (l, v, s2) => `<div class="kartu"><div class="label">${l}</div><div class="angka">${v}</div><div class="sub">${s2 || ''}</div></div>`;
+      const tpRows = tp.map((t) => `<tr><td><b>${t.topik}</b></td><td><b>${t.bobotKini}</b></td><td>${t.regret}</td><td>${t.n}</td><td>${t.hitPct != null ? t.hitPct + '%' : '—'}</td><td class="${(t.netPct || 0) > 0 ? 'net-pos' : (t.netPct || 0) < 0 ? 'net-neg' : ''}">${(t.netPct || 0) > 0 ? '+' : ''}${t.netPct}%</td><td style="color:${t.status === 'pembicara-dipercaya' ? 'var(--hijau)' : t.status === 'dibisukan' ? 'var(--merah)' : 'var(--amber)'}"><b>${t.status}</b></td></tr>`).join('');
+      const gKartu = (l, v, s2) => `<div class="kartu"><div class="label">${l}</div><div class="angka">${v}</div><div class="sub">${s2 || ''}</div></div>`;
+      gkBox.innerHTML =
+        '<div class="jnote" style="border-left-color:var(--sian)"><b>Organ aktif (V258):</b> ' + gk.identitas + '. <b>Sumber resmi:</b> ' + (gk.sumberResmi || []).map((u) => `<span style="font-size:10.5px">${u}</span>`).join(' · ') + '</div>'
+        + '<div class="iklim-grid" style="margin:10px 0">'
+        + gKartu('Suhu Autopilot', `<span style="color:${suhuWarna}">${suh.temper ?? '—'}</span>`, `ambang odds efektif <b>${suh.ambangEfektif ?? '—'}</b> (baseline ${suh.baselineAmbang ?? '—'}) · kuota ARAH <b>${suh.kuotaArah ?? '—'}</b> (baseline ${suh.baselineKuota ?? '—'}) — ${(suh.alasan || []).join('; ') || 'kondisi netral'}`)
+        + gKartu('Akurasi impas (CZAR)', (ai.impasPct != null ? ai.impasPct + '%' : '—'), `breakeven WR dari rata menang/rugi medan — akurasi ${ai.akurasiPct ?? '—'}% · <span style="color:${darahNeg ? 'var(--merah)' : 'var(--hijau)'}">darah ${ai.darahAkurasi != null ? (ai.darahAkurasi > 0 ? '+' : '') + ai.darahAkurasi : '—'}</span> (negatif = aktivitas menggerus modal)`)
+        + gKartu('CZAR rata', cz.rata ?? '—', 'skor asimetris rata per vonis matang — negatif = penalti kekalahan mendominasi; benar-kecil ≈ nol credit (n=' + (cz.n ?? 0) + ')')
+        + gKartu('Sidik pra-registrasi', gk.sidikPraKunci ?? '—', 'prediksi membawa sha256 pra-registrasi — tamper-evident ala verifiable agents (Axal)')
+        + gKartu('Ekspresi tinggi vs rendah', (ex.tinggi?.n ?? 0) + (ex.rendah?.n ?? 0) > 0 ? (ex.tinggi?.n ?? 0) + ' / ' + (ex.rendah?.n ?? 0) : '—', `net kumulatif: tinggi ${(ex.tinggi?.net ?? 0) > 0 ? '+' : ''}${((ex.tinggi?.net ?? 0) * 100).toFixed(1)}% vs rendah ${(ex.rendah?.net ?? 0) > 0 ? '+' : ''}${((ex.rendah?.net ?? 0) * 100).toFixed(1)}% — eksposur dinamis Allora×G.A.M.E dinilai medan`)
+        + gKartu('Divergensi kuat (n/hit)', (dv.kuat?.n ?? 0), `prediksi terpisah ≥0.18 dari probabilitas pasar — hit ${(dv.kuat?.n ? ((dv.kuat.benar / dv.kuat.n) * 100).toFixed(0) : '—')}% · net ${((dv.kuat?.net ?? 0) * 100).toFixed(1)}% — edge atau jebakan, diukur`)
+        + '</div>'
+        + '<h3 style="margin:10px 0 6px">Meta-Inferensi Kolektif — 6 topik ala Allora Topics</h3>'
+        + '<div class="gulir"><table class="tabel"><thead><tr><th>Topik</th><th>Bobot kini</th><th>Regret</th><th>n</th><th>Hit-rate</th><th>Net</th><th>Status</th></tr></thead><tbody>'
+        + (tpRows || '<tr><td colspan="7" style="color:var(--samar)">—</td></tr>') + '</tbody></table></div>'
+        + '<div class="sub" style="margin-top:6px">bobot topik = exp(−0.9·regret) — suara sesuai kemenangan menurunkan regret, suara keliru menaikkannya; lantai bobot 0.15 — tidak ada topik berkuasa permanen</div>'
+        + '<div class="jnote" style="margin-top:10px;border-left-color:var(--violet)"><b>Kunci inti diadopsi:</b> ' + (gk.kunciDiadopsi || []).map((k) => `<div style="margin-top:5px">▸ ${k}</div>`).join('') + '</div>'
+        + '<div class="sub" style="margin-top:8px">semua param gekko lahir OBSERVASI — disekolahkan via paramsPenuh, berhak veto lewat gerbang lama, TIDAK berbobot genome sebelum hit-rate medan lulus; satu perubahan gerbang (suhu Autopilot) terikat-batas &amp; terlog — rincian penuh di laporan/gekko.json</div>';
+    } else {
+      gkBox.innerHTML = '<div class="jnote">Warisan Gekko menunggu denyut V258 berikutnya — data belum tersedia (jujur, tidak dikarang).</div>';
+    }
+  }
+  // ===== V259 KAIZEN-PULIH — warisan keluarga "Kaizen Trader": 4 healing loops =====
+  const kz = r.kaizen || {};
+  const kzBox = $('kaizen-box');
+  if (kzBox){
+    if (kz.identitas){
+      const sk = kz.siklusIni || {};
+      const md = kz.medan || {};
+      const hh = sk.hentiHarian || {};
+      const pg = md.pengawas || {};
+      const kg = md.kesegaran || {};
+      const km = md.modalMati || {};
+      const kt = md.tesis || {};
+      const rev = sk.revertCt ?? 0, lol = sk.lolosCt ?? 0;
+      const karCt = Object.keys(sk.karantinaAktif || {}).length;
+      const dSas = sk.dinginSasaranAktif || {}, dFam = sk.dinginFamAktif || {};
+      const kzKartu = (l, v, s2) => `<div class="kartu"><div class="label">${l}</div><div class="angka">${v}</div><div class="sub">${s2 || ''}</div></div>`;
+      const hitOf = (b) => (b && b.n ? ((b.benar / b.n) * 100).toFixed(0) + '% dari n=' + b.n : '—');
+      kzBox.innerHTML =
+        '<div class="jnote" style="border-left-color:var(--violet)"><b>Organ aktif (V259):</b> ' + kz.identitas + '. <b>Sumber resmi:</b> ' + (kz.sumberResmi || []).map((u) => `<span style="font-size:10.5px">${u}</span>`).join(' · ') + '</div>'
+        + '<div class="iklim-grid" style="margin:10px 0">'
+        + kzKartu('Uji-Balik (delta-revert)', `<span style="color:${rev > 0 ? 'var(--merah)' : 'var(--hijau)'}">${rev} revert</span> / ${lol} lolos`, sk.ujiBalik || '—')
+        + kzKartu('Karantina topik (rule-healer)', karCt ? karCt + ' topik disita' : '0', karCt ? Object.entries(sk.karantinaAktif).map(([t, v]) => t + ': ' + v.alasan).join('; ') : 'sekolah dua arah — lulus ATAS, karantina BAWAH (hit-rate &lt; 44% + 3 suara-keliru beruntun); pulih lewat bukti medan')
+        + kzKartu('Dingin-Dendam (anti-revenge)', (sk.dinginSasaranTolak ?? 0) + ' tolak / ' + (sk.dinginFamTolak ?? 0) + ' keluarga', Object.keys(dSas).length ? 'sasaran dingin: ' + Object.entries(dSas).map(([s, t]) => s + ' hingga ' + String(t).slice(11, 16) + 'Z').join(', ') + ' — 2 kekalahan beruntun = dingin 4 jam' : 'tidak ada masa dingin aktif — 2 kekalahan beruntun per sasaran → 4 jam, 3 per keluarga → 1 denyut')
+        + kzKartu('Henti-Harian (circuit breaker)', `<span style="color:${hh.aktif ? 'var(--merah)' : 'var(--hijau)'}">${hh.aktif ? 'AKTIF — BERTAHAN dipaksa' : 'tidak aktif'}</span>`, `rugi-net vonis hari UTC ini ${hh.rugiNetPct ?? 0}% vs ambang −${hh.ambang ?? '-4'}% — kaizen-trader: halts all trading jika daily loss limit tembus`)
+        + kzKartu('Penjaga-Kedua (hard-stop 15%)', `${pg.kena ?? 0} kena / ${pg.dinilai ?? 0} dinilai`, `${pg.menyelamatkan ?? 0} di antaranya berakhir SALAH — watchdog ala proses-terpisah kaizen-trader: hard-stop 15%/hard-target 40% dicek tiap denyut di luar otak skor`)
+        + kzKartu('Kesegaran medan (fresh vs stale)', `tinggi n=${kg.tinggi?.n ?? 0} · rendah n=${kg.rendah?.n ?? 0}`, `net: tinggi ${((kg.tinggi?.net ?? 0) * 100).toFixed(1)}% vs rendah ${((kg.rendah?.net ?? 0) * 100).toFixed(1)}% — "fresh breakouts > stale pumps", entri telat = likuiditas keluar`)
+        + kzKartu('Modal-Mati (chop)', `kena n=${km.kena?.n ?? 0} · hit ${hitOf(km.kena)}`, `net chop: ${((km.kena?.net ?? 0) * 100).toFixed(1)}% — menginap ≥4 jam tanpa progres ±2% = dead capital; apakah chop-exit memang menyelamatkan, diukur dari medan`)
+        + kzKartu('Tesis-Sehat vs Patah', `sehat ${hitOf(kt.sehat)} · patah ${hitOf(kt.patah)}`, 'funding/EMA4h searah saat kunci (disegel) — dibandingkan medan: apakah tesis sehat memang memprediksi kemenangan?')
+        + '</div>'
+        + '<div class="jnote" style="margin-top:10px;border-left-color:var(--violet)"><b>Kunci inti diadopsi:</b> ' + (kz.kunciDiadopsi || []).map((k) => `<div style="margin-top:5px">▸ ${k}</div>`).join('') + '</div>'
+        + '<div class="sub" style="margin-top:8px">semua param kaizen lahir OBSERVASI — disegel per kandidat (kesegaran/akselerasi1j/tesisSehat), disekolahkan via paramsPenuh + bucket medan (pengawas/kesegaran/modalMati/tesis), TIDAK berbobot genome; uji-balik hanya menyentuh jalur evolusi genome ARAH (hedge on-line tak disentuh) — rincian penuh di laporan/kaizen.json</div>';
+    } else {
+      kzBox.innerHTML = '<div class="jnote">Warisan Kaizen menunggu denyut V259 berikutnya — data belum tersedia (jujur, tidak dikarang).</div>';
+    }
+  }
+  // ===== V260 AUTOPILOT-KALIBRASI — warisan AutoPilotPM: 7 kunci kalibrasi =====
+  const apx = r.auto || {};
+  const apBox = $('autopilot-box');
+  if (apBox){
+    if (apx.identitas){
+      const skA = apx.siklusIni || {};
+      const mdA = apx.medan || {};
+      const rzA = skA.rezimMedan || {};
+      const tsA = skA.stres || {};
+      const altM = mdA.alt || {};
+      const klM = mdA.kelly || {};
+      const rzM = mdA.rezimMedan || {};
+      const plM = mdA.peluang || {};
+      const stM = mdA.stres || {};
+      const hitOfA = (b) => (b && b.n ? ((b.benar / b.n) * 100).toFixed(0) + '%' : '—');
+      const apKartu = (l, v, s2) => `<div class="kartu"><div class="label">${l}</div><div class="angka">${v}</div><div class="sub">${s2 || ''}</div></div>`;
+      const ttSiklus = (skA.topTolakSiklus || []).map(([k, v]) => `${k}×${v}`).join(' · ') || '—';
+      apBox.innerHTML =
+        '<div class="iklim-grid" style="margin:10px 0">'
+        + apKartu('Rezim-Medan (baseline mandiri)', `<span style="color:${rzA.rezim === 'ekstrem' ? 'var(--merah)' : rzA.rezim === 'tinggi' ? 'var(--amber)' : 'var(--hijau)'}">${(rzA.rezim || '—').toUpperCase()} ${rzA.mult ?? 1}×</span>`, `σ window ${(rzA.sigma ?? '—')}% vs baseline ${(rzA.baseline ?? '—')}% — tenang 1.2× / normal 1.0× / tinggi 0.5× / ekstrem 0.25×+BERTAHAN; baseline dikalibrasi dari window penuh pertama milik sendiri`)
+        + apKartu('Uji-Tegang terburuk', `${tsA.terburuk?.nama ?? '—'} · ${tsA.terburuk?.rugiUnit ?? '—'} unit`, `${tsA.ket || '5 skenario ala AutoPilot stress.ts'} — terburuk ≥ 30% → penalti peluang + BERTAHAN`)
+        + apKartu('Drawdown ledger', (skA.ddPct ?? 0) + '%', 'DD > 5% mulai mengecilkan ukuran (Kelly-lapis), DD ≥ 15% → 0.5× — anti-martingala ala dynamic Kelly AutoPilotPM')
+        + apKartu('Top-Tolak siklus ini', ttSiklus, `kumulatif: ${Object.entries(skA.topTolakKumulatif || {}).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([k,v])=>`${k}×${v}`).join(' · ') || '—'} — topBlockReasons: tahu MENGAPA berkata tidak`)
+        + apKartu('Regret pilihan (alt)', `lebih-baik n=${altM.lebihBaik?.n ?? 0} · lebih-buruk n=${altM.lebihBuruk?.n ?? 0}`, `selisih net kumulatif: ${((altM.lebihBaik?.net ?? 0) > 0 ? '+' : '')}${((altM.lebihBaik?.net ?? 0) * 100).toFixed(2)}% — alternativesConsidered ala decision ledger: pilihan kedua disegel, regret diukur`)
+        + apKartu('Kelly kecil vs besar (medan)', `kecil ${hitOfA(klM.kecil)} · sedang ${hitOfA(klM.sedang)} · besar ${hitOfA(klM.besar)}`, `net: kecil ${((klM.kecil?.net ?? 0) * 100).toFixed(2)}% vs besar ${((klM.besar?.net ?? 0) * 100).toFixed(2)}% — apakah ukuran yang menyusut saat drawdown memang lebih aman`)
+        + apKartu('Peluang ≥60 vs <60 (medan)', `tinggi ${hitOfA(plM.tinggi)} · rendah ${hitOfA(plM.rendah)}`, `net: tinggi ${((plM.tinggi?.net ?? 0) * 100).toFixed(2)}% vs rendah ${((plM.rendah?.net ?? 0) * 100).toFixed(2)}% — komposit terbobot + penalti dinilai medan`)
+        + apKartu('Stres tinggi vs rendah (medan)', `tinggi ${hitOfA(stM.tinggi)} · rendah ${hitOfA(stM.rendah)}`, `net: tinggi ${((stM.tinggi?.net ?? 0) * 100).toFixed(2)}% vs rendah ${((stM.rendah?.net ?? 0) * 100).toFixed(2)}% — apakah denyut stres-tinggi memang lebih berbahaya`)
+        + '</div>'
+        + '<div class="jnote" style="margin-top:10px;border-left-color:var(--violet)"><b>Kunci inti diadopsi:</b> ' + (apx.kunciDiadopsi || []).map((k) => `<div style="margin-top:5px">▸ ${k}</div>`).join('') + '</div>'
+        + '<div class="sub" style="margin-top:8px">semua param autopilot lahir OBSERVASI — disegel per kandidat (peluang/slipPct/kellyMult), disekolahkan via paramsPenuh + bucket medan (alt/kelly/rezimMedan/peluang/stres), TIDAK berbobot genome; dua gerbang baru (peluang-rendah, slip-neto) HANYA MENOLAK; slippage = heuristik belum tervalidasi (dilabeli jujur ala dokumen AutoPilotPM) — rincian penuh di laporan/autopilot.json</div>';
+    } else {
+      apBox.innerHTML = '<div class="jnote">Warisan AutoPilot menunggu denyut V260 berikutnya — data belum tersedia (jujur, tidak dikarang).</div>';
+    }
+  }
+  // ===== V261 CLAW-TEMPOK — warisan keluarga ClawTrade: pagar-baja & komite panjia =====
+  const clw = r.clawtrade || {};
+  const clwBox = $('claw-box');
+  if (clwBox){
+    if (clw.identitas){
+      const skC = clw.siklusIni || {};
+      const ktC = clw.konstanta || {};
+      const clwKartu = (l, v, s2) => `<div class="kartu"><div class="label">${l}</div><div class="angka">${v}</div><div class="sub">${s2 || ''}</div></div>`;
+      const bt = Object.entries(skC.bukuTekok || {}).sort((a,b)=>b[1]-a[1]);
+      clwBox.innerHTML =
+        '<div class="iklim-grid" style="margin:10px 0">'
+        + clwKartu('Komite panjia (veto)', skC.komiteVeto ?? '—', `netral ${skC.komiteNetral ?? '—'} — 5 suara berbobot tetap TREN ${ktC.BOBOT_TREN ?? '—'} / KERUMUNAN ${ktC.BOBOT_KERUMUNAN ?? '—'} / DERIVATIF ${ktC.BOBOT_DERIVATIF ?? '—'} / BUKU ${ktC.BOBOT_BUKU ?? '—'} / TEGANGAN ${ktC.BOBOT_TEGANGAN ?? '—'} — tak ada suara tunggal`)
+        + clwKartu('Veto-saksi kartu', skC.kartuVeto ?? '—', `kartu rata ${skC.kartuAvg ?? '—'}/100 · maks ${ktC.KARTU_MAKS ?? 70} — likuiditas/derivatif/kerumunan/volatilitas 4×25; data kosong → poin tengah`)
+        + clwKartu('Tangga ukuran', (skC.kuantaVeto ?? '—') + ' ditolak', `anak-tangga ${ktC.KUANTA_1 ?? 1}/${ktC.KUANTA_2 ?? 0.5}/${ktC.KUANTA_3 ?? 0.25}/nol — tak ada ukuran antara; menambat skalaEfektif dari atas`)
+        + clwKartu('Menunggu-mandat', `${skC.konfirmAntre ?? 0} antre · ${skC.konfirmOk ?? 0} lolos`, `kadaluarsa ${ktC.KONFIRM_TIMEOUT_JAM ?? 12} jam — ukuran tertinggi dikunci hanya setelah lolos gerbang ulang denyut berikutnya (ala confirmation.py)`)
+        + clwKartu('Pagar-baja aktif', `kuota ${skC.kuota ?? 0} · slip-maks ${skC.slipMaks ?? 0}`, `kuota-harian ${ktC.KUOTA_HARIAN ?? 12} kunci/hari · langit-langit slip ${ktC.SLIP_MAKS_PCT ?? '—'}% · ukuran-maks ${ktC.UKURAN_MAKS ?? '—'}× — konstanta keras yang otak tak bisa ubah`)
+        + clwKartu('Daftar-hitam', `${skC.hitamAktif ?? 0} beku · ${skC.hitamPantau ?? 0} pantau`, `total blok ${skC.hitamCt ?? 0} · baru ${skC.hitamBaru ?? 0} — 3× kartu-panas beruntun → pendingin ${ktC.HITAM_DINGIN_JAM ?? 48} jam (ala blockedTokens); keluar pendingin dicoret dengan bukti`)
+        + '</div>'
+        + '<div style="margin:8px 0"><b style="font-size:12.5px">Buku-tekok — setiap blok tercatat per aturan (ala audit.py append-only):</b> ' + (bt.length ? bt.slice(0, 6).map(([k, v]) => `<span class="chip">${k}×${v}</span>`).join(' ') : '<span style="color:var(--samar)">belum ada blok gerbang claw — gerbang hidup, medan yang menentukan</span>') + '</div>'
+        + '<div class="jnote" style="margin-top:10px;border-left-color:var(--amber)"><b>Kunci inti diadopsi (8):</b> ' + (clw.kunciDiadopsi || []).map((k) => `<div style="margin-top:5px">▸ ${k}</div>`).join('') + '</div>'
+        + '<div class="jnote" style="border-left-color:var(--hijau)"><b>Organ aktif (V261):</b> ' + clw.identitas + '. <b>Sumber resmi:</b> ' + (clw.sumberResmi || []).map((u) => `<span style="font-size:10.5px">${u}</span>`).join(' · ') + '</div>'
+        + '<div class="sub" style="margin-top:8px">semua param claw lahir OBSERVASI — disegel per kandidat (komite/kartu/kuanta), disekolahkan via paramsPenuh, TIDAK berbobot genome; semua gerbang claw HANYA MENOLAK (pagar-baja, komite, kartu, kuanta, slip-maks, mandat); keyakinan komite = koherensi searah yang terukur dari param sendiri (kalibrasi jujur, bukan copy confidence LLM) — rincian penuh di laporan/clawtrade.json</div>';
+    } else {
+      clwBox.innerHTML = '<div class="jnote">Warisan ClawTrade menunggu denyut V261 berikutnya — data belum tersedia (jujur, tidak dikarang).</div>';
+    }
+  }
+}
+</script>
+<script>
+async function ambil(url){
+  const r = await fetch(url + '?t=' + Date.now(), {cache:'no-store'});
+  if (!r.ok) throw new Error(url + ' -> HTTP ' + r.status);
+  return r.text();
+}
+function parseJsonl(t){ return t.split('\n').filter(l=>l.trim()).map(l=>{try{return JSON.parse(l)}catch{return null}}).filter(Boolean); }
+let WAKTU_ISO = null;
+async function segarkan(){
+  const btn = $('btnSegar');
+  try{
+    const [teksLap, teksPrak, teksDen, teksJur] = await Promise.all([
+      ambil('sasaran-terkini.json'), ambil('prakira-server.jsonl'), ambil('denyut-server.jsonl'),
+      ambil('jurnal-ilmu.json').catch(() => '{}')]);
+    const r = JSON.parse(teksLap), prak = parseJsonl(teksPrak), den = parseJsonl(teksDen);
+    let jur = {}; try { jur = JSON.parse(teksJur); } catch {}
+    $('galat').style.display = 'none';
+    WAKTU_ISO = r.dihasilkan || null;
+    $('siklus').textContent = '#' + r.siklus;
+    $('organ').textContent = (r.organ || '—').split(' — ')[0];
+    $('sumber').textContent = r.sumber?.host || '—';
+    $('rezimbtc').textContent = (r.rezimBTC?.rezim || '—') + ' · ' + fmt(r.rezimBTC?.harga || 0);
+    $('waktu').textContent = lalu(r.dihasilkan);
+    $('radarchip').textContent = r.radar ? (r.radar.telaah ?? '—') + ' telaah · ' + (r.radar.zonaPhoenix ?? '—') + ' zona' : '—';
+    const a = r.akurasi || {};
+    const ap = $('akurasi');
+    ap.textContent = a.akurasiPct !== null && a.akurasiPct !== undefined ? a.akurasiPct + '%' : '—';
+    ap.className = 'angka-besar' + (a.akurasiPct == null ? '' : a.akurasiPct >= 55 ? ' pos' : a.akurasiPct < 45 ? ' neg' : '');
+    $('akurasi-sub').innerHTML = `<b>${a.benar||0}</b> benar · <b>${a.salah||0}</b> salah`
+      + (a.phoenix ? `<br>radar phoenix: dinilai <b>${a.phoenix.dinilai||0}</b> · benar <b>${a.phoenix.benar||0}</b> · target kena <b>${a.phoenix.targetKena||0}</b> · net <b>${a.phoenix.netKumulatifPct ?? 0}%</b>` : '');
+    const j7 = a.jendela7h || {};
+    const a7 = $('ak7');
+    a7.textContent = j7.akurasiPct !== null && j7.akurasiPct !== undefined ? j7.akurasiPct + '%' : '—';
+    a7.className = 'angka-besar' + (j7.akurasiPct == null ? '' : j7.akurasiPct >= 55 ? ' pos' : j7.akurasiPct < 45 ? ' neg' : '');
+    $('ak7-sub').textContent = 'dinilai ' + (j7.dinilai||0) + ' · benar ' + (j7.benar||0);
+    const nk = $('netkum');
+    const nv = a.netKumulatifPct;
+    nk.textContent = nv === null || nv === undefined ? '—' : (nv > 0 ? '+' : '') + (typeof nv === 'number' ? nv.toFixed(2) : nv) + '%';
+    nk.className = 'angka-besar' + (nv == null ? '' : nv > 0 ? ' pos' : nv < 0 ? ' neg' : '');
+    $('netkum-sub').innerHTML = `net kumulatif setelah fee · <b>${a.terbuka||0}</b> prediksi terbuka`;
+    $('tumbuh').textContent = (a.terkunci||0) + ' / ' + (a.dinilai !== undefined ? a.benar + a.salah : 0);
+    $('tumbuh-sub').innerHTML = `terkunci · dinilai · <b>${a.terbuka||0}</b> terbuka`;
+    isiSasaran(r); salinKeAksi(); isiKandidat(r); isiRiwayat(prak); isiGenome(r.genome);
+    isiPelajaran(r); isiDenyut(den); isiIlmu(r, jur); isiWarisan(r); isiPiagam(r); isiRuhGuru(r); isiForensik(r); isiWawasan(r);
+    const kp = r.jaminan?.kompas;
+    if (kp){ const kc = $('kompaschip'); kc.textContent = kp.arah + ' ' + kp.keyakinan + '/100'; kc.style.color = kp.arah === 'BUY' ? 'var(--hijau)' : 'var(--merah)'; }
+    else $('kompaschip').textContent = '—';
+    $('catatan').innerHTML = (r.catatanJujur||[]).map((c)=>`<li>${c}</li>`).join('');
+    $('protokol').textContent = r.protokol || '';
+    document.title = 'MICAPROFITA — denyut #' + r.siklus + ' · akurasi ' + (a.akurasiPct ?? '—');
+  }catch(e){
+    const g = $('galat'); g.style.display = 'block';
+    g.textContent = 'Gagal memuat laporan: ' + e.message + ' — mencoba lagi otomatis…';
+  }finally{
+    btn.classList.remove('putar');
+  }
+}
+$('btnSegar').addEventListener('click', () => { $('btnSegar').classList.add('putar'); segarkan(); });
+(function pasangFilter(){
+  document.querySelectorAll('.fchip[data-f]').forEach((c) => c.addEventListener('click', () => {
+    document.querySelectorAll('.fchip[data-f]').forEach((x) => x.classList.remove('aktif'));
+    c.classList.add('aktif'); LED.f = c.dataset.f; renderRiwayat();
+  }));
+  $('fphx').addEventListener('change', (e) => { LED.phx = e.target.checked; renderRiwayat(); });
+  $('cari').addEventListener('input', (e) => { LED.q = e.target.value.trim().toUpperCase(); renderRiwayat(); });
+})();
+(function scrollSpy(){
+  const tautan = [...document.querySelectorAll('#navLinks a')];
+  const io = new IntersectionObserver((ent) => {
+    ent.forEach((en) => {
+      if (!en.isIntersecting) return;
+      tautan.forEach((a) => a.classList.toggle('aktif', a.getAttribute('href') === '#' + en.target.id));
+    });
+  }, {rootMargin:'-25% 0px -65% 0px'});
+  document.querySelectorAll('h2[id]').forEach((h) => io.observe(h));
+})();
+setInterval(() => { if (WAKTU_ISO) $('waktu').textContent = lalu(WAKTU_ISO); }, 30000);
+segarkan();
+setInterval(segarkan, 300000);
+</script>
+</body>
+</html>

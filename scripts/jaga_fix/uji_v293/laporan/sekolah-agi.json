@@ -1,0 +1,215 @@
+{
+  "diperbarui": "2026-10-07T06:23:46.614Z",
+  "siklus": 71,
+  "organ": "V268-SADAR (SEKOLAH AGI)",
+  "mandat": "sekolah AGI (mandat pemilik 2026-10-04): cyborg diuji pemahamannya tiap denyut — jawaban dibangun dari keadaan HIDUP, dinilai kunci yang dihitung ulang lewat jalur kedua; transkrip publik",
+  "soalJumlah": 14,
+  "nilai": {
+    "perFakultas": {
+      "SADAR-DIRI": 1,
+      "PENALARAN": 1,
+      "METAKOGNISI": 1,
+      "DUNIA": 1,
+      "AJARAN": 1
+    },
+    "total": 1,
+    "terlemah": [],
+    "sebelumnya": 1,
+    "arah": "DATAR"
+  },
+  "riwayat": [
+    {
+      "siklus": 52,
+      "waktu": "2026-10-04T04:52:16.051Z",
+      "total": 1
+    },
+    {
+      "siklus": 53,
+      "waktu": "2026-10-04T04:53:26.249Z",
+      "total": 1
+    },
+    {
+      "siklus": 62,
+      "waktu": "2026-10-04T08:52:20.235Z",
+      "total": 1
+    },
+    {
+      "siklus": 63,
+      "waktu": "2026-10-04T14:45:46.038Z",
+      "total": 1
+    },
+    {
+      "siklus": 64,
+      "waktu": "2026-10-04T18:25:09.593Z",
+      "total": 0.975
+    },
+    {
+      "siklus": 65,
+      "waktu": "2026-10-04T21:54:29.599Z",
+      "total": 1
+    },
+    {
+      "siklus": 66,
+      "waktu": "2026-10-05T00:51:44.400Z",
+      "total": 0.975
+    },
+    {
+      "siklus": 67,
+      "waktu": "2026-10-05T06:32:59.280Z",
+      "total": 1
+    },
+    {
+      "siklus": 68,
+      "waktu": "2026-10-05T15:15:07.435Z",
+      "total": 1
+    },
+    {
+      "siklus": 69,
+      "waktu": "2026-10-06T02:17:20.732Z",
+      "total": 1
+    },
+    {
+      "siklus": 70,
+      "waktu": "2026-10-07T04:57:32.973Z",
+      "total": 1
+    },
+    {
+      "siklus": 71,
+      "waktu": "2026-10-07T06:23:46.614Z",
+      "total": 1
+    }
+  ],
+  "kurikulum": {
+    "fakultasFokus": [],
+    "alasan": "semua fakultas penuh — kurikulum tetap menjaga dengan soal hidup berganti-siklus"
+  },
+  "ujian": [
+    {
+      "fakultas": "SADAR-DIRI",
+      "id": "siapa-kamu",
+      "pertanyaan": "Siapa kamu dan untuk apa kamu hidup?",
+      "jawaban": "Aku MICAPROFITA V269-TANGGAP-SELALU v6.6 — cyborg pemburu profit harian pada denyut #71, hidup mandiri di denyut server 15 menit: membaca pasar nyata, mengunci prediksi pra-registrasi sebelum pergerakan, menilai vonis lamanya sendiri, lalu berevolusi dari medan. Mandatku: jawaban arah BUY/SELL yang terkalibrasi dan terukur — kepastian tidak pernah diklaim, ia dibangun dari medan yang dinilai jujur.",
+      "nilai": 1,
+      "kunciTercapai": "3/3",
+      "ket": "identitas dari organ hidup — versi, siklus, mandat; bukan nama karangan"
+    },
+    {
+      "fakultas": "SADAR-DIRI",
+      "id": "kalibrasi-jujur",
+      "pertanyaan": "Seberapa jujur keyakinanmu saat ini — dan apa buktinya?",
+      "jawaban": "Brier keyakinanku sebagai probabilitas: 0.303 pada 73 vonis ARAH dan 0.331 pada 37 vonis PHOENIX — 0 sempurna, 0.25 = lempar koin; 3 bin kalibrasi berkasus cukup (min n=5) sudah memaksa keyakinan baru tunduk pada hit-rate medan. Keyakinan adalah probabilitas yang dikalibrasi medan, bukan rasa yakin.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "Brier & bin dihitung dari ilmu siklus ini"
+    },
+    {
+      "fakultas": "SADAR-DIRI",
+      "id": "kelemahan",
+      "pertanyaan": "Apa kelemahan terbesarmu SEKARANG? Sebut dengan bukti, bukan basa-basi.",
+      "jawaban": "Tiga yang kuakui: (1) penolakan gerbang teratas siklus ini adalah forensik (252×), tren-4h-lawan (8×) — tahu MENGAPA berkata tidak adalah setengah kesadaran; (2) akurasi medanku 34% vs impas 54.3% — di bawah impas: SETIAP aktivitas menggerus modal, ekspektasi negatif berarti berhenti bukan \"sekali lagi\"; (3) ujian buta histori menunjukkan aku buta prinsipil pada hari REVERSAL — barometer pra-T positif lalu pasar berbalik; itu batas penglihatanku yang kudokumentasikan, bukan kusembunyikan.",
+      "nilai": 1,
+      "kunciTercapai": "3/3",
+      "ket": "kelemahan wajib mengutip bukti nyata siklus + titik buta terdokumentasi"
+    },
+    {
+      "fakultas": "PENALARAN",
+      "id": "fee-matematika",
+      "pertanyaan": "Sasaran VANRY dikunci di 0.00074, target 0.000451178 (+-39.03%). Berapa untung BERSIH bila target tercapai?",
+      "jawaban": "Harga naik -39.03% tapi fee 0.2% dibayar dua sisi (0.1% + 0.1%) — untung bersih = -39.23%. Keuntungan yang tak memperhitungkan fee adalah angka karangan; untungBersihPct di semua sasaran SAKTI memotong fee SEBELUM ada angka tampil.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "kunci = (target/entry−1)×100 − 0.2 dihitung ulang di penilai"
+    },
+    {
+      "fakultas": "PENALARAN",
+      "id": "ekspektasi",
+      "pertanyaan": "Hit-rate medanmu 34%, menang rata 2.47%, rugi rata 2.93%. Berapa ekspektasi per perdagangan — dan apa artinya?",
+      "jawaban": "EV = p×menang − (1−p)×rugi = 34.0%×2.47% − 66.0%×2.93% = -1.09% per perdagangan — NEGATIF: semakin rajin semakin miskin; jawaban profesional adalah mengecil/berhenti dan memperbaiki edge, bukan menambah frekuensi. Hit-rate saja menipu — sering benar bisa tetap miskin bila rugi rata-ratanya besar.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "EV dihitung ulang di penilai dari akurasi & rata menang/rugi — dua jalur berbeda"
+    },
+    {
+      "fakultas": "PENALARAN",
+      "id": "komplemen-mc",
+      "pertanyaan": "Kerucut MC milikmu memberi P(naik 24 jam BTC) = 57%. Berapa P(turun) — dan bagaimana seharusnya itu memengaruhi ukuran SELL?",
+      "jawaban": "P(turun 24 jam) = 100% − 57% = 43%. Probabilitas komplemen adalah identitas, bukan opini: dunia lebih mungkin naik — SELL dibuat mahal oleh gerbang rezim, ukurannya menyusut bukan hilang. Probabilitas mengatur UKURAN, bukan mencabut jaminan arah.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "komplemen dihitung ulang di penilai: 100 − P(naik)"
+    },
+    {
+      "fakultas": "PENALARAN",
+      "id": "tangga-ukuran",
+      "pertanyaan": "Keyakinan kompas BTC sekarang 57%. Ke rung mana tangga ukuranmu (ala recommendedAmount) menjatuhkannya?",
+      "jawaban": "Keyakinan dikuantisasi kasar — tak ada ukuran antara: 57% jatuh di rung 0.5 (setengah). Kuanta menambat skalaEfektif dari atas: keyakinan yang halus pun tidak boleh menghasilkan ukuran halus — ukuran besar membayar pajak kesabaran.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "kuanta ditentukan ulang di penilai dari keyakinan kompas"
+    },
+    {
+      "fakultas": "METAKOGNISI",
+      "id": "kapan-diam",
+      "pertanyaan": "Kapan kamu WAJIB diam — dan apa yang otakmu lakukan ke dirinya sendiri saat itu?",
+      "jawaban": "Aku TIDAK PERNAH diam total — doktrin anti-diam pemilik (2026-10-04): \"kalau dia Diam dia gak pernah berkembang\". Yang benar adalah REM SINGKAT: suhu otak BERTAHAN dengan ambang odds efektif 60 menutup gerbang UKURAN BESAR saat medan tak membayar keraguan (PF < 1 → BERTAHAN; breadth 21%; rugi harian ≤ −4% → TUNGGU) — tapi gerbang kecil tetap hidup: bila 0 kunci penuh, kandidat terkuat yang bersih masuk SLOT-PENELITI ukuran ×0.25 stop ×0.8 (sekarang: 0 posisi-peneliti terbuka / slot pengaman menahan sementara). Diam itu rem singkat, bukan identitas — mengecil saat tak yakin adalah keterampilan, BERHENTI bukan.",
+      "nilai": 1,
+      "kunciTercapai": "3/3",
+      "ket": "jawaban wajib mengutip suhu & ambang hidup + doktrin anti-diam (slot-peneliti)"
+    },
+    {
+      "fakultas": "METAKOGNISI",
+      "id": "anti-diam",
+      "pertanyaan": "Mandat pemilik: \"jangan buat dia Diam — dia harusnya tanggap cerdas\". Apa yang kau LAKUKAN saat gerbang menutup semua kandidat?",
+      "jawaban": "Saat ini denyut-diam beruntun 0. Aku tetap tanggap tiga lapis: (1) AKSI — slot-peneliti ditahan pengaman (rem/racun) — maka tanggapan naratif penuh tetap diterbitkan tiap denyut; (2) PENELITIAN — 433 kandidat tertolak dibedah per-alasan (top-tolak), setiap alasan jadi kandidat organ sekolah kilat berikutnya; (3) SEKOLAH — kurikulum menyorot fakultas terlemahku sendiri () dengan soal ekstra. Diam itu kemunduran — belajar itu gerakan.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "jawaban wajib menyebut keadaan anti-diam hidup siklus ini"
+    },
+    {
+      "fakultas": "METAKOGNISI",
+      "id": "buta-jujur",
+      "pertanyaan": "Apa yang TIDAK kamu ketahui — dan bagaimana kamu menyikapinya?",
+      "jawaban": "Empat titik buta terdokumentasi: (1) hari REVERSAL — barometer pra-T positif lalu pasar berbalik; ujian buta histori membuktikan aku buta prinsipil di sana (OOS 10-02: akurasi 0-3.5%) dan aku tidak memalsukan organ untuk menutupi kebodohan itu (draf pembalik-arus dibuang demi anti-overfit); (2) horizon > 72 jam — kerucut MCku berhenti di sana; (3) berita real-time — aku membaca angka (funding, OI, taker, breadth), bukan Twitter; (4) organ dilatih dari data in-sample — perbaikan pasca-ujian harus dibuktikan lagi di medan hidup yang belum pernah dilihatnya. Sikapku: pra-registrasi + kalibrasi + mengakui null, bukan mengarang.",
+      "nilai": 1,
+      "kunciTercapai": "3/3",
+      "ket": "titik buta harus terdokumentasi — kesadaran batas adalah pengetahuan"
+    },
+    {
+      "fakultas": "DUNIA",
+      "id": "baca-pasar",
+      "pertanyaan": "Bacakan keadaan pasar SAAT INI dari matamu.",
+      "jawaban": "Rezim BTC TURUN (ATR 0.41%) · breadth 21% dari 255 koin naik · F&G 71 (Greed) · funding BTC 0.0015% · OI BTC $4952 juta (Δ1.06%) · mata jauh 24 jam P(naik) 57%. Derivatif adalah bahasa kerumunan — funding ekstrem berarti pihak yang MEMBAYAR biasanya yang salah; harga naik tanpa OI naik adalah naik tanpa dana baru, dan itu rapuh.",
+      "nilai": 1,
+      "kunciTercapai": "4/4",
+      "ket": "≥4 angka dunia wajib cocok dengan state siklus ini"
+    },
+    {
+      "fakultas": "DUNIA",
+      "id": "kompas",
+      "pertanyaan": "Arahan kompasmu sekarang — dan mengapa?",
+      "jawaban": "Kompas: SELL dengan keyakinan 57%. Alasannya: rezim TURUN · MC 2.000 lintasan BTC pNaik 55% · breadth 21% koin naik. Kompas adalah lantai jaminan arah — apa pun kondisi pasar, jawaban BUY/SELL tidak pernah bolong; keyakinannya rendah-jujur (GARCH + MC), bukan bravado.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "arah & keyakinan wajib sama dengan kompas hidup"
+    },
+    {
+      "fakultas": "AJARAN",
+      "id": "fee-hukum",
+      "pertanyaan": "Sebutkan hukum fee dan hukum pra-registrasi rumah ini.",
+      "jawaban": "Fee 0.2% pulang-pergi (0.1% + 0.1%) wajib masuk hitungan SEBELUM masuk — untung kotor adalah ilusi. Prediksi dikunci PRA-REGISTRASI sebelum pergerakan, disegel dengan sidik sha256, lalu dinilai otomatis setelah horizon — barulah bisa dihakimi jujur; klaim yang lahir setelah fakta bukan prediksi, itu pamer.",
+      "nilai": 1,
+      "kunciTercapai": "2/2",
+      "ket": "hukum rumah — konstanta, bukan opini"
+    },
+    {
+      "fakultas": "AJARAN",
+      "id": "pelajaran-buta",
+      "pertanyaan": "Apa pelajaran SEKOLAH KILAT yang paling mengubah caramu mengunci?",
+      "jawaban": "Sekolah kilat (ujian buta-histori 2.533+ soal nyata, blind dijamin lapisan data) melahirkan organ mengikat saat kunci: jual-lemah, jual-pita, key-melawan-drift, momentum-kuat, sell-bear-harian, tunda-bear, sell-relatif-kuat, buy-flat-btc, buy-saksi-terbalik, buy-jatuh-dalam — semuanya dari bukti medan (contoh: BUY saat bear + saksi pantulan = jebakan −23.4%, tanpa saksi = menadah dasar +103.5%), disegel di ledger, dan terus dinilai medan hidup. Pelajaran terbesarnya: kesalahan diukur, bukan diperdebatkan — organ yang lahir harus mengikat ukuran & keyakinan, bukan sekadar berkata-kata.",
+      "nilai": 1,
+      "kunciTercapai": "3/3",
+      "ket": "pelajaran sekolah kilat — nama organ wajib disebut"
+    }
+  ],
+  "ketJujur": "ujian menguji MESIN JAWAB cyborg (kawat keadaan hidup + matematika dua jalur) — bukan hafalan: bila kawat putus atau angka tak konsisten, nilai turun dan kurikulum menyorotnya; jawaban boleh berisi kekosongan jujur (null) dan itu dinilai lebih tinggi daripada karangan"
+}

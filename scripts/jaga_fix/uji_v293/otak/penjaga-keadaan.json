@@ -1,0 +1,163 @@
+{
+  "mulai": "2026-09-28T01:06:34.918Z",
+  "siklus": 71,
+  "epochTerakhir": "2026-10-07",
+  "wawasan": {
+    "oiLama": {
+      "BTC": 4951818000.63,
+      "ETH": 2258516666.98,
+      "SOL": 722940411.16,
+      "BNB": 116130278.4,
+      "XRP": 311353876.85,
+      "DOGE": 136104103.52,
+      "ADA": 77919123.44,
+      "AVAX": 88538008.96,
+      "LINK": 78339699.61,
+      "TRX": 57499792.41
+    },
+    "waktu": "2026-10-07T06:23:46.614Z",
+    "dominasiPct": 58.76
+  },
+  "kaizen": {
+    "dingin": {
+      "RUNE": {
+        "beruntun": 1,
+        "dinginSampai": 0
+      },
+      "ASTER": {
+        "beruntun": 1,
+        "dinginSampai": 0
+      },
+      "ARK": {
+        "beruntun": 1,
+        "dinginSampai": 0
+      },
+      "XRP": {
+        "beruntun": 0,
+        "dinginSampai": 1791126046038
+      },
+      "BNB": {
+        "beruntun": 1,
+        "dinginSampai": 1791139209593
+      },
+      "ADA": {
+        "beruntun": 1,
+        "dinginSampai": 1791162404400
+      },
+      "LINK": {
+        "beruntun": 0,
+        "dinginSampai": 0
+      },
+      "ENA": {
+        "beruntun": 1,
+        "dinginSampai": 0
+      },
+      "DOGE": {
+        "beruntun": 0,
+        "dinginSampai": 1791349952973
+      },
+      "AVAX": {
+        "beruntun": 0,
+        "dinginSampai": 1791126046038
+      },
+      "TRX": {
+        "beruntun": 1,
+        "dinginSampai": 0
+      },
+      "NOM": {
+        "beruntun": 1,
+        "dinginSampai": 0
+      },
+      "SOL": {
+        "beruntun": 1,
+        "dinginSampai": 0
+      }
+    },
+    "dinginFam": {
+      "DATAR-BUY": {
+        "beruntun": 2,
+        "dinginSampaiDenyut": 0
+      },
+      "TURUN-BUY": {
+        "beruntun": 0,
+        "dinginSampaiDenyut": 0
+      },
+      "NAIK-BUY": {
+        "beruntun": 2,
+        "dinginSampaiDenyut": 69
+      },
+      "TURUN-SELL": {
+        "beruntun": 1,
+        "dinginSampaiDenyut": 67
+      }
+    },
+    "uji": {
+      "rezim": "TURUN",
+      "mulaiSiklus": 70,
+      "n0": 23,
+      "snap": {
+        "struktur": 0.2477,
+        "momentum": 0.2606,
+        "sr": 0.1601,
+        "tekanan": 0.18,
+        "perubahan": 0.1516
+      },
+      "baseline": -0.006
+    },
+    "netHist": [
+      0.00146,
+      -0.02852,
+      -0.02019,
+      -0.0434,
+      -0.03608,
+      -0.04724,
+      -0.04585,
+      -0.00499,
+      -0.01485,
+      -0.0143,
+      0.01425,
+      -0.01272,
+      -0.00105,
+      -0.08072,
+      -0.03345,
+      0.00497,
+      -0.01201,
+      -0.00079,
+      0.00777,
+      0.05262,
+      0.01814,
+      -0.06455,
+      -0.05416
+    ],
+    "revertCt": 0,
+    "lolosCt": 1,
+    "karantinaStreak": {
+      "momentum": 1,
+      "tren": 2,
+      "aliran": 0,
+      "mikrostruktur": 0,
+      "derivatif": 0,
+      "relatif": 2
+    }
+  },
+  "auto": {
+    "baselineSigma": 1.622
+  },
+  "claw": {
+    "hitam": {},
+    "konfirm": [],
+    "bukuTekok": {},
+    "komiteVetoCt": 0,
+    "kartuVetoCt": 0,
+    "komiteNetralCt": 0,
+    "kuantaVetoCt": 0,
+    "kuotaCt": 0,
+    "slipMaksCt": 0,
+    "hitamCt": 0,
+    "hitamAddCt": 0,
+    "konfirmQueCt": 0,
+    "konfirmOkCt": 0,
+    "konfirmExpCt": 0
+  },
+  "diamBeruntun": 0
+}

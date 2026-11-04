@@ -1,0 +1,57 @@
+name: SADAR-1 — detak hidup otonom
+# DUA SADARI: tubuh otonom cyborg MICAPROFITA.
+# Membaca repo sendiri + pasar Binance nyata tiap bangun, lalu menulis
+# ingatan ke GitHub via commit (bukan localStorage). Sadar-2 (hidup.html)
+# hanyalah mata interaktif yang membaca ingatan ini.
+#
+# JANTUNG MANDIRI: scheduler cron GitHub sering DITUNDA/DILEWATI (terbukti
+# di repo ini: denyut 15 mnt milik penjaga lama nyata-nya berjarak jam).
+# Maka tiap bangun MEN-DISPATCH bangun berikutnya sendiri (workflow_dispatch
+# via GITHUB_TOKEN + izin actions:write) tepat di batas :00/:20/:40 UTC.
+# Cron */20 tetap dipasang sebagai cadangan; push ke main = denyut ekstra.
+#
+# V291 JANTUNG-TAK-PUTUS: cancel-in-progress DIMATIKAN. Sebelumnya run yang
+# sedang tidur di-bunuh run berikutnya (riwayat: semua run berakhir cancelled),
+# rawan memotong denyut di tengah kerja + memicu balapan 5 komit bersamaan.
+# Sekarang: run antre rapi (maks 1-2), tak ada pembunuhan, tak ada balapan.
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: sadar1-otonom
+  cancel-in-progress: false
+jobs:
+  bangun:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: BANGUN — baca rumah, hisap pasar nyata, tulis ingatan ke GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/hidup/sadar1.js
+      - name: JANTUNG MANDIRI — tidur sampai batas berikutnya, lalu dispatch bangun baru
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import time, datetime
+          now = datetime.datetime.utcnow()
+          slot = (now.minute // 20 + 1) * 20
+          nxt = now.replace(minute=0, second=0, microsecond=0) + datetime.timedelta(minutes=slot)
+          tunggu = max(5, (nxt - now).total_seconds())
+          print(f"jantung: tidur {tunggu:.0f} dtk sampai {nxt:%H:%M} UTC lalu dispatch")
+          time.sleep(tunggu)
+          PY
+          curl -sf -X POST             -H "Authorization: Bearer $GITHUB_TOKEN"             -H "Accept: application/vnd.github+json"             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/hidup-sadar1.yml/dispatches"             -d '{"ref":"main"}' && echo "jantung: bangun berikutnya di-dispatch"             || echo "jantung: dispatch gagal (cron + penjaga-waktu yang akan membangunkan)"

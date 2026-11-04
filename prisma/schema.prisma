@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// ARENA PERTARUNGAN AGI KRIPTO — MICAPROFITA
+// Setiap hari UTC, semua kompetitor mengajukan pick arah biner
+// (BUY/SELL). Profit terbesar kumulatif = pemenang arena.
+// ============================================================
+
+// Satu hari pertarungan: pick dibuat dengan data <= candle sebelumnya
+// (bebas kebocoran), dinilai dengan candle close hari-D.
+model BattleDay {
+  id        String   @id @default(cuid())
+  day       String   @unique // YYYY-MM-DD (UTC) = hari target outcome
+  regime    String // rezim BTC saat keputusan: TREND_NAIK|TREND_TURUN|SIDEWAYS|JATUH
+  status    String // PENDING | SCORED
+  btcEntry  Float? // close BTC sehari sebelum (harga keputusan)
+  btcExit   Float? // close BTC hari-D
+  createdAt DateTime @default(now())
+  scoredAt  DateTime?
+  picks     Pick[]
+}
+
+// Satu pick dari satu kompetitor untuk satu hari
+model Pick {
+  id          String    @id @default(cuid())
+  battleDayId String
+  battleDay   BattleDay @relation(fields: [battleDayId], references: [id])
+  competitor  String // MICAPROFITA | AI_ANALIS | MOMENTUM | MEANREV | BNH_BTC | ACAK
+  symbol      String
+  direction   String // BUY | SELL
+  confidence  Float // 0-100
+  entryClose  Float // close T-1 (harga keputusan)
+  exitClose   Float? // close T (diisi saat scoring)
+  ret         Float? // arah-ditandatangani: (exit/entry-1) * (+1 BUY / -1 SELL)
+  hit         Boolean?
+  evidence    String? // JSON: faktor, alasan, kewajiban, sumber
+  createdAt   DateTime  @default(now())
+
+  @@unique([battleDayId, competitor, symbol])
+  @@index([competitor])
+}
+
+// Genome bobot faktor per rezim — otak evolusi MICAPROFITA
+model GenomeState {
+  id        String   @id @default(cuid())
+  regime    String   @unique
+  weights   String // JSON {mom7:1.0,...}
+  updatedAt DateTime @updatedAt
+}
+
+// Log evolusi: mutasi, revolusi, mode-upgrade
+model GenomeLog {
+  id         String   @id @default(cuid())
+  day        String
+  generation Int
+  kind       String // INIT | MUTATION | REVOLUSI | UPGRADE
+  note       String
+  fitness    Float?
+  payload    String? // JSON snapshot bobot
+  createdAt  DateTime @default(now())
+}
+
+// Memori episode — sidik jari FNV-1a unik = mustahil overlap.
+// Duplikat state -> hits++ + agregat payload (kompresi).
+model MemoryEpisode {
+  id          String   @id @default(cuid())
+  fingerprint String   @unique
+  kind        String // EPISODE | POLA | POLA_RIVAL | PELAJARAN
+  payload     String // JSON terkompresi (agregat)
+  hits        Int      @default(1)
+  firstDay    String
+  lastDay     String
+  createdAt   DateTime @default(now())
+}
+
+// Log peristiwa arena: revolusi, upgrade, milestone, bootstrap
+model ArenaEvent {
+  id        String   @id @default(cuid())
+  day       String
+  kind      String // BOOTSTRAP | REVOLUSI | UPGRADE | MILESTONE | SISTEM
+  text      String
+  createdAt DateTime @default(now())
+}
+
+// KV meta: status bootstrap, generasi, audit leak-free, dll.
+model Meta {
+  key   String @id
+  value String
+}

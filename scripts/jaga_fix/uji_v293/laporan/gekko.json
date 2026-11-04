@@ -1,0 +1,194 @@
+{
+  "versi": "V258-GEKKO-CZAR",
+  "dihasilkan": "2026-10-07T06:23:46.614Z",
+  "siklus": 71,
+  "identitas": "deep-screening Gekko Agent (Axal × Virtuals × Allora) + CZAR Loss (Allora Foundation, arXiv 2609.36061) — kunci inti diadopsi, diadaptasi ke ledger pra-registrasi SAKTI, lalu DINILAI MEDAN",
+  "sumber": [
+    {
+      "platform": "Gekko AI by Virtuals / Axal",
+      "url": "https://www.coinbase.com/price/base-gekko-ai-by-virtuals",
+      "kunci": "identitas: agen trading AI buatan Axal (jaringan verifiable agents), fokus agents × trading × automation"
+    },
+    {
+      "platform": "Axal Substack",
+      "url": "https://axal.substack.com/p/why-we-launched-gekko",
+      "kunci": "peluncuran Des-2024 bersama Virtuals; fair-launch (alokasi tim ZERO); integrasi Autopilot"
+    },
+    {
+      "platform": "Allora Network × Gekko",
+      "url": "https://www.allora.network/blog/gekko-ai-allora-a-new-edge-in-automated-trading",
+      "kunci": "META-INFERENSI KOLEKTIF: model spesialis bertanding per Topics, inferensi dibobot akurasi historis+kontekstual; Gekko \"dynamically adjust strategies mid-flight\""
+    },
+    {
+      "platform": "Allora Foundation (arXiv 2609.36061)",
+      "url": "https://arxiv.org/abs/2609.36061",
+      "kunci": "CZAR LOSS: loss simetris membiarkan prediktor-nol menang (akurasi-impas naik tajam dgn derau); skor asimetris magnitude-aware menjaga ambang impas dekat 50%"
+    },
+    {
+      "platform": "Allora × Virtuals G.A.M.E",
+      "url": "https://www.allora.network/blog/allora-powers-virtuals-protocol",
+      "kunci": "EKSPOSUR DINAMIS: volatilitas forecast → pangkas/naikkan exposure; meta-strategy realokasi; intelligent DCA"
+    },
+    {
+      "platform": "Allora Prediction Markets",
+      "url": "https://www.allora.network/blog/inside-the-allora-prediction-markets-ecosystem",
+      "kunci": "DIVERGENSI: masuk saat ramalan sendiri TERPISAH dari probabilitas-implied pasar"
+    },
+    {
+      "platform": "Axal Autopilot",
+      "url": "https://axal.substack.com/p/introducing-axal-autopilot",
+      "kunci": "TEMPER: risk-profile → alokasi strategi personal; fase-masuk bertahap; rebalancing otomatis"
+    },
+    {
+      "platform": "Axal (verifiable agents)",
+      "url": "https://docs.axal.com/how-it-works/contracts",
+      "kunci": "VERIFIABLE AUTONOMY: aksi agen bisa diverifikasi pihak ketiga"
+    }
+  ],
+  "kunciDiadopsi": [
+    "META-INFERENSI KOLEKTIF (Allora Topics) — 6 topik pekerja (momentum/tren/aliran/derivatif/mikrostruktur/relatif) memberi suara arah; bobot topik = exp(-0.9·regret), regret diperbarui tiap vonis matang dari medan — tidak ada topik berkuasa permanen",
+    "CZAR DECISIVENESS (arXiv 2609.36061) — skor asimetris magnitude-aware utk tiap vonis matang (benar: linear cap 8%; benar-kecil ≈ 0 credit; salah: floor 1.5 + kuadratik); akurasiImpas = breakeven WR dari rata menang/rugi medan; darahAkurasi = akurasi − impas (merah = aktivitas menggerus modal)",
+    "EKSPOSUR DINAMIS (Allora×G.A.M.E) — ekspresi 0.25–1.0× unit per sasaran dari odds+keyakinan−volatilitas ekstrem−kerumunan funding; dipra-registrasi & dibandingkan medan (ekspresi tinggi vs rendah)",
+    "DIVERGENSI PASAR-PREDIKSI (Allora prediction markets) — probPasar dari agresor taker + kerumunan LS + funding + EMA4h; divergensi = keyakinan komite − P(arah komite); bucket kuat/lemah dinilai medan",
+    "TEMPER AUTOPILOT (Axal) — suhu denyut AGRESIF/NETRAL/BERTAHAN dari PF-jendela+rezim+breadth+F&G; BERTAHAN: ambang odds +5 & kuota −1; AGRESIF: −3 dengan lantai 52; PF<1 MEMAKSA BERTAHAN — terikat-batas & terlog",
+    "VERIFIABLE AUTONOMY (Axal) — sidikPrakunci sha256 payload prediksi saat kunci (ARAH & PHOENIX) — tamper-evident, bisa direkalkulasi siapa pun"
+  ],
+  "paramGekko": {
+    "kandang": [
+      "metaArah",
+      "metaKeyakinan",
+      "probPasar",
+      "divergensi",
+      "ekspresi"
+    ],
+    "siklus": [
+      "suhuTemper",
+      "ambangOddsEfektif",
+      "kuotaArahEfektif",
+      "akurasiImpas",
+      "darahAkurasi"
+    ],
+    "konst": [
+      "czarCap",
+      "czarFloor",
+      "regretEta",
+      "regretDecay",
+      "ekspresiMin",
+      "ekspresiMaks",
+      "divergKuat",
+      "suhuAmbang"
+    ],
+    "total": 18
+  },
+  "konstanta": {
+    "regretEta": 0.9,
+    "regretDecay": 0.97,
+    "bobotMin": 0.15,
+    "czarCap": 8,
+    "czarFloor": 1.5,
+    "ekspresiMin": 0.25,
+    "ekspresiMaks": 1,
+    "divergKuat": 0.18,
+    "ambangLantai": 52
+  },
+  "suhuSiklusIni": {
+    "temper": "BERTAHAN",
+    "ambang": 60,
+    "kuota": 2,
+    "alasan": [
+      "HENTI-HARIAN: rugi-net vonis hari ini -11.87% ≤ −4% — circuit breaker kaizen-trader",
+      "PF jendela 0.31 < 1 — modal mengetat",
+      "rezim BTC TURUN",
+      "breadth sempit 21% koin naik"
+    ],
+    "ket": "temper Autopilot: BERTAHAN → ambang odds efektif 60 · kuota ARAH 2"
+  },
+  "topik": [
+    {
+      "topik": "relatif",
+      "n": 16,
+      "hitPct": 31.3,
+      "netPct": -8.71,
+      "regret": 1.0681,
+      "bobotKini": 0.382,
+      "status": "dibisukan"
+    },
+    {
+      "topik": "derivatif",
+      "n": 11,
+      "hitPct": 45.5,
+      "netPct": 5.7,
+      "regret": 1.0969,
+      "bobotKini": 0.373,
+      "status": "netral"
+    },
+    {
+      "topik": "mikrostruktur",
+      "n": 15,
+      "hitPct": 40,
+      "netPct": -4.26,
+      "regret": 1.0643,
+      "bobotKini": 0.35,
+      "status": "dibisukan"
+    },
+    {
+      "topik": "momentum",
+      "n": 22,
+      "hitPct": 36.4,
+      "netPct": -33.02,
+      "regret": 1.2179,
+      "bobotKini": 0.334,
+      "status": "dibisukan"
+    },
+    {
+      "topik": "aliran",
+      "n": 20,
+      "hitPct": 40,
+      "netPct": -17.2,
+      "regret": 1.2507,
+      "bobotKini": 0.324,
+      "status": "dibisukan"
+    },
+    {
+      "topik": "tren",
+      "n": 23,
+      "hitPct": 26.1,
+      "netPct": -41.57,
+      "regret": 1.362,
+      "bobotKini": 0.294,
+      "status": "dibisukan"
+    }
+  ],
+  "czar": {
+    "n": 48,
+    "rata": -1.024,
+    "ket": "skor CZAR rata-rata — negatif berarti ledger masih didominasi penalti kekalahan; naik mendekati 0/positif = decisiveness terbayar"
+  },
+  "ekspresiMedan": {
+    "tinggi": {
+      "n": 15,
+      "net": -0.36868
+    },
+    "rendah": {
+      "n": 15,
+      "net": -0.34746
+    }
+  },
+  "divergensiMedan": {
+    "kuat": {
+      "n": 10,
+      "benar": 1,
+      "net": -0.22897
+    },
+    "lemah": {
+      "n": 13,
+      "benar": 5,
+      "net": -0.18669
+    }
+  },
+  "sidikPraKunci": {
+    "jumlahTerkunci": 32,
+    "ket": "setiap prediksi baru membawa sidik sha256 pra-registrasi — entri lama tanpa sidik tampil apa adanya"
+  },
+  "kejujuran": "semua param gekko lahir OBSERVASI — dinarasikan, disekolahkan (paramsPenuh), berhak veto lewat gerbang lama; TIDAK berbobot genome sebelum hit-rate medan lulus; satu perubahan gerbang (suhu Autopilot) terikat-batas (lantai 52, kuota ≤ baseline) dan tercatat per denyut"
+}

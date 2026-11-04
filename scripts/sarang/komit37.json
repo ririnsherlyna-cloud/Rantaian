@@ -1,0 +1,290 @@
+[
+  {
+    "sha": "eba2526c3d4631d2ea07cc0ebe487ad7cb948c86",
+    "node_id": "C_kwDOUvD1SNoAKGViYTI1MjZjM2Q0NjMxZDJlYTA3Y2MwZWJlNDg3YWQ3Y2I5NDhjODY",
+    "commit": {
+      "author": {
+        "name": "SARANG-PENJAGA",
+        "email": "penjaga@micaprofita.local",
+        "date": "2026-09-30T11:14:54Z"
+      },
+      "committer": {
+        "name": "SARANG-PENJAGA",
+        "email": "penjaga@micaprofita.local",
+        "date": "2026-09-30T11:14:54Z"
+      },
+      "message": "SARANG-PENJAGA: denyut #20 — akurasi 40.6% — 6 sasaran [skip ci]",
+      "tree": {
+        "sha": "5ce3de75d8e33501ec8163b09637f0a5b26d3b9a",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/5ce3de75d8e33501ec8163b09637f0a5b26d3b9a"
+      },
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/commits/eba2526c3d4631d2ea07cc0ebe487ad7cb948c86",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/eba2526c3d4631d2ea07cc0ebe487ad7cb948c86",
+    "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/eba2526c3d4631d2ea07cc0ebe487ad7cb948c86",
+    "comments_url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/eba2526c3d4631d2ea07cc0ebe487ad7cb948c86/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "840e86246ba3576437f6d9686a70213350b14d8f",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/840e86246ba3576437f6d9686a70213350b14d8f",
+        "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/840e86246ba3576437f6d9686a70213350b14d8f"
+      }
+    ]
+  },
+  {
+    "sha": "840e86246ba3576437f6d9686a70213350b14d8f",
+    "node_id": "C_kwDOUvD1SNoAKDg0MGU4NjI0NmJhMzU3NjQzN2Y2ZDk2ODZhNzAyMTMzNTBiMTRkOGY",
+    "commit": {
+      "author": {
+        "name": "ririnsherlyna-cloud",
+        "email": "ririnsherlyna@gmail.com",
+        "date": "2026-09-30T11:14:38Z"
+      },
+      "committer": {
+        "name": "ririnsherlyna-cloud",
+        "email": "ririnsherlyna@gmail.com",
+        "date": "2026-09-30T11:14:38Z"
+      },
+      "message": "WORKFLOW: perbaiki YAML name (colon di plain scalar) — tag epoch tetap [skip ci]",
+      "tree": {
+        "sha": "cbc4da17213f0ee2a323e8945c05598a9410ee36",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/cbc4da17213f0ee2a323e8945c05598a9410ee36"
+      },
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/commits/840e86246ba3576437f6d9686a70213350b14d8f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/840e86246ba3576437f6d9686a70213350b14d8f",
+    "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/840e86246ba3576437f6d9686a70213350b14d8f",
+    "comments_url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/840e86246ba3576437f6d9686a70213350b14d8f/comments",
+    "author": {
+      "login": "ririnsherlyna-cloud",
+      "id": 243263445,
+      "node_id": "U_kgDODn_n1Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243263445?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ririnsherlyna-cloud",
+      "html_url": "https://github.com/ririnsherlyna-cloud",
+      "followers_url": "https://api.github.com/users/ririnsherlyna-cloud/followers",
+      "following_url": "https://api.github.com/users/ririnsherlyna-cloud/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ririnsherlyna-cloud/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ririnsherlyna-cloud/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ririnsherlyna-cloud/subscriptions",
+      "organizations_url": "https://api.github.com/users/ririnsherlyna-cloud/orgs",
+      "repos_url": "https://api.github.com/users/ririnsherlyna-cloud/repos",
+      "events_url": "https://api.github.com/users/ririnsherlyna-cloud/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ririnsherlyna-cloud/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "ririnsherlyna-cloud",
+      "id": 243263445,
+      "node_id": "U_kgDODn_n1Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243263445?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ririnsherlyna-cloud",
+      "html_url": "https://github.com/ririnsherlyna-cloud",
+      "followers_url": "https://api.github.com/users/ririnsherlyna-cloud/followers",
+      "following_url": "https://api.github.com/users/ririnsherlyna-cloud/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ririnsherlyna-cloud/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ririnsherlyna-cloud/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ririnsherlyna-cloud/subscriptions",
+      "organizations_url": "https://api.github.com/users/ririnsherlyna-cloud/orgs",
+      "repos_url": "https://api.github.com/users/ririnsherlyna-cloud/repos",
+      "events_url": "https://api.github.com/users/ririnsherlyna-cloud/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ririnsherlyna-cloud/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "dd0e64fd339512534513ea8c8e830cc116710e2b",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/dd0e64fd339512534513ea8c8e830cc116710e2b",
+        "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/dd0e64fd339512534513ea8c8e830cc116710e2b"
+      }
+    ]
+  },
+  {
+    "sha": "dd0e64fd339512534513ea8c8e830cc116710e2b",
+    "node_id": "C_kwDOUvD1SNoAKGRkMGU2NGZkMzM5NTEyNTM0NTEzZWE4YzhlODMwY2MxMTY3MTBlMmI",
+    "commit": {
+      "author": {
+        "name": "ririnsherlyna-cloud",
+        "email": "ririnsherlyna@gmail.com",
+        "date": "2026-09-30T11:13:42Z"
+      },
+      "committer": {
+        "name": "ririnsherlyna-cloud",
+        "email": "ririnsherlyna@gmail.com",
+        "date": "2026-09-30T11:13:42Z"
+      },
+      "message": "WORKFLOW: env mandat Issue (GITHUB_TOKEN bawaan) + langkah tag metamorfosis epoch-YYYY-MM-DD [skip ci]",
+      "tree": {
+        "sha": "7be74ddc1ec6869e46c6feeb1d039b209d6aa9e3",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/7be74ddc1ec6869e46c6feeb1d039b209d6aa9e3"
+      },
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/commits/dd0e64fd339512534513ea8c8e830cc116710e2b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/dd0e64fd339512534513ea8c8e830cc116710e2b",
+    "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/dd0e64fd339512534513ea8c8e830cc116710e2b",
+    "comments_url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/dd0e64fd339512534513ea8c8e830cc116710e2b/comments",
+    "author": {
+      "login": "ririnsherlyna-cloud",
+      "id": 243263445,
+      "node_id": "U_kgDODn_n1Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243263445?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ririnsherlyna-cloud",
+      "html_url": "https://github.com/ririnsherlyna-cloud",
+      "followers_url": "https://api.github.com/users/ririnsherlyna-cloud/followers",
+      "following_url": "https://api.github.com/users/ririnsherlyna-cloud/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ririnsherlyna-cloud/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ririnsherlyna-cloud/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ririnsherlyna-cloud/subscriptions",
+      "organizations_url": "https://api.github.com/users/ririnsherlyna-cloud/orgs",
+      "repos_url": "https://api.github.com/users/ririnsherlyna-cloud/repos",
+      "events_url": "https://api.github.com/users/ririnsherlyna-cloud/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ririnsherlyna-cloud/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "ririnsherlyna-cloud",
+      "id": 243263445,
+      "node_id": "U_kgDODn_n1Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243263445?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ririnsherlyna-cloud",
+      "html_url": "https://github.com/ririnsherlyna-cloud",
+      "followers_url": "https://api.github.com/users/ririnsherlyna-cloud/followers",
+      "following_url": "https://api.github.com/users/ririnsherlyna-cloud/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ririnsherlyna-cloud/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ririnsherlyna-cloud/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ririnsherlyna-cloud/subscriptions",
+      "organizations_url": "https://api.github.com/users/ririnsherlyna-cloud/orgs",
+      "repos_url": "https://api.github.com/users/ririnsherlyna-cloud/repos",
+      "events_url": "https://api.github.com/users/ririnsherlyna-cloud/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ririnsherlyna-cloud/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34",
+        "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34"
+      }
+    ]
+  },
+  {
+    "sha": "16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34",
+    "node_id": "C_kwDOUvD1SNoAKDE2ZTYxNDc4NzRmNWIzZDljNWJjYWU1YzQ3ZThhYWVhYmU5ZTBhMzQ",
+    "commit": {
+      "author": {
+        "name": "ririnsherlyna-cloud",
+        "email": "ririnsherlyna@gmail.com",
+        "date": "2026-09-30T11:13:41Z"
+      },
+      "committer": {
+        "name": "ririnsherlyna-cloud",
+        "email": "ririnsherlyna@gmail.com",
+        "date": "2026-09-30T11:13:41Z"
+      },
+      "message": "TUJUAN: seksi 5b PIAGAM CYBORG — lima pilar dipasang nyata + pengakuan roadmap jujur [skip ci]",
+      "tree": {
+        "sha": "fef9c4165e909eb50591a1f51c6febc21471f4f0",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/trees/fef9c4165e909eb50591a1f51c6febc21471f4f0"
+      },
+      "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/git/commits/16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34",
+    "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34",
+    "comments_url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/16e6147874f5b3d9c5bcae5c47e8aaeabe9e0a34/comments",
+    "author": {
+      "login": "ririnsherlyna-cloud",
+      "id": 243263445,
+      "node_id": "U_kgDODn_n1Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243263445?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ririnsherlyna-cloud",
+      "html_url": "https://github.com/ririnsherlyna-cloud",
+      "followers_url": "https://api.github.com/users/ririnsherlyna-cloud/followers",
+      "following_url": "https://api.github.com/users/ririnsherlyna-cloud/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ririnsherlyna-cloud/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ririnsherlyna-cloud/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ririnsherlyna-cloud/subscriptions",
+      "organizations_url": "https://api.github.com/users/ririnsherlyna-cloud/orgs",
+      "repos_url": "https://api.github.com/users/ririnsherlyna-cloud/repos",
+      "events_url": "https://api.github.com/users/ririnsherlyna-cloud/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ririnsherlyna-cloud/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "ririnsherlyna-cloud",
+      "id": 243263445,
+      "node_id": "U_kgDODn_n1Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243263445?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ririnsherlyna-cloud",
+      "html_url": "https://github.com/ririnsherlyna-cloud",
+      "followers_url": "https://api.github.com/users/ririnsherlyna-cloud/followers",
+      "following_url": "https://api.github.com/users/ririnsherlyna-cloud/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ririnsherlyna-cloud/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ririnsherlyna-cloud/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ririnsherlyna-cloud/subscriptions",
+      "organizations_url": "https://api.github.com/users/ririnsherlyna-cloud/orgs",
+      "repos_url": "https://api.github.com/users/ririnsherlyna-cloud/repos",
+      "events_url": "https://api.github.com/users/ririnsherlyna-cloud/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ririnsherlyna-cloud/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "92006e4bbd4dc3d70469ad81978463e8c660d867",
+        "url": "https://api.github.com/repos/ririnsherlyna-cloud/Micaprofita-/commits/92006e4bbd4dc3d70469ad81978463e8c660d867",
+        "html_url": "https://github.com/ririnsherlyna-cloud/Micaprofita-/commit/92006e4bbd4dc3d70469ad81978463e8c660d867"
+      }
+    ]
+  }
+]

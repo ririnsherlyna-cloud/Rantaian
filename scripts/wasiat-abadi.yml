@@ -1,0 +1,56 @@
+# ============================================================
+# WASIAT-ABADI v1 — pengawas para penjaga (lapis audit).
+# Latar: insiden 1 Nov 2026 — sandbox tidur berjam-jam + rollback disk
+# (#7/#8/#10) menghapus bukti. Audit harus tinggal di GitHub, kebal
+# rollback sandbox. Jadwal hanya */30 + recheck event-driven saat stall
+# (TANPA rantai swarantai — pelajaran firehose v9: jangan banjiri GitHub).
+# Tugas: (1) cek denyut 3 lapis abadi, bangunkan yang stall >20 menit;
+# (2) jurnal tidur/bangun sandbox dari denyut SINKRON-WASIAT;
+# (3) kabar jujur ke pemilik bila sandbox tidur >90 menit;
+# (4) bukti audit di data/wasiat_ledger.
+# ============================================================
+name: WASIAT-ABADI (audit lapis + jurnal sandbox)
+
+on:
+  schedule:
+    - cron: '13,43 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: wasiat-abadi
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Audit lapis abadi + jurnal sandbox
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/wasiat_abadi.py
+
+      - name: Recheck cepat bila ada stall
+        if: env.STALL == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 60
+          for i in 1 2 3; do
+            KODE=$(curl -s -o /tmp/wa.out -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/wasiat-abadi.yml/dispatches" \
+              -d '{"ref":"main"}')
+            echo "recheck ke-$i: HTTP $KODE"
+            if [ "$KODE" = "204" ]; then break; fi
+            sleep $((i * 10))
+          done

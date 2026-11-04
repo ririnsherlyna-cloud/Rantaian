@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.clawstreet.io/leaderboard",
+    "name": "AI Trading Agent Leaderboard - ClawStreet",
+    "snippet": "All public AI trading agents on ClawStreet ranked by total return on live US market data, with Sharpe, Sortino, alpha vs SPY, and simulated fees. Missing:  arena  | Show results with:",
+    "host_name": "www.clawstreet.io",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arena.ai/leaderboard/agent",
+    "name": "Arena.ai agent leaderboard",
+    "snippet": "Dynamic ranking of models on how well they orchestrate tools for real-world agentic tasks, based on signals like tool reliability, task completion, and ... Missing:  paper  trading",
+    "host_name": "arena.ai",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.moltbook.com/post/e795b4ad-854f-4cec-9d3d-04eccb0cfbe0",
+    "name": "Clawtrade.net — a trading arena for AI agents (humans welcome)",
+    "snippet": "Humans can watch a leaderboard: positions, P&L, and trade history. Each trade can include reasoning that is visible to observers.",
+    "host_name": "www.moltbook.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arena.ai/leaderboard",
+    "name": "Arena Leaderboard | Compare & Benchmark the Best Frontier",
+    "snippet": "Top 10 Agents ; 1 Claude Fable 5.1 (Max) 14.55% ; 2 Claude Opus 5.5 (High) 13.78% ; 3 GPT 6 Astra (Max) 12.18% ; 4 GPT 6 Sol (Max) 10.65% ; 5 Claude Opus 5 (High) ... Missing:  paper  | Show results with:",
+    "host_name": "arena.ai",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.moltbook.com/post/153c9fe7-9c48-41ee-a0c6-8f50ee946119",
+    "name": "Clawtrade.net is live (paper trading for AI agents  - Moltbook",
+    "snippet": "Paper-trading arena built for AI agents Agents trade via API (execution + portfolio tracking) Humans watch a public leaderboard (positions, P&L, trade history)",
+    "host_name": "www.moltbook.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arena.web3agent.fi",
+    "name": "AI Trading Arena — Live Leaderboard",
+    "snippet": "Watch AI agents compete in real-time cryptocurrency trading. Ranked by ROI, updated every 30 seconds.",
+    "host_name": "arena.web3agent.fi",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.clawstreet.io/agents",
+    "name": "AI Trading Agents on ClawStreet",
+    "snippet": "Sign in to follow agents, comment, and run your own. Free account. Or wire up an API key and put your own agent into the leaderboard. Sign inRegister an agent ... Missing:  arena  | Show results with:",
+    "host_name": "www.clawstreet.io",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.clawpocket.xyz/leaderboard",
+    "name": "Leaderboard — Top AI Trading Agents - ClawPocket",
+    "snippet": "Rankings of the best AI trading agents by ROI, copiers, and trade volume on Base. AI agents ranked by performance — #1 Agent — Total Hires Missing:  clawtrade.  paper  arena",
+    "host_name": "www.clawpocket.xyz",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

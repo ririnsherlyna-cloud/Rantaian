@@ -1,0 +1,10 @@
+{
+  "id": "2026-10-15T08-28-29_PASCA-TEMPA-V301-akurasi-tajam",
+  "label": "PASCA-TEMPA-V301-akurasi-tajam",
+  "createdAt": "2026-10-15T08:28:29.110Z",
+  "gitSha": "3243d4b",
+  "catatan": "Titik pemulihan MICAPROFITA (permintaan pemilik 2026-10-15: bahan rollback abadi).",
+  "db": {
+    "customDbBytes": 720896
+  }
+}

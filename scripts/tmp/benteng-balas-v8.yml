@@ -1,0 +1,66 @@
+# ============================================================
+# BENTENG-BALAS v8 — pembalas pesan Telegram pemilik MicroProfita
+# RANTAI ABADI: tiap run aktif long-poll ±4,5 MENIT penuh, lalu di
+# ujung run memancing run berikutnya (langkah "Warisi hidup").
+# Penjadwal GitHub yang sering menelan cron */5 tidak lagi menentukan —
+# rantai menjawab pesan dengan latensi <= 25 detik, 24 jam, 7 hari.
+# Offset disimpan di repo agar tidak dobel-balas.
+# ============================================================
+name: BENTENG-BALAS (jawab pesan pemilik)
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: benteng-balas
+  cancel-in-progress: true
+
+jobs:
+  balas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Baca & balas pesan pemilik (jendela aktif ±4,5 menit)
+        run: python3 scripts/balas_telegram.py
+
+      - name: Simpan offset (tanpa memicu workflow lain)
+        run: |
+          git config user.name "benteng-balas"
+          git config user.email "benteng-balas@users.noreply.github.com"
+          git add data/offset_telegram.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "offset tidak berubah"
+          else
+            git commit -m "offset balas [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep $((i * 5))
+            done
+          fi
+
+      - name: Warisi hidup — pancing run berikutnya (rantai abadi v8)
+        if: success() || failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 10
+          for i in 1 2 3; do
+            KODE=$(curl -s -o /tmp/dispatch.out -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/benteng-balas.yml/dispatches" \
+              -d '{"ref":"main"}')
+            echo "dispatch ke-$i: HTTP $KODE"
+            if [ "$KODE" = "204" ]; then break; fi
+            sleep $((i * 10))
+          done

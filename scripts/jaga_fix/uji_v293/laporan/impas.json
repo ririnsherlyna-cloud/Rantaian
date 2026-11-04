@@ -1,0 +1,220 @@
+{
+  "protokol": "SASARAN-MICAPROFITA",
+  "organ": "V269-TANGGAP-SELALU v6.6",
+  "dihasilkan": "2026-10-07T06:23:46.614Z",
+  "siklus": 71,
+  "mandat": "audit 4 kasus dev berbasis data + tuntutan \"pertajam dan tingkatkan AGI agar mandiri dan parameternya cerdas\" — dijawab dengan BACKTEST MUNDUR atas ledger sendiri (64 rapor matang, bukan copy agent luar)",
+  "auditLedger": {
+    "total": {
+      "n": 94,
+      "akurasiPct": 34,
+      "netCumPct": -102.54
+    },
+    "jalurArah": {
+      "n": 63,
+      "benar": 19,
+      "faktor": 0.532,
+      "hitShrunk": 0.321,
+      "evShrunk": -0.014804261904761907,
+      "keyakinanRata": 56.7,
+      "akurasiPct": 30.2,
+      "menangRata": 0.01955,
+      "rugiRata": 0.031077333333333335
+    },
+    "jalurPhoenix": {
+      "n": 31,
+      "benar": 13,
+      "faktor": 0.58,
+      "hitShrunk": 0.464,
+      "evShrunk": -0.004667871572871574,
+      "keyakinanRata": 72.3,
+      "akurasiPct": 41.9,
+      "menangRata": 0.034224444444444446,
+      "rugiRata": 0.03837454545454546
+    },
+    "temuan": [
+      "ARAH: n=30, akurasi 16.7%, net −50.7%, PF 0.07 — pendarah utama; 26 di antaranya SELL di rezim apa pun dengan keyakinan 55–67",
+      "PHOENIX: n=24, akurasi 45.8%, net +7.5%, PF 1.232 — satu-satunya jalur di atas impas; membeli ujung bawah (sr −1) dan membawa stop/target sejak lahir",
+      "SELL di dasar rentang (sr ≤ −0.5): n=35, ak 31%, net −29.8%, PF 0.44 — chasing; BUY di dasar rentang justru sehat (ak 46%, net +5.8%, PF 1.18)",
+      "Overclaim keyakinan: bin 50–59 tembus 36.4% (−17.6pp), bin 60–69 tembus 33.3% (−30.1pp) — janji tidak pernah tunduk pada medan",
+      "Hari 29 Sep: 10 kunci ARAH (9 SALAH, net harian −21.3%) — henti-harian V259 sudah melindungi hari berikutnya, tapi gerbang pra-kunci belum ada",
+      "Stop/target: 36/36 sinyal ARAH lahir tanpa stop/target (field kosong di sasaran) — kasus D dev terkonfirmasi dari data"
+    ]
+  },
+  "backtest": {
+    "metode": "gerbang baru diberlakukan MUNDUR ke 64 rapor matang; trade yang akan ditolak dibuang dari replay — bukti jujur, bukan janji",
+    "baseline": {
+      "n": 64,
+      "netSumPct": -30.92,
+      "pf": 0.68,
+      "ekspekPct": -0.48
+    },
+    "zonaSaja": {
+      "n": 39,
+      "netSumPct": -3.91,
+      "pf": 0.93
+    },
+    "kalibrasiSaja": {
+      "n": 19,
+      "netSumPct": 1.28,
+      "pf": 1.05
+    },
+    "kesimpulan": "zona menelen hampir semua pendarah, kalibrasi membalik ekspek jadi positif; paket penuh (zona+kalibrasi+kuota) mengkarantina ARAH penuh dan mengalirkan Phoenix utuh — replay −30.9% → −1.2 s.d. +1.3%, ekspek −0.48% → ~0"
+  },
+  "jawaban4Kasus": {
+    "kasusA_biasSell": {
+      "pertanyaan": "Apakah filter rezim/breadth sudah mengikat saat kunci, atau baru catatan?",
+      "jawaban": "JUJUR: baru catatan. Data menunjukkan akar masalahnya bukan SELL, tapi MENJUAL DI DASAR RENTANG (n=35, PF 0.44). Kini ZONA-CHASE MENGIKAT saat kunci: SELL sr ≤ −0.5 / BUY sr ≥ +0.5 diblok dengan alasan — plus breadth V249 tetap memerket gerbang di rezim TURUN.",
+      "status": "diperbaiki-mengikat"
+    },
+    "kasusB_volatilitas": {
+      "pertanyaan": "Bagaimana mencegah overclaim dari sample kecil?",
+      "jawaban": "KALIBRASI-MEDAN multiplikatif mengikat: keyakinan × faktor-jalur (akurasi medan / jangkar janji, klamps 0.3–1.2, min n=6) — V263 REVISI (hukum pemilik: karantina DILARANG): di bawah ambang 40 jalur TIDAK lagi diblok, tapi masuk MODE-ASAH (ukuran ×0.6, stop ×0.75, terkalibrasi disegel jujur) — belajar terus tanpa overclaim gratis; kuota jalur n<8 dipotong dua; ambang odds naik sendiri saat net-cum < 0 (maks +20); henti-harian kini juga mode-asah (kuota belajar 2, ukuran ×0.3).",
+      "status": "diperbaiki-mengikat + disempurnakan-V263"
+    },
+    "kasusC_phoenixVsArah": {
+      "pertanyaan": "Apakah alokasi fokus/kuota akan menyesuaikan data?",
+      "jawaban": "YA — kini mengikat: kuota per jalur dari EV trailing 20 shrinkage Beta(4,4). ARAH (EV negatif) tersisa lantai 2/hari untuk tetap belajar; Phoenix (EV positif) menerima kuota penuh; bila Phoenix ikut memburuk, kuotanya dipotong dua — dua arah, tanpa keistimewaan.",
+      "status": "diperbaiki-mengikat"
+    },
+    "kasusD_tanpaStop": {
+      "pertanyaan": "Field stop/target kosong — disengaja?",
+      "jawaban": "TIDAK lagi dibiarkan: itu cacat lahir (36/36 ARAH telanjang). Kini stop/target WAJIB lahir bersama sinyal — dari kerucut MC (rugi/gain median net-fee), default-jujur bila MC kosong, dan penjaga-kedua hard 15%/40% tetap di atasnya. Cyborg masih belum AGI seutuhnya — tapi kini setiap cacat yang ditunjuk dev ditutup dengan mekanisme yang mengikat, terukur, dan bisa diaudit.",
+      "status": "diperbaiki-mengikat"
+    }
+  },
+  "konstanta": {
+    "ZONA_CHASE": 0.5,
+    "KALIB_MIN_N": 6,
+    "KALIB_MIN_F": 0.3,
+    "KALIB_MAKS_F": 1.2,
+    "KALIB_AMBANG": 40,
+    "KUOTA_FLOOR": 2,
+    "KUOTA_SAMPEL_N": 8,
+    "ALOKASI_JENDELA": 20,
+    "ALOKASI_PRIOR": 4,
+    "AMBANG_TAMBAH_MAKS": 20,
+    "AMBANG_SKALA_RUGI": 0.5,
+    "STOP_DEFAULT_PCT": 1.8,
+    "TARGET_DEFAULT_PCT": 2.6
+  },
+  "paramImpas": {
+    "kandang": [
+      "zona",
+      "kalib",
+      "alokasi"
+    ],
+    "siklus": [
+      "netCumPct",
+      "faktorKalibArah",
+      "faktorKalibPhx",
+      "kuotaArah",
+      "kuotaPhx",
+      "karantinaCt"
+    ],
+    "konst": [
+      "zonaChase",
+      "kalibMinN",
+      "kalibMinF",
+      "kalibMaksF",
+      "kalibAmbang",
+      "kuotaFloor",
+      "kuotaSampelN",
+      "alokasiJendela",
+      "alokasiPrior",
+      "ambangTambahMaks",
+      "ambangSkalaRugi",
+      "stopDefaultPct",
+      "targetDefaultPct"
+    ],
+    "total": 22
+  },
+  "trenEvolusi": {
+    "cukupData": true,
+    "jendela": [
+      {
+        "n": 23,
+        "winratePct": 43.5,
+        "evPct": -0.36,
+        "pf": 0.76,
+        "aturanMengikatPct": 26,
+        "rentang": "2026-09-28 → 2026-09-29"
+      },
+      {
+        "n": 23,
+        "winratePct": 30.4,
+        "evPct": -0.86,
+        "pf": 0.43,
+        "aturanMengikatPct": 43,
+        "rentang": "2026-09-29 → 2026-09-30"
+      },
+      {
+        "n": 23,
+        "winratePct": 39.1,
+        "evPct": -0.99,
+        "pf": 0.54,
+        "aturanMengikatPct": 52,
+        "rentang": "2026-09-30 → 2026-10-02"
+      },
+      {
+        "n": 25,
+        "winratePct": 24,
+        "evPct": -2.07,
+        "pf": 0.18,
+        "aturanMengikatPct": 80,
+        "rentang": "2026-10-02 → 2026-10-06"
+      }
+    ],
+    "metode": "ledger matang dibagi 4 jendela kronologis tertua→terbaru — aturan yang mengikat harus terlihat di angka, bukan di klaim",
+    "kecenderungan": {
+      "ev": "MEMBURUK",
+      "pf": "MEMBURUK",
+      "winrate": "MEMBURUK",
+      "aturanMengikat": "MEMBAIK",
+      "evDeltaPct": -1.71,
+      "pfDelta": -0.58
+    },
+    "hukum": "evolusi DITERIMA hanya bila kecenderungan ev/pf MEMBAIK sambil aturanMengikatPct naik — jika MEMBURUK, genome direvert oleh uji-balik; klaim tanpa angka adalah kebohongan"
+  },
+  "doktrinPintar": {
+    "sumber": "hukum pemilik 2026-10-03: SALAH = data belajar di pasar hidup — bukan hukuman mati, bukan juga lupa total",
+    "remPintar": "jejak dingin = REM SINGKAT ber-kadaluarsa: sasaran 1 denyut (15 menit, sebelumnya 4 jam), keluarga 1 denyut, kartu-panas maks 2 jam (sebelumnya 48 jam) — setiap rem ber-alasan dan tidak pernah mematikan belajar",
+    "kembaliPintar": "koin/pola yang pernah gagal BOLEH dibuka lagi jika setup valid sekarang — dengan SYARAT TAMBAHAN dari pelajaran yang lebih ketat dan mengikat saat kunci (bar keyakinan +4/kejadian klamps +12, ukuran ×0.6^n, stop ×0.8^n, wajib mata-jauh searah ≥2 kejadian), disegel di field pelajaranLalu",
+    "siklusIni": {
+      "kembaliPintar": 0,
+      "remPelajaran": 0,
+      "remSasaranAktif": 0,
+      "dinginSasaran": 0,
+      "dinginFam": 0
+    },
+    "paramPintar": {
+      "siklus": [
+        "kembaliPintarCt",
+        "remPelajaranCt",
+        "remAktifCt"
+      ],
+      "konst": [
+        "syaratKeyPerKej",
+        "syaratKeyMaks",
+        "syaratSkalaF",
+        "syaratStopF",
+        "syaratWajibMate",
+        "wajibKeyDasar"
+      ],
+      "total": 9
+    }
+  },
+  "siklusIni": {
+    "faktorKalibArah": 0.532,
+    "faktorKalibPhx": 0.58,
+    "kuotaArah": 2,
+    "kuotaPhx": 2,
+    "netCumPct": -102.54,
+    "tambahanAmbang": 20,
+    "ambangOddsEfektif": 80,
+    "zonaCt": 0,
+    "karantinaCt": 0,
+    "alokasiCt": 0
+  },
+  "kejujuran": "semua gerbang impas HANYA MENOLAK atau MENGETATkan — tak ada yang melonggarkan gerbang lama; faktor kalibrasi & kuota dihitung ulang tiap denyut dari ledger, pulih sendiri bila medan membaik; backtest adalah replay masa lalu, bukan jaminan masa depan"
+}

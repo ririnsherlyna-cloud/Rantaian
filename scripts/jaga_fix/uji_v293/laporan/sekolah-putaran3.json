@@ -1,0 +1,38 @@
+{
+  "putaran": 3,
+  "tanggal": "2026-10-03",
+  "versi": "V267-ANTI-ARUS v6.4",
+  "mandat": "Lakukan dan benahi juga intinya semuanya penting — sekolah kilat terus berjalan tanpa menunggu hari demi hari",
+  "metode": "bedah anti-arus 2.366 soal in-sample (grade panen V265) + verifikasi OOS putaran-2 + uji dunia bear murni dua versi berjauhan (run terpisah, kondisi cache sama)",
+  "buktiOrgan": {
+    "buySaksiTerbalik": {
+      "kena": "BUY saat bear-harian (ret24 BTC ≤ −1.5%) & ret1h BTC ≥ 0 (saksi pantulan sesaat)",
+      "denganSaksi": { "n": 77, "akurasiPct": 41.6, "netPct": -23.4, "makna": "jebakan pantulan — membeli kenaikan sesaat di tengah jatuh = puncak pantulan kecil lalu lanjut turun" },
+      "tanpaSaksi": { "n": 64, "akurasiPct": 68.8, "netPct": 103.5, "makna": "menadah dasar terbukti untung — DIPERTAHANKAN" },
+      "bearDalamVerifikasi": { "denganSaksi": { "n": 10, "akurasiPct": 20.0, "netPct": -24.5 }, "tanpaSaksi": { "n": 17, "akurasiPct": 70.6, "netPct": 20.7 } },
+      "tindakan": "key −8 + ukuran ×0.6 (anti-karantina: tetap mengunci & tetap belajar)"
+    },
+    "buyJatuhDalam": {
+      "kena": "BUY saat ret24 BTC ≤ −2.5% (jatuh pisau)",
+      "bukti": { "ret24_-2..-1": { "n": 106, "akurasiPct": 55.7, "netPct": 83.1 }, "ret24_-3..-2": { "n": 31, "akurasiPct": 51.6, "netPct": -7.4 }, "ret24_-4..-3": { "n": 4, "akurasiPct": 25.0, "netPct": 4.3 }, "ret24_<=-2.5": { "n": 27, "akurasiPct": 51.9, "netPct": -3.8 } },
+      "batas": "−2.5% tajam dari data — di atasnya menadah untung, di bawahnya menadah pisau",
+      "tindakan": "key −8 + ukuran ×0.6"
+    }
+  },
+  "kejujuran": {
+    "divergensiReversal": "hari 10-02 (BTC ret24 +1.5..+3.7% & breadth 13-26%, 82 BUY 0% benar di OOS) tetap BUTA PRINSIPIL — in-sample divergensi justru untung (+15.2%, n=25, ak 52%) sehingga organ pembalik-arus divergensi TIDAK SAH dibuat; draf-2 dibuang sebelum push (anti-overfit, pelajaran draf-1 putaran-2 diulang)",
+    "sistemDiam": "dunia beku baru (10-02T01, 06-10T06, 06-11T00) menghasilkan 0 kunci — gerbang odds/peluang (ambang efektif 60, suhu BERTAHAN) memilih DIAM saat tidak yakin; jawaban radar (kelas B) tetap tercatat & dinilai",
+    "inSample": "organ V267 dilatih dari data in-sample — bukti sesudahnya adalah medan hidup yang belum pernah dilihat organ"
+  },
+  "ujiDuniaBearMurni": {
+    "dunia": "2026-06-10T00:00Z (ret24 BTC −2.15%, breadth 11-26%)",
+    "v63": { "n": 8, "arah": "SELL", "akurasiPct": 100.0, "netPct": 15.4 },
+    "v64": { "n": 8, "arah": "SELL", "akurasiPct": 100.0, "netPct": 17.7 },
+    "makna": "organ V267 tidak merusak — keduanya 8/8 SELL benar; net beda kecil = noise MC antar-run"
+  },
+  "infrastruktur": {
+    "cron": "menit bulat sering dilewati scheduler GitHub (denyut #52/#54 terlewat 03:45→09:15 & 09:45→11:20) → diperbaiki ke menit non-bulat 7/15",
+    "registri": "301 → 307 parameter bernama"
+  },
+  "organ": "10 organ mengikat saat kunci (4 kalibrasi V265 + 3 barometer V266 + 2 anti-arus V267 + seleksi publik radar-bear)"
+}

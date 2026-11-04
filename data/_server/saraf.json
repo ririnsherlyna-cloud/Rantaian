@@ -1,0 +1,10 @@
+{
+ "skema": "saraf-v1",
+ "diperbarui": "2026-10-08T15:50:00.000Z",
+ "hukum": "saraf hidup DI DALAM tubuh (pelajaran V309: dorongan file workflow dari Actions ditolak platform selamanya); luka saraf dipulihkan imun dari cadangan tersegel",
+ "organ": {
+  "guru-master": { "aktif": true, "jalur": "scripts/hidup/guru-master.mjs" },
+  "sadar1": { "aktif": true, "jalur": "scripts/hidup/sadar1.js" },
+  "pustaka": { "aktif": true, "jalur": "scripts/hidup/pustaka.mjs" }
+ }
+}

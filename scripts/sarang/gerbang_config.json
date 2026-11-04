@@ -1,0 +1,5 @@
+{
+ "live_url": null,
+ "catatan": "Isi live_url manual (https://preview-xxx.space-z.ai) bila ingin memaksa; prioritas tetap pada host_publik.txt hasil belajar-otomatis dari header Host /api/arena.",
+ "dibuat": "2026-10-04"
+}

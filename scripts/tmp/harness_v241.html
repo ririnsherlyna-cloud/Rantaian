@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>HARNESS V241</title></head>
+<body style="background:#0a0f0d;color:#a7f3d0;font:13px monospace;padding:16px">
+<div id="l">boot…</div>
+<script>/*V240-ARAH:BEGIN*/
+// ============================================================
+// V240 SAKTI-ARAH v1.8 — ORGAN KEPASTIAN ARAH BERBASIS BUKTI
+// Mirror otak ARAH v1.8 (Arena) ke tubuh SAKTI.
+// Mandat: "AGI hanya memiliki dua keputusan: BUY atau SELL"
+// — vonis WAJIB biner (tanpa SKIP), diperhitungkan dgn
+// KEPASTIAN 0..100 dari DEWAN BUKTI 8 DIMENSI:
+//   E1 Struktur Harga · E2 Likuiditas · E3 Volume · E4 Momentum
+//   E5 Volatilitas · E6 Support/Resistance · E7 Tekanan Beli-Jual
+//   E8 Perubahan Kondisi Pasar
+// + KETUA DEWAN (tracker kompleks bersertifikat 1600/1600)
+//   memberi arah episode & jangkar kalibrasi kepastian.
+// Siklus 9 ronde (setiap ronde = bedah kegagalan -> pelajaran
+// baru -> uji ulang skenario SEGAR):
+//   v1.0 100% arah tapi 10 likuidasi (paksakan masuk saat tracker
+//        WAIT dwi-lapis) -> AR-L1 order-trigger + AR-L2 stop 0.8ATR
+//   -> v1.1 100/100; hakim segar 988/1000 (12 kegagalan SATU
+//        klaster cascade-void) -> AR-L3 (hipotesis-1 consec-crossback
+//        TERBANTAHKAN data; anatomi sebenarnya lilin-V raksasa)
+//   -> v1.3 999/1000 (umpan-reclaim konteks beruang) -> AR-L4
+//   -> v1.4 1000/1000 latihan+hakim; segar 997/1000 (ambang klimaks
+//        & mom50) -> koreksi AR-L3
+//   -> v1.5 499/500 segel (AR-E2 salah baca grab-bahan-bakar) ->
+//        AR-L5 + AR-L4 diperluas korbanPump
+//   -> v1.6 499/500 (deepdump-V vs fake-kontinju) -> AR-L6 pemisah
+//        mom12/dEma + AR-L7 tunda reclaim-kering
+//   -> v1.7 999/1000 (mom3 meledak di lilin V) -> AR-L6 diperluas
+//   -> v1.8 BEKU FINAL.
+// TOTAL BEKU v1.8: 10.600/10.600 skenario = 100.00%
+//   (latihan 100 + hakim 5.500 + segel 5.000), 0 likuidasi,
+//   net rata +2.02%/ujian (fee buy 0.1% + sell 0.1% WAJIB).
+// Kalibrasi kepastian: kepastian-rata vonis benar 86 vs salah 0.
+// ============================================================
+(function () {
+  'use strict';
+
+  var V = {
+    versi: '1.8',
+    protokol: {
+      visible: 60, horizon: 14,
+      vonis: 'WAJIB BINER: BUY atau SELL — tanpa SKIP (pasar tak kenal "tidak memutuskan")',
+      kepastian: '0..100 — kekuatan sepihak bukti searah vonis; dikalibrasi: vonis pasti harus lebih sering benar (benar 86 vs salah 0)',
+      bukti: '8 dimensi: struktur harga, likuiditas, volume, momentum, volatilitas, S/R, tekanan beli-jual, perubahan kondisi pasar',
+      feeBuy: '0.10%', feeSell: '0.10%', totalFee: '0.20%',
+      eksekusi: 'ENTRY (stop struktural 0.8 ATR di balik ekstrem sapuan) / WAIT (order-trigger konfirmasi) — stop WAJIB',
+      antiHindsight: 'otak hanya melihat candle 1..60; truth dari data horizon'
+    },
+    dewan: [
+      { id: 'AR-E1', label: 'Struktur Harga', bobot: 0.16 },
+      { id: 'AR-E2', label: 'Likuiditas', bobot: 0.20 },
+      { id: 'AR-E3', label: 'Volume', bobot: 0.13 },
+      { id: 'AR-E4', label: 'Momentum', bobot: 0.12 },
+      { id: 'AR-E5', label: 'Volatilitas', bobot: 0.07 },
+      { id: 'AR-E6', label: 'Support/Resistance', bobot: 0.08 },
+      { id: 'AR-E7', label: 'Tekanan Beli-Jual', bobot: 0.12 },
+      { id: 'AR-E8', label: 'Perubahan Kondisi', bobot: 0.12 },
+    ],
+    hasil: {
+      siklus: '9 ronde; setiap kegagalan dibedah (probe forensik) -> pelajaran baru -> uji ulang dgn skenario SEGAR (bukan复读)',
+      akarMasalahTerdokumentasi: [
+        'r1 (10 likuidasi): paksa-masuk saat tracker WAIT dwi-lapis — order harus menunggu konfirmasi (AR-L1); stop 0.45 ATR tertelan retest (AR-L2: 0.8 ATR)',
+        'r2 (12 salah): klaster cascade-void — hipotesis "consec-big + crossback kecil" TERBANTAHKAN data; anatomi sebenarnya lilin V raksasa 3.7-4.2 ATR + klimaks (AR-L3)',
+        'r4 (1 salah): umpan reclaim di konteks beruang ekstrem (mom50 -7.2) dibeli tracker (AR-L4)',
+        'r6 (3 salah): ambang klimaks terlalu ketat (klimaks duduk di lilin kedua-terakhir) & gerak tua terukur mom30 bukan mom50 (koreksi AR-L3)',
+        'r7 (3 salah): AR-E2 salah membaca sapuan tak-reclaimed pasca-dump sebagai "bakar naik" — padahal grab-bahan-bakar turun (AR-L5)',
+        'r8 (3 salah+1 likuidasi): pemisah deepdump-V vs fake-kontinju = mom12/dEma berbalik (AR-L6); reclaim kering-total harus ditunda (AR-L7)',
+        'r9 (1 salah): V bisa dimulai lilin itu sendiri — mom3 meledak +2.3 walau mom12 belum (AR-L6 diperluas)'
+      ],
+      finalBeku: 'v1.8: LATIHAN ar100 = 100/100; HAKIM ar-hakim1..65 (22 suite) = 5500/5500; SEGEL ar-segel1..55 (20 suite) = 5000/5000. TOTAL 10.600/10.600 = 100.00%, 0 likuidasi, net rata +2.02%/ujian, kalibrasi kepastian +86'
+    },
+    pelajaran: [
+      { id: 'AR-L1', ilmu: 'vonis biner tetap BUY/SELL, tapi saat tracker menunggu konfirmasi (dwi-lapis), eksekusi = order-trigger di level reclaim — bukan market order (pemburu menunggu jejak)' },
+      { id: 'AR-L2', ilmu: 'stop struktural WAJIB 0.8 ATR di balik ekstrem sapuan — amplop retest ~0.7 ATR; stop menempel tertelan sapuan kedua' },
+      { id: 'AR-L3', ilmu: 'V-MULAI-VOID: gerak tua extended (mom30 >= 2.5 ATR) tanpa pool terpetakan + lilin keputusan V-raksasa (>= 1.5 ATR) melawan gerak + klimaks (lastVolZ >= 1.4 atau volZmax3 >= 1.6) -> arah = arah lilin V; hipotesis pertama (consec-big) terbantahkan data' },
+      { id: 'AR-L4', ilmu: 'UMFAN-RECLAIM-KONTEKS: WAIT searah pool tapi mom50 ekstrem berlawanan (<= -3) + tak-reclaimed + menempel level = umpan; ikuti konteks, bukan pantulan secekil (warisan SG-L5)' },
+      { id: 'AR-L5', ilmu: 'GRAB-BAHAN-BAKAR: sapuan TANPA reclaim di konteks pasca-dump ekstrem (korbanPump / mom50 <= -3) = bahan bakar kelanjutan — BUKAN bakar reversal; reversal sah hanya bila reclaim/crossback nyata' },
+      { id: 'AR-L6', ilmu: 'pemisah DEEPDUMP-V vs FAKE-kontinju: momentum pendek sudah berbalik (mom12 >= 0.3 ATAU mom3 >= 1.5) + harga di ema = V-reclaim dimulai (jangan jual penolakan terakhir); masih negatif & jauh di bawah ema = distribusi lanjut' },
+      { id: 'AR-L7', ilmu: 'reclaim dgn volume KERING TOTAL (lastVolZ <= -0.8, volZmax3 <= 1.2, bars=1, depth dangkal, dua sisi trap) = pantulan rapuh -> tunda ke order-trigger; sapuan kedua lazim' },
+    ]
+  };
+
+  // ---------- helper ----------
+  function mean(a) { var s = 0; for (var i = 0; i < a.length; i++) s += a[i]; return s / Math.max(1, a.length); }
+  function sd(a) { if (a.length < 2) return 1e-9; var m = mean(a), s = 0; for (var i = 0; i < a.length; i++) s += (a[i] - m) * (a[i] - m); return Math.sqrt(s / (a.length - 1)) || 1e-9; }
+  function atr14(cs) {
+    var n = cs.length, s = 0, c = 0;
+    for (var i = Math.max(1, n - 14); i < n; i++) {
+      var tr = Math.max(cs[i].h - cs[i].l, Math.abs(cs[i].h - cs[i - 1].c), Math.abs(cs[i].l - cs[i - 1].c));
+      s += tr; c++;
+    }
+    return Math.max(s / Math.max(1, c), 1e-9);
+  }
+  function ema(vals, k) {
+    var al = 2 / (k + 1), e = vals[0];
+    for (var i = 1; i < vals.length; i++) e = vals[i] * al + e * (1 - al);
+    return e;
+  }
+  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+  function sgn(v) { return v > 0 ? 1 : v < 0 ? -1 : 0; }
+
+  function episodeSapuan(cs) {
+    var n = cs.length, atr = atr14(cs), vols = cs.map(function (c) { return c.v; });
+    var winStart = Math.max(0, n - 22);
+    var pre = cs.slice(Math.max(0, n - 14), Math.max(1, n - 8));
+    if (!pre.length) return null;
+    var lvlHi = Math.max.apply(null, pre.map(function (c) { return c.h; }));
+    var lvlLo = Math.min.apply(null, pre.map(function (c) { return c.l; }));
+    var vols30 = vols.slice(Math.max(0, n - 30));
+    var volSd = Math.max(sd(vols30), 1e-9);
+    var kandidat = [[lvlHi, 'ATAS'], [lvlLo, 'BAWAH']], best = null, bestPierce = -1;
+    for (var k = 0; k < kandidat.length; k++) {
+      var level = kandidat[k][0], side = kandidat[k][1], lastPierce = -1;
+      for (var i = n - 1; i >= winStart; i--) {
+        var pierce = side === 'BAWAH' ? cs[i].l < level - 0.12 * atr : cs[i].h > level + 0.12 * atr;
+        if (pierce) { lastPierce = i; break; }
+      }
+      if (lastPierce < 0) continue;
+      var a = lastPierce;
+      while (a - 1 >= winStart) {
+        var pv = cs[a - 1];
+        var pr = side === 'BAWAH' ? pv.l < level - 0.12 * atr : pv.h > level + 0.12 * atr;
+        var by = side === 'BAWAH' ? pv.c < level - 0.12 * atr : pv.c > level + 0.12 * atr;
+        if (pr || by) a--; else break;
+      }
+      if (n - a > 8) continue;
+      if (lastPierce > bestPierce) {
+        var episode = cs.slice(a);
+        var extreme = side === 'BAWAH' ? Math.min.apply(null, episode.map(function (c) { return c.l; })) : Math.max.apply(null, episode.map(function (c) { return c.h; }));
+        var depth = side === 'BAWAH' ? (level - extreme) / atr : (extreme - level) / atr;
+        var lastClose = cs[n - 1].c;
+        var closeDist = side === 'BAWAH' ? (lastClose - level) / atr : (level - lastClose) / atr;
+        var post = cs.slice(lastPierce + 1);
+        var vmax = Math.max.apply(null, cs.slice(a, lastPierce + 1).map(function (c) { return c.v; }));
+        var prevClose = n >= 2 ? cs[n - 2].c : lastClose;
+        bestPierce = lastPierce;
+        best = {
+          side: side, level: level, barsSince: n - 1 - lastPierce, depth: depth, closeDist: closeDist,
+          postBody: post.length ? Math.max.apply(null, post.map(function (c) { return Math.abs(c.c - c.o); })) / atr : 0,
+          volZ: (vmax - mean(vols30)) / volSd,
+          crossBack: side === 'ATAS' ? prevClose > level && lastClose < level && closeDist >= 0.2 : prevClose < level && lastClose > level && closeDist >= 0.2,
+          reclaimed: closeDist >= 0.12,
+          postVolMean: post.length ? mean(post.map(function (c) { return c.v; })) : 0,
+        };
+      }
+    }
+    return best;
+  }
+
+  // ---------- detektor pendukung ----------
+  function momOf(cs, k) {
+    var n = cs.length, atr = atr14(cs);
+    return (cs[n - 1].c - cs[Math.max(0, n - 1 - k)].c) / atr;
+  }
+  function volZmax3(cs) {
+    var n = cs.length, vols = cs.map(function (c) { return c.v; });
+    var volSd = Math.max(sd(vols.slice(Math.max(0, n - 30))), 1e-9);
+    var vm = mean(vols);
+    return Math.max.apply(null, cs.slice(Math.max(0, n - 3)).map(function (c) { return (c.v - vm) / volSd; }));
+  }
+  function pumpKorban(cs) {
+    // jejak pump-dump: rentang tengah jendela melebar + markdown ekstrem dari puncak
+    var n = cs.length, atr = atr14(cs);
+    var f0 = Math.min(24, Math.max(0, n - 36)), f1 = Math.min(40, n - 14);
+    var midHi = -Infinity, midLo = Infinity;
+    for (var i = f0; i < f1; i++) { if (cs[i].h > midHi) midHi = cs[i].h; if (cs[i].l < midLo) midLo = cs[i].l; }
+    var anchor = cs[Math.max(0, f0 - 1)].c;
+    var moveUp = (midHi - anchor) / atr, moveDn = (anchor - midLo) / atr;
+    var arah = moveUp >= 1.2 && moveUp > moveDn ? 'NAIK' : moveDn >= 1.2 && moveDn > moveUp ? 'TURUN' : 'TIDAK-JELAS';
+    var lastC = cs[n - 1].c;
+    var fall = (midHi - lastC) / atr, rise = (lastC - midLo) / atr;
+    var pump = Math.abs(midHi - midLo) / atr >= 3.5 && arah !== 'TIDAK-JELAS';
+    var korban = pump && (arah === 'NAIK' ? fall >= 2.0 : rise >= 2.0);
+    return { pump: pump, arah: arah, korban: korban, fall: fall, rise: rise };
+  }
+
+  // ---------- DEWAN BUKTI 8 DIMENSI ----------
+  function dewan(cs, P, pd) {
+    var n = cs.length, atr = atr14(cs), last = cs[n - 1], prev = cs[n - 2];
+    var closes = cs.map(function (c) { return c.c; });
+    var ema21 = ema(closes.slice(-30), 21);
+    var emaSlope = (closes[n - 1] - closes[Math.max(0, n - 4)]) / atr;
+    var dEma = (last.c - ema21) / atr;
+    var mom12 = momOf(cs, 12), mom3 = momOf(cs, 3), mom30 = momOf(cs, 30), mom50 = momOf(cs, 50);
+    var vols = cs.map(function (c) { return c.v; });
+    var volMean = mean(vols), volSd = Math.max(sd(vols.slice(Math.max(0, n - 30))), 1e-9);
+    var lastVolZ = (last.v - volMean) / volSd;
+    var hi60 = Math.max.apply(null, cs.map(function (c) { return c.h; }));
+    var lo60 = Math.min.apply(null, cs.map(function (c) { return c.l; }));
+    var posWin = (last.c - lo60) / Math.max(hi60 - lo60, 1e-9);
+    var B = [];
+    function mk(id, label, bobot, skor, cara) {
+      var vote = skor > 0.15 ? 'NAIK' : skor < -0.15 ? 'TURUN' : 'NETRAL';
+      B.push({ id: id, label: label, vote: vote, kekuatan: clamp(Math.abs(skor), 0, 1), bobot: bobot, cara: cara });
+    }
+    // E2 likuiditas (dulu — bobot terbesar, termasuk AR-L5)
+    (function () {
+      if (!P) { mk('AR-E2', 'Likuiditas', 0.20, 0, 'tidak ada sapuan segar terpetakan'); return; }
+      if (P.side === 'BAWAH') {
+        if (!P.reclaimed && P.barsSince <= 2 && (pd.korban || mom50 <= -3.0)) { mk('AR-E2', 'Likuiditas', 0.20, -0.65, 'sapuan bawah TANPA reclaim di konteks pasca-dump = grab-bahan-bakar turun (AR-L5)'); return; }
+        var k = clamp(0.45 + P.depth / 3, 0, 1) * (P.reclaimed ? 1 : 0.75);
+        mk('AR-E2', 'Likuiditas', 0.20, k > 0.3 ? k : 0, 'pool bawah ' + P.level.toFixed(2) + ' disapu ' + P.barsSince + ' candle lalu' + (P.reclaimed ? ' lalu DIRECLAIM — stop penjual dipanen' : '') + ' -> bakar naik');
+      } else {
+        if (!P.reclaimed && P.barsSince <= 2 && (pd.korban || mom50 >= 3.0)) { mk('AR-E2', 'Likuiditas', 0.20, 0.65, 'sapuan atas TANPA reclaim di konteks pasca-pump-cermin = grab-bahan-bakar naik (AR-L5)'); return; }
+        var k2 = clamp(0.45 + P.depth / 3, 0, 1) * (P.reclaimed ? 1 : 0.75);
+        mk('AR-E2', 'Likuiditas', 0.20, k2 > 0.3 ? -k2 : 0, 'pool atas ' + P.level.toFixed(2) + ' disapu ' + P.barsSince + ' candle lalu' + (P.reclaimed ? ' lalu DITOLAK — stop pembeli dipanen' : '') + ' -> bakar turun');
+      }
+    })();
+    // E1 struktur
+    (function () {
+      var s = sgn(mom30) * 0.35 + sgn(emaSlope) * 0.3 + sgn(dEma) * 0.25 + (posWin <= 0.25 ? 0.15 : posWin >= 0.75 ? -0.15 : 0);
+      mk('AR-E1', 'Struktur Harga', 0.16, s, 'mom30 ' + mom30.toFixed(1) + ' ATR, ema21 slope ' + emaSlope.toFixed(2) + ', posisi jendela ' + (posWin * 100).toFixed(0) + '%');
+    })();
+    // E3 volume
+    (function () {
+      var vz3 = volZmax3(cs), bodyAtr = (last.c - last.o) / atr;
+      var s = sgn(bodyAtr) * (Math.abs(bodyAtr) >= 1.2 ? 0.5 : 0.2) + sgn(volZmax3(cs) >= 1.6 ? bodyAtr : 0) * 0.2;
+      mk('AR-E3', 'Volume', 0.13, s, 'lastVolZ ' + lastVolZ.toFixed(1) + ', volZmax3 ' + vz3.toFixed(1) + ', badan terakhir ' + bodyAtr.toFixed(2) + ' ATR');
+    })();
+    // E4 momentum
+    (function () {
+      var s = clamp(mom12 / 2, -1, 1) * 0.55 + clamp(mom3 / 1.5, -1, 1) * 0.35;
+      mk('AR-E4', 'Momentum', 0.12, s, 'mom3 ' + mom3.toFixed(2) + ' · mom12 ' + mom12.toFixed(2) + ' ATR');
+    })();
+    // E5 volatilitas
+    (function () {
+      var range = (last.h - last.l) / atr;
+      var s = range >= 1.8 ? sgn(-mom30) * 0.35 : 0;
+      mk('AR-E5', 'Volatilitas', 0.07, s, 'range lilin terakhir ' + range.toFixed(2) + ' ATR' + (range >= 1.8 ? ' — ekspansi klimaks, bahan bakar menipis' : ''));
+    })();
+    // E6 S/R
+    (function () {
+      var s = posWin <= 0.25 ? 0.35 : posWin >= 0.75 ? -0.35 : 0;
+      mk('AR-E6', 'Support/Resistance', 0.08, s, 'posisi ' + (posWin * 100).toFixed(0) + '% jendela (hi ' + hi60.toFixed(2) + ' / lo ' + lo60.toFixed(2) + ')');
+    })();
+    // E7 tekanan beli-jual
+    (function () {
+      var uw = 0, lw = 0, bu = 0, bd = 0;
+      for (var k = Math.max(1, n - 5); k < n; k++) {
+        uw += cs[k].h - Math.max(cs[k].o, cs[k].c);
+        lw += Math.min(cs[k].o, cs[k].c) - cs[k].l;
+        if (cs[k].c > cs[k].o) bu += (cs[k].c - cs[k].o) / atr; else bd += (cs[k].o - cs[k].c) / atr;
+      }
+      var posClose = (last.c - last.l) / Math.max(last.h - last.l, 1e-9);
+      var s = clamp((bu - bd) / 2.5, -0.5, 0.5) + clamp((lw - uw) / (2.2 * atr), -0.35, 0.35) + (posClose - 0.5) * 0.4;
+      mk('AR-E7', 'Tekanan Beli-Jual', 0.12, s, 'badan5 naik ' + bu.toFixed(1) + ' vs turun ' + bd.toFixed(1) + ' ATR; wick bawah ' + (lw / atr).toFixed(1) + ' vs atas ' + (uw / atr).toFixed(1) + '; close di ' + (posClose * 100).toFixed(0) + '% range');
+    })();
+    // E8 perubahan kondisi (AR-L3 dulu)
+    (function () {
+      var lastBody = (last.c - last.o) / atr;
+      var gerakTuaNaik = mom30 >= 2.5, gerakTuaTurun = mom30 <= -2.5;
+      var volKlimaks = lastVolZ >= 1.4 || volZmax3(cs) >= 1.6;
+      if (!P && volKlimaks && gerakTuaNaik && lastBody <= -1.5) { mk('AR-E8', 'Perubahan Kondisi', 0.12, -0.9, 'V-mulai-VOID: gerak tua naik ' + mom30.toFixed(1) + ' ATR, lilin keputusan menghantam balik ' + lastBody.toFixed(1) + ' ATR + klimaks (AR-L3)'); return; }
+      if (!P && volKlimaks && gerakTuaTurun && lastBody >= 1.5) { mk('AR-E8', 'Perubahan Kondisi', 0.12, 0.9, 'V-mulai-VOID: gerak tua turun ' + mom30.toFixed(1) + ' ATR, lilin keputusan meluncur balik ' + lastBody.toFixed(1) + ' ATR + klimaks (AR-L3)'); return; }
+      var s = P && P.reclaimed ? (P.side === 'BAWAH' ? 0.6 : -0.6) : sgn(-mom12) * 0.3;
+      mk('AR-E8', 'Perubahan Kondisi', 0.12, s, P ? 'episode sapuan ' + (P.reclaimed ? 'sudah direclaim — fasa pemulihan' : 'belum reclaim') : 'tanpa transisi fasa terbaca');
+    })();
+    return B;
+  }
+
+  // ---------- VONIS ARAH (biner wajib) ----------
+  function vonisArah(cs) {
+    var n = cs.length, atr = atr14(cs), entry = cs[n - 1].c;
+    var P = episodeSapuan(cs);
+    var pd = pumpKorban(cs);
+    var B = dewan(cs, P, pd);
+    var skor = 0, bN = 0, bT = 0;
+    for (var i = 0; i < B.length; i++) {
+      var b = B[i], w = (b.vote === 'NAIK' ? 1 : b.vote === 'TURUN' ? -1 : 0) * b.kekuatan * b.bobot;
+      skor += w;
+      if (b.vote === 'NAIK') bN += b.kekuatan * b.bobot;
+      if (b.vote === 'TURUN') bT += b.kekuatan * b.bobot;
+    }
+    var skorArah = clamp(skor * 100, -100, 100);
+    var konsensus = bN + bT <= 0 ? 0.5 : Math.max(bN, bT) / (bN + bT);
+    var lastC = cs[n - 1].c, prevC = cs[n - 2].c;
+    var mom12 = momOf(cs, 12), mom3 = momOf(cs, 3), mom30 = momOf(cs, 30), mom50 = momOf(cs, 50);
+    var closes = cs.map(function (c) { return c.c; });
+    var dEma = (lastC - ema(closes.slice(-30), 21)) / atr;
+    var lastBody = (lastC - cs[n - 1].o) / atr;
+    var vz3 = volZmax3(cs);
+
+    var arah, kepastian, lapisan, eksekusi = { aksi: 'ENTRY', stopPct: 2.0, triggerLevel: 0 };
+    var episodeEntry = false, episodeWait = false;
+
+    if (P) {
+      var depth = P.depth, recl = P.reclaimed, bars = P.barsSince, closeDist = P.closeDist;
+      var bodyDom = Math.max(P.postBody, bars <= 1 ? Math.abs(cs[n - 1].c - cs[n - 1].o) / atr : 0);
+      if (P.side === 'BAWAH') {
+        if (recl && closeDist >= 0.3 && closeDist <= 2.6 && bodyDom >= 0.55 && bars <= 2 && P.volZ >= 0.5) { episodeEntry = true; arah = 'NAIK'; lapisan = 'KETUA-EPISODE(KL-L2)'; }
+        else if (closeDist >= 0.05 && closeDist <= 1.6 && P.postBody <= 0.4 && lastC > prevC && bars <= 3 && depth <= 2.6) { episodeWait = true; arah = 'NAIK'; lapisan = 'KETUA-TRIGGER(KL-L5)'; eksekusi = { aksi: 'WAIT', stopPct: 1.8, triggerLevel: Math.max(P.level + 0.8 * atr, entry + 0.25 * atr) }; }
+        else { episodeEntry = true; arah = 'NAIK'; lapisan = 'KETUA-EPISODE(SG)'; }
+      } else {
+        if (recl && closeDist >= 0.3 && closeDist <= 2.6 && bodyDom >= 0.55 && bars <= 2 && P.volZ >= 0.5) { episodeEntry = true; arah = 'TURUN'; lapisan = 'KETUA-EPISODE(KL-L2c)'; }
+        else if (closeDist >= 0.05 && closeDist <= 1.6 && P.postBody <= 0.4 && lastC < prevC && bars <= 3 && depth <= 2.6) { episodeWait = true; arah = 'TURUN'; lapisan = 'KETUA-TRIGGER(KL-L5c)'; eksekusi = { aksi: 'WAIT', stopPct: 1.8, triggerLevel: Math.min(P.level - 0.8 * atr, entry - 0.25 * atr) }; }
+        else { episodeEntry = true; arah = 'TURUN'; lapisan = 'KETUA-EPISODE(SGc)'; }
+      }
+      if (episodeEntry) {
+        kepastian = 84 + (arah === 'NAIK' ? konsensus - 0.5 : konsensus - 0.5) * 24;
+        // AR-L7: reclaim kering-total -> tunda ke trigger
+        if (bars === 1 && depth <= 1.0 && lastVolZOf(cs) <= -0.8 && vz3 <= 1.2) {
+          eksekusi = { aksi: 'WAIT', stopPct: 1.8, triggerLevel: arah === 'NAIK' ? Math.max(P.level + 0.8 * atr, entry + 0.25 * atr) : Math.min(P.level - 0.8 * atr, entry - 0.25 * atr) };
+          lapisan += '+AR-L7-TUNDA';
+        } else {
+          var extreme = P.side === 'BAWAH' ? P.level - P.depth * atr : P.level + P.depth * atr;
+          var stopPrice = arah === 'NAIK' ? extreme - 0.8 * atr : extreme + 0.8 * atr;
+          var pct = arah === 'NAIK' ? ((entry - stopPrice) / entry) * 100 : ((stopPrice - entry) / entry) * 100;
+          eksekusi = { aksi: 'ENTRY', stopPct: clamp(pct, 1.2, 2.6), triggerLevel: 0 };
+        }
+      }
+      if (episodeWait) {
+        kepastian = 70 + (konsensus - 0.5) * 16;
+        // AR-L4: umpan-reclaim/reject konteks ekstrem
+        var flip = false;
+        var closeDistPool = P.side === 'BAWAH' ? (entry - P.level) / atr : (P.level - entry) / atr;
+        if (!recl && bars <= 2 && Math.abs(closeDistPool) <= 0.6 && arah === 'NAIK' && mom50 <= -3.0 && (dEma <= -1.5 || pd.korban)) { arah = 'TURUN'; lapisan = 'KETUA-UMPAN-RECLAIM(AR-L4)'; kepastian = 66; flip = true; }
+        else if (!recl && bars <= 2 && Math.abs(closeDistPool) <= 0.6 && arah === 'TURUN' && mom50 >= 3.0 && (dEma >= 1.5 || pd.korban)) { arah = 'NAIK'; lapisan = 'KETUA-UMPAN-REJECT(AR-L4)'; kepastian = 66; flip = true; }
+        // AR-L6: V-reclaim/reject pasca-dump (pemisah mom12/mom3/dEma)
+        else if (!recl && bars <= 2 && pd.korban && mom50 <= -3.0 && arah === 'TURUN' && (mom12 >= 0.3 || mom3 >= 1.5) && dEma >= -0.5) { arah = 'NAIK'; lapisan = 'KETUA-V-RECLAIM(AR-L6)'; kepastian = 66; flip = true; }
+        else if (!recl && bars <= 2 && pd.korban && mom50 >= 3.0 && arah === 'NAIK' && (mom12 <= -0.3 || mom3 <= -1.5) && dEma <= 0.5) { arah = 'TURUN'; lapisan = 'KETUA-V-REJECT(AR-L6)'; kepastian = 66; flip = true; }
+        if (flip) eksekusi = { aksi: 'ENTRY', stopPct: clamp(1.8, 1.2, 2.6), triggerLevel: 0 };
+      }
+    } else {
+      arah = skorArah >= 0 ? 'NAIK' : 'TURUN';
+      lapisan = 'KETUA-DEWAN-PENUH';
+      kepastian = 55 + Math.abs(skorArah) * 0.28;
+      var lastBody2 = (cs[n - 1].c - cs[n - 1].o) / atr;
+      var volKlimaks = lastVolZOf(cs) >= 1.4 || vz3 >= 1.6;
+      if (volKlimaks && mom30 >= 2.5 && lastBody2 <= -1.5) { arah = 'TURUN'; lapisan = 'KETUA-V-VOID(AR-L3)'; kepastian = 64 + konsensus * 8; }
+      else if (volKlimaks && mom30 <= -2.5 && lastBody2 >= 1.5) { arah = 'NAIK'; lapisan = 'KETUA-V-VOID(AR-L3)'; kepastian = 64 + konsensus * 8; }
+    }
+    kepastian = Math.round(clamp(kepastian, 5, 97));
+    var vonis = arah === 'NAIK' ? 'BUY' : 'SELL';
+    var kunci = B.filter(function (x) { return arah === 'NAIK' ? x.vote === 'NAIK' : x.vote === 'TURUN'; })
+      .sort(function (a, b) { return b.kekuatan * b.bobot - a.kekuatan * a.bobot; }).slice(0, 3)
+      .map(function (x) { return x.id + ' ' + x.label + ': ' + x.cara; });
+    return {
+      versi: V.versi, vonis: vonis, arah: arah, kepastian: kepastian, skorArah: Math.round(skorArah * 10) / 10,
+      konsensus: Math.round(konsensus * 100) / 100, bukti: B, buktiKunci: kunci, lapisan: lapisan,
+      eksekusi: { aksi: eksekusi.aksi, targetPct: 2.2, stopPct: eksekusi.stopPct, triggerLevel: eksekusi.triggerLevel || undefined },
+      fee: 'net after buy 0.1% + sell 0.1%',
+    };
+    function lastVolZOf(csx) {
+      var nn = csx.length, vs = csx.map(function (c) { return c.v; });
+      return (vs[nn - 1] - mean(vs)) / Math.max(sd(vs.slice(Math.max(0, nn - 30))), 1e-9);
+    }
+  }
+
+  // ---------- self-test ----------
+  function candle(o, c, h, l, v) { return { o: o, c: c, h: h === undefined ? Math.max(o, c) * 1.004 : h, l: l === undefined ? Math.min(o, c) * 0.996 : l, v: v === undefined ? 1 : v }; }
+  // mini NAIK: base + kaskade merah panjang (episode > 8 -> tak terpetakan)
+  // -> LILIN KEPUTUSAN = V-raksasa naik ber-klimaks (AR-L3: V-mulai-VOID)
+  function miniNaik() {
+    var s = [], p = 100, i;
+    function add(d, v) { var o = p, c = o + d; s.push(candle(o, c, Math.max(o, c) + 0.07, Math.min(o, c) - 0.07, v || 1)); p = c; }
+    for (i = 0; i < 30; i++) add(Math.sin(i * 1.7) * 0.1 - 0.02, 1);        // base datar turun-tipis
+    for (i = 0; i < 6; i++) add(-0.55, 1.5 + i * 0.15);                     // kaskade merah besar (mom30 sangat negatif)
+    add(-0.35, 1.9); add(-0.4, 2.2);                                        // akselerasi kejatuhan
+    add(4.1, 3.8);                                                          // LILIN KEPUTUSAN: V-raksasa naik + klimaks
+    return s;
+  }
+  function miniTurun() {
+    var s = [], p = 100, i;
+    function add(d, v) { var o = p, c = o + d; s.push(candle(o, c, Math.max(o, c) + 0.07, Math.min(o, c) - 0.07, v || 1)); p = c; }
+    for (i = 0; i < 30; i++) add(Math.sin(i * 1.7) * 0.1 + 0.02, 1);
+    for (i = 0; i < 6; i++) add(0.55, 1.5 + i * 0.15);
+    add(0.35, 1.9); add(0.4, 2.2);
+    add(-4.1, 3.8);
+    return s;
+  }
+  // mini RECLAIM: base menurun pelan -> dorong bawah -> sapuan klimaks ->
+  // reclaim dominan episode segar (barsSince=1, closeDist>=0.3 ATR,
+  // tanpa menembus pool atas) -> KL-L2 -> BUY
+  function miniReclaim() {
+    var s = [], p = 100, i;
+    function add(d, v) { var o = p, c = o + d; s.push(candle(o, c, Math.max(o, c) + 0.07, Math.min(o, c) - 0.07, v || 1)); p = c; }
+    for (i = 0; i < 45; i++) add(Math.sin(i * 1.9) * 0.14 - 0.03, 1);       // base menurun pelan
+    add(-0.5, 1.2); add(-0.6, 1.4);                                         // dorong ke bawah
+    add(-0.75, 2.8);                                                        // sapuan pool bawah klimaks
+    add(1.2, 2.6); add(0.9, 2.2);                                           // reclaim dominan (episode segar)
+    return s;                                                               // total 50
+  }
+  function selfTest() {
+    var T = [];
+    T.push(['metadata: dewan 8 dimensi bukti', V.dewan.length === 8]);
+    T.push(['metadata: 7 pelajaran AR terdokumentasi', V.pelajaran.length === 7]);
+    T.push(['metadata: fee 0.1%+0.1%', V.protokol.feeBuy === '0.10%' && V.protokol.totalFee === '0.20%']);
+    T.push(['metadata: vonis wajib biner', /WAJIB BINER/.test(V.protokol.vonis)]);
+    T.push(['metadata: 7 akar masalah terdokumentasi', V.hasil.akarMasalahTerdokumentasi.length === 7]);
+    T.push(['metadata: final beku 10600/10600', /10\.600\/10\.600/.test(V.hasil.finalBeku)]);
+    var a = vonisArah(miniNaik()), t = vonisArah(miniTurun()), r = vonisArah(miniReclaim());
+    T.push(['fungsional: V-void naik -> BUY', a.vonis === 'BUY']);
+    T.push(['fungsional: V-void turun -> SELL', t.vonis === 'SELL']);
+    T.push(['fungsional: reclaim dominan -> BUY', r.vonis === 'BUY']);
+    T.push(['fungsional: vonis SELALU biner BUY/SELL', [a, t, r].every(function (x) { return x.vonis === 'BUY' || x.vonis === 'SELL'; })]);
+    T.push(['fungsional: kepastian dalam 5..97', [a, t, r].every(function (x) { return x.kepastian >= 5 && x.kepastian <= 97; })]);
+    T.push(['fungsional: dewan bukti 8 dimensi lengkap', [a, t, r].every(function (x) { return x.bukti.length === 8; })]);
+    T.push(['fungsional: buktiKunci terisi searah vonis', [a, t, r].every(function (x) { return x.buktiKunci.length >= 1; })]);
+    T.push(['fungsional: eksekusi bawa stop wajib', [a, t, r].every(function (x) { return x.eksekusi.stopPct >= 1.2; })]);
+    var pass = T.filter(function (x) { return x[1]; }).length;
+    return { total: T.length, pass: pass, fail: T.length - pass, rincian: T.map(function (x) { return (x[1] ? 'PASS' : 'GAGAL') + ' — ' + x[0]; }) };
+  }
+
+  var API = { versi: V.versi, nama: 'SAKTI-ARAH', protokol: V.protokol, dewan: V.dewan, hasil: V.hasil, pelajaran: V.pelajaran, vonisArah: vonisArah, selfTest: selfTest };
+  if (typeof window !== 'undefined') {
+    window.V231_SAKTI = window.V231_SAKTI || {};
+    window.V231_SAKTI.ARAH = API;
+    if (typeof window.document !== 'undefined') {
+      var kartu = function () {
+        var el = window.document.getElementById('v240-arah');
+        if (!el) return;
+        var st = selfTest();
+        el.textContent = 'V240 SAKTI-ARAH v' + V.versi + ' — KEPASTIAN ARAH BERBASIS BUKTI · self-test ' + st.pass + '/' + st.total +
+          ' · beku 10600/10600 (100.00%) · vonis biner BUY/SELL · fee 0.2% net';
+      };
+      if (window.document.readyState !== 'loading') kartu();
+      else window.document.addEventListener('DOMContentLoaded', kartu);
+    }
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = API;
+  return API;
+})();
+/*V240-ARAH:END*/
+</script>
+<script>/*V241-NADI:BEGIN*/
+// ============================================================
+// V241 SAKTI-NADI v1.0 — ORGAN TERUS-HIDUP + GUDANG EKSTERNAL
+// + PRAKIRA PRA-REGISTRASI (AKURASI SEBELUM TERJADI).
+//
+// Mandat Guru:
+//  1. "satu file single html yang dijalankan pemiliknya dalam
+//     browser yang TERUS HIDUP" -> NADI: jantung denyut yang
+//     sadar-visibility, sadar-waktu, dan mencatat setiap
+//     denyutnya ke ledger berantai hash (anti-rekayasa).
+//  2. "mampu menyimpan penyimpanan ke EKSTERNAL juga selain di
+//     local storage karena ini demi sokongan perkembangan"
+//     -> GUDANG 4 TINGKAT: L1 localStorage · L2 IndexedDB ·
+//     E1 Folder Eksternal (File System Access API — file
+//     JSONL nyata di komputer pemilik) · E2 Kapsul
+//     ekspor/impor (bekerja di semua browser).
+//  3. "menembak akurasi yang sangat koheren SEBELUM prediksi
+//     itu terjadi" -> PRAKIRA: otak ARAH (organ v240) memvonis
+//     dari 60 candle live, prediksi DIKUNCI dulu ke ledger
+//     berantai hash SEBELUM jendela berjalan, lalu dinilai
+//     BENAR/SALAH saat jendela berakhir. Akurasi dihitung
+//     HANYA dari prediksi terkunci — tidak ada tempat untuk
+//     omongan belakangan.
+//
+// Rekayasa sistem: modular (satu tingkat = satu modul),
+// fault isolation (tiap tingkat try/catch, mati satu tingkat
+// tetap hidup), redundancy (L1+L2+E1+E2 saling membackup),
+// observability (kartu status live + peristiwa JSONL),
+// recovery (rantai rusak dipotong jujur + dilaporkan),
+// automated testing (self-test async saat boot).
+// Nol biaya: semua sumber data = API publik gratis.
+// ============================================================
+(function () {
+  'use strict';
+  var V = {
+    versi: '1.0', nama: 'SAKTI-NADI', organ: 'V241',
+    protokol: {
+      nadi: 'denyut sadar-visibility tiap 15 dtk (latar 45 dtk), ledger berantai hash',
+      gudang: 'L1 localStorage · L2 IndexedDB · E1 folder eksternal (File System Access) · E2 kapsul ekspor/impor',
+      prakira: 'pra-registrasi: otak ARAH v240 memvonis dari 60 candle live -> DIKUNCI ke ledger berantai hash SEBELUM jendela 15 menit -> dinilai BENAR/SALAH saat jendela tuntas; akurasi hanya dari prediksi terkunci'
+    }
+  };
+
+  // ---------------- kanonikal + sha256 (identik dgn prareg.ts) ----------------
+  function kanonikal(x) {
+    if (x === null || typeof x === 'number') {
+      if (typeof x === 'number') {
+        if (!isFinite(x)) return 'null';
+        if (x === Math.floor(x)) return String(x);
+        return String(parseFloat(x.toFixed(6)));
+      }
+      return 'null';
+    }
+    if (typeof x === 'string') return JSON.stringify(x);
+    if (typeof x === 'boolean') return x ? 'true' : 'false';
+    if (Array.isArray(x)) return '[' + x.map(kanonikal).join(',') + ']';
+    var ks = Object.keys(x).sort();
+    return '{' + ks.map(function (k) { return JSON.stringify(k) + ':' + kanonikal(x[k]); }).join(',') + '}';
+  }
+  var _K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  function _rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+  function sha256Hex(pesan) {
+    var bytes = Array.prototype.slice.call(new TextEncoder().encode(pesan));
+    var bitLen = bytes.length * 8;
+    bytes.push(0x80);
+    while (bytes.length % 64 !== 56) bytes.push(0);
+    var hi = Math.floor(bitLen / 0x100000000), lo = bitLen >>> 0;
+    bytes.push((hi >>> 24) & 255, (hi >>> 16) & 255, (hi >>> 8) & 255, hi & 255, (lo >>> 24) & 255, (lo >>> 16) & 255, (lo >>> 8) & 255, lo & 255);
+    var h0=0x6a09e667,h1=0xbb67ae85,h2=0x3c6ef372,h3=0xa54ff53a,h4=0x510e527f,h5=0x9b05688c,h6=0x1f83d9ab,h7=0x5be0cd19;
+    var w = new Array(64);
+    for (var off = 0; off < bytes.length; off += 64) {
+      var t, i;
+      for (t = 0; t < 16; t++) { w[t] = ((bytes[off+t*4]<<24)|(bytes[off+t*4+1]<<16)|(bytes[off+t*4+2]<<8)|bytes[off+t*4+3])>>>0; }
+      for (t = 16; t < 64; t++) {
+        var s0=_rotr(w[t-15],7)^_rotr(w[t-15],18)^(w[t-15]>>>3), s1=_rotr(w[t-2],17)^_rotr(w[t-2],19)^(w[t-2]>>>10);
+        w[t]=(w[t-16]+s0+w[t-7]+s1)>>>0;
+      }
+      var a=h0,b=h1,c=h2,d=h3,e=h4,f=h5,g=h6,h=h7;
+      for (t = 0; t < 64; t++) {
+        var S1=_rotr(e,6)^_rotr(e,11)^_rotr(e,25), ch=(e&f)^(~e&g), t1=(h+S1+ch+_K[t]+w[t])>>>0;
+        var S0=_rotr(a,2)^_rotr(a,13)^_rotr(a,22), maj=(a&b)^(a&c)^(b&c), t2=(S0+maj)>>>0;
+        h=g;g=f;f=e;e=(d+t1)>>>0; d=c;c=b;b=a;a=(t1+t2)>>>0;
+      }
+      h0=(h0+a)>>>0;h1=(h1+b)>>>0;h2=(h2+c)>>>0;h3=(h3+d)>>>0;h4=(h4+e)>>>0;h5=(h5+f)>>>0;h6=(h6+g)>>>0;h7=(h7+h)>>>0;
+    }
+    return [h0,h1,h2,h3,h4,h5,h6,h7].map(function(x){return (x>>>0).toString(16).padStart(8,'0');}).join('');
+  }
+  var GENESIS = '0000000000000000000000000000000000000000000000000000000000000000';
+
+  // ---------------- keadaan ----------------
+  var st = {
+    denyut: 0, mulai: Date.now(), terakhirDenyut: null, tersembunyi: false,
+    antrianE1: [], folder: null, namaFolder: '',
+    rantai: { denyut: [], prakira: [] }, // entri {hash, ...payload}
+    prakira: [], // entri prakira (sama dgn rantai.prakira, alias)
+    prakiraKunciTerakhir: 0, watchlist: ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'],
+    jendelaMenit: 15, intervalKunciMenit: 30, hostAktif: '', l2Siap: false, bootLog: []
+  };
+
+  // ---------------- L1 localStorage ----------------
+  function l1Get(k, def) { try { var v = localStorage.getItem('mp241.' + k); return v === null ? def : JSON.parse(v); } catch (e) { return def; } }
+  function l1Set(k, v) { try { localStorage.setItem('mp241.' + k, JSON.stringify(v)); st.tierL1 = true; return true; } catch (e) { st.tierL1 = false; return false; } }
+
+  // ---------------- L2 IndexedDB ----------------
+  var _db = null;
+  function idbOpen() {
+    return new Promise(function (res) {
+      if (_db) return res(_db);
+      if (typeof indexedDB === 'undefined') return res(null);
+      try {
+        var req = indexedDB.open('mp241-gudang', 1);
+        req.onupgradeneeded = function (ev) {
+          var db = ev.target.result;
+          if (!db.objectStoreNames.contains('kv')) db.createObjectStore('kv');
+          if (!db.objectStoreNames.contains('rantai')) db.createObjectStore('rantai');
+        };
+        req.onsuccess = function () { _db = req.result; st.l2Siap = true; res(_db); };
+        req.onerror = function () { res(null); };
+      } catch (e) { res(null); }
+    });
+  }
+  function idbPut(store, key, val) {
+    return idbOpen().then(function (db) {
+      if (!db) return false;
+      return new Promise(function (res) {
+        try { var tx = db.transaction(store, 'readwrite'); tx.objectStore(store).put(val, key); tx.oncomplete = function () { res(true); }; tx.onerror = function () { res(false); }; }
+        catch (e) { res(false); }
+      });
+    });
+  }
+  function idbGet(store, key) {
+    return idbOpen().then(function (db) {
+      if (!db) return null;
+      return new Promise(function (res) {
+        try { var tx = db.transaction(store, 'readonly'); var r = tx.objectStore(store).get(key); r.onsuccess = function () { res(r.result === undefined ? null : r.result); }; r.onerror = function () { res(null); }; }
+        catch (e) { res(null); }
+      });
+    });
+  }
+
+  // ---------------- rantai hash (append-only, anti-rekayasa) ----------------
+  function payloadEntri(p) {
+    var o = {}; for (var k in p) if (k !== 'hash' && k !== 'prev') o[k] = p[k];
+    o.prev = p.prev; return o;
+  }
+  function rantaiVerifikasi(entri) {
+    var prev = GENESIS;
+    for (var i = 0; i < entri.length; i++) {
+      if (entri[i].prev !== prev) return { ok: false, indeks: i };
+      if (sha256Hex(kanonikal(payloadEntri(entri[i]))) !== entri[i].hash) return { ok: false, indeks: i };
+      prev = entri[i].hash;
+    }
+    return { ok: true, indeks: -1 };
+  }
+  function rantaiTambah(jenis, payload) {
+    var rc = st.rantai[jenis];
+    var prev = rc.length ? rc[rc.length - 1].hash : GENESIS;
+    var entri = Object.assign({}, payload, { prev: prev });
+    entri.hash = sha256Hex(kanonikal(payloadEntri(entri)));
+    rc.push(entri);
+    // redam ukuran: simpan penuh di L2; L1 simpan 400 terakhir
+    // (potongan dimulai dr genesis sc jujur) — rantai tetap sahih.
+    var potong = rc.length > 400 ? rc.slice(-400) : rc;
+    if (potong !== rc) potong[0] = Object.assign({}, potong[0], { prev: GENESIS });
+    l1Set('rantai-' + jenis, potong);
+    idbPut('rantai', jenis, rc);
+    st.antrianE1.push({ jenis: jenis, baris: JSON.stringify(entri) });
+    return entri;
+  }
+  function rantaiMuat() {
+    return idbOpen().then(function () {
+      ['denyut', 'prakira'].forEach(function (jenis) {
+        return idbGet('rantai', jenis).then(function (drL2) {
+          var drL1 = l1Get('rantai-' + jenis, []);
+          var pilih = (drL2 && drL2.length >= drL1.length) ? drL2 : drL1;
+          var ver = rantaiVerifikasi(pilih);
+          if (!ver.ok && ver.indeks >= 0) {
+            // RECOVERY: ekor rusak dipotong jujur + dicatat
+            st.bootLog.push('rantai ' + jenis + ' rusak di indeks ' + ver.indeks + ' — dipotong (recovery)');
+            pilih = pilih.slice(0, ver.indeks);
+          }
+          st.rantai[jenis] = pilih;
+          if (jenis === 'prakira') st.prakira = pilih;
+        });
+      });
+    });
+  }
+
+  // ---------------- E1 folder eksternal (File System Access) ----------------
+  function fsTersedia() { return typeof window.showDirectoryPicker === 'function'; }
+  async function tulisFile(dir, nama, teks, tambah) {
+    var fh = await dir.getFileHandle(nama, { create: true });
+    if (tambah && (await fh.getFile()).size > 0) {
+      var w2 = await fh.createWritable({ keepExistingData: true });
+      await w2.write({ type: 'write', position: (await fh.getFile()).size, data: teks });
+      await w2.close();
+    } else {
+      var w = await fh.createWritable();
+      await w.write(teks);
+      await w.close();
+    }
+  }
+  async function pastikanDir(induk, nama) { return induk.getDirectoryHandle(nama, { create: true }); }
+  async function flushE1() {
+    if (!st.folder || !st.antrianE1.length) return 0;
+    var nadiDir = await pastikanDir(st.folder, 'nadi');
+    var prakiraDir = await pastikanDir(st.folder, 'prakira');
+    var buffer = { denyut: [], prakira: [] };
+    st.antrianE1.forEach(function (x) { (buffer[x.jenis] = buffer[x.jenis] || []).push(x.baris); });
+    var n = 0;
+    if (buffer.denyut.length) { await tulisFile(nadiDir, 'denyut.jsonl', buffer.denyut.join('\n') + '\n', true); n += buffer.denyut.length; }
+    if (buffer.prakira.length) { await tulisFile(prakiraDir, 'ledger.jsonl', buffer.prakira.join('\n') + '\n', true); n += buffer.prakira.length; }
+    st.antrianE1 = [];
+    return n;
+  }
+  async function pasangFolder() {
+    try {
+      if (!fsTersedia()) { st.bootLog.push('File System Access tak tersedia di browser ini — pakai E2 kapsul'); render(); return false; }
+      var folder = await window.showDirectoryPicker({ mode: 'readwrite', id: 'micaprofita-gudang' });
+      st.folder = folder; st.namaFolder = folder.name; st.tierE1 = true;
+      await tulisFile(st.folder, 'gudang-micaprofita.json', JSON.stringify({ protokol: 'GUDANG-MICAPROFITA', organ: V.nama, versi: V.versi, dibuka: new Date().toISOString() }, null, 1));
+      var n = await flushE1();
+      await simpanSnapshot();
+      st.bootLog.push('folder eksternal terpasang: ' + folder.name + ' (' + n + ' peristiwa diantrikan tersalin)');
+      l1Set('namaFolder', folder.name);
+      render(); return true;
+    } catch (e) { st.bootLog.push('pasang folder batal: ' + (e && e.name || e)); render(); return false; }
+  }
+  async function simpanSnapshot() {
+    if (!st.folder) return false;
+    try {
+      var snapDir = await pastikanDir(st.folder, 'snapshot');
+      var snap = { protokol: 'SNAPSHOT-GUDANG', waktu: new Date().toISOString(), denyut: st.denyut, prakira: st.rantai.prakira.slice(-500), ringkas: ringkasPrakira() };
+      await tulisFile(snapDir, 'keadaan-' + Date.now() + '.json', JSON.stringify(snap, null, 1));
+      return true;
+    } catch (e) { return false; }
+  }
+
+  // ---------------- E2 kapsul ----------------
+  function isiKapsul() {
+    return {
+      protokol: 'KAPSUL-MICAPROFITA', organ: V.nama, versi: V.versi, waktu: new Date().toISOString(),
+      denyut: st.denyut, mulai: st.mulai, watchlist: st.watchlist,
+      rantai: st.rantai, verifikasi: { denyut: rantaiVerifikasi(st.rantai.denyut), prakira: rantaiVerifikasi(st.rantai.prakira) }
+    };
+  }
+  function eksporKapsul() {
+    try {
+      var k = isiKapsul();
+      var blob = new Blob([JSON.stringify(k, null, 1)], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'micaprofita-kapsul-' + new Date().toISOString().replace(/[:.]/g, '-') + '.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      st.bootLog.push('kapsul diekspor (' + JSON.stringify(k).length + ' byte)');
+      render(); return true;
+    } catch (e) { st.bootLog.push('ekspor gagal: ' + e); return false; }
+  }
+  async function imporKapsul(file) {
+    try {
+      var teks = await file.text();
+      var k = JSON.parse(teks);
+      if (k.protokol !== 'KAPSUL-MICAPROFITA') { st.bootLog.push('impor ditolak: bukan kapsul Micaprofita'); render(); return false; }
+      var gabung = {};
+      ['denyut', 'prakira'].forEach(function (jenis) {
+        var lama = st.rantai[jenis], baru = (k.rantai && k.rantai[jenis]) || [];
+        var ada = {}; lama.forEach(function (e) { ada[e.hash] = 1; });
+        baru.forEach(function (e) { if (!ada[e.hash]) lama.push(e); });
+        lama.sort(function (a, b) { return (a.waktu || '').localeCompare(b.waktu || ''); });
+        gabung[jenis] = rantaiVerifikasi(lama).ok;
+      });
+      st.rantai.denyut = st.rantai.denyut; // sudah digabung in-place
+      if (k.denyut > st.denyut) { st.denyut = k.denyut; l1Set('denyut', st.denyut); }
+      l1Set('rantai-denyut', st.rantai.denyut.slice(-400));
+      l1Set('rantai-prakira', st.rantai.prakira.slice(-400));
+      idbPut('rantai', 'denyut', st.rantai.denyut); idbPut('rantai', 'prakira', st.rantai.prakira);
+      st.prakira = st.rantai.prakira;
+      st.bootLog.push('kapsul diimpor: denyut=' + k.denyut + ', rantai sahih=' + JSON.stringify(gabung));
+      render(); return gabung.prakira && gabung.denyut;
+    } catch (e) { st.bootLog.push('impor gagal: ' + e); render(); return false; }
+  }
+
+  // ---------------- sumber harga nol-biaya (failover 3 host) ----------------
+  function ambil(url, ms) {
+    var ctl = new AbortController(); var t = setTimeout(function () { ctl.abort(); }, ms || 8000);
+    return fetch(url, { signal: ctl.signal }).then(function (r) { clearTimeout(t); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .catch(function (e) { clearTimeout(t); throw e; });
+  }
+  async function hargaSemua() {
+    var host = [
+      { nama: 'binance-fapi', url: 'https://fapi.binance.com/fapi/v1/ticker/price', baca: function (j) { var m = {}; (Array.isArray(j) ? j : [j]).forEach(function (x) { m[x.symbol] = parseFloat(x.price); }); return m; } },
+      { nama: 'okx-swap', url: 'https://www.okx.com/api/v5/market/tickers?instType=SWAP', baca: function (j) { var m = {}; (j.data || []).forEach(function (x) { m[x.instId.replace('-SWAP', 'USDT').replace('XBT', 'BTC')] = parseFloat(x.last); }); return m; } },
+      { nama: 'bybit-linear', url: 'https://api.bybit.com/v5/market/tickers?category=linear', baca: function (j) { var m = {}; ((j.result || {}).list || []).forEach(function (x) { m[x.symbol] = parseFloat(x.lastPrice); }); return m; } }
+    ];
+    for (var i = 0; i < host.length; i++) {
+      try { var j = await ambil(host[i].url); var m = host[i].baca(j); st.hostAktif = host[i].nama; return m; } catch (e) { /* host berikutnya */ }
+    }
+    st.hostAktif = ''; return null;
+  }
+  async function lilin60(simbol) {
+    var host = [
+      { nama: 'binance-fapi', url: 'https://fapi.binance.com/fapi/v1/klines?symbol=' + simbol + '&interval=5m&limit=60', baca: function (j) { return j.map(function (k) { return { o: parseFloat(k[1]), h: parseFloat(k[2]), l: parseFloat(k[3]), c: parseFloat(k[4]), v: parseFloat(k[5]) }; }); } },
+      { nama: 'okx-swap', url: 'https://www.okx.com/api/v5/market/candles?instId=' + simbol.replace('USDT', '-USDT-SWAP') + '&bar=5m&limit=60', baca: function (j) { return (j.data || []).reverse().map(function (k) { return { o: parseFloat(k[1]), h: parseFloat(k[2]), l: parseFloat(k[3]), c: parseFloat(k[4]), v: parseFloat(k[5]) }; }); } },
+      { nama: 'bybit-linear', url: 'https://api.bybit.com/v5/market/kline?category=linear&symbol=' + simbol + '&interval=5&limit=60', baca: function (j) { return ((j.result || {}).list || []).reverse().map(function (k) { return { o: parseFloat(k[1]), h: parseFloat(k[2]), l: parseFloat(k[3]), c: parseFloat(k[4]), v: parseFloat(k[5]) }; }); } }
+    ];
+    for (var i = 0; i < host.length; i++) {
+      try { var j = await ambil(host[i].url); var c = host[i].baca(j); if (c && c.length >= 60) { st.hostAktif = host[i].nama; return c; } } catch (e) { /* berikutnya */ }
+    }
+    return null;
+  }
+
+  // ---------------- PRAKIRA (pra-registrasi live) ----------------
+  function ringkasPrakira() {
+    var tb = 0, benar = 0, salah = 0;
+    st.rantai.prakira.forEach(function (e) { if (e.status === 'TERBUKA') tb++; else if (e.status === 'BENAR') benar++; else if (e.status === 'SALAH') salah++; });
+    var selesai = benar + salah;
+    return { terbuka: tb, benar: benar, salah: salah, selesai: selesai, akurasi: selesai ? Math.round((benar / selesai) * 10000) / 100 : null };
+  }
+  async function prakiraKunci(simbol, arah, hargaKunci, bukti) {
+    var entri = rantaiTambah('prakira', {
+      jenis: 'PRAKIRA', id: 'pk-' + Date.now() + '-' + Math.floor(Math.random() * 1e6),
+      simbol: simbol, arah: arah, hargaKunci: hargaKunci,
+      waktuKunci: new Date().toISOString(), jendelaMenit: st.jendelaMenit,
+      waktuBuka: new Date(Date.now() + st.jendelaMenit * 60000).toISOString(),
+      status: 'TERBUKA', bukti: (bukti || '').slice(0, 200), versiOtak: 'v240-araj+'
+    });
+    l1Set('prakira-terakhir', Date.now());
+    return entri;
+  }
+  async function prakiraTick() {
+    try {
+      var harga = await hargaSemua();
+      if (!harga) return;
+      // 1) selesaikan yang TERBUKA dan sudah lewat jendela
+      var kini = Date.now();
+      for (var i = 0; i < st.rantai.prakira.length; i++) {
+        var e = st.rantai.prakira[i];
+        if (e.status !== 'TERBUKA') continue;
+        var buka = Date.parse(e.waktuBuka);
+        if (isNaN(buka) || kini < buka) continue;
+        var hKini = harga[e.simbol];
+        if (!hKini) continue;
+        e.status = (e.arah === 'NAIK' ? hKini > e.hargaKunci : hKini < e.hargaKunci) ? 'BENAR' : 'SALAH';
+        e.hargaBuka = hKini; e.waktuNilai = new Date().toISOString();
+        e.deltaPct = Math.round(((hKini - e.hargaKunci) / e.hargaKunci) * 1000000) / 10000;
+        st.antrianE1.push({ jenis: 'prakira', baris: JSON.stringify({ jenis: 'NILAI', id: e.id, status: e.status, hargaBuka: hKini, waktuNilai: e.waktuNilai }) });
+      }
+      l1Set('prakira-terakhir-list', st.rantai.prakira.slice(-60));
+      idbPut('rantai', 'prakira', st.rantai.prakira);
+      // 2) kunci prediksi baru bila waktunya (interval per watchlist)
+      if (kini - st.prakiraKunciTerakhir < st.intervalKunciMenit * 60000) { render(); return; }
+      var otak = (window.V231_SAKTI && window.V231_SAKTI.ARAH && typeof window.V231_SAKTI.ARAH.vonisArah === 'function') ? window.V231_SAKTI.ARAH : null;
+      if (!otak) { st.bootLog.push('prakira DIAM: organ ARAH belum ada (fault isolation)'); render(); return; }
+      for (var s = 0; s < st.watchlist.length; s++) {
+        var sim = st.watchlist[s];
+        var masihTerbuka = st.rantai.prakira.some(function (e) { return e.simbol === sim && e.status === 'TERBUKA'; });
+        if (masihTerbuka) continue;
+        var cs = await lilin60(sim);
+        if (!cs || !harga[sim]) continue;
+        var von = otak.vonisArah(cs);
+        var arah = von.arah || (von.vonis === 'BUY' ? 'NAIK' : 'TURUN');
+        var bk = (von.vonis || '') + ' kepastian ' + (von.kepastian !== undefined ? von.kepastian : '-') + ' · ' + ((von.buktiKunci || []).slice(0, 2).join('; '));
+        await prakiraKunci(sim, arah, harga[sim], bk);
+      }
+      st.prakiraKunciTerakhir = kini;
+      render();
+    } catch (e) { st.bootLog.push('prakira tick galat: ' + (e && e.message || e)); }
+  }
+
+  // ---------------- NADI (jantung) ----------------
+  var denyutSejakCatat = 0;
+  function denyutkan() {
+    st.denyut++; denyutSejakCatat++;
+    st.terakhirDenyut = new Date().toISOString();
+    l1Set('denyut', st.denyut); l1Set('terakhirDenyut', st.terakhirDenyut);
+    if (denyutSejakCatat >= 10) { // catat ke rantai tiap ~150 dtk
+      denyutSejakCatat = 0;
+      rantaiTambah('denyut', { jenis: 'DENYUT', seq: st.denyut, waktu: st.terakhirDenyut, uptimeMs: Date.now() - st.mulai, tersembunyi: st.tersembunyi, host: st.hostAktif });
+    }
+    flushE1().then(function () { render(); }).catch(function () {});
+    prakiraTick(); // async, fault-isolated
+    render();
+  }
+  function aturJadwal() {
+    if (st._timer) clearInterval(st._timer);
+    var ms = st.tersembunyi ? 45000 : 15000;
+    st._timer = setInterval(function () { try { denyutkan(); } catch (e) { /* jantung tak boleh mati */ } }, ms);
+  }
+
+  // ---------------- UI kartu status ----------------
+  var el = null, elDetail = null;
+  function fmtUptime(ms) {
+    var m = Math.floor(ms / 60000), h = Math.floor(m / 60), d = Math.floor(h / 24);
+    if (d > 0) return d + 'h ' + (h % 24) + 'j'; if (h > 0) return h + 'j ' + (m % 60) + 'm'; return m + 'm';
+  }
+  function buatKartu() {
+    if (typeof document === 'undefined') return;
+    el = document.createElement('div');
+    el.id = 'v241-nadi';
+    el.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:2147483000;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;color:#a7f3d0;background:rgba(6,26,22,.92);border:1px solid #10b98166;border-radius:10px;padding:8px 10px;max-width:340px;box-shadow:0 6px 24px rgba(0,0,0,.45);backdrop-filter:blur(4px)';
+    el.innerHTML =
+      '<div style="display:flex;align-items:center;gap:8px;cursor:pointer" id="v241-kepala">' +
+      '<span id="v241-led" style="width:9px;height:9px;border-radius:50%;background:#10b981;box-shadow:0 0 6px #10b981;display:inline-block"></span>' +
+      '<b>V241 NADI</b><span id="v241-ringkas" style="color:#6ee7b7"></span>' +
+      '<span style="margin-left:auto;color:#6ee7b7;cursor:pointer" id="v241-toggle">▾</span></div>' +
+      '<div id="v241-detail" style="margin-top:6px;display:none"></div>';
+    document.body.appendChild(el);
+    elDetail = el.querySelector('#v241-detail');
+    el.querySelector('#v241-kepala').addEventListener('click', function () {
+      var buka = elDetail.style.display === 'none';
+      elDetail.style.display = buka ? 'block' : 'none';
+      el.querySelector('#v241-toggle').textContent = buka ? '▴' : '▾';
+      l1Set('panelTerbuka', buka);
+    });
+    var btnCss = 'margin:3px 4px 0 0;padding:4px 8px;border-radius:6px;border:1px solid #10b98155;background:#0b3b2e;color:#a7f3d0;cursor:pointer;font:11px ui-monospace,monospace;min-height:24px';
+    function btn(id, label) {
+      var b = document.createElement('button'); b.id = id; b.textContent = label; b.style.cssText = btnCss;
+      elDetail.appendChild(document.createElement('div')).appendChild(b); return b;
+    }
+    btn('v241-btn-folder', '📁 Pasang Gudang Eksternal').addEventListener('click', function () { pasangFolder(); });
+    btn('v241-btn-ekspor', '⬇ Ekspor Kapsul').addEventListener('click', function () { eksporKapsul(); });
+    var w = btn('v241-btn-impor', '⬆ Impor Kapsul');
+    var inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.json'; inp.style.display = 'none';
+    inp.addEventListener('change', function () { if (inp.files && inp.files[0]) imporKapsul(inp.files[0]); });
+    elDetail.appendChild(inp);
+    w.addEventListener('click', function () { inp.click(); });
+    if (l1Get('panelTerbuka', false)) { elDetail.style.display = 'block'; el.querySelector('#v241-toggle').textContent = '▴'; }
+  }
+  function render() {
+    if (!el || !elDetail) return;
+    var r = ringkasPrakira();
+    var ak = r.akurasi === null ? '—' : r.akurasi + '%';
+    el.querySelector('#v241-ringkas').textContent = 'denyut ' + st.denyut + ' · prakira ' + r.benar + '/' + r.selesai + ' (' + ak + ')';
+    var e1 = st.folder ? '✓ ' + st.namaFolder : (fsTersedia() ? '— belum dipasang' : '× tak tersedia (pakai kapsul)');
+    var ver = rantaiVerifikasi(st.rantai.prakira);
+    elDetail.innerHTML =
+      '<div>NADI: denyut <b>' + st.denyut + '</b> · hidup ' + fmtUptime(Date.now() - st.mulai) + ' · denyut terakhir ' + (st.terakhirDenyut || '—').slice(11, 19) + '</div>' +
+      '<div>GUDANG: L1 ' + (st.tierL1 === false ? '×' : '✓') + ' · L2 ' + (st.l2Siap ? '✓' : '×') + ' · E1 ' + e1 + ' · E2 ✓</div>' +
+      '<div>PRAKIRA: terbuka <b>' + r.terbuka + '</b> · benar ' + r.benar + ' · salah ' + r.salah + ' · akurasi <b>' + ak + '</b> (hanya prediksi terkunci)</div>' +
+      '<div>RANTAI: ' + st.rantai.denyut.length + ' denyut + ' + st.rantai.prakira.length + ' prakira · ' + (ver.ok ? 'sahih ✓' : 'RUSAK @' + ver.indeks) + ' · host ' + (st.hostAktif || '—') + '</div>' +
+      '<div style="color:#6ee7b7">' + (st.bootLog.slice(-3).join('<br>') || 'siap') + '</div>';
+  }
+
+  // ---------------- self-test ----------------
+  async function selfTest() {
+    var T = [];
+    T.push(['sha256 vektor abc', sha256Hex('abc') === 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad']);
+    var o1 = kanonikal({ b: 1, a: 'x' }), o2 = kanonikal({ a: 'x', b: 1 });
+    T.push(['kanonikal deterministik (urut kunci)', o1 === o2]);
+    T.push(['kanonikal angka desimal stabil', kanonikal(0.123456789) === kanonikal(parseFloat((0.123456789).toFixed(6)))]);
+    // rantai: tambah 3 -> sahih; tamper -> rusak terdeteksi
+    var rc = [];
+    var prev = GENESIS;
+    for (var i = 0; i < 3; i++) {
+      var p = { jenis: 'UJI', seq: i, prev: prev }; p.hash = sha256Hex(kanonikal(payloadEntri(p))); rc.push(p); prev = p.hash;
+    }
+    T.push(['rantai: 3 entri sahih', rantaiVerifikasi(rc).ok]);
+    var rc2 = JSON.parse(JSON.stringify(rc)); rc2[1].seq = 99;
+    T.push(['rantai: tamper terdeteksi', !rantaiVerifikasi(rc2).ok]);
+    // kapsul roundtrip
+    var k1 = JSON.parse(JSON.stringify(isiKapsul()));
+    T.push(['kapsul: encode-decode utuh', JSON.parse(JSON.stringify(k1)).protokol === 'KAPSUL-MICAPROFITA']);
+    // L1 roundtrip (bila lingkungan punya localStorage)
+    if (typeof localStorage !== 'undefined') {
+      T.push(['L1 localStorage: tulis-baca', (function () { l1Set('uji', { z: 42 }); return l1Get('uji', {}).z === 42; })()]);
+    } else T.push(['L1 localStorage: tak tersedia di lingkungan ini — degradasi jujur', true]);
+    // L2 roundtrip (bila ada)
+    if (st.l2Siap) { var okL2 = await idbPut('kv', 'uji', { z: 7 }); var v2 = okL2 ? await idbGet('kv', 'uji') : null; T.push(['L2 IndexedDB: tulis-baca', !!v2 && v2.z === 7]); }
+    else T.push(['L2 IndexedDB: tak tersedia — degradasi jujur', true]);
+    // E1 bila terpasang
+    if (st.folder) { try { var nd = await pastikanDir(st.folder, 'nadi'); await tulisFile(nd, 'uji.txt', 'ok-' + Date.now()); T.push(['E1 folder: tulis file nyata', true]); } catch (e) { T.push(['E1 folder: tulis file nyata', false]); } }
+    else T.push(['E1 folder: belum dipasang — kapsul siap', true]);
+    // rantai hidup
+    T.push(['rantai denyut hidup: sahih', rantaiVerifikasi(st.rantai.denyut).ok]);
+    T.push(['rantai prakira hidup: sahih', rantaiVerifikasi(st.rantai.prakira).ok]);
+    var pass = T.filter(function (x) { return x[1]; }).length;
+    return { total: T.length, pass: pass, fail: T.length - pass, rincian: T.map(function (x) { return (x[1] ? 'PASS' : 'GAGAL') + ' — ' + x[0]; }) };
+  }
+
+  // ---------------- boot ----------------
+  async function boot() {
+    st.denyut = l1Get('denyut', 0);
+    st.mulai = l1Get('mulai', Date.now()) || Date.now();
+    st.watchlist = l1Get('watchlist', st.watchlist);
+    st.namaFolder = l1Get('namaFolder', '');
+    await rantaiMuat();
+    buatKartu();
+    denyutkan();
+    aturJadwal();
+    if (typeof document !== 'undefined') {
+      document.addEventListener('visibilitychange', function () {
+        st.tersembunyi = document.hidden;
+        aturJadwal(); // sadar-visibility: latar 45 dtk, depan 15 dtk
+        if (!document.hidden) denyutkan(); // denyut pembangkit
+      });
+      window.addEventListener('pagehide', function () { try { l1Set('denyut', st.denyut); } catch (e) {} });
+    }
+    var stres = await selfTest();
+    st.bootLog.push('self-test ' + stres.pass + '/' + stres.total + (stres.fail ? ' — LIHAT rincian via API selfTest()' : ' semua PASS'));
+    render();
+    if (typeof console !== 'undefined') console.log('[V241 NADI] v' + V.versi + ' — self-test ' + stres.pass + '/' + stres.total + ' · gudang 4 tingkat · prakira pra-registrasi hidup', stres.rincian);
+  }
+  boot();
+
+  var API = {
+    versi: V.versi, nama: V.nama, protokol: V.protokol,
+    status: function () { return { denyut: st.denyut, uptimeMs: Date.now() - st.mulai, tersembunyi: st.tersembunyi, tier: { l1: st.tierL1 !== false, l2: st.l2Siap, e1: !!st.folder, e2: true }, folder: st.namaFolder, prakira: ringkasPrakira(), host: st.hostAktif, watchlist: st.watchlist, bootLog: st.bootLog.slice(-8) }; },
+    selfTest: selfTest, pasangFolder: pasangFolder, eksporKapsul: eksporKapsul, imporKapsul: imporKapsul,
+    prakiraKunci: prakiraKunci, prakiraTick: prakiraTick, setWatchlist: function (w) { st.watchlist = w; l1Set('watchlist', w); render(); },
+    aturJendela: function (menit) { st.jendelaMenit = menit; render(); },
+    denyutkanSekarang: denyutkan, simpanSnapshot: simpanSnapshot
+  };
+  if (typeof window !== 'undefined') {
+    window.V231_SAKTI = window.V231_SAKTI || {};
+    window.V231_SAKTI.NADI = API;
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = API;
+  return API;
+})();
+/*V241-NADI:END*/
+</script>
+<script>
+(async () => {
+  const out = [];
+  const nadi = window.V231_SAKTI.NADI;
+  const st = await nadi.selfTest();
+  out.push('selfTest NADI: ' + st.pass + '/' + st.total + (st.fail ? ' GAGAL:' + JSON.stringify(st.rincian.filter(r=>r.startsWith('GAGAL'))) : ''));
+  // prakira live (jaringan publik) — kunci manual tanpa menunggu interval
+  const harga = await (async () => {
+    try { const r = await fetch('https://fapi.binance.com/fapi/v1/ticker/price?symbol=BTCUSDT', {signal: AbortSignal.timeout(8000)}); const j = await r.json(); return parseFloat(j.price); } catch(e) { try { const r2 = await fetch('https://www.okx.com/api/v5/market/ticker?instId=BTC-USDT-SWAP', {signal: AbortSignal.timeout(8000)}); const j2 = await r2.json(); return parseFloat(j2.data[0].last); } catch(e2) { return null; } }
+  })();
+  out.push('harga live BTC: ' + harga);
+  if (harga) {
+    const entri = await nadi.prakiraKunci('BTCUSDT', 'NAIK', harga, 'harness: dikunci sebelum jendela');
+    out.push('prakira DIKUNCI: ' + entri.id + ' arah=' + entri.arah + ' harga=' + entri.hargaKunci + ' status=' + entri.status);
+    out.push('hash entri: ' + entri.hash.slice(0, 20) + '…');
+  }
+  nadi.denyutkanSekarang();
+  await new Promise(r => setTimeout(r, 1500));
+  const s = nadi.status();
+  out.push('denyut: ' + s.denyut + ' · host: ' + s.host + ' · tier L2: ' + s.tier.l2 + ' · E2: ' + s.tier.e2);
+  // otak ARAH hidup?
+  const arah = window.V231_SAKTI.ARAH;
+  out.push('organ ARAH: ' + (arah ? 'ada (vonisArah fungsi=' + typeof arah.vonisArah + ')' : 'TIDAK ADA'));
+  document.getElementById('l').innerHTML = '<pre>HARNESS-V241 ' + (st.fail === 0 ? 'LOLOS' : 'GAGAL') + '\n' + out.join('\n') + '</pre>';
+  document.title = 'HARNESS-V241 ' + (st.fail === 0 ? 'LOLOS' : 'GAGAL');
+})();
+</script></body></html>

@@ -1,0 +1,55 @@
+{
+  "epoch": "2026-10-05",
+  "diulum": "2026-10-05T00:51:44.400Z",
+  "siklus": 66,
+  "ringkasan": {
+    "dinilai": 1,
+    "benar": 0,
+    "netPct": -8.07,
+    "terkunci": 1,
+    "pelajaran": 1,
+    "aturanLahir": []
+  },
+  "resepOtak": {
+    "rezim": "NAIK",
+    "generasi": 3,
+    "bobot": {
+      "struktur": 0.2502,
+      "momentum": 0.2661,
+      "sr": 0.154,
+      "tekanan": 0.1847,
+      "perubahan": 0.1449
+    },
+    "hedge": {
+      "arah": {
+        "struktur": 0.0454,
+        "momentum": 0.0978,
+        "sr": 0.366,
+        "tekanan": 0.1926,
+        "perubahan": 0.2982
+      },
+      "phx": {
+        "posisi": 0.1461,
+        "sweep": 0.4689,
+        "akumulasi": 0.2622,
+        "momentum": 0.0861,
+        "kompresi": 0.0367
+      }
+    }
+  },
+  "brier": {
+    "arah": 0.3134,
+    "phx": 0.3308
+  },
+  "akumulasi": {
+    "akurasiPct": 32.9,
+    "netKumulatifPct": -94.39,
+    "phoenix": {
+      "dinilai": 31,
+      "benar": 13,
+      "targetKena": 13,
+      "netKumulatifPct": -22.5
+    }
+  },
+  "ket": "resep, bukan hasil — siapa pun bisa menghitung ulang vonis dari ledger pra-registrasi dengan resep ini"
+}

@@ -1,0 +1,17 @@
+{
+ "updatedAt": "2026-10-13T12:41:25.550Z",
+ "frame": "4h",
+ "tahap": 3,
+ "selesai": true,
+ "simbolTotal": 144,
+ "episode": 36814,
+ "totalLintasFrame": 86182,
+ "perRezim": {
+  "SIDEWAYS": 1525,
+  "BEARISH": 8499,
+  "BULLISH": 865,
+  "PUMP": 741,
+  "__baru": 11630
+ },
+ "sasaran": 50000
+}

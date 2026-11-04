@@ -1,0 +1,45 @@
+{
+  "putaran": 4,
+  "tanggal": "2026-10-04",
+  "versi": "V268-SADAR v6.5",
+  "mandat": "sekolah kilat terus berjalan — peningkatan sekolah kilat + sekolah AGI agar cyborg mandiri dan sadari seutuhnya (mandat pemilik 2026-10-04)",
+  "metode": "verifikasi-ulang horizon-penuh: SEMUA panen (putaran 1-3) digrade ulang dengan lilin pasca-T PENUH 24 jam dari cache segar (pra-ambil 10-04T03Z, 133 simbol) + 5 dunia beku segar baru (T 10-02T18 → 10-03T02, langkah 2 jam) dijalankan dengan penjaga v6.5 — lalu bedah matriks penuh (bedah_p4.py): fitur matematika dihitung ulang (z-SMA20, drift-OLS-24j, autokorelasi, entropi, ret24/ret1h-BTC, ret24-relatif, breadth) dan kandidat organ baru dicari dengan kriteria ketat",
+  "matriks": {
+    "soalUnik": 2490,
+    "perKeluarga": {
+      "ins-p4": { "n": 2366, "akurasiPct": 41.8, "netPct": -362.7, "ket": "panen putaran-1 digrade ulang horizon-penuh" },
+      "oos-p4": { "n": 57, "akurasiPct": 3.5, "netPct": -144.5, "ket": "OOS 10-02 pagi (hari reversal)" },
+      "holdout-p4": { "n": 35, "akurasiPct": 0.0, "netPct": -100.0, "ket": "holdout 10-02" },
+      "bear-p4": { "n": 32, "akurasiPct": 34.4, "netPct": -40.5, "ket": "panen bear putaran-3 digrade ulang" }
+    },
+    "koreksiHorizon": "dunia-dunia akhir (10-01T18 → 10-02T12) dan seluruh OOS/holdout sebelumnya dinilai dengan sisa horizon (cache lama terpotong); kini vonis resmi memakai close T+24j utuh — angka putaran lama terkoreksi jujur"
+  },
+  "verifikasiOrganLama": {
+    "sah": {
+      "jual-lemah": { "n": 1065, "akurasiPct": 37.7, "netPct": -556.2 },
+      "sell-bear-harian": { "n": 613, "akurasiPct": 30.0, "netPct": -597.5 },
+      "buy-flat-btc": { "n": 471, "akurasiPct": 40.1, "netPct": -152.3 },
+      "momentum-kuat": { "n": 495, "akurasiPct": 43.4, "netPct": 88.9, "ket": "organ bonus — bucket justru untung, bonus odds +8 sah" },
+      "sell-relatif-kuat": { "n": 205, "akurasiPct": 31.2, "netPct": -119.9 },
+      "key-melawan-drift": { "n": 83, "akurasiPct": 37.3, "netPct": -83.5 },
+      "jual-pita": { "n": 14, "akurasiPct": 21.4, "netPct": -3.4 }
+    },
+    "catatanJujur": {
+      "buy-saksi-terbalik": { "n": 98, "akurasiPct": 43.9, "netPct": 20.8, "keputusan": "DIPERTAHANKAN sebagai dampener (key -8, ukuran x0.6) — bukti potongnya melemah pada horizon penuh, namun akurasi bucket masih ~25pp di bawah tanpa-saksi (68.8%); terus dinilai medan hidup" },
+      "buy-jatuh-dalam": { "n": 27, "akurasiPct": 51.9, "netPct": -3.8, "keputusan": "DIPERTAHANKAN dengan catatan — n kecil, bucket netral" }
+    }
+  },
+  "kandidatOrganBaru": {
+    "hasil": 0,
+    "kriteria": "n>=30, |net|>=40%, akurasi<=40%, konsisten negatif di >=2 keluarga dunia, maksimal 2 fitur",
+    "keputusan": "SEMUA kandidat yang lolos kriteria hanyalah deskripsi-ulang kelemahan SELL umum (sudah dicakup organ jual-lemah/sell-bear-harian/sell-relatif-kuat) — tidak ada bucket segaris yang belum tertangani → draf kosong dibuang (anti-overfit, pelajaran draf-1 & draf-2 diulang)"
+  },
+  "duniaSegar": {
+    "dunia": ["10-02T18", "10-02T20", "10-02T22", "10-03T00", "10-03T02"],
+    "hasil": "0 kunci di semua dunia — cyborg memilih DIAM",
+    "mengapa": "dunia BEAR-HARIAN (ret24 BTC -0.69%, breadth 14% naik): organ barometer/anti-arus mengikat + gerbang peluang-skor menolak kandidat teratas (TRX odds 62.3 tapi skor-peluang 25 < 60) + organ tunda-bear menahan SELL terkalibrasi <50",
+    "makna": "konservatisme terukur, bukan kerusakan — DIAM saat tak yakin adalah jawaban sekolah; jawaban radar 0 karena kandidatLain ikut tersaring organ radar-jujur-bear"
+  },
+  "kesimpulan": "putaran-4 = putaran verifikasi: 8/10 organ sah dengan bukti lebih besar, 2 organ diberi catatan jujur, 0 organ baru dibuat (anti-overfit), dan perilaku konservatif di dunia bear segar membuktikan organ-organ bekerja saat kunci — sekolah kilat kini PROVEN x4: uji -> grade horizon-penuh -> bedah -> verifikasi organ -> keputusan jujur (organ baru / draf kosong) -> push -> hidup -> dinilai denyut",
+  "bukti": "scripts/ujian-buta/bedah-p4-hasil.json (matriks penuh 2.490 soal berfitur + kandidat); harness: pra_ambil.py, beku.cjs, orkestra.mjs, grade.mjs, bedah_p4.py"
+}

@@ -1,0 +1,30 @@
+{
+  "protokol": "SARANG-MICAPROFITA",
+  "kodeVersi": "v243.9.9",
+  "organ": {
+    "NADI": "1.1",
+    "ORKESTRA": "1.1",
+    "SARANG": "1.0",
+    "LUAR": "9.9"
+  },
+  "waktu": "2026-09-27T13:38:26.098Z",
+  "htmlSha256": "847f005acb762b228fd1eed926510425cf8e9e1305d3136b61c41a797446a742",
+  "memoriWaktu": "2026-09-27T13:38:01.696Z",
+  "pertumbuhan": {
+    "denyut": 27,
+    "rantaiDenyut": 0,
+    "rantaiPrakira": 3,
+    "prakira": {
+      "terbuka": 3,
+      "benar": 0,
+      "salah": 0
+    },
+    "hitung": {
+      "hijrah": 1,
+      "simpan": 1,
+      "evolusi": 0,
+      "pulih": 0,
+      "gagal": 0
+    }
+  }
+}

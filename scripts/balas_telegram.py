@@ -1,0 +1,2166 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+BENTENG-BALAS v8 "BOT-CHAT" — pembalas pesan Telegram pemilik MicroProfita.
+BENTENG-BALAS v7 — penanda kompatibilitas lapis RESPON (jangan dihapus).
+v8.1 (31 Okt, mandat pemilik): +PENJAGA LEVEL CEPAT (BUY=HARGA AMBISIUS tercapai,
+SELL=STOP LOSS tercapai; buy dan sell BEDA) + LAPORAN HARIAN ATH -70..-90%
+dari 100 koin pilihan (tanda hidup disaring) — dikirim otomatis dari denyut ini.
+v8.2/V308 BURU-SEGAR (1 Nov 2026) — jawaban kritik pemilik "jangan main
+bekukan-bekukan kalau data tidak fresh; harusnya inovasi, fast, news
+selalu, tanggap": saat otak tua sistem TIDAK lagi beku/diam — (1) otak
+segar DIBURU aktif tiap siklus, (2) level terakhir yang pernah segar
+dipantau TERUS melawan harga LIVE bursa (label jujur umur data),
+(3) perintah baru /berita + /kabar — berita crypto selalu segar
+(Cointelegraph+Decrypt) & harga berstempel waktu+sumber via mesin
+kesegaran data_fresh.py. Angka basi tetap TIDAK PERNAH diklaim segar.
+v9 (1 Nov 2026, mandat pemilik "lifetime sejati"): (1) umuman PENJAGA
+ONLINE hanya saat rantai abadi Actions TERBUKTI gelap — daur ulang
+sandbox tidak lagi diumumkan sebagai alarm palsu (inilah sumber spam
+"penjaga online"/"terhenti X menit" berulang-ulang); (2) LEDGER ABADI
+data/abadi_ledger ditulis tiap run Actions dan di-commit ke repo —
+bukti kontinuitas yang hidup di luar sandbox, bukan di RAM yang hilang.
+
+v10.5 (2 Nov 2026, WASIAT pemilik — HUKUM): (1) LAPORAN KOIN RUNTUH =
+penurunan yang TERJADI KINI — diukur dari PUNCAK 7 HARI, bukan runtuh
+masa lalu vs ATH berumur sejak listing; koin yang runtuhnya hanya kejadian
+masa lalu tidak dilaporkan; (2) KEBAL-KEMATIAN: --jaga instance TUNGGAL
+(kunci pid anti dobel 409) + nadi_mandiri.py menjaga organ hidup di server
+tanpa menunggu chat z.ai — master kode = server, GitHub hanya cangkang
+salinan (restore/upgrade), bukan sumber evolusi.
+
+Dua tempat jalan sekaligus (doktrin benteng-total):
+  1. GitHub Actions RANTAI ABADI: tiap run aktif long-poll ±4,5 MENIT penuh,
+     lalu di ujung run memancing run berikutnya (workflow "Warisi hidup")
+     -> penjadwal GitHub yang sering menelan cron */5 tidak lagi menentukan;
+     rantai menjawab dengan latensi <= 25 detik, 24 jam, 7 hari.
+  2. Sandbox lokal: mode --jaga (long-poll 25s + penanda hidup) + --sekali
+     (tiap kunjungan cron) -> balasan DETIK-DETIK saat tubuh hidup.
+
+v8 (28 Okt) — akar keluhan "bot mati, harus chat balik dulu": run Actions
+ternyata hanya jalan 3x dalam 10 jam (scheduler GitHub menelan jadwal */5)
+dan daemon lokal dibunuh sandbox -> fix: rantai warisi-hidup + jendela aktif
+45x lebih panjang + penanda hidup penjaga + perintah /tubuh dan /ping.
+
+v7 (28 Okt) — respons keluhan pemilik "bot lambat & tidak tanggap":
+  + PERINTAH LENGKAP: /start /menu /status /laporan /harga <koin> /sasaran
+    /peluang /akurasi /bantuan /tubuh /ping — plus teks bebas ("harga btc")
+  + TOMBOL INLINE (menu profesional, callback dijawab + pesan diedit di tempat)
+  + CEPAT: data otak & harga diambil PARALEL (thread) + cache TTL 60s,
+    typing indicator segera, long-poll singkat (8s) agar tak tabrak Actions
+  + TAHAN BANTING: offset selalu dicocokkan dengan repo (rollback disk lokal
+    tak membuat bot membalas ulang pesan lama); 429/409 ditangani sopan
+  + JUJUR: setiap jawaban diberi label sumber & umur data; TIDAK mengarang angka
+Hukum tetap: hanya membalas chat pemilik (8340502683);
+TP SASARAN ≠ JUAL AMBISIUS ≠ POWER MAX ≠ STOP — selalu beda baris & beda makna.
+"""
+import base64
+import json
+import os
+import re
+import html
+import subprocess
+import sys
+import time
+import urllib.request
+import urllib.parse
+import urllib.error
+from datetime import datetime, timezone, timedelta
+from decimal import Decimal
+from concurrent.futures import ThreadPoolExecutor
+
+# v10.9 PELURU-BUTA: stdout daemon wajib line-buffered. Tanpa ini, nohup>>file
+# membuat print menumpuk di buffer 8KB — log bot_chat tampak "bisu" (tanpa baris
+# TIDAK ADA PESAN BARU / OFFSET / BALAS) padahal mesin hidup. Pembaca diagnosis
+# (watchdog/z.ai/pemilik) bisa salah vonis "daemon mati/getUpdates gagal".
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+except Exception:
+    pass
+
+try:  # V308 MESIN KESEGARAN: buru data segar + berita, bukan beku
+    import data_fresh
+except Exception:  # pragma: no cover - jalur cadangan
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import data_fresh
+    except Exception:
+        data_fresh = None
+
+ROOT = os.environ.get("GITHUB_WORKSPACE", "/home/z/my-project")
+F_NYAWA_REPO = os.path.join(ROOT, "benteng", "nyawa.json")      # mode Actions
+F_TOKEN_LOKAL = "/home/z/my-project/.token-telegram"            # mode lokal
+F_CHAT_LOKAL = "/home/z/my-project/data/telegram_chat_id"
+F_STATE = os.path.join(ROOT, "data", "offset_telegram.json")
+REPO = "ririnsherlyna-cloud/Rantaian"
+REPO_RAW = f"https://raw.githubusercontent.com/{REPO}/main"
+REPO_API = f"https://api.github.com/repos/{REPO}/contents"
+OTAK_RAW = "https://raw.githubusercontent.com/ririnsherlyna-cloud/Micaprofita-/main"
+ZAI_RAW = f"{REPO_RAW}/benteng/sasaran-zai.json"
+WIB = timezone(timedelta(hours=7))
+PEMILIK = "8340502683"
+LIMIT_BALAS_PER_RUN = 40
+TTL_OTAK = 60.0
+JAGA_INTERVAL = 2
+LONG_POLL = {"actions": 25, "jaga": 25}
+RUN_LAMA_ACTIONS = 285.0      # jendela aktif run Actions (±4,5 menit)
+F_NYALA = "/home/z/my-project/data/penjaga_nyala"
+F_UMUM = "/home/z/my-project/data/penjaga_umum"
+
+_g = {"otak": None, "otak_at": 0.0, "token_rantaian": None,
+      "offset_repo": None, "offset_repo_at": 0.0}
+
+
+def sekarang_wib():
+    return datetime.now(WIB).strftime("%H:%M:%S WIB, %d %b %Y")
+
+
+def tulis_nyala(mode):
+    """Penanda hidup penjaga lokal: epoch tiap siklus (dibaca watchdog/restore)."""
+    try:
+        with open(F_NYALA, "w") as f:
+            f.write(str(time.time()))
+    except Exception:
+        pass
+
+
+def umur_nyala():
+    try:
+        return time.time() - float(open(F_NYALA).read().strip())
+    except Exception:
+        return None
+
+
+def rantai_actions_sehat(batas=900.0):
+    """True bila run rantai Actions primer masih segar (< batas detik).
+    None = tak bisa memastikan (token hilang / API gagal)."""
+    tok = _token_rantaian()
+    if not tok:
+        return None
+    try:
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{REPO}/actions/workflows/benteng-balas.yml/runs?per_page=1",
+            headers={"Authorization": f"Bearer {tok}",
+                     "Accept": "application/vnd.github+json"})
+        d = json.load(urllib.request.urlopen(req, timeout=20))
+        r = d["workflow_runs"][0]
+        t = datetime.fromisoformat(r["created_at"].replace("Z", "+00:00"))
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - t).total_seconds() < batas
+    except Exception:
+        return None
+
+
+def umum_hidup(token):
+    """Umumkan penjaga online HANYA bila rantai abadi TERBUKTI gelap.
+    Rantai menyala = keadaan sehat = SENYAP: daur ulang sandbox bukan alarm."""
+    try:
+        sehat = rantai_actions_sehat()
+        if sehat is not False:
+            print("UMUM: rantai abadi menyala/tak terverifikasi gelap — senyap")
+            return
+        terakhir = 0.0
+        try:
+            terakhir = float(open(F_UMUM).read().strip())
+        except Exception:
+            pass
+        if time.time() - terakhir < 1800:
+            return
+        with open(F_UMUM, "w") as f:
+            f.write(str(time.time()))
+        kirim(token, PEMILIK,
+              "🛡️ <b>PENJAGA v8 ONLINE — ALARM NYATA</b>\n"
+              "Rantai abadi Actions terbukti gelap; saya mengambil alih "
+              "penjagaan sekarang. Ketik /menu untuk mulai.",
+              reply_markup=menu_utama())
+        print("UMUM: penjaga online diumumkan (rantai gelap)")
+    except Exception as e:
+        print("UMUM gagal:", repr(e))
+
+
+def muat_json(p):
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def simpan_json(p, obj):
+    try:
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(obj, f, ensure_ascii=False)
+    except Exception:
+        pass
+
+
+def nyawa():
+    n = muat_json(F_NYAWA_REPO)
+    if n and n.get("bot_token"):
+        return n["bot_token"], str(n["chat_id"])
+    tok = chat = None
+    try:
+        with open(F_TOKEN_LOKAL) as f:
+            tok = f.read().strip()
+    except Exception:
+        pass
+    try:
+        with open(F_CHAT_LOKAL) as f:
+            chat = f.read().strip()
+    except Exception:
+        pass
+    return tok, chat
+
+
+def fmt_harga(p):
+    if p is None:
+        return "-"
+    try:
+        p = float(p)
+    except Exception:
+        return str(p)
+    if p == 0:
+        return "0"
+    if p >= 1000:
+        return f"{p:,.2f}"
+    if p >= 1:
+        return f"{p:.4f}".rstrip("0").rstrip(".")
+    return format(Decimal(repr(p)).normalize(), "f")
+
+
+def fmt_pct(v):
+    return f"{v:+.2f}%" if isinstance(v, (int, float)) else "-"
+
+
+def _basis_simbol(s):
+    s = str(s).strip().upper()
+    if s.endswith("USDT") and len(s) > 4:
+        s = s[:-4]
+    return s if s.isalnum() else None
+
+
+def umur_jam(iso):
+    try:
+        t = datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - t).total_seconds() / 3600.0
+    except Exception:
+        return None
+
+
+def _token_rantaian():
+    if _g["token_rantaian"]:
+        return _g["token_rantaian"]
+    try:
+        with open("/home/z/my-project/.token-rantaian") as f:
+            _g["token_rantaian"] = f.read().strip()
+    except Exception:
+        _g["token_rantaian"] = os.environ.get("GITHUB_TOKEN", "")
+    return _g["token_rantaian"]
+
+
+# ---------------------------------------------------------------- TELEGRAM --
+def tg(token, method, params, coba=2):
+    """Panggil API Telegram; 429 menunggu retry_after; 409 dilempar khusus."""
+    payload = urllib.parse.urlencode(params).encode()
+    terakhir = None
+    for i in range(coba + 1):
+        try:
+            req = urllib.request.Request(
+                f"https://api.telegram.org/bot{token}/{method}", data=payload,
+                headers={"Content-Type": "application/x-www-form-urlencoded"})
+            with urllib.request.urlopen(req, timeout=35) as r:
+                return json.loads(r.read().decode())
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "replace")
+            if e.code == 409:
+                raise
+            if e.code == 429 and i < coba:
+                try:
+                    wait = float(json.loads(body).get("parameters", {}).get("retry_after", 3))
+                except Exception:
+                    wait = 3
+                time.sleep(min(wait + 1, 15))
+                continue
+            terakhir = f"HTTP {e.code}: {body[:120]}"
+        except Exception as e:
+            terakhir = repr(e)
+        if i < coba:
+            time.sleep(1 + i)
+    print(f"TG_GAGAL {method}: {terakhir}")
+    return {"ok": False, "error": terakhir}
+
+
+def _tanpa_tag_html(teks):
+    """v10.3 MUTASI: buang semua tag HTML (penyokong pesan tahan banting —
+    bila entity HTML ditolak Telegram, isi tetap sampai sebagai teks polos)."""
+    return re.sub(r"</?(b|i|u|s|code|pre|a)[^>]*>|<[^<>]{0,120}>", "", str(teks))
+
+
+def kirim(token, chat_id, text, reply_markup=None, reply_to=None, edit_mid=None):
+    if edit_mid is not None:
+        params = {"chat_id": chat_id, "message_id": edit_mid, "text": text,
+                  "parse_mode": "HTML", "disable_web_page_preview": "true"}
+        if reply_markup:
+            params["reply_markup"] = json.dumps(reply_markup)
+        r = tg(token, "editMessageText", params)
+        if r.get("ok"):
+            return r
+    params = {"chat_id": chat_id, "text": text[:4096], "parse_mode": "HTML",
+              "disable_web_page_preview": "true"}
+    if reply_markup:
+        params["reply_markup"] = json.dumps(reply_markup)
+    if reply_to:
+        params["reply_to_message_id"] = reply_to
+    r = tg(token, "sendMessage", params)
+    # v10.3: entity HTML ditolak (teks mentah mengandung '<' liar) -> kirim ulang
+    # teks polos SEKALI; kegagalan format tidak boleh membunuh laporan mandat.
+    if not r.get("ok") and str(r.get("error") or "").find("parse entities") >= 0:
+        polos = {"chat_id": chat_id, "text": _tanpa_tag_html(text)[:4096],
+                 "disable_web_page_preview": "true"}
+        if reply_markup:
+            polos["reply_markup"] = json.dumps(reply_markup)
+        if reply_to:
+            polos["reply_to_message_id"] = reply_to
+        r2 = tg(token, "sendMessage", polos)
+        if r2.get("ok"):
+            print("KIRIM: fallback teks-polos berhasil (entity HTML ditolak)")
+        return r2
+    return r
+
+
+def ketik(token, chat_id):
+    try:
+        tg(token, "sendChatAction", {"chat_id": chat_id, "action": "typing"}, coba=0)
+    except Exception:
+        pass
+
+
+# --------------------------------------------------------- OFFSET (REPO) ----
+def offset_repo(max_umur=120.0):
+    """Offset kebenaran dari repo (raw) — rollback disk lokal tak bisa menipu."""
+    now = time.time()
+    if _g["offset_repo"] is not None and now - _g["offset_repo_at"] < max_umur:
+        return _g["offset_repo"]
+    try:
+        req = urllib.request.Request(f"{REPO_RAW}/data/offset_telegram.json",
+                                     headers={"User-Agent": "benteng-balas"})
+        with urllib.request.urlopen(req, timeout=12) as r:
+            _g["offset_repo"] = int((json.loads(r.read().decode()) or {}).get("offset") or 0)
+        _g["offset_repo_at"] = now
+    except Exception:
+        if _g["offset_repo"] is None:
+            _g["offset_repo"] = 0
+    return _g["offset_repo"]
+
+
+def _commit_offset_cepat():
+    """Mode Actions: commit offset SEGERA setelah membalas, agar run yang
+    dibatalkan concurrency tidak membuat pesan terbalas dobel."""
+    if not os.environ.get("GITHUB_WORKSPACE"):
+        return
+    os.system("cd \"$GITHUB_WORKSPACE\" && git add data/offset_telegram.json && "
+              "git commit -m 'offset balas v8 [skip ci]' -q && git push -q || true")
+
+
+def dorong_penjaga_state():
+    """v10.4 DEDUP-ABADI: dorong penanda dedup (ath_tanggal + level) ke
+    data/penjaga_state.json — dibaca SEMUA tubuh (jaga/sekali/actions) saat
+    cek dedup, sehingga laporan harian & event tidak pernah dobel walau
+    daemon sandbox mati dan Actions yang mengirim. Dipanggil SETELAH kirim."""
+    tok = _token_rantaian()
+    if not tok:
+        return False
+    try:
+        try:
+            with urllib.request.urlopen(urllib.request.Request(
+                    REPO_RAW_81, headers={"User-Agent": "benteng-balas"}), timeout=15) as r:
+                lama = json.loads(r.read().decode("utf-8", "replace"))
+        except Exception:
+            lama = {}
+        lama["last_run"] = time.time()
+        lama["waktu_iso"] = datetime.now(timezone.utc).isoformat()
+        _ath = (muat_json(F_ATH_81) or {}).get("tanggal")
+        if _ath:
+            lama["ath_tanggal"] = _ath
+        _lv = muat_json(F_ARENA_LEVEL_81)
+        if isinstance(_lv, dict) and _lv:
+            lama["level"] = _lv
+        isi = base64.b64encode(json.dumps(lama).encode()).decode()
+        sha = None
+        try:
+            with urllib.request.urlopen(urllib.request.Request(
+                    f"{REPO_API}/data%2Fpenjaga_state.json",
+                    headers={"Authorization": f"Bearer {tok}", "User-Agent": "benteng-balas",
+                             "Accept": "application/vnd.github+json"}), timeout=20) as r:
+                sha = json.loads(r.read().decode()).get("sha")
+        except Exception:
+            pass
+        body = json.dumps({"message": "dedup abadi [skip ci]",
+                           "content": isi, **({"sha": sha} if sha else {})}).encode()
+        with urllib.request.urlopen(urllib.request.Request(
+                f"{REPO_API}/data%2Fpenjaga_state.json", data=body, method="PUT",
+                headers={"Authorization": f"Bearer {tok}", "User-Agent": "benteng-balas",
+                         "Accept": "application/vnd.github+json",
+                         "Content-Type": "application/json"}), timeout=25) as r:
+            json.loads(r.read().decode())
+        return True
+    except Exception as e:
+        print("PENJAGA_STATE_GAGAL:", repr(e))
+        return False
+
+
+def dorong_offset_repo(offset):
+    """Commit offset ke repo (mode lokal; Actions memakai git commit biasa)."""
+    tok = _token_rantaian()
+    if not tok:
+        return False
+    try:
+        req = urllib.request.Request(f"{REPO_API}/data%2Foffset_telegram.json",
+                                     headers={"Authorization": f"Bearer {tok}",
+                                              "User-Agent": "benteng-balas",
+                                              "Accept": "application/vnd.github+json"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            sha = json.loads(r.read().decode()).get("sha")
+        body = json.dumps({
+            "message": "offset balas lokal [skip ci]",
+            "content": __import__("base64").b64encode(json.dumps(
+                {"offset": offset, "waktu": time.time(),
+                 "waktu_iso": datetime.now(timezone.utc).isoformat()}).encode()).decode(),
+            **({"sha": sha} if sha else {})}).encode()
+        req = urllib.request.Request(f"{REPO_API}/data%2Foffset_telegram.json", data=body,
+                                     method="PUT",
+                                     headers={"Authorization": f"Bearer {tok}",
+                                              "User-Agent": "benteng-balas",
+                                              "Accept": "application/vnd.github+json",
+                                              "Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            json.loads(r.read().decode())
+        _g["offset_repo"] = offset
+        _g["offset_repo_at"] = time.time()
+        return True
+    except Exception as e:
+        print("OFFSET_REPO_GAGAL:", repr(e))
+        return False
+
+
+# ------------------------------------------------------------ DATA OTAK ----
+# HUKUM PEMILIK (2 Nov): data segar & perhitungan WAJIB dari server otak
+# Z.AI (otakz.ai) — file laporan/ & otak/ lokal yang ditulis mesin denyut
+# di server ini. Repo GitHub = SALINAN CADANGAN saja (restore/upgrade).
+OTAK_SEGAR_DETIK = 7200  # lokal dianggap segar bila umur < 2 jam
+
+
+def _ambil_url(jalur, jsonl=False, timeout=15):
+    lokal = os.path.join(ROOT, jalur)
+    try:
+        if time.time() - os.path.getmtime(lokal) < OTAK_SEGAR_DETIK:
+            with open(lokal, "r", encoding="utf-8", errors="replace") as f:
+                t = f.read()
+            if jsonl:
+                lines = [l for l in t.splitlines() if l.strip()]
+                return json.loads(lines[-1])
+            return json.loads(t)
+    except Exception:
+        pass
+    req = urllib.request.Request(f"{OTAK_RAW}/{jalur}", headers={"User-Agent": "benteng-balas"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        t = r.read().decode("utf-8", "replace")
+    if jsonl:
+        lines = [l for l in t.splitlines() if l.strip()]
+        return json.loads(lines[-1])
+    return json.loads(t)
+
+
+def _zai_jembatan():
+    """Snapshot otak z.ai — V309 ANTI-BEKU: SERVER ARENA LOKAL dulu (paling
+    segar, instan), lalu file benteng lokal, lalu raw benteng (repo)."""
+    if data_fresh is not None:
+        try:
+            z, sumber_l = data_fresh.otak_arena_lokal()
+            if z and z.get("picks"):
+                return z, sumber_l
+        except Exception:
+            pass
+    z = muat_json(os.path.join(ROOT, "benteng", "sasaran-zai.json"))
+    if z and z.get("picks"):
+        return z, "file benteng (lokal)"
+    try:
+        req = urllib.request.Request(ZAI_RAW, headers={"User-Agent": "benteng-balas"})
+        with urllib.request.urlopen(req, timeout=12) as r:
+            z = json.loads(r.read().decode("utf-8", "replace"))
+        return z, "raw benteng (repo)"
+    except Exception:
+        return None, "tidak tersedia"
+
+
+def ambil_otak(paksa=False):
+    """Semua sumber otak diambil PARALEL; cache TTL 60s agar perintah beruntun instan."""
+    now = time.time()
+    if not paksa and _g["otak"] is not None and now - _g["otak_at"] < TTL_OTAK:
+        return _g["otak"]
+    out = {}
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        f_sasaran = ex.submit(_ambil_url, "laporan/sasaran-terkini.json")
+        f_genome = ex.submit(_ambil_url, "otak/genome-server.json")
+        f_denyut = ex.submit(_ambil_url, "laporan/denyut-server.jsonl", True)
+        f_odds = ex.submit(_ambil_url, "laporan/odds.json")
+        f_zai = ex.submit(_zai_jembatan)
+        try:
+            out["sasaran"] = f_sasaran.result(timeout=30)
+        except Exception:
+            out["sasaran"] = None
+        try:
+            out["genome"] = f_genome.result(timeout=30)
+        except Exception:
+            out["genome"] = None
+        try:
+            out["denyut"] = f_denyut.result(timeout=30)
+        except Exception:
+            out["denyut"] = None
+        try:
+            out["odds"] = f_odds.result(timeout=30)
+        except Exception:
+            out["odds"] = None
+        try:
+            z, sumber_z = f_zai.result(timeout=30)
+        except Exception:
+            z, sumber_z = None, "tidak tersedia"
+    out["zai"], out["zai_sumber"] = z, sumber_z
+    out["waktu_ambil"] = now
+    _g["otak"] = out
+    _g["otak_at"] = now
+    return out
+
+
+# ---------------------------------------------------------------- HARGA ----
+def _tickers_satu(url, ekstrak, timeout=15):
+    req = urllib.request.Request(url, headers={"User-Agent": "benteng-balas"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return ekstrak(json.loads(r.read().decode()))
+
+
+def harga_binance(simbol_list):
+    """Chunk 5 simbol/chunk + fallback per-simbol + cadangan futures/OKX/Bybit.
+    (pola terbukti dari benteng_telegram.py — 1 simbol sakit tak membunuh batch)"""
+    if not simbol_list:
+        return {}
+    bases = sorted({b for b in (_basis_simbol(s) for s in simbol_list) if b})
+    if not bases:
+        return {}
+    hosts = ("https://data-api.binance.vision/api/v3/ticker/price",
+             "https://api.binance.com/api/v3/ticker/price",
+             "https://api-gcp.binance.com/api/v3/ticker/price")
+    out = {}
+    kerja = []
+
+    def _chunk(chunk):
+        q = urllib.parse.quote(json.dumps([f"{b}USDT" for b in chunk], separators=(",", ":")))
+        for host in hosts:
+            try:
+                req = urllib.request.Request(f"{host}?symbols={q}", headers={"User-Agent": "benteng-balas"})
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    arr = json.loads(r.read().decode())
+                if isinstance(arr, list):
+                    return {x["symbol"].replace("USDT", ""): float(x["price"]) for x in arr}
+            except Exception:
+                continue
+        return {}
+
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        for i in range(0, len(bases), 5):
+            kerja.append(ex.submit(_chunk, bases[i:i + 5]))
+        for f in kerja:
+            out.update(f.result() or {})
+    hilang = [b for b in bases if b not in out]
+    if hilang and out:
+        try:
+            fut = _tickers_satu("https://fapi.binance.com/fapi/v1/ticker/price",
+                                lambda a: {x["symbol"].replace("USDT", ""): float(x["price"])
+                                           for x in a if x.get("symbol", "").endswith("USDT")
+                                           and x["symbol"][:-4] in set(hilang)})
+            out.update(fut or {})
+        except Exception:
+            pass
+    hilang = [b for b in bases if b not in out]
+    if hilang:
+        try:
+            cad = _tickers_satu("https://api.bybit.com/v5/market/tickers?category=spot",
+                                lambda d: {x["symbol"][:-4]: float(x["lastPrice"])
+                                           for x in ((d.get("result") or {}).get("list") or [])
+                                           if x.get("symbol", "").endswith("USDT")
+                                           and x["symbol"][:-4] in set(hilang)})
+            out.update(cad or {})
+        except Exception:
+            pass
+        try:
+            cad2 = _tickers_satu("https://www.okx.com/api/v5/market/tickers?instType=SPOT",
+                                 lambda d: {x["instId"][:-5]: float(x["last"])
+                                            for x in (d.get("data") or [])
+                                            if x.get("instId", "").endswith("-USDT")
+                                            and x["instId"][:-5] in set(hilang)})
+            out.update(cad2 or {})
+        except Exception:
+            pass
+    return out
+
+
+def statistik_24jam(base):
+    """Perubahan 24 jam: high/low/volume dari ticker 24hr (spot; futures cadangan)."""
+    for url, fmt in (
+        (f"https://data-api.binance.vision/api/v3/ticker/24hr?symbol={base}USDT", "spot"),
+        (f"https://fapi.binance.com/fapi/v1/ticker/24hr?symbol={base}USDT", "futures"),
+    ):
+        try:
+            j = _tickers_satu(url, lambda d: d, timeout=10)
+            chg = j.get("priceChangePercent")
+            return {"chg": float(chg) if chg is not None else None,
+                    "high": float(j["highPrice"]) if j.get("highPrice") else None,
+                    "low": float(j["lowPrice"]) if j.get("lowPrice") else None,
+                    "vol": j.get("quoteVolume"), "sumber": fmt}
+        except Exception:
+            continue
+    return {}
+
+
+def harga_xau():
+    """Rantai fallback emas: gold-api -> Bybit XAUTUSDT -> OKX."""
+    def _get(url, timeout=10):
+        req = urllib.request.Request(url, headers={"User-Agent": "benteng-balas"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8", "replace"))
+    try:
+        j = _get("https://api.gold-api.com/price/XAU")
+        p = j.get("price") if isinstance(j, dict) else None
+        if isinstance(p, (int, float)) and 100 < p < 100000:
+            chg = None
+            try:
+                b = _get("https://api.bybit.com/v5/market/tickers?category=spot&symbol=XAUTUSDT")
+                lst = (b.get("result") or {}).get("list") or []
+                pc = float(lst[0].get("price24hPcnt")) if lst else None
+                chg = round(pc * 100, 2) if pc is not None else None
+            except Exception:
+                pass
+            return float(p), chg, "gold-api XAU spot"
+    except Exception:
+        pass
+    try:
+        b = _get("https://api.bybit.com/v5/market/tickers?category=spot&symbol=XAUTUSDT")
+        lst = (b.get("result") or {}).get("list") or []
+        if lst:
+            return float(lst[0]["lastPrice"]), round(float(lst[0]["price24hPcnt"]) * 100, 2), "Bybit XAUTUSDT"
+    except Exception:
+        pass
+    try:
+        o = _get("https://www.okx.com/api/v5/market/ticker?instId=XAUT-USDT")
+        d0 = ((o.get("data") or []) or [None])[0]
+        if d0:
+            p, op = float(d0["last"]), float(d0.get("open24h") or 0)
+            return p, (round((p / op - 1) * 100, 2) if op > 0 else None), "OKX XAUT-USDT"
+    except Exception:
+        pass
+    return None, None, "gagal"
+
+
+# ---------------------------------------------------------------- TAMPILAN --
+def menu_utama():
+    """Tombol inline menu profesional (2 kolom x 3 baris)."""
+    return {"inline_keyboard": [
+        [{"text": "📊 Status", "callback_data": "cmd:status"},
+         {"text": "📋 Laporan", "callback_data": "cmd:laporan"}],
+        [{"text": "🎯 Sasaran", "callback_data": "cmd:sasaran"},
+         {"text": "💥 Peluang", "callback_data": "cmd:peluang"}],
+        [{"text": "📈 Akurasi", "callback_data": "cmd:akurasi"},
+         {"text": "🥇 Emas", "callback_data": "cmd:emas"}],
+        [{"text": "🧬 Tubuh", "callback_data": "cmd:tubuh"},
+         {"text": "🏓 Ping", "callback_data": "cmd:ping"}],
+        [{"text": "❓ Bantuan", "callback_data": "cmd:bantuan"}],
+    ]}
+
+
+KAKI = ("<i>Klaim jujur: saya akan terus berkembang menjadi master pasar; "
+        "profit adalah yang saya pelajari.</i>\n"
+        "<i>v8: lapis abadi kini rantai terus-menerus — respons ≤ ±25 detik, "
+        "24 jam, tanpa perlu chat pembangkit.</i>")
+
+
+def baris_pick(i, p, h):
+    """Satu baris sasaran: simbol arah keyakinan + entry/kini/jarak + 3 level."""
+    basis = _basis_simbol(p.get("simbol")) or p.get("simbol")
+    arah = str(p.get("arah") or "?").upper()
+    ikon_arah = "🟢" if arah == "BUY" else ("🔴" if arah == "SELL" else "⚪")
+    ent = p.get("entry")
+    kini = h.get(basis)
+    jarak = fmt_pct((kini / ent - 1) * 100) if (kini and ent) else "-"
+    lvl = []
+    if p.get("target"):
+        j = (kini / p["target"] - 1) * 100 if kini else None
+        lvl.append(f"TP {fmt_harga(p['target'])}" + (f" ({fmt_pct(j)})" if j is not None else ""))
+    if p.get("ambisius"):
+        lvl.append(f"🔥 {fmt_harga(p['ambisius'])}")
+    if p.get("powermax"):
+        lvl.append(f"💥 {fmt_harga(p['powermax'])}")
+    if p.get("stop"):
+        lvl.append(f"🛑 {fmt_harga(p['stop'])}")
+    baris = (f"{i}. {ikon_arah} <b>{html.escape(str(basis))}</b> {html.escape(arah)} "
+             f"{p.get('keyakinan', '-')}% · entry <code>{fmt_harga(ent)}</code> · "
+             f"kini <code>{fmt_harga(kini)}</code> ({jarak})")
+    if lvl:
+        baris += "\n    " + " · ".join(lvl)
+    return baris
+
+
+def cmd_start():
+    return ("🤖 <b>MICROPROFITA — BOT CHAT v8</b>\n"
+            f"🕐 {sekarang_wib()}\n\n"
+            "Saya penjaga & asisten pasar dagangmu — kini mendengarkan terus. "
+            "Ketik perintah atau pakai tombol:\n"
+            "• <b>status</b> — kondisi sistem sekilas\n"
+            "• <b>laporan</b> — laporan lengkap\n"
+            "• <b>harga BTC</b> — harga koin apa pun + 24 jam\n"
+            "• <b>sasaran</b> — daftar sasaran otak (dengan 4 level)\n"
+            "• <b>peluang</b> — peluang profit terbesar\n"
+            "• <b>akurasi</b> — rekam jejak otak & genome\n"
+            "• <b>emas</b> — XAU (koin wajib abadi)\n"
+            "• <b>tubuh</b> — cek integritas tubuh & benteng\n"
+            "• <b>ping</b> — uji kecepatan respons\n\n"
+            + KAKI)
+
+
+def cmd_status():
+    o = ambil_otak()
+    z = o.get("zai") or {}
+    denyut = o.get("denyut") or {}
+    picks = z.get("picks") or []
+    L = ["📊 <b>STATUS MICROPROFITA</b>", f"🕐 {sekarang_wib()}", ""]
+    if z:
+        umur_z = umur_jam(z.get("waktu"))
+        L.append(f"🧠 Otak z.ai: <b>HIDUP</b> — {len(picks)} sasaran + XAU · regim {html.escape(str(z.get('regime') or '?'))}"
+                 + (f" · snapshot {umur_z:.1f} jam lalu" if umur_z is not None else ""))
+        L.append(f"🔗 Sumber snapshot: {html.escape(str(o.get('zai_sumber')))}")
+    else:
+        L.append("🧠 Otak z.ai: snapshot belum tersedia — saya akui jujur")
+    if denyut:
+        uw = denyut.get("waktu") or denyut.get("dihasilkan")
+        u = umur_jam(uw)
+        if u is not None:
+            L.append(f"💓 Denyut otak server: {'HIDUP ✅' if u < 1.5 else f'terhenti {u:.0f} jam ⚠️'} ({u*60:.0f} menit lalu)")
+    L.append(f"🛡️ Lapis abadi: <b>HIDUP</b> (detak 30 menit + balasan 5 menit)")
+    L.append(f"📡 Sumber otak server: {'live ✅' if o.get('sasaran') else 'cache/gagal ⚠️'}")
+    L.append("")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_laporan():
+    o = ambil_otak()
+    sasaran = o.get("sasaran") or {}
+    genome = o.get("genome") or {}
+    denyut = o.get("denyut") or {}
+    daftar = sasaran.get("sasaranHariIni") or []
+    syms = [e.get("simbol") for e in daftar if e.get("simbol")]
+    h = harga_binance(syms[:40])
+    L = ["📋 <b>LAPORAN MICROPROFITA</b>", f"🕐 {sekarang_wib()}", "",
+         f"🎯 <b>{len(daftar)} sasaran hari ini</b> — TP ≠ Ambisius ≠ PowerMax ≠ Stop:"]
+    for e in daftar[:25]:
+        sim = e.get("simbol")
+        base = _basis_simbol(sim)
+        harga = h.get(base)
+        baris = (f"• <b>{html.escape(str(sim))}</b> ({html.escape(str(e.get('arah', '?')))}) "
+                 f"kini <code>{fmt_harga(harga)}</code>")
+        d = []
+        if e.get("target"):
+            d.append(f"TP {fmt_harga(e['target'])}")
+        if e.get("highAmbisius"):
+            d.append(f"🔥 {fmt_harga(e['highAmbisius'])}")
+        pw = next((v for k, v in e.items()
+                   if isinstance(v, (int, float)) and v > 0 and "power" in str(k).lower()), None)
+        if pw:
+            d.append(f"💥 {fmt_harga(pw)}")
+        if e.get("stop"):
+            d.append(f"🛑 {fmt_harga(e['stop'])}")
+        if e.get("entry") and harga:
+            d.append(f"({fmt_pct((harga / e['entry'] - 1) * 100)} dari entry)")
+        L.append(baris + ("\n    " + " · ".join(d) if d else ""))
+    if len(daftar) > 25:
+        L.append(f"<i>… {len(daftar) - 25} sasaran lain (ketik 'sasaran' untuk daftar otak z.ai)</i>")
+    a_raw = sasaran.get("akurasi")
+    if isinstance(a_raw, dict):
+        akur, net_k = a_raw.get("akurasiPct"), a_raw.get("netKumulatifPct")
+    else:
+        akur, net_k = a_raw, None
+    if akur is not None:
+        L.append("")
+        L.append(f"📈 Akurasi terkunci: <b>{float(akur):.1f}%</b>"
+                 + (f" · net kumulatif {float(net_k):+.1f}%" if net_k is not None else ""))
+    if denyut:
+        L.append(f"💓 Denyut: siklus {denyut.get('siklus', '?')}")
+    terbaru, gm, tb = None, 0, 0
+
+    def telusur(d):
+        nonlocal terbaru, gm, tb
+        if isinstance(d, dict):
+            iso = d.get("diperbarui")
+            if iso and (terbaru is None or umur_jam(iso) < umur_jam(terbaru)):
+                terbaru = iso
+            gm = max(gm, int(d.get("generasi") or 0))
+            tb += int(d.get("belajar") or 0)
+            for v in d.values():
+                telusur(v)
+
+    telusur(genome)
+    if terbaru:
+        L.append(f"🧬 Genome: generasi {gm} · {tb} pembelajaran · tumbuh {umur_jam(terbaru)/24:.0f} hari lalu")
+    L.append("")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_harga(arg):
+    if not arg:
+        return ("💡 Ketik: <b>harga BTC</b> (atau BTCUSDT, sol, xau, emas)\n"
+                "Contoh: <i>harga pepe</i>, <i>harga bitcoin</i>")
+    k = arg.strip().lower()
+    if k in ("xau", "emas", "gold"):
+        h, chg, src = harga_xau()
+        if h:
+            return (f"🥇 <b>XAU (EMAS)</b>\n🕐 {sekarang_wib()}\n\n"
+                    f"Kini: <code>{fmt_harga(h)}</code>"
+                    + (f" · 24 jam {fmt_pct(chg)}" if chg is not None else "")
+                    + f"\nSumber: {html.escape(src)}\n\n" + KAKI)
+        return "⚠️ Gagal mengambil harga emas dari semua sumber — saya akui jujur."
+    alias = {"bitcoin": "BTC", "ethereum": "ETH", "solana": "SOL"}
+    base = _basis_simbol(alias.get(k, k))
+    if not base:
+        return f"⚠️ Simbol '{html.escape(arg)}' tidak sah. Contoh benar: <b>harga BTC</b>"
+    ketik_data = statistik_24jam(base)
+    h = harga_binance([base]).get(base)
+    if not h:
+        return (f"⚠️ Harga <b>{html.escape(base)}</b> tidak ditemukan di Binance/Bybit/OKX. "
+                "Coba simbol lain (contoh: harga BTC).")
+    L = [f"💰 <b>{base}/USDT</b>", f"🕐 {sekarang_wib()}", "",
+         f"Harga kini: <code>{fmt_harga(h)}</code>"]
+    if ketik_data:
+        if ketik_data.get("chg") is not None:
+            L.append(f"24 jam: <b>{fmt_pct(ketik_data['chg'])}</b>"
+                     + (f" · tinggi {fmt_harga(ketik_data['high'])} · rendah {fmt_harga(ketik_data['low'])}"
+                        if ketik_data.get("high") else ""))
+        L.append(f"Sumber: Binance {html.escape(ketik_data.get('sumber', 'spot'))}")
+    # bila koin ada di daftar sasaran, tampilkan levelnya
+    z = (ambil_otak().get("zai") or {})
+    cocok = next((p for p in (z.get("picks") or [])
+                  if (_basis_simbol(p.get("simbol")) or "") == base), None)
+    if cocok:
+        L.append("")
+        L.append(f"🎯 Koin ini ada di sasaran otak ({html.escape(str(cocok.get('arah', '?')))} "
+                 f"{cocok.get('keyakinan', '-')}%):")
+        L.append(baris_pick(1, cocok, {base: h}))
+    L.append("")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_sasaran():
+    o = ambil_otak()
+    z = o.get("zai") or {}
+    picks = (z.get("picks") or [])[:15]
+    if not picks:
+        return ("⚠️ Snapshot sasaran otak belum tersedia — saya akui jujur.\n\n" + KAKI)
+    syms = [p.get("simbol") for p in picks if p.get("simbol")]
+    h = harga_binance(syms)
+    xau = z.get("xau") or {}
+    xh, xchg, xsrc = harga_xau()
+    umur_z = umur_jam(z.get("waktu"))
+    # GEN-10 TANGGAL-JUJUR: tampilkan hari data sasaran; WARNING bila bukan hari ini
+    hari_data = str(z.get("hariData") or "").strip()
+    hari_ini = datetime.now(WIB).strftime("%Y-%m-%d")
+    if hari_data:
+        label_hari = (f" · 📅 data hari <b>{html.escape(hari_data)}</b>"
+                      if hari_data == hari_ini
+                      else f" · ⚠️ <b>data {html.escape(hari_data)}</b> (bukan hari ini)")
+    else:
+        label_hari = ""
+    L = [f"🎯 <b>SASARAN OTAK — {len(z.get('picks') or [])} koin + XAU</b>",
+         f"🧭 Regim {html.escape(str(z.get('regime') or '?'))}"
+         + (f" · snapshot {umur_z:.1f} jam lalu" if umur_z is not None else "") + label_hari,
+         f"🕐 {sekarang_wib()}", "",
+         "🥇 <b>XAU (EMAS) — WAJIB ABADI</b>"]
+    if xau.get("entry") or xh:
+        ent = xau.get("entry") or xh
+        kini = xh or xau.get("entry")
+        L.append(f"<b>XAUUSDT</b> {html.escape(str(xau.get('arah') or '?'))} {xau.get('keyakinan', '-')}% · "
+                 f"entry <code>{fmt_harga(ent)}</code> · kini <code>{fmt_harga(kini)}</code> "
+                 f"({fmt_pct((kini / ent - 1) * 100) if (kini and ent) else '-'})"
+                 + (f" · 24 jam {fmt_pct(xchg)}" if xchg is not None else ""))
+        lvl = [f"TP {fmt_harga(xau.get('target'))}", f"🔥 {fmt_harga(xau.get('ambisius'))}",
+               f"💥 {fmt_harga(xau.get('powermax'))}", f"🛑 {fmt_harga(xau.get('stop'))}"]
+        L.append("    " + " · ".join(lvl))
+    L.append("")
+    for i, p in enumerate(picks, 1):
+        L.append(baris_pick(i, p, h))
+    L.append("")
+    L.append("<i>TP sasaran ≠ Jual Ambisius ≠ Power Max ≠ Stop — empat level, empat keputusan.</i>")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_peluang():
+    """PELUANG PROFIT TERBESAR — urut murni % jarak kini -> JUAL AMBISIUS."""
+    o = ambil_otak()
+    z = o.get("zai") or {}
+    picks = z.get("picks") or []
+    if not picks:
+        return ("⚠️ Snapshot peluang belum tersedia — saya akui jujur.\n\n" + KAKI)
+    syms = [p.get("simbol") for p in picks if p.get("simbol")]
+    h = harga_binance(syms)
+    skala = []
+    for p in picks:
+        basis = _basis_simbol(p.get("simbol"))
+        amb, kini = p.get("ambisius"), h.get(basis)
+        arah = str(p.get("arah") or "?").upper()
+        if not (amb and kini):
+            continue
+        pot = ((amb / kini - 1) * 100) if arah == "BUY" else ((kini / amb - 1) * 100)
+        skala.append((pot, p, kini))
+    skala.sort(key=lambda x: -x[0])
+    L = ["💥 <b>PELUANG PROFIT TERBESAR</b> (jarak kini → JUAL AMBISIUS)",
+         f"🧭 Regim {html.escape(str(z.get('regime') or '?'))} · 🕐 {sekarang_wib()}", ""]
+    for i, (pot, p, kini) in enumerate(skala[:10], 1):
+        basis = _basis_simbol(p.get("simbol")) or p.get("simbol")
+        ikon = "🟢" if str(p.get("arah", "")).upper() == "BUY" else "🔴"
+        bonus = " 💥POWERMAX" if p.get("powermax") and (
+            (p["powermax"] / kini - 1) * 100 > 3) else ""
+        L.append(f"{i}. {ikon} <b>{html.escape(str(basis))}</b> {html.escape(str(p.get('arah', '?')))} "
+                 f"{p.get('keyakinan', '-')}% — potensi <b>{pot:+.2f}%</b>{bonus}\n"
+                 f"    kini <code>{fmt_harga(kini)}</code> → 🔥 <code>{fmt_harga(p.get('ambisius'))}</code>")
+    L.append("")
+    L.append("<i>Potensi = jarak harga ke level, BUKAN janji profit. SELL dihitung arah-aware.</i>")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_akurasi():
+    o = ambil_otak()
+    sasaran = o.get("sasaran") or {}
+    genome = o.get("genome") or {}
+    a_raw = sasaran.get("akurasi")
+    if isinstance(a_raw, dict):
+        akur, net_k = a_raw.get("akurasiPct"), a_raw.get("netKumulatifPct")
+    else:
+        akur, net_k = a_raw, None
+    L = ["📈 <b>REKAM JEJAK OTAK</b>", f"🕐 {sekarang_wib()}", ""]
+    if akur is not None:
+        L.append(f"Akurasi terkunci: <b>{float(akur):.1f}%</b>"
+                 + (f" · net kumulatif {float(net_k):+.1f}%" if net_k is not None else ""))
+    else:
+        L.append("Akurasi: data server belum tersedia — saya tidak mengarang angka")
+    L.append(f"💓 Denyut: siklus {(o.get('denyut') or {}).get('siklus', '?')}")
+    terbaru, gm, tb = None, 0, 0
+
+    def telusur(d):
+        nonlocal terbaru, gm, tb
+        if isinstance(d, dict):
+            iso = d.get("diperbarui")
+            if iso and (terbaru is None or umur_jam(iso) < umur_jam(terbaru)):
+                terbaru = iso
+            gm = max(gm, int(d.get("generasi") or 0))
+            tb += int(d.get("belajar") or 0)
+            for v in d.values():
+                telusur(v)
+
+    telusur(genome)
+    if terbaru:
+        u = umur_jam(terbaru) / 24.0
+        L.append(f"🧬 Genome: generasi <b>{gm}</b> · {tb} pembelajaran · tumbuh {u:.0f} hari lalu"
+                 + (" — <b>STAGNAN, sedang saya bedahi</b>" if u > 7 else ""))
+    L.append("")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_emas():
+    return cmd_harga("xau")
+
+
+def cmd_tubuh():
+    """CEK TUBUH — integritas file inti via penanda versi (pelajaran 13x rollback).
+    Lokal dulu bila ada; bila tidak (mode Actions), cek salinan benteng di repo."""
+    baris_cek = [
+        ("🫀 heartbeat (GEN-10)", "/home/z/my-project/scripts/heartbeat.py",
+         "benteng/heartbeat_local.py", "daftar_peluang_profit"),
+        ("🛡️ ip_rotasi (PELINDUNG-IP)", "/home/z/my-project/scripts/ip_rotasi.py",
+         "benteng/ip_rotasi.py", "PELINDUNG-IP"),
+        ("🧠 arena.ts (V305)", "/home/z/my-project/src/lib/cyborg/arena.ts",
+         "benteng/web/arena.ts", "daftar-100"),
+        ("💬 balas_telegram (v8)", "/home/z/my-project/scripts/balas_telegram.py",
+         "scripts/balas_telegram.py", "BENTENG-BALAS v8"),
+        ("🏛️ restore_tubuh (GEN-11)", "/home/z/my-project/scripts/restore_tubuh.py",
+         "benteng/restore_tubuh.py", "GEN-11"),
+    ]
+    L = ["🧬 <b>CEK TUBUH MICROPROFITA</b>", f"🕐 {sekarang_wib()}", ""]
+    utuh = sakit = 0
+
+    def cek_repo(jalur_repo, penanda):
+        try:
+            req = urllib.request.Request(f"{REPO_RAW}/{jalur_repo}",
+                                         headers={"User-Agent": "benteng-balas"})
+            with urllib.request.urlopen(req, timeout=12) as r:
+                teks = r.read().decode("utf-8", "replace")
+            ada = penanda in teks
+            return ada, len(teks), "benteng(repo)"
+        except Exception:
+            return None, 0, "benteng(repo)"
+
+    for label, lokal, repo, penanda in baris_cek:
+        status, ukuran, sumber = None, 0, "lokal"
+        try:
+            isi = open(lokal, "rb").read()
+            status = penanda.encode() in isi
+            ukuran, sumber = len(isi), "lokal"
+        except Exception:
+            status, ukuran, sumber = cek_repo(repo, penanda)
+        if status is True:
+            utuh += 1
+            L.append(f"✅ {label} — penanda OK ({ukuran // 1024 or 1} KB, {sumber})")
+        elif status is False:
+            sakit += 1
+            L.append(f"❌ {label} — penanda versi HILANG (curiga rollback)")
+        else:
+            L.append(f"⚠️ {label} — tidak dapat diperiksa dari sini")
+    ny = umur_nyala()
+    if ny is not None and ny < 120:
+        L.append(f"💬 Penjaga lokal: <b>HIDUP</b> (denyut {ny:.0f}s lalu) — respons detik")
+    else:
+        L.append("💬 Penjaga lokal: sedang tidur — lapis abadi rantai GitHub yang bertugas")
+    L.append("")
+    if sakit == 0:
+        L.append(f" kesimpulan: <b>{utuh}/5 organ terverifikasi</b> — tubuh dalam bentuk tempur.")
+    else:
+        L.append(f"⚠️ kesimpulan: {sakit} organ dicurigai revert — restorer akan menanam ulang "
+                 "dari benteng pada kunjungan berikutnya.")
+    o = ambil_otak()
+    d = o.get("denyut") or {}
+    uw = d.get("waktu") or d.get("dihasilkan")
+    u = umur_jam(uw)
+    if u is not None:
+        L.append(f"💓 Denyut otak server terakhir: {u * 60:.0f} menit lalu")
+    L.append("")
+    L.append(KAKI)
+    return "\n".join(L)
+
+
+def cmd_ping():
+    token, _ = nyawa()
+    t0 = time.time()
+    r = tg(token, "getMe", {}, coba=0) if token else {"ok": False}
+    ms = int((time.time() - t0) * 1000)
+    nama = ((r.get("result") or {}).get("username")) or "?"
+    ny = umur_nyala()
+    if ny is not None and ny < 120:
+        kondisi = f"💬 Penjaga lokal: <b>HIDUP</b> (denyut {ny:.0f}s lalu) — respons detik"
+    else:
+        kondisi = "💬 Penjaga lokal: tidur — lapis abadi rantai GitHub yang melayani (≤ ±25 dtk)"
+    return (f"🏓 <b>PONG!</b> — API Telegram <b>{ms} ms</b> "
+            f"({'lancar ⚡' if ms < 900 else 'agak lambat 🐢'})\n"
+            f"🤖 Bot: @{html.escape(str(nama))}\n"
+            f"🕐 {sekarang_wib()}\n\n{kondisi}\n\n" + KAKI)
+
+
+def cmd_bantuan():
+    return ("❓ <b>BANTUAN — PERINTAH BOT CHAT v8</b>\n\n"
+            "/start · /menu — menu utama\n"
+            "/status — kondisi sistem sekilas\n"
+            "/laporan — laporan lengkap sasaran server\n"
+            "/harga &lt;koin&gt; — harga + statistik 24 jam (contoh: /harga btc)\n"
+            "/sasaran — daftar sasaran otak z.ai + 4 level\n"
+            "/peluang — peluang profit terbesar (arah-aware)\n"
+            "/akurasi — rekam jejak & genome\n"
+            "/emas — harga emas XAU\n"
+            "/tubuh — cek integritas tubuh & benteng\n"
+            "/ping — uji kecepatan respons\n"
+            "/berita — berita crypto selalu segar + trending (V308)\n"
+            "/kabar — kabar cepat: harga live berstempel + berita (V308)\n\n"
+            "Atau ketik apa saja: <i>harga pepe</i>, <i>menu</i>, <i>status</i>.\n"
+            "Saya hanya membalas chat pemilik — data jujur, tanpa angka karangan.\n\n"
+            + KAKI)
+
+
+FALLBACK = ("🙏 Saya belum paham perintah itu.\nKetik <b>menu</b> untuk daftar perintah, "
+            "atau coba: <i>harga BTC</i>, <i>status</i>, <i>sasaran</i>, <i>peluang</i>.")
+
+
+def cmd_berita():
+    """V308: berita crypto SELALU segar + tren — 'news selalu, tanggap'."""
+    if data_fresh is None:
+        return "⚠️ Mesin kesegaran belum terpasang di tubuh ini."
+    try:
+        b = data_fresh.berita(8, 24)
+        t = data_fresh.trending(6)
+        L = [f"📰 <b>BERITA CRYPTO</b> — {data_fresh.sekarang_wib()}", ""]
+        if not b:
+            L.append("Feed sedang tertahan — buru ulang beberapa detik lagi, saya tidak diam.")
+        for n in b:
+            L.append(f"• {html.escape(n['judul'])} <i>[{n['sumber']} · {data_fresh.umur_teks(n['umur'])}]</i>")
+        if t:
+            L.append("")
+            L.append("🔥 <b>TRENDING:</b> " + " · ".join(
+                html.escape(str(c.get('simbol') or c.get('nama') or '?')) for c in t))
+        L.append("")
+        L.append("<i>Sumber: Cointelegraph + Decrypt — umur tiap berita dicantumkan jujur.</i>")
+        return "\n".join(L)
+    except Exception as e:
+        return f"err berita: {html.escape(repr(e)[:90])}"
+
+
+def cmd_kabar():
+    """V308: kabar cepat — harga live berstempel waktu+sumber + berita."""
+    if data_fresh is None:
+        return "⚠️ Mesin kesegaran belum terpasang di tubuh ini."
+    try:
+        return data_fresh.kabar_cepat()
+    except Exception as e:
+        return f"err kabar: {html.escape(repr(e)[:90])}"
+
+
+def route(teks):
+    t = teks.strip()
+    tl = t.lower()
+    if not t:
+        return None
+    if t.startswith("/"):
+        tl = tl[1:].split("@")[0].split()[0] if tl[1:].strip() else "start"
+        arg = t[1:].split(None, 1)[1] if len(t.split(None, 1)) > 1 else ""
+        if tl in ("start", "menu"):
+            return cmd_start()
+        if tl == "status":
+            return cmd_status()
+        if tl in ("laporan", "report"):
+            return cmd_laporan()
+        if tl == "harga":
+            return cmd_harga(arg)
+        if tl in ("sasaran", "picks"):
+            return cmd_sasaran()
+        if tl in ("peluang", "profit"):
+            return cmd_peluang()
+        if tl in ("akurasi",):
+            return cmd_akurasi()
+        if tl in ("emas", "xau", "gold"):
+            return cmd_emas()
+        if tl in ("tubuh", "cektubuh", "kesehatan"):
+            return cmd_tubuh()
+        if tl in ("ping", "pong"):
+            return cmd_ping()
+        if tl in ("berita", "news"):
+            return cmd_berita()
+        if tl in ("kabar", "kabarpasar", "pasar"):
+            return cmd_kabar()
+        if tl in ("bantuan", "help"):
+            return cmd_bantuan()
+        return ("⚠️ Perintah /" + html.escape(tl) + " belum kukenal.\n" + FALLBACK)
+    m = re.match(r"^(?:harga|price)\s+(.+)$", tl)
+    if m:
+        return cmd_harga(m.group(1))
+    if re.match(r"^(btc|eth|sol|\w+usdt)\s*$", tl):
+        return cmd_harga(tl)
+    if "periksa" in tl or "aktivasi" in tl:
+        return ("✅ <b>SAYA HIDUP</b> — merespons pesanmu langsung.\n"
+                f"🕐 {sekarang_wib()}\n\n" + FALLBACK)
+    if "tubuh" in tl or "sehat" in tl:
+        return cmd_tubuh()
+    if tl in ("ping", "pong", "tes", "test"):
+        return cmd_ping()
+    if tl in ("menu", "mulai", "start", "halo", "hai", "hi", "assalamualaikum", "pagi", "siang", "malam"):
+        return cmd_start()
+    if "laporan" in tl or "status" in tl or "report" in tl:
+        return cmd_laporan()
+    if "sasaran" in tl or "picks" in tl:
+        return cmd_sasaran()
+    if "peluang" in tl or "profit" in tl:
+        return cmd_peluang()
+    if "akurasi" in tl:
+        return cmd_akurasi()
+    if "emas" in tl or "xau" in tl or "gold" in tl:
+        return cmd_emas()
+    if "berita" in tl or "news" in tl:
+        return cmd_berita()
+    if "kabar" in tl:
+        return cmd_kabar()
+    if "bantuan" in tl or "help" in tl or "bantu" in tl:
+        return cmd_bantuan()
+    return FALLBACK + "\n\n" + cmd_start()
+
+
+# ------------------------------------------------------------------ MESIN ---
+def proses_update(token, u, sudah_dijawab):
+    uid = u.get("update_id", 0)
+    if uid in sudah_dijawab or uid <= offset_repo():
+        return uid, False
+    cq = u.get("callback_query") or {}
+    m = u.get("message") or {}
+    if cq:
+        chat = str(((cq.get("message") or {}).get("chat") or {}).get("id") or "")
+        data = str(cq.get("data") or "")
+        pesan_id = (cq.get("message") or {}).get("message_id")
+        if chat != PEMILIK:
+            return uid, False
+        cmd = data[4:] if data.startswith("cmd:") else data
+        ketik(token, chat)
+        jawab = route("/" + cmd)
+        r = kirim(token, chat, jawab, reply_markup=menu_utama(), edit_mid=pesan_id)
+        tg(token, "answerCallbackQuery", {"callback_query_id": cq.get("id")}, coba=0)
+        print(f"BALAS-CB uid={uid} '{cmd}' {'OK' if r.get('ok') else 'GAGAL'}")
+        return uid, r.get("ok")
+    teks = (m.get("text") or "").strip()
+    chat = str((m.get("chat") or {}).get("id") or "")
+    if not teks or chat != PEMILIK:
+        return uid, False
+    ketik(token, chat)
+    jawab = route(teks)
+    if not jawab:
+        return uid, False
+    r = kirim(token, chat, jawab, reply_markup=menu_utama(),
+              reply_to=m.get("message_id", 0))
+    print(f"BALAS uid={uid} '{teks[:30]}' {'OK' if r.get('ok') else 'GAGAL'}")
+    return uid, r.get("ok")
+
+
+# ---------------- v8.1 PENJAGA LEVEL CEPAT + LAPORAN ATH (mandat 31 Okt) ----------------
+F_ARENA_LEVEL_81 = "/home/z/my-project/data/penjaga_level_state.json"  # state level penjaga (nested, file sendiri — v10.2)
+F_THROTTLE_81 = "/home/z/my-project/data/level_cepat_state.json"
+F_ATH_81 = "/home/z/my-project/data/ath_harian_state.json"
+F_FUNDAMEN_81 = "/home/z/my-project/data/fundamen_cache.json"  # v10.4: verdict fundamen (TTL 7 hari)
+# v10.4: meme terkenal (pengetahuan umum) — pengaman bila tag paprika gagal;
+# bukan sumber tunggal: tag paprika tetap pemeriksa utama.
+MEME_DIKENAL = {"DOGE", "SHIB", "PEPE", "BONK", "WIF", "FLOKI", "TRUMP", "POPCAT",
+                "MOG", "BRETT", "TURBO", "MEW", "PENGU", "BABYDOGE", "AIDOGE",
+                "ELON", "WOJAK", "MILADY", "SNEK", "HARAMBE", "GIGA", "TOSHI"}
+# v10.4: repo resmi kurasi (org proyek) — diverifikasi hidup via API 2 Nov 2026.
+# Pencarian GitHub by-name terbukti salah sasaran (plotly/dash ≠ DASH kripto,
+# prometheus-community/avalanche ≠ AVAX, repo panduan pribadi ≠ INJ) sehingga
+# HANYA peta kurasi boleh jadi bukti tim aktif; koin di luar peta memakai
+# catatan jujur dan dinilai dari OI & status bursa.
+KANONIS_REPO = {
+    "UNI": "Uniswap/interface", "AVAX": "ava-labs/avalanchego",
+    "ADA": "IntersectMBO/cardano-node", "DOT": "paritytech/polkadot-sdk",
+    "XLM": "stellar/stellar-core", "ARB": "OffchainLabs/nitro",
+    "SUI": "MystenLabs/sui", "FIL": "filecoin-project/lotus",
+    "WLD": "worldcoin/orb-software", "DASH": "dashpay/dash",
+    "SEI": "sei-protocol/sei-chain", "LSK": "LiskHQ/lisk-sdk",
+}
+F_KOIN100_81 = "/home/z/my-project/data/koin100.json"
+F_LEVEL_CACHE = "/home/z/my-project/data/arena_level_cache.json"  # V308: level terakhir segar
+REPO_RAW_81 = f"{REPO_RAW}/data/penjaga_state.json"
+PAPRIKA_81 = "https://api.coinpaprika.com/v1"
+THROTTLE_LEVEL_81 = 180.0
+THROTTLE_ATH_81 = 600.0
+# v10.7 (hukum pemilik 2 Nov, keluhan "pegangannya athnya masa lampau"):
+# puncak KEJADIAN MASA KINI = high tertinggi dalam PUNCAK_LILIN lilin harian
+# terakhir, dan umur puncak wajib <= PUNCAK_UMUR_MAKS hari. Puncak lebih tua
+# = runtuhan itu kejadian masa lampau -> koin TIDAK dilaporkan. Tanggal lilin
+# puncak dicantumkan di laporan agar pemilik bisa cocokkan dengan grafik.
+PUNCAK_LILIN = 30
+PUNCAK_UMUR_MAKS = 14
+
+
+def level_dari_entri(e):
+    """Kenali level dari nama kunci secara generik (target/ambisius/powermax/stop)."""
+    out = {}
+    for k, v in (e or {}).items():
+        if not isinstance(v, (int, float)) or v <= 0:
+            continue
+        kl = k.lower()
+        if kl == "target":
+            out["TP"] = float(v)
+        elif "power" in kl:
+            out["POWER MAX AMBISIUS"] = float(v)
+        elif "ambisius" in kl:
+            out["JUAL AMBISIUS"] = float(v)
+        elif kl == "stop":
+            out["STOP LOSS"] = float(v)
+    return out
+
+
+def level_kena_81(nama, nilai, harga, arah):
+    """Semantik arah benar: BUY stop di BAWAH entry, SELL stop di ATAS entry."""
+    if not harga or not isinstance(nilai, (int, float)) or nilai <= 0:
+        return False
+    a = str(arah or "?").upper()
+    if nama in ("STOP", "STOP LOSS"):
+        return (harga >= nilai) if a == "SELL" else (harga <= nilai)
+    return (harga <= nilai) if a == "SELL" else (harga >= nilai)
+
+
+def level_untuk_arah_81(arah):
+    """MANDAT 2 Nov v10.4: BUY -> JUAL AMBISIUS + POWER MAX AMBISIUS saja
+    (dua tier ambisius; TP sasaran tetap TIDAK dinotifikasi); SELL -> STOP LOSS saja."""
+    a = str(arah or "?").upper()
+    if a == "BUY":
+        return ["JUAL AMBISIUS", "POWER MAX AMBISIUS"]
+    if a == "SELL":
+        return ["STOP LOSS"]
+    return ["JUAL AMBISIUS", "STOP LOSS"]
+
+
+def penjaga_level_cepat(token, paksa=False):
+    """MANDAT 31 Okt via denyut tubuh z.ai (jaga/sekali/actions): BUY = laporan
+    HARGA AMBISIUS tercapai, SELL = laporan STOP LOSS tercapai. Throttle 3 menit;
+    state bersama dengan heartbeat (data/arena_level_state.json, skema sama dengan
+    lapis abadi); seed pertama dari state repo agar dua tubuh tak kirim ulang."""
+    try:
+        th = muat_json(F_THROTTLE_81) or {}
+        now = time.time()
+        if not paksa and now - float(th.get("level_terakhir") or 0) < THROTTLE_LEVEL_81:
+            return "throttle"
+        th["level_terakhir"] = now
+        simpan_json(F_THROTTLE_81, th)
+        _, chat_id = nyawa()
+        if not chat_id:
+            return "chat_id kosong"
+        otak = ambil_otak(paksa=True)
+        picks = ((otak.get("zai") or {}).get("picks")) or []
+        xau = (otak.get("zai") or {}).get("xau")
+        sasaran = ((otak.get("sasaran") or {}).get("sasaranHariIni")) or []
+        # V306 GERBANG-KESEGARAN (pelajaran 31 Okt: data basi diklaim segar
+        # merugikan pemilik): umur NYATA dari timestamp; level dari data
+        # usang >24 jam TIDAK VALID untuk notifikasi -> DIBEKUKAN.
+        def _umur_jam_iso(o, kunci="waktu"):
+            try:
+                s = str((o or {}).get(kunci) or "").replace("Z", "+00:00")
+                t = datetime.fromisoformat(s)
+                if t.tzinfo is None:
+                    t = t.replace(tzinfo=timezone.utc)
+                return (datetime.now(timezone.utc) - t).total_seconds() / 3600.0
+            except Exception:
+                return None
+        z_u = _umur_jam_iso(otak.get("zai"))
+        s_u = _umur_jam_iso(otak.get("sasaran"), "dihasilkan")
+        # V307 ANTI-DATA-USANG (insiden 1 Nov: level 27 Okt terkirim sbg data hari
+        # ini karena 'waktu' file repo di-cap-ulang jembatan -> umur terlihat segar):
+        # gerbang KUNCI-GANDA — hariData WAJIB == tanggal WIB sekarang DAN umur
+        # <= 12 jam. Cap-ulang waktu tak bisa menipu lagi; flag stale/lag beku tak dipercaya.
+        _hari_zai = str((otak.get("zai") or {}).get("hariData") or "").strip()
+        _hari_ini_wib = datetime.now(WIB).strftime("%Y-%m-%d")
+        # V309: arena menganalisa data H-1 pada pagi berikutnya (lag 0 = terkini),
+        # jadi hariData sah bila hari ini ATAU kemarin; lebih tua dari itu = beku.
+        _hari_km_wib = (datetime.now(WIB) - timedelta(days=1)).strftime("%Y-%m-%d")
+        zai_beku = (z_u is None) or (z_u > 12.0) or (_hari_zai not in (_hari_ini_wib, _hari_km_wib))
+        sas_beku = (s_u is None) or (s_u > 12.0)
+        if zai_beku:
+            picks, xau = [], None
+        if sas_beku:
+            sasaran = []
+        daftar = [dict(e) for e in sasaran if isinstance(e, dict)]
+        daftar += [dict(p) for p in picks if isinstance(p, dict)]
+        if isinstance(xau, dict) and xau.get("entry"):
+            daftar.append(xau)
+        # V308 BURU-SEGAR (1 Nov, kritik pemilik: "jangan main bekukan!"):
+        # saat otak tua -> TIDAK beku. Level terakhir yang pernah segar
+        # disimpan & dipantau TERUS melawan harga LIVE bursa, label jujur
+        # umur data. Angka basi tak pernah diklaim segar; sistem tetap tanggap.
+        _sumber_daftar = "otak"
+        _umur_cache = None
+        if not daftar:
+            _cache = muat_json(F_LEVEL_CACHE) or {}
+            if _cache.get("waktu"):
+                _umur_cache = time.time() - float(_cache.get("waktu"))
+                if _umur_cache <= 48 * 3600.0 and _cache.get("daftar"):
+                    daftar = [dict(e) for e in _cache["daftar"] if isinstance(e, dict)]
+                    _sumber_daftar = "cache"
+        if daftar and _sumber_daftar == "otak":
+            simpan_json(F_LEVEL_CACHE, {"waktu": time.time(), "daftar": daftar})
+        if not daftar:
+            _sebab = []
+            if z_u is None:
+                _sebab.append("timestamp otak tak terbaca")
+            else:
+                if z_u > 12.0:
+                    _sebab.append(f"otak umur {z_u:.0f} jam")
+                if _hari_zai not in (_hari_ini_wib, _hari_km_wib):
+                    _sebab.append(f"hariData otak {_hari_zai or '?'} bukan hari ini/kemarin")
+            if s_u is None:
+                _sebab.append("timestamp server tak terbaca")
+            elif s_u > 12.0:
+                _sebab.append(f"server umur {s_u:.0f} jam")
+            return ("senyap — tiada sasaran & tiada cache: level DITAHAN [V307+V308]: " + "; ".join(_sebab)
+                    + " — otak baru diburu tiap siklus; angka basi tidak diklaim segar")
+        simbol = [e.get("simbol") for e in daftar if e.get("simbol")]
+        harga_map = harga_binance(simbol)
+        state = muat_json(F_ARENA_LEVEL_81)
+        if not isinstance(state, dict) or not state:
+            try:
+                req = urllib.request.Request(REPO_RAW_81, headers={"User-Agent": "benteng-balas"})
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    state = (json.loads(r.read().decode("utf-8", "replace")).get("level")) or {}
+            except Exception:
+                state = {}
+        kejadian, baru = [], {}
+        for e in daftar:
+            sim = str(e.get("simbol") or "").upper()
+            if not sim:
+                continue
+            h = harga_xau()[0] if sim == "XAUUSDT" else harga_map.get(_basis_simbol(sim) or sim)
+            if not h:
+                continue
+            izin = level_untuk_arah_81(e.get("arah"))
+            lv = level_dari_entri(e)
+            baru[sim] = {}
+            for nama, nilai in lv.items():
+                kena = level_kena_81(nama, nilai, h, e.get("arah")) if nama in izin else False
+                baru[sim][nama] = kena
+                sebelumnya = (state.get(sim) or {}).get(nama)
+                if kena and not sebelumnya:
+                    kejadian.append((sim, e.get("arah", "?"), nama, nilai, h,
+                                     e.get("entry"), sebelumnya is None, lv))
+        if baru:
+            simpan_json(F_ARENA_LEVEL_81, baru)
+        if not kejadian:
+            return "senyap (tidak ada level baru)"
+        if _sumber_daftar == "cache":
+            baris = ["\u2728 <b>NOTIFIKASI LEVEL — harga LIVE vs level terakhir [V308 BURU-SEGAR]</b>", "",
+                     f"\U0001F4C5 <i>Otak z.ai "
+                     f"{('umur ' + format(z_u * 60, '.0f') + ' mnt') if z_u is not None else 'tak terbaca'} "
+                     f"(hariData {_hari_zai or '?'}) — sistem TIDAK beku: level dipantau dari "
+                     f"cache terakhir (umur {format(_umur_cache / 3600.0, '.1f') if _umur_cache is not None else '?'} jam) "
+                     f"melawan harga LIVE bursa sekarang. Data tua tidak diklaim segar.</i>", ""]
+        else:
+            baris = ["\u2728 <b>NOTIFIKASI LEVEL (mandat 31 Okt) — dari denyut otak z.ai</b>", "",
+                     f"\U0001F4C5 <i>Level terverifikasi segar [V307 anti-data-usang]: "
+                     f"otak {('umur ' + format(z_u * 60, '.0f') + ' mnt') if not zai_beku else 'beku'} · "
+                     f"server {('umur ' + format(s_u * 60, '.0f') + ' mnt') if not sas_beku else 'beku'} · "
+                     f"harga kini live Binance.</i>", ""]
+        _tampil = kejadian[:15]
+        for sim, arah, nama, nilai, h, ent, pertama, lv in _tampil:
+            if nama == "POWER MAX AMBISIUS":
+                ikon, nama_t = "\U0001F4A5", "POWER MAX AMBISIUS TERCAPAI"
+            elif nama == "JUAL AMBISIUS":
+                ikon, nama_t = "\U0001F525", "AMBISIUS TERCAPAI"
+            else:
+                ikon, nama_t = "\U0001F6D1", "STOP LOSS TERCAPAI"
+            pct = f"{(h / ent - 1) * 100:+.2f}%" if ent else ""
+            pl = f"{(h / nilai - 1) * 100:+.2f}%" if nilai else ""
+            tanda = " <i>(sudah di level saat pemantauan menyala)</i>" if pertama else ""
+            baris.append(f"{ikon} <b>{nama_t} \u2014 {html.escape(sim)} ({html.escape(str(arah))})</b>{tanda}")
+            baris.append(f"Harga kini {fmt_harga(h)} · level {fmt_harga(nilai)} ({pl} dari level)"
+                         + (f" · entry {fmt_harga(ent)} ({pct})" if ent else ""))
+            # v10.4 mandat: koin BUY yang menyentuh AMBISIUS wajib ikut menunjukkan
+            # POWER MAX AMBISIUS-nya (daging, bukan basa-basi).
+            if str(arah).upper() == "BUY" and nama == "JUAL AMBISIUS":
+                _pm = lv.get("POWER MAX AMBISIUS")
+                if _pm and abs(float(_pm) - float(nilai)) > 1e-12:
+                    _pm_pct = f"{(float(_pm) / h - 1) * 100:+.2f}%"
+                    baris.append(f"⚡ POWER MAX AMBISIUS berikutnya: <b>{fmt_harga(_pm)}</b> ({_pm_pct} dari harga kini)")
+        if len(kejadian) > 15:
+            baris.append(f"<i>…dan {len(kejadian) - 15} kejadian level lainnya detak ini (semua tercatat di state penjaga).</i>")
+        baris.append("")
+        baris.append("<i>BUY = AMBISIUS & POWER MAX AMBISIUS saja · SELL = STOP LOSS saja (buy dan sell BEDA) "
+                     "· dikirim otomatis dari denyut z.ai tanpa menunggu apa pun.</i>")
+        kirim(token, PEMILIK, "\n".join(baris))
+        dorong_penjaga_state()  # v10.4: level abadi tersinkron utk semua tubuh
+        return f"kirim {len(kejadian)} kejadian"
+    except Exception as e:
+        return f"err: {repr(e)[:90]}"
+
+
+def ath_cepat(token, paksa=False, dry=False):
+    """MANDAT 2 Nov 2026 — LAPORAN HARIAN KOIN ATH RUNTUH \u221280%..\u2212100% YANG
+    v10.8 (2 Nov, tuntutan pemilik "masih abai akan pencaruan mendalam koin
+    penurunan ath 80-100%"): setiap koin lolos kini DIBEDAH otomatis 3 lapis
+    (modul ath_bedah.py): sebab runtuh (crash vs pendarahan dari lilin harian),
+    detak tim (pencarian GitHub otomatis dari identitas paprika — lubang
+    KANONIS_REPO 12 koin yang membuat Q/IRYS lewat "tak terverifikasi" kini
+    tertambal), nadi pasar (tren volume & jarak puncak). Bedah gagal = baris
+    jujur, tidak pernah diam.
+    v10.7 (2 Nov, keluhan pemilik "pegangannya athnya masa lampau, gak
+    selaras"): penurunan diukur dari PUNCAK KEJADIAN MASA KINI — high
+    tertinggi 30 lilin harian terakhir, umur puncak wajib <= 14 hari; puncak
+    lebih tua = kejadian masa lampau, koin tidak dilaporkan. Tanggal lilin
+    puncak dicantumkan agar penurunan bisa dicocokkan satu-per-satu dengan
+    kejadian di grafik. (v10.5 lama: jendela buta 8 lilin — bisa salah
+    puncak bila kejadian berlangsung lebih dari 7 hari.)
+    v10.5 (2 Nov, WASIAT/HUKUM pemilik): daftar runtuh = penurunan yang
+    TERJADI KINI — diukur dari PUNCAK 7 HARI (8 lilin harian), bukan ATH
+    berumur sejak listing. Koin yang runtuhnya hanya kejadian masa lalu
+    (ATH 2021 dll, sekarang datar) TIDAK dilaporkan; hanya yang SEDANG
+    runtuh sekarang yang menarik bagi pemilik.
+    MASIH HIDUP, dari renderan LUAS (BUKAN cuma 100 koin pilihan), dua lapis:
+    A) CoinPaprika top-500 (ATH resmi per koin), B) seluruh PERPETUAL USDT
+    Binance — ATH dihitung dari kline bulanan (max high sejak listing) = koin
+    yang memang punya pasar derivatif. Tanda hidup (min. satu): volume 24j,
+    perputaran harga, harga masih bergerak, OI futures \u2014 koin sepi total
+    dibuang (bukan koin beneran mati). Contoh fase: magma, ain, idol pernah
+    runtuh namun masih bernafas. Kirim kapan pun denyut menyala (dedup harian
+    WIB: lokal + state lapis abadi; throttle 10 mnt). dry=True: hitung tanpa
+    kirim & tanpa menulis state (uji aman).
+    v10.3 (2 Nov, insiden 02:44 & 03:0x: lapis futures gagal senyap -> laporan
+    terkirim tanpa MAGMA/AIN/IDOL padahal contoh pemilik justru di futures):
+    semua panggilan penting memakai _get_tahan = retry 3x + rotasi IP
+    (ip_rotasi._buka) — lapis futures TIDAK BOLEH mati senyap lagi.
+    v10.4 (2 Nov, aturan pemilik): gerbang fundamental — koin tampil hanya bila
+    BUKAN meme (tag paprika), tim masih aktif (repo GitHub disunting ≤ 400 hari,
+    tak diarsipkan), OI futures ≥ $10rb, status TRADING/aktif (bukan koin yang
+    mau ditutup). Tak terverifikasi = dibuang. Daging, bukan daftar."""
+    try:
+        th = muat_json(F_THROTTLE_81) or {}
+        now = time.time()
+        if not dry and not paksa and now - float(th.get("ath_terakhir") or 0) < THROTTLE_ATH_81:
+            return "throttle"
+        if not dry:
+            th["ath_terakhir"] = now
+            simpan_json(F_THROTTLE_81, th)
+        jam = datetime.now(WIB)
+        hari_ini = jam.strftime("%Y-%m-%d")
+        if not dry:
+            st = muat_json(F_ATH_81) or {}
+            # v10.7: paksa=True = perintah pemilik -> dedup harian (lokal +
+            # lapis abadi) dilewati, kirim ulang tetap sah.
+            if st.get("tanggal") == hari_ini and not paksa:
+                return "sudah terkirim lokal"
+            try:
+                req = urllib.request.Request(REPO_RAW_81, headers={"User-Agent": "benteng-balas"})
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    if json.loads(r.read().decode("utf-8", "replace")).get("ath_tanggal") == hari_ini \
+                            and not paksa:
+                        return "sudah terkirim lapis abadi"
+            except Exception:
+                pass
+
+        def _get(url, timeout=20):
+            req = urllib.request.Request(url, headers={"User-Agent": "benteng-balas"})
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return json.loads(r.read().decode())
+
+        def _get_tahan(url, timeout=20):
+            """v10.3 MUTASI: langsung -> retry 3x (mundur 2/4/6s) -> rotasi IP.
+            Angkat pengecualian hanya bila semua jalan gagal (disebut jujur)."""
+            try:
+                return _get(url, timeout)
+            except Exception:
+                pass
+            _err_terakhir = None
+            for i in range(3):
+                time.sleep(2 + i * 2)
+                try:
+                    return _get(url, timeout)
+                except Exception as e:
+                    _err_terakhir = e
+                try:
+                    import ip_rotasi
+                    return json.loads(ip_rotasi._buka(url, timeout).decode())
+                except Exception as e:
+                    _err_terakhir = e
+            raise RuntimeError(f"get_tahan gagal total: {url[:70]} ({_err_terakhir!r:.60})")
+
+        # ---- LAPIS A: CoinPaprika top-500 (ATH resmi) ----
+        dataA = {}
+        id_paprika = {}  # v10.4: simbol -> id paprika (cek tag meme + repo GitHub)
+        try:
+            arr = _get_tahan(f"{PAPRIKA_81}/tickers?limit=500&start=0", 25)
+            for x in (arr if isinstance(arr, list) else []):
+                s = str(x.get("symbol") or "").split("-")[0].upper()
+                if s and s not in id_paprika and x.get("id"):
+                    id_paprika[s] = str(x.get("id"))
+                if not s or s in dataA:
+                    continue
+                usd = (x.get("quotes") or {}).get("USD") or {}
+                if usd:
+                    dataA[s] = {
+                        "price": usd.get("price"), "ath_price": usd.get("ath_price"),
+                        "drop": None if usd.get("percent_from_price_ath") is None
+                        else -float(usd.get("percent_from_price_ath")),
+                        "vol": float(usd.get("volume_24h") or 0),
+                        "mcap": float(usd.get("market_cap") or 0),
+                        "chg1": float(usd.get("percent_change_1h") or 0),
+                        "chg24": float(usd.get("percent_change_24h") or 0),
+                        "sumber": "paprika"}
+        except Exception:
+            pass
+        # ---- LAPIS B: seluruh PERPETUAL USDT Binance (ATH dari kline bulanan) ----
+        fut = {}
+        try:
+            ex = _get_tahan("https://fapi.binance.com/fapi/v1/exchangeInfo", 25)
+            for si in ex.get("symbols") or []:
+                if si.get("contractType") == "PERPETUAL" and si.get("quoteAsset") == "USDT" \
+                        and si.get("status") == "TRADING":
+                    fut[si["symbol"].removesuffix("USDT")] = {"last": 0.0, "qvol": 0.0, "chg24": 0.0}
+            for t in _get_tahan("https://fapi.binance.com/fapi/v1/ticker/24hr", 25) or []:
+                b = str(t.get("symbol") or "").removesuffix("USDT")
+                if b in fut:
+                    fut[b].update({"last": float(t.get("lastPrice") or 0),
+                                   "qvol": float(t.get("quoteVolume") or 0),
+                                   "chg24": float(t.get("priceChangePercent") or 0)})
+        except Exception as e:
+            print(f"ATH81: LAPIS FUTURES GAGAL MESKI SUDAH TAHAN ({repr(e)[:80]})")
+
+        # ---- v10.7 HUKUM PEMILIK 2 NOV: RUNTUH DARI KEJADIAN MASA KINI ----
+        # Penurunan diukur dari PUNCAK KEJADIAN: high tertinggi 30 lilin harian
+        # terakhir yang umurnya <= 14 hari. Bukan ATH sejak listing (masa
+        # lampau), bukan pula jendela buta pendek yang bisa salah puncak bila
+        # kejadian sedang berlangsung lebih dari 7 hari. Puncak lebih tua =
+        # kejadian sudah lewat -> koin tidak dilaporkan. Tanggal lilin puncak
+        # dicantumkan di laporan (pemilik: "penurunannya sama persis dengan
+        # kejadian masa kini").
+        def _puncak_kejadian(base):
+            """(base, puncak, umur_hari, tgl_puncak) — puncak kejadian masa
+            kini dari kline harian; (base, 0.0, None, None) bila gagal ATAU
+            puncaknya sudah masa lampau (> PUNCAK_UMUR_MAKS hari)."""
+            try:
+                kl = _get(f"https://fapi.binance.com/fapi/v1/klines?symbol={base}USDT"
+                          f"&interval=1d&limit={PUNCAK_LILIN}", 15)
+                pasang = [(float(k[2]), i, int(k[0])) for i, k in enumerate(kl)
+                          if k and len(k) > 2 and k[2]]
+                if not pasang:
+                    return base, 0.0, None, None
+                high, idx, ms = max(pasang)
+                umur = len(pasang) - 1 - idx
+                if umur > PUNCAK_UMUR_MAKS:
+                    return base, 0.0, None, None
+                tgl = datetime.fromtimestamp(ms / 1000.0, WIB).strftime("%d %b")
+                return base, high, umur, tgl
+            except Exception:
+                return base, 0.0, None, None
+
+        puncakB = {}
+        daftar_puncak = list(fut) if not dry else list(fut)[:200]
+        if daftar_puncak:
+            with ThreadPoolExecutor(max_workers=10) as ex2:
+                for base, high, umur, tgl in ex2.map(_puncak_kejadian, daftar_puncak):
+                    if high > 0:
+                        puncakB[base] = (high, umur, tgl)
+
+        kandidat = []  # (simbol, harga, puncak, drop_kini, sumber, entri)
+        # LAPIS B: futures — uji runtuh-kini langsung dari kline harian.
+        for b, ft in fut.items():
+            p = ft.get("last") or 0.0
+            peak, umur, tgl = puncakB.get(b, (0.0, None, None))
+            if p > 0 and peak > 0:
+                d = (1 - p / peak) * 100.0
+                if 80.0 <= d <= 100.0:
+                    kandidat.append((b, p, peak, d, "B", {"vol": ft["qvol"], "chg24": ft["chg24"],
+                                                          "sumber": "binance-fut", "puncak_umur": umur,
+                                                          "puncak_tgl": tgl}))
+        # LAPIS A: paprika — zona ATH historis hanya PRA-SARING; lolos akhir
+        # wajib terverifikasi runtuh-kini via kline harian Binance SPOT (koin
+        # tanpa futures; OHLCV paprika berbayar/402). Tak terverifikasi =
+        # dibuang (jujur > gembira).
+        praA = []
+        for s, e in dataA.items():
+            d = e.get("drop")
+            p, ath = float(e.get("price") or 0), float(e.get("ath_price") or 0)
+            if d is None and p and ath:
+                d = (1 - p / ath) * 100.0
+            if d is not None and 80.0 <= d <= 100.0 and p > 0 and s not in fut:
+                praA.append((s, p, ath, d, e))
+        praA.sort(key=lambda x: -float(x[4].get("vol") or 0))
+
+        def _puncak_kejadian_paprika(sym):
+            try:
+                kl = _get(f"https://api.binance.com/api/v3/klines?symbol={sym}USDT"
+                          f"&interval=1d&limit={PUNCAK_LILIN}", 15)
+                pasang = [(float(k[2]), i, int(k[0])) for i, k in enumerate(kl)
+                          if k and len(k) > 2 and k[2]]
+                if not pasang:
+                    return 0.0, None, None
+                high, idx, ms = max(pasang)
+                umur = len(pasang) - 1 - idx
+                if umur > PUNCAK_UMUR_MAKS:
+                    return 0.0, None, None
+                return high, umur, datetime.fromtimestamp(ms / 1000.0, WIB).strftime("%d %b")
+            except Exception:
+                return 0.0, None, None
+
+        if praA:
+            ujiA = praA[:40]
+            with ThreadPoolExecutor(max_workers=8) as exA:
+                hasilA = list(exA.map(lambda it: _puncak_kejadian_paprika(it[0]), ujiA))
+            for (s, p, _ath, _d, e), (peak, umur, tgl) in zip(ujiA, hasilA):
+                if peak > 0:
+                    d = (1 - p / peak) * 100.0
+                    if 80.0 <= d <= 100.0:
+                        e2 = dict(e)
+                        e2["puncak_umur"] = umur
+                        e2["puncak_tgl"] = tgl
+                        kandidat.append((s, p, peak, d, "A", e2))
+
+        umur_puncak = {c[0]: ((c[5] or {}).get("puncak_umur"), (c[5] or {}).get("puncak_tgl"))
+                       for c in kandidat}
+
+        # ---- OI untuk kandidat (maks 80) — bukti derivatif hidup; bukan gerbang ----
+        oi_map = {}
+        ks = [c[0] for c in kandidat][:80]
+
+        def _oi(sym):
+            try:
+                d = _get(f"https://fapi.binance.com/fapi/v1/openInterest?symbol={sym}USDT", 8)
+                return sym, float(d.get("openInterest") or 0)
+            except Exception:
+                return sym, 0.0
+
+        if ks and not dry:
+            with ThreadPoolExecutor(max_workers=8) as ex3:
+                for sym, oi in ex3.map(_oi, ks):
+                    if oi:
+                        oi_map[sym] = oi
+
+        hidup, mati = [], 0
+        for s, p, ath, d, sumber, e in kandidat:
+            vol = float(e.get("vol") or 0)
+            mcap = float(e.get("mcap") or 0)
+            chg1 = float(e.get("chg1") or 0)
+            chg24 = float(e.get("chg24") or 0)
+            oi = oi_map.get(s) or 0.0
+            oi_usd = oi * p if oi else 0.0
+            # GERBANG KEBANGKITAN: dolar nyata masih berpindah (volume ATAU OI)
+            if vol < 10000 and oi_usd < 10000:
+                mati += 1
+                continue
+            tanda = []
+            if vol >= 100000:
+                tanda.append(f"volume 24j ${vol / 1e6:.1f}jt masih hidup")
+            if mcap and vol and vol / mcap >= 0.005:
+                tanda.append(f"perputaran {vol / mcap * 100:.1f}%/24j")
+            if abs(chg24) >= 1.0 or abs(chg1) >= 0.5:
+                tanda.append(f"harga masih bergerak (1j {chg1:+.1f}% · 24j {chg24:+.1f}%)")
+            if oi_usd >= 10000:
+                tanda.append(f"OI futures ${oi_usd / 1e6:.2f}jt (pasar derivatif nyata)")
+            if tanda:
+                hidup.append((s, p, ath, d, tanda, vol, sumber))
+            else:
+                mati += 1
+        universe = len(dataA) + len(fut)
+        hidup.sort(key=lambda x: -x[5])
+
+        # ---- v10.4 GERBANG FUNDAMENTAL (mandat pemilik 2 Nov: daging, bukan daftar) ----
+        # Koin −80..−100% hanya lolos bila: (1) BUKAN meme (tag paprika);
+        # (2) tim masih aktif (repo GitHub ada, tak diarsipkan, disunting ≤ 400 hari);
+        # (3) OI futures nyata ≥ $10.000; (4) bukan koin yang mau ditutup
+        # (status TRADING di futures + aktif di paprika + repo tak diarsipkan).
+        # Yang tak terverifikasi DIBUANG — jujur > gembira.
+        def _gh_get(url, hdr=None, timeout=12):
+            """GitHub API; langsung -> rotasi IP bila blokir."""
+            h = hdr or {"User-Agent": "benteng-balas"}
+            try:
+                req = urllib.request.Request(url, headers=h)
+                with urllib.request.urlopen(req, timeout=timeout) as r:
+                    return json.loads(r.read().decode())
+            except Exception:
+                import ip_rotasi
+                return json.loads(ip_rotasi._buka(url, timeout).decode())
+
+        _fund_hdr = {"User-Agent": "benteng-balas", "Accept": "application/vnd.github+json"}
+        try:
+            _gt = open("/home/z/my-project/.token-rantaian").read().strip()
+            if _gt:
+                _fund_hdr["Authorization"] = f"Bearer {_gt}"
+        except Exception:
+            pass
+
+        def _fundamen(s):
+            """v10.4: verdict fundamental koin \u221280..\u2212100%. Return (lolos, catatan).
+            Verdict DEFINITIF di-cache 7 hari; hasil tak konklusif TIDAK di-cache
+            agar dicek ulang detak berikut. Meme & status = tag paprika + daftar
+            meme terkenal; tim aktif = repo resmi kurasi (KANONIS_REPO, org
+            proyek — diverifikasi hidup; pencarian by-name terbukti salah
+            sasaran: plotly/dash, prometheus/avalanche, repo panduan pribadi)."""
+            st = muat_json(F_FUNDAMEN_81) or {}
+            e = st.get(s)
+            if e and e.get("v") == 2 and time.time() - float(e.get("waktu") or 0) < 7 * 86400:
+                return bool(e.get("lolos")), list(e.get("catatan") or [])
+            s2 = re.sub(r"^(1000|10000|1000000|1M|1B)(?=[A-Z])", "", s)  # 1000PEPE -> PEPE
+            cat, lolos, _tentu = [], True, True
+            if s2 in MEME_DIKENAL:  # pengaman bila tag paprika gagal diambil
+                st[s] = {"v": 2, "waktu": time.time(), "lolos": False,
+                         "catatan": ["koin meme (daftar meme terkenal)"]}
+                simpan_json(F_FUNDAMEN_81, st)
+                return False, ["koin meme (daftar meme terkenal)"]
+            cid = id_paprika.get(s2)
+            if not cid:
+                try:
+                    sr = _get(f"{PAPRIKA_81}/search/?q={urllib.parse.quote(s2)}&c=currencies&limit=5", 12)
+                    for cu in (sr.get("currencies") or []):
+                        if str(cu.get("symbol") or "").upper() == s2 and cu.get("id"):
+                            cid = cu["id"]
+                            break
+                except Exception:
+                    pass
+            nama = s2
+            if cid:
+                try:
+                    coin = _get(f"{PAPRIKA_81}/coins/{cid}", 15)
+                    nama = str(coin.get("name") or s2).strip() or s2
+                    if coin.get("is_active") is False:
+                        st[s] = {"v": 2, "waktu": time.time(), "lolos": False,
+                                 "catatan": ["status paprika: tidak aktif (kemungkinan sudah ditutup)"]}
+                        simpan_json(F_FUNDAMEN_81, st)
+                        return False, list(st[s]["catatan"])
+                    if any("meme" in (str((t or {}).get("id", "")) + str((t or {}).get("name", ""))).lower()
+                           for t in (coin.get("tags") or [])):
+                        st[s] = {"v": 2, "waktu": time.time(), "lolos": False,
+                                 "catatan": ["koin meme (tag paprika)"]}
+                        simpan_json(F_FUNDAMEN_81, st)
+                        return False, ["koin meme (tag paprika)"]
+                    cat.append("bukan meme")
+                    try:
+                        t0 = datetime.fromisoformat(str(coin.get("started_at")).replace("Z", "+00:00"))
+                        cat.append(f"umur {max((datetime.now(timezone.utc) - t0).days, 0)} hari")
+                    except Exception:
+                        pass
+                except Exception:
+                    cat.append("data paprika gagal diambil (diperiksa via bursa)")
+                    _tentu = False
+            # tim aktif: repo RESMI kurasi (KANONIS_REPO, org proyek, terverifikasi
+            # hidup via API). Di luar peta = catatan jujur, dinilai dari OI & status.
+            repo_k = KANONIS_REPO.get(s2)
+            verdict_tim = None
+            if repo_k:
+                try:
+                    rj = _gh_get(f"https://api.github.com/repos/{repo_k}", _fund_hdr)
+                    if rj.get("archived"):
+                        verdict_tim = (False, "repo resmi diarsipkan (tim meninggalkan)")
+                    else:
+                        t1 = datetime.fromisoformat(str(rj.get("pushed_at") or "").replace("Z", "+00:00"))
+                        up = (datetime.now(timezone.utc) - t1).days
+                        if up > 400:
+                            verdict_tim = (False, f"repo resmi disunting terakhir {up} hari lalu (tim pasif)")
+                        else:
+                            verdict_tim = (True, f"tim aktif (repo resmi {repo_k} disunting {max(up, 0)} hari lalu)")
+                except Exception:
+                    verdict_tim = None
+            if verdict_tim is None:
+                if repo_k:
+                    cat.append("aktivitas tim: GitHub tak terjangkau detak ini \u2014 dicek ulang detak berikut")
+                    _tentu = False
+                else:
+                    cat.append("aktivitas tim tak terverifikasi otomatis \u2014 dinilai dari OI & status bursa")
+            else:
+                ok_t, ket_t = verdict_tim
+                cat.append(ket_t)
+                if not ok_t:
+                    lolos = False
+            if _tentu:
+                st[s] = {"v": 2, "waktu": time.time(), "lolos": lolos, "catatan": cat}
+                simpan_json(F_FUNDAMEN_81, st)
+            return lolos, cat
+
+        finalis = hidup[:30]
+        kurang_oi = [s for s, *_ in finalis if s not in oi_map]
+        if kurang_oi:
+            with ThreadPoolExecutor(max_workers=8) as ex4:
+                for sym, oi in ex4.map(_oi, kurang_oi):
+                    if oi:
+                        oi_map[sym] = oi
+        lolos, tolak_fund = [], []
+        for s, p, ath, d, tanda, vol, sumber in finalis:
+            oi_usd_f = (oi_map.get(s) or 0.0) * p
+            if oi_usd_f < 10000:
+                tolak_fund.append((s, "tanpa OI futures (tak ada aktivitas derivatif)"))
+                continue
+            ok_f, cat_f = _fundamen(s)
+            if not ok_f:
+                tolak_fund.append((s, "; ".join(cat_f)))
+                continue
+            lolos.append((s, p, ath, d, tanda, vol, sumber, oi_usd_f, cat_f))
+        if dry:
+            return (f"DRY: universe={universe} (paprika={len(dataA)} futures={len(fut)} "
+                    f"puncak_kejadian={len(puncakB)}) kandidat80_100={len(kandidat)} hidup={len(hidup)} mati={mati} "
+                    f"finalis={len(finalis)} lolos_fundamen={len(lolos)} tolak={len(tolak_fund)}")
+        L = ["\U0001F4C9 <b>LAPORAN HARIAN \u2014 KOIN RUNTUH KINI \u221280%..\u2212100%, MASIH HIDUP & FUNDAMENTAL + BEDAH MENDALAM</b> (mandat 2 Nov v10.8)",
+             f"\U0001F550 {jam.strftime('%H:%M WIB, %d %b %Y')} \u00b7 diseret dari renderan luas <b>{universe} koin</b> "
+             "(paprika top-500 + seluruh futures Binance) \u00b7 BUKAN cuma 100 pilihan \u00b7 penurunan diukur "
+             "dari <b>PUNCAK KEJADIAN MASA KINI</b> \u2014 high tertinggi 30 lilin harian terakhir yang umurnya "
+             "\u2264 14 hari, <b>tanggal puncak dicantumkan</b> agar bisa dicocokkan dengan grafik: "
+             "bukan ATH masa lampau (hukum pemilik v10.7)"]
+        if lolos:
+            L.append("")
+            L.append(f"<b>{len(lolos)} koin lolos saringan fundamental</b> (bukan meme \u00b7 tim aktif \u00b7 OI nyata \u00b7 bukan koin mau ditutup) \u2014 urut volume, maks 20:")
+            for s, p, ath, d, tanda, _, sumber, oi_usd_f, cat_f in lolos[:20]:
+                _um, _tg = umur_puncak.get(s, (None, None))
+                L.append(f"\n<b>{html.escape(s)}</b> \u2014 turun <b>{d:.1f}%</b> dari puncak kejadian masa kini"
+                         + (f" (lilin {_tg}, {int(_um)} hari lalu)" if _um is not None else "")
+                         + f" \u2014 kini {fmt_harga(p)} vs puncak {fmt_harga(ath)}"
+                         + (" · futures Binance" if sumber == "B" else ""))
+                L.append("   · daging: " + " · ".join(html.escape(t) for t in cat_f)
+                         + f" · OI futures ${oi_usd_f / 1e6:.2f}jt (derivatif nyata)")
+                L.append("   · tanda hidup: " + " · ".join(html.escape(t) for t in tanda if not t.startswith("OI futures")))
+                # v10.8 BEDAH (tuntutan pemilik 2 Nov: "masih abai akan pencaruan
+                # mendalam koin penurunan ath 80-100%") — 3 lapis gali per koin:
+                # sebab runtuh (lilin harian), detak tim (GitHub search otomatis
+                # dari identitas paprika — BUKAN peta KANONIS_REPO 12 koin),
+                # nadi pasar (tren volume/jarak puncak).
+                try:
+                    import ath_bedah
+                    for _b in ath_bedah.bedah(s, p, ath, _tg, cid=id_paprika.get(s)):
+                        L.append("   · bedah: " + _b)
+                except Exception as _e_b:
+                    L.append("   · bedah: gagal (" + html.escape(repr(_e_b)[:40]) + ") — jujur, bukan pura-pura bersih")
+        else:
+            L.append("")
+            L.append("Hari ini <b>tidak ada</b> koin zona \u221280%..\u2212100% yang lolos saringan fundamental "
+                     "\u2014 lebih baik kosong daripada menyarankan meme/bangkrut.")
+        if tolak_fund:
+            _sebab = {}
+            for _, sb in tolak_fund:
+                _k = sb.split(" (")[0].split(";")[0].strip()
+                _sebab[_k] = _sebab.get(_k, 0) + 1
+            L.append(f"\U0001F5D1 {len(tolak_fund)} finalis dibuang saringan fundamental: "
+                     + ", ".join(f"{k} \u00d7{v}" for k, v in sorted(_sebab.items(), key=lambda kv: -kv[1])[:4]) + ".")
+        if mati:
+            L.append(f"\U0001F5D1 {mati} koin sepi total (dolar tak berpindah) \u2014 dibuang, bukan koin beneran mati.")
+        L.append("")
+        L.append("<i>Hukum v10.7: penurunan diukur dari PUNCAK KEJADIAN MASA KINI \u2014 high tertinggi 30 lilin harian "
+                 "terakhir, umur puncak wajib \u2264 14 hari; puncak lebih tua = kejadian masa lampau, tidak dilaporkan. "
+                 "Tanggal lilin puncak dicantumkan agar penurunan bisa dicocokkan satu-per-satu dengan kejadian di grafik. "
+                 "Saringan fundamental: bukan meme (tag paprika) \u00b7 tim aktif (repo GitHub terverifikasi \u2014 segmen nama + kata-kunci kripto, diarsipkan/pasif = dibuang) \u00b7 "
+                 "OI futures \u2265 $10rb \u00b7 status TRADING/aktif (bukan koin yang mau ditutup). Pengumuman delist bursa tak "
+                 "bisa di-intai otomatis \u2014 koin di atas semuanya masih TRADING. "
+                 "v10.8: tiap koin kini dibedah 3 lapis \u2014 sebab runtuh, detak tim (pencarian repo otomatis), nadi pasar. "
+                 "Dikirim otomatis dari denyut otak z.ai tanpa menunggu apa pun.</i>")
+        kirim(token, PEMILIK, "\n".join(L))
+        simpan_json(F_ATH_81, {"tanggal": hari_ini, "waktu": time.time(),
+                               "oleh": "benteng-balas", "universe": universe,
+                               "hidup": len(hidup), "lolos_fundamen": len(lolos),
+                               "lolos_nama": [s for s, *_ in lolos[:20]],
+                               "tolak_fundamen": len(tolak_fund), "mati": mati})
+        dorong_penjaga_state()  # v10.4: penanda dedup abadi utk SEMUA tubuh
+        return (f"TERKIRIM (universe={universe} kandidat={len(kandidat)} hidup={len(hidup)} "
+                f"lolos={len(lolos)} tolak_fund={len(tolak_fund)} mati={mati})")
+    except Exception as e:
+        return f"err: {repr(e)[:90]}"
+
+
+def jalankan(mode, lama_longpoll):
+    token, chat_id = nyawa()
+    if not token or not chat_id:
+        print("NYAWA_HILANG")
+        return 2
+    repo_off = offset_repo()
+    lokal = (muat_json(F_STATE) or {}).get("offset") or 0
+    offset = max(repo_off, lokal)
+    try:
+        d = tg(token, "getUpdates", {"offset": offset, "timeout": lama_longpoll, "limit": 20})
+    except urllib.error.HTTPError as e:
+        if e.code == 409:
+            try:
+                badan = e.read().decode("utf-8", "replace")[:220]
+            except Exception:
+                badan = "?"
+            print(f"409-TERBUKA: {badan}", flush=True)
+            return 3
+        print("GETUPDATES_GAGAL:", repr(e))
+        return 2
+    except Exception as e:
+        print("GETUPDATES_GAGAL:", repr(e))
+        return 2
+    if not d.get("ok"):
+        print("GETUPDATES_ERR:", str(d)[:200])
+        return 2
+    ups = d.get("result", [])
+    diproses = 0
+    max_id = offset - 1 if offset else 0
+    sudah = set()
+    for u in ups:
+        uid, ok = proses_update(token, u, sudah)
+        max_id = max(max_id, uid)
+        if ok:
+            diproses += 1
+            sudah.add(uid)
+        if diproses >= LIMIT_BALAS_PER_RUN:
+            break
+    _g["balas_run"] = _g.get("balas_run", 0) + diproses
+    if ups:
+        baru = max_id + 1
+        simpan_json(F_STATE, {"offset": baru, "waktu": time.time(),
+                              "waktu_iso": datetime.now(timezone.utc).isoformat(),
+                              "mode": mode})
+        if mode == "actions":
+            _commit_offset_cepat()
+        else:
+            dorong_offset_repo(baru)
+        print(f"OFFSET -> {baru} | diproses: {diproses} | mode: {mode}")
+    else:
+        print(f"TIDAK ADA PESAN BARU (offset {offset}, mode {mode})")
+    return 0
+
+
+def tulis_ledger_abadi(t0, konflik):
+    """LEDGER ABADI: satu baris bukti kontinuitas per run Actions —
+    hidup di repo (di-commit tiap run), bukan di RAM sandbox yang terhapus."""
+    try:
+        jalur = os.path.join(ROOT, "data", "abadi_ledger")
+        os.makedirs(os.path.dirname(jalur), exist_ok=True)
+        lama = open(jalur).read().splitlines() if os.path.exists(jalur) else []
+        lama = [l for l in lama if l.strip()][-399:]
+        bucket = int(time.time() // 1800)
+        bucket_lama = int(lama[-1].split()[0]) // 1800 if lama else -1
+        if _g.get("balas_run", 0) > 0 or bucket != bucket_lama:
+            lama.append(f"{int(time.time())} {datetime.now(WIB).isoformat(timespec='seconds')} "
+                        f"run={int(time.time() - t0)}s balas={_g.get('balas_run', 0)} konflik={konflik}")
+            open(jalur, "w").write("\n".join(lama) + "\n")
+            print("LEDGER: baris ditulis")
+    except Exception as e:
+        print("LEDGER_GAGAL:", repr(e))
+
+
+# ------------------------------------------------------------ JAGA OTAK ----
+def jaga_otak_zai():
+    """Hukum pemilik 2 Nov: otak denyut WAJIB hidup di server Z.AI (otakz.ai).
+    Bila data/otak_nyala lebih tua dari 25 menit (daemon otak_jaga mati),
+    bangunkan lagi; bila web arena localhost:3000 padam, hidupkan `npm run dev`
+    — semuanya secara senyap, dipanggil tiap kunjungan mana pun."""
+    try:
+        f_nyala = "/home/z/my-project/data/otak_nyala"
+        umur = time.time() - os.path.getmtime(f_nyala) if os.path.exists(f_nyala) else 1e9
+        if umur >= 1500:
+            logf = open("/home/z/my-project/data/otak_jaga.log", "ab")
+            subprocess.Popen(
+                ["setsid", "nohup", "python3", "/home/z/my-project/scripts/otak_jaga.py"],
+                stdout=logf, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                cwd="/home/z/my-project", start_new_session=True)
+    except Exception:
+        pass
+    try:
+        urllib.request.urlopen("http://localhost:3000/api/arena", timeout=4)
+    except Exception:
+        try:
+            logf2 = open("/home/z/my-project/dev.log", "ab")
+            subprocess.Popen(
+                ["setsid", "nohup", "npm", "run", "dev"],
+                stdout=logf2, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                cwd="/home/z/my-project", start_new_session=True)
+        except Exception:
+            pass
+
+
+# ---------------- v10.5 KEBAL-KEMATIAN: kunci tunggal + nadi ----------------
+def jaga_kunci_ambil():
+    """Kunci instance TUNGGAL --jaga (pelajaran 2 Nov: dua --jaga hidup
+    bersamaan saling tabrak 409 dan pesan pemilik bisa hilang). Return True
+    bila kunci didapat; False bila --jaga lain masih hidup."""
+    jalur = "/home/z/my-project/data/jaga_kunci.pid"
+    try:
+        if os.path.exists(jalur):
+            pid_lama = int(open(jalur).read().strip() or 0)
+            if pid_lama and pid_lama != os.getpid():
+                try:
+                    os.kill(pid_lama, 0)
+                    return False  # proses lain masih hidup -> jangan dobel
+                except ProcessLookupError:
+                    pass  # kunci basi -> ambil alih
+    except (ValueError, OSError):
+        return False
+    try:
+        tmp = jalur + ".tmp"
+        open(tmp, "w").write(str(os.getpid()))
+        os.replace(tmp, jalur)
+    except OSError:
+        return False
+    return True
+
+
+def nadi_hidup():
+    try:
+        out = subprocess.run(["pgrep", "-f", "nadi_mandiri.py"],
+                             capture_output=True, text=True, timeout=8)
+        return bool((out.stdout or "").strip())
+    except Exception:
+        return False
+
+
+def nadi_pastikan():
+    """v10.5 WASIAT pemilik: makhluk hidup di SERVER, bukan menunggu chat.
+    Setiap tubuh yang menyala memastikan pengawas nadi berjalan — nadi
+    menghidupkan ulang --jaga tunggal, otak_jaga, dan denyut server."""
+    try:
+        if nadi_hidup():
+            return
+        logf = open("/home/z/my-project/data/nadi.log", "ab")
+        subprocess.Popen(["setsid", "nohup", "python3", "/home/z/my-project/scripts/nadi_mandiri.py"],
+                         stdout=logf, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                         cwd="/home/z/my-project", start_new_session=True)
+        print("NADI: dinyalakan")
+    except Exception as e:
+        print("NADI_GAGAL:", repr(e)[:80])
+
+
+def main():
+    jaga_otak_zai()
+    nadi_pastikan()
+    mode = "actions"
+    if "--jaga" in sys.argv:
+        mode = "jaga"
+    elif "--sekali" in sys.argv:
+        mode = "sekali"
+    if mode == "jaga":
+        if not jaga_kunci_ambil():
+            print("JAGA_SUDAH_HIDUP — keluar sopan (kunci tunggal, hukum v10.5)")
+            return 0
+        print(f"BOT-CHAT JAGA v8 mulai {sekarang_wib()} — long-poll {LONG_POLL['jaga']}s")
+        token, _ = nyawa()
+        if token:
+            umum_hidup(token)
+        siklus = 0
+        while True:
+            tulis_nyala(mode)
+            try:
+                jalankan(mode, LONG_POLL["jaga"])
+            except Exception as e:
+                print("LOOP_ERR:", repr(e))
+            tk81, _ = nyawa()
+            if tk81:
+                try:
+                    print("PENJAGA81:", penjaga_level_cepat(tk81))
+                    print("ATH81:", ath_cepat(tk81))
+                except Exception as e:
+                    print("PENJAGA81_ERR:", repr(e))
+            siklus += 1
+            if siklus % 15 == 0:
+                print(f"jaga hidup: siklus {siklus}")
+            time.sleep(JAGA_INTERVAL)
+    if mode == "actions":
+        t0 = time.time()
+        konflik = 0
+        while time.time() - t0 < RUN_LAMA_ACTIONS:
+            sisa = RUN_LAMA_ACTIONS - (time.time() - t0)
+            try:
+                kode = jalankan("actions", max(5, min(int(LONG_POLL["actions"]), int(sisa))))
+                if kode == 3:
+                    konflik += 1
+                    print(f"409 (#{konflik}) — lapis lain sedang melayani, tunggu 45s")
+                    if konflik >= 3:
+                        print("409 3x — tubuh lokal hidup & melayani; run ini istirahat")
+                        tulis_ledger_abadi(t0, konflik)
+                        return 0
+                    time.sleep(45)
+                    continue
+                konflik = 0
+                tk81, _ = nyawa()
+                if tk81:
+                    try:
+                        print("PENJAGA81:", penjaga_level_cepat(tk81))
+                        print("ATH81:", ath_cepat(tk81))
+                    except Exception as e:
+                        print("PENJAGA81_ERR:", repr(e))
+            except Exception as e:
+                print("LOOP_ACTIONS_ERR:", repr(e))
+                time.sleep(10)
+            time.sleep(2)
+        tulis_ledger_abadi(t0, konflik)
+        print("JENDELA AKTIF SELESAI — run berikutnya dipancing langkah Warisi hidup")
+        return 0
+    kode = jalankan(mode, LONG_POLL["actions"])
+    tk81, _ = nyawa()
+    if tk81:
+        try:
+            print("PENJAGA81:", penjaga_level_cepat(tk81))
+            print("ATH81:", ath_cepat(tk81))
+        except Exception as e:
+            print("PENJAGA81_ERR:", repr(e))
+    return kode
+
+
+if __name__ == "__main__":
+    import sys
+    raise SystemExit(main())

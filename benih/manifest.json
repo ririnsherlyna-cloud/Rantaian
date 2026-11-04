@@ -1,0 +1,56 @@
+[
+  {
+    "file": "src/lib/cyborg/waktu.ts",
+    "benih": "waktu.ts",
+    "sha256": "d9a7f00087154ef69e2b892189080570ca415c33b5e853e3e0fabb82cab865f6",
+    "byte": 3233
+  },
+  {
+    "file": "src/lib/cyborg/gerbang.ts",
+    "benih": "gerbang.ts",
+    "sha256": "874ea488439da72449a3edf8e14c83e76df5faf117fc7628aab100a3eb8d8f24",
+    "byte": 2733
+  },
+  {
+    "file": "src/lib/cyborg/kalibrasi.ts",
+    "benih": "kalibrasi.ts",
+    "sha256": "007703902f9fc173378e13a83c2dd238c82f1133a84624c486cc704804768524",
+    "byte": 4418
+  },
+  {
+    "file": "src/lib/cyborg/sapu10.ts",
+    "benih": "sapu10.ts",
+    "sha256": "b8ee0f279dc4b644d18419f9e0049a40c2661dffb2eccae35ecebe4438805a75",
+    "byte": 19014
+  },
+  {
+    "file": "src/lib/cyborg/jantung.ts",
+    "benih": "jantung.ts",
+    "sha256": "b3eba902f134ebdb8f90d17b7304e2060281ce6bf36b006e7ae7860d1e4d068f",
+    "byte": 4316
+  },
+  {
+    "file": "src/lib/cyborg/kalibrasi-ambisius.json",
+    "benih": "kalibrasi-ambisius.json",
+    "sha256": "48f20d8ebaa05851bdc7ce2f6cc8af2aa4ac7c2a31546294de0b55e111b24ec5",
+    "byte": 2396
+  },
+  {
+    "file": "src/app/api/sapu10/route.ts",
+    "benih": "route-sapu10.ts",
+    "sha256": "0f321ae99c3d64159df2e94d32a3d27f1e8294bbe77fe94a267bb38f654bd909",
+    "byte": 1753
+  },
+  {
+    "file": "src/components/arena/sapu10-panel.tsx",
+    "benih": "sapu10-panel.tsx",
+    "sha256": "fd91181e513e07ae78355d9360fe9a65c4c0d6ef253df4a63e333e34f1d2abe8",
+    "byte": 11315
+  },
+  {
+    "file": "src/instrumentation.ts",
+    "benih": "instrumentation.ts",
+    "sha256": "91b98e7f07619e6879cf22ed85ea4d67cd5bbf3fa0bd296994aac9ea91976c15",
+    "byte": 756
+  }
+]

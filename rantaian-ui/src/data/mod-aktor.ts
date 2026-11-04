@@ -1,0 +1,208 @@
+import type { ModuleData, Org, Person } from '@/lib/types'
+
+export const ORGS: Org[] = [
+  {
+    name: 'Google DeepMind',
+    hq: 'London, Inggris (+ Mountain View)',
+    people: 'Demis Hassabis (CEO), Shane Legg (co-founder, chief AGI scientist), David Silver, Francois Chollet (sampai 2024, lanjut ARC Prize)',
+    focus: 'Levels of AGI (framework resmi), AlphaProof/AlphaGeometry (neuro-symbolic), Gemini (LLM frontier), world models, tim AGI Safety & Alignment khusus',
+    stance: 'Definisi operasional + jalur komposit; paling produktif mempublikasi kerangka pengukuran',
+    scale: 'Risert AI terbesar dunia; integrasi penuh ke Google Compute infra',
+    color: '#34d399',
+  },
+  {
+    name: 'OpenAI',
+    hq: 'San Francisco, AS',
+    people: 'Sam Altman (CEO), Jakub Pachocki (chief scientist), Noam Brown (reasoning), Mark Chen; misi tertulis: AGI yang bermanfaat bagi seluruh umat manusia',
+    focus: 'Jalur LLM-as-core: GPT-4/5.x, o-series (test-time compute RL), agen alat; framework preparedness untuk risiko kapabilitas',
+    stance: 'Scaling + RL reasoning adalah jalur AGI; benchmark internal bertingkat menuju "AGI yang aman"',
+    scale: 'Komputasi pelatihan terbesar di industri (Stargate & mitra Azure)',
+    color: '#f59e0b',
+  },
+  {
+    name: 'Anthropic',
+    hq: 'San Francisco, AS',
+    people: 'Dario Amodei (CEO, mantan VP Research OpenAI), Jared Kaplan (scaling laws), Paul Christiano (alumni alignment; era terdahulu), tim Alignment Science',
+    focus: 'Claude (LLM frontier), Constitutional AI & interpretability, riset alignment teknis terstruktur (jaringan riset, RSP)',
+    stance: 'AGI mungkin 2026-2030; risiko katasrofik serius; alignment harus mendahului kapabilitas',
+    scale: 'Frontier lab dengan komitmen keselamatan paling terdokumentasi',
+    color: '#f4a261',
+  },
+  {
+    name: 'Meta AI (FAIR) → komunitas JEPA',
+    hq: 'New York/Menlo Park, AS',
+    people: 'Yann LeCun (keluar akhir 2025 untuk startup world-model), tim V-JEPA/FAIR, Joelle Pineau (mantan VP research)',
+    focus: 'V-JEPA 1/2, world model video, Llama (open weights), energy-based models; roadmap Advanced Machine Intelligence',
+    stance: 'LLM autoregresif bukan jalur AGI; world model prediktif non-generatif adalah jalurnya',
+    scale: 'Risert terbuka terbesar (open weights); LeCun membawa jalur JEPA ke perusahaan baru bermodal besar',
+    color: '#60a5fa',
+  },
+  {
+    name: 'OpenCog / SingularityNET (TrueAGI)',
+    hq: 'Amsterdam + komunitas global',
+    people: 'Ben Goertzel (CEO), David Hanson, tim Hyperon MeTTa/AtomSpace',
+    focus: 'OpenCog Hyperon: MeTTa, Distributed AtomSpace, PLN, ECAN — arsitektur hybrid penuh untuk AGI; jaringan AI terdesentralisasi',
+    stance: 'Jalur hybrid eksplisit; roadmap human-level AGI bila stack produksi tercapai — paling transparan soal arsitektur, paling agresif soal timeline',
+    scale: 'Komunitas riset open-source terlama di AGI (sejak 2008)',
+    color: '#a78bfa',
+  },
+  {
+    name: 'DeepSeek (High-Flyer)',
+    hq: 'Hangzhou, Tiongkok',
+    people: 'Liang Wenfeng (pendiri), tim riset R1',
+    focus: 'DeepSeek-R1 (RL murni → reasoning), V3 (MoE efisien); publikasi terbuka model + metode',
+    stance: 'Bukti bahwa reasoning bisa diinduksi RL tanpa distilasi manusia — menyebarluaskan jalur o-series',
+    scale: 'Frontier lab yang mengguncang asumsi biaya (efficiency frontier)',
+    color: '#38bdf8',
+  },
+  {
+    name: 'ARC Prize Foundation',
+    hq: 'New York + komunitas global',
+    people: 'Francois Chollet (pembuat ARC), Mike Knoop',
+    focus: 'ARC-AGI-1/2/3, kompetisi tahunan open-source, laporan teknis tahunan tentang efisiensi penalaran novel',
+    stance: 'Pengukuran jujur: fluid intelligence pada tugas novel adalah ukuran AGI yang tidak bisa di-recall',
+    scale: 'Benchmark standar de facto untuk generalisasi novel',
+    color: '#fb7185',
+  },
+  {
+    name: 'Epoch AI & CAIS/Scale',
+    hq: 'AS/Eropa',
+    people: 'Tim Epoch (analisis tren compute), Dan Hendrycks (HLE, CAIS)',
+    focus: 'FrontierMath (Epoch), Humanity\'s Last Exam (HLE), pelacakan tren compute & timeline',
+    stance: 'Pengukuran independen lintas lab; menyediakan sinyal kemajuan yang tidak dikendalikan vendor',
+    scale: 'Rujukan kebijakan dan jurnalisme teknologi',
+    color: '#fbbf24',
+  },
+]
+
+export const PEOPLE: Person[] = [
+  {
+    name: 'Yann LeCun',
+    role: 'Turing Award 2018; arsitek jalur world-model',
+    org: 'eks-Meta; kini startup world-model (2025/2026)',
+    thesis: 'LLM autoregresif adalah jalan buntu menuju AGI; kecerdasan butuh world model prediktif di ruang abstrak (JEPA) + siklus agen penuh.',
+    notable: 'H-JEPA blueprint (2022); V-JEPA 2 (2025); keluar dari Meta dengan pendanaan startup yang dilaporkan ~USD 1 miliar',
+  },
+  {
+    name: 'Francois Chollet',
+    role: 'Pencipta Keras & ARC; teoretikus pengukuran',
+    org: 'ARC Prize Foundation (meninggalkan Google 2024)',
+    thesis: 'Kecerdasan = efisiensi akuisisi skill (skill-B); benchmark harus memaksa generalisasi novel, bukan recall.',
+    notable: 'ARC (2019) → ARC-AGI-2 (2025); kerangka yang menahan klaim AGI vendor tetap jujur',
+  },
+  {
+    name: 'Shane Legg',
+    role: 'Co-founder DeepMind; penulis definisi universal intelligence',
+    org: 'Google DeepMind',
+    thesis: 'Kecerdasan didefinisikan formal: performa rata-rata lintas lingkungan; AGI = mencapai level manusia di mayoritas lingkungan.',
+    notable: 'Legg & Hutter (2007); konsisten memprediksi 50% human-level AI sekitar 2028',
+  },
+  {
+    name: 'Marcus Hutter',
+    role: 'Peneliti AIXI; teori universal AI',
+    org: 'ANU / DeepMind alumni',
+    thesis: 'AIXI: agen optimal teoretis dari induksi Solomonoff + keputusan sekuensial; batas atas matematika untuk AGI.',
+    notable: 'Universal Artificial Intelligence (2005); kompetisi Hutter Prize untuk kompresi = kecerdasan',
+  },
+  {
+    name: 'Ben Goertzel',
+    role: 'Arsitek OpenCog Hyperon; veteran AGI',
+    org: 'SingularityNET / TrueAGI / OpenCog',
+    thesis: 'AGI butuh hybrid penuh: neural + symbolic + evolutionary dalam satu metagraph yang memprogram ulang dirinya.',
+    notable: 'OpenCog (2008-), Hyperon (2023-); mendefinisikan lapangan AGI via jurnal & konferensi AGI',
+  },
+  {
+    name: 'Demis Hassabis',
+    role: 'CEO DeepMind; Nobel Kimia 2024',
+    org: 'Google DeepMind',
+    thesis: 'AGI via jalur games → generality: sistem yang belajar plannning dari pengalaman (AlphaGo lineage) + LLM (Gemini).',
+    notable: 'AlphaGo/AlphaZero/AlphaFold; ko-penulis Levels of AGI; penyebutan timeline AGI "5-10 tahun" (2024-2026)',
+  },
+  {
+    name: 'Dario Amodei',
+    role: 'CEO Anthropic; teoretis scaling',
+    org: 'Anthropic',
+    thesis: 'Scaling laws menentukan dekade ini; AGI ("powerful AI") bisa 2026-2030; keselamatan harus terstruktur (RSP, interpretability).',
+    notable: 'Machines of Loving Grace (2024); Constitutional AI; kerangka kebijakan responsible scaling',
+  },
+  {
+    name: 'Gary Marcus',
+    role: 'Kritikus utama jalur LLM-murni',
+    org: 'NYU (emeritus); penulis independen',
+    thesis: 'LLM robustness-nya terbatas; tanpa symbolic reasoning hybrid, AGI tidak akan tercapai via scaling saja.',
+    notable: 'The Next Decade in AI (2020); Rebooting AI; komentar kontra-Sparks of AGI',
+  },
+  {
+    name: 'Rich Sutton',
+    role: 'Bapak RL; penulis The Bitter Lesson',
+    org: 'University of Alberta / Amii',
+    thesis: 'Compute + metode umum belajar mengalahkan pengetahuan hand-crafted dalam jangka panjang.',
+    notable: 'The Bitter Lesson (2019); Sutton & Barto (RL textbook, Turing Award 2024)',
+  },
+  {
+    name: 'Noam Brown',
+    role: 'Ilmuwan reasoning; test-time compute',
+    org: 'OpenAI (eks-DeepMind/Meta)',
+    thesis: 'Penskalaan di waktu inferensi (search + deliberasi) adalah dimensi kemajuan independen dari parameter.',
+    notable: 'Libratus/Pluribus (poker); o-series reasoning; klaim "bulan tambahan berpikir" memberi lompatan berikutnya',
+  },
+]
+
+export const modAktor: ModuleData = {
+  id: 'aktor',
+  label: 'Aktor Global',
+  short: 'Siapa & di mana: lembaga, tokoh, klaim, dan sumber daya yang menggerakkan lapangan',
+  tagline: 'Peta aktor global — siapa berjuang di jalur mana, dengan sumber daya apa, dan klaim yang bisa ditagih',
+  color: '#38bdf8',
+  sections: [
+    {
+      id: 'aktor-lembaga',
+      title: 'Lembaga: Siapa Membangun, Di Mana, dengan Jalur Apa',
+      kicker: 'ORGANISASI',
+      blocks: [
+        { type: 'paragraph', text: 'AKTOR_ORGS_COMPONENT' },
+        {
+          type: 'paragraph',
+          text: 'Membaca peta lembaga ini dengan kacamata tim kita: setiap lembaga memiliki kombinasi jalur-arsitektur dan sumber daya yang berbeda, dan tidak ada satu pun yang memegang seluruh fragmen solusi. DeepMind paling kuat di bukti hibrida (AlphaProof lineage) dan kerangka pengukuran; OpenAI paling kuat di infrastruktur RL reasoning dan penerapan; Anthropic di alignment terstruktur; komunitas JEPA (kini dengan startup LeCun) di world model; OpenCog di arsitektur hybrid terbuka; DeepSeek di efisiensi; ARC Foundation dan Epoch/CAIS di pengukuran independen. Strategi monitoring tim: pantai-paper dari tujuh aktor ini tiap kuartal, karena setiap aktor menguasai satu komponen blueprint kita.',
+        },
+      ],
+    },
+    {
+      id: 'aktor-tokoh',
+      title: 'Tokoh Kunci: Tesis yang Bisa Ditagih',
+      kicker: 'INDIVIDU',
+      blocks: [
+        { type: 'paragraph', text: 'AKTOR_PEOPLE_COMPONENT' },
+        {
+          type: 'paragraph',
+          text: 'Perhatikan struktur perdebatan antar tokoh, karena ia memetakan ruang keputusan desain kita. LeCun vs kubu scaling adalah perdebatan sarana prediksi (representasi abstrak vs token autoregresif); Chollet vs frontier labs adalah perdebatan pengukuran (skill-B vs benchmark recall); Marcus vs Sutton adalah perdebatan pengetahuan (struktur hand-crafted vs compute murni); Goertzel berdiri sendiri pada klaim integrasi penuh. Tesis masing-masing dapat ditagih melalui benchmark spesifik — dan itulah cara tim kita menyikapinya: bukan dengan memilih seseorang, melainkan dengan menguji klaimnya pada prototipe.',
+        },
+      ],
+    },
+    {
+      id: 'aktor-timeline-prediksi',
+      title: 'Prediksi Timeline: Kompilasi Sinyal',
+      kicker: 'KAPAN?',
+      blocks: [
+        {
+          type: 'table',
+          headers: ['Sumber prediksi', 'Estimasi', 'Basis argumen', 'Penyangkal utama'],
+          rows: [
+            ['Shane Legg (DeepMind)', '50% human-level AI ~2028', 'Konsistensi prediksi pribadi sejak 2009 + tren kemajuan', 'Generalitas penalaran novel belum terpecahkan'],
+            ['L. Aschenbrenner (2024)', 'AGI ~2027', 'Ekstrapolasi OOM compute + RL reasoning', 'Hukum data, biaya energi, verifikasi domain terbuka'],
+            ['Dario Amodei (Anthropic)', '"Powerful AI" 2026-2030', 'Scaling + RL; RSP sebagai penyangga risiko', 'Interpretability tertinggal; evaluasi dunia nyata'],
+            ['Demis Hassabis (DeepMind)', 'AGI 5-10 tahun dari 2024', 'Komposit Gemini + Alpha lineage', 'Bukti transfer lintas domain masih parsial'],
+            ['Yann LeCun', 'Setelah world model matang', 'Argumen arsitektural; menolak timeline LLM', 'JEPA belum terbukti di penalaran diskrit'],
+            ['Komunitas ARC/Chollet', 'Belum ada sinyal AGI', 'ARC-AGI-2 & 3 sebagai saringan novel-task', '— (benchmark mereka sendiri yang menjadi arloji)'],
+          ],
+        },
+        {
+          type: 'callout',
+          tone: 'violet',
+          title: 'Sikap tim terhadap prediksi',
+          text: 'Prediksi timeline bukan data desain — ia data risiko. Rencana kerja kita tidak bergantung pada AGI datang 2027 atau 2037: komponen blueprint (world model, memori, verifier, RL reasoning) adalah pekerjaan riset yang bernilai pada setiap skenario. Yang kami pantau dari tabel ini adalah sinyal geser (benchmark baru yang jebol, verifier domain baru, bukti konsolidasi memori) — bukan angkanya.',
+        },
+      ],
+    },
+  ],
+}

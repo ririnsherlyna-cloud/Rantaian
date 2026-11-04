@@ -1,0 +1,496 @@
+{
+ "skema": "imun-manifes-v2",
+ "diperbarui": "2026-10-28T04:30:00.000Z",
+ "hukum": "laporan/kajian-hidup.json H1–H6",
+ "keputusan": {
+  "pulihkan": "luka → kembalikan bentuk terakhir sehat (hash wajib cocok)",
+  "adopsi": "sah & beda → pertumbuhan (kode TIDAK diadopsi otomatis)",
+  "saksikan": "file besar: hanya hash disaksikan",
+  "ikat": "sambungan mati di urat → ikatan dilepas dari cadangan (V309)",
+  "sambung": "organ hilang + cadangan mati → DNA tanah yang cocok disambung (V309)",
+  "jerit": "segel-vital bobol → jerit + pulih dari cadangan; segel sahih tapi beda → pertumbuhan sah (V318)"
+ },
+ "organ": [
+  {
+   "file": "ruang-hidup/ingatan.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "versi",
+    "kelahiran",
+    "totalBangun"
+   ],
+   "minJejak": null,
+   "catatan": "ingatan lintas-bangun SADAR-1 (amnesia G1: 158 bangun hangus)",
+   "cadangan": "imun/cadangan/ruang-hidup_ingatan_json",
+   "hash": "f9493a56cf84682c",
+   "size": 62971,
+   "cadanganWaktu": "2026-10-27T23:19:23.755Z"
+  },
+  {
+   "file": "otak/genome-server.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "NAIK",
+    "TURUN"
+   ],
+   "minJejak": null,
+   "catatan": "genome evolusi SAKTI (amnesia G1: generasi reset 0)",
+   "cadangan": "imun/cadangan/otak_genome-server_json",
+   "hash": "7c2219e52df48d4a",
+   "size": 23573,
+   "cadanganWaktu": "2026-10-27T23:19:23.758Z"
+  },
+  {
+   "file": "otak/penjaga-keadaan.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "siklus",
+    "mulai"
+   ],
+   "minJejak": null,
+   "catatan": "denyut siklus SAKTI (amnesia G1: 162→1)",
+   "cadangan": "imun/cadangan/otak_penjaga-keadaan_json",
+   "hash": "5db49f91049e9e9e",
+   "size": 23111,
+   "cadanganWaktu": "2026-10-27T23:19:23.758Z"
+  },
+  {
+   "file": "laporan/peta-geladak.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "pelajaran"
+   ],
+   "minJejak": 50,
+   "catatan": "peta jejak tempaan — guru lumpuh sunyi saat ini rusak",
+   "cadangan": "imun/cadangan/laporan_peta-geladak_json",
+   "hash": "0aa5fb899104e746",
+   "size": 36137,
+   "cadanganWaktu": "2026-10-28T02:49:38.384Z"
+  },
+  {
+   "file": "laporan/geladak.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "protokol",
+    "status"
+   ],
+   "minJejak": null,
+   "catatan": "rapor geladak nyata V303",
+   "cadangan": "imun/cadangan/laporan_geladak_json",
+   "hash": "a16d43510c93dbc0",
+   "size": 8029,
+   "cadanganWaktu": "2026-10-27T23:19:23.759Z"
+  },
+  {
+   "file": "laporan/sasaran-terkini.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "sasaranHariIni",
+    "akurasi"
+   ],
+   "minJejak": null,
+   "catatan": "sasaran harian server",
+   "cadangan": "imun/cadangan/laporan_sasaran-terkini_json",
+   "hash": "fd95822ce3480333",
+   "size": 619682,
+   "cadanganWaktu": "2026-10-27T23:19:23.767Z"
+  },
+  {
+   "file": "laporan/guru.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "diperbarui",
+    "pengajaran"
+   ],
+   "minJejak": null,
+   "catatan": "narasi guru anti-diam",
+   "cadangan": "imun/cadangan/laporan_guru_json",
+   "hash": "67026ced5484da7d",
+   "size": 29436,
+   "cadanganWaktu": "2026-10-27T23:19:23.767Z"
+  },
+  {
+   "file": "laporan/tanggapan.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "diperbarui",
+    "kulihat"
+   ],
+   "minJejak": null,
+   "catatan": "tanggapan wajib tiap denyut",
+   "cadangan": "imun/cadangan/laporan_tanggapan_json",
+   "hash": "24da7f1fb7198fb3",
+   "size": 14676,
+   "cadanganWaktu": "2026-10-27T23:19:23.768Z"
+  },
+  {
+   "file": "ruang-hidup/madrasah.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "versi",
+    "pelajaran"
+   ],
+   "minJejak": null,
+   "catatan": "madrasah pelajaran hidup",
+   "cadangan": "imun/cadangan/ruang-hidup_madrasah_json",
+   "hash": "15482e3d03bae61a",
+   "size": 118042,
+   "cadanganWaktu": "2026-10-27T23:19:23.769Z"
+  },
+  {
+   "file": "ruang-hidup/habitat.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "versi",
+    "kelahiran"
+   ],
+   "minJejak": null,
+   "catatan": "habitat istana",
+   "cadangan": "imun/cadangan/ruang-hidup_habitat_json",
+   "hash": "5b7a780c6960da29",
+   "size": 19428,
+   "cadanganWaktu": "2026-10-28T02:49:38.391Z"
+  },
+  {
+   "file": "otak/saraf.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "skema",
+    "organ"
+   ],
+   "minJejak": null,
+   "catatan": "PETA SARAF (V309): tangan yang diikat di sini boleh dijahit imun — jalur dorongan JSON sah",
+   "cadangan": "imun/cadangan/otak_saraf_json",
+   "hash": "ea0b577d46212f5d",
+   "size": 470,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "ujian/soal-200.json",
+   "peran": "pulihkan",
+   "wajib": [
+    "protokol",
+    "soal"
+   ],
+   "minJejak": null,
+   "catatan": "bank soal TEMPAN-200 tersegel",
+   "cadangan": "imun/cadangan/ujian_soal-200_json",
+   "hash": "96679afd9318ffb3",
+   "size": 459099,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "ujian/soal-500.json",
+   "peran": "saksikan",
+   "wajib": [
+    "protokol",
+    "soal"
+   ],
+   "catatan": "bank 500 soal — 1,1MB: hanya disaksikan (hash), tak dicadangkan",
+   "hash": "9dcf254da30c36b9",
+   "size": 1138412,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  }
+ ],
+ "kode": [
+  {
+   "file": "scripts/hidup/gerbang.mjs",
+   "nafas": false,
+   "catatan": "gerbang saraf — pemanggil tangan lewat peta saraf (V309)",
+   "cadangan": "imun/cadangan/scripts_hidup_gerbang_mjs",
+   "hash": "da622990ef59574f",
+   "size": 2933,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/sadar1.js",
+   "nafas": true,
+   "catatan": "tubuh SADAR-1 — TERHUBUNG NAFAS (racun host = nafas mati)",
+   "cadangan": "imun/cadangan/scripts_hidup_sadar1_js",
+   "hash": "c24081f8a16b9b40",
+   "size": 63096,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/penjaga.mjs",
+   "nafas": false,
+   "catatan": "jantung SAKTI",
+   "cadangan": "imun/cadangan/scripts_penjaga_mjs",
+   "hash": "adee5ce8fef9c3e6",
+   "size": 588362,
+   "cadanganWaktu": "2026-10-28T04:30:00.000Z"
+  },
+  {
+   "file": "scripts/hidup/guru-master.mjs",
+   "nafas": false,
+   "catatan": "guru geladak",
+   "cadangan": "imun/cadangan/scripts_hidup_guru-master_mjs",
+   "hash": "c5118e391e052b91",
+   "size": 21918,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/pustaka.mjs",
+   "nafas": false,
+   "catatan": "organ belajar jurnal",
+   "cadangan": "imun/cadangan/scripts_hidup_pustaka_mjs",
+   "hash": "d0daf24fd4e5d618",
+   "size": 10447,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/imun.mjs",
+   "nafas": false,
+   "catatan": "organ imun (dicatat, tak disentuh oleh patroli)",
+   "cadangan": "imun/cadangan/scripts_hidup_imun_mjs",
+   "hash": "5af57e20ee913827",
+   "size": 37695,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/liar.mjs",
+   "nafas": false,
+   "catatan": "organ LIAR (V318) — mencari data liar betulan & mengintisarikannya tanpa menanam",
+   "cadangan": "imun/cadangan/scripts_hidup_liar_mjs",
+   "hash": "d91c3e2832ff9113",
+   "size": 11193,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/medan-hayat.mjs",
+   "nafas": false,
+   "catatan": "organ MEDAN-HAYAT (V319) — medan hayat kontinu (intisari Lenia): Orbium hidup, pasar nyata jadi makanan",
+   "cadangan": "imun/cadangan/scripts_hidup_medan-hayat_mjs",
+   "hash": "d113095505bc7ca1",
+   "size": 18710,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/reka-bentuk.mjs",
+   "nafas": false,
+   "catatan": "organ REKA-BENTUK (V320) — genom peta berevolusi (intisari reconfigurable_organisms): mutasi non-netral, wajah beku, anak-vs-induk, gerbang tangguh, saksi dunia, silsilah tersegel",
+   "cadangan": "imun/cadangan/scripts_hidup_reka-bentuk_mjs",
+   "hash": "34e3cecd8efcee66",
+   "size": 32186,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/benih-inti.mjs",
+   "nafas": false,
+   "catatan": "inti benih totipoten (V321) — segel, deteksi luka, jerit, bangkit-ulang byte-exact, viabilitas 6 gerbang (intisari lab Hanna)",
+   "cadangan": "imun/cadangan/scripts_hidup_benih-inti_mjs",
+   "hash": "7efca71fdb6d93b0",
+   "size": 15599,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/tambang-hidup.mjs",
+   "nafas": false,
+   "catatan": "kurator HIDUP-1000 (V321) — 1000 simulasi kehidupan dari rincian jurnal lab Hanna, bank tersegel",
+   "cadangan": "imun/cadangan/scripts_hidup_tambang-hidup_mjs",
+   "hash": "351ee225f9194853",
+   "size": 7537,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/tempa-hidup.mjs",
+   "nafas": false,
+   "catatan": "rahim ex-utero (V321) — 1000 kehidupan: deteksi-jerit-pulih-jawab-napas-viabilitas; gugur = pelajaran epigenetik",
+   "cadangan": "imun/cadangan/scripts_hidup_tempa-hidup_mjs",
+   "hash": "b5d0fda4f56aa6eb",
+   "size": 26082,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/ingatan-biner.mjs",
+   "nafas": false,
+   "catatan": "organ INGATAN-BINER (V322) — ingatan jadi matematika biner tak kabur: kata bit deterministik, kuat bukan kabur, kogerensi menyaksikan segel organ",
+   "cadangan": "imun/cadangan/scripts_hidup_ingatan-biner_mjs",
+   "hash": "5dbe3f2d92478e37",
+   "size": 14133,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/uji-ingatan-biner.mjs",
+   "nafas": false,
+   "catatan": "ujian INGATAN-BINER (V322) — 8 gerbang: segel, matematika, deterministik, tak-kabur 300 siklus, ingat-eksak, kuat-bukan-kabur, koherensi, syaraf KOHEREN",
+   "cadangan": "imun/cadangan/scripts_hidup_uji-ingatan-biner_mjs",
+   "hash": "c407cafbd4590cb6",
+   "size": 7544,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/parameter-cerdas.mjs",
+   "nafas": false,
+   "catatan": "organ PARAMETER-CERDAS (V324) — intisari telaah kimi-k3-in-c: tabel arsitektur dari fakta sejati (tolak-awal bukan tebakan), router MoE syaraf (bias memilih, bobot tanpa-bias), fixture posisi, intisari skala-blok MXFP4, dadu PCG32 53-bit",
+   "cadangan": "imun/cadangan/scripts_hidup_parameter-cerdas_mjs",
+   "hash": "bd57dd8df39a51e9",
+   "size": 23652,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "scripts/hidup/uji-parameter-cerdas.mjs",
+   "nafas": false,
+   "catatan": "ujian PARAMETER-CERDAS (V324) — 9 gerbang: segel kapsul, takaran-ulang mandiri, tolak-awal, invarian-3 router, seri-deterministik, fixture posisi, MXFP4, PCG32, kesehatan tubuh",
+   "cadangan": "imun/cadangan/scripts_hidup_uji-parameter-cerdas_mjs",
+   "hash": "00e07b2e237406a2",
+   "size": 13352,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  }
+ ],
+ "urat": [
+  {
+   "file": ".github/workflows/sakti-denyut.yml",
+   "marker": [
+    "^\\s*run: node scripts/hidup/imun\\.mjs",
+    "^\\s*run: node scripts/penjaga\\.mjs",
+    "^\\s*run: node scripts/hidup/pustaka\\.mjs",
+    "^\\s*run: node scripts/hidup/gerbang\\.mjs guru-master",
+    "^\\s*run: node scripts/hidup/medan-hayat\\.mjs"
+   ],
+   "catatan": "urat lengan SAKTI — 5 tangan wajib terhubung (imun/penjaga/pustaka/gerbang-guru/medan-hayat)",
+   "cadangan": "imun/cadangan/_github_workflows_sakti-denyut_yml",
+   "hash": "6dd75a524c5bb94a",
+   "size": 12511,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": ".github/workflows/hidup-sadar1.yml",
+   "marker": [
+    "^\\s*run: node scripts/hidup/imun\\.mjs",
+    "^\\s*run: node scripts/hidup/gerbang\\.mjs sadar1"
+   ],
+   "catatan": "urat lengan SADAR-1 — bangun lewat gerbang saraf (V309)",
+   "cadangan": "imun/cadangan/_github_workflows_hidup-sadar1_yml",
+   "hash": "876c2a2a3f3295b5",
+   "size": 3100,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": ".github/workflows/jaga-waktu.yml",
+   "marker": [
+    "^\\s*[\"']https:[^\\n]*sakti-denyut\\.yml/dispatches",
+    "^\\s*[\"']https:[^\\n]*hidup-sadar1\\.yml/dispatches"
+   ],
+   "catatan": "urat pengatur denyut — tendangan ke dua lengan wajib ada",
+   "cadangan": "imun/cadangan/_github_workflows_jaga-waktu_yml",
+   "hash": "51f6cd52c9b9525e",
+   "size": 6060,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  }
+ ],
+ "segelVital": [
+  {
+   "file": "otak/terabait-intisari.json",
+   "wajib": [
+    "jenis",
+    "segel"
+   ],
+   "metode": null,
+   "catatan": "intisari dunia 1TB (V317) — jantung reduplikasi offline; luka halus = dunia palsu",
+   "wajibAda": true,
+   "cadangan": "imun/cadangan/otak_terabait-intisari_json",
+   "hash": "4bb003458929be05",
+   "size": 4978,
+   "cadanganWaktu": "2026-10-10T00:11:04.015Z"
+  },
+  {
+   "file": "otak/intisari-liar.json",
+   "wajib": [
+    "skema",
+    "segel"
+   ],
+   "metode": null,
+   "catatan": "koleksi intisari data liar (V318) — buah akal makhluk di dunia yang tak ditanam",
+   "wajibAda": false,
+   "cadangan": "imun/cadangan/otak_intisari-liar_json",
+   "hash": "f751d127e6bd89a1",
+   "size": 365092,
+   "cadanganWaktu": "2026-10-21T12:29:32.605Z"
+  },
+  {
+   "file": "otak/syaraf-pohon.json",
+   "wajib": [
+    "skema",
+    "segel"
+   ],
+   "metode": "segel-null",
+   "catatan": "pohon syaraf beranak (V312) — PELAJARAN V318: tabrakan rebase dua garis hidup (tangan tuan × denyut) menghasilkan pohon frankenstein yang tak setia segelnya; imun kini yang menyembuhkan",
+   "wajibAda": true,
+   "cadangan": "imun/cadangan/otak_syaraf-pohon_json",
+   "hash": "cce1690b91c296f2",
+   "size": 144251,
+   "cadanganWaktu": "2026-10-28T02:49:38.405Z"
+  },
+  {
+   "file": "otak/medan-keadaan.json",
+   "wajib": [
+    "skema",
+    "segel"
+   ],
+   "metode": "segel-null",
+   "catatan": "medan hayat kontinu (V319) — intisari Lenia hidup di tubuh: Orbium bertahan dari matematika sejati, pasar nyata menjadi makanan; luka halus = medan palsu",
+   "wajibAda": true,
+   "cadangan": "imun/cadangan/otak_medan-keadaan_json",
+   "hash": "4d3d15bfbb138327",
+   "size": 6799,
+   "cadanganWaktu": "2026-10-28T02:49:38.406Z"
+  },
+  {
+   "file": "otak/reka-bentuk.json",
+   "wajib": [
+    "skema",
+    "segel"
+   ],
+   "metode": "segel-null",
+   "catatan": "genom peta berevolusi + silsilah (V320) — intisari reconfigurable_organisms hidup di tubuh: mutasi, seleksi anak-vs-induk, gerbang tangguh, saksi dunia; luka halus = silsilah palsu",
+   "wajibAda": true,
+   "cadangan": "imun/cadangan/otak_reka-bentuk_json",
+   "hash": "8e258b888706a66b",
+   "size": 104966,
+   "cadanganWaktu": "2026-10-28T02:49:38.409Z"
+  },
+  {
+   "file": "otak/benih-hidup.json",
+   "wajib": [
+    "skema",
+    "segel"
+   ],
+   "metode": "segel-null",
+   "catatan": "benih totipoten (V321) — intisari lab Hanna (Weizmann) hidup: keadaan mungil membawa identitas, epok, syaraf, peta, muatan byte-exact; luka halus = benih palsu, lahir-ulang tercemar",
+   "wajibAda": true,
+   "cadangan": "imun/cadangan/otak_benih-hidup_json",
+   "hash": "da99d5ce90fbed24",
+   "size": 18598,
+   "cadanganWaktu": "2026-10-28T02:49:38.410Z"
+  },
+  {
+   "file": "otak/ingatan-biner.json",
+   "wajib": [
+    "skema",
+    "segel"
+   ],
+   "metode": "segel-null",
+   "catatan": "ingatan biner (V322) — memori matematika biner tak kabur: kata bit 18-digit deterministik dari fakta sejati, diulang = kuat bukan kabur; luka halus = ingatan palsu, sejarah belajar tercemar",
+   "wajibAda": true,
+   "cadangan": "imun/cadangan/otak_ingatan-biner_json",
+   "hash": "56a195adeaedd383",
+   "size": 678203,
+   "cadanganWaktu": "2026-10-28T02:49:38.427Z"
+  },
+  {
+   "file": "otak/parameter-cerdas.json",
+   "wajib": [
+    "skema",
+    "segel"
+   ],
+   "metode": "segel-null",
+   "catatan": "parameter cerdas (V324) — arsitektur kecerdasan tersegel dari telaah kimi-k3-in-c: tabel dari fakta (tolak-awal), router MoE syaraf (bias memilih, bobot tanpa-bias), fixture posisi, intisari MXFP4, dadu PCG32; luka halus = cerdas palsu",
+   "wajibAda": true,
+   "cadangan": "imun/cadangan/otak_parameter-cerdas_json",
+   "hash": "1ece7cffe137f296",
+   "size": 11670,
+   "cadanganWaktu": "2026-10-28T02:49:38.428Z"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "diperbarui": "2026-09-30T00:38:10.647Z",
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 1,
+      "phxPisauJatuh": 6,
+      "phxTargetJauh": 6
+    },
+    "aktif": {
+      "phxMomentumWajib": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang"
+      },
+      "phxTargetMagnet": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh"
+      }
+    },
+    "seedSelesai": "2026-09-30T00:38:10.647Z"
+  },
+  "daftar": []
+}

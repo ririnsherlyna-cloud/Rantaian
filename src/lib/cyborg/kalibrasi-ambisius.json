@@ -1,0 +1,95 @@
+{
+  "versi": "V302-KALIBRASI-AMBISIUS-R3",
+  "dibuat": "2026-10-12T12:56:15Z",
+  "status": "TERKALIBRASI_UJIAN_50000_SOAL",
+  "kejujuran": "MENUNGGU (entry tak terisi) = keputusan benar tanpa klaim. TERLEWAT dilaporkan terbuka. Daun dicari pada 50% soal latihan (kemurnian 100%), lalu DIVERIFIKASI di 50% soal uji \u2014 daun yang gagal di uji dipangkas (prune konservatif, diumumkan). Sertifikat = hasil gabungan latih+uji.",
+  "sumber": "ujian-ambisius.py R3 \u2014 soal data real Binance, daun kemurnian diverifikasi latih+uji",
+  "ambisius": {
+    "k_atr": 1.4,
+    "k_atr_min": 1.0999999999999999,
+    "k_atr_maks": 1.7,
+    "toleransi_dilampaui_atr": 0.75,
+    "butuh_sasaran_dulu": true
+  },
+  "gerbang_ambisius": {
+    "daun": [
+      {
+        "k": 1.4,
+        "tol": 0.75,
+        "rezim": "SIDEWAYS",
+        "syarat": [
+          {
+            "fitur": "mom7",
+            "arah": "min",
+            "batas": 5.970689674707894
+          }
+        ],
+        "latih_n": 880,
+        "uji_n": 820,
+        "n_akhir": 1700
+      },
+      {
+        "k": 1.4,
+        "tol": 0.5,
+        "rezim": "BEARISH",
+        "syarat": [
+          {
+            "fitur": "jarakPuncak",
+            "arah": "min",
+            "batas": 63.408885418379086
+          }
+        ],
+        "latih_n": 830,
+        "uji_n": 850,
+        "n_akhir": 1680
+      },
+      {
+        "k": 2.0,
+        "tol": 0.75,
+        "rezim": "BULLISH",
+        "syarat": [
+          {
+            "fitur": "qvRasio",
+            "arah": "max",
+            "batas": 0.6076323824285527
+          }
+        ],
+        "latih_n": 791,
+        "uji_n": 804,
+        "n_akhir": 1595
+      }
+    ]
+  },
+  "sertifikat": {
+    "total_soal": 50000,
+    "benar": 45856,
+    "lulus": 91,
+    "salah": 0,
+    "pasang": 4975,
+    "presisi_janji": 1.0,
+    "terlewat": 4144,
+    "menunggu_sentuh": 4794,
+    "peluang_ada": 4522,
+    "per_rezim": {
+      "SIDEWAYS": {
+        "pasang": 1700,
+        "tercapai": 85,
+        "salah": 0
+      },
+      "BEARISH": {
+        "pasang": 1680,
+        "tercapai": 60,
+        "salah": 0
+      },
+      "BULLISH": {
+        "pasang": 1595,
+        "tercapai": 36,
+        "salah": 0
+      }
+    },
+    "rentang_data": "2024-02-26 s.d. 2026-10-11",
+    "resolusi_verifikasi": "candle 4 jam Binance, urutan intraday sebenarnya",
+    "diuji_pada": "2026-10-12T12:56:15Z",
+    "tercapai": 181
+  }
+}

@@ -1,0 +1,31 @@
+{
+ "protokol": "KAPSUL-MICAPROFITA",
+ "organ": "arena-nadi-panel",
+ "versi": "1.0",
+ "waktu": "2026-09-25T15:11:13.190Z",
+ "denyut": 1,
+ "rantai": {
+  "denyut": [],
+  "prakira": [
+   {
+    "hash": "6259adce313994d412d76673d288baaaf3e1355c3a73f44d78f1af792cbd3ad6",
+    "nomor": 1,
+    "ns": "LIVE-DEMO",
+    "seed": "demo-1790349073191",
+    "simbol": "BTCUSDT",
+    "arah": "NAIK",
+    "kepastian": 78,
+    "cek": [
+     "TURUN",
+     "NAIK",
+     "NAIK",
+     "NAIK"
+    ],
+    "dasar": "demo rantai pra-registrasi dari tab Nadi & Gudang",
+    "versiOtak": "1.1",
+    "waktu": "2026-09-25T15:11:13.190Z",
+    "prev": "0000000000000000000000000000000000000000000000000000000000000000"
+   }
+  ]
+ }
+}

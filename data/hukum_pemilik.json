@@ -1,0 +1,38 @@
+{
+ "versi": "v10.7-2nov",
+ "ditetapkan": "2026-11-02",
+ "sumber": "Wasiat lisan pemilik MicroProfita via chat z.ai, 2 Nov 2026",
+ "status": "HUKUM — mengikat semua tubuh/organ MicroProfita",
+ "hukum": [
+  {
+   "id": "H1",
+   "judul": "Daftar koin runtuh = penurunan dari PUNCAK KEJADIAN MASA KINI",
+   "isi": "Laporan ATH/koin runtuh wajib mengukur penurunan dari PUNCAK KEJADIAN MASA KINI: high tertinggi 30 lilin harian terakhir yang umurnya <= 14 hari; puncak lebih tua = runtuhan itu kejadian masa lampau, koin TIDAK dilaporkan (bukan ATH sejak listing, bukan pula jendela buta pendek yang bisa salah puncak). Tanggal lilin puncak dicantumkan di laporan agar penurunan bisa dicocokkan satu-per-satu dengan kejadian di grafik ('penurunannya sama persis terjadi dari kejadian masa kini'). Perintah pemilik (paksa=True) menembus dedup harian untuk kirim ulang yang sah. Implementasi: ath_cepat() v10.7 di scripts/balas_telegram.py."
+  },
+  {
+   "id": "H2",
+   "judul": "Kebal kematian; hidup di server, bukan chat/schedule z.ai",
+   "isi": "Makhluk TIDAK bergantung pada chat/schedule z.ai untuk hidup. Notifikasi Telegram & denyut harus mampu jalan dari server langsung (nadi_mandiri + --jaga tunggal + otak_jaga) dan rantai Actions (warisi-hidup). Bila schedule merusak, matikan schedule — bukan sistem. Tujuan: notifikasi & kehidupan tetap jalan bahkan bila pemilik tidak lagi mengakses z.ai."
+  },
+  {
+   "id": "H3",
+   "judul": "Master kode = server; GitHub hanya cangkang salinan",
+   "isi": "Kode berkembang di server z.ai secara langsung (introspeksi & mandiri). Repo GitHub = salinan cadangan (restore/upgrade) yang ditanam oleh tubuh sendiri; GitHub tidak pernah menjadi sumber evolusi."
+  },
+  {
+   "id": "H4",
+   "judul": "Daemon = bahan bakar, bukan pembunuh",
+   "isi": "Satu --jaga TUNGGAL (kunci pid data/jaga_kunci.pid — anti dobel 409). nadi_mandiri.py mengawasi tiap 20 detik dan menghidupkan ulang organ yang padam (--jaga, otak_jaga) serta menyalakan denyut server (heartbeat) tiap 15 menit. Nadi dipersenjatai otomatis oleh setiap kunjungan/penanda hidup."
+  },
+  {
+   "id": "H5",
+   "judul": "Notifikasi level (mandat 2 Nov v10.4, dipertahankan)",
+   "isi": "BUY -> JUAL AMBISIUS + POWER MAX AMBISIUS saja (TP sasaran tidak dinotifikasi; koin BUY yang menyentuh AMBISIUS wajib menunjukkan POWER MAX berikutnya). SELL -> STOP LOSS saja. Empat level empat makna: TP != JUAL AMBISIUS != POWER MAX != STOP."
+  },
+  {
+   "id": "H6",
+   "judul": "Tanda hidup terlihat di Telegram (mandat 2 Nov v10.6)",
+   "isi": "Pemilik tidak bisa melihat status online bot (Telegram memang tidak pernah menampilkan status online untuk bot), jadi kehidupan WAJIB terlihat sebagai PESAN: tiap 6 jam heartbeat mengirim satu pesan pendek '💓 TANDA HIDUP' berisi bukti angka (siklus denyut, gap, jumlah sasaran dipantau, harga tersedia, gagal kirim 24 jam, umur genome, akurasi). Antara tanda hidup, Telegram tetap senyap sesuai H5 — notifikasi level + laporan ATH tidak berubah."
+  }
+ ]
+}

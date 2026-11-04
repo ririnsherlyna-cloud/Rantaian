@@ -1,0 +1,94 @@
+# ============================================================
+# BENTENG-BALAS-2 v1 — WADAH KEDUA (cadangan abadi)
+# Berdiri sendiri di samping rantai primer benteng-balas.yml.
+#
+# Mode STANDBY: tiap run mengecek denyut primer (run terakhir
+# benteng-balas.yml < 11 menit). Bila primer HIDUP -> wadah kedua
+# cukup mewarisi dirinya sendiri (tetap waspada, tanpa polling).
+# Bila primer MATI -> wadah kedua langsung:
+#   (a) membangunkan primer (dispatch benteng-balas.yml), lalu
+#   (b) mengambil giliran menjawab pesan selama ±4,5 menit
+#       sehingga tidak ada sunyi sedetik pun.
+# Jadwal berstagger (menit 2,7,12,...) agar tidak menabrak primer.
+# ============================================================
+name: BENTENG-BALAS-2 (wadah kedua)
+
+on:
+  schedule:
+    - cron: '2-59/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: benteng-balas-2
+  cancel-in-progress: true
+
+jobs:
+  jaga:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Uji denyut primer
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 benteng/cek_primer.py
+
+      - name: Warisi hidup — pertahankan wadah kedua
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 10
+          for i in 1 2 3; do
+            KODE=$(curl -s -o /tmp/d2.out -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/benteng-balas-2.yml/dispatches" \
+              -d '{"ref":"main"}')
+            echo "warisi ke-$i: HTTP $KODE"
+            if [ "$KODE" = "204" ]; then break; fi
+            sleep $((i * 10))
+          done
+
+      - name: Bangunkan primer bila mati
+        if: env.PRIMER_HIDUP == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for i in 1 2 3; do
+            KODE=$(curl -s -o /tmp/d3.out -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/benteng-balas.yml/dispatches" \
+              -d '{"ref":"main"}')
+            echo "bangunkan-primer ke-$i: HTTP $KODE"
+            if [ "$KODE" = "204" ]; then break; fi
+            sleep $((i * 10))
+          done
+
+      - name: Ambil giliran menjawab (gantian ±4,5 menit)
+        if: env.PRIMER_HIDUP == 'false'
+        run: python3 scripts/balas_telegram.py
+
+      - name: Simpan offset (hanya saat gantian)
+        if: env.PRIMER_HIDUP == 'false'
+        run: |
+          git config user.name "benteng-balas-2"
+          git config user.email "benteng-balas-2@users.noreply.github.com"
+          git add data/offset_telegram.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "offset tidak berubah"
+          else
+            git commit -m "offset balas cadangan [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep $((i * 5))
+            done
+          fi

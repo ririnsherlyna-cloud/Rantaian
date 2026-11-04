@@ -1,0 +1,1015 @@
+{
+  "NAIK": {
+    "bobot": {
+      "struktur": 0.2411,
+      "momentum": 0.2734,
+      "sr": 0.1593,
+      "tekanan": 0.1764,
+      "perubahan": 0.1498
+    },
+    "generasi": 4,
+    "belajar": 27,
+    "diperbarui": "2026-10-06T02:17:20.732Z"
+  },
+  "TURUN": {
+    "bobot": {
+      "struktur": 0.2477,
+      "momentum": 0.2606,
+      "sr": 0.1601,
+      "tekanan": 0.18,
+      "perubahan": 0.1516
+    },
+    "generasi": 2,
+    "belajar": 20,
+    "diperbarui": "2026-09-30T03:50:57.250Z"
+  },
+  "phoenix": {
+    "TURUN": {
+      "bobot": {
+        "posisi": 0.2474,
+        "sweep": 0.3035,
+        "akumulasi": 0.2004,
+        "momentum": 0.1506,
+        "kompresi": 0.0982
+      },
+      "generasi": 2,
+      "belajar": 12,
+      "diperbarui": "2026-09-30T03:50:57.250Z"
+    },
+    "NAIK": {
+      "bobot": {
+        "posisi": 0.2511,
+        "sweep": 0.294,
+        "akumulasi": 0.2015,
+        "momentum": 0.1525,
+        "kompresi": 0.1009
+      },
+      "generasi": 1,
+      "belajar": 6,
+      "diperbarui": "2026-10-02T04:37:51.298Z"
+    },
+    "DATAR": {
+      "bobot": {
+        "posisi": 0.2484,
+        "sweep": 0.3032,
+        "akumulasi": 0.2015,
+        "momentum": 0.1481,
+        "kompresi": 0.0988
+      },
+      "generasi": 1,
+      "belajar": 5,
+      "diperbarui": "2026-10-03T00:38:31.774Z"
+    }
+  },
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 8,
+      "phxPisauJatuh": 19,
+      "phxTargetJauh": 13
+    },
+    "aktif": {
+      "phxMomentumWajib": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang"
+      },
+      "phxTargetMagnet": {
+        "sejak": "2026-09-30T00:38:10.647Z",
+        "teks": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh"
+      },
+      "arahRegimHormati": {
+        "sejak": "2026-09-30T03:50:57.250Z",
+        "teks": "Arah melawan rezim wajib keyakinan lebih rendah — potongan keyakinan dipasang di vonis komite"
+      }
+    },
+    "seedSelesai": "2026-09-30T00:38:10.647Z",
+    "polaMeta": {
+      "phxPisauJatuh": {
+        "sejak": "2026-10-01T12:13:59.697Z"
+      },
+      "arahLawanRezim": {
+        "sejak": "2026-10-02T04:37:51.298Z"
+      },
+      "phxTargetJauh": {
+        "sejak": "2026-10-03T00:38:31.774Z"
+      }
+    }
+  },
+  "ilmu": {
+    "hedge": {
+      "arah": {
+        "struktur": 0.0425,
+        "momentum": 0.1086,
+        "sr": 0.486,
+        "tekanan": 0.1666,
+        "perubahan": 0.1963
+      },
+      "phx": {
+        "posisi": 0.1461,
+        "sweep": 0.4689,
+        "akumulasi": 0.2622,
+        "momentum": 0.0861,
+        "kompresi": 0.0367
+      },
+      "waw": {
+        "macd": 0.1217,
+        "adx": 0.0415,
+        "bollinger": 0.0885,
+        "vwap": 0.0672,
+        "obv": 0.0574,
+        "swing": 0.2062,
+        "pola": 0.0871,
+        "konsist": 0.0475,
+        "pivot": 0.041,
+        "relatif": 0.1326,
+        "funding": 0.0612,
+        "oi": 0.048
+      }
+    },
+    "brier": {
+      "arah": {
+        "n": 73,
+        "jumlah": 22.141300000000005
+      },
+      "phx": {
+        "n": 37,
+        "jumlah": 12.237800000000002
+      },
+      "mc": {
+        "n": 15,
+        "jumlah": 3.593847
+      }
+    },
+    "kalibrasi": [
+      {
+        "low": 52,
+        "high": 60,
+        "n": 36,
+        "benar": 10
+      },
+      {
+        "low": 60,
+        "high": 70,
+        "n": 30,
+        "benar": 7
+      },
+      {
+        "low": 70,
+        "high": 80,
+        "n": 35,
+        "benar": 16
+      },
+      {
+        "low": 80,
+        "high": 101,
+        "n": 1,
+        "benar": 0
+      }
+    ],
+    "konformal": [
+      0.0129,
+      0.0817,
+      0.0525,
+      0.0316,
+      0.079,
+      0.0505,
+      0.0129,
+      0.0817,
+      0.0525,
+      0.0316,
+      0.079,
+      0.0505,
+      0.0031,
+      0.0313,
+      0.0285,
+      0.0439,
+      0.0312,
+      0.0442,
+      0.0345,
+      0.0184,
+      0.0222,
+      0.1045,
+      0.0101,
+      0.0776,
+      0.0308,
+      0.0197,
+      0.0414,
+      -0.0041,
+      0.0691,
+      0.0215,
+      0.0165
+    ],
+    "meta": {
+      "kuat": {
+        "n": 13,
+        "benar": 6
+      },
+      "lemah": {
+        "n": 24,
+        "benar": 10
+      },
+      "geser": 2
+    },
+    "seedSelesai": "2026-09-30T03:50:57.250Z",
+    "mcKalibrasi": [
+      {
+        "low": 0.3,
+        "high": 0.45,
+        "n": 0,
+        "benar": 0
+      },
+      {
+        "low": 0.45,
+        "high": 0.6,
+        "n": 5,
+        "benar": 4
+      },
+      {
+        "low": 0.6,
+        "high": 0.75,
+        "n": 8,
+        "benar": 5
+      },
+      {
+        "low": 0.75,
+        "high": 0.96,
+        "n": 2,
+        "benar": 1
+      }
+    ],
+    "metakognisi": {
+      "estimator": {
+        "n": 23,
+        "tepat": 6
+      },
+      "prediktor": {
+        "n": 23,
+        "tepat": 14
+      }
+    },
+    "deal": {
+      "so": {
+        "n": 25,
+        "soKena": 46,
+        "netDenganSo": -0.4261,
+        "netTanpaSo": -0.80533,
+        "menyelamatkan": 25
+      },
+      "bep": {
+        "n": 18,
+        "aktivasiKena": 18,
+        "keluarNetNol": 18,
+        "menyelamatkan": 10
+      },
+      "trail": {
+        "n": 5,
+        "tembusT1": 5,
+        "ekstraPctJumlah": 7.95,
+        "ekstraMaksPct": 3.53
+      }
+    },
+    "peristiwa": {
+      "breakout48j": {
+        "n": 2,
+        "benar": 0,
+        "net": -0.02124,
+        "cz": -3.0001
+      },
+      "lonjakVolume": {
+        "n": 1,
+        "benar": 1,
+        "net": 0.01814,
+        "cz": 0.0181
+      },
+      "crossEMA": {
+        "n": 8,
+        "benar": 3,
+        "net": -0.10961,
+        "cz": -7.4863
+      },
+      "pullbackBB": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "divergensiRSI": {
+        "n": 1,
+        "benar": 0,
+        "net": -0.05981,
+        "cz": -1.5004
+      },
+      "searahTren4h": {
+        "n": 24,
+        "benar": 6,
+        "net": -0.48786,
+        "cz": -26.9021
+      }
+    },
+    "topik": {
+      "momentum": {
+        "n": 22,
+        "benar": 8,
+        "net": -0.33022,
+        "regret": 1.2179
+      },
+      "tren": {
+        "n": 23,
+        "benar": 6,
+        "net": -0.41566,
+        "regret": 1.362
+      },
+      "aliran": {
+        "n": 20,
+        "benar": 8,
+        "net": -0.17201,
+        "regret": 1.2507
+      },
+      "derivatif": {
+        "n": 11,
+        "benar": 5,
+        "net": 0.05697,
+        "regret": 1.0969
+      },
+      "mikrostruktur": {
+        "n": 15,
+        "benar": 6,
+        "net": -0.04264,
+        "regret": 1.0643
+      },
+      "relatif": {
+        "n": 16,
+        "benar": 5,
+        "net": -0.08709,
+        "regret": 1.0681
+      }
+    },
+    "cz": {
+      "n": 48,
+      "jumlah": -49.1301
+    },
+    "ekspresi": {
+      "tinggi": {
+        "n": 15,
+        "net": -0.36868
+      },
+      "rendah": {
+        "n": 15,
+        "net": -0.34746
+      }
+    },
+    "divergensi": {
+      "kuat": {
+        "n": 10,
+        "benar": 1,
+        "net": -0.22897
+      },
+      "lemah": {
+        "n": 13,
+        "benar": 5,
+        "net": -0.18669
+      }
+    },
+    "paramHit": {
+      "macd": {
+        "n": 32,
+        "benar": 19,
+        "net": 0.04077,
+        "cz": -18.939
+      },
+      "adx": {
+        "n": 16,
+        "benar": 3,
+        "net": -0.05528,
+        "cz": -19.3656
+      },
+      "bollinger": {
+        "n": 21,
+        "benar": 10,
+        "net": -0.09137,
+        "cz": -16.2886
+      },
+      "vwap": {
+        "n": 32,
+        "benar": 13,
+        "net": -0.01547,
+        "cz": -27.9658
+      },
+      "swing": {
+        "n": 23,
+        "benar": 13,
+        "net": 0.19102,
+        "cz": -14.4624
+      },
+      "pola": {
+        "n": 15,
+        "benar": 7,
+        "net": -0.11332,
+        "cz": -11.8555
+      },
+      "konsist": {
+        "n": 22,
+        "benar": 10,
+        "net": -0.00253,
+        "cz": -17.5256
+      },
+      "pivot": {
+        "n": 28,
+        "benar": 10,
+        "net": -0.07285,
+        "cz": -26.5396
+      },
+      "relatif": {
+        "n": 24,
+        "benar": 11,
+        "net": 0.18111,
+        "cz": -18.9696
+      },
+      "ema1h": {
+        "n": 30,
+        "benar": 9,
+        "net": -0.32589,
+        "cz": -31.1711
+      },
+      "rsi1h": {
+        "n": 21,
+        "benar": 6,
+        "net": -0.14081,
+        "cz": -22.2445
+      },
+      "roc12": {
+        "n": 22,
+        "benar": 8,
+        "net": -0.14105,
+        "cz": -20.8397
+      },
+      "stoch": {
+        "n": 25,
+        "benar": 15,
+        "net": 0.05821,
+        "cz": -14.5222
+      },
+      "mfi": {
+        "n": 25,
+        "benar": 13,
+        "net": 0.04381,
+        "cz": -17.6502
+      },
+      "cci": {
+        "n": 24,
+        "benar": 10,
+        "net": -0.13813,
+        "cz": -20.6446
+      },
+      "volZ": {
+        "n": 22,
+        "benar": 11,
+        "net": 0.07717,
+        "cz": -16.1528
+      },
+      "bodyRatio": {
+        "n": 14,
+        "benar": 5,
+        "net": 0.03792,
+        "cz": -13.2083
+      },
+      "ema4h": {
+        "n": 29,
+        "benar": 10,
+        "net": -0.23025,
+        "cz": -28.1612
+      },
+      "macd4h": {
+        "n": 29,
+        "benar": 10,
+        "net": -0.09428,
+        "cz": -28.0287
+      },
+      "swing4h": {
+        "n": 20,
+        "benar": 9,
+        "net": 0.19559,
+        "cz": -16.0304
+      },
+      "sejajar4h": {
+        "n": 29,
+        "benar": 9,
+        "net": -0.27615,
+        "cz": -29.6898
+      },
+      "bukuDinding": {
+        "n": 23,
+        "benar": 13,
+        "net": 0.04781,
+        "cz": -14.6256
+      },
+      "ema1d": {
+        "n": 23,
+        "benar": 12,
+        "net": -0.13385,
+        "cz": -16.2005
+      },
+      "rsi1d": {
+        "n": 23,
+        "benar": 12,
+        "net": -0.03629,
+        "cz": -16.2005
+      },
+      "macd1d": {
+        "n": 22,
+        "benar": 7,
+        "net": -0.26191,
+        "cz": -22.3572
+      },
+      "donchian30d": {
+        "n": 20,
+        "benar": 9,
+        "net": -0.02104,
+        "cz": -16.261
+      },
+      "jarak90d": {
+        "n": 22,
+        "benar": 12,
+        "net": -0.00807,
+        "cz": -14.7005
+      },
+      "momen30d": {
+        "n": 22,
+        "benar": 12,
+        "net": -0.01479,
+        "cz": -14.7005
+      },
+      "streak1d": {
+        "n": 11,
+        "benar": 3,
+        "net": -0.05776,
+        "cz": -11.9673
+      },
+      "lsAkun": {
+        "n": 18,
+        "benar": 7,
+        "net": -0.00362,
+        "cz": -16.3032
+      },
+      "lsTren": {
+        "n": 16,
+        "benar": 8,
+        "net": -0.03204,
+        "cz": -11.8269
+      },
+      "pocJarak": {
+        "n": 30,
+        "benar": 13,
+        "net": -0.06473,
+        "cz": -25.122
+      },
+      "mcPnaik": {
+        "n": 8,
+        "benar": 3,
+        "net": -0.01609,
+        "cz": -7.4288
+      },
+      "ixVolAtr": {
+        "n": 22,
+        "benar": 11,
+        "net": 0.07318,
+        "cz": -16.1528
+      },
+      "ixDonchianVol": {
+        "n": 10,
+        "benar": 7,
+        "net": 0.0498,
+        "cz": -4.2803
+      },
+      "metaArah": {
+        "n": 23,
+        "benar": 8,
+        "net": -0.11758,
+        "cz": -22.3128
+      },
+      "roc48": {
+        "n": 26,
+        "benar": 9,
+        "net": -0.11014,
+        "cz": -25.1668
+      },
+      "jarakEkstrem": {
+        "n": 25,
+        "benar": 6,
+        "net": -0.12713,
+        "cz": -28.2095
+      },
+      "rsi4h": {
+        "n": 22,
+        "benar": 3,
+        "net": -0.12942,
+        "cz": -28.3765
+      },
+      "persenChg": {
+        "n": 16,
+        "benar": 4,
+        "net": -0.01745,
+        "cz": -17.8414
+      },
+      "bb4h": {
+        "n": 24,
+        "benar": 9,
+        "net": -0.08328,
+        "cz": -22.1242
+      },
+      "funding": {
+        "n": 15,
+        "benar": 9,
+        "net": 0.04118,
+        "cz": -8.7412
+      },
+      "oi": {
+        "n": 10,
+        "benar": 3,
+        "net": -0.02261,
+        "cz": -10.3758
+      },
+      "ixFundingOI": {
+        "n": 5,
+        "benar": 3,
+        "net": -0.00847,
+        "cz": -2.9588
+      },
+      "ixTrenFunding": {
+        "n": 15,
+        "benar": 8,
+        "net": 0.01636,
+        "cz": -10.2918
+      },
+      "probPasar": {
+        "n": 10,
+        "benar": 4,
+        "net": -0.04076,
+        "cz": -8.86
+      },
+      "bukuImbalans": {
+        "n": 9,
+        "benar": 4,
+        "net": -0.01384,
+        "cz": -7.4683
+      },
+      "bukuKedalaman": {
+        "n": 12,
+        "benar": 5,
+        "net": -0.02941,
+        "cz": -10.4257
+      },
+      "ixBukuTren": {
+        "n": 6,
+        "benar": 2,
+        "net": -0.02069,
+        "cz": -5.9799
+      },
+      "bukuGradien": {
+        "n": 12,
+        "benar": 3,
+        "net": -0.02852,
+        "cz": -13.4003
+      },
+      "kellyMult": {
+        "n": 18,
+        "benar": 6,
+        "net": -0.12469,
+        "cz": -17.8218
+      },
+      "komite": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.23641,
+        "cz": -19.4046
+      },
+      "tesisSehat": {
+        "n": 18,
+        "benar": 12,
+        "net": 0.12483,
+        "cz": -8.6964
+      },
+      "kuanta": {
+        "n": 18,
+        "benar": 6,
+        "net": -0.11824,
+        "cz": -17.8218
+      },
+      "fundTren": {
+        "n": 1,
+        "benar": 1,
+        "net": 0.01009,
+        "cz": 0.0459
+      },
+      "peluang": {
+        "n": 15,
+        "benar": 4,
+        "net": -0.08524,
+        "cz": -16.37
+      },
+      "slipPct": {
+        "n": 11,
+        "benar": 9,
+        "net": 0.04477,
+        "cz": -2.762
+      },
+      "zona": {
+        "n": 16,
+        "benar": 8,
+        "net": -0.03173,
+        "cz": -11.8235
+      },
+      "kalib": {
+        "n": 17,
+        "benar": 5,
+        "net": -0.08088,
+        "cz": -17.869
+      },
+      "alokasi": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.17509,
+        "cz": -19.3694
+      },
+      "fundRata3": {
+        "n": 1,
+        "benar": 1,
+        "net": 0.00125,
+        "cz": 0.005
+      },
+      "kartu": {
+        "n": 11,
+        "benar": 4,
+        "net": -0.02931,
+        "cz": -10.4331
+      },
+      "divRSI": {
+        "n": 2,
+        "benar": 1,
+        "net": -0.03542,
+        "cz": -1.4996
+      },
+      "mateHurst": {
+        "n": 14,
+        "benar": 5,
+        "net": -0.02416,
+        "cz": -13.4032
+      },
+      "mateEkonomi": {
+        "n": 14,
+        "benar": 6,
+        "net": -0.09395,
+        "cz": -11.8842
+      },
+      "mateJauh": {
+        "n": 9,
+        "benar": 3,
+        "net": -0.03075,
+        "cz": -8.916
+      }
+    },
+    "karantina": {
+      "mikrostruktur": {
+        "sejak": "2026-10-07T04:57:32.973Z",
+        "alasan": "hit-rate 40% dari 15 vonis + 3 suara-keliru beruntun — MODE-ASAH: bobot dilirihkan ke 0.35, TIDAK disita (karantina dilarang)",
+        "pulih": 0
+      }
+    },
+    "pengawas": {
+      "dinilai": 18,
+      "kena": 0,
+      "menyelamatkan": 0
+    },
+    "kesegaran": {
+      "tinggi": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      },
+      "rendah": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      }
+    },
+    "modalMati": {
+      "kena": {
+        "n": 20,
+        "benar": 5,
+        "net": -0.37519
+      },
+      "sehat": {
+        "n": 3,
+        "benar": 1,
+        "net": -0.04047
+      }
+    },
+    "tesis": {
+      "sehat": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      },
+      "patah": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      }
+    },
+    "alt": {
+      "lebihBaik": {
+        "n": 0,
+        "net": 0
+      },
+      "lebihBuruk": {
+        "n": 0,
+        "net": 0
+      }
+    },
+    "kelly": {
+      "kecil": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      },
+      "sedang": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "besar": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      }
+    },
+    "rezimMedan": {
+      "tenang": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "normal": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      },
+      "tinggi": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "ekstrem": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      }
+    },
+    "peluang": {
+      "tinggi": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "rendah": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      }
+    },
+    "stres": {
+      "tinggi": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "rendah": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      }
+    },
+    "topTolak": {
+      "kerumunan-funding": 1,
+      "forensik": 466,
+      "order-book-lawan": 4,
+      "tren-4h-lawan": 21
+    },
+    "organ": {
+      "list": [
+        {
+          "nama": "organ-carry-melawan-BUY",
+          "jenis": "carry-melawan",
+          "pengukur": [
+            "ekonomi",
+            "evEkoPct"
+          ],
+          "ambang": 0,
+          "arahMelawan": "BUY",
+          "ket": "JANGAN BUY saat EV-ekonomi negatif (drift+carry−biaya < 0) — lahir dari BNB SALAH (net -0.1%)",
+          "lahir": "2026-10-04T18:25:09.593Z",
+          "dari": "BNB-2026-10-03",
+          "n": 0,
+          "benar": 0,
+          "net": 0,
+          "status": "pengamatan",
+          "replay": {
+            "n": 1,
+            "netHindaranPct": -1.43
+          }
+        },
+        {
+          "nama": "organ-carry-melawan-SELL",
+          "jenis": "carry-melawan",
+          "pengukur": [
+            "ekonomi",
+            "evEkoPct"
+          ],
+          "ambang": 0,
+          "arahMelawan": "SELL",
+          "ket": "JANGAN SELL saat EV-ekonomi negatif (drift+carry−biaya < 0) — lahir dari ADA SALAH (net -8.1%)",
+          "lahir": "2026-10-05T00:51:44.400Z",
+          "dari": "ADA-2026-10-03",
+          "n": 0,
+          "benar": 0,
+          "net": 0,
+          "status": "pengamatan",
+          "replay": {
+            "n": 2,
+            "netHindaranPct": -1.32
+          }
+        }
+      ],
+      "lulusCt": 0
+    }
+  },
+  "DATAR": {
+    "bobot": {
+      "struktur": 0.2491,
+      "momentum": 0.2551,
+      "sr": 0.1429,
+      "tekanan": 0.1911,
+      "perubahan": 0.1618
+    },
+    "generasi": 1,
+    "belajar": 3,
+    "diperbarui": "2026-10-03T09:23:34.207Z"
+  },
+  "waw": {
+    "DATAR": {
+      "bobot": {
+        "macd": 0.0861,
+        "adx": 0.0682,
+        "bollinger": 0.0779,
+        "vwap": 0.081,
+        "obv": 0.0824,
+        "swing": 0.1339,
+        "pola": 0.0707,
+        "konsist": 0.0812,
+        "pivot": 0.0805,
+        "relatif": 0.1095,
+        "funding": 0.0726,
+        "oi": 0.0558
+      },
+      "generasi": 2,
+      "belajar": 9,
+      "diperbarui": "2026-10-03T09:23:34.207Z"
+    },
+    "NAIK": {
+      "bobot": {
+        "macd": 0.1273,
+        "adx": 0.0739,
+        "bollinger": 0.0653,
+        "vwap": 0.0906,
+        "obv": 0.0781,
+        "swing": 0.1127,
+        "pola": 0.0702,
+        "konsist": 0.0786,
+        "pivot": 0.0874,
+        "relatif": 0.0933,
+        "funding": 0.0622,
+        "oi": 0.0605
+      },
+      "generasi": 3,
+      "belajar": 12,
+      "diperbarui": "2026-10-06T02:17:20.732Z"
+    },
+    "TURUN": {
+      "bobot": {
+        "macd": 0.1,
+        "adx": 0.07,
+        "bollinger": 0.07,
+        "vwap": 0.09,
+        "obv": 0.08,
+        "swing": 0.12,
+        "pola": 0.07,
+        "konsist": 0.08,
+        "pivot": 0.09,
+        "relatif": 0.1,
+        "funding": 0.07,
+        "oi": 0.06
+      },
+      "generasi": 0,
+      "belajar": 0,
+      "diperbarui": "2026-10-03T11:22:09.392Z"
+    }
+  }
+}

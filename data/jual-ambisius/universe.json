@@ -1,0 +1,727 @@
+{
+ "waktu": 1791892660797,
+ "kriteria": "USDT & qv>=3jt & bukan leveraged (V298-v2)",
+ "tahap": 1,
+ "daftar": [
+  {
+   "simbol": "USDCUSDT",
+   "qv": 4240492305.4911,
+   "harga": 1.00113
+  },
+  {
+   "simbol": "BTCUSDT",
+   "qv": 1313875707.8123174,
+   "harga": 83330
+  },
+  {
+   "simbol": "ETHUSDT",
+   "qv": 784947539.254584,
+   "harga": 2500.42
+  },
+  {
+   "simbol": "SOLUSDT",
+   "qv": 321985173.65658,
+   "harga": 106.18
+  },
+  {
+   "simbol": "NEARUSDT",
+   "qv": 264810116.4253,
+   "harga": 5.016
+  },
+  {
+   "simbol": "ZECUSDT",
+   "qv": 215505693.54673,
+   "harga": 1186.82
+  },
+  {
+   "simbol": "XRPUSDT",
+   "qv": 165306803.09037,
+   "harga": 1.3576
+  },
+  {
+   "simbol": "USD1USDT",
+   "qv": 131261765.05518,
+   "harga": 1.00032
+  },
+  {
+   "simbol": "BNBUSDT",
+   "qv": 83090173.96547,
+   "harga": 739.03
+  },
+  {
+   "simbol": "SUIUSDT",
+   "qv": 79945944.92384,
+   "harga": 1.0348
+  },
+  {
+   "simbol": "DOGEUSDT",
+   "qv": 73391214.68216,
+   "harga": 0.08354
+  },
+  {
+   "simbol": "ENAUSDT",
+   "qv": 66183206.402081,
+   "harga": 0.2101
+  },
+  {
+   "simbol": "UNIUSDT",
+   "qv": 59344754.89515,
+   "harga": 7.268
+  },
+  {
+   "simbol": "STRKUSDT",
+   "qv": 53525530.9044993,
+   "harga": 0.09066
+  },
+  {
+   "simbol": "WLDUSDT",
+   "qv": 51657384.56379,
+   "harga": 0.5022
+  },
+  {
+   "simbol": "RLUSDUSDT",
+   "qv": 50987577.6092,
+   "harga": 1.0012
+  },
+  {
+   "simbol": "AVAXUSDT",
+   "qv": 44702602.928,
+   "harga": 10.236
+  },
+  {
+   "simbol": "FDUSDUSDT",
+   "qv": 41732628.8037,
+   "harga": 0.9992
+  },
+  {
+   "simbol": "ADAUSDT",
+   "qv": 39633010.30653,
+   "harga": 0.2328
+  },
+  {
+   "simbol": "PEPEUSDT",
+   "qv": 36383954.41884129,
+   "harga": 0.00000406
+  },
+  {
+   "simbol": "LINKUSDT",
+   "qv": 35093837.69398,
+   "harga": 12.85
+  },
+  {
+   "simbol": "HYPEUSDT",
+   "qv": 33430848.22316,
+   "harga": 82.14
+  },
+  {
+   "simbol": "TAOUSDT",
+   "qv": 33307206.26604,
+   "harga": 273.4
+  },
+  {
+   "simbol": "PUMPUSDT",
+   "qv": 32211049.318414,
+   "harga": 0.004907
+  },
+  {
+   "simbol": "SNDKBUSDT",
+   "qv": 32105263.967611,
+   "harga": 1417.62
+  },
+  {
+   "simbol": "ONDOUSDT",
+   "qv": 31723550.75595,
+   "harga": 0.4627
+  },
+  {
+   "simbol": "UUSDT",
+   "qv": 28108069.7395,
+   "harga": 1.0003
+  },
+  {
+   "simbol": "FILUSDT",
+   "qv": 26794511.244909,
+   "harga": 1.1561
+  },
+  {
+   "simbol": "QNTUSDT",
+   "qv": 25953973.13359,
+   "harga": 205.51
+  },
+  {
+   "simbol": "ZROUSDT",
+   "qv": 25720998.81063,
+   "harga": 2.042
+  },
+  {
+   "simbol": "OGNUSDT",
+   "qv": 25219695.393,
+   "harga": 0.0396
+  },
+  {
+   "simbol": "FETUSDT",
+   "qv": 24413364.6522,
+   "harga": 0.2103
+  },
+  {
+   "simbol": "TRXUSDT",
+   "qv": 24238044.46866,
+   "harga": 0.3289
+  },
+  {
+   "simbol": "WUSDT",
+   "qv": 23698201.282995,
+   "harga": 0.01887
+  },
+  {
+   "simbol": "LTCUSDT",
+   "qv": 23143686.58714,
+   "harga": 60.74
+  },
+  {
+   "simbol": "CTKUSDT",
+   "qv": 22796714.41322,
+   "harga": 0.1243
+  },
+  {
+   "simbol": "SPCXBUSDT",
+   "qv": 22578274.38664,
+   "harga": 162.61
+  },
+  {
+   "simbol": "TIAUSDT",
+   "qv": 21795622.432785,
+   "harga": 0.591
+  },
+  {
+   "simbol": "INJUSDT",
+   "qv": 21734533.20831,
+   "harga": 7.839
+  },
+  {
+   "simbol": "AAVEUSDT",
+   "qv": 20352509.01435,
+   "harga": 157.64
+  },
+  {
+   "simbol": "APTUSDT",
+   "qv": 20332482.121222,
+   "harga": 0.8192
+  },
+  {
+   "simbol": "POLUSDT",
+   "qv": 20189687.544641,
+   "harga": 0.10089
+  },
+  {
+   "simbol": "GTCUSDT",
+   "qv": 19862242.192313,
+   "harga": 0.24561
+  },
+  {
+   "simbol": "HBARUSDT",
+   "qv": 19517379.81094,
+   "harga": 0.08619
+  },
+  {
+   "simbol": "RENDERUSDT",
+   "qv": 19429132.44592,
+   "harga": 2.026
+  },
+  {
+   "simbol": "DOTUSDT",
+   "qv": 19215836.15674,
+   "harga": 1.173
+  },
+  {
+   "simbol": "SOXLBUSDT",
+   "qv": 17700508.75492,
+   "harga": 120.9
+  },
+  {
+   "simbol": "MAGICUSDT",
+   "qv": 17442312.23752,
+   "harga": 0.1211
+  },
+  {
+   "simbol": "CRCLBUSDT",
+   "qv": 17303476.4605,
+   "harga": 83.38
+  },
+  {
+   "simbol": "RSRUSDT",
+   "qv": 16413978.7994197,
+   "harga": 0.002025
+  },
+  {
+   "simbol": "ICPUSDT",
+   "qv": 15895334.02364,
+   "harga": 3.101
+  },
+  {
+   "simbol": "STXUSDT",
+   "qv": 15391285.01609,
+   "harga": 0.4186
+  },
+  {
+   "simbol": "ARBUSDT",
+   "qv": 15319421.7492,
+   "harga": 0.1829
+  },
+  {
+   "simbol": "BCHUSDT",
+   "qv": 14777917.2342,
+   "harga": 268.6
+  },
+  {
+   "simbol": "TRUMPUSDT",
+   "qv": 14324491.150192,
+   "harga": 1.865
+  },
+  {
+   "simbol": "PYTHUSDT",
+   "qv": 14171667.463374,
+   "harga": 0.08262
+  },
+  {
+   "simbol": "XLMUSDT",
+   "qv": 13949818.9447,
+   "harga": 0.1899
+  },
+  {
+   "simbol": "MARSCOINUSDT",
+   "qv": 13306059.57308,
+   "harga": 0.079
+  },
+  {
+   "simbol": "SUSDT",
+   "qv": 13083250.829926,
+   "harga": 0.06144
+  },
+  {
+   "simbol": "PAXGUSDT",
+   "qv": 13050245.159614,
+   "harga": 4189.01
+  },
+  {
+   "simbol": "MSTRBUSDT",
+   "qv": 12754203.67323,
+   "harga": 154.2
+  },
+  {
+   "simbol": "PENGUUSDT",
+   "qv": 12417877.782481,
+   "harga": 0.007679
+  },
+  {
+   "simbol": "BATUSDT",
+   "qv": 11876103.4279,
+   "harga": 0.175
+  },
+  {
+   "simbol": "XPLUSDT",
+   "qv": 11717900.199688,
+   "harga": 0.08017
+  },
+  {
+   "simbol": "SKHYBUSDT",
+   "qv": 11443739.47784,
+   "harga": 152.5
+  },
+  {
+   "simbol": "MUBUSDT",
+   "qv": 10697572.94197,
+   "harga": 950.66
+  },
+  {
+   "simbol": "ASTERUSDT",
+   "qv": 10461403.136869,
+   "harga": 0.6887
+  },
+  {
+   "simbol": "XAUTUSDT",
+   "qv": 10434903.468505,
+   "harga": 4185.11
+  },
+  {
+   "simbol": "NVDABUSDT",
+   "qv": 10171681.13938,
+   "harga": 224.73
+  },
+  {
+   "simbol": "BLURUSDT",
+   "qv": 10167660.403713,
+   "harga": 0.01176
+  },
+  {
+   "simbol": "SKLUSDT",
+   "qv": 9827010.38162,
+   "harga": 0.00532
+  },
+  {
+   "simbol": "CFXUSDT",
+   "qv": 9782141.216,
+   "harga": 0.05694
+  },
+  {
+   "simbol": "GRAMUSDT",
+   "qv": 9688871.41847,
+   "harga": 1.369
+  },
+  {
+   "simbol": "BOMEUSDT",
+   "qv": 9647776.9181505,
+   "harga": 0.0007814
+  },
+  {
+   "simbol": "SHIBUSDT",
+   "qv": 9632011.11749827,
+   "harga": 0.00000514
+  },
+  {
+   "simbol": "INTCBUSDT",
+   "qv": 9315211.10861,
+   "harga": 100.09
+  },
+  {
+   "simbol": "OSMOUSDT",
+   "qv": 9243146.811509,
+   "harga": 0.0471
+  },
+  {
+   "simbol": "KORUBUSDT",
+   "qv": 9085399.7378,
+   "harga": 13.95
+  },
+  {
+   "simbol": "SEIUSDT",
+   "qv": 8812564.487908,
+   "harga": 0.06205
+  },
+  {
+   "simbol": "OPUSDT",
+   "qv": 8731454.50439,
+   "harga": 0.136
+  },
+  {
+   "simbol": "EURUSDT",
+   "qv": 7855947.13119,
+   "harga": 1.1199
+  },
+  {
+   "simbol": "TONUSDT",
+   "qv": 7717352.41982,
+   "harga": 1.6
+  },
+  {
+   "simbol": "RLCUSDT",
+   "qv": 7560631.14824,
+   "harga": 0.9181
+  },
+  {
+   "simbol": "ZAMAUSDT",
+   "qv": 7469634.07242,
+   "harga": 0.07903
+  },
+  {
+   "simbol": "ETHFIUSDT",
+   "qv": 7433262.76874,
+   "harga": 0.6918
+  },
+  {
+   "simbol": "RAYUSDT",
+   "qv": 7303264.936,
+   "harga": 2.0721
+  },
+  {
+   "simbol": "DASHUSDT",
+   "qv": 7177777.67536,
+   "harga": 48.84
+  },
+  {
+   "simbol": "LUMIAUSDT",
+   "qv": 6946859.760477,
+   "harga": 0.11
+  },
+  {
+   "simbol": "KAIAUSDT",
+   "qv": 6828404.70616,
+   "harga": 0.048
+  },
+  {
+   "simbol": "PLUMEUSDT",
+   "qv": 6622461.78003,
+   "harga": 0.02062
+  },
+  {
+   "simbol": "牛来USDT",
+   "qv": 6536306.93845,
+   "harga": 0.07192
+  },
+  {
+   "simbol": "ALGOUSDT",
+   "qv": 6393963.9217,
+   "harga": 0.1167
+  },
+  {
+   "simbol": "LDOUSDT",
+   "qv": 6187444.024428,
+   "harga": 0.4093
+  },
+  {
+   "simbol": "币安人生USDT",
+   "qv": 6148155.8339,
+   "harga": 0.5253
+  },
+  {
+   "simbol": "ATOMUSDT",
+   "qv": 6080275.74435,
+   "harga": 1.788
+  },
+  {
+   "simbol": "CRVUSDT",
+   "qv": 5838558.75677,
+   "harga": 0.3405
+  },
+  {
+   "simbol": "SANDUSDT",
+   "qv": 5821423.44464,
+   "harga": 0.05935
+  },
+  {
+   "simbol": "SNXXBUSDT",
+   "qv": 5790586.2603,
+   "harga": 10.92
+  },
+  {
+   "simbol": "AEROUSDT",
+   "qv": 5722648.65387,
+   "harga": 0.883
+  },
+  {
+   "simbol": "ZKUSDT",
+   "qv": 5619285.633781,
+   "harga": 0.01499
+  },
+  {
+   "simbol": "DODOUSDT",
+   "qv": 5459925.754553,
+   "harga": 0.01985
+  },
+  {
+   "simbol": "XUSDUSDT",
+   "qv": 5421344.1166,
+   "harga": 1.0012
+  },
+  {
+   "simbol": "MUBARAKUSDT",
+   "qv": 5218470.262534,
+   "harga": 0.07116
+  },
+  {
+   "simbol": "CAKEUSDT",
+   "qv": 5172250.83602,
+   "harga": 2.268
+  },
+  {
+   "simbol": "WLFIUSDT",
+   "qv": 5163903.76958,
+   "harga": 0.0568
+  },
+  {
+   "simbol": "CKBUSDT",
+   "qv": 5130239.704435,
+   "harga": 0.001533
+  },
+  {
+   "simbol": "CHIPUSDT",
+   "qv": 5082143.81334,
+   "harga": 0.05773
+  },
+  {
+   "simbol": "REDUSDT",
+   "qv": 4976320.31229,
+   "harga": 0.1519
+  },
+  {
+   "simbol": "VIRTUALUSDT",
+   "qv": 4958351.47037,
+   "harga": 0.6886
+  },
+  {
+   "simbol": "AMPUSDT",
+   "qv": 4920921.866451,
+   "harga": 0.000692
+  },
+  {
+   "simbol": "CYBERUSDT",
+   "qv": 4912134.03789,
+   "harga": 0.349
+  },
+  {
+   "simbol": "ONEUSDT",
+   "qv": 4849891.6064705,
+   "harga": 0.001635
+  },
+  {
+   "simbol": "SOXSBUSDT",
+   "qv": 4591976.9241,
+   "harga": 39.52
+  },
+  {
+   "simbol": "EIGENUSDT",
+   "qv": 4580249.025535,
+   "harga": 0.2456
+  },
+  {
+   "simbol": "JTOUSDT",
+   "qv": 4576932.28768,
+   "harga": 0.5166
+  },
+  {
+   "simbol": "ARUSDT",
+   "qv": 4575845.96762,
+   "harga": 3.86
+  },
+  {
+   "simbol": "ERAUSDT",
+   "qv": 4363020.15025,
+   "harga": 0.0641
+  },
+  {
+   "simbol": "NILUSDT",
+   "qv": 4336994.240342,
+   "harga": 0.07131
+  },
+  {
+   "simbol": "IOUSDT",
+   "qv": 4298722.329176,
+   "harga": 0.1623
+  },
+  {
+   "simbol": "JSTUSDT",
+   "qv": 4264769.418166,
+   "harga": 0.13878
+  },
+  {
+   "simbol": "MANTAUSDT",
+   "qv": 4063660.205975,
+   "harga": 0.0695
+  },
+  {
+   "simbol": "SFPUSDT",
+   "qv": 4047514.4787,
+   "harga": 0.257
+  },
+  {
+   "simbol": "SXTUSDT",
+   "qv": 3971953.517895,
+   "harga": 0.00907
+  },
+  {
+   "simbol": "GPSUSDT",
+   "qv": 3950780.749075,
+   "harga": 0.00779
+  },
+  {
+   "simbol": "NMRUSDT",
+   "qv": 3938210.6674,
+   "harga": 12.26
+  },
+  {
+   "simbol": "BEAMXUSDT",
+   "qv": 3883292.00229,
+   "harga": 0.002766
+  },
+  {
+   "simbol": "NFPUSDT",
+   "qv": 3834192.03235,
+   "harga": 0.00181
+  },
+  {
+   "simbol": "TQQQBUSDT",
+   "qv": 3802552.2731,
+   "harga": 78.01
+  },
+  {
+   "simbol": "PROMUSDT",
+   "qv": 3766223.26287,
+   "harga": 5.18
+  },
+  {
+   "simbol": "XAIUSDT",
+   "qv": 3754721.991398,
+   "harga": 0.00918
+  },
+  {
+   "simbol": "DUSKUSDT",
+   "qv": 3752999.2775,
+   "harga": 0.0961
+  },
+  {
+   "simbol": "MORPHOUSDT",
+   "qv": 3677702.21141,
+   "harga": 2.335
+  },
+  {
+   "simbol": "QQQBUSDT",
+   "qv": 3607086.06665,
+   "harga": 741.65
+  },
+  {
+   "simbol": "RVNUSDT",
+   "qv": 3601550.8974537,
+   "harga": 0.001565
+  },
+  {
+   "simbol": "PENDLEUSDT",
+   "qv": 3482768.0064,
+   "harga": 2.041
+  },
+  {
+   "simbol": "KITEUSDT",
+   "qv": 3477471.16141,
+   "harga": 0.1253
+  },
+  {
+   "simbol": "NIGHTUSDT",
+   "qv": 3410839.9114,
+   "harga": 0.04496
+  },
+  {
+   "simbol": "ZENUSDT",
+   "qv": 3386913.88391,
+   "harga": 6.098
+  },
+  {
+   "simbol": "GOOGLBUSDT",
+   "qv": 3385007.54454,
+   "harga": 353.99
+  },
+  {
+   "simbol": "MINAUSDT",
+   "qv": 3331615.55367,
+   "harga": 0.0764
+  },
+  {
+   "simbol": "METISUSDT",
+   "qv": 3193218.42605,
+   "harga": 3.65
+  },
+  {
+   "simbol": "RADUSDT",
+   "qv": 3159115.1537,
+   "harga": 0.3
+  },
+  {
+   "simbol": "ALTUSDT",
+   "qv": 3138321.32962,
+   "harga": 0.0079
+  },
+  {
+   "simbol": "MOVRUSDT",
+   "qv": 3106975.47895,
+   "harga": 1.48
+  }
+ ]
+}

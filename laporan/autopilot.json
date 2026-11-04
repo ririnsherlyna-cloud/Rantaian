@@ -1,0 +1,306 @@
+{
+  "diperbarui": "2026-11-03T02:57:35.614Z",
+  "organ": "V261-CLAW-TEMPOK v5.7 — pagar-baja & komite panjia warisan keluarga \"ClawTrade\"; V261: deep-screening DUA anggota keluarga dari KODE SUMBER — yuxuan-lou/ClawTrade (security middleware: \"treat your AI agent as an untrusted client\" — guardrails.py hard rules di luar jangkauan otak, confirmation.py antrean konfirmasi manusia ber-kadaluarsa, audit.py append-only ber-sanitasi) + clawtradeai-Agent/ClawTradeAI (MIT, multi-agent Solana: CoordinatorAgent weighted voting + riskManagerVeto + recommendedAmount, RiskManagerAgent kartu 4×25 + blockedTokens): DELAPAN KUNCI TEMPOK diadopsi — (1) PAGAR-BAJA: konstanta keras yang otak BACA tapi tak bisa TULIS ulang (kuota-harian, langit-langit slip, ukuran maks) dicek DULU di gerbang; (2) DAFTAR-TERLARANG ala FORBIDDEN_OPS: operasi terlarang blokir permanen sebelum hitung apa pun; (3) KOMITE-PANJIA ala CoordinatorAgent: 5 suara berbobot tetap (tren/kerumunan/derivatif/buku/tegangan) — tak ada suara tunggal yang berkuasa, suara rusak = bobot nol (degradasi anggun), keyakinan komite = koherensi searah (porsi kekuatan suara searah dari total terbaca — kalibrasi jujur, bukan copy confidence LLM) < minconf → SKIP; (4) KARTU-RISIKO 4×25 ala RiskManagerAgent: likuiditas/derivatif/kerumunan-konsentrasi/volatilitas → skor 0-100 berlevel LOW/MEDIUM/HIGH/CRITICAL, > 70 → VETO-SAKSI; (5) TANGGA-UKURAN ala recommendedAmount: keyakinan dikuantisasi kasar 1.0/0.5/0.25/nol — tak ada ukuran antara, kuanta membatasi skalaEfektif dari atas; (6) MENUNGGU-MANDAT ala confirmation.py: ukuran tertinggi tak dikunci seketika — antre + kadaluarsa 12 jam, kunci hanya setelah lolos gerbang ulang denyut berikutnya; (7) DAFTAR-HITAM ala blockedTokens: sasaran yang 3× diveto kartu-panas dibekukan 48 jam ber-alasan; (8) BUKU-TEKOK ala audit.py: setiap blok gerbang tercatat per-aturan + rekap kumulatif — ditumpuk pada V260-AUTOPILOT-KALIBRASI (warisan deep-screening \"AutoPilotPM\" (recogardtech/AutoPilotPM, MIT, kode sumber TypeScript 95 modul dibedah: src/ledger + src/risk + src/trading): TUJUH KUNCI KALIBRASI diadopsi — (1) TIMBANGAN-ALT (alternativesConsidered ala decision ledger): pilihan kedua dicatat saat kunci, regret-nya dihitung medan saat matang; (2) KELLY-LAPIS (dynamic Kelly 9-lapis): pengecilan drawdown (mulai 5%, setengah di 15%), kerendahan-hati sampel-kecil (<10 vonis → 0.5–0.95×), penyusutan streak-kalah (lantai 0.5×), vol-target scaling (klamps 0.5–1.5) — ditumpuk di atas ekspresi dinamis, skalaEfektif clamp [0.2,1.2] + keyakinan-ukuran 0.4/0.3/0.3; (3) REZIM-MEDAN (volatility regime 4-tingkat BASELINE-MANDIRI): σ window P&L dibanding baseline σ window penuh pertama milik sendiri — tenang 1.2×/normal 1.0×/tinggi 0.5×/ekstrem 0.25×+BERTAHAN; (4) UJI-TEGANG (stress test 5 skenario ala stress.ts): flash-crash/likuiditas/platform/korelasi/black-swan dinilai ke posisi terbuka, terburuk ≥30% → penalti+BERTAHAN; (5) SLIP-NETO (slippage-adjusted edge ala OPPORTUNITY_FINDER): edge dikurangi sqrt(1/likuiditas)·2·faktor+spread/2 SEBELUM memutuskan — edge bersih ≤ 0 ditolak dengan alasan, data kosong tidak memblokir (fallback-jujur); (6) PELUANG-SKOR (opportunity scoring terbobot + penalti): 0-100 = edge+likuiditas+keyakinan+eksekusi−penalti, <60 ditolak dengan alasan (gerbang baru yang hanya MENOLAK); (7) TOP-TOLAK (topBlockReasons): ranking alasan penolakan — kesadaran atas penolakannya sendiri — ditumpuk pada V259-KAIZEN-PULIH (prateekjain98/kaizen-trader open-source + KAIZEN Virtuals/Hyperliquid + Kaizen RegimeBot + kaizen.cash): EMPAT LOOP PENYEMBUHAN-DIRI diadopsi — (1) UJI-BALIK (delta-revert): perubahan genome adalah eksperimen yang dinilai medan per 8 vonis matang, yang lebih buruk DIREVERT; (2) KARANTINA (rule-healer): topik meta-inferensi yang terus keliru disita suaranya sementara, pulih lewat bukti; (3) DINGIN-DENDAM (anti-revenge): kekalahan beruntun per sasaran/keluarga membekukan re-entry; (4) HENTI-HARIAN: rugi-net harian ≤ −4% memaksa BERTAHAN — ditambah KESEGARAN gerakan (pompa-tua diveto ala \"fresh breakouts > stale pumps\"), MODAL-MATI (chop-exit), TESIS-PATAH, dan PENJAGA-KEDUA (hard-stop 15%/hard-target 40% pra-registrasi ala watchdog proses-terpisah): lapisan parameter per kandang diperluas 46 → 67 bernama — (D) STRUKTUR HARIAN dari klines 1d 90 hari (EMA-align/RSI/MACD daily, Donchian 30d, jarak puncak-lantai 90d, momentum bulanan, streak hari, rasio volatilitas realized 7d/30d), (E) KERUMUNAN NYATA OKX rubik (long/short account ratio + tren membubarnya, taker buy/sell aggressor), (F) STRES DERIVATIF (basis perp-vs-spot, jam menuju funding, funding relatif vs BTC), (G) gradien order book (massa depan vs total 1%), (H) 6 INTERAKSI antar-faktor eksplisit (funding×ΔOI, volume×rezim-ATR, tren4h×funding, buku×tren1h, breakout×volume, agresor×tren) — semuanya lapis OBSERVASI: dihitung, dinarasikan, disekolahkan, berhak VETO, TIDAK berbobot sebelum hit-rate medan lulus (hukum rumah tak berubah) + 5 param iklim lintas-siklus (Δdominasi antar-denyut, ETH/BTC 7d risk-on/off, LS-akun BTC/ETH, jam funding BTC) · ditumpuk pada V256-MESIN-DEAL-ODDS (MESIN DEAL ala DCA-bot 3Commas: safety orders hard-cap 1.2×ATR ×1.6 ×1.5 + breakeven aktivasi 60% + trailing 0.8×ATR + Global Max Open Positions; ODDS MAKER ala Trade Ideas: skor 0-100, top-3 ≥55 boleh kunci; 6 tag peristiwa OddsMaker) → registri total 101 → 127 → 145 → 167 → 191 → 232 parameter bernama",
+  "siklus": 1601,
+  "mandat": "periksa ai agent bernama autopilotpm yang only khusus trading — masuk, pelajari sistemnya, decrypt, ambil yang bermanfaat & kunci intinya, implementasikan pada micaprofita agar cyborg AGI benar-benar mahir, mawas & makin professional — bukan sekadar sadari tanpa wawasan (perintah pemilik)",
+  "identitas": {
+    "nama": "AutoPilotPM",
+    "repo": "recogardtech/AutoPilotPM",
+    "lisensi": "MIT",
+    "bahasa": "TypeScript (95 modul src)",
+    "deskripsi": "open-source autonomous trading system powered by AI — monitor & trade across 1,000+ markets (prediction markets + perp futures + DeFi Solana/EVM)",
+    "ket": "bukan sekadar app copy-trading — decision ledger, risk engine 10 gerbang, dan kalkulator Kelly-nya adalah kode sumber terbuka yang dibedah langsung"
+  },
+  "sumber": [
+    {
+      "platform": "AutoPilotPM (GitHub, recogardtech)",
+      "url": "https://github.com/recogardtech/AutoPilotPM",
+      "kunci": "self-hosted AI workspace utk market research & automated trading: 1000+ pasar, 118+ strategi, 4 peran agent, decision ledger dgn confidence calibration & on-chain anchoring"
+    },
+    {
+      "platform": "src/ledger (kode sumber)",
+      "url": "https://github.com/recogardtech/AutoPilotPM/tree/main/src/ledger",
+      "kunci": "DecisionRecord: inputs + analysis (observations/factors/ALTERNATIVES-CONSIDERED) + constraints[] + confidence 0-100; pasca-eksekusi accurate boolean; kalibrasi 5 bucket (0-19/…/80-100) masing-masing accuracyRate; SHA-256 integrity"
+    },
+    {
+      "platform": "src/trading/kelly.ts (kode sumber)",
+      "url": "https://github.com/recogardtech/AutoPilotPM/blob/main/src/trading/kelly.ts",
+      "kunci": "Dynamic Kelly 9-lapis: quarter-Kelly × confidence × drawdown (mulai 5%, 0.5× di 15%) × streak × vol-target (klamps 0.5-1.5) × kategori × sampel-kecil (0.5-1.0 di <10 trades) × bounds [1%,25%] + anti-martingale + keyakinan-ukuran 0.4/0.3/0.3"
+    },
+    {
+      "platform": "src/risk/volatility.ts (kode sumber)",
+      "url": "https://github.com/recogardtech/AutoPilotPM/blob/main/src/risk/volatility.ts",
+      "kunci": "4 rezim (low 1.2×/normal 1.0×/high 0.5×/extreme 0.25×+halt) dgn BASELINE CALIBRATION dari window penuh pertama — rezim dinilai relatif thd sejarah sendiri, bukan ambang karangan"
+    },
+    {
+      "platform": "src/risk/stress.ts (kode sumber)",
+      "url": "https://github.com/recogardtech/AutoPilotPM/blob/main/src/risk/stress.ts",
+      "kunci": "5 skenario terdefinisi: flash_crash 20% / liquidity_crunch 10% / platform_down 15% / correlation_spike 25% / black_swan 40% — dijalankan semua, diurut severity, keluarkan recommendations"
+    },
+    {
+      "platform": "docs/RISK_MANAGEMENT.md",
+      "url": "https://github.com/recogardtech/AutoPilotPM/blob/main/docs/RISK_MANAGEMENT.md",
+      "kunci": "RiskEngine validateTrade(): 10 gerbang BERURUTAN (kill-switch → breaker → order → exposure → daily-loss/DD/konsentrasi → VaR/CVaR → regime → Kelly non-blocking); circuit breaker pasar-sadar 5 kondisi + 3 preset"
+    },
+    {
+      "platform": "docs/OPPORTUNITY_FINDER.md",
+      "url": "https://github.com/recogardtech/AutoPilotPM/blob/main/docs/OPPORTUNITY_FINDER.md",
+      "kunci": "skor peluang 0-100 (Edge 35/Liq 25/Conf 25/Exec 15 − penalti eksplisit); slippage = sqrt(size/liquidity)·2·faktor + spread/2 — dgn catatan jujur \"heuristic, not empirically validated\"; statistik per pasangan platform & tipe peluang"
+    },
+    {
+      "platform": "docs/FEATURE_ENGINEERING.md",
+      "url": "https://github.com/recogardtech/AutoPilotPM/blob/main/docs/FEATURE_ENGINEERING.md",
+      "kunci": "fallback-jujur: semua feature check return TRUE saat data kosong — tidak memblokir dari ketidaktahuan; adaptive stop/TP widening berbasis volatilitas"
+    }
+  ],
+  "kunciDiadopsi": [
+    "TIMBANGAN-ALT (alternativesConsidered ala decision ledger) — pilihan kedua (runner-up odds) + alasan penolakannya disegel saat kunci; saat matang, net-hipotetis alternatif dihitung dari lilin pasca-kunci dan REGRET-nya dicatat (ilmu.alt.lebihBaik/lebihBuruk) — kejujuran atas jalan yang tak ditempuh",
+    "KELLY-LAPIS (dynamic Kelly) — pengecilan drawdown (mulai 5%, setengah di 15%), kerendahan-hati sampel-kecil (<10 vonis matang → 0.5–0.95×), penyusutan streak-kalah (lantai 0.5×), vol-target scaling (10%/σ, klamps [0.5,1.5]) — ditumpuk di atas ekspresi dinamis gekko → skalaEfektif clamp [0.2,1.2]; keyakinan-ukuran 0.4·sampel+0.3·kinerja+0.3·(1−DD) disegel per entri",
+    "REZIM-MEDAN (volatility regime 4-tingkat BASELINE-MANDIRI) — σ window P&L terakhir dibanding baseline σ window penuh PERTAMA milik sendiri (dipersistenkan): tenang 1.2×/normal 1.0×/tinggi 0.5×/ekstrem 0.25× + suhu BERTAHAN dipaksa saat ekstrem — terikat-batas: hanya mengetatkan, tak melonggarkan",
+    "UJI-TEGANG (stress test 5 skenario) — posisi terbuka dinilai di flash-crash/likuiditas/platform/korelasi/black-swan (fraksi 20/10/15/25/40% × skala eksposur); terburuk ≥ 30% unit → penalti peluang + BERTAHAN; hasil lengkap di laporan & denyut",
+    "SLIP-NETO (slippage-adjusted edge) — slip = sqrt(1/likuiditasUSD)·2·0.8 + spread/2; edgeBersih = EV − slip; edgeBersih ≤ 0 → TOLAK dengan alasan; data kosong TIDAK memblokir (fallback-jujur ala AutoPilot feature-engineering)",
+    "PELUANG-SKOR (opportunity scoring terbobot + penalti) — 0-100 = edge (0-40) + likuiditas (0-25) + keyakinan (0-25) + eksekusi (0-10) − penalti (spread lebar −5, slip>2% −4, keyakinan<70 −3); < 60 → TOLAK dengan alasan (gerbang baru yang hanya MENOLAK); dinilai medan: apakah skor tinggi memang menang lebih sering (ilmu.peluang)",
+    "TOP-TOLAK (topBlockReasons) — alasan penolakan jalur ARAH dihitung per kunci tiap siklus + kumulatif (ilmu.topTolak) — kesadaran atas penolakannya sendiri: tahu MENGAPA berkata tidak, bukan sekadar kapan berkata ya"
+  ],
+  "paramAuto": {
+    "kandang": [
+      "peluang",
+      "slipPct",
+      "kellyMult"
+    ],
+    "siklus": [
+      "rezimMedan",
+      "multRezim",
+      "stresTerkburuk",
+      "stresSkenario",
+      "topTolakUtama",
+      "topTolakCt"
+    ],
+    "konst": [
+      "kellyDdMulai",
+      "kellyDdMaks",
+      "kellyDdFaktor",
+      "kellySampelN",
+      "kellyLossStreak",
+      "kellyVolTarget",
+      "kellyVolKlip",
+      "stresAmbangPct",
+      "slipFaktor",
+      "slipAmbangPct",
+      "peluangAmbang",
+      "bobotEdge",
+      "bobotLiq",
+      "bobotKiyak",
+      "bobotEksekusi"
+    ],
+    "total": 24
+  },
+  "konstanta": {
+    "kellyDdMulai": 5,
+    "kellyDdMaks": 15,
+    "kellyDdFaktor": 0.5,
+    "kellySampelN": 10,
+    "kellyLossStreak": 2,
+    "kellyVolTarget": 10,
+    "kellyVolKlip": 1.5,
+    "stresAmbangPct": 30,
+    "slipFaktor": 0.8,
+    "slipAmbangPct": 2,
+    "peluangAmbang": 60,
+    "bobot": {
+      "edge": 40,
+      "liq": 25,
+      "kiyak": 25,
+      "eksekusi": 10
+    }
+  },
+  "siklusIni": {
+    "ddPct": 656.69,
+    "rezimMedan": {
+      "rezim": "ekstrem",
+      "mult": 0.25,
+      "sigma": 7.1967,
+      "baseline": 1.622,
+      "ket": "σ window 7.1967% vs baseline 1.6220% (rasio 4.44) — baseline dikalibrasi dari window penuh pertama, bukan ambang karangan"
+    },
+    "stres": {
+      "skenario": [
+        {
+          "nama": "black-swan",
+          "rugiPct": 40,
+          "rugiUnit": 1.59
+        },
+        {
+          "nama": "korelasi-menembus",
+          "rugiPct": 25,
+          "rugiUnit": 0.99
+        },
+        {
+          "nama": "flash-crash",
+          "rugiPct": 20,
+          "rugiUnit": 0.79
+        },
+        {
+          "nama": "platform-mati",
+          "rugiPct": 15,
+          "rugiUnit": 0.6
+        },
+        {
+          "nama": "likuiditas-mampet",
+          "rugiPct": 10,
+          "rugiUnit": 0.4
+        }
+      ],
+      "terburuk": {
+        "nama": "black-swan",
+        "rugiPct": 40,
+        "rugiUnit": 1.59
+      },
+      "ket": "19 posisi terbuka dinilai di 5 skenario — estimasi rugi unit-relatif (skala eksposur × fraksi skenario), diurut severity ala AutoPilot stress.ts"
+    },
+    "peluangVeto": 0,
+    "slipVeto": 0,
+    "topTolakSiklus": [
+      [
+        "forensik",
+        9
+      ]
+    ],
+    "topTolakKumulatif": {
+      "kerumunan-funding": 31,
+      "forensik": 84948,
+      "order-book-lawan": 354,
+      "tren-4h-lawan": 46970,
+      "volatilitas-ekstrem": 2411,
+      "odds": 141729,
+      "metakognisi": 62,
+      "peluang-rendah": 3,
+      "aturan-dinamis-AD-0001": 538,
+      "aturan-dinamis-AD-0004": 3117,
+      "aturan-dinamis-AD-0007": 903,
+      "aturan-dinamis-AD-0010": 1909,
+      "aturan-dinamis-AD-0014": 447,
+      "pompa-tua": 26,
+      "aturan-dinamis-AD-0012": 42,
+      "aturan-dinamis-AD-0016": 15,
+      "aturan-dinamis-AD-0015": 25,
+      "aturan-dinamis-AD-0019": 19,
+      "basis-ekstrem": 18,
+      "aturan-dinamis-AD-0021": 893,
+      "aturan-dinamis-AD-0024": 3262,
+      "aturan-dinamis-AD-0037": 164,
+      "aturan-dinamis-AD-0028": 8,
+      "aturan-dinamis-AD-0041": 533,
+      "aturan-dinamis-AD-0033": 15,
+      "aturan-dinamis-AD-0044": 12,
+      "aturan-dinamis-AD-0052": 28,
+      "aturan-dinamis-AD-0074": 16,
+      "claw-kuota": 161,
+      "aturan-dinamis-AD-0056": 18,
+      "aturan-dinamis-AD-0085": 24,
+      "aturan-dinamis-AD-0094": 128,
+      "aturan-dinamis-AD-0072": 8,
+      "aturan-dinamis-AD-0112": 2,
+      "zona-chase": 70,
+      "aturan-dinamis-AD-0126": 541,
+      "claw-slipmaks": 22,
+      "aturan-dinamis-AD-0116": 1,
+      "aturan-dinamis-AD-0129": 10,
+      "aturan-dinamis-AD-0133": 2,
+      "aturan-dinamis-AD-0138": 10,
+      "aturan-dinamis-AD-0151": 269,
+      "aturan-dinamis-AD-0161": 10,
+      "aturan-dinamis-AD-0166": 4,
+      "impas-alokasi": 1,
+      "aturan-dinamis-AD-0176": 31,
+      "aturan-dinamis-AD-0182": 5,
+      "aturan-dinamis-AD-0194": 20,
+      "aturan-dinamis-AD-0198": 2,
+      "aturan-dinamis-AD-0204": 5,
+      "aturan-dinamis-AD-0216": 1,
+      "aturan-dinamis-AD-0229": 45
+    },
+    "baselineSigma": 1.622
+  },
+  "medan": {
+    "alt": {
+      "lebihBaik": {
+        "n": 0,
+        "net": 0
+      },
+      "lebihBuruk": {
+        "n": 0,
+        "net": 0
+      },
+      "ket": "berapa kali alternatif seharusnya dipilih (regret) vs pilihan utama menang"
+    },
+    "kelly": {
+      "kecil": {
+        "n": 1067,
+        "benar": 438,
+        "net": -3.8444
+      },
+      "sedang": {
+        "n": 43,
+        "benar": 23,
+        "net": 0.09421
+      },
+      "besar": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "ket": "apakah ukuran kecil (kelly < 0.7) memang lebih aman dari besar"
+    },
+    "rezimMedan": {
+      "tenang": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "normal": {
+        "n": 20,
+        "benar": 5,
+        "net": -0.40482
+      },
+      "tinggi": {
+        "n": 125,
+        "benar": 44,
+        "net": -0.49027
+      },
+      "ekstrem": {
+        "n": 965,
+        "benar": 412,
+        "net": -2.8551
+      },
+      "ket": "apakah entri saat σ-tenang memang lebih menguntungkan"
+    },
+    "peluang": {
+      "tinggi": {
+        "n": 31,
+        "benar": 6,
+        "net": -1.69804
+      },
+      "rendah": {
+        "n": 1079,
+        "benar": 455,
+        "net": -2.05215
+      },
+      "ket": "apakah skor komposit ≥ ambang memang menang lebih sering"
+    },
+    "stres": {
+      "tinggi": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      },
+      "rendah": {
+        "n": 1110,
+        "benar": 461,
+        "net": -3.75019
+      },
+      "ket": "apakah denyut stres-tinggi (terburuk ≥ 30%) memang lebih berbahaya"
+    }
+  },
+  "kejujuran": "semua param autopilot lahir OBSERVASI — disegel (paramsPenuh + bucket ilmu.alt/kelly/rezimMedan/peluang/stres), TIDAK berbobot genome; dua gerbang baru (peluang-rendah, slip-neto) HANYA MENOLAK; dua perubahan suhu (rezim-ekstrem → BERTAHAN, stres ≥ 30% → penalti) terikat-batas & terlog; slippage adalah HEURISTIK belum tervalidasi — dilabeli jujur ala dokumen AutoPilotPM; entri lama tanpa lapis autopilot tampil apa adanya"
+}

@@ -1,0 +1,108 @@
+{
+ "versi": "V266-BAROMETER v6.3 — sekolah kilat putaran-2 (2026-10-03)",
+ "metode": "ujian buta-histori pada dunia beku (blind dijamin lapisan data — fetch dipotong pada T, Date dibekukan); vonis resmi close T+24j − fee 0.002; penjaga.mjs ASLI dijalankan utuh per dunia",
+ "putaran2": {
+  "oos_reversal_1002": {
+   "n": 57,
+   "akurasiPct": 3.5,
+   "netPct": -144.5,
+   "pf": 0.011,
+   "ket": "6 dunia 10-02 langkah 2 jam — organ V265 belum pernah lihat; v6.2 kunci BUY 89% di hari yang berbalik arah"
+  },
+  "holdout_reversal_1002": {
+   "n": 63,
+   "akurasiPct": 0.0,
+   "netPct": -186.9,
+   "ket": "4 dunia holdout T05/07/09/11 (belum pernah disentuh) — baseline v6.2; v6.3 hasil identik karena hari REVERSAL: barometer pra-T positif (+1.5..+3.2% BTC) lalu pasar berbalik = buta prinsipil, diakui jujur"
+  },
+  "bedah_makro_2366_soal": {
+   "sell_saat_btc_lt_minus1": {
+    "n": 397,
+    "akurasiPct": 30.2,
+    "netPct": -339.3,
+    "ket": "pendarah terbesar — menjual dasar"
+   },
+   "breadth_lt_25": {
+    "n": 705,
+    "akurasiPct": 35.2,
+    "netPct": -405.5
+   },
+   "buy_saat_btc_0_1": {
+    "n": 470,
+    "akurasiPct": 40.0,
+    "netPct": -155.8
+   },
+   "buy_saat_btc_lt_minus1": {
+    "n": 141,
+    "akurasiPct": 53.9,
+    "netPct": 80.1,
+    "ket": "menadah pantulan terbukti untung — dipertahankan; draf-1 organ yang memotong BUY-bear = salah target, dibuang"
+   },
+   "buy_saat_btc_gt_3": {
+    "n": 176,
+    "akurasiPct": 46.7,
+    "netPct": 187.7
+   }
+  },
+  "uji_dunia_bear_sejati_organ_revisi": {
+   "dunia": [
+    "2026-06-10T00Z (BTC −2.15%, breadth 21%)",
+    "2026-06-10T06Z (−3.12%, 10%)",
+    "2026-06-10T18Z (+0.45%, 14%)",
+    "2026-06-11T00Z"
+   ],
+   "baseline_v62": {
+    "n": 32,
+    "akurasiPct": 34.4,
+    "netPct": -40.5,
+    "sell": "n=31 ak 32% net −44.0"
+   },
+   "v63_v266": {
+    "n": 8,
+    "akurasiPct": 100.0,
+    "netPct": 15.4,
+    "sell": "n=8 ak 100% net +15.4",
+    "ket": "radar-jujur-bear menahan 24 jawaban murahan (key<45) — sistem memilih diam pada bear ekstrem (06-10T06/18, 06-11T00: breadth 0-14%) alih-alih menjual dasar"
+   },
+   "delta": "net +55.9pp membaik; SELL ak 29%→56% (jendela luas n=41→18)"
+  }
+ },
+ "organ_v66": [
+  {
+   "nama": "sell-bear-harian",
+   "syarat": "ret24 BTC ≤ −1.5% atau breadth ≤25%",
+   "aksi": "keyakinan SELL ≤40 + ukuran ×0.5",
+   "bukti": "ak 30.2% net −339.3% n=397"
+  },
+  {
+   "nama": "tunda-bear",
+   "syarat": "SELL terkalibrasi <50 saat bear-harian",
+   "aksi": "TUNDA denyut ini (rem, bukan ban — pola KEMBALI-PINTAR)",
+   "bukti": "menjual dasar = pendarah"
+  },
+  {
+   "nama": "sell-relatif-kuat",
+   "syarat": "SELL koin yang ret24-nya lebih kuat dari BTC saat bear",
+   "aksi": "key ≤45",
+   "bukti": "menjual yang kuat saat bear = salah sasaran"
+  },
+  {
+   "nama": "buy-flat-btc",
+   "syarat": "BUY saat BTC 0..+1% (pasar ragu)",
+   "aksi": "keyakinan −8",
+   "bukti": "ak 40% net −155.8% n=470"
+  },
+  {
+   "nama": "radar-jujur-bear",
+   "syarat": "bear-harian",
+   "aksi": "kandidatLain hanya key ≥45 (kunci penuh tetap dinilai apa adanya — seleksi publik, bukan karantina)",
+   "bukti": "24 jawaban murahan tertahan di uji dunia bear"
+  }
+ ],
+ "kejujuran": [
+  "hari reversal (10-02) secara prinsip tidak dapat diprediksi dari data pra-T — akurasi 0% di hari itu bukan bug yang bisa dipatch tanpa melihat masa depan; diakui terbuka",
+  "draf-1 organ (potong BUY saat bear) SALAH TARGET — bedah membuktikan BUY-bear untung; organ direvisi sebelum push, bukti di atas",
+  "uji dunia bear n kecil (32 vs 8 soal) — organ terus dinilai medan hidup; uji-balik akan merevisi bila terbukti salah"
+ ],
+ "registri": "293 → 301 parameter bernama"
+}

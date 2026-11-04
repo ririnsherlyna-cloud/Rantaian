@@ -1,0 +1,15 @@
+{
+ "waktu": "2026-11-04 22:44:45 WIB",
+ "endpoint": {},
+ "sasaran": {
+  "BTCUSDT": {
+   "gagal": "HTTP 418: Way too many requests; IP(8.212.10.159) banned until 1793853595017. Please use the websocket for live updates to avoid b"
+  },
+  "ETHUSDT": {
+   "gagal": "HTTP 418: Way too many requests; IP(8.212.10.159) banned until 1793888696831. Please use the websocket for live updates to avoid b"
+  },
+  "SYNUSDT": {
+   "gagal": "HTTP 418: Way too many requests; IP(47.57.242.119) banned until 1793836678514. Please use the websocket for live updates to avoid "
+  }
+ }
+}

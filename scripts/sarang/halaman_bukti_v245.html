@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bukti V245 SARANG-BAWAAN — organ live + data server live</title>
+<style>
+  body{background:#0b0906;color:#e7d9bd;font:13px ui-monospace,monospace;margin:0;padding:24px}
+  h1{color:#fde68a;font-size:16px;letter-spacing:2px;margin:0 0 4px}
+  .sub{color:#a18b5d;font-size:11px;margin-bottom:18px;line-height:1.6}
+  #panel{width:min(600px,100%);border:1px solid rgba(245,158,11,.35);border-radius:12px;padding:14px;background:rgba(20,14,4,.6)}
+  #panel h3{margin:0 0 2px;font-size:13px;letter-spacing:2px;color:#fde68a}
+  .sub2{color:#a18b5d;font-size:10.5px;margin-bottom:10px}
+  #v243-status{font-size:11px;line-height:1.7;margin-bottom:4px}
+  #v243-status .l{display:inline-block;width:110px;color:#a18b5d}
+  #log{margin-top:18px;border:1px dashed rgba(245,158,11,.3);border-radius:10px;padding:12px;font-size:11px;line-height:1.7;white-space:pre-line;color:#b8a97f}
+  .ok{color:#34d399;font-weight:700}.bad{color:#f87171;font-weight:700}
+</style>
+</head>
+<body>
+<h1>BUKTI V245 SARANG-BAWAAN</h1>
+<div class="sub">
+  Halaman bukti ringan: blok organ V245 diambil LANGSUNG dari situs Pages live
+  (satu sumber kebenaran — yang diuji di sini byte-identik dengan yang disajikan ke semua browser).
+  Organ V243 SARANG di-host dgn tiruan ber-signature identik (label jujur di bawah);
+  laporan yang tampil adalah data server nyata SARANG-PENJAGA, tanpa token.
+</div>
+<div id="panel">
+  <h3>SARANG <span style="color:#7c6c46;font-size:10px">(host tiruan V243 — signature API identik)</span></h3>
+  <div class="sub2">konfigurasi: TIDAK ADA isian — organ memasang sendiri dari alamat halaman</div>
+  <div id="v243-status"></div>
+</div>
+<div id="log">memuat organ dari Pages live…</div>
+<script>
+(function () {
+  var L = [];
+  function log(m, kelas) { L.push((kelas === 'ok' ? '[OK] ' : kelas === 'bad' ? '[GAGAL] ' : '[..] ') + m); document.getElementById('log').textContent = L.join('\n'); }
+
+  // ---- host tiruan V243 (signature identik dgn API asli) ----
+  var cfgMock = { apiBase: 'https://api.github.com', owner: '', repo: '', branch: 'main', token: '', pagesUrl: '' };
+  var cfgSetCalls = [], pulihCalls = 0, versiCalls = 0;
+  window.V231_SAKTI = { SARANG: {
+    versi: '1.0', nama: 'SAKTI-SARANG (tiruan host)',
+    status: function () { return { cfg: Object.assign({}, cfgMock) }; },
+    cfgSet: function (o) { cfgSetCalls.push(Object.assign({}, o)); Object.assign(cfgMock, o); return true; },
+    pulih: function () { pulihCalls++; return Promise.resolve({ ok: true, dipulihkan: false, alasan: 'tiruan' }); },
+    pemeriksaVersi: function () { versiCalls++; return Promise.resolve({ ok: true, sama: true }); }
+  }};
+
+  // panel & status element untuk sisipUI organ
+  var panel = document.getElementById('panel'), statusEl = document.getElementById('v243-status');
+
+  var BASE = 'https://ririnsherlyna-cloud.github.io/Micaprofita-/';
+  log('mengunduh tubuh SAKTI live (' + BASE + ') untuk mengambil blok V245 byte-identik…');
+
+  fetch(BASE + 'index.html?bukti=' + Date.now(), { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+    .then(function (tubuh) {
+      var a = tubuh.indexOf('/*V245-SARANG-BAWAAN:BEGIN*/');
+      var b = tubuh.indexOf('/*V245-SARANG-BAWAAN:END*/');
+      if (a < 0 || b < 0) throw new Error('blok V245 tidak ditemukan di tubuh live');
+      var blok = tubuh.slice(a, b + '/*V245-SARANG-BAWAAN:END*/'.length);
+      log('blok V245 live: ' + blok.length.toLocaleString('en-US') + ' byte — dieksekusi apa adanya (byte-identik).');
+      // sediakan id yang dicari sisipUI organ: panel jadi v243-panel, status jadi v243-status
+      document.getElementById('panel').id = 'v243-panel';
+      statusEl.id = 'v243-status';
+      // jalankan organ live
+      new Function(blok)();
+      log('organ dieksekusi — boot selesai.', 'ok');
+
+      setTimeout(function () {
+        try {
+          var S = window.V231_SAKTI.SASARAN;
+          var k = S.keadaan();
+          var t = S.selfTest();
+          log('pasang bawaan  : ' + (k.dipasang && k.dipasang.cara) + ' → ' + k.dipasang.target.owner + '/' + k.dipasang.target.repo, k.dipasang && k.dipasang.ok ? 'ok' : 'bad');
+          log('token disentuh : ' + (cfgSetCalls.some(function (c) { return 'token' in c; }) ? 'YA (GAGAL)' : 'TIDAK (benar)'), 'ok');
+          log('otak server    : ' + (k.server ? 'siklus #' + k.server.siklus + ' · sasaran ' + k.server.sasaranHariIni.length + ' · rezim ' + k.server.rezimBTC.rezim : 'GAGAL: ' + k.galat), k.server ? 'ok' : 'bad');
+          log('denyut terbaca : ' + k.denyut.length + ' garis', k.denyut.length ? 'ok' : 'bad');
+          log('pulih (publik) : dipanggil ' + pulihCalls + 'x · pemeriksa versi: ' + versiCalls + 'x (tanpa token)', 'ok');
+          log('self-test      : ' + t.pass + '/' + t.total + (t.fail ? ' — GAGAL' : ' — semua PASS'), t.fail ? 'bad' : 'ok');
+          var baris = document.querySelectorAll('#v245-bawaan .v245-baris').length;
+          log('baris sasaran  : ' + baris + ' tergambar di seksi OTAK SERVER', baris >= 1 ? 'ok' : 'bad');
+          document.getElementById('v243-status').innerHTML =
+            '<div><span class="l">SARANG</span>terpasang otomatis — ' + cfgMock.owner + '/' + cfgMock.repo + ' (tanpa isian)</div>' +
+            '<div><span class="l">TULIS</span>butuh token pemilik — evolusi rutin di server PENJAGA</div>';
+        } catch (e) {
+          log('verifikasi gagal: ' + (e && e.message), 'bad');
+        }
+      }, 3500);
+    })
+    .catch(function (e) { log('GAGAL: ' + (e && e.message), 'bad'); });
+})();
+</script>
+</body>
+</html>

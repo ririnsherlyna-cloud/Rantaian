@@ -1,0 +1,18 @@
+{
+ "ts": 1793803099.6749916,
+ "sumber": "heartbeat",
+ "universe": 91,
+ "terbaca": 90,
+ "zona99": 13,
+ "zona90": 33,
+ "zona80": 16,
+ "total_zona": 62,
+ "denyut": 0,
+ "mayat": 58,
+ "luka_baru": 0,
+ "gagal": 1,
+ "gagal_list": [
+  "AGTUSDT"
+ ],
+ "detik": 1.9
+}

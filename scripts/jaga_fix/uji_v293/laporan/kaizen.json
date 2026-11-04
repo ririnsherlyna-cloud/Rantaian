@@ -1,0 +1,187 @@
+{
+  "versi": "V262-IMPAS-CERDAS",
+  "dihasilkan": "2026-10-07T06:23:46.614Z",
+  "siklus": 71,
+  "identitas": "deep-screening keluarga \"Kaizen Trader\": prateekjain98/kaizen-trader (open-source, kode sumber dibedah), KAIZEN Virtuals/Hyperliquid, Kaizen RegimeBot, kaizen.cash — EMPAT LOOP PENYEMBUHAN-DIRI diadopsi ke ledger pra-registrasi SAKTI lalu DINILAI MEDAN",
+  "sumber": [
+    {
+      "platform": "kaizen-trader (GitHub, prateekjain98)",
+      "url": "https://github.com/prateekjain98/kaizen-trader",
+      "kunci": "otonomous perp-futures engine: 11 data streams gratis, 14 strategi, 4 SELF-HEALING LOOPS (rule healer, Claude analysis, delta revert, Darwinian selector), cooldown anti-dendam per-simbol/per-strategi, daily loss halt, 8 kondisi keluar eksplisit, watchdog proses-terpisah"
+    },
+    {
+      "platform": "rule_brain.py (kode sumber)",
+      "url": "https://github.com/prateekjain98/kaizen-trader/blob/main/src/engine/rule_brain.py",
+      "kunci": "12-faktor aditif berlabel + P0/P1/P2 audit fixes: atribusi strategi tunggal, bonus kontrarian tak boleh lawan arah, umur tak diketahui = tua (konservatif-pada-kekaburan)"
+    },
+    {
+      "platform": "claude_brain.py (kode sumber)",
+      "url": "https://github.com/prateekjain98/kaizen-trader/blob/main/src/engine/claude_brain.py",
+      "kunci": "\"1H ACCELERATION is THE key signal... fresh breakouts > stale pumps. Late entries are exit liquidity\" + PATIENCE IS EDGE"
+    },
+    {
+      "platform": "Portofolio pencipta (Prateek Jain)",
+      "url": "https://prateekjain.io",
+      "kunci": "4 Healing Loops eksplisit: Rule healer, Claude analysis, Delta revert, Darwinian selector — klaim live +18.2% @ 1x leverage"
+    },
+    {
+      "platform": "KAIZEN (Virtuals Protocol — HOL registry)",
+      "url": "https://hol.org/registry/agent/uaid:aid:9quBQSRbaUGSZzJ5VCfvrF4AScUU5i75N78BrTdz39xC12V2UqwpokdGeiex3ZUqTy",
+      "kunci": "quant trading agent kelas institusional eksklusif Hyperliquid — prinsip SPESIALIZASI satu-venue"
+    },
+    {
+      "platform": "Kaizen RegimeBot (kaizen-daytrading.com)",
+      "url": "https://kaizen-daytrading.com/bots",
+      "kunci": "regime-strategy binding: 5 input klasifikasi harian → TEPAT SATU strategi aktif ATAU OFF (~17% hari tanpa edge); fail-safe data-gagal = tetap flat; validasi out-of-sample 6 bulan"
+    },
+    {
+      "platform": "kaizen.cash",
+      "url": "https://kaizen.cash",
+      "kunci": "otonomi berjenjang: sarankan dulu → direview → eksekusi hanya dalam aturan pemilik (cermin sekolah OBSERVASI→berhak-veto→berbobot SAKTI)"
+    },
+    {
+      "platform": "thekaizentrader.com",
+      "url": "https://thekaizentrader.com",
+      "kunci": "jurnal + mental prep: strategi adalah perjalanan berkelanjutan, bukan tugas sekali-jadi"
+    }
+  ],
+  "kunciDiadopsi": [
+    "UJI-BALIK / DELTA-REVERT (loop 3 dari 4 healing loops) — perubahan genome disegel sebagai eksperimen; net/denis dibandingkan baseline per 8 vonis matang; lebih buruk → DIREVERT ke snapshot; lebih baik → LOLOS; rezim bergeser → eksperimen dibatalkan (genome per-rezim tak dicampur)",
+    "ASAH-SUARA (V263 — revisi hukum pemilik: KARANTINA DILARANG, sebelumnya rule-healer loop 1) — topik meta-inferensi dengan hit-rate < 44% + 3 suara-keliru beruntun TIDAK lagi disita: bobotnya dilirihkan ke 0.35 (bersuara lirih di komite) dan tetap ikut belajar; pulih penuh lewat 2× setuju-saat-benar — yang belajar terus belajar",
+    "DINGIN-DENDAM (anti-revenge-trading ala kaizen-trader) — 2 kekalahan beruntun per sasaran → dingin 4 jam; 3 kekalahan beruntun per keluarga rezim×arah → dingin 1 denyut; menang me-reset; re-entry dendam ditolak DENGAN ALASAN",
+    "HENTI-HARIAN (daily loss halt; V263: kini MODE-ASAH) — rugi-net vonis ARAH yang dinilai hari UTC kumulatif ≤ −4% → suhu BERTAHAN + kuota belajar 2 dengan ukuran mikro ×0.3 — modal dibekukan, ilmu tetap bertambah",
+    "KESEGARAN GERAKAN (\"fresh breakouts > stale pumps\") — |24j| > 100% tanpa akselerasi 1j ≥ 5% = POMPA-TUA diveto; skor kesegaran 0-1 disegel per kandidat & dinilai medan (tinggi vs rendah); data tak terbaca = diperlakukan tua (konservatif-pada-kekaburan)",
+    "MODAL-MATI + TESIS-PATAH (chop & thesis-break exits) — menginap ≥4 jam tanpa progres ±2% = modal mati (dinilai: apakah chop-exit memang menyelamatkan?); tesis-sehat (funding/EMA4h searah) disegel saat kunci dan dibandingkan medan",
+    "PENJAGA-KEDUA (watchdog proses-terpisah ala kaizen-trader) — hard-stop 15% / hard-target 40% dipra-registrasi di rencana deal; dicek dari lilin pasca-kunci TIAP denyut di luar otak skor — pertahanan berlapis bila otak bingung",
+    "DARWINIAN-SELEKTOR + OTONOMI-BERJENJANG (kaizen.cash & filosofi kaizen) — seleksi via sekolah hit-rate yang kini dua arah; saran → review → eksekusi-dalam-aturan: param kaizen lahir OBSERVASI, tak berbobot genome sebelum medan bicara"
+  ],
+  "paramKaizen": {
+    "kandang": [
+      "kesegaran",
+      "akselerasi1j",
+      "tesisSehat"
+    ],
+    "siklus": [
+      "dinginSasaranCt",
+      "dinginFamCt",
+      "hentiHarianAktif",
+      "ujiBalikStatus",
+      "karantinaCt",
+      "pengawasKenaCt"
+    ],
+    "konst": [
+      "ujiJendela",
+      "karantinaKej",
+      "karantinaPulih",
+      "dinginSasaranKej",
+      "dinginSasaranJam",
+      "dinginFamKej",
+      "hentiRugiPct",
+      "modalMatiJam",
+      "modalMatiProgres",
+      "kesegaran24j",
+      "kesegaranAks",
+      "pengawasStopDef",
+      "pengawasTargetDef"
+    ],
+    "total": 22
+  },
+  "konstanta": {
+    "ujiJendela": 8,
+    "karantinaKej": 3,
+    "karantinaPulih": 2,
+    "dinginSasaranKej": 2,
+    "dinginSasaranJam": 0.25,
+    "dinginFamKej": 3,
+    "hentiRugiPct": 4,
+    "modalMatiJam": 4,
+    "modalMatiProgres": 2,
+    "kesegaran24j": 100,
+    "kesegaranAks": 5,
+    "pengawasStop": 15,
+    "pengawasTarget": 40
+  },
+  "pintar": {
+    "kembaliPintar": 0,
+    "remPelajaran": 0,
+    "remSasaranAktif": 0,
+    "doktrin": "rem singkat bukan blacklist; kembali lewat syarat pelajaran (V264)",
+    "paramKonst": {
+      "SYARAT_KEY_PER_KEJ": 4,
+      "SYARAT_KEY_MAKS": 12,
+      "SYARAT_SKALA_F": 0.6,
+      "SYARAT_STOP_F": 0.8,
+      "SYARAT_WAJIB_MATE": 2,
+      "WAJIB_KEY_DASAR": 50
+    }
+  },
+  "siklusIni": {
+    "ujiBalik": "eksperimen berjalan (mulai siklus 70, baseline -0.006)",
+    "revertCt": 0,
+    "lolosCt": 1,
+    "karantinaAktif": {
+      "mikrostruktur": {
+        "sejak": "2026-10-07T04:57:32.973Z",
+        "alasan": "hit-rate 40% dari 15 vonis + 3 suara-keliru beruntun — MODE-ASAH: bobot dilirihkan ke 0.35, TIDAK disita (karantina dilarang)",
+        "pulih": 0
+      }
+    },
+    "karantinaBaru": [],
+    "karantinaPulih": [],
+    "dinginSasaranAktif": {},
+    "dinginFamAktif": {},
+    "dinginSasaranTolak": 0,
+    "dinginFamTolak": 0,
+    "hentiHarian": {
+      "aktif": true,
+      "rugiNetPct": -11.87,
+      "ambang": -4
+    },
+    "pompaTuaDitolak": 0
+  },
+  "medan": {
+    "pengawas": {
+      "dinilai": 18,
+      "kena": 0,
+      "menyelamatkan": 0,
+      "ket": "berapa vonis yang hard-stop 15%-nya tersentuh, dan berapa di antaranya memang berakhir SALAH (penjaga-kedua akan menyelamatkan)"
+    },
+    "kesegaran": {
+      "tinggi": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      },
+      "rendah": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      }
+    },
+    "modalMati": {
+      "kena": {
+        "n": 20,
+        "benar": 5,
+        "net": -0.37519
+      },
+      "sehat": {
+        "n": 3,
+        "benar": 1,
+        "net": -0.04047
+      }
+    },
+    "tesis": {
+      "sehat": {
+        "n": 18,
+        "benar": 5,
+        "net": -0.28893
+      },
+      "patah": {
+        "n": 0,
+        "benar": 0,
+        "net": 0
+      }
+    }
+  },
+  "kejujuran": "semua param kaizen lahir OBSERVASI — disegel, dinilai medan (sekolah paramsPenuh + bucket ilmu.kesegaran/modalMati/tesis/pengawas), TIDAK berbobot genome; uji-balik hanya menyentuh jalur evolusi genome ARAH (hedge on-line tak disentuh); satu perubahan gerbang (henti-harian → BERTAHAN) terikat-batas & terlog; entri lama tanpa lapis kaizen tampil apa adanya"
+}

@@ -1,0 +1,52 @@
+{
+ "protokol": "KOMPAS-PENGUAT",
+ "versi": 1,
+ "waktu_epoch": 1793803223.913812,
+ "catatan": "CVD = delta taker dari 1000 trade terakhir Bybit; OI 3 jam; funding per interval",
+ "hasil": [
+  {
+   "simbol": "COWUSDT",
+   "status": "OK",
+   "harga": 0.1172,
+   "chg1h_pct": -0.29,
+   "chg24h_pct": -1.35,
+   "oi_usd": 918136.6,
+   "oi_chg3j_pct": -0.49,
+   "cvd_net": 12696.0,
+   "cvd_imb_pct": 5.8,
+   "cvd_n": 1000,
+   "funding_pct": 0.005,
+   "skor": -8.8,
+   "arah": "NETRAL",
+   "narasi": "long flushing: OI rontok, turun karena bakar long",
+   "arah_organ": "SELL",
+   "entry_organ": 0.1355,
+   "selaras": "KABUR-ORGAN"
+  },
+  {
+   "simbol": "PROVEUSDT",
+   "status": "OK",
+   "harga": 0.1897,
+   "chg1h_pct": 0.32,
+   "chg24h_pct": -0.84,
+   "oi_usd": 1199667.46,
+   "oi_chg3j_pct": -1.37,
+   "cvd_net": -2814.0,
+   "cvd_imb_pct": -0.6,
+   "cvd_n": 1000,
+   "funding_pct": 0.005,
+   "skor": 11.7,
+   "arah": "NETRAL",
+   "narasi": "short squeeze: likuidasi short menarik harga NAIK (bahan bakar terbatas)",
+   "arah_organ": "BUY",
+   "entry_organ": 0.2224,
+   "selaras": "KABUR-ORGAN"
+  },
+  {
+   "simbol": "TOMOUSDT",
+   "status": "TIDAK-ADA-DI-BYBIT",
+   "arah_organ": "BUY",
+   "entry_organ": 1.3819
+  }
+ ]
+}

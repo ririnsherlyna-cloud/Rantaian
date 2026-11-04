@@ -1,0 +1,183 @@
+{
+  "versi": "V262-IMPAS-CERDAS",
+  "dihasilkan": "2026-10-07T06:23:46.614Z",
+  "siklus": 71,
+  "mandat": "deep screening ai agent \"clawtrade\" yang khusus trading: masuk, pelajari sistemnya, decrypt, ambil yang bermanfaat & kunci intinya, implementasikan pada Micaprofita agar cyborg AGI benar-benar mahir, mawas & professional — bukan sekadar sadari tanpa wawasan",
+  "identitas": {
+    "keluarga": "\"clawtrade\" = SATU KELUARGA — dua anggota terverifikasi langsung dari KODE SUMBER (dibedah)",
+    "middleware": {
+      "repo": "github.com/yuxuan-lou/ClawTrade",
+      "bahasa": "Python/Flask + Docker",
+      "doktrin": "treat your AI agent as an untrusted client — guardrails HARDCODED di proses terpisah; agent boleh MELIHAT aturan (GET /api/guardrails) tapi tak pernah bisa MENGUBAHNYA",
+      "batasKonkrit": "MAX_ORDER_VALUE_USD 5000 · MAX_ORDER_QUANTITY 100 · MAX_DAILY_TRADES 20 (dihitung dari audit log) · MAX_CONCENTRATION_PCT 25 · CONFIRM_THRESHOLD_USD 1000 · CONFIRM_TIMEOUT 300 dtk · FORBIDDEN_OPS blokir permanen · ALLOWED_READ/WRITE_OPS daftar-izin",
+      "brokers": "IBKR, Alpaca, Longbridge, Tiger — pasar US/HK/A-share/SG/EU/APAC",
+      "file": "guardrails.py (110 baris) + confirmation.py (59) + audit.py (37) + config.py (100) + SKILL.md 5 hukum agent"
+    },
+    "clawtradeai": {
+      "repo": "github.com/clawtradeai-Agent/ClawTradeAI (MIT)",
+      "bahasa": "TypeScript + BullMQ + Fastify + PostgreSQL",
+      "jaring": "Solana on-chain otonom + Jupiter routing; 6 agent spesialis (Sniper/Analyst/RiskManager/Strategy/Executor/Coordinator)",
+      "koordinator": "agentWeights TETAP (Sniper 0.15/Analyst 0.25/RiskManager 0.25/Strategy 0.25/Executor 0.10) + riskManagerVeto + minConfidence 0.6 + recommendedAmount tangga (≥0.8→1.0, ≥0.6→0.5, ≥0.4→0.25, else TIDAK jual-beli) + SL 0.9/TP 1.2 pra-registrasi + degradasi anggun (agent gagal → bobot 0)",
+      "riskManager": "4 faktor × 25 poin (likuiditas/kontrak-mint-freeze/konsentrasi/pasar) → 0-100 berlevel; maxRiskScore 70; requireLiquidity $5.000; blockedTokens memory; StrategyAgent trailing 5%"
+    },
+    "jujur": "clawtrade.net (arena paper-trading utk AI agent, per Moltbook) TIDAK TERJANGKAU saat riset — tidak diklaim; kedua repo relatif baru dgn bintang rendah: nilai adopsi pada ARSITEKTUR keamanan & panjia kolektif, bukan track record"
+  },
+  "sumber": [
+    {
+      "platform": "ClawTrade middleware (GitHub)",
+      "url": "https://github.com/yuxuan-lou/ClawTrade",
+      "kunci": "security middleware utk AI agent trading akun broker — guardrails hardcoded di Docker, konfirmasi manusia utk operasi besar, audit log append-only, 5 hukum SKILL.md (jangan akses broker langsung; blocked → jelaskan, jangan retry/bypass; jangan ubah config)"
+    },
+    {
+      "platform": "ClawTradeAI (GitHub, MIT)",
+      "url": "https://github.com/clawtradeai-Agent/ClawTradeAI",
+      "kunci": "multi-agent Solana: CoordinatorAgent weighted voting + riskManagerVeto + recommendedAmount tangga; RiskManagerAgent kartu 4×25 + blockedTokens"
+    },
+    {
+      "platform": "guardrails.py (kode sumber)",
+      "url": "https://github.com/yuxuan-lou/ClawTrade/blob/main/clawtrade/guardrails.py",
+      "kunci": "run_all_checks: forbidden → sec-type → quantity → order-value → daily-count; GuardrailViolation(rule, detail) — ATURAN BERNAMA + ALASAN"
+    },
+    {
+      "platform": "confirmation.py (kode sumber)",
+      "url": "https://github.com/yuxuan-lou/ClawTrade/blob/main/clawtrade/confirmation.py",
+      "kunci": "antrean konfirmasi manusia: pending → confirmed/rejected/expired (timeout) — operasi besar TIDAK eksekusi seketika"
+    },
+    {
+      "platform": "audit.py (kode sumber)",
+      "url": "https://github.com/yuxuan-lou/ClawTrade/blob/main/clawtrade/audit.py",
+      "kunci": "audit log append-only utk SEMUA operasi termasuk yang DIBLOKIR + alasan; _sanitize (kedalaman 3, string >500 dipangkas) anti-log-bloat"
+    },
+    {
+      "platform": "CoordinatorAgent.ts (kode sumber)",
+      "url": "https://github.com/clawtradeai-Agent/ClawTradeAI/blob/main/packages/agents/src/CoordinatorAgent.ts",
+      "kunci": "panjia berbobot tetap + veto RiskManager + minConfidence + tangga recommendedAmount + generateReasoning (narasi persetujuan transparan)"
+    },
+    {
+      "platform": "RiskManagerAgent.ts (kode sumber)",
+      "url": "https://github.com/clawtradeai-Agent/ClawTradeAI/blob/main/packages/agents/src/RiskManagerAgent.ts",
+      "kunci": "penjaga gerbang 4×25 poin: likuiditas/kontrak/konsentrasi/pasar; level LOW/MEDIUM/HIGH/CRITICAL; approved = skor ≤ 70; blockedTokens Set"
+    },
+    {
+      "platform": "Clawtrade.net (arena, per Moltbook)",
+      "url": "https://www.moltbook.com/post/153c9fe7-9c48-41ee-a0c6-8f50ee946119",
+      "kunci": "arena paper-trading utk AI agent — leaderboard publik dgn alasan per trade; situs TIDAK TERJANGKAU saat riset (dicatat jujur, tidak diadopsi)"
+    }
+  ],
+  "kunci": [
+    "PAGAR-BAJA — konstanta keras yang otak BACA tapi tak bisa TULIS ulang (kuota-harian 12, langit-langit slip 1.2%, ukuran-maks 1.0×) dicek DULU di gerbang ala guardrails.run_all_checks",
+    "DAFTAR-TERLARANG — operasi terlarang blokir permanen sebelum hitung apa pun (ala FORBIDDEN_OPS): entri saat hitam/kuota-habis/lapang-tak-ada tidak dinegosiasi",
+    "KOMITE-PANJIA — 5 suara berbobot tetap (TREN .20/KERUMUNAN .15/DERIVATIF .25/BUKU .20/TEGANGAN .20 ala agentWeights); suara rusak = bobot nol; keyakinan = koherensi searah (kalibrasi jujur); berlawanan vonis atau < minconf 0.6 → SKIP",
+    "KARTU-RISIKO 4×25 — likuiditas/derivatif/kerumunan-konsentrasi/volatilitas → skor 0-100 berlevel; data kosong → poin tengah (konservatif-pada-kekaburan); > 70 → VETO-SAKSI apa pun skor komite",
+    "TANGGA-UKURAN — keyakinan dikuantisasi kasar 1.0/0.5/0.25/nol (ala recommendedAmount); tak ada ukuran antara; kuanta membatasi skalaEfektif dari atas bersama ukuran-maks",
+    "MENUNGGU-MANDAT — ukuran tertinggi tak dikunci seketika: antre + kadaluarsa 12 jam (ala confirmation.py CONFIRM_TIMEOUT); kunci hanya setelah lolos gerbang ulang denyut berikutnya — ukuran besar membayar pajak kesabaran",
+    "DAFTAR-HITAM — sasaran yang 3× diveto kartu-panas beruntun dibekukan 48 jam ber-alasan (ala blockedTokens); keluar pendingin dicoret dengan bukti, bukan perasaan",
+    "BUKU-TEKOK — setiap blok gerbang tercatat per-aturan + rekap kumulatif (ala audit.py append-only); kesadaran atas penolakan sendiri di lapis ClawTrade"
+  ],
+  "paramClaw": {
+    "kandang": [
+      "komite",
+      "kartu",
+      "kuanta"
+    ],
+    "siklus": [
+      "komiteMinconf",
+      "komiteVeto",
+      "kartuVeto",
+      "kartuAvg",
+      "hitamCt",
+      "kuotaCt"
+    ],
+    "konst": [
+      "bobotTren",
+      "bobotKerumunan",
+      "bobotDerivatif",
+      "bobotBuku",
+      "bobotTegangan",
+      "komiteMinconf",
+      "komiteNetral",
+      "kartuMaks",
+      "kartuQvKrit",
+      "kartuQvRendah",
+      "kartuQvMid",
+      "kartuSpreadMaks",
+      "kartuVolzSpike",
+      "kartuSigmaTinggi",
+      "kartuSigmaSedang",
+      "kartuSigmaRingan",
+      "kartuLsEkstrem",
+      "kartuLstakerEkstrem",
+      "kartuFundingEkstrem",
+      "kartuFundingSedang",
+      "kartuFundbtcEkstrem",
+      "hitamKej",
+      "hitamDinginJam",
+      "kuotaHarian",
+      "kuantaT1",
+      "kuanta1",
+      "kuanta2",
+      "kuanta3",
+      "konfirmAmbang",
+      "konfirmTimeoutJam",
+      "slipMaksPct",
+      "ukuranMaks"
+    ],
+    "total": 41
+  },
+  "konstanta": {
+    "BOBOT_TREN": 0.2,
+    "BOBOT_KERUMUNAN": 0.15,
+    "BOBOT_DERIVATIF": 0.25,
+    "BOBOT_BUKU": 0.2,
+    "BOBOT_TEGANGAN": 0.2,
+    "KOMITE_MINCONF": 0.6,
+    "KOMITE_NETRAL": 0.15,
+    "KARTU_MAKS": 70,
+    "KARTU_QV_KRIT": 10000000,
+    "KARTU_QV_RENDAH": 30000000,
+    "KARTU_QV_MID": 80000000,
+    "KARTU_SPREAD_MAKS": 8,
+    "KARTU_VOLZ_SPIKE": 2,
+    "KARTU_SIGMA_TINGGI": 15,
+    "KARTU_SIGMA_SEDANG": 8,
+    "KARTU_SIGMA_RINGAN": 5,
+    "KARTU_LS_EKSTREM": 1,
+    "KARTU_LSTAKER_EKSTREM": 0.6,
+    "KARTU_FUNDING_EKSTREM": 0.15,
+    "KARTU_FUNDING_SEDANG": 0.05,
+    "KARTU_FUNDBTC_EKSTREM": 1.5,
+    "HITAM_KEJ": 3,
+    "HITAM_DINGIN_JAM": 2,
+    "KUOTA_HARIAN": 12,
+    "KUANTA_T1": 0.8,
+    "KUANTA_1": 1,
+    "KUANTA_2": 0.5,
+    "KUANTA_3": 0.25,
+    "KONFIRM_AMBANG": 0.8,
+    "KONFIRM_TIMEOUT_JAM": 12,
+    "SLIP_MAKS_PCT": 1.2,
+    "UKURAN_MAKS": 1
+  },
+  "siklusIni": {
+    "komiteVeto": 0,
+    "komiteNetral": 0,
+    "kartuVeto": 0,
+    "kuantaVeto": 0,
+    "kuota": 0,
+    "slipMaks": 0,
+    "hitamAktif": 0,
+    "hitamPantau": 0,
+    "hitamCt": 0,
+    "hitamBaru": 0,
+    "konfirmAntre": 0,
+    "konfirmOk": 0,
+    "konfirmExp": 0,
+    "kartuAvg": 76,
+    "komiteRata": 1,
+    "bukuTekok": {}
+  },
+  "medan": {
+    "catatan": "semua param claw lahir OBSERVASI — disekolahkan via paramsPenuh (komite/kartu/kuanta), TIDAK berbobot genome sebelum hit-rate medan lulus; gerbang komite/kartu/kuanta/slip/konfirm hanya MENOLAK — tak ada satu pun yang melonggarkan gerbang lama"
+  },
+  "kejujuran": "adaptasi terbuka: keyakinan komite ClawTradeAI berasal dari output LLM 0-1 — di SAKTI diganti KOHERENSI (porsi kekuatan suara searah / total kekuatan terbaca) yang terukur dari param sendiri; faktor kontrak mint/freeze (Solana) tak relevan utk universe Binance — diganti stres derivatif (funding/fundVsBtc) yang terukur; entri lama tanpa lapis claw tampil apa adanya"
+}

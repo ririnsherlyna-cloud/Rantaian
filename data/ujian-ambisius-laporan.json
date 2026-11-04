@@ -1,0 +1,184 @@
+{
+  "versi": "V302-UJIAN-AMBISIUS-R3",
+  "dibuat": "2026-10-12T12:56:15Z",
+  "seed": 20261012,
+  "simbol": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "NEARUSDT",
+    "SOLUSDT",
+    "ZECUSDT",
+    "XRPUSDT",
+    "STRKUSDT",
+    "BNBUSDT",
+    "SUIUSDT",
+    "ENAUSDT",
+    "WUSDT",
+    "SUSDT",
+    "UNIUSDT",
+    "WLDUSDT",
+    "AVAXUSDT",
+    "DOGEUSDT",
+    "ONDOUSDT",
+    "TAOUSDT",
+    "FILUSDT",
+    "MAGICUSDT",
+    "PUMPUSDT",
+    "PEPEUSDT",
+    "RSRUSDT",
+    "APTUSDT",
+    "ADAUSDT",
+    "TRXUSDT",
+    "FETUSDT",
+    "ZROUSDT",
+    "CTKUSDT",
+    "CKBUSDT",
+    "MUBARAKUSDT",
+    "LINKUSDT",
+    "HYPEUSDT",
+    "UUSDT",
+    "QNTUSDT",
+    "CFXUSDT",
+    "ICPUSDT",
+    "PLUMEUSDT",
+    "LTCUSDT",
+    "AAVEUSDT",
+    "GTCUSDT",
+    "LUMIAUSDT",
+    "RLCUSDT",
+    "TIAUSDT",
+    "BCHUSDT",
+    "INJUSDT",
+    "ATOMUSDT",
+    "ARBUSDT",
+    "TRUMPUSDT",
+    "XLMUSDT",
+    "POLUSDT",
+    "IOUSDT",
+    "SNDKBUSDT",
+    "PYTHUSDT",
+    "HBARUSDT",
+    "ALGOUSDT",
+    "ASTERUSDT",
+    "ZKUSDT",
+    "BATUSDT",
+    "CHIPUSDT",
+    "RVNUSDT",
+    "GRAMUSDT",
+    "RENDERUSDT",
+    "DOTUSDT",
+    "PENGUUSDT",
+    "OPUSDT",
+    "MARSCOINUSDT",
+    "\u5e01\u5b89\u4eba\u751fUSDT",
+    "EIGENUSDT",
+    "DYMUSDT",
+    "TONUSDT",
+    "REDUSDT",
+    "DASHUSDT",
+    "RAYUSDT",
+    "SEIUSDT"
+  ],
+  "total_soal": 50000,
+  "strata": {
+    "sideways": 17569,
+    "bearish": 16623,
+    "bullish": 15808,
+    "ledakan_pump5pct": 6117
+  },
+  "rentang_data": "2024-02-26 s.d. 2026-10-11",
+  "resolusi_verifikasi": "candle 4 jam Binance, urutan intraday sebenarnya",
+  "model_keputusan": "daun kemurnian: pra-hari + intraday saat entry terisi \u2192 ambisius A dipasang (k & tol per daun)",
+  "kriteria_lulus": [
+    "entry tersentuh",
+    "SL tak menyentuh sebelum ambisius",
+    "ambisius tersentuh hari itu",
+    "tak dilampaui > tol\u00b7ATR7",
+    "longsor: penutupan hari < ambisius"
+  ],
+  "daun": [
+    {
+      "k": 1.4,
+      "tol": 0.75,
+      "rezim": "SIDEWAYS",
+      "syarat": [
+        {
+          "fitur": "mom7",
+          "arah": "min",
+          "batas": 5.970689674707894
+        }
+      ],
+      "latih_n": 880,
+      "uji_n": 820,
+      "n_akhir": 1700
+    },
+    {
+      "k": 1.4,
+      "tol": 0.5,
+      "rezim": "BEARISH",
+      "syarat": [
+        {
+          "fitur": "jarakPuncak",
+          "arah": "min",
+          "batas": 63.408885418379086
+        }
+      ],
+      "latih_n": 830,
+      "uji_n": 850,
+      "n_akhir": 1680
+    },
+    {
+      "k": 2.0,
+      "tol": 0.75,
+      "rezim": "BULLISH",
+      "syarat": [
+        {
+          "fitur": "qvRasio",
+          "arah": "max",
+          "batas": 0.6076323824285527
+        }
+      ],
+      "latih_n": 791,
+      "uji_n": 804,
+      "n_akhir": 1595
+    }
+  ],
+  "final": {
+    "pasang": 4975,
+    "tercapai": 181,
+    "benar": 45856,
+    "salah": 0,
+    "terlewat": 4144,
+    "tak_ternyata": 4794,
+    "tingkat_sentuh": 0.03638190954773869,
+    "peluang": 4522
+  },
+  "per_rezim": {
+    "SIDEWAYS": {
+      "pasang": 1700,
+      "tercapai": 85,
+      "salah": 0
+    },
+    "BEARISH": {
+      "pasang": 1680,
+      "tercapai": 60,
+      "salah": 0
+    },
+    "BULLISH": {
+      "pasang": 1595,
+      "tercapai": 36,
+      "salah": 0
+    }
+  },
+  "ledakan": {
+    "pasang": 707,
+    "tercapai": 123,
+    "salah": 0
+  },
+  "verdict": "LULUS",
+  "kejujuran": {
+    "sumber": "klines real Binance publik",
+    "anti_diam": "sertifikat hanya sah bila pasang \u2265 120, sentuhan \u2265 150, salah = 0, dan tiap rezim aktif",
+    "catatan": "MENUNGGU (entry tak terisi) = keputusan benar tanpa klaim. TERLEWAT dilaporkan terbuka. Daun dicari pada 50% soal latihan (kemurnian 100%), lalu DIVERIFIKASI di 50% soal uji \u2014 daun yang gagal di uji dipangkas (prune konservatif, diumumkan). Sertifikat = hasil gabungan latih+uji."
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "versi": "V301-AMBISIUS-UJIAN",
+ "mentah": 71637,
+ "train": 40000,
+ "val": 10000,
+ "rezim": {
+  "BEAR": 30890,
+  "BULL": 20428,
+  "SIDE": 20319
+ },
+ "pump": 18691,
+ "crash": 19564,
+ "seed": 50500,
+ "detik": 2.6
+}

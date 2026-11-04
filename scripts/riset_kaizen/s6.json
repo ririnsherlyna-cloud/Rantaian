@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://github.com/prateekjain98",
+    "name": "prateekjain98 (Prateek Jain) - GitHub",
+    "snippet": "Self-healing systems — trading bots that analyze their own logs and rewrite their own strategies; Context engineering — the kind of AI work that requires ...",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://mcpmarket.com/tools/skills/product-kaizen-loop",
+    "name": "Kaizen Loop - 0-1 Product Delivery Claude Code Skill",
+    "snippet": "The Product Kaizen Loop skill guides Claude through structured, evidence-based product iteration loops rather than routine maintenance. Missing:  trader  self-  healing  trading  strategy",
+    "host_name": "mcpmarket.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/coding-nexus/how-to-build-a-self-improving-quant-trading-system-using-loop-engineering-baaf4858a822",
+    "name": "How to Build a Self-Improving Quant Trading System  - Medium",
+    "snippet": "How to Build a Self-Improving Quant Trading System Using Loop Engineering Most quants still prompt Claude. They type. They wait. Missing:  kaizen  healing",
+    "host_name": "medium.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://kaizenledger.com",
+    "name": "Kaizen — the free trading journal that builds discipline",
+    "snippet": "Kaizen is a free journal for traders who are done repeating themselves. Morning routine, trade log, honest reviews — and an AI coach when you want an edge.",
+    "host_name": "kaizenledger.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://m.youtube.com/watch?v=nRiojS6jpWM",
+    "name": "Claude Ran a Trading Research Loop for 24 Hours—Here Is",
+    "snippet": "The creator reveals the real resource cost of letting an AI research and optimize trading backtests continuously for 24 hours. The loop ...",
+    "host_name": "m.youtube.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://nexustrade.io/blog/i-asked-claude-opus-45-to-autonomously-develop-a-trading-strategy-it-is-destroying-the-market-20251125",
+    "name": "Claude Opus 4.5 Built a Trading Strategy: Out-of-Sample Results",
+    "snippet": "With a single prompt, Claude Opus 4.5 created a profitable trading strategy. It didn't spit out words randomly. It mimicked the process of a ...",
+    "host_name": "nexustrade.io",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://agentpatterns.ai/workflows",
+    "name": "Workflows for AI Agent Development - AgentPatterns.ai",
+    "snippet": "Kaizen-Style Continuous Code Quality Loop (Pomona) — Pair a Scanning skill and a Repair skill to file small, single-purpose code-quality PRs a reviewer ...",
+    "host_name": "agentpatterns.ai",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://roguequant.substack.com/p/free-gift",
+    "name": "How I Made ChatGPT and Claude Fight to Improve My Trading",
+    "snippet": "Side-by-side performance comparisons of ChatGPT vs Claude's strategies. The feedback loop process I used to refine each iteration. All the ... Missing:  kaizen  healing",
+    "host_name": "roguequant.substack.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

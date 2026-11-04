@@ -1,0 +1,300 @@
+{
+  "protokol": "SASARAN-MICAPROFITA",
+  "organ": "V247-MAJELIS-ILMU v3.0 — belajar dari jurnal ilmiah teruji + medan nyata",
+  "dihasilkan": "2026-09-30T03:46:14.573Z",
+  "siklus": 3,
+  "sumber": {
+    "host": "binance-vision",
+    "gagal": []
+  },
+  "rezimBTC": {
+    "rezim": "TURUN",
+    "harga": 83326.01,
+    "atrPct": 0.43
+  },
+  "radar": {
+    "telaah": 658,
+    "zonaPhoenix": 67,
+    "telusurDalam": 64,
+    "gerbang": {
+      "skorMin": 42,
+      "untungMinPct": 1,
+      "likuiditasMinJuta": 3
+    },
+    "catatan": "menelaah 658 pasangan USDT — 67 di zona ujung-bawah — 64 ditelusuri dalam dengan lilin 1 jam"
+  },
+  "sasaranHariIni": [],
+  "kandidatLain": [
+    {
+      "simbol": "BTC",
+      "arah": "BUY",
+      "keyakinan": 35,
+      "entry": 83326.01,
+      "rezim": "TURUN",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi; taker-buy tidak menguat — tak ada beli diam-diam yang terbaca"
+    },
+    {
+      "simbol": "ETH",
+      "arah": "BUY",
+      "keyakinan": 46,
+      "entry": 2673.16,
+      "rezim": "TURUN",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi"
+    },
+    {
+      "simbol": "XRP",
+      "arah": "BUY",
+      "keyakinan": 38,
+      "entry": 1.4947,
+      "rezim": "TURUN",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi"
+    },
+    {
+      "simbol": "HBAR",
+      "arah": "BUY",
+      "keyakinan": 50,
+      "entry": 0.1047,
+      "rezim": "TURUN",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi"
+    },
+    {
+      "simbol": "UNI",
+      "arah": "BUY",
+      "keyakinan": 33,
+      "entry": 8.767,
+      "rezim": "TURUN",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi"
+    },
+    {
+      "simbol": "LINK",
+      "arah": "BUY",
+      "keyakinan": 40,
+      "entry": 14.4,
+      "rezim": "DATAR",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi; taker-buy tidak menguat — tak ada beli diam-diam yang terbaca"
+    },
+    {
+      "simbol": "DOGE",
+      "arah": "BUY",
+      "keyakinan": 47,
+      "entry": 0.09356,
+      "rezim": "TURUN",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi"
+    },
+    {
+      "simbol": "WLD",
+      "arah": "BUY",
+      "keyakinan": 31,
+      "entry": 0.4889,
+      "rezim": "TURUN",
+      "catatan": "belum konfirmasi — harga masih di bawah EMA9 — pisau jatuh, bukan akumulasi"
+    }
+  ],
+  "akurasi": {
+    "terkunci": 42,
+    "terbuka": 0,
+    "benar": 13,
+    "salah": 29,
+    "akurasiPct": 31,
+    "netKumulatifPct": -22.19,
+    "jendela7h": {
+      "dinilai": 42,
+      "benar": 13,
+      "akurasiPct": 31
+    },
+    "phoenix": {
+      "dinilai": 12,
+      "benar": 5,
+      "targetKena": 0,
+      "netKumulatifPct": -8.11
+    }
+  },
+  "pelajaran": [
+    {
+      "waktu": "2026-09-30T03:46:14.573Z",
+      "simbol": "BTC",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.16,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-09-30T03:46:14.573Z",
+      "simbol": "ETH",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.14,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-09-30T03:46:14.573Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.27,
+      "kenapa": [
+        "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "melawan arus koin/rezim butuh bukti jauh lebih kuat — keyakinan kini dipotong bila arah melawan rezim"
+    },
+    {
+      "waktu": "2026-09-30T03:46:14.573Z",
+      "simbol": "BNB",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.27,
+      "kenapa": [
+        "BUY dipasang saat rezim koin sendiri TURUN — melawan arus tanpa penalti keyakinan"
+      ],
+      "pelajaran": "melawan arus koin/rezim butuh bukti jauh lebih kuat — keyakinan kini dipotong bila arah melawan rezim"
+    },
+    {
+      "waktu": "2026-09-30T03:46:14.573Z",
+      "simbol": "XRP",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.13,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    },
+    {
+      "waktu": "2026-09-30T03:46:14.573Z",
+      "simbol": "DOGE",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -0.1,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+    }
+  ],
+  "aturanBelajar": {
+    "pola": {
+      "arahLawanRezim": 4,
+      "phxPisauJatuh": 12,
+      "phxTargetJauh": 12
+    },
+    "aktif": {
+      "phxMomentumWajib": "RADAR dilarang membeli saat harga masih di bawah EMA9 — kasus pisau jatuh terbukti berulang",
+      "phxTargetMagnet": "Target radar = magnet nyata TERDEKAT (tengah rentang / puncak 24 jam) — target jauh terbukti tak tersentuh",
+      "arahRegimHormati": "Arah melawan rezim wajib keyakinan lebih rendah — potongan keyakinan dipasang di vonis komite"
+    },
+    "baruSiklusIni": []
+  },
+  "ilmu": {
+    "versi": "V247-MAJELIS-ILMU",
+    "fondasi": "metode teruji dipasang nyata: Hedge/MWU (Arora-Hazan-Kale 2012 · Freund-Schapire 1997) · Brier & proper scoring (Gneiting-Raftery 2007) · kalibrasi keyakinan dari medan · pita konformal 75% (Angelopoulos-Bates 2021) · triple-barrier & meta-labeling (Lopez de Prado 2018) · ingatan berlapis FinMem (Zhang dkk 2023) — rincian di laporan/jurnal-ilmu.json",
+    "brier": {
+      "arah": 0.3211,
+      "phx": 0.3223,
+      "nArah": 40,
+      "nPhx": 18,
+      "ket": "skor Brier keyakinan sebagai probabilitas — 0 sempurna, 0.25 = tebakan koin; makin kecil makin jujur"
+    },
+    "kalibrasi": [
+      {
+        "bin": "52–59%",
+        "n": 20,
+        "tembusPct": 25
+      },
+      {
+        "bin": "60–69%",
+        "n": 22,
+        "tembusPct": 13.6
+      },
+      {
+        "bin": "70–79%",
+        "n": 16,
+        "tembusPct": 50
+      },
+      {
+        "bin": "80–100%",
+        "n": 0,
+        "tembusPct": null
+      }
+    ],
+    "hedge": {
+      "arah": {
+        "struktur": 0.0505,
+        "momentum": 0.1813,
+        "sr": 0.3607,
+        "tekanan": 0.1269,
+        "perubahan": 0.2806
+      },
+      "phx": {
+        "posisi": 0.1925,
+        "sweep": 0.3783,
+        "akumulasi": 0.1985,
+        "momentum": 0.1667,
+        "kompresi": 0.0639
+      },
+      "catatan": "ilmu: hedge/kalibrasi/brier berlatih dari 10 vonis matang (eta 0.5); bobot efektif = 50% genome evolusi per rezim + 50% Hedge on-line"
+    },
+    "metaGerbang": {
+      "geser": 0,
+      "gerbangAktif": 52,
+      "bucketKuat": {
+        "n": 1,
+        "benar": 0
+      },
+      "bucketLemah": {
+        "n": 17,
+        "benar": 8
+      },
+      "catatan": "meta-labeling: bucket konfirmasi belum cukup (min 6) — gerbang tak digeser"
+    },
+    "konformal": {
+      "bawah": 0.0316,
+      "tengah": 0.0525,
+      "atas": 0.079,
+      "n": 12
+    }
+  },
+  "genome": {
+    "rezim": "TURUN",
+    "bobot": {
+      "struktur": 0.2543,
+      "momentum": 0.2648,
+      "sr": 0.1527,
+      "tekanan": 0.179,
+      "perubahan": 0.1493
+    },
+    "phoenix": {
+      "rezim": "TURUN",
+      "bobot": {
+        "posisi": 0.2474,
+        "sweep": 0.3035,
+        "akumulasi": 0.2004,
+        "momentum": 0.1506,
+        "kompresi": 0.0982
+      }
+    },
+    "semuaRezim": {
+      "NAIK": {
+        "generasi": 0,
+        "belajar": 0
+      },
+      "TURUN": {
+        "generasi": 3,
+        "belajar": 30
+      }
+    }
+  },
+  "pertumbuhan": {
+    "waktuMulai": "2026-09-30T03:43:45.549Z",
+    "siklus": 3,
+    "prediksiTerkunci": 42,
+    "prediksiDinilai": 42,
+    "evolusiCatatan": "generasi 3 rezim TURUN: bobot disesuaikan dari 10 vonis nyata; radar: belum cukup sampel (min 3 dinilai per siklus)"
+  },
+  "catatanJujur": [
+    "prediksi DIKUNCI sebelum pergerakan (pra-registrasi) — dinilai otomatis setelah horizon 24 jam memakai close terkini pada siklus penilaian",
+    "RADAR PHOENIX menelaah ratusan pasangan USDT tiap siklus: mencari akumulasi di ujung bawah hari (sapuan lantai 3-hari, taker-buy menguat, kompresi) lalu memprediksi ujung atas dari level nyata — prediksi terukur, bukan jaminan",
+    "target jual phoenix wajib memberi >= 1% setelah fee 0.2%; bila seluruh pasar di puncak, radar jujur melaporkan zona kosong alih-alih memaksa beli mahal",
+    "lane PHOENIX (beli ujung bawah) dan lane ARAH (komite genome) berdiri sendiri; keduanya dinilai net P/L close-ke-close yang sama jujurnya",
+    "cron GitHub bisa mundur beberapa menit saat server padat; jadwal tetap berjalan tanpa browser",
+    "BAHAN AJAR: setiap vonis ditulis jadi pelajaran (laporan/pelajaran-server.json); pola kekalahan yang terulang >= 2 kali melahirkan ATURAN baru yang mengikat gerbang siklus berikutnya — otak tumbuh dari medan, bukan tebakan",
+    "ILMU BERJURNAL: bobot bukti belajar on-line ala Hedge dengan jaminan regret (Arora dkk 2012); keyakinan diperlakukan sebagai probabilitas — dinilai Brier (Gneiting-Raftery 2007) dan dikalibrasi dari hit-rate medan sendiri; pita ujung atas memakai jaminan cakupan konformal (Angelopoulos-Bates 2021); vonis phoenix dilabel triple-barrier dan gerbang digeser meta-labeling (Lopez de Prado 2018) — kepastian dibangun dari metode teruji + medan sendiri, bukan janji"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "diperbarui": "2026-09-30T03:50:30.435Z",
+  "organ": "V247-MAJELIS-ILMU v3.0 — belajar dari jurnal ilmiah teruji + medan nyata",
+  "mandat": "pelajari jurnal ilmiah AI yang banyak diperdebatkan, ditelaah, terbukti koheren — lalu inovasikan pada cyborg (perintah pemilik)",
+  "prinsip": "setiap metode di bawah DIPASANG dalam kode otak (bukan sekadar dikutip) dan dinilai jujur oleh medan lewat ledger pra-registrasi",
+  "daftar": [
+    {
+      "judul": "The Multiplicative Weights Update Method: a Meta-Algorithm and Applications",
+      "penulis": "S. Arora, E. Hazan, S. Kale",
+      "tahun": 2012,
+      "terbitan": "Theory of Computing 8(1):121–164",
+      "rujukan": "https://theoryofcomputing.org/articles/v008a001",
+      "penerapan": "hedgePerbarui() — bobot 5 dimensi bukti & 5 sinyal radar belajar on-line dari tiap vonis matang (w *= exp(-eta*loss)); jaminan regret: komite tak jauh kalah dari ahli terbaiknya"
+    },
+    {
+      "judul": "A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting",
+      "penulis": "Y. Freund, R.E. Schapire",
+      "tahun": 1997,
+      "terbitan": "Journal of Computer and System Sciences 55(1):119–139",
+      "rujukan": "https://doi.org/10.1006/jcss.1997.1504",
+      "penerapan": "algoritma Hedge asli yang dipakai hedgePerbarui() — loss=(1-y*a)/2 per dimensi"
+    },
+    {
+      "judul": "Prediction, Learning, and Games",
+      "penulis": "N. Cesa-Bianchi, G. Lugosi",
+      "tahun": 2006,
+      "terbitan": "Cambridge University Press",
+      "rujukan": "https://doi.org/10.1017/CBO9780511546921",
+      "penerapan": "kerangka prediction with expert advice — 8-dim komite ARAH & 5-sinyal PHOENIX adalah ahli-ahli beradopsi dalam kerangka ini"
+    },
+    {
+      "judul": "Strictly Proper Scoring Rules, Prediction, and Estimation",
+      "penulis": "T. Gneiting, A.E. Raftery",
+      "tahun": 2007,
+      "terbitan": "Journal of the American Statistical Association 102(477):359–378",
+      "rujukan": "https://doi.org/10.1198/016214506000001437",
+      "penerapan": "keyakinan dinilai sebagai probabilitas lewat skor Brier (e.brier) — aturan skor tepat mendorong kejujuran probabilitas, bukan overconfidence"
+    },
+    {
+      "judul": "A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification",
+      "penulis": "A.N. Angelopoulos, S. Bates",
+      "tahun": 2021,
+      "terbitan": "arXiv:2107.07511 (Foundations and Trends in ML)",
+      "rujukan": "https://arxiv.org/abs/2107.07511",
+      "penerapan": "pitaKonformal() — pita ujung atas 75% dari skor kesesuaian (MFE medan sendiri): kuantil dengan jaminan cakupan bebas-distribusi"
+    },
+    {
+      "judul": "Advances in Financial Machine Learning (bab 3: Triple-Barrier & Meta-Labeling)",
+      "penulis": "M. López de Prado",
+      "tahun": 2018,
+      "terbitan": "Wiley",
+      "rujukan": "https://www.wiley.com/en-us/9781119482089",
+      "penerapan": "label triple-barrier (TARGET/STOP/WAKTU) saat penilaian phoenix + gerbang meta-labeling: model kedua (hit-rate bucket konfirmasi) menggeser gerbang model pertama"
+    },
+    {
+      "judul": "FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design",
+      "penulis": "Y. Zhang, dkk.",
+      "tahun": 2023,
+      "terbitan": "arXiv:2311.13743",
+      "rujukan": "https://arxiv.org/abs/2311.13743",
+      "penerapan": "ingatan berlapis: peristiwa (ledger prakira) → pelajaran (refleksi) → doktrin (aturan mengikat gerbang) — bahan ajar cyborg kini berarsitektur jurnal"
+    }
+  ],
+  "buktiPemasangan": {
+    "hedge": "hedgePerbarui() dipanggil dari sejarah (seed) + tiap vonis matang; bobot efektif = 50% genome + 50% hedge",
+    "brier": "e.brier dihitung saat penilaian; rata-rata dilaporkan di laporan.ilmu.brier",
+    "kalibrasi": "kalibrasiKeyakinan() dipakai saat mengunci ARAH & PHOENIX; tabel bin dilaporkan di laporan.ilmu.kalibrasi",
+    "konformal": "pitaKonformal() dari MFE medan sendiri; tercantum di entri phoenix (pitaUjungAtas) saat n >= 8",
+    "tripleBarrier": "e.barier (TARGET/STOP/WAKTU) dihitung saat penilaian phoenix",
+    "metaLabeling": "ilmu.meta.kuat/lemah menilai gerbang radar; geser dibatasi ±8 (laporan.ilmu.metaGerbang)",
+    "finmem": "lapisan 1 ledger -> lapisan 2 pelajaran -> lapisan 3 aturan (laporan/pelajaran-server.json)"
+  }
+}

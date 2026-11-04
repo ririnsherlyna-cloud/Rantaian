@@ -1,0 +1,4928 @@
+{
+ "sumber": "Binance spot api.binance.com /api/v3/klines interval=1M",
+ "caraHitung": "gain = (high bulan puncak / low terendah bulan-bulan sebelum puncak - 1) x 100, dibulatkan 4 desimal",
+ "diambil": "2026-10-26 11:15:55",
+ "jumlah": 492,
+ "koin": [
+  {
+   "gainPct": 52999900.0,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.0001,
+   "hargaHigh": 53.0,
+   "simbol": "LINKUSDT",
+   "jumlahBulan": 94,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 22499650.0,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2022-06",
+   "hargaLow": 4e-05,
+   "hargaHigh": 8.9999,
+   "simbol": "LUNAUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16499900.0,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.0001,
+   "hargaHigh": 16.5,
+   "simbol": "RLCUSDT",
+   "jumlahBulan": 84,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1347900.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 1e-06,
+   "hargaHigh": 0.01348,
+   "simbol": "IOTXUSDT",
+   "jumlahBulan": 84,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1047700.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 1e-05,
+   "hargaHigh": 0.10478,
+   "simbol": "ENJUSDT",
+   "jumlahBulan": 91,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 319800.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.001,
+   "hargaHigh": 3.199,
+   "simbol": "ATOMUSDT",
+   "jumlahBulan": 91,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 274922.0,
+   "bulanLow": "2017-11",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.5,
+   "hargaHigh": 1375.11,
+   "simbol": "BNBUSDT",
+   "jumlahBulan": 108,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 165990.0,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.1,
+   "hargaHigh": 166.09,
+   "simbol": "AXSUSDT",
+   "jumlahBulan": 72,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 145400.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 1e-05,
+   "hargaHigh": 0.01455,
+   "simbol": "RVNUSDT",
+   "jumlahBulan": 86,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 126700.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 1e-05,
+   "hargaHigh": 0.01268,
+   "simbol": "ANKRUSDT",
+   "jumlahBulan": 88,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 101755.2742,
+   "bulanLow": "2020-08",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.008333,
+   "hargaHigh": 8.4876,
+   "simbol": "SANDUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 87981.6062,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-06",
+   "hargaLow": 0.000772,
+   "hargaHigh": 0.67999,
+   "simbol": "TFUELUSDT",
+   "jumlahBulan": 90,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 65122.565,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.0011345,
+   "hargaHigh": 0.73995,
+   "simbol": "DOGEUSDT",
+   "jumlahBulan": 88,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 57566.0377,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.00053,
+   "hargaHigh": 0.30563,
+   "simbol": "TUTUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 47246.9388,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.00735,
+   "hargaHigh": 3.48,
+   "simbol": "FETUSDT",
+   "jumlahBulan": 93,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 44582.0484,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.03554,
+   "hargaHigh": 15.88,
+   "simbol": "THETAUSDT",
+   "jumlahBulan": 91,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 41685.1,
+   "bulanLow": "2022-03",
+   "bulanPuncak": "2022-04",
+   "hargaLow": 0.01,
+   "hargaHigh": 4.17851,
+   "simbol": "GMTUSDT",
+   "jumlahBulan": 56,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 36247.0588,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.136,
+   "hargaHigh": 49.432,
+   "simbol": "DEXEUSDT",
+   "jumlahBulan": 64,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 32103.3898,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-10",
+   "hargaLow": 0.00118,
+   "hargaHigh": 0.38,
+   "simbol": "ONEUSDT",
+   "jumlahBulan": 89,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 29344.4444,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.18,
+   "hargaHigh": 53.0,
+   "simbol": "INJUSDT",
+   "jumlahBulan": 73,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 28618.571,
+   "bulanLow": "2020-12",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 1.0301,
+   "hargaHigh": 295.83,
+   "simbol": "SOLUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 28560.0,
+   "bulanLow": "2021-03",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.1,
+   "hargaHigh": 28.66,
+   "simbol": "ALICEUSDT",
+   "jumlahBulan": 68,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 24850.0,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2021-03",
+   "hargaLow": 0.02,
+   "hargaHigh": 4.99,
+   "simbol": "AUDIOUSDT",
+   "jumlahBulan": 73,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 24765.7895,
+   "bulanLow": "2019-09",
+   "bulanPuncak": "2021-03",
+   "hargaLow": 0.0038,
+   "hargaHigh": 0.9449,
+   "simbol": "CHZUSDT",
+   "jumlahBulan": 86,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 21735.1648,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-09",
+   "hargaLow": 0.00091,
+   "hargaHigh": 0.1987,
+   "simbol": "CELRUSDT",
+   "jumlahBulan": 92,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20171.028,
+   "bulanLow": "2020-09",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.000214,
+   "hargaHigh": 0.04338,
+   "simbol": "MBLUSDT",
+   "jumlahBulan": 81,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 19566.6667,
+   "bulanLow": "2020-09",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.03,
+   "hargaHigh": 5.9,
+   "simbol": "MANAUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 18014.2857,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-12",
+   "hargaLow": 1.4e-05,
+   "hargaHigh": 0.002536,
+   "simbol": "IOSTUSDT",
+   "jumlahBulan": 92,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 17780.4473,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.001565,
+   "hargaHigh": 0.279829,
+   "simbol": "VETUSDT",
+   "jumlahBulan": 100,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 17469.4051,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-09",
+   "hargaLow": 0.01765,
+   "hargaHigh": 3.101,
+   "simbol": "ADAUSDT",
+   "jumlahBulan": 103,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 17194.1176,
+   "bulanLow": "2020-09",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.85,
+   "hargaHigh": 147.0,
+   "simbol": "AVAXUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 17048.0,
+   "bulanLow": "2020-02",
+   "bulanPuncak": "2021-09",
+   "hargaLow": 0.5,
+   "hargaHigh": 85.74,
+   "simbol": "FTTUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16022.449,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.000196,
+   "hargaHigh": 0.0316,
+   "simbol": "HOTUSDT",
+   "jumlahBulan": 93,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 14900.0,
+   "bulanLow": "2020-09",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.3,
+   "hargaHigh": 45.0,
+   "simbol": "UNIUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 13116.8,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.0125,
+   "hargaHigh": 1.6521,
+   "simbol": "USUALUSDT",
+   "jumlahBulan": 24,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12638.05,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 1.159,
+   "hargaHigh": 147.634,
+   "simbol": "XVSUSDT",
+   "jumlahBulan": 73,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12018.8768,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.1923,
+   "hargaHigh": 23.3046,
+   "simbol": "BANDUSDT",
+   "jumlahBulan": 86,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11520.1859,
+   "bulanLow": "2020-04",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.01506,
+   "hargaHigh": 1.75,
+   "simbol": "CTSIUSDT",
+   "jumlahBulan": 79,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11483.3333,
+   "bulanLow": "2024-01",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.006,
+   "hargaHigh": 0.695,
+   "simbol": "ALTUSDT",
+   "jumlahBulan": 34,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 11369.1964,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.00224,
+   "hargaHigh": 0.25691,
+   "simbol": "ZILUSDT",
+   "jumlahBulan": 93,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 10978.3019,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-12",
+   "hargaLow": 0.0106,
+   "hargaHigh": 1.1743,
+   "simbol": "DUSKUSDT",
+   "jumlahBulan": 88,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 10660.4563,
+   "bulanLow": "2024-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 15.78,
+   "hargaHigh": 1698.0,
+   "simbol": "ZECUSDT",
+   "jumlahBulan": 92,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 10013.5191,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-09",
+   "hargaLow": 0.00969,
+   "hargaHigh": 0.98,
+   "simbol": "CVCUSDT",
+   "jumlahBulan": 83,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9897.7229,
+   "bulanLow": "2024-09",
+   "bulanPuncak": "2024-11",
+   "hargaLow": 3.118e-05,
+   "hargaHigh": 0.00311729,
+   "simbol": "NEIROUSDT",
+   "jumlahBulan": 26,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9798.4718,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-03",
+   "hargaLow": 0.1047,
+   "hargaHigh": 10.3637,
+   "simbol": "MTLUSDT",
+   "jumlahBulan": 87,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9502.4333,
+   "bulanLow": "2020-12",
+   "bulanPuncak": "2021-02",
+   "hargaLow": 0.03,
+   "hargaHigh": 2.88073,
+   "simbol": "GRTUSDT",
+   "jumlahBulan": 71,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9333.9623,
+   "bulanLow": "2020-06",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.0159,
+   "hargaHigh": 1.5,
+   "simbol": "CHRUSDT",
+   "jumlahBulan": 78,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9330.8846,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2023-12",
+   "hargaLow": 6.67,
+   "hargaHigh": 629.04,
+   "simbol": "TRBUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8970.8333,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 6.0,
+   "hargaHigh": 544.25,
+   "simbol": "EGLDUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8965.9341,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.0364,
+   "hargaHigh": 3.3,
+   "simbol": "ONGUSDT",
+   "jumlahBulan": 93,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8845.1163,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.043,
+   "hargaHigh": 3.8464,
+   "simbol": "STXUSDT",
+   "jumlahBulan": 85,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8775.0,
+   "bulanLow": "2024-04",
+   "bulanPuncak": "2024-05",
+   "hargaLow": 0.04,
+   "hargaHigh": 3.55,
+   "simbol": "SAGAUSDT",
+   "jumlahBulan": 31,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8343.2515,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.00326,
+   "hargaHigh": 0.27525,
+   "simbol": "ARPAUSDT",
+   "jumlahBulan": 84,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8191.0619,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-03",
+   "hargaLow": 0.113,
+   "hargaHigh": 9.3689,
+   "simbol": "BNTUSDT",
+   "jumlahBulan": 81,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8085.0,
+   "bulanLow": "2024-01",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.02,
+   "hargaHigh": 1.637,
+   "simbol": "XAIUSDT",
+   "jumlahBulan": 34,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8072.0,
+   "bulanLow": "2024-01",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.05,
+   "hargaHigh": 4.086,
+   "simbol": "MANTAUSDT",
+   "jumlahBulan": 34,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8064.7059,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-10",
+   "hargaLow": 0.0085,
+   "hargaHigh": 0.694,
+   "simbol": "COTIUSDT",
+   "jumlahBulan": 81,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7970.6522,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 3.68e-05,
+   "hargaHigh": 0.00297,
+   "simbol": "WINUSDT",
+   "jumlahBulan": 87,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7892.6,
+   "bulanLow": "2023-07",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.05,
+   "hargaHigh": 3.9963,
+   "simbol": "ARKMUSDT",
+   "jumlahBulan": 40,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7881.3333,
+   "bulanLow": "2023-07",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.15,
+   "hargaHigh": 11.972,
+   "simbol": "WLDUSDT",
+   "jumlahBulan": 40,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7861.6667,
+   "bulanLow": "2024-06",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.06,
+   "hargaHigh": 4.777,
+   "simbol": "IOUSDT",
+   "jumlahBulan": 29,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7836.6667,
+   "bulanLow": "2024-01",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.03,
+   "hargaHigh": 2.381,
+   "simbol": "AIUSDT",
+   "jumlahBulan": 34,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7260.8,
+   "bulanLow": "2023-03",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.025,
+   "hargaHigh": 1.8402,
+   "simbol": "IDUSDT",
+   "jumlahBulan": 44,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6500.4963,
+   "bulanLow": "2020-09",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.3224,
+   "hargaHigh": 21.28,
+   "simbol": "RUNEUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6478.9474,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.00684,
+   "hargaHigh": 0.45,
+   "simbol": "TRXUSDT",
+   "jumlahBulan": 101,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6421.7391,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 0.1334,
+   "hargaHigh": 8.7,
+   "simbol": "RAYUSDT",
+   "jumlahBulan": 63,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6201.9694,
+   "bulanLow": "2019-12",
+   "bulanPuncak": "2021-09",
+   "hargaLow": 0.00914,
+   "hargaHigh": 0.576,
+   "simbol": "HBARUSDT",
+   "jumlahBulan": 86,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5960.3741,
+   "bulanLow": "2018-12",
+   "bulanPuncak": "2025-08",
+   "hargaLow": 81.79,
+   "hargaHigh": 4956.78,
+   "simbol": "ETHUSDT",
+   "jumlahBulan": 111,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5752.698,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 3.0726,
+   "hargaHigh": 179.83,
+   "simbol": "ETCUSDT",
+   "jumlahBulan": 101,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5677.5,
+   "bulanLow": "2024-12",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 0.02,
+   "hargaHigh": 1.1555,
+   "simbol": "MOVEUSDT",
+   "jumlahBulan": 23,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5655.5,
+   "bulanLow": "2023-11",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.001,
+   "hargaHigh": 0.057555,
+   "simbol": "MEMEUSDT",
+   "jumlahBulan": 36,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5503.4,
+   "bulanLow": "2024-02",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.05,
+   "hargaHigh": 2.8017,
+   "simbol": "PORTALUSDT",
+   "jumlahBulan": 33,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5391.3295,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.000519,
+   "hargaHigh": 0.0285,
+   "simbol": "VTHOUSDT",
+   "jumlahBulan": 76,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5268.7,
+   "bulanLow": "2023-05",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 0.1,
+   "hargaHigh": 5.3687,
+   "simbol": "SUIUSDT",
+   "jumlahBulan": 42,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5195.098,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.0102,
+   "hargaHigh": 0.5401,
+   "simbol": "HEIUSDT",
+   "jumlahBulan": 21,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4926.0563,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.71,
+   "hargaHigh": 35.685,
+   "simbol": "QTUMUSDT",
+   "jumlahBulan": 104,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4913.6704,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.0534,
+   "hargaHigh": 2.6773,
+   "simbol": "IOTAUSDT",
+   "jumlahBulan": 102,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4890.0,
+   "bulanLow": "2021-04",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.1,
+   "hargaHigh": 4.99,
+   "simbol": "TKOUSDT",
+   "jumlahBulan": 67,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4886.6667,
+   "bulanLow": "2024-04",
+   "bulanPuncak": "2024-06",
+   "hargaLow": 0.03,
+   "hargaHigh": 1.496,
+   "simbol": "TNSRUSDT",
+   "jumlahBulan": 31,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4863.9831,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-03",
+   "hargaLow": 0.472,
+   "hargaHigh": 23.43,
+   "simbol": "SUSHIUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4626.6667,
+   "bulanLow": "2023-09",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 6e-07,
+   "hargaHigh": 2.836e-05,
+   "simbol": "PEPEUSDT",
+   "jumlahBulan": 42,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4379.9301,
+   "bulanLow": "2017-09",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 2817.0,
+   "hargaHigh": 126199.63,
+   "simbol": "BTCUSDT",
+   "jumlahBulan": 111,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4065.2616,
+   "bulanLow": "2020-07",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 6.002,
+   "hargaHigh": 249.999,
+   "simbol": "DCRUSDT",
+   "jumlahBulan": 76,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4048.1,
+   "bulanLow": "2020-12",
+   "bulanPuncak": "2021-03",
+   "hargaLow": 0.03,
+   "hargaHigh": 1.24443,
+   "simbol": "SKLUSDT",
+   "jumlahBulan": 71,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3929.6556,
+   "bulanLow": "2023-12",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.3571,
+   "hargaHigh": 14.3899,
+   "simbol": "ACEUSDT",
+   "jumlahBulan": 35,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3909.0,
+   "bulanLow": "2024-02",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.2,
+   "hargaHigh": 8.018,
+   "simbol": "DYMUSDT",
+   "jumlahBulan": 33,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3900.3804,
+   "bulanLow": "2021-09",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.02103,
+   "hargaHigh": 0.84128,
+   "simbol": "GALAUSDT",
+   "jumlahBulan": 62,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3871.2,
+   "bulanLow": "2021-02",
+   "bulanPuncak": "2021-03",
+   "hargaLow": 0.1,
+   "hargaHigh": 3.9712,
+   "simbol": "SFPUSDT",
+   "jumlahBulan": 69,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3826.2295,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2022-01",
+   "hargaLow": 0.5246,
+   "hargaHigh": 20.597,
+   "simbol": "NEARUSDT",
+   "jumlahBulan": 73,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3736.0383,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-08",
+   "hargaLow": 0.2403,
+   "hargaHigh": 9.218,
+   "simbol": "KAVAUSDT",
+   "jumlahBulan": 85,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3695.9184,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 0.049,
+   "hargaHigh": 1.86,
+   "simbol": "STOUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3674.0693,
+   "bulanLow": "2024-05",
+   "bulanPuncak": "2024-06",
+   "hargaLow": 0.000779,
+   "hargaHigh": 0.0294,
+   "simbol": "NOTUSDT",
+   "jumlahBulan": 30,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3629.5,
+   "bulanLow": "2024-06",
+   "bulanPuncak": "2024-07",
+   "hargaLow": 0.02,
+   "hargaHigh": 0.7459,
+   "simbol": "LISTAUSDT",
+   "jumlahBulan": 29,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3606.0606,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.00066,
+   "hargaHigh": 0.02446,
+   "simbol": "SOLVUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3592.8571,
+   "bulanLow": "2024-05",
+   "bulanPuncak": "2024-06",
+   "hargaLow": 0.0238,
+   "hargaHigh": 0.8789,
+   "simbol": "BBUSDT",
+   "jumlahBulan": 30,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3524.6787,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 3.89,
+   "hargaHigh": 141.0,
+   "simbol": "NEOUSDT",
+   "jumlahBulan": 108,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3514.0784,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2025-07",
+   "hargaLow": 0.10129,
+   "hargaHigh": 3.6607,
+   "simbol": "XRPUSDT",
+   "jumlahBulan": 102,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3453.2667,
+   "bulanLow": "2023-12",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.15,
+   "hargaHigh": 5.3299,
+   "simbol": "JTOUSDT",
+   "jumlahBulan": 35,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3327.7048,
+   "bulanLow": "2020-01",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.0989,
+   "hargaHigh": 3.39,
+   "simbol": "OGNUSDT",
+   "jumlahBulan": 82,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3265.3061,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.0196,
+   "hargaHigh": 0.6596,
+   "simbol": "ACTUSDT",
+   "jumlahBulan": 24,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3263.6453,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.1015,
+   "hargaHigh": 3.4141,
+   "simbol": "HIVEUSDT",
+   "jumlahBulan": 79,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3243.145,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 5.062,
+   "hargaHigh": 169.23,
+   "simbol": "ZENUSDT",
+   "jumlahBulan": 76,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3161.8911,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.0698,
+   "hargaHigh": 2.2768,
+   "simbol": "SUPERUSDT",
+   "jumlahBulan": 68,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3084.4444,
+   "bulanLow": "2023-04",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.0045,
+   "hargaHigh": 0.1433,
+   "simbol": "JSTUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3066.6667,
+   "bulanLow": "2020-08",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 3000.0,
+   "hargaHigh": 95000.0,
+   "simbol": "YFIUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3021.0856,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.0958,
+   "hargaHigh": 2.99,
+   "simbol": "ALGOUSDT",
+   "jumlahBulan": 89,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 3000.0,
+   "bulanLow": "2023-04",
+   "bulanPuncak": "2023-05",
+   "hargaLow": 0.05,
+   "hargaHigh": 1.55,
+   "simbol": "EDUUSDT",
+   "jumlahBulan": 43,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2971.1538,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.026,
+   "hargaHigh": 0.7985,
+   "simbol": "XLMUSDT",
+   "jumlahBulan": 102,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2834.7826,
+   "bulanLow": "2024-03",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.23,
+   "hargaHigh": 6.75,
+   "simbol": "ETHFIUSDT",
+   "jumlahBulan": 32,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2744.9502,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.0703,
+   "hargaHigh": 2.0,
+   "simbol": "LSKUSDT",
+   "jumlahBulan": 81,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2693.5399,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.002291,
+   "hargaHigh": 0.064,
+   "simbol": "SCUSDT",
+   "jumlahBulan": 76,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2660.15,
+   "bulanLow": "2022-03",
+   "bulanPuncak": "2022-04",
+   "hargaLow": 1.0,
+   "hargaHigh": 27.6015,
+   "simbol": "APEUSDT",
+   "jumlahBulan": 56,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2654.5,
+   "bulanLow": "2020-08",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 2.0,
+   "hargaHigh": 55.09,
+   "simbol": "DOTUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2618.9441,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.00322,
+   "hargaHigh": 0.08755,
+   "simbol": "MUBARAKUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2598.8514,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 23.158,
+   "hargaHigh": 625.0,
+   "simbol": "KSMUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2596.2,
+   "bulanLow": "2022-01",
+   "bulanPuncak": "2022-02",
+   "hargaLow": 0.25,
+   "hargaHigh": 6.7405,
+   "simbol": "GLMRUSDT",
+   "jumlahBulan": 58,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2580.1802,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.0222,
+   "hargaHigh": 0.595,
+   "simbol": "BANKUSDT",
+   "jumlahBulan": 12,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2506.1121,
+   "bulanLow": "2025-06",
+   "bulanPuncak": "2025-09",
+   "hargaLow": 0.589,
+   "hargaHigh": 15.35,
+   "simbol": "ALPINEUSDT",
+   "jumlahBulan": 57,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2491.75,
+   "bulanLow": "2024-02",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.04,
+   "hargaHigh": 1.0367,
+   "simbol": "PIXELUSDT",
+   "jumlahBulan": 33,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2475.2728,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 25.939,
+   "hargaHigh": 668.0,
+   "simbol": "AAVEUSDT",
+   "jumlahBulan": 73,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2458.1395,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.0215,
+   "hargaHigh": 0.55,
+   "simbol": "CFXUSDT",
+   "jumlahBulan": 68,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2329.7,
+   "bulanLow": "2025-02",
+   "bulanPuncak": "2025-03",
+   "hargaLow": 0.1,
+   "hargaHigh": 2.4297,
+   "simbol": "KAITOUSDT",
+   "jumlahBulan": 21,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2321.8606,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 5209.0,
+   "hargaHigh": 126154.72,
+   "simbol": "WBTCUSDT",
+   "jumlahBulan": 43,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2311.25,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.08,
+   "hargaHigh": 1.929,
+   "simbol": "BATUSDT",
+   "jumlahBulan": 92,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2282.033,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 10.0,
+   "hargaHigh": 238.2033,
+   "simbol": "FILUSDT",
+   "jumlahBulan": 73,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2278.0822,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.00146,
+   "hargaHigh": 0.03472,
+   "simbol": "TSTUSDT",
+   "jumlahBulan": 21,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2190.0262,
+   "bulanLow": "2023-09",
+   "bulanPuncak": "2024-06",
+   "hargaLow": 1.524e-05,
+   "hargaHigh": 0.000349,
+   "simbol": "FLOKIUSDT",
+   "jumlahBulan": 42,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2189.3773,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.0273,
+   "hargaHigh": 0.625,
+   "simbol": "SYNUSDT",
+   "jumlahBulan": 45,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2178.8204,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.00373,
+   "hargaHigh": 0.085,
+   "simbol": "ZKUSDT",
+   "jumlahBulan": 29,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2071.9457,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.1105,
+   "hargaHigh": 2.4,
+   "simbol": "ZRXUSDT",
+   "jumlahBulan": 93,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2069.1123,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.002726,
+   "hargaHigh": 0.05913,
+   "simbol": "JASMYUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2063.7931,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2025-09",
+   "hargaLow": 1.16,
+   "hargaHigh": 25.1,
+   "simbol": "OGUSDT",
+   "jumlahBulan": 71,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1973.1707,
+   "bulanLow": "2020-10",
+   "bulanPuncak": "2022-01",
+   "hargaLow": 0.328,
+   "hargaHigh": 6.8,
+   "simbol": "CRVUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1960.0,
+   "bulanLow": "2024-04",
+   "bulanPuncak": "2024-05",
+   "hargaLow": 0.01,
+   "hargaHigh": 0.206,
+   "simbol": "REZUSDT",
+   "jumlahBulan": 31,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1940.0,
+   "bulanLow": "2022-10",
+   "bulanPuncak": "2023-01",
+   "hargaLow": 1.0,
+   "hargaHigh": 20.4,
+   "simbol": "APTUSDT",
+   "jumlahBulan": 49,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1922.29,
+   "bulanLow": "2025-06",
+   "bulanPuncak": "2025-07",
+   "hargaLow": 0.01,
+   "hargaHigh": 0.202229,
+   "simbol": "SPKUSDT",
+   "jumlahBulan": 17,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1893.3333,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2022-01",
+   "hargaLow": 0.03,
+   "hargaHigh": 0.598,
+   "simbol": "ROSEUSDT",
+   "jumlahBulan": 72,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1874.2775,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2025-03",
+   "hargaLow": 3.46,
+   "hargaHigh": 68.31,
+   "simbol": "AUCTIONUSDT",
+   "jumlahBulan": 61,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1861.6528,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.1682,
+   "hargaHigh": 3.2995,
+   "simbol": "THEUSDT",
+   "jumlahBulan": 24,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1798.5853,
+   "bulanLow": "2021-09",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 5.655,
+   "hargaHigh": 107.365,
+   "simbol": "FIDAUSDT",
+   "jumlahBulan": 62,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1786.3333,
+   "bulanLow": "2024-10",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.3,
+   "hargaHigh": 5.659,
+   "simbol": "EIGENUSDT",
+   "jumlahBulan": 25,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1774.5,
+   "bulanLow": "2024-12",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 1.0,
+   "hargaHigh": 18.745,
+   "simbol": "VANAUSDT",
+   "jumlahBulan": 23,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1752.5538,
+   "bulanLow": "2018-12",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 22.32,
+   "hargaHigh": 413.49,
+   "simbol": "LTCUSDT",
+   "jumlahBulan": 107,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1743.5437,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.00206,
+   "hargaHigh": 0.037977,
+   "simbol": "CKBUSDT",
+   "jumlahBulan": 70,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1689.0625,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.064,
+   "hargaHigh": 1.145,
+   "simbol": "SEIUSDT",
+   "jumlahBulan": 39,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1687.8549,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2022-09",
+   "hargaLow": 1.268,
+   "hargaHigh": 22.67,
+   "simbol": "SANTOSUSDT",
+   "jumlahBulan": 59,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1636.0784,
+   "bulanLow": "2021-09",
+   "bulanPuncak": "2021-10",
+   "hargaLow": 5.1e-06,
+   "hargaHigh": 8.854e-05,
+   "simbol": "SHIBUSDT",
+   "jumlahBulan": 66,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1633.7616,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.001401,
+   "hargaHigh": 0.02429,
+   "simbol": "AMPUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1615.15,
+   "bulanLow": "2025-02",
+   "bulanPuncak": "2025-05",
+   "hargaLow": 0.2,
+   "hargaHigh": 3.4303,
+   "simbol": "LAYERUSDT",
+   "jumlahBulan": 21,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1610.3834,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 0.626,
+   "hargaHigh": 10.707,
+   "simbol": "ORDIUSDT",
+   "jumlahBulan": 36,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1607.6,
+   "bulanLow": "2025-03",
+   "bulanPuncak": "2025-05",
+   "hargaLow": 0.025,
+   "hargaHigh": 0.4269,
+   "simbol": "PARTIUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1602.1277,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2024-06",
+   "hargaLow": 0.00846,
+   "hargaHigh": 0.144,
+   "simbol": "PEOPLEUSDT",
+   "jumlahBulan": 59,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1584.4042,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.001603,
+   "hargaHigh": 0.027001,
+   "simbol": "RSRUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1555.9611,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.000411,
+   "hargaHigh": 0.006806,
+   "simbol": "PUMPUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1539.6,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.05,
+   "hargaHigh": 0.8198,
+   "simbol": "MAVUSDT",
+   "jumlahBulan": 41,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1521.3594,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.4649,
+   "hargaHigh": 7.5377,
+   "simbol": "PENDLEUSDT",
+   "jumlahBulan": 40,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1513.6631,
+   "bulanLow": "2021-01",
+   "bulanPuncak": "2022-12",
+   "hargaLow": 0.1698,
+   "hargaHigh": 2.74,
+   "simbol": "TWTUSDT",
+   "jumlahBulan": 70,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1497.6,
+   "bulanLow": "2025-05",
+   "bulanPuncak": "2025-06",
+   "hargaLow": 0.1,
+   "hargaHigh": 1.5976,
+   "simbol": "NXPCUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1454.0,
+   "bulanLow": "2024-04",
+   "bulanPuncak": "2024-05",
+   "hargaLow": 0.05,
+   "hargaHigh": 0.777,
+   "simbol": "WUSDT",
+   "jumlahBulan": 31,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1453.3981,
+   "bulanLow": "2022-11",
+   "bulanPuncak": "2024-11",
+   "hargaLow": 0.206,
+   "hargaHigh": 3.2,
+   "simbol": "AGLDUSDT",
+   "jumlahBulan": 61,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1449.6077,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.1147,
+   "hargaHigh": 1.7774,
+   "simbol": "YGGUSDT",
+   "jumlahBulan": 62,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1425.6942,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 31.33,
+   "hargaHigh": 478.0,
+   "simbol": "DASHUSDT",
+   "jumlahBulan": 92,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1417.383,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.1047,
+   "hargaHigh": 1.5887,
+   "simbol": "PNUTUSDT",
+   "jumlahBulan": 24,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1417.0714,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.0014,
+   "hargaHigh": 0.021239,
+   "simbol": "XVGUSDT",
+   "jumlahBulan": 65,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1411.2,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.05,
+   "hargaHigh": 0.7556,
+   "simbol": "REUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1398.585,
+   "bulanLow": "2021-01",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 4.099,
+   "hargaHigh": 61.427,
+   "simbol": "ATMUSDT",
+   "jumlahBulan": 71,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1377.5692,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2023-11",
+   "hargaLow": 2.024,
+   "hargaHigh": 29.906,
+   "simbol": "GASUSDT",
+   "jumlahBulan": 44,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1304.0342,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.2107,
+   "hargaHigh": 2.9583,
+   "simbol": "ONTUSDT",
+   "jumlahBulan": 101,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1291.5852,
+   "bulanLow": "2024-12",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 0.003375,
+   "hargaHigh": 0.046966,
+   "simbol": "PENGUUSDT",
+   "jumlahBulan": 23,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1281.7188,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.3293,
+   "hargaHigh": 4.55,
+   "simbol": "STRAXUSDT",
+   "jumlahBulan": 72,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1250.0,
+   "bulanLow": "2021-10",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 1.0,
+   "hargaHigh": 13.5,
+   "simbol": "LAZIOUSDT",
+   "jumlahBulan": 61,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1246.1016,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-05",
+   "hargaLow": 3.681,
+   "hargaHigh": 49.55,
+   "simbol": "ARUSDT",
+   "jumlahBulan": 66,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1236.5,
+   "bulanLow": "2024-02",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.2,
+   "hargaHigh": 2.673,
+   "simbol": "STRKUSDT",
+   "jumlahBulan": 33,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1219.7861,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0187,
+   "hargaHigh": 0.2468,
+   "simbol": "RESOLVUSDT",
+   "jumlahBulan": 17,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1196.6805,
+   "bulanLow": "2022-11",
+   "bulanPuncak": "2022-12",
+   "hargaLow": 0.964,
+   "hargaHigh": 12.5,
+   "simbol": "OSMOUSDT",
+   "jumlahBulan": 49,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1191.6667,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-03",
+   "hargaLow": 0.0048,
+   "hargaHigh": 0.062,
+   "simbol": "SIGNUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1179.0698,
+   "bulanLow": "2020-03",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 129.0,
+   "hargaHigh": 1650.0,
+   "simbol": "BCHUSDT",
+   "jumlahBulan": 84,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1156.0748,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.214,
+   "hargaHigh": 2.688,
+   "simbol": "BELUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1134.6578,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-06",
+   "hargaLow": 0.0453,
+   "hargaHigh": 0.5593,
+   "simbol": "ALLOUSDT",
+   "jumlahBulan": 12,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1128.5354,
+   "bulanLow": "2022-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.396,
+   "hargaHigh": 4.865,
+   "simbol": "OPUSDT",
+   "jumlahBulan": 53,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1123.5818,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2023-12",
+   "hargaLow": 3.596,
+   "hargaHigh": 44.0,
+   "simbol": "MOVRUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1122.9631,
+   "bulanLow": "2019-10",
+   "bulanPuncak": "2021-10",
+   "hargaLow": 0.7499,
+   "hargaHigh": 9.171,
+   "simbol": "XTZUSDT",
+   "jumlahBulan": 86,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1115.646,
+   "bulanLow": "2020-07",
+   "bulanPuncak": "2021-02",
+   "hargaLow": 2.384,
+   "hargaHigh": 28.981,
+   "simbol": "SNXUSDT",
+   "jumlahBulan": 76,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1075.3333,
+   "bulanLow": "2024-12",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 0.3,
+   "hargaHigh": 3.526,
+   "simbol": "MEUSDT",
+   "jumlahBulan": 23,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1060.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.35,
+   "hargaHigh": 4.06,
+   "simbol": "RPLUSDT",
+   "jumlahBulan": 46,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1043.7908,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.153,
+   "hargaHigh": 1.75,
+   "simbol": "XNOUSDT",
+   "jumlahBulan": 58,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1029.9926,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 80.62,
+   "hargaHigh": 911.0,
+   "simbol": "COMPUSDT",
+   "jumlahBulan": 77,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1025.0,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2023-09",
+   "hargaLow": 1.44,
+   "hargaHigh": 16.2,
+   "simbol": "CYBERUSDT",
+   "jumlahBulan": 39,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 1012.7105,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-02",
+   "hargaLow": 1.9,
+   "hargaHigh": 21.1415,
+   "simbol": "TIAUSDT",
+   "jumlahBulan": 37,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 990.0,
+   "bulanLow": "2025-09",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.1,
+   "hargaHigh": 1.09,
+   "simbol": "XPLUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 984.6667,
+   "bulanLow": "2025-01",
+   "bulanPuncak": "2025-08",
+   "hargaLow": 0.03,
+   "hargaHigh": 0.3254,
+   "simbol": "BIOUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 977.6667,
+   "bulanLow": "2025-11",
+   "bulanPuncak": "2026-03",
+   "hargaLow": 0.03,
+   "hargaHigh": 0.3233,
+   "simbol": "KITEUSDT",
+   "jumlahBulan": 12,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 971.6366,
+   "bulanLow": "2020-12",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.01717,
+   "hargaHigh": 0.184,
+   "simbol": "DGBUSDT",
+   "jumlahBulan": 76,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 955.3797,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.316,
+   "hargaHigh": 3.335,
+   "simbol": "ORCAUSDT",
+   "jumlahBulan": 23,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 954.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 1e-05,
+   "hargaHigh": 0.0001054,
+   "simbol": "DOGSUSDT",
+   "jumlahBulan": 27,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 943.625,
+   "bulanLow": "2024-09",
+   "bulanPuncak": "2024-11",
+   "hargaLow": 0.08,
+   "hargaHigh": 0.8349,
+   "simbol": "CATIUSDT",
+   "jumlahBulan": 26,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 938.6266,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2024-01",
+   "hargaLow": 0.1165,
+   "hargaHigh": 1.21,
+   "simbol": "POWRUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 920.9581,
+   "bulanLow": "2020-12",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 5.344,
+   "hargaHigh": 54.56,
+   "simbol": "SUNUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 909.5,
+   "bulanLow": "2022-06",
+   "bulanPuncak": "2024-01",
+   "hargaLow": 0.4,
+   "hargaHigh": 4.038,
+   "simbol": "LDOUSDT",
+   "jumlahBulan": 54,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 902.8,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.375,
+   "hargaHigh": 3.7605,
+   "simbol": "IMXUSDT",
+   "jumlahBulan": 58,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 897.0399,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-06",
+   "hargaLow": 0.00777,
+   "hargaHigh": 0.07747,
+   "simbol": "HOMEUSDT",
+   "jumlahBulan": 17,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 895.0154,
+   "bulanLow": "2020-12",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.65,
+   "hargaHigh": 6.4676,
+   "simbol": "AVAUSDT",
+   "jumlahBulan": 72,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 893.3333,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.3,
+   "hargaHigh": 2.98,
+   "simbol": "GTCUSDT",
+   "jumlahBulan": 65,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 884.0845,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 430.65,
+   "hargaHigh": 4237.96,
+   "simbol": "WBETHUSDT",
+   "jumlahBulan": 40,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 861.7318,
+   "bulanLow": "2022-11",
+   "bulanPuncak": "2024-04",
+   "hargaLow": 0.0358,
+   "hargaHigh": 0.3443,
+   "simbol": "RIFUSDT",
+   "jumlahBulan": 70,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 859.4084,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2023-11",
+   "hargaLow": 0.00813001,
+   "hargaHigh": 0.078,
+   "simbol": "USTCUSDT",
+   "jumlahBulan": 44,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 853.1835,
+   "bulanLow": "2021-07",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 10.68,
+   "hargaHigh": 101.8,
+   "simbol": "LPTUSDT",
+   "jumlahBulan": 66,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 849.6201,
+   "bulanLow": "2023-01",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.1316,
+   "hargaHigh": 1.2497,
+   "simbol": "JOEUSDT",
+   "jumlahBulan": 59,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 843.7799,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.836,
+   "hargaHigh": 7.89,
+   "simbol": "PROMUSDT",
+   "jumlahBulan": 44,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 830.1746,
+   "bulanLow": "2022-06",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 40.1,
+   "hargaHigh": 373.0,
+   "simbol": "QNTUSDT",
+   "jumlahBulan": 64,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 819.8529,
+   "bulanLow": "2025-04",
+   "bulanPuncak": "2025-08",
+   "hargaLow": 0.952,
+   "hargaHigh": 8.757,
+   "simbol": "ASRUSDT",
+   "jumlahBulan": 71,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 818.9,
+   "bulanLow": "2025-02",
+   "bulanPuncak": "2025-03",
+   "hargaLow": 1.0,
+   "hargaHigh": 9.189,
+   "simbol": "BERAUSDT",
+   "jumlahBulan": 21,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 813.7422,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2022-08",
+   "hargaLow": 0.9278,
+   "hargaHigh": 8.4777,
+   "simbol": "PORTOUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 812.7546,
+   "bulanLow": "2023-11",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.004861,
+   "hargaHigh": 0.044369,
+   "simbol": "BEAMXUSDT",
+   "jumlahBulan": 36,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 796.5714,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 1.75,
+   "hargaHigh": 15.69,
+   "simbol": "ENSUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 782.2581,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.062,
+   "hargaHigh": 0.547,
+   "simbol": "WIFUSDT",
+   "jumlahBulan": 32,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 781.0333,
+   "bulanLow": "2021-09",
+   "bulanPuncak": "2021-10",
+   "hargaLow": 3.0,
+   "hargaHigh": 26.431,
+   "simbol": "DYDXUSDT",
+   "jumlahBulan": 62,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 778.6,
+   "bulanLow": "2021-04",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 0.1,
+   "hargaHigh": 0.8786,
+   "simbol": "TLMUSDT",
+   "jumlahBulan": 67,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 759.175,
+   "bulanLow": "2022-10",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.0703,
+   "hargaHigh": 0.604,
+   "simbol": "PHAUSDT",
+   "jumlahBulan": 65,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 752.0,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.15,
+   "hargaHigh": 1.278,
+   "simbol": "UMAUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 749.0517,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 1.16,
+   "hargaHigh": 9.849,
+   "simbol": "ICPUSDT",
+   "jumlahBulan": 66,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 744.8023,
+   "bulanLow": "2020-12",
+   "bulanPuncak": "2022-04",
+   "hargaLow": 0.683,
+   "hargaHigh": 5.77,
+   "simbol": "KNCUSDT",
+   "jumlahBulan": 77,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 737.8,
+   "bulanLow": "2025-06",
+   "bulanPuncak": "2025-07",
+   "hargaLow": 0.02,
+   "hargaHigh": 0.16756,
+   "simbol": "SAHARAUSDT",
+   "jumlahBulan": 17,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 732.7974,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-02",
+   "hargaLow": 0.311,
+   "hargaHigh": 2.59,
+   "simbol": "ZROUSDT",
+   "jumlahBulan": 29,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 730.5085,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.00472,
+   "hargaHigh": 0.0392,
+   "simbol": "QIUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 720.294,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-03",
+   "hargaLow": 0.2109,
+   "hargaHigh": 1.73,
+   "simbol": "BARDUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 717.2654,
+   "bulanLow": "2025-06",
+   "bulanPuncak": "2025-07",
+   "hargaLow": 0.0863,
+   "hargaHigh": 0.7053,
+   "simbol": "HYPERUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 713.75,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2025-02",
+   "hargaLow": 0.0072,
+   "hargaHigh": 0.05859,
+   "simbol": "ACHUSDT",
+   "jumlahBulan": 58,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 700.7117,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.01124,
+   "hargaHigh": 0.09,
+   "simbol": "BICOUSDT",
+   "jumlahBulan": 59,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 700.4162,
+   "bulanLow": "2021-02",
+   "bulanPuncak": "2021-08",
+   "hargaLow": 7.688,
+   "hargaHigh": 61.536,
+   "simbol": "PSGUSDT",
+   "jumlahBulan": 71,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 690.9091,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.00836,
+   "hargaHigh": 0.06612,
+   "simbol": "PLUMEUSDT",
+   "jumlahBulan": 15,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 674.5592,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 1.588e-05,
+   "hargaHigh": 0.000123,
+   "simbol": "LUNCUSDT",
+   "jumlahBulan": 50,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 671.3849,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.0982,
+   "hargaHigh": 0.7575,
+   "simbol": "POLYXUSDT",
+   "jumlahBulan": 49,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 655.0765,
+   "bulanLow": "2022-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 7.19,
+   "hargaHigh": 54.29,
+   "simbol": "NMRUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 654.0984,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2023-12",
+   "hargaLow": 0.0305,
+   "hargaHigh": 0.23,
+   "simbol": "ASTRUSDT",
+   "jumlahBulan": 57,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 653.9566,
+   "bulanLow": "2021-07",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 2.995,
+   "hargaHigh": 22.581,
+   "simbol": "MASKUSDT",
+   "jumlahBulan": 66,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 651.0917,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.00229,
+   "hargaHigh": 0.0172,
+   "simbol": "TOWNSUSDT",
+   "jumlahBulan": 15,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 631.2139,
+   "bulanLow": "2026-03",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 0.00173,
+   "hargaHigh": 0.01265,
+   "simbol": "NOMUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 630.45,
+   "bulanLow": "2025-02",
+   "bulanPuncak": "2025-03",
+   "hargaLow": 0.2,
+   "hargaHigh": 1.4609,
+   "simbol": "REDUSDT",
+   "jumlahBulan": 21,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 623.85,
+   "bulanLow": "2025-04",
+   "bulanPuncak": "2025-05",
+   "hargaLow": 0.2,
+   "hargaHigh": 1.4477,
+   "simbol": "INITUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 597.05,
+   "bulanLow": "2025-04",
+   "bulanPuncak": "2025-05",
+   "hargaLow": 0.2,
+   "hargaHigh": 1.3941,
+   "simbol": "WCTUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 591.5493,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.426,
+   "hargaHigh": 2.946,
+   "simbol": "RENDERUSDT",
+   "jumlahBulan": 28,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 589.9874,
+   "bulanLow": "2021-01",
+   "bulanPuncak": "2021-08",
+   "hargaLow": 1.588,
+   "hargaHigh": 10.957,
+   "simbol": "CELOUSDT",
+   "jumlahBulan": 70,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 585.567,
+   "bulanLow": "2024-09",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.194,
+   "hargaHigh": 1.33,
+   "simbol": "ENAUSDT",
+   "jumlahBulan": 31,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 585.3896,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.2772,
+   "hargaHigh": 1.8999,
+   "simbol": "VIRTUALUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 581.5686,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-08",
+   "hargaLow": 0.051,
+   "hargaHigh": 0.3476,
+   "simbol": "RAREUSDT",
+   "jumlahBulan": 61,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 580.5447,
+   "bulanLow": "2026-03",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.0257,
+   "hargaHigh": 0.1749,
+   "simbol": "EDENUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 576.7442,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0129,
+   "hargaHigh": 0.0873,
+   "simbol": "AIXBTUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 575.3927,
+   "bulanLow": "2026-05",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.191,
+   "hargaHigh": 1.29,
+   "simbol": "EPICUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 567.7524,
+   "bulanLow": "2021-05",
+   "bulanPuncak": "2021-07",
+   "hargaLow": 0.0614,
+   "hargaHigh": 0.41,
+   "simbol": "SLPUSDT",
+   "jumlahBulan": 67,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 567.7385,
+   "bulanLow": "2024-01",
+   "bulanPuncak": "2024-11",
+   "hargaLow": 9.33e-06,
+   "hargaHigh": 6.23e-05,
+   "simbol": "BONKUSDT",
+   "jumlahBulan": 35,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 563.6473,
+   "bulanLow": "2021-09",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.1656,
+   "hargaHigh": 1.099,
+   "simbol": "REQUSDT",
+   "jumlahBulan": 63,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 555.4817,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0301,
+   "hargaHigh": 0.1973,
+   "simbol": "AXLUSDT",
+   "jumlahBulan": 32,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 553.5424,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0861,
+   "hargaHigh": 0.5627,
+   "simbol": "FORMUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 549.6988,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.0166,
+   "hargaHigh": 0.10785,
+   "simbol": "ZAMAUSDT",
+   "jumlahBulan": 9,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 545.4183,
+   "bulanLow": "2022-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.1004,
+   "hargaHigh": 0.648,
+   "simbol": "WOOUSDT",
+   "jumlahBulan": 57,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 539.1304,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2024-10",
+   "hargaLow": 0.2093,
+   "hargaHigh": 1.3377,
+   "simbol": "DIAUSDT",
+   "jumlahBulan": 74,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 538.8,
+   "bulanLow": "2024-09",
+   "bulanPuncak": "2024-11",
+   "hargaLow": 0.001,
+   "hargaHigh": 0.006388,
+   "simbol": "HMSTRUSDT",
+   "jumlahBulan": 26,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 538.0667,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 1.5,
+   "hargaHigh": 9.571,
+   "simbol": "TRUMPUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 532.0,
+   "bulanLow": "2026-04",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.012,
+   "hargaHigh": 0.07584,
+   "simbol": "CHIPUSDT",
+   "jumlahBulan": 7,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 527.5261,
+   "bulanLow": "2021-01",
+   "bulanPuncak": "2021-05",
+   "hargaLow": 4.701,
+   "hargaHigh": 29.5,
+   "simbol": "JUVUSDT",
+   "jumlahBulan": 71,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 514.2353,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2025-01",
+   "hargaLow": 0.00034,
+   "hargaHigh": 0.0020884,
+   "simbol": "SPELLUSDT",
+   "jumlahBulan": 59,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 514.0351,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0342,
+   "hargaHigh": 0.21,
+   "simbol": "MINAUSDT",
+   "jumlahBulan": 63,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 513.0,
+   "bulanLow": "2026-03",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 0.005,
+   "hargaHigh": 0.03065,
+   "simbol": "KATUSDT",
+   "jumlahBulan": 8,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 511.1111,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 3.6e-07,
+   "hargaHigh": 2.2e-06,
+   "simbol": "BTTCUSDT",
+   "jumlahBulan": 58,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 511.1111,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 1.8e-05,
+   "hargaHigh": 0.00011,
+   "simbol": "XECUSDT",
+   "jumlahBulan": 62,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 509.9388,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-01",
+   "hargaLow": 0.00654,
+   "hargaHigh": 0.03989,
+   "simbol": "GUNUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 509.7357,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2023-02",
+   "hargaLow": 0.3821,
+   "hargaHigh": 2.3298,
+   "simbol": "MAGICUSDT",
+   "jumlahBulan": 47,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 495.5,
+   "bulanLow": "2025-07",
+   "bulanPuncak": "2025-08",
+   "hargaLow": 0.2,
+   "hargaHigh": 1.191,
+   "simbol": "ERAUSDT",
+   "jumlahBulan": 16,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 495.4,
+   "bulanLow": "2025-09",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.005,
+   "hargaHigh": 0.02977,
+   "simbol": "LINEAUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 493.588,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.301,
+   "hargaHigh": 1.7867,
+   "simbol": "FLUXUSDT",
+   "jumlahBulan": 59,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 493.3333,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.00255,
+   "hargaHigh": 0.01513,
+   "simbol": "GUSDT",
+   "jumlahBulan": 28,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 490.1639,
+   "bulanLow": "2024-08",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.488,
+   "hargaHigh": 2.88,
+   "simbol": "LQTYUSDT",
+   "jumlahBulan": 45,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 488.4328,
+   "bulanLow": "2026-01",
+   "bulanPuncak": "2026-02",
+   "hargaLow": 0.536,
+   "hargaHigh": 3.154,
+   "simbol": "ENSOUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 487.4,
+   "bulanLow": "2025-05",
+   "bulanPuncak": "2025-06",
+   "hargaLow": 0.01,
+   "hargaHigh": 0.05874,
+   "simbol": "HUMAUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 485.3868,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 34.9,
+   "hargaHigh": 204.3,
+   "simbol": "BNSOLUSDT",
+   "jumlahBulan": 25,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 485.0785,
+   "bulanLow": "2022-11",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 76.4,
+   "hargaHigh": 447.0,
+   "simbol": "GNOUSDT",
+   "jumlahBulan": 63,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 482.5243,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 11.33,
+   "hargaHigh": 66.0,
+   "simbol": "SSVUSDT",
+   "jumlahBulan": 45,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 482.0106,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.00189,
+   "hargaHigh": 0.011,
+   "simbol": "ANIMEUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 479.8515,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.0943,
+   "hargaHigh": 0.5468,
+   "simbol": "METUSDT",
+   "jumlahBulan": 12,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 475.1051,
+   "bulanLow": "2020-11",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 0.6901,
+   "hargaHigh": 3.9688,
+   "simbol": "CTKUSDT",
+   "jumlahBulan": 73,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 474.7126,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0261,
+   "hargaHigh": 0.15,
+   "simbol": "KERNELUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 474.0845,
+   "bulanLow": "2024-10",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 1.42,
+   "hargaHigh": 8.152,
+   "simbol": "CVXUSDT",
+   "jumlahBulan": 59,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 471.9424,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 0.0278,
+   "hargaHigh": 0.159,
+   "simbol": "ESPUSDT",
+   "jumlahBulan": 9,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 469.26,
+   "bulanLow": "2022-11",
+   "bulanPuncak": "2023-01",
+   "hargaLow": 0.1054,
+   "hargaHigh": 0.6,
+   "simbol": "ADXUSDT",
+   "jumlahBulan": 61,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 465.25,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.004,
+   "hargaHigh": 0.02261,
+   "simbol": "HEMIUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 453.8636,
+   "bulanLow": "2023-10",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.0044,
+   "hargaHigh": 0.02437,
+   "simbol": "IQUSDT",
+   "jumlahBulan": 38,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 447.619,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.0273,
+   "hargaHigh": 0.1495,
+   "simbol": "NILUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 438.5996,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.557,
+   "hargaHigh": 3.0,
+   "simbol": "MORPHOUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 433.4699,
+   "bulanLow": "2021-02",
+   "bulanPuncak": "2021-04",
+   "hargaLow": 8.3,
+   "hargaHigh": 44.278,
+   "simbol": "CAKEUSDT",
+   "jumlahBulan": 69,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 431.7602,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.00784,
+   "hargaHigh": 0.04169,
+   "simbol": "BABYUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 431.0475,
+   "bulanLow": "2021-08",
+   "bulanPuncak": "2021-11",
+   "hargaLow": 0.1852,
+   "hargaHigh": 0.9835,
+   "simbol": "WAXPUSDT",
+   "jumlahBulan": 63,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 429.7872,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.047,
+   "hargaHigh": 0.249,
+   "simbol": "LUMIAUSDT",
+   "jumlahBulan": 25,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 429.4872,
+   "bulanLow": "2025-11",
+   "bulanPuncak": "2025-12",
+   "hargaLow": 0.039,
+   "hargaHigh": 0.2065,
+   "simbol": "SAPIENUSDT",
+   "jumlahBulan": 12,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 424.1821,
+   "bulanLow": "2025-04",
+   "bulanPuncak": "2025-05",
+   "hargaLow": 0.0703,
+   "hargaHigh": 0.3685,
+   "simbol": "COOKIEUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 417.1429,
+   "bulanLow": "2024-10",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.28,
+   "hargaHigh": 1.448,
+   "simbol": "SCRUSDT",
+   "jumlahBulan": 25,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 412.9412,
+   "bulanLow": "2025-04",
+   "bulanPuncak": "2025-07",
+   "hargaLow": 0.00136,
+   "hargaHigh": 0.006976,
+   "simbol": "TURBOUSDT",
+   "jumlahBulan": 26,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 400.2347,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.0852,
+   "hargaHigh": 0.4262,
+   "simbol": "ARKUSDT",
+   "jumlahBulan": 38,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 393.9759,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.249,
+   "hargaHigh": 1.23,
+   "simbol": "COWUSDT",
+   "jumlahBulan": 24,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 392.0635,
+   "bulanLow": "2023-09",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.1575,
+   "hargaHigh": 0.775,
+   "simbol": "GLMUSDT",
+   "jumlahBulan": 44,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 386.7491,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 0.0566,
+   "hargaHigh": 0.2755,
+   "simbol": "ZBTUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 385.0,
+   "bulanLow": "2023-03",
+   "bulanPuncak": "2024-01",
+   "hargaLow": 0.5,
+   "hargaHigh": 2.425,
+   "simbol": "ARBUSDT",
+   "jumlahBulan": 44,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 383.3333,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.03,
+   "hargaHigh": 0.145,
+   "simbol": "MITOUSDT",
+   "jumlahBulan": 15,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 373.2291,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.01087,
+   "hargaHigh": 0.05144,
+   "simbol": "BMTUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 370.4637,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.0992,
+   "hargaHigh": 0.4667,
+   "simbol": "MMTUSDT",
+   "jumlahBulan": 12,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 369.7286,
+   "bulanLow": "2025-04",
+   "bulanPuncak": "2025-08",
+   "hargaLow": 9.58,
+   "hargaHigh": 45.0,
+   "simbol": "GMXUSDT",
+   "jumlahBulan": 49,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 367.7371,
+   "bulanLow": "2022-06",
+   "bulanPuncak": "2023-05",
+   "hargaLow": 1.339,
+   "hargaHigh": 6.263,
+   "simbol": "RADUSDT",
+   "jumlahBulan": 61,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 365.6212,
+   "bulanLow": "2021-09",
+   "bulanPuncak": "2021-12",
+   "hargaLow": 414.5,
+   "hargaHigh": 1930.0,
+   "simbol": "ILVUSDT",
+   "jumlahBulan": 62,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 365.4896,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.000337,
+   "hargaHigh": 0.0015687,
+   "simbol": "BOMEUSDT",
+   "jumlahBulan": 32,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 357.1167,
+   "bulanLow": "2024-08",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 163.7,
+   "hargaHigh": 748.3,
+   "simbol": "TAOUSDT",
+   "jumlahBulan": 31,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 352.0548,
+   "bulanLow": "2022-12",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.0146,
+   "hargaHigh": 0.066,
+   "simbol": "TUSDT",
+   "jumlahBulan": 57,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 351.44,
+   "bulanLow": "2025-09",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.05,
+   "hargaHigh": 0.22572,
+   "simbol": "FFUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 350.0,
+   "bulanLow": "2026-01",
+   "bulanPuncak": "2026-02",
+   "hargaLow": 0.011,
+   "hargaHigh": 0.0495,
+   "simbol": "SENTUSDT",
+   "jumlahBulan": 10,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 341.9355,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.062,
+   "hargaHigh": 0.274,
+   "simbol": "WALUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 335.8974,
+   "bulanLow": "2023-09",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.39,
+   "hargaHigh": 1.7,
+   "simbol": "FLOWUSDT",
+   "jumlahBulan": 64,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 333.8046,
+   "bulanLow": "2023-06",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.0778,
+   "hargaHigh": 0.3375,
+   "simbol": "DODOUSDT",
+   "jumlahBulan": 69,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 333.3333,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0468,
+   "hargaHigh": 0.2028,
+   "simbol": "TREEUSDT",
+   "jumlahBulan": 16,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 332.6484,
+   "bulanLow": "2025-12",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.00438,
+   "hargaHigh": 0.01895,
+   "simbol": "GPSUSDT",
+   "jumlahBulan": 20,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 323.7805,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.00328,
+   "hargaHigh": 0.0139,
+   "simbol": "SOPHUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 318.8419,
+   "bulanLow": "2024-08",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.1088,
+   "hargaHigh": 0.4557,
+   "simbol": "BLURUSDT",
+   "jumlahBulan": 36,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 308.8682,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.01184,
+   "hargaHigh": 0.04841,
+   "simbol": "VELODROMEUSDT",
+   "jumlahBulan": 23,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 295.7784,
+   "bulanLow": "2022-06",
+   "bulanPuncak": "2023-02",
+   "hargaLow": 37.9,
+   "hargaHigh": 150.0,
+   "simbol": "QUICKUSDT",
+   "jumlahBulan": 63,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 294.3415,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 69.1,
+   "hargaHigh": 272.49,
+   "simbol": "GIGGLEUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 288.9006,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.01901,
+   "hargaHigh": 0.07393,
+   "simbol": "SUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 288.4083,
+   "bulanLow": "2021-06",
+   "bulanPuncak": "2021-09",
+   "hargaLow": 0.578,
+   "hargaHigh": 2.245,
+   "simbol": "PUNDIXUSDT",
+   "jumlahBulan": 67,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 287.5934,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.01338,
+   "hargaHigh": 0.05186,
+   "simbol": "KMNOUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 285.6742,
+   "bulanLow": "2026-03",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.712,
+   "hargaHigh": 2.746,
+   "simbol": "EULUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 281.1659,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.1115,
+   "hargaHigh": 0.425,
+   "simbol": "KAIAUSDT",
+   "jumlahBulan": 25,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 272.1333,
+   "bulanLow": "2025-09",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.3,
+   "hargaHigh": 1.1164,
+   "simbol": "SOMIUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 268.7316,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2022-07",
+   "hargaLow": 2.034,
+   "hargaHigh": 7.5,
+   "simbol": "ACMUSDT",
+   "jumlahBulan": 69,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 268.6869,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.198,
+   "hargaHigh": 0.73,
+   "simbol": "AVNTUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 268.4211,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 3.61,
+   "hargaHigh": 13.3,
+   "simbol": "BANANAUSDT",
+   "jumlahBulan": 28,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 265.5367,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0177,
+   "hargaHigh": 0.0647,
+   "simbol": "AEVOUSDT",
+   "jumlahBulan": 32,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 260.4154,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.1637,
+   "hargaHigh": 0.59,
+   "simbol": "LAUSDT",
+   "jumlahBulan": 16,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 258.7,
+   "bulanLow": "2025-09",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.2,
+   "hargaHigh": 0.7174,
+   "simbol": "OPENUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 256.4865,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.037,
+   "hargaHigh": 0.1319,
+   "simbol": "SHELLUSDT",
+   "jumlahBulan": 21,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 251.8593,
+   "bulanLow": "2022-09",
+   "bulanPuncak": "2026-01",
+   "hargaLow": 1606.0,
+   "hargaHigh": 5650.86,
+   "simbol": "PAXGUSDT",
+   "jumlahBulan": 75,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 251.7538,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.01511,
+   "hargaHigh": 0.05315,
+   "simbol": "NIGHTUSDT",
+   "jumlahBulan": 8,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 250.0,
+   "bulanLow": "2026-03",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.1,
+   "hargaHigh": 0.35,
+   "simbol": "CFGUSDT",
+   "jumlahBulan": 8,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 244.5,
+   "bulanLow": "2025-08",
+   "bulanPuncak": "2025-09",
+   "hargaLow": 0.3,
+   "hargaHigh": 1.0335,
+   "simbol": "PROVEUSDT",
+   "jumlahBulan": 15,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 242.1695,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.0295,
+   "hargaHigh": 0.10094,
+   "simbol": "PYTHUSDT",
+   "jumlahBulan": 33,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 237.2671,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0161,
+   "hargaHigh": 0.0543,
+   "simbol": "CGPTUSDT",
+   "jumlahBulan": 22,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 237.0904,
+   "bulanLow": "2025-04",
+   "bulanPuncak": "2025-05",
+   "hargaLow": 0.0763,
+   "hargaHigh": 0.2572,
+   "simbol": "CETUSUSDT",
+   "jumlahBulan": 24,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 233.6,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2022-08",
+   "hargaLow": 2.5,
+   "hargaHigh": 8.34,
+   "simbol": "BARUSDT",
+   "jumlahBulan": 67,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 226.4151,
+   "bulanLow": "2026-04",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.053,
+   "hargaHigh": 0.173,
+   "simbol": "MEGAUSDT",
+   "jumlahBulan": 7,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 226.087,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 6.21,
+   "hargaHigh": 20.25,
+   "simbol": "SNXXBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 221.4511,
+   "bulanLow": "2025-06",
+   "bulanPuncak": "2025-07",
+   "hargaLow": 0.0951,
+   "hargaHigh": 0.3057,
+   "simbol": "HAEDALUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 218.3266,
+   "bulanLow": "2024-08",
+   "bulanPuncak": "2024-11",
+   "hargaLow": 0.005462,
+   "hargaHigh": 0.017387,
+   "simbol": "QKCUSDT",
+   "jumlahBulan": 44,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 217.8,
+   "bulanLow": "2026-03",
+   "bulanPuncak": "2026-06",
+   "hargaLow": 0.1,
+   "hargaHigh": 0.3178,
+   "simbol": "OPNUSDT",
+   "jumlahBulan": 8,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 212.9428,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 14.68,
+   "hargaHigh": 45.94,
+   "simbol": "MVLLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 212.3772,
+   "bulanLow": "2023-08",
+   "bulanPuncak": "2024-03",
+   "hargaLow": 0.509,
+   "hargaHigh": 1.59,
+   "simbol": "NEXOUSDT",
+   "jumlahBulan": 55,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 208.5288,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0469,
+   "hargaHigh": 0.1447,
+   "simbol": "NEWTUSDT",
+   "jumlahBulan": 17,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 206.7093,
+   "bulanLow": "2022-05",
+   "bulanPuncak": "2022-07",
+   "hargaLow": 0.1565,
+   "hargaHigh": 0.48,
+   "simbol": "STEEMUSDT",
+   "jumlahBulan": 55,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 204.6341,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 4.1,
+   "hargaHigh": 12.49,
+   "simbol": "METISUSDT",
+   "jumlahBulan": 32,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 201.7344,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.2018,
+   "hargaHigh": 0.6089,
+   "simbol": "ONDOUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 201.6129,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.0434,
+   "hargaHigh": 0.1309,
+   "simbol": "HOLOUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 194.7464,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.1104,
+   "hargaHigh": 0.3254,
+   "simbol": "AUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 192.4091,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.03491,
+   "hargaHigh": 0.10208,
+   "simbol": "SKYUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 181.9579,
+   "bulanLow": "2025-12",
+   "bulanPuncak": "2026-01",
+   "hargaLow": 0.02993,
+   "hargaHigh": 0.08439,
+   "simbol": "DOLOUSDT",
+   "jumlahBulan": 15,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 181.92,
+   "bulanLow": "2025-09",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.25,
+   "hargaHigh": 0.7048,
+   "simbol": "MIRAUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 175.0667,
+   "bulanLow": "2026-01",
+   "bulanPuncak": "2026-02",
+   "hargaLow": 0.075,
+   "hargaHigh": 0.2063,
+   "simbol": "BREVUSDT",
+   "jumlahBulan": 10,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 170.8754,
+   "bulanLow": "2025-06",
+   "bulanPuncak": "2025-09",
+   "hargaLow": 0.04752,
+   "hargaHigh": 0.12872,
+   "simbol": "AWEUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 170.4759,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 36.14,
+   "hargaHigh": 97.75,
+   "simbol": "AXTIBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 169.1769,
+   "bulanLow": "2024-11",
+   "bulanPuncak": "2024-12",
+   "hargaLow": 0.2855,
+   "hargaHigh": 0.7685,
+   "simbol": "POLUSDT",
+   "jumlahBulan": 26,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 166.7133,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2026-01",
+   "hargaLow": 0.0715,
+   "hargaHigh": 0.1907,
+   "simbol": "WLFIUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 161.8817,
+   "bulanLow": "2025-02",
+   "bulanPuncak": "2025-06",
+   "hargaLow": 1.031,
+   "hargaHigh": 2.7,
+   "simbol": "GNSUSDT",
+   "jumlahBulan": 45,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 157.3913,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-06",
+   "hargaLow": 0.046,
+   "hargaHigh": 0.1184,
+   "simbol": "CUSDT",
+   "jumlahBulan": 16,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 155.3728,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.389,
+   "hargaHigh": 0.9934,
+   "simbol": "AEROUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 152.7319,
+   "bulanLow": "2025-12",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.0787,
+   "hargaHigh": 0.1989,
+   "simbol": "ATUSDT",
+   "jumlahBulan": 12,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 147.4038,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 10.4,
+   "hargaHigh": 25.73,
+   "simbol": "KORUBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 146.2865,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 15.08,
+   "hargaHigh": 37.14,
+   "simbol": "INTWBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 132.327,
+   "bulanLow": "2021-12",
+   "bulanPuncak": "2022-04",
+   "hargaLow": 7.95,
+   "hargaHigh": 18.47,
+   "simbol": "CITYUSDT",
+   "jumlahBulan": 60,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 128.5856,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.1011,
+   "hargaHigh": 0.2311,
+   "simbol": "ZKCUSDT",
+   "jumlahBulan": 14,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 123.0984,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 17.88,
+   "hargaHigh": 39.89,
+   "simbol": "MUUBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 121.5812,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.00468,
+   "hargaHigh": 0.01037,
+   "simbol": "BIGTIMEUSDT",
+   "jumlahBulan": 19,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 120.5995,
+   "bulanLow": "2026-05",
+   "bulanPuncak": "2026-06",
+   "hargaLow": 0.1568,
+   "hargaHigh": 0.3459,
+   "simbol": "OPGUSDT",
+   "jumlahBulan": 6,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 119.4373,
+   "bulanLow": "2026-01",
+   "bulanPuncak": "2026-02",
+   "hargaLow": 0.0782,
+   "hargaHigh": 0.1716,
+   "simbol": "ZKPUSDT",
+   "jumlahBulan": 10,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 118.4674,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.00261,
+   "hargaHigh": 0.005702,
+   "simbol": "FUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 117.0508,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 74.19,
+   "hargaHigh": 161.03,
+   "simbol": "AAOIBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 116.8734,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.403,
+   "hargaHigh": 0.874,
+   "simbol": "ASTERUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 116.038,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 80.06,
+   "hargaHigh": 172.96,
+   "simbol": "MSTRBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 114.4667,
+   "bulanLow": "2025-10",
+   "bulanPuncak": "2025-11",
+   "hargaLow": 0.3,
+   "hargaHigh": 0.6434,
+   "simbol": "YBUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 112.9693,
+   "bulanLow": "2025-06",
+   "bulanPuncak": "2025-07",
+   "hargaLow": 0.0586,
+   "hargaHigh": 0.1248,
+   "simbol": "SXTUSDT",
+   "jumlahBulan": 18,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 110.6742,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.0712,
+   "hargaHigh": 0.15,
+   "simbol": "RONINUSDT",
+   "jumlahBulan": 33,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 109.6525,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 0.01036,
+   "hargaHigh": 0.02172,
+   "simbol": "ROBOUSDT",
+   "jumlahBulan": 8,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 101.256,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 141.72,
+   "hargaHigh": 285.22,
+   "simbol": "NBISBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 99.1535,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 59.07,
+   "hargaHigh": 117.64,
+   "simbol": "CRWVBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 97.6033,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 85.95,
+   "hargaHigh": 169.84,
+   "simbol": "SOXLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 96.4497,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 971.47,
+   "hargaHigh": 1908.45,
+   "simbol": "SNDKBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 95.6155,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 584.1,
+   "hargaHigh": 1142.59,
+   "simbol": "LITEBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 94.788,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 130.66,
+   "hargaHigh": 254.51,
+   "simbol": "MRNABUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 94.727,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 155.32,
+   "hargaHigh": 302.45,
+   "simbol": "BEBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.9712,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 158.05,
+   "hargaHigh": 301.83,
+   "simbol": "MRVLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 90.4528,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.02032,
+   "hargaHigh": 0.0387,
+   "simbol": "AIGENSYNUSDT",
+   "jumlahBulan": 6,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 85.6433,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 114.72,
+   "hargaHigh": 212.97,
+   "simbol": "PLTRBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 82.1096,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 58.02,
+   "hargaHigh": 105.66,
+   "simbol": "CRCLBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 78.5737,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 31.41,
+   "hargaHigh": 56.09,
+   "simbol": "SOXSBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 77.0073,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.0822,
+   "hargaHigh": 0.1455,
+   "simbol": "MARSCOINUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 75.2787,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 113.91,
+   "hargaHigh": 199.66,
+   "simbol": "SKHYBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 72.4324,
+   "bulanLow": "2026-02",
+   "bulanPuncak": "2026-04",
+   "hargaLow": 0.037,
+   "hargaHigh": 0.0638,
+   "simbol": "TURTLEUSDT",
+   "jumlahBulan": 13,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 70.0299,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 0.2676,
+   "hargaHigh": 0.455,
+   "simbol": "GENIUSUSDT",
+   "jumlahBulan": 6,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 68.1168,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 17.47,
+   "hargaHigh": 29.37,
+   "simbol": "BMNRBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 68.0762,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 105.0,
+   "hargaHigh": 176.48,
+   "simbol": "SPCXBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 67.0592,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 201.27,
+   "hargaHigh": 336.24,
+   "simbol": "ARMBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 66.4441,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 0.2247,
+   "hargaHigh": 0.374,
+   "simbol": "FRAXUSDT",
+   "jumlahBulan": 10,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 65.4115,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 362.23,
+   "hargaHigh": 599.17,
+   "simbol": "DELLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 64.4119,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 79.24,
+   "hargaHigh": 130.28,
+   "simbol": "INTCBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 63.905,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 17.26,
+   "hargaHigh": 28.29,
+   "simbol": "GMEBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 62.9636,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 163.11,
+   "hargaHigh": 265.81,
+   "simbol": "CBRSBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 60.3035,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 45.47,
+   "hargaHigh": 72.89,
+   "simbol": "QNTBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 59.5612,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 252.06,
+   "hargaHigh": 402.19,
+   "simbol": "ALABBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 57.7089,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 706.39,
+   "hargaHigh": 1114.04,
+   "simbol": "MUBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 56.6838,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 420.42,
+   "hargaHigh": 658.73,
+   "simbol": "AMDBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 56.0601,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 29.29,
+   "hargaHigh": 45.71,
+   "simbol": "SMCIBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 54.6392,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 149.38,
+   "hargaHigh": 231.0,
+   "simbol": "CRDOBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 54.1932,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 114.83,
+   "hargaHigh": 177.06,
+   "simbol": "GLWBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 52.293,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 83.95,
+   "hargaHigh": 127.85,
+   "simbol": "HOODBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 52.0224,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 57.11,
+   "hargaHigh": 86.82,
+   "simbol": "RKLBBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 50.9818,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 56.53,
+   "hargaHigh": 85.35,
+   "simbol": "TQQQBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 50.6297,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 518.49,
+   "hargaHigh": 781.0,
+   "simbol": "METABUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 50.1225,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 367.46,
+   "hargaHigh": 551.64,
+   "simbol": "MSFTBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 49.8592,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 42.6,
+   "hargaHigh": 63.84,
+   "simbol": "DRAMBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 49.2505,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 139.43,
+   "hargaHigh": 208.1,
+   "simbol": "COINBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 48.891,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 114.52,
+   "hargaHigh": 170.51,
+   "simbol": "ORCLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 45.6274,
+   "bulanLow": "2026-04",
+   "bulanPuncak": "2026-05",
+   "hargaLow": 0.01578,
+   "hargaHigh": 0.02298,
+   "simbol": "FOGOUSDT",
+   "jumlahBulan": 10,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 43.8251,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 143.16,
+   "hargaHigh": 205.9,
+   "simbol": "QCOMBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 42.9001,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 136.41,
+   "hargaHigh": 194.93,
+   "simbol": "EWYBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 42.4294,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 201.04,
+   "hargaHigh": 286.34,
+   "simbol": "CRWDBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 41.7816,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 34.8,
+   "hargaHigh": 49.34,
+   "simbol": "IRENBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 38.88,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.00625,
+   "hargaHigh": 0.00868,
+   "simbol": "MANTRAUSDT",
+   "jumlahBulan": 8,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 37.9544,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 11.83,
+   "hargaHigh": 16.32,
+   "simbol": "FLNCBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 36.983,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 8.22,
+   "hargaHigh": 11.26,
+   "simbol": "NOKBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 36.4542,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 198.66,
+   "hargaHigh": 271.08,
+   "simbol": "IBMBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 35.0084,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 423.07,
+   "hargaHigh": 571.18,
+   "simbol": "WDCBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 34.529,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 255.09,
+   "hargaHigh": 343.17,
+   "simbol": "COHRBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 34.4668,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 1.294,
+   "hargaHigh": 1.74,
+   "simbol": "GRAMUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 34.3912,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 294.0,
+   "hargaHigh": 395.11,
+   "simbol": "TSLABUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 33.9019,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 4.69,
+   "hargaHigh": 6.28,
+   "simbol": "BNCBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 33.225,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 412.4,
+   "hargaHigh": 549.42,
+   "simbol": "AMATBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 32.2026,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 368.79,
+   "hargaHigh": 487.55,
+   "simbol": "TSMBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 28.8384,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 188.88,
+   "hargaHigh": 243.35,
+   "simbol": "NVDABUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 28.7094,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 496.98,
+   "hargaHigh": 639.66,
+   "simbol": "SMHBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 27.5654,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 225.21,
+   "hargaHigh": 287.29,
+   "simbol": "AMZNBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 24.877,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 762.35,
+   "hargaHigh": 952.0,
+   "simbol": "STXBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 23.7937,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 33.16,
+   "hargaHigh": 41.05,
+   "simbol": "SQQQBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 22.0494,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 315.11,
+   "hargaHigh": 384.59,
+   "simbol": "GOOGLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.5237,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 61.49,
+   "hargaHigh": 74.11,
+   "simbol": "HPEBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.5068,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 359.1,
+   "hargaHigh": 432.74,
+   "simbol": "AVGOBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.2078,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 110.7,
+   "hargaHigh": 133.07,
+   "simbol": "BABABUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 20.1139,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 56.18,
+   "hargaHigh": 67.48,
+   "simbol": "ASTSBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 19.9626,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 1573.84,
+   "hargaHigh": 1888.02,
+   "simbol": "ASMLBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 18.8672,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 26.66,
+   "hargaHigh": 31.69,
+   "simbol": "HIMSBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 18.6172,
+   "bulanLow": "2026-06",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 3945.0,
+   "hargaHigh": 4679.45,
+   "simbol": "XAUTUSDT",
+   "jumlahBulan": 8,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 18.5586,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 11.1,
+   "hargaHigh": 13.16,
+   "simbol": "AGPUBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 18.1481,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 2.7,
+   "hargaHigh": 3.19,
+   "simbol": "AMCBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 17.2236,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 232.24,
+   "hargaHigh": 272.24,
+   "simbol": "ADBEBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.9015,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 300.86,
+   "hargaHigh": 351.71,
+   "simbol": "AAPLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.7273,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 16.5,
+   "hargaHigh": 19.26,
+   "simbol": "USARBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 16.0392,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 141.84,
+   "hargaHigh": 164.59,
+   "simbol": "RDDTBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 15.8995,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 658.26,
+   "hargaHigh": 762.92,
+   "simbol": "QQQBUSDT",
+   "jumlahBulan": 5,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 15.8578,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 50.07,
+   "hargaHigh": 58.01,
+   "simbol": "PYPLBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 15.584,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 88.36,
+   "hargaHigh": 102.13,
+   "simbol": "ZMBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 14.446,
+   "bulanLow": "2026-08",
+   "bulanPuncak": "2026-09",
+   "hargaLow": 73.1,
+   "hargaHigh": 83.66,
+   "simbol": "NFLXBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 14.0728,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 221.42,
+   "hargaHigh": 252.58,
+   "simbol": "CRMBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.6441,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-08",
+   "hargaLow": 975.55,
+   "hargaHigh": 1098.9,
+   "simbol": "GSBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.5354,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 84.64,
+   "hargaHigh": 95.25,
+   "simbol": "HYPEUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 12.0968,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 1.24,
+   "hargaHigh": 1.39,
+   "simbol": "GPROBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 10.9395,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 7.77,
+   "hargaHigh": 8.62,
+   "simbol": "FWDIBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9.8413,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 3.15,
+   "hargaHigh": 3.46,
+   "simbol": "CYPHBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 9.0695,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 8.49,
+   "hargaHigh": 9.26,
+   "simbol": "DJTBUSDT",
+   "jumlahBulan": 3,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 8.5589,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 77.23,
+   "hargaHigh": 83.84,
+   "simbol": "PDDBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 7.2769,
+   "bulanLow": "2026-07",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 728.88,
+   "hargaHigh": 781.92,
+   "simbol": "SPYBUSDT",
+   "jumlahBulan": 4,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 6.5728,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 6.39,
+   "hargaHigh": 6.81,
+   "simbol": "WENBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 5.566,
+   "bulanLow": "2026-09",
+   "bulanPuncak": "2026-10",
+   "hargaLow": 53.0,
+   "hargaHigh": 55.95,
+   "simbol": "SHAZBUSDT",
+   "jumlahBulan": 2,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 4.7273,
+   "bulanLow": "2025-12",
+   "bulanPuncak": "2026-03",
+   "hargaLow": 0.011,
+   "hargaHigh": 0.01152,
+   "simbol": "KGSTUSDT",
+   "jumlahBulan": 11,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 2.3374,
+   "bulanLow": "2026-01",
+   "bulanPuncak": "2026-02",
+   "hargaLow": 0.984,
+   "hargaHigh": 1.007,
+   "simbol": "UUSDT",
+   "jumlahBulan": 10,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 0.6935,
+   "bulanLow": "2025-08",
+   "bulanPuncak": "2025-10",
+   "hargaLow": 0.995,
+   "hargaHigh": 1.0019,
+   "simbol": "BFUSDUSDT",
+   "jumlahBulan": 15,
+   "catatan": "ok"
+  },
+  {
+   "gainPct": 0.3803,
+   "bulanLow": "2026-04",
+   "bulanPuncak": "2026-07",
+   "hargaLow": 0.9991,
+   "hargaHigh": 1.0029,
+   "simbol": "RLUSDUSDT",
+   "jumlahBulan": 10,
+   "catatan": "ok"
+  },
+  {
+   "simbol": "BBBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 9.47,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "BOTBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 25.49,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "BRKBBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 551.37,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "JPMBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 344.42,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "KSTRBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 20.1,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "LLYBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 1322.32,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "MDBBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 393.03,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "PENGBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 78.56,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "RWUSDUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 1.001,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "SECZBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 15.5,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "TMFBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 30.1,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "USDEBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 14.33,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "UVXYBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 19.85,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  },
+  {
+   "simbol": "VSTBUSDT",
+   "gainPct": 0.0,
+   "bulanLow": null,
+   "bulanPuncak": null,
+   "hargaLow": null,
+   "hargaHigh": 158.71,
+   "jumlahBulan": 1,
+   "catatan": "umur<2bulan-tak-dinilai"
+  }
+ ]
+}

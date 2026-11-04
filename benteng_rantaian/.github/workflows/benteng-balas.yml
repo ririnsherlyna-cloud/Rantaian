@@ -1,0 +1,45 @@
+# ============================================================
+# BENTENG-BALAS — pembalas pesan Telegram pemilik
+# Tiap 5 menit: getUpdates -> jawab periksa aktivasi / laporan / status /
+# daftar 50 koin. Offset disimpan di repo agar tidak dobel-balas.
+# ============================================================
+name: BENTENG-BALAS (jawab pesan pemilik)
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: benteng-balas
+  cancel-in-progress: true
+
+jobs:
+  balas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Baca & balas pesan pemilik
+        run: python3 scripts/balas_telegram.py
+
+      - name: Simpan offset (tanpa memicu workflow lain)
+        run: |
+          git config user.name "benteng-balas"
+          git config user.email "benteng-balas@users.noreply.github.com"
+          git add data/offset_telegram.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "offset tidak berubah"
+          else
+            git commit -m "offset balas [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep $((i * 5))
+            done
+          fi

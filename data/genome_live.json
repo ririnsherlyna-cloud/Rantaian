@@ -1,0 +1,56 @@
+{
+ "sumber": "GENOM-HIDUP-v1 otak z.ai",
+ "DNA_asal": "remote_genome.json (Micaprofita- beku)",
+ "diperbarui": "2026-10-30T00:53:42Z",
+ "epoch_hidup": "2026-10-30",
+ "sinyal": {
+  "akurasi": 39.8,
+  "brier": 0.271,
+  "breadth": 69.1,
+  "siklus": 1270,
+  "kompas": "SELL",
+  "evProfit": -0.334
+ },
+ "arah": {
+  "NAIK": {
+   "bobot": {
+    "struktur": 0.2434,
+    "momentum": 0.2538,
+    "sr": 0.1623,
+    "tekanan": 0.1806,
+    "perubahan": 0.16
+   },
+   "generasi": 7,
+   "belajar": 95,
+   "diperbarui": "2026-10-30T00:53:42Z"
+  },
+  "TURUN": {
+   "bobot": {
+    "struktur": 0.2541,
+    "momentum": 0.2545,
+    "sr": 0.1566,
+    "tekanan": 0.1852,
+    "perubahan": 0.1497
+   },
+   "generasi": 7,
+   "belajar": 66,
+   "diperbarui": "2026-10-30T00:53:42Z"
+  }
+ },
+ "mutasi": {
+  "NAIK": {
+   "struktur": -0.0009,
+   "momentum": -0.005,
+   "sr": -0.0006,
+   "tekanan": -0.0007,
+   "perubahan": 0.0074
+  },
+  "TURUN": {
+   "struktur": -0.001,
+   "momentum": -0.005,
+   "sr": -0.0006,
+   "tekanan": -0.0007,
+   "perubahan": 0.0074
+  }
+ }
+}
