@@ -12,13 +12,19 @@
   "UNIUSDT",
   "STXUSDT",
   "ARKUSDT",
-  "XAUUSDT"
+  "XAUUSDT",
+  "JSTUSDT",
+  "SIRENUSDT"
  ],
  "tp": {
   "UNIUSDT": true,
+  "PEPEUSDT": true,
+  "HYPEUSDT": true
+ },
+ "ambisius": {
+  "UNIUSDT": true,
   "PEPEUSDT": true
  },
- "ambisius": {},
  "powerMax": {},
  "stop": {}
 }

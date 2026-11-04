@@ -1,33 +1,13 @@
 {
-  "dihasilkan": "2026-11-04T14:53:02.845Z",
+  "dihasilkan": "2026-11-04T15:53:02.849Z",
   "organ": "V261-CLAW-TEMPOK v5.7 — pagar-baja & komite panjia warisan keluarga \"ClawTrade\"; V261: deep-screening DUA anggota keluarga dari KODE SUMBER — yuxuan-lou/ClawTrade (security middleware: \"treat your AI agent as an untrusted client\" — guardrails.py hard rules di luar jangkauan otak, confirmation.py antrean konfirmasi manusia ber-kadaluarsa, audit.py append-only ber-sanitasi) + clawtradeai-Agent/ClawTradeAI (MIT, multi-agent Solana: CoordinatorAgent weighted voting + riskManagerVeto + recommendedAmount, RiskManagerAgent kartu 4×25 + blockedTokens): DELAPAN KUNCI TEMPOK diadopsi — (1) PAGAR-BAJA: konstanta keras yang otak BACA tapi tak bisa TULIS ulang (kuota-harian, langit-langit slip, ukuran maks) dicek DULU di gerbang; (2) DAFTAR-TERLARANG ala FORBIDDEN_OPS: operasi terlarang blokir permanen sebelum hitung apa pun; (3) KOMITE-PANJIA ala CoordinatorAgent: 5 suara berbobot tetap (tren/kerumunan/derivatif/buku/tegangan) — tak ada suara tunggal yang berkuasa, suara rusak = bobot nol (degradasi anggun), keyakinan komite = koherensi searah (porsi kekuatan suara searah dari total terbaca — kalibrasi jujur, bukan copy confidence LLM) < minconf → SKIP; (4) KARTU-RISIKO 4×25 ala RiskManagerAgent: likuiditas/derivatif/kerumunan-konsentrasi/volatilitas → skor 0-100 berlevel LOW/MEDIUM/HIGH/CRITICAL, > 70 → VETO-SAKSI; (5) TANGGA-UKURAN ala recommendedAmount: keyakinan dikuantisasi kasar 1.0/0.5/0.25/nol — tak ada ukuran antara, kuanta membatasi skalaEfektif dari atas; (6) MENUNGGU-MANDAT ala confirmation.py: ukuran tertinggi tak dikunci seketika — antre + kadaluarsa 12 jam, kunci hanya setelah lolos gerbang ulang denyut berikutnya; (7) DAFTAR-HITAM ala blockedTokens: sasaran yang 3× diveto kartu-panas dibekukan 48 jam ber-alasan; (8) BUKU-TEKOK ala audit.py: setiap blok gerbang tercatat per-aturan + rekap kumulatif — ditumpuk pada V260-AUTOPILOT-KALIBRASI (warisan deep-screening \"AutoPilotPM\" (recogardtech/AutoPilotPM, MIT, kode sumber TypeScript 95 modul dibedah: src/ledger + src/risk + src/trading): TUJUH KUNCI KALIBRASI diadopsi — (1) TIMBANGAN-ALT (alternativesConsidered ala decision ledger): pilihan kedua dicatat saat kunci, regret-nya dihitung medan saat matang; (2) KELLY-LAPIS (dynamic Kelly 9-lapis): pengecilan drawdown (mulai 5%, setengah di 15%), kerendahan-hati sampel-kecil (<10 vonis → 0.5–0.95×), penyusutan streak-kalah (lantai 0.5×), vol-target scaling (klamps 0.5–1.5) — ditumpuk di atas ekspresi dinamis, skalaEfektif clamp [0.2,1.2] + keyakinan-ukuran 0.4/0.3/0.3; (3) REZIM-MEDAN (volatility regime 4-tingkat BASELINE-MANDIRI): σ window P&L dibanding baseline σ window penuh pertama milik sendiri — tenang 1.2×/normal 1.0×/tinggi 0.5×/ekstrem 0.25×+BERTAHAN; (4) UJI-TEGANG (stress test 5 skenario ala stress.ts): flash-crash/likuiditas/platform/korelasi/black-swan dinilai ke posisi terbuka, terburuk ≥30% → penalti+BERTAHAN; (5) SLIP-NETO (slippage-adjusted edge ala OPPORTUNITY_FINDER): edge dikurangi sqrt(1/likuiditas)·2·faktor+spread/2 SEBELUM memutuskan — edge bersih ≤ 0 ditolak dengan alasan, data kosong tidak memblokir (fallback-jujur); (6) PELUANG-SKOR (opportunity scoring terbobot + penalti): 0-100 = edge+likuiditas+keyakinan+eksekusi−penalti, <60 ditolak dengan alasan (gerbang baru yang hanya MENOLAK); (7) TOP-TOLAK (topBlockReasons): ranking alasan penolakan — kesadaran atas penolakannya sendiri — ditumpuk pada V259-KAIZEN-PULIH (prateekjain98/kaizen-trader open-source + KAIZEN Virtuals/Hyperliquid + Kaizen RegimeBot + kaizen.cash): EMPAT LOOP PENYEMBUHAN-DIRI diadopsi — (1) UJI-BALIK (delta-revert): perubahan genome adalah eksperimen yang dinilai medan per 8 vonis matang, yang lebih buruk DIREVERT; (2) KARANTINA (rule-healer): topik meta-inferensi yang terus keliru disita suaranya sementara, pulih lewat bukti; (3) DINGIN-DENDAM (anti-revenge): kekalahan beruntun per sasaran/keluarga membekukan re-entry; (4) HENTI-HARIAN: rugi-net harian ≤ −4% memaksa BERTAHAN — ditambah KESEGARAN gerakan (pompa-tua diveto ala \"fresh breakouts > stale pumps\"), MODAL-MATI (chop-exit), TESIS-PATAH, dan PENJAGA-KEDUA (hard-stop 15%/hard-target 40% pra-registrasi ala watchdog proses-terpisah): lapisan parameter per kandang diperluas 46 → 67 bernama — (D) STRUKTUR HARIAN dari klines 1d 90 hari (EMA-align/RSI/MACD daily, Donchian 30d, jarak puncak-lantai 90d, momentum bulanan, streak hari, rasio volatilitas realized 7d/30d), (E) KERUMUNAN NYATA OKX rubik (long/short account ratio + tren membubarnya, taker buy/sell aggressor), (F) STRES DERIVATIF (basis perp-vs-spot, jam menuju funding, funding relatif vs BTC), (G) gradien order book (massa depan vs total 1%), (H) 6 INTERAKSI antar-faktor eksplisit (funding×ΔOI, volume×rezim-ATR, tren4h×funding, buku×tren1h, breakout×volume, agresor×tren) — semuanya lapis OBSERVASI: dihitung, dinarasikan, disekolahkan, berhak VETO, TIDAK berbobot sebelum hit-rate medan lulus (hukum rumah tak berubah) + 5 param iklim lintas-siklus (Δdominasi antar-denyut, ETH/BTC 7d risk-on/off, LS-akun BTC/ETH, jam funding BTC) · ditumpuk pada V256-MESIN-DEAL-ODDS (MESIN DEAL ala DCA-bot 3Commas: safety orders hard-cap 1.2×ATR ×1.6 ×1.5 + breakeven aktivasi 60% + trailing 0.8×ATR + Global Max Open Positions; ODDS MAKER ala Trade Ideas: skor 0-100, top-3 ≥55 boleh kunci; 6 tag peristiwa OddsMaker) → registri total 101 → 127 → 145 → 167 → 191 → 232 parameter bernama",
-  "siklus": 1602,
+  "siklus": 1606,
   "dasarN": {
-    "arah": 999,
+    "arah": 997,
     "phoenix": 0
   },
   "zona": {
     "arah": [
-      {
-        "kunci": "SELL-TURUN",
-        "nama": "arah SELL di rezim TURUN",
-        "n": 345,
-        "porsi": 0.345,
-        "akurasiPct": 47.8,
-        "ekspekPct": 0.28,
-        "pf": 1.2,
-        "status": "NETRAL"
-      },
-      {
-        "kunci": "BUY-NAIK",
-        "nama": "arah BUY di rezim NAIK",
-        "n": 154,
-        "porsi": 0.154,
-        "akurasiPct": 31.2,
-        "ekspekPct": 0.98,
-        "pf": 1.56,
-        "status": "EMAS"
-      },
       {
         "kunci": "SELL-NAIK",
         "nama": "arah SELL di rezim NAIK",
@@ -39,14 +19,34 @@
         "status": "EMAS"
       },
       {
+        "kunci": "SELL-TURUN",
+        "nama": "arah SELL di rezim TURUN",
+        "n": 344,
+        "porsi": 0.345,
+        "akurasiPct": 47.7,
+        "ekspekPct": 0.27,
+        "pf": 1.19,
+        "status": "NETRAL"
+      },
+      {
         "kunci": "BUY-PARABOLIK",
         "nama": "arah BUY di rezim PARABOLIK",
         "n": 225,
-        "porsi": 0.225,
+        "porsi": 0.226,
         "akurasiPct": 26.7,
         "ekspekPct": -3.93,
         "pf": 0.45,
         "status": "RACUN"
+      },
+      {
+        "kunci": "BUY-NAIK",
+        "nama": "arah BUY di rezim NAIK",
+        "n": 153,
+        "porsi": 0.153,
+        "akurasiPct": 31.4,
+        "ekspekPct": 0.99,
+        "pf": 1.56,
+        "status": "EMAS"
       },
       {
         "kunci": "BUY-TURUN",
@@ -91,8 +91,8 @@
       {
         "kunci": "<55",
         "nama": "keyakinan mentah <55",
-        "n": 823,
-        "porsi": 0.824,
+        "n": 820,
+        "porsi": 0.822,
         "akurasiPct": 45.7,
         "ekspekPct": -0.15,
         "pf": 0.95,
@@ -101,11 +101,11 @@
       {
         "kunci": "55-69",
         "nama": "keyakinan mentah 55-69",
-        "n": 160,
-        "porsi": 0.16,
-        "akurasiPct": 25,
-        "ekspekPct": -1.49,
-        "pf": 0.55,
+        "n": 161,
+        "porsi": 0.161,
+        "akurasiPct": 24.8,
+        "ekspekPct": -1.5,
+        "pf": 0.54,
         "status": "RACUN"
       },
       {
@@ -119,30 +119,30 @@
         "status": "RACUN"
       },
       {
+        "kunci": "taker-melawan",
+        "nama": "tekanan taker melawan (fade kerumunan)",
+        "n": 351,
+        "porsi": 0.352,
+        "akurasiPct": 39.9,
+        "ekspekPct": -0.49,
+        "pf": 0.85,
+        "status": "NETRAL"
+      },
+      {
         "kunci": "taker-netral",
         "nama": "tekanan taker netral",
-        "n": 300,
-        "porsi": 0.3,
+        "n": 298,
+        "porsi": 0.299,
         "akurasiPct": 46,
         "ekspekPct": -0.5,
         "pf": 0.84,
         "status": "NETRAL"
       },
       {
-        "kunci": "taker-melawan",
-        "nama": "tekanan taker melawan (fade kerumunan)",
-        "n": 351,
-        "porsi": 0.351,
-        "akurasiPct": 39.9,
-        "ekspekPct": -0.47,
-        "pf": 0.85,
-        "status": "NETRAL"
-      },
-      {
         "kunci": "taker-searah",
         "nama": "tekanan taker searah kuat (ikut kerumunan)",
         "n": 348,
-        "porsi": 0.348,
+        "porsi": 0.349,
         "akurasiPct": 40.8,
         "ekspekPct": -0.22,
         "pf": 0.91,
@@ -151,11 +151,11 @@
       {
         "kunci": "3-5",
         "nama": "konsensus bukti 3-5 sesuai",
-        "n": 835,
+        "n": 833,
         "porsi": 0.836,
-        "akurasiPct": 39.8,
+        "akurasiPct": 39.7,
         "ekspekPct": -0.66,
-        "pf": 0.79,
+        "pf": 0.78,
         "status": "RACUN"
       },
       {
@@ -171,21 +171,21 @@
       {
         "kunci": "funding-tak-ada",
         "nama": "funding belum tercatat (entri pra-V253)",
-        "n": 878,
-        "porsi": 0.879,
+        "n": 875,
+        "porsi": 0.878,
         "akurasiPct": 41.5,
-        "ekspekPct": -0.46,
+        "ekspekPct": -0.47,
         "pf": 0.85,
         "status": "NETRAL"
       },
       {
         "kunci": "funding-seimbang",
         "nama": "funding seimbang",
-        "n": 120,
-        "porsi": 0.12,
-        "akurasiPct": 45.8,
-        "ekspekPct": 0.09,
-        "pf": 1.07,
+        "n": 121,
+        "porsi": 0.121,
+        "akurasiPct": 45.5,
+        "ekspekPct": 0.06,
+        "pf": 1.05,
         "status": "NETRAL"
       },
       {
@@ -204,13 +204,13 @@
   "penyebab": [
     "ARAH: arah BUY di rezim PARABOLIK — n=225, akurasi 26.7%, ekspek -3.93%, PF 0.45 → ZONA RACUN, DITOLAK mesin",
     "ARAH: arah BUY di rezim TURUN — n=39, akurasi 30.8%, ekspek -0.8%, PF 0.79 → ZONA RACUN, DITOLAK mesin",
-    "ARAH: keyakinan mentah 55-69 — n=160, akurasi 25%, ekspek -1.49%, PF 0.55 → ZONA RACUN, DITOLAK mesin",
+    "ARAH: keyakinan mentah 55-69 — n=161, akurasi 24.8%, ekspek -1.5%, PF 0.54 → ZONA RACUN, DITOLAK mesin",
     "ARAH: keyakinan mentah >=70 — n=16, akurasi 25%, ekspek -2.18%, PF 0.66 → ZONA RACUN, DITOLAK mesin",
-    "ARAH: konsensus bukti 3-5 sesuai — n=835, akurasi 39.8%, ekspek -0.66%, PF 0.79 → ZONA RACUN, DITOLAK mesin"
+    "ARAH: konsensus bukti 3-5 sesuai — n=833, akurasi 39.7%, ekspek -0.66%, PF 0.78 → ZONA RACUN, DITOLAK mesin"
   ],
   "tindakan": [
-    "slot eksplorasi: ETH BUY dilepas lewat gerbang (EV +80.00% >= 0) — zona racun diuji agar bisa menyembuh dengan bukti baru",
-    "gerbang menolak 9 kandidat ARAH + 0 kandidat phoenix siklus ini",
+    "slot eksplorasi: AVAX BUY dilepas lewat gerbang (EV +11.00% >= 0) — zona racun diuji agar bisa menyembuh dengan bukti baru",
+    "gerbang menolak 6 kandidat ARAH + 0 kandidat phoenix siklus ini",
     "mode disiplin: AKTIF"
   ],
   "performa": {
@@ -228,13 +228,13 @@
     },
     "sekarang": {
       "versi": "V261-CLAW-TEMPOK v5.7 — pagar-baja & komite panjia warisan keluarga \"ClawTrade\"; V261: deep-screening DUA anggota keluarga dari KODE SUMBER — yuxuan-lou/ClawTrade (security middleware: \"treat your AI agent as an untrusted client\" — guardrails.py hard rules di luar jangkauan otak, confirmation.py antrean konfirmasi manusia ber-kadaluarsa, audit.py append-only ber-sanitasi) + clawtradeai-Agent/ClawTradeAI (MIT, multi-agent Solana: CoordinatorAgent weighted voting + riskManagerVeto + recommendedAmount, RiskManagerAgent kartu 4×25 + blockedTokens): DELAPAN KUNCI TEMPOK diadopsi — (1) PAGAR-BAJA: konstanta keras yang otak BACA tapi tak bisa TULIS ulang (kuota-harian, langit-langit slip, ukuran maks) dicek DULU di gerbang; (2) DAFTAR-TERLARANG ala FORBIDDEN_OPS: operasi terlarang blokir permanen sebelum hitung apa pun; (3) KOMITE-PANJIA ala CoordinatorAgent: 5 suara berbobot tetap (tren/kerumunan/derivatif/buku/tegangan) — tak ada suara tunggal yang berkuasa, suara rusak = bobot nol (degradasi anggun), keyakinan komite = koherensi searah (porsi kekuatan suara searah dari total terbaca — kalibrasi jujur, bukan copy confidence LLM) < minconf → SKIP; (4) KARTU-RISIKO 4×25 ala RiskManagerAgent: likuiditas/derivatif/kerumunan-konsentrasi/volatilitas → skor 0-100 berlevel LOW/MEDIUM/HIGH/CRITICAL, > 70 → VETO-SAKSI; (5) TANGGA-UKURAN ala recommendedAmount: keyakinan dikuantisasi kasar 1.0/0.5/0.25/nol — tak ada ukuran antara, kuanta membatasi skalaEfektif dari atas; (6) MENUNGGU-MANDAT ala confirmation.py: ukuran tertinggi tak dikunci seketika — antre + kadaluarsa 12 jam, kunci hanya setelah lolos gerbang ulang denyut berikutnya; (7) DAFTAR-HITAM ala blockedTokens: sasaran yang 3× diveto kartu-panas dibekukan 48 jam ber-alasan; (8) BUKU-TEKOK ala audit.py: setiap blok gerbang tercatat per-aturan + rekap kumulatif — ditumpuk pada V260-AUTOPILOT-KALIBRASI (warisan deep-screening \"AutoPilotPM\" (recogardtech/AutoPilotPM, MIT, kode sumber TypeScript 95 modul dibedah: src/ledger + src/risk + src/trading): TUJUH KUNCI KALIBRASI diadopsi — (1) TIMBANGAN-ALT (alternativesConsidered ala decision ledger): pilihan kedua dicatat saat kunci, regret-nya dihitung medan saat matang; (2) KELLY-LAPIS (dynamic Kelly 9-lapis): pengecilan drawdown (mulai 5%, setengah di 15%), kerendahan-hati sampel-kecil (<10 vonis → 0.5–0.95×), penyusutan streak-kalah (lantai 0.5×), vol-target scaling (klamps 0.5–1.5) — ditumpuk di atas ekspresi dinamis, skalaEfektif clamp [0.2,1.2] + keyakinan-ukuran 0.4/0.3/0.3; (3) REZIM-MEDAN (volatility regime 4-tingkat BASELINE-MANDIRI): σ window P&L dibanding baseline σ window penuh pertama milik sendiri — tenang 1.2×/normal 1.0×/tinggi 0.5×/ekstrem 0.25×+BERTAHAN; (4) UJI-TEGANG (stress test 5 skenario ala stress.ts): flash-crash/likuiditas/platform/korelasi/black-swan dinilai ke posisi terbuka, terburuk ≥30% → penalti+BERTAHAN; (5) SLIP-NETO (slippage-adjusted edge ala OPPORTUNITY_FINDER): edge dikurangi sqrt(1/likuiditas)·2·faktor+spread/2 SEBELUM memutuskan — edge bersih ≤ 0 ditolak dengan alasan, data kosong tidak memblokir (fallback-jujur); (6) PELUANG-SKOR (opportunity scoring terbobot + penalti): 0-100 = edge+likuiditas+keyakinan+eksekusi−penalti, <60 ditolak dengan alasan (gerbang baru yang hanya MENOLAK); (7) TOP-TOLAK (topBlockReasons): ranking alasan penolakan — kesadaran atas penolakannya sendiri — ditumpuk pada V259-KAIZEN-PULIH (prateekjain98/kaizen-trader open-source + KAIZEN Virtuals/Hyperliquid + Kaizen RegimeBot + kaizen.cash): EMPAT LOOP PENYEMBUHAN-DIRI diadopsi — (1) UJI-BALIK (delta-revert): perubahan genome adalah eksperimen yang dinilai medan per 8 vonis matang, yang lebih buruk DIREVERT; (2) KARANTINA (rule-healer): topik meta-inferensi yang terus keliru disita suaranya sementara, pulih lewat bukti; (3) DINGIN-DENDAM (anti-revenge): kekalahan beruntun per sasaran/keluarga membekukan re-entry; (4) HENTI-HARIAN: rugi-net harian ≤ −4% memaksa BERTAHAN — ditambah KESEGARAN gerakan (pompa-tua diveto ala \"fresh breakouts > stale pumps\"), MODAL-MATI (chop-exit), TESIS-PATAH, dan PENJAGA-KEDUA (hard-stop 15%/hard-target 40% pra-registrasi ala watchdog proses-terpisah): lapisan parameter per kandang diperluas 46 → 67 bernama — (D) STRUKTUR HARIAN dari klines 1d 90 hari (EMA-align/RSI/MACD daily, Donchian 30d, jarak puncak-lantai 90d, momentum bulanan, streak hari, rasio volatilitas realized 7d/30d), (E) KERUMUNAN NYATA OKX rubik (long/short account ratio + tren membubarnya, taker buy/sell aggressor), (F) STRES DERIVATIF (basis perp-vs-spot, jam menuju funding, funding relatif vs BTC), (G) gradien order book (massa depan vs total 1%), (H) 6 INTERAKSI antar-faktor eksplisit (funding×ΔOI, volume×rezim-ATR, tren4h×funding, buku×tren1h, breakout×volume, agresor×tren) — semuanya lapis OBSERVASI: dihitung, dinarasikan, disekolahkan, berhak VETO, TIDAK berbobot sebelum hit-rate medan lulus (hukum rumah tak berubah) + 5 param iklim lintas-siklus (Δdominasi antar-denyut, ETH/BTC 7d risk-on/off, LS-akun BTC/ETH, jam funding BTC) · ditumpuk pada V256-MESIN-DEAL-ODDS (MESIN DEAL ala DCA-bot 3Commas: safety orders hard-cap 1.2×ATR ×1.6 ×1.5 + breakeven aktivasi 60% + trailing 0.8×ATR + Global Max Open Positions; ODDS MAKER ala Trade Ideas: skor 0-100, top-3 ≥55 boleh kunci; 6 tag peristiwa OddsMaker) → registri total 101 → 127 → 145 → 167 → 191 → 232 parameter bernama",
-      "n": 1000,
+      "n": 997,
       "akurasiPct": 42,
-      "netPct": -397.25,
+      "netPct": -396.55,
       "pf": 0.86,
       "ekspekPct": -0.4,
-      "menangRataPct": 5.87,
-      "rugiRataPct": -4.94
+      "menangRataPct": 5.88,
+      "rugiRataPct": -4.95
     },
     "target": {
       "akurasiPct": 50,
@@ -254,9 +254,9 @@
   "disiplin": {
     "mode": "AKTIF",
     "zonaRacunAktif": 5,
-    "ditolakSiklusIni": 9,
+    "ditolakSiklusIni": 6,
     "emasDiprioritaskan": 5,
-    "posisiTerbuka": 1,
+    "posisiTerbuka": 4,
     "maksPosisiTerbuka": 24,
     "oddsDitolakSiklusIni": 0,
     "ket": "sasaran aktif — hanya kandidat yang selamat dari gerbang forensik; zona racun terbukti tetap ditolak"

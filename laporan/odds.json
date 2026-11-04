@@ -1,7 +1,7 @@
 {
   "versi": "V256-MESIN-DEAL-ODDS",
-  "dihasilkan": "2026-11-04T14:53:02.845Z",
-  "siklus": 1602,
+  "dihasilkan": "2026-11-04T15:53:02.849Z",
+  "siklus": 1606,
   "identitas": "deep-screening dua platform trading-AI profesional — kunci intinya diadopsi, diadaptasi ke ledger pra-registrasi SAKTI, lalu DINILAI MEDAN",
   "sumber": [
     {
@@ -176,10 +176,28 @@
     "ket": "semua kontingensi deal DIPRA-REGISTRASI saat kunci lalu dibandingkan dengan jalur nyata lilin pasca-kunci — net-dengan-SO vs tanpa-SO, BEP menyelamatkan?, ekstra trailing dari peak nyata; tumbuh dari ledger, bukan klaim"
   },
   "posisiTerbuka": {
-    "jumlah": 1,
+    "jumlah": 4,
     "rincian": [
       {
         "simbol": "ETH",
+        "jalur": "ARAH",
+        "arah": "BUY",
+        "umurJam": 1
+      },
+      {
+        "simbol": "DOGE",
+        "jalur": "ARAH",
+        "arah": "BUY",
+        "umurJam": 0.7
+      },
+      {
+        "simbol": "XRP",
+        "jalur": "ARAH",
+        "arah": "BUY",
+        "umurJam": 0.5
+      },
+      {
+        "simbol": "AVAX",
         "jalur": "ARAH",
         "arah": "BUY",
         "umurJam": 0

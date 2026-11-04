@@ -1,7 +1,7 @@
 {
   "versi": "V261-CLAW-TEMPOK",
-  "dihasilkan": "2026-11-04T14:53:02.845Z",
-  "siklus": 1602,
+  "dihasilkan": "2026-11-04T15:53:02.849Z",
+  "siklus": 1606,
   "identitas": "deep-screening keluarga \"Kaizen Trader\": prateekjain98/kaizen-trader (open-source, kode sumber dibedah), KAIZEN Virtuals/Hyperliquid, Kaizen RegimeBot, kaizen.cash — EMPAT LOOP PENYEMBUHAN-DIRI diadopsi ke ledger pra-registrasi SAKTI lalu DINILAI MEDAN",
   "sumber": [
     {
@@ -102,7 +102,7 @@
     "pengawasTarget": 40
   },
   "siklusIni": {
-    "ujiBalik": "eksperimen baru: snapshot genome NAIK disegel (siklus 1602) — baseline 0.00678",
+    "ujiBalik": "eksperimen berjalan (mulai siklus 1602, baseline 0.00678)",
     "revertCt": 12,
     "lolosCt": 9,
     "karantinaAktif": {},
@@ -113,8 +113,8 @@
     "dinginSasaranTolak": 0,
     "dinginFamTolak": 0,
     "hentiHarian": {
-      "aktif": false,
-      "rugiNetPct": 0,
+      "aktif": true,
+      "rugiNetPct": -4.04,
       "ambang": -4
     },
     "pompaTuaDitolak": 0
