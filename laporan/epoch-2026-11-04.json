@@ -1,32 +1,32 @@
 {
   "epoch": "2026-11-04",
-  "diulum": "2026-11-04T14:38:02.875Z",
-  "siklus": 1601,
+  "diulum": "2026-11-04T14:53:02.845Z",
+  "siklus": 1602,
   "ringkasan": {
-    "dinilai": 19,
-    "benar": 9,
-    "netPct": -8.05,
+    "dinilai": 1,
+    "benar": 0,
+    "netPct": -4.04,
     "terkunci": 1,
-    "pelajaran": 19,
+    "pelajaran": 1,
     "aturanLahir": []
   },
   "resepOtak": {
     "rezim": "NAIK",
-    "generasi": 7,
+    "generasi": 6,
     "bobot": {
-      "struktur": 0.2468,
-      "momentum": 0.2594,
-      "sr": 0.1609,
-      "tekanan": 0.1807,
-      "perubahan": 0.1522
+      "struktur": 0.2443,
+      "momentum": 0.2588,
+      "sr": 0.1629,
+      "tekanan": 0.1813,
+      "perubahan": 0.1526
     },
     "hedge": {
       "arah": {
-        "struktur": 0.1653,
-        "momentum": 0.0663,
-        "sr": 0.0857,
-        "tekanan": 0.1752,
-        "perubahan": 0.5075
+        "struktur": 0.1446,
+        "momentum": 0.0494,
+        "sr": 0.0417,
+        "tekanan": 0.1974,
+        "perubahan": 0.5669
       },
       "phx": {
         "posisi": 0.1461,
@@ -38,12 +38,12 @@
     }
   },
   "brier": {
-    "arah": 0.2679,
+    "arah": 0.2675,
     "phx": 0.3308
   },
   "akumulasi": {
-    "akurasiPct": 41.4,
-    "netKumulatifPct": -450.78,
+    "akurasiPct": 42,
+    "netKumulatifPct": -397.25,
     "phoenix": {
       "dinilai": 0,
       "benar": 0,

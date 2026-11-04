@@ -1,7 +1,7 @@
 {
   "versi": "V258-GEKKO-CZAR",
-  "dihasilkan": "2026-11-03T02:57:35.614Z",
-  "siklus": 1601,
+  "dihasilkan": "2026-11-04T14:53:02.845Z",
+  "siklus": 1602,
   "identitas": "deep-screening Gekko Agent (Axal × Virtuals × Allora) + CZAR Loss (Allora Foundation, arXiv 2609.36061) — kunci inti diadopsi, diadaptasi ke ledger pra-registrasi SAKTI, lalu DINILAI MEDAN",
   "sumber": [
     {
@@ -96,21 +96,18 @@
     "ambang": 60,
     "kuota": 2,
     "alasan": [
-      "REZIM-MEDAN EKSTREM: σ P&L ≥ 2.5× baseline mandiri — halt ala AutoPilot volatility regime",
-      "PF jendela 0.85 < 1 — modal mengetat",
-      "rezim BTC TURUN",
-      "breadth sempit 11% koin naik"
+      "PF jendela 0.86 < 1 — modal mengetat"
     ],
     "ket": "temper Autopilot: BERTAHAN → ambang odds efektif 60 · kuota ARAH 2"
   },
   "topik": [
     {
       "topik": "aliran",
-      "n": 977,
+      "n": 978,
       "hitPct": 39.5,
-      "netPct": -919.19,
-      "regret": 0,
-      "bobotKini": 1,
+      "netPct": -923.23,
+      "regret": 0.12,
+      "bobotKini": 0.898,
       "status": "dibisukan"
     },
     {
@@ -124,50 +121,50 @@
     },
     {
       "topik": "momentum",
-      "n": 1041,
+      "n": 1042,
       "hitPct": 38.6,
-      "netPct": -989.54,
-      "regret": 0.1553,
-      "bobotKini": 0.87,
+      "netPct": -993.59,
+      "regret": 0.2706,
+      "bobotKini": 0.784,
       "status": "dibisukan"
     },
     {
       "topik": "tren",
-      "n": 1069,
+      "n": 1070,
       "hitPct": 39.1,
-      "netPct": -670.23,
-      "regret": 0.1553,
-      "bobotKini": 0.87,
+      "netPct": -674.28,
+      "regret": 0.2706,
+      "bobotKini": 0.784,
       "status": "dibisukan"
     },
     {
       "topik": "relatif",
-      "n": 988,
-      "hitPct": 38.1,
-      "netPct": -1014.18,
-      "regret": 0.2078,
-      "bobotKini": 0.829,
+      "n": 989,
+      "hitPct": 38,
+      "netPct": -1018.23,
+      "regret": 0.3216,
+      "bobotKini": 0.749,
       "status": "dibisukan"
     },
     {
       "topik": "mikrostruktur",
-      "n": 102,
-      "hitPct": 44.1,
-      "netPct": -36.02,
-      "regret": 0.5415,
-      "bobotKini": 0.614,
+      "n": 103,
+      "hitPct": 44.7,
+      "netPct": -31.98,
+      "regret": 0.6053,
+      "bobotKini": 0.58,
       "status": "netral"
     }
   ],
   "czar": {
-    "n": 1140,
-    "rata": -0.856,
+    "n": 1141,
+    "rata": -0.857,
     "ket": "skor CZAR rata-rata — negatif berarti ledger masih didominasi penalti kekalahan; naik mendekati 0/positif = decisiveness terbayar"
   },
   "ekspresiMedan": {
     "tinggi": {
-      "n": 525,
-      "net": -4.90303
+      "n": 526,
+      "net": -4.94347
     },
     "rendah": {
       "n": 597,
@@ -181,9 +178,9 @@
       "net": -3.7697
     },
     "lemah": {
-      "n": 242,
+      "n": 243,
       "benar": 112,
-      "net": -0.10722
+      "net": -0.14766
     }
   },
   "sidikPraKunci": {

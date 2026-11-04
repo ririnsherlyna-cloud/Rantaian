@@ -1,5 +1,5 @@
 {
-  "diperbarui": "2026-11-03T02:57:35.614Z",
+  "diperbarui": "2026-11-04T14:53:02.845Z",
   "aturanBelajar": {
     "pola": {
       "arahLawanRezim": 135,
@@ -34,6 +34,22 @@
     }
   },
   "daftar": [
+    {
+      "waktu": "2026-11-04T14:53:02.845Z",
+      "simbol": "SOL",
+      "jalur": "ARAH",
+      "vonis": "SALAH",
+      "netPct": -4.04,
+      "kenapa": [],
+      "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini",
+      "kritik": {
+        "alasanGagal": "komite ARAH kalah di rezim TURUN — bobot digeser Hedge dari vonis nyata ini",
+        "yangSalah": "tidak ada pola spesifik terdeteksi — kekalahan pasar murni",
+        "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
+        "polaDihindari": "—",
+        "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
+      }
+    },
     {
       "waktu": "2026-11-03T02:57:35.614Z",
       "simbol": "TRUMP",
@@ -1014,24 +1030,6 @@
         "caraLebihBaik": "ukuran posisi kecil atau tangan kosong di kondisi ini — tunggu konfirmasi searah rezim",
         "polaDihindari": "—",
         "pelajaran": "komite kalah — bobot genome digeser evolusi dari vonis nyata ini"
-      }
-    },
-    {
-      "waktu": "2026-11-01T23:41:41.323Z",
-      "simbol": "PENDLE",
-      "jalur": "ARAH",
-      "vonis": "BENAR",
-      "netPct": 0.18,
-      "kenapa": [
-        "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan"
-      ],
-      "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji",
-      "kritik": {
-        "alasanGagal": "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan",
-        "yangSalah": "SELL dipasang saat rezim koin sendiri NAIK — melawan arus tanpa penalti keyakinan",
-        "caraLebihBaik": "pertahankan kondisi ini — perkuat dengan bukti tambahan sebelum menaikkan keyakinan",
-        "polaDihindari": "arahLawanRezim",
-        "pelajaran": "benar secara P/L tetapi sasaran jualnya tak tersentuh — target diturunkan ke magnet terdekat agar prediksi ujung atas benar-benar teruji"
       }
     }
   ]

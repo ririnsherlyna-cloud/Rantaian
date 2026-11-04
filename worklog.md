@@ -3149,3 +3149,28 @@ Stage Summary: rantai abadi pulih penuh dari kematian 35.8 jam; tubuh lokal terb
 ---
 Task ID: PENJAGA-WD-2243
 Work Log: penjaga hidup gap 5s (pid 1364) - rantai OK run 41850720936 in_progress age 68s (pasca-kebangkitan) - senyap
+---
+Task ID: PENJAGA-WD-2248
+Work Log: penjaga hidup gap 1s (pid 1364) - rantai OK run 41850720936 in_progress age 226s (long-poll 4,5 menit sesuai desain v9) - senyap
+---
+Task ID: PENJAGA-WD-2253
+Agent: watchdog-cron
+Work Log: penjaga hidup gap 6s pid 1364 - rantai OK run 41850720936 completed success age 521s - senyap
+Stage Summary: watchdog senyap, semua lapis sehat.
+---
+Task ID: HB-2258
+Agent: heartbeat-cron
+Task: detak hidup
+Work Log: tubuh utuh (token+script ada), detak jalan GAP 4.9m; PELINDUNG-IP 91/91 simbol 3 sumber; ZAI_HIDUP True picks 91; JEMBATAN commit OK; KEJADIAN 0 (SENYAP-RUTIN mandat 2 Nov); SASARAN_DIPANTAU 1 (rotasi alami pasca-COW kunci); SIKLUS 1602 AKURASI 42; send_failures 0
+Stage Summary: detak sehat, mandat senyap-rutin dipatuhi, jembatan abadi mengalir.
+---
+Task ID: PENJAGA-WD-2258
+Agent: watchdog-cron
+Work Log: penjaga hidup gap 6s pid 1364 - rantai OK run 41850720936 completed success age 834s - senyap
+Stage Summary: watchdog senyap, rantai abadi mengalir.
+---
+Task ID: MATA-ARAH-2300
+Agent: zai-chat
+Task: insight order-flow pemilik -> validasi mata baru
+Work Log: 5 mata hidup (harga/OI/CVD/funding/likuidasi via Bybit+OKX); Binance REST diparkir (IP egress banned 13-23 jam, WS fstream diblokir proxy: 0 frame/35 dtk); kalibrasi OKX buy_col=2 (r +0.12 vs -0.12, n=72); bacaan pertama BTC SHORT-COVER rapuh (OI -0.8%, short likuidasi 84x/24j) vs ETH LONG BARU MENGUAT (OI +2.2%, CVD 1.22, penguat 3/4)
+Stage Summary: gagasan pemilik tervalidasi bisa dieksekusi; modul scripts/mata_orderflow.py v2 + jejak data/mata_jejak.jsonl; rencana 4 fase (observasi 48j -> dimensi bukti EMPU via walk-forward -> tampilan -> WS live) di data/rencana_mata_arah.md; SYNUSDT tidak ada di Bybit linear

@@ -1,15 +1,75 @@
 {
- "waktu": "2026-11-04 22:44:45 WIB",
- "endpoint": {},
+ "waktu": "2026-11-04 23:01:07 WIB",
+ "kalibrasi": {
+  "buy_col": 2,
+  "rA": 0.12,
+  "rB": -0.12,
+  "n": 72,
+  "waktu": "2026-11-04 23:00:21 WIB"
+ },
  "sasaran": {
   "BTCUSDT": {
-   "gagal": "HTTP 418: Way too many requests; IP(8.212.10.159) banned until 1793853595017. Please use the websocket for live updates to avoid b"
+   "simbol": "BTCUSDT",
+   "harga": 79508.2,
+   "dp24": 2.804,
+   "oi": 68554.841,
+   "oi_value_usdt": 5447820127.81,
+   "fund_now": 0.01,
+   "next_funding": "2026-11-05 00:00:00 WIB",
+   "doi24": -0.772,
+   "doi_window_jam": 24.02,
+   "fund_avg7d": 0.0075,
+   "fund_maks7d": 0.01,
+   "cvd_beli": 30.963,
+   "cvd_jual": 3.477,
+   "cvd_win": 8.9051,
+   "cvd_window_menit": 0.02,
+   "cvd24": 1.0362,
+   "cvd24_sumber": "OKX rubik (terkalibrasi)",
+   "likuidasi_24j": {
+    "long_n": 16,
+    "short_n": 84,
+    "sz_long": 256.4,
+    "sz_short": 1732.1399999999999,
+    "tersedia": true
+   },
+   "mode": "SHORT-COVER — bakar bahan bakar short, naik RAPUH",
+   "skor": 2,
+   "arah": "ARAH NAIK TERKONFIRMASI (penguat +2/4)",
+   "bahan_bakar": "funding netral +0.0100%/8h; bahan bakar SHORT terbakar (84x likuidasi/24j)"
   },
   "ETHUSDT": {
-   "gagal": "HTTP 418: Way too many requests; IP(8.212.10.159) banned until 1793888696831. Please use the websocket for live updates to avoid b"
+   "simbol": "ETHUSDT",
+   "harga": 2394.5,
+   "dp24": 4.632,
+   "oi": 791677.53,
+   "oi_value_usdt": 1894555580.27,
+   "fund_now": 0.0054,
+   "next_funding": "2026-11-05 00:00:00 WIB",
+   "doi24": 2.334,
+   "doi_window_jam": 24.02,
+   "fund_avg7d": 0.0005,
+   "fund_maks7d": 0.0145,
+   "cvd_beli": 886.12,
+   "cvd_jual": 722.85,
+   "cvd_win": 1.2259,
+   "cvd_window_menit": 0.02,
+   "cvd24": 1.224,
+   "cvd24_sumber": "OKX rubik (terkalibrasi)",
+   "likuidasi_24j": {
+    "long_n": 27,
+    "short_n": 73,
+    "sz_long": 260.22,
+    "sz_short": 2769.8199999999997,
+    "tersedia": true
+   },
+   "mode": "LONG BARU MENGUAT — penguat naik sehat",
+   "skor": 3,
+   "arah": "ARAH NAIK TERKONFIRMASI (penguat +3/4)",
+   "bahan_bakar": "funding netral +0.0054%/8h"
   },
   "SYNUSDT": {
-   "gagal": "HTTP 418: Way too many requests; IP(47.57.242.119) banned until 1793836678514. Please use the websocket for live updates to avoid "
+   "gagal": "SYNUSDT tidak terdaftar di Bybit linear — mata Bybit butuh untuk simbol ini"
   }
  }
 }

@@ -1,22 +1,22 @@
 {
   "mulai": "2026-09-28T01:06:34.918Z",
-  "siklus": 1601,
-  "epochTerakhir": "2026-11-03",
+  "siklus": 1602,
+  "epochTerakhir": "2026-11-04",
   "wawasan": {
     "oiLama": {
-      "BTC": 5294022516.6,
-      "ETH": 1734150103.03,
-      "SOL": 590105822.46,
-      "BNB": 122276092.67,
-      "XRP": 305364048.46,
-      "DOGE": 101139375.8,
-      "ADA": 45831134.5,
-      "AVAX": 60406180.54,
-      "LINK": 62847009,
-      "TRX": 66216406.52
+      "BTC": 5450812456.67,
+      "ETH": 1871024889.6,
+      "SOL": 600943331.83,
+      "BNB": 115001713.3,
+      "XRP": 311585073.11,
+      "DOGE": 112083732.38,
+      "ADA": 46101643.73,
+      "AVAX": 64454309.59,
+      "LINK": 64739546.3,
+      "TRX": 63887715.86
     },
-    "waktu": "2026-11-03T02:57:35.614Z",
-    "dominasiPct": 59.29
+    "waktu": "2026-11-04T14:53:02.845Z",
+    "dominasiPct": 23.16
   },
   "kaizen": {
     "dingin": {
@@ -69,7 +69,7 @@
         "dinginSampai": 0
       },
       "SOL": {
-        "beruntun": 0,
+        "beruntun": 1,
         "dinginSampai": 1792519667221
       },
       "BTC": {
@@ -939,7 +939,7 @@
         "dinginSampaiDenyut": 1602
       },
       "TURUN-SELL": {
-        "beruntun": 0,
+        "beruntun": 1,
         "dinginSampaiDenyut": 1549
       },
       "PARABOLIK-BUY": {
@@ -960,20 +960,19 @@
       }
     },
     "uji": {
-      "rezim": "TURUN",
-      "mulaiSiklus": 1599,
+      "rezim": "NAIK",
+      "mulaiSiklus": 1602,
       "n0": 300,
       "snap": {
-        "struktur": 0.2575,
-        "momentum": 0.2555,
-        "sr": 0.1593,
-        "tekanan": 0.186,
-        "perubahan": 0.1418
+        "struktur": 0.2443,
+        "momentum": 0.2588,
+        "sr": 0.1629,
+        "tekanan": 0.1813,
+        "perubahan": 0.1526
       },
-      "baseline": 0.00567
+      "baseline": 0.00678
     },
     "netHist": [
-      0.06162,
       -0.00938,
       0.02871,
       0.0283,
@@ -1272,17 +1271,18 @@
       0.03836,
       -0.00449,
       0.02919,
-      -0.02876
+      -0.02876,
+      -0.04044
     ],
     "revertCt": 12,
     "lolosCt": 9,
     "karantinaStreak": {
-      "momentum": 1,
-      "tren": 1,
-      "aliran": 0,
-      "mikrostruktur": 2,
+      "momentum": 2,
+      "tren": 2,
+      "aliran": 1,
+      "mikrostruktur": 0,
       "derivatif": 0,
-      "relatif": 1
+      "relatif": 2
     }
   },
   "auto": {

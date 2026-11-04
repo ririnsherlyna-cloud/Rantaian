@@ -1,7 +1,7 @@
 {
   "versi": "V256-MESIN-DEAL-ODDS",
-  "dihasilkan": "2026-11-03T02:57:35.614Z",
-  "siklus": 1601,
+  "dihasilkan": "2026-11-04T14:53:02.845Z",
+  "siklus": 1602,
   "identitas": "deep-screening dua platform trading-AI profesional — kunci intinya diadopsi, diadaptasi ke ledger pra-registrasi SAKTI, lalu DINILAI MEDAN",
   "sumber": [
     {
@@ -136,10 +136,10 @@
     {
       "peristiwa": "searahTren4h",
       "ket": "EMA-align 1h & 4h searah dengan arah sinyal (trend-follow event)",
-      "n": 921,
+      "n": 922,
       "hitPct": 39.2,
-      "netPct": -590.7,
-      "czar": -818.74,
+      "netPct": -594.75,
+      "czar": -820.24,
       "status": "penggerus"
     }
   ],
@@ -154,17 +154,17 @@
     },
     "medan": {
       "so": {
-        "n": 734,
-        "soKena": 1273,
-        "netDenganSo": -1.88772,
-        "netTanpaSo": -21.05261,
-        "menyelamatkan": 734
+        "n": 735,
+        "soKena": 1275,
+        "netDenganSo": -1.91545,
+        "netTanpaSo": -21.09305,
+        "menyelamatkan": 735
       },
       "bep": {
-        "n": 665,
-        "aktivasiKena": 665,
-        "keluarNetNol": 644,
-        "menyelamatkan": 241
+        "n": 666,
+        "aktivasiKena": 666,
+        "keluarNetNol": 645,
+        "menyelamatkan": 242
       },
       "trail": {
         "n": 5,
@@ -179,9 +179,9 @@
     "jumlah": 1,
     "rincian": [
       {
-        "simbol": "SOL",
+        "simbol": "ETH",
         "jalur": "ARAH",
-        "arah": "SELL",
+        "arah": "BUY",
         "umurJam": 0
       }
     ],

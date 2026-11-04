@@ -1,7 +1,7 @@
 {
   "versi": "V261-CLAW-TEMPOK",
-  "dihasilkan": "2026-11-03T02:57:35.614Z",
-  "siklus": 1601,
+  "dihasilkan": "2026-11-04T14:53:02.845Z",
+  "siklus": 1602,
   "identitas": "deep-screening keluarga \"Kaizen Trader\": prateekjain98/kaizen-trader (open-source, kode sumber dibedah), KAIZEN Virtuals/Hyperliquid, Kaizen RegimeBot, kaizen.cash — EMPAT LOOP PENYEMBUHAN-DIRI diadopsi ke ledger pra-registrasi SAKTI lalu DINILAI MEDAN",
   "sumber": [
     {
@@ -102,18 +102,14 @@
     "pengawasTarget": 40
   },
   "siklusIni": {
-    "ujiBalik": "eksperimen berjalan (mulai siklus 1599, baseline 0.00567)",
+    "ujiBalik": "eksperimen baru: snapshot genome NAIK disegel (siklus 1602) — baseline 0.00678",
     "revertCt": 12,
     "lolosCt": 9,
     "karantinaAktif": {},
     "karantinaBaru": [],
     "karantinaPulih": [],
-    "dinginSasaranAktif": {
-      "XRP": "2026-11-03T06:57:35.614Z"
-    },
-    "dinginFamAktif": {
-      "NAIK-BUY": "hingga denyut 1602"
-    },
+    "dinginSasaranAktif": {},
+    "dinginFamAktif": {},
     "dinginSasaranTolak": 0,
     "dinginFamTolak": 0,
     "hentiHarian": {
@@ -125,16 +121,16 @@
   },
   "medan": {
     "pengawas": {
-      "dinilai": 1022,
+      "dinilai": 1023,
       "kena": 96,
       "menyelamatkan": 90,
       "ket": "berapa vonis yang hard-stop 15%-nya tersentuh, dan berapa di antaranya memang berakhir SALAH (penjaga-kedua akan menyelamatkan)"
     },
     "kesegaran": {
       "tinggi": {
-        "n": 1107,
+        "n": 1108,
         "benar": 461,
-        "net": -3.05279
+        "net": -3.09323
       },
       "rendah": {
         "n": 3,
@@ -144,9 +140,9 @@
     },
     "modalMati": {
       "kena": {
-        "n": 833,
+        "n": 834,
         "benar": 389,
-        "net": 1.46545
+        "net": 1.42501
       },
       "sehat": {
         "n": 194,
@@ -156,9 +152,9 @@
     },
     "tesis": {
       "sehat": {
-        "n": 1016,
+        "n": 1017,
         "benar": 419,
-        "net": -3.58564
+        "net": -3.62608
       },
       "patah": {
         "n": 94,
