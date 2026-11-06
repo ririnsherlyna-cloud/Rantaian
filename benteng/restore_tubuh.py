@@ -25,6 +25,8 @@ PETA = [
     ("benteng/lintang_pasar.py", "/home/z/my-project/scripts/lintang_pasar.py", "LINTANG-PASAR v3"),
     ("benteng/formula_master.py", "/home/z/my-project/scripts/formula_master.py", "FORMULA-MASTER v1"),
     ("benteng/mesin_formula.py", "/home/z/my-project/scripts/mesin_formula.py", "MESIN-FORMULA v1"),
+    ("benteng/skor_master.py", "/home/z/my-project/scripts/skor_master.py", "SKOR-MASTER v1"),
+    ("benteng/audit_kedalaman.py", "/home/z/my-project/scripts/audit_kedalaman.py", "AUDIT-KEDALAMAN"),
 ]
 
 def ambil(path):
