@@ -110,3 +110,4 @@
 {"waktu": "2026-11-06T10:58:58.276190+00:00", "simbol": "LSK", "arah": "SELL", "level": "STOP", "level_harga": 0.197624, "harga_kini": 0.188, "entry": 0.1603, "pelajaran": "LSK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-06T11:08:29.485230+00:00", "simbol": "ZEC", "arah": "BUY", "level": "TP", "level_harga": 1284.1689728, "harga_kini": 1285.3, "entry": 1233.26, "pelajaran": "ZEC BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-06T11:17:58.654447+00:00", "simbol": "ANIME", "arah": "SELL", "level": "TP", "level_harga": 0.002572222, "harga_kini": 0.002574, "entry": 0.00277, "pelajaran": "ANIME SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-06T11:22:49.909038+00:00", "simbol": "ZEC", "arah": "BUY", "level": "TP", "level_harga": 1284.1689728, "harga_kini": 1285.77, "entry": 1233.26, "pelajaran": "ZEC BUY menyentuh TP — vonis pasar datang, catat hasil"}
