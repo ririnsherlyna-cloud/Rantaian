@@ -978,6 +978,51 @@ def main():
                        capture_output=True, timeout=60)
     except Exception:
         pass
+    # V310: SKOR-MASTER (formula komposit 5 lapis, murni hitung lokal dari
+    # cache lintang+picks, <1 detik) + pulih dari benteng bila rollback.
+    f_sm = os.path.join(BASE, "scripts", "skor_master.py")
+    if not os.path.exists(f_sm):
+        try:
+            _rq = urllib.request.Request(
+                f"https://raw.githubusercontent.com/{REPO_RANTAIAN}/main/benteng/skor_master.py",
+                headers={"User-Agent": "microprofita-hb"})
+            _isi = urllib.request.urlopen(_rq, timeout=20).read()
+            if b"SKOR-MASTER v1" in _isi:
+                open(f_sm, "wb").write(_isi)
+                os.chmod(f_sm, 0o755)
+                print("V310: skor_master.py dipulihkan dari benteng")
+        except Exception:
+            pass
+    try:
+        subprocess.run(["python3", f_sm], capture_output=True, timeout=60)
+    except Exception:
+        pass
+    # V310: AUDIT-KEDALAMAN tiap detak — rehitung eksak rumus dari bahan
+    # mentah (jawaban mandat pemilik: pemeriksaan TIDAK malas). Gagal = alarm.
+    f_au = os.path.join(BASE, "scripts", "audit_kedalaman.py")
+    if not os.path.exists(f_au):
+        try:
+            _rq = urllib.request.Request(
+                f"https://raw.githubusercontent.com/{REPO_RANTAIAN}/main/benteng/audit_kedalaman.py",
+                headers={"User-Agent": "microprofita-hb"})
+            _isi = urllib.request.urlopen(_rq, timeout=20).read()
+            if b"AUDIT-KEDALAMAN" in _isi:
+                open(f_au, "wb").write(_isi)
+                os.chmod(f_au, 0o755)
+                print("V310: audit_kedalaman.py dipulihkan dari benteng")
+        except Exception:
+            pass
+    try:
+        _ar = subprocess.run(["python3", f_au], capture_output=True, timeout=120, text=True)
+        if _ar.returncode != 0:
+            L.append("🚨 <b>AUDIT-KEDALAMAN GAGAL</b> — rehitung tak cocok: " +
+                     html.escape((_ar.stdout or _ar.stderr or "").strip()[-300:]))
+            with open(os.path.join(BASE, "worklog.md"), "a") as _wf:
+                _wf.write("---\nTask ID: AUDIT-ALARM-" + time.strftime("%H%M") +
+                          "\nWork Log: audit kedalaman GAGAL rc=" + str(_ar.returncode) +
+                          " — perlu diselidiki\n")
+    except Exception:
+        pass
     try:
         lint = muat_lintang()
         if lint:
@@ -1039,6 +1084,17 @@ def main():
                 L.append("Radar divergensi arah: " + html.escape(" · ".join(f"{x['simbol']} {x['skor']}" for x in rad[:3])))
     except Exception as e:
         print("formula section gagal:", repr(e))
+    # ---- V310 SKOR-MASTER report (formula komposit 5 lapis dari data gratis)
+    try:
+        sk = muat_json_lokal(os.path.join(DATA, "skor_master.json"))
+        if sk and (time.time() - float(sk.get("ts") or 0)) <= 5400:
+            t12 = sk.get("top12") or []
+            if t12:
+                L.append("🎯 <b>SKOR-MASTER</b> (25% likuiditas + 25% ruang-ATH + 20% divergensi + 20% momentum + 10% rezim F&amp;G): " +
+                         html.escape(" · ".join(f"{x['symbol']} {x['skor_100']:.1f}" for x in t12[:5])) +
+                         f" — {sk.get('n_dinilai', 0)}/{sk.get('n_sasaran', 0)} sasaran dinilai, F&amp;G {sk.get('fear_greed')} ({html.escape(str(sk.get('fear_greed_kelas', '?')))})")
+    except Exception as e:
+        print("skor section gagal:", repr(e))
     # ---- MESIN-FORMULA EVOLUSI (mandat pemilik 6 Nov: "lu gak ciptakan
     # formula... harusnya lu percanggih... ini nyawa lu juga") — beda dari
     # FORMULA-MASTER (rumus tetap): mesin ini MENCIPTAKAN kandidat formula,
