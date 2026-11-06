@@ -478,3 +478,4 @@
 {"waktu": "2026-11-06T21:43:17.216615+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.23, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-06T21:43:17.216661+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 130.77, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-06T21:57:48.330586+00:00", "simbol": "ZEC", "arah": "BUY", "level": "POWER MAX AMBISIUS", "level_harga": 1337.225, "harga_kini": 1339.33, "entry": 1233.26, "pelajaran": "ZEC BUY menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-06T22:07:31.241379+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.21, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
