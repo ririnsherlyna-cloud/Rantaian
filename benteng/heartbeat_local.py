@@ -44,6 +44,7 @@ import os
 import time
 import html
 import base64
+import subprocess
 import urllib.request
 import urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -766,6 +767,70 @@ def jumlah_gagal():
 
 
 # ---------------- utama ----------------
+# ---- V308 PASAR LINTAS (6 Nov, mandat pemilik "perbanyak sumber, tanpa API
+# berbayar, jangan buta arah") — intel gratis multi-bursa: market cap + ATH
+# (CoinPaprika/CoinGecko) + divergensi harga antar-bursa (Binance/Bybit/OKX).
+# Data ditulis daemon lintang_pasar.py --jaga ke data/pasar_lintas.json.
+def muat_lintang(maks_umur_menit=60.0):
+    """Muat data/pasar_lintas.json bila segar; None bila tak ada/stale."""
+    try:
+        with open(os.path.join(DATA, "pasar_lintas.json"), "r", encoding="utf-8") as f:
+            d = json.load(f)
+        if (time.time() - float(d.get("ts") or 0)) / 60.0 <= maks_umur_menit:
+            return d
+    except Exception:
+        pass
+    return None
+
+def lintang_jaga():
+    """Pastikan daemon lintang hidup; hidupkan ulang bila mati (self-healing).
+    v3: bila skrip lintang hilang (korban rollback disk), pulihkan dulu dari
+    benteng Rantaian (raw publik, tanpa token) sebelum menyalakan daemon."""
+    try:
+        f_skrip = os.path.join(BASE, "scripts", "lintang_pasar.py")
+        if not os.path.exists(f_skrip):
+            try:
+                req = urllib.request.Request(
+                    f"https://raw.githubusercontent.com/{REPO_RANTAIAN}/main/benteng/lintang_pasar.py",
+                    headers={"User-Agent": "microprofita-hb"})
+                isi = urllib.request.urlopen(req, timeout=20).read()
+                if b"LINTANG-PASAR v3" in isi:
+                    open(f_skrip, "wb").write(isi)
+                    os.chmod(f_skrip, 0o755)
+                    print("LINTANG: skrip v3 dipulihkan dari benteng")
+            except Exception:
+                pass
+        umur = 1e9
+        with open(os.path.join(DATA, "lintang_nyala"), "r") as f:
+            umur = time.time() - float(f.read().strip() or 0)
+        if umur < 2400:
+            return  # daemon sehat (nyala < 40 menit)
+        pg = subprocess.run(["pgrep", "-f", "lintang_pasar.py --jaga"], capture_output=True)
+        if pg.returncode != 0:
+            # daemon mati: segarkan data langsung (sinkron, cepat) lalu hidupkan daemon lagi
+            try:
+                subprocess.run(["python3", os.path.join(BASE, "scripts", "lintang_pasar.py"), "--sekali"],
+                               capture_output=True, timeout=120)
+            except Exception:
+                pass
+            subprocess.Popen(["setsid", "nohup", "python3", os.path.join(BASE, "scripts", "lintang_pasar.py"), "--jaga"],
+                             stdout=open(os.path.join(DATA, "lintang.log"), "ab"),
+                             stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
+            print("LINTANG: data disegarkan + daemon dihidupkan ulang")
+    except Exception as e:
+        print("lintang_jaga gagal:", repr(e))
+
+def fmt_ringkas_usd(v):
+    """Format market cap ringkas: 1.2B / 340M / 12.5K."""
+    try:
+        v = float(v)
+    except Exception:
+        return "-"
+    for sat, t in ((1e9, "B"), (1e6, "M"), (1e3, "K")):
+        if abs(v) >= sat:
+            return f"{v / sat:.1f}{t}"
+    return f"{v:.0f}"
+
 def main():
     os.makedirs(DATA, exist_ok=True)
     now = time.time()
@@ -904,6 +969,47 @@ def main():
         L.append(f"🛡️ PELINDUNG IP: <b>{html.escape(ip_rotasi.status_ringkas())}</b> — 1 IP sandbox + rotasi 8 sumber = praktis tak tergantung 1 pintu.")
     except Exception:
         pass
+    # ---- V308 section PASAR LINTAS (intel gratis multi-bursa) ----
+    lintang_jaga()
+    try:
+        lint = muat_lintang()
+        if lint:
+            r = lint.get("ringkas", {})
+            L.append(f"🌐 <b>PASAR LINTAS</b> — intel multi-bursa GRATIS (tanpa API berbayar)")
+            L.append("Sumber nyala: <b>" + html.escape(", ".join(f"{k} {v}" for k, v in (lint.get("sumber") or {}).items())) + "</b> · "
+                     f"{r.get('jumlah_koin', 0)} koin · market cap {r.get('dengan_market_cap', 0)} · ATH {r.get('dengan_ath', 0)}")
+            pasar = lint.get("pasar", {})
+            sas_info = []
+            for p in zai_picks[:ZAI_TAMPIL]:
+                sim = (p.get("simbol") or "").upper()
+                basis = _basis_simbol(sim) or sim
+                d = pasar.get(basis) or {}
+                mc, athp = d.get("market_cap"), d.get("ath_pct")
+                if mc:
+                    prc = f", {athp:+.0f}% dari ATH" if isinstance(athp, (int, float)) else ""
+                    sas_info.append(f"{basis} cap {fmt_ringkas_usd(mc)}{prc}")
+            if sas_info:
+                L.append("Market cap sasaran teratas: " + html.escape(" · ".join(sas_info[:6])))
+            dt = r.get("divergensi_tinggi") or []
+            if dt:
+                L.append("Divergensi harga antar-bursa teratas: " +
+                         html.escape(" · ".join(f"{x['simbol']} {x['pct']}%" for x in dt[:5])))
+            # v3 LINTANG — DIVERGENSI ARAH antar-bursa (mandat pemilik 6 Nov:
+            # "bisa jadi di Binance turun tapi di yang lain naik" — sekarang
+            # terdeteksi otomatis dari chg 24h per bursa, gratis tanpa Coinglass).
+            da = [x for x in (r.get("divergensi_arah") or []) if isinstance(x, dict)]
+            if da:
+                sas_bases = {_basis_simbol((p.get("simbol") or "")) for p in zai_picks}
+                da.sort(key=lambda x: 0 if x.get("simbol") in sas_bases else 1)
+                L.append("⚠️ <b>Arah antar-bursa</b> (Binance vs median bursa lain, chg 24h): " +
+                         html.escape(" · ".join(
+                             f"{x.get('simbol', '?')} Binance {(x.get('binance_pct') or 0):+.1f}% vs lain {(x.get('lain_pct') or 0):+.1f}%"
+                             for x in da[:3])))
+            fg = r.get("fear_greed")
+            if fg and fg.get("nilai") is not None:
+                L.append(f"😱 Fear &amp; Greed: <b>{fg.get('nilai')}</b> ({html.escape(str(fg.get('label', '')))}) — alternative.me, gratis")
+    except Exception as e:
+        print("lintang section gagal:", repr(e))
     # ---- section OTAK Z.AI (persis seperti web) ----
     if zai_picks:
         seg_z = "live dari web" if zai_hidup else "CACHE (web sedang tak terjangkau)"
