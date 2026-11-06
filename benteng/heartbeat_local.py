@@ -971,6 +971,13 @@ def main():
         pass
     # ---- V308 section PASAR LINTAS (intel gratis multi-bursa) ----
     lintang_jaga()
+    # V309: segarkan FORMULA-MASTER (murni hitung lokal dari cache lintang+picks,
+    # tanpa panggilan API, <= 1 detik) — rumus tak boleh basi.
+    try:
+        subprocess.run(["python3", os.path.join(BASE, "scripts", "formula_master.py")],
+                       capture_output=True, timeout=60)
+    except Exception:
+        pass
     try:
         lint = muat_lintang()
         if lint:
@@ -1010,6 +1017,28 @@ def main():
                 L.append(f"😱 Fear &amp; Greed: <b>{fg.get('nilai')}</b> ({html.escape(str(fg.get('label', '')))}) — alternative.me, gratis")
     except Exception as e:
         print("lintang section gagal:", repr(e))
+    # ---- V309 FORMULA-MASTER (mandat pemilik 6 Nov: "lu gak ciptakan formula,
+    # harusnya lu percanggih" — 3 rumus kuantitatif hidup dari data gratis:
+    # SKG komposit / RR-v2 dgn penjebak rencana-mati / radar divergensi) ----
+    try:
+        fm = muat_json_lokal(os.path.join(DATA, "formula_terkini.json"))
+        if fm and (time.time() - float(fm.get("ts") or 0)) <= 5400:
+            L.append("🧮 <b>FORMULA-MASTER v1</b> — rumus kuantitatif hidup, data gratis lintas bursa")
+            top = fm.get("teratas_skg") or []
+            if top:
+                L.append("SKG teratas: " + html.escape(" · ".join(f"{x['simbol']} {x['skg']}" for x in top[:5]))
+                         + " <i>(SKG=40% keyakinan+20% momentum+15% posisi-ATH+15% likuiditas+10% lintas-bursa)</i>")
+            rr = fm.get("rr_terbaik") or []
+            n_rusak = fm.get("rencana_rusak")
+            rr_line = " · ".join(f"{x['simbol']} {x['rr_v2']}" for x in rr[:5])
+            if rr_line:
+                L.append("RR-v2 terbaik (rencana sehat): " + html.escape(rr_line)
+                         + (f" — <b>{n_rusak}</b> rencana rusak/stop-terbus disingkirkan (jebakan RR)" if n_rusak else ""))
+            rad = fm.get("sinyal_radar") or []
+            if rad:
+                L.append("Radar divergensi arah: " + html.escape(" · ".join(f"{x['simbol']} {x['skor']}" for x in rad[:3])))
+    except Exception as e:
+        print("formula section gagal:", repr(e))
     # ---- section OTAK Z.AI (persis seperti web) ----
     if zai_picks:
         seg_z = "live dari web" if zai_hidup else "CACHE (web sedang tak terjangkau)"
