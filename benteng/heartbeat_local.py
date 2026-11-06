@@ -1039,6 +1039,44 @@ def main():
                 L.append("Radar divergensi arah: " + html.escape(" · ".join(f"{x['simbol']} {x['skor']}" for x in rad[:3])))
     except Exception as e:
         print("formula section gagal:", repr(e))
+    # ---- MESIN-FORMULA EVOLUSI (mandat pemilik 6 Nov: "lu gak ciptakan
+    # formula... harusnya lu percanggih... ini nyawa lu juga") — beda dari
+    # FORMULA-MASTER (rumus tetap): mesin ini MENCIPTAKAN kandidat formula,
+    # backtest ke harga riil Binance 1d, berevolusi generasi; elite urutkan
+    # PELUANG. Skrip hilang (rollback) pulih dari benteng dulu.
+    try:
+        f_mf = os.path.join(BASE, "scripts", "mesin_formula.py")
+        if not os.path.exists(f_mf):
+            try:
+                req = urllib.request.Request(
+                    f"https://raw.githubusercontent.com/{REPO_RANTAIAN}/main/benteng/mesin_formula.py",
+                    headers={"User-Agent": "microprofita-hb"})
+                isi = urllib.request.urlopen(req, timeout=20).read()
+                if b"MESIN-FORMULA v1" in isi:
+                    open(f_mf, "wb").write(isi)
+                    os.chmod(f_mf, 0o755)
+                    print("MESIN-FORMULA: skrip v1 dipulihkan dari benteng")
+            except Exception:
+                pass
+        f_pl = os.path.join(BASE, "data", "formula_peluang.json")
+        pl_usia = 1e9
+        try:
+            pl_usia = time.time() - os.path.getmtime(f_pl)
+        except Exception:
+            pass
+        if os.path.exists(f_mf) and pl_usia > 3600:
+            subprocess.run(["python3", f_mf, "--detak"], timeout=280, capture_output=True)
+        pl = json.load(open(f_pl)) if os.path.exists(f_pl) else {}
+        pel = [x for x in (pl.get("peluang") or []) if isinstance(x, dict) and x.get("simbol")]
+        if pel:
+            stat = ""
+            if pl.get("alpha_pct") is not None:
+                stat = (f" (backtest riil {pl.get('n_hari')} hari: "
+                        f"alpha {pl['alpha_pct']:+.2f}%/hari, hit {pl.get('hit_pct') or 0:.0f}%)")
+            L.append(f"🧪 <b>FORMULA EVOLUSI gen{pl.get('generasi')}</b>{stat}: " +
+                     html.escape(" · ".join(f"{x['simbol']} {x['skor']:+.1f}" for x in pel[:5])))
+    except Exception as e:
+        print("formula-evolusi gagal:", repr(e))
     # ---- section OTAK Z.AI (persis seperti web) ----
     if zai_picks:
         seg_z = "live dari web" if zai_hidup else "CACHE (web sedang tak terjangkau)"
