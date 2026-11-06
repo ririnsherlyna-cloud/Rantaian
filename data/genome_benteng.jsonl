@@ -505,3 +505,4 @@
 {"waktu": "2026-11-06T22:12:17.764691+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.39228, "harga_kini": 0.2686, "entry": 0.3426, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-06T22:12:17.764696+00:00", "simbol": "ZAMA", "arah": "SELL", "level": "STOP", "level_harga": 0.085982, "harga_kini": 0.06981, "entry": 0.07187, "pelajaran": "ZAMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-06T22:22:28.743270+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.22, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-06T22:56:11.687748+00:00", "simbol": "XTZ", "arah": "SELL", "level": "POWER MAX AMBISIUS", "level_harga": 0.276827, "harga_kini": 0.2781, "entry": 0.2813, "pelajaran": "XTZ SELL menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
