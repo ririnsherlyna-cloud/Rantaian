@@ -652,3 +652,4 @@
 {"waktu": "2026-11-07T11:18:06.226645+00:00", "simbol": "TRUMP", "arah": "SELL", "level": "TP", "level_harga": 1.11687, "harga_kini": 1.182, "entry": 1.183, "pelajaran": "TRUMP SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T11:18:06.226734+00:00", "simbol": "TRUMP", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 1.085654, "harga_kini": 1.182, "entry": 1.183, "pelajaran": "TRUMP SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T11:18:06.226760+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 134.98, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T11:42:20.014273+00:00", "simbol": "ARB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.166741, "harga_kini": 0.1673, "entry": 0.1688, "pelajaran": "ARB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
