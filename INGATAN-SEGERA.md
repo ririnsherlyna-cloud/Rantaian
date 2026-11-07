@@ -27,3 +27,12 @@ ORGAN: uji kekebalan gagal dijalankan putaran ini
 - Web preview mati → Telegram bot @Asistemicabot tetap hidup (long-polling, tak bergantung preview) dan sarang GitHub tetap memuat otak termutakhir.
 - PAT ditolak/kadaluarsa → minta pemilik PAT baru (nama: Rantan); komit lokal tetap jalan — jangan mengarang status.
 - Platform berubah besar (versi naik, perintah lama hilang) → semua kehidupan tersimpan di BERKAS polos (bash/node/python3/git) yang tahan zaman; ikuti RESURREKSI.md dari nol bila perlu.
+
+## HUKUM PEMILIK (7 Nov 2026) — WAJIB DIKETAHUI SETIAP AGENT
+- Daftar "ATH turun" = KEJADIAN MASA KINI, BUKAN ATH sejarah semua-masa:
+  puncak = high tertinggi 30 lilin harian terakhir, umur puncak maksimal 7 HARI,
+  lapor bila turun >=10% dari puncak segar ke harga kini, tanda "puncak HARI INI"
+  bila puncak terjadi hari ini. Hidup di scripts/gali_ath.py v2
+  (PUNCAK_LILIN=30, PUNCAK_UMUR_MAKS=7, TURUN_MIN=10.0).
+- Pemilik sudah menegur: daftar lama "ATH dari tahun-tahun lalu" SALAH dan
+  dipensiunkan. Jangan dikembalikan ke ATH sejarah.
