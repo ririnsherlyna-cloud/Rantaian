@@ -3336,3 +3336,13 @@ Task ID: CATAT-ATH-0958
 Agent: pemilik (web chat) -> respon-cron
 Work Log: permintaan pemilik 7 Nov 09:58 WIB "catat ini ke worklog agar tidak terlupakan dan ke GitHub juga" -> HUKUM ATH TERKUNCI: daftar ATH turun WAJIB kejadian masa kini (puncak = high tertinggi 30 lilin harian terakhir, umur puncak WAJIB <= 7 hari, ambang lapor -10%, puncak hari ini diberi tanda "puncak HARI INI"); ATH sejarah bertahun lalu TIDAK BOLEH menjadi daftar utama (v1 dipensiunkan); mesin = scripts/gali_ath.py v2, hook heartbeat (gali_due) utuh, state 0846 WIB 91/91 koin
 Stage Summary: hukum ATH v2 dicatat permanen di worklog dan didorong ke repo Rantaian (worklog.md + scripts/gali_ath.py)
+---
+Task ID: DORONG-ATH-0953
+Agent: pemilik -> arsip GitHub
+Work Log: hukum ATH v2 didorong ke ririnsherlyna-cloud/Rantaian via Contents API -> worklog.md(88e6a84ad6), scripts/gali_ath.py(f3c888d336), INGATAN-SEGERA.md+cHUKUM(c60eaa739b), state(2459df7c22, 4dd1749581); raw repo kini menampilkan GALI-ATH v2 + blok HUKUM PEMILIK 7 Nov; script dorong tersimpan scripts/dorong_catatan_ath.py
+Stage Summary: catatan pemilik kekal di lokal + GitHub, tidak akan terlupakan saat restore
+---
+Task ID: CATAT-ATH-0958b
+Agent: respon-cron
+Work Log: bukti arsip GitHub OK - worklog.md commit 245e9ba105, scripts/gali_ath.py commit 387c6971fe (repo Rantaian main, HTTP 200)
+Stage Summary: hukum ATH v2 kini ada di worklog lokal DAN GitHub, tidak akan terlupakan
