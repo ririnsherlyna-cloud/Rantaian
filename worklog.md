@@ -3331,3 +3331,8 @@ Task ID: CATAT-ATH-0952
 Agent: pemilik -> arsip
 Work Log: perintah pemilik "catat ini agar gak terlupakan dan ke GitHub juga" -> HUKUM ATH TETAP (7 Nov 2026): daftar "ath turun" WAJIB kejadian masa kini = puncak adalah high tertinggi 30 lilin harian terakhir, umur puncak maksimal 7 hari, ambang lapor turun >=10% dari puncak segar ke harga kini, tanda "puncak HARI INI" bila puncak terjadi hari ini; ATH sejarah semua-masa (bisa bertahun lalu) TIDAK BOLEH lagi jadi daftar utama. Aturan hidup di scripts/gali_ath.py v2 (PUNCAK_LILIN=30, PUNCAK_UMUR_MAKS=7, TURUN_MIN=10.0).
 Stage Summary: hukum pemilik diarsipkan ke worklog + didorong ke GitHub Rantaian (worklog.md, scripts/gali_ath.py, INGATAN-SEGERA.md, state gali_ath)
+---
+Task ID: CATAT-ATH-0958
+Agent: pemilik (web chat) -> respon-cron
+Work Log: permintaan pemilik 7 Nov 09:58 WIB "catat ini ke worklog agar tidak terlupakan dan ke GitHub juga" -> HUKUM ATH TERKUNCI: daftar ATH turun WAJIB kejadian masa kini (puncak = high tertinggi 30 lilin harian terakhir, umur puncak WAJIB <= 7 hari, ambang lapor -10%, puncak hari ini diberi tanda "puncak HARI INI"); ATH sejarah bertahun lalu TIDAK BOLEH menjadi daftar utama (v1 dipensiunkan); mesin = scripts/gali_ath.py v2, hook heartbeat (gali_due) utuh, state 0846 WIB 91/91 koin
+Stage Summary: hukum ATH v2 dicatat permanen di worklog dan didorong ke repo Rantaian (worklog.md + scripts/gali_ath.py)
