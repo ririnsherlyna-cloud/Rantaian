@@ -1,18 +1,26 @@
 {
- "ts": 1793803099.6749916,
- "sumber": "heartbeat",
+ "ts": 1794015987.798537,
+ "versi": 2,
+ "sumber": "manual",
  "universe": 91,
- "terbaca": 90,
- "zona99": 13,
- "zona90": 33,
- "zona80": 16,
- "total_zona": 62,
- "denyut": 0,
- "mayat": 58,
- "luka_baru": 0,
- "gagal": 1,
- "gagal_list": [
-  "AGTUSDT"
+ "terbaca": 91,
+ "turun_kini": 3,
+ "puncak_lampau": 86,
+ "terdalam": [
+  {
+   "s": "LSKUSDT",
+   "dd": -38.51
+  },
+  {
+   "s": "GUSDT",
+   "dd": -29.71
+  },
+  {
+   "s": "PROVEUSDT",
+   "dd": -22.12
+  }
  ],
- "detik": 1.9
+ "gagal": 0,
+ "gagal_list": [],
+ "detik": 1.4
 }
