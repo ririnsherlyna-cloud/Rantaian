@@ -673,3 +673,4 @@
 {"waktu": "2026-11-07T13:04:40.995086+00:00", "simbol": "INTCB", "arah": "SELL", "level": "TP", "level_harga": 53.27176, "harga_kini": 56.43, "entry": 56.42, "pelajaran": "INTCB SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T13:04:40.995147+00:00", "simbol": "INTCB", "arah": "SELL", "level": "STOP", "level_harga": 57.41299, "harga_kini": 56.43, "entry": 56.42, "pelajaran": "INTCB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T13:04:40.995164+00:00", "simbol": "INTCB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 51.78548, "harga_kini": 56.43, "entry": 56.42, "pelajaran": "INTCB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T13:09:36.914881+00:00", "simbol": "PROVE", "arah": "SELL", "level": "TP", "level_harga": 0.17912978, "harga_kini": 0.1793, "entry": 0.1858, "pelajaran": "PROVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
