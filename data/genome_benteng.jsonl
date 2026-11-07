@@ -561,3 +561,4 @@
 {"waktu": "2026-11-07T02:21:10.640443+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.39228, "harga_kini": 0.2645, "entry": 0.3426, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T02:49:59.560929+00:00", "simbol": "LSK", "arah": "SELL", "level": "STOP", "level_harga": 0.197624, "harga_kini": 0.197, "entry": 0.1603, "pelajaran": "LSK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T02:59:42.795541+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.22, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T03:14:17.771285+00:00", "simbol": "TIA", "arah": "SELL", "level": "STOP", "level_harga": 0.67505, "harga_kini": 0.4362, "entry": 0.5468, "pelajaran": "TIA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
