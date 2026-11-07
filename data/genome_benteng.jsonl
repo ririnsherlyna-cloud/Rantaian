@@ -722,3 +722,4 @@
 {"waktu": "2026-11-07T17:03:02.292886+00:00", "simbol": "ERA", "arah": "SELL", "level": "TP", "level_harga": 0.0673632, "harga_kini": 0.0725, "entry": 0.072, "pelajaran": "ERA SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T17:03:02.292923+00:00", "simbol": "ERA", "arah": "SELL", "level": "STOP", "level_harga": 0.0775656, "harga_kini": 0.0725, "entry": 0.072, "pelajaran": "ERA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T17:03:02.292935+00:00", "simbol": "ERA", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.0651941, "harga_kini": 0.0725, "entry": 0.072, "pelajaran": "ERA SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T17:07:54.864671+00:00", "simbol": "ARB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.166741, "harga_kini": 0.1668, "entry": 0.1688, "pelajaran": "ARB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
