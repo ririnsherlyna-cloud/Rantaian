@@ -750,3 +750,4 @@
 {"waktu": "2026-11-07T20:01:20.323079+00:00", "simbol": "YB", "arah": "SELL", "level": "TP", "level_harga": 0.04590824, "harga_kini": 0.051, "entry": 0.0511, "pelajaran": "YB SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T20:01:20.323126+00:00", "simbol": "YB", "arah": "SELL", "level": "STOP", "level_harga": 0.05852994, "harga_kini": 0.051, "entry": 0.0511, "pelajaran": "YB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T20:01:20.323145+00:00", "simbol": "YB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.0435761, "harga_kini": 0.051, "entry": 0.0511, "pelajaran": "YB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T20:06:00.387042+00:00", "simbol": "BANK", "arah": "SELL", "level": "TP", "level_harga": 0.024086879999999998, "harga_kini": 0.0241, "entry": 0.0258, "pelajaran": "BANK SELL menyentuh TP — vonis pasar datang, catat hasil"}
