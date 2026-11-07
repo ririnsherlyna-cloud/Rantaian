@@ -557,3 +557,5 @@
 {"waktu": "2026-11-07T01:42:36.198095+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 130.81, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T01:56:59.167134+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 130.82, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T02:11:30.640707+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 130.88, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T02:21:10.640398+00:00", "simbol": "INJ", "arah": "BUY", "level": "TP", "level_harga": 8.2538094, "harga_kini": 8.449, "entry": 8.058, "pelajaran": "INJ BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T02:21:10.640443+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.39228, "harga_kini": 0.2645, "entry": 0.3426, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
