@@ -796,3 +796,4 @@
 {"waktu": "2026-11-07T23:49:32.334141+00:00", "simbol": "FIL", "arah": "SELL", "level": "TP", "level_harga": 0.7579598, "harga_kini": 0.7888, "entry": 0.7879, "pelajaran": "FIL SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T23:49:32.334175+00:00", "simbol": "FIL", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.7435586, "harga_kini": 0.7888, "entry": 0.7879, "pelajaran": "FIL SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-07T23:49:32.334184+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.39228, "harga_kini": 0.2675, "entry": 0.3426, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-07T23:59:17.171217+00:00", "simbol": "PROVE", "arah": "SELL", "level": "TP", "level_harga": 0.17912978, "harga_kini": 0.1793, "entry": 0.1858, "pelajaran": "PROVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
