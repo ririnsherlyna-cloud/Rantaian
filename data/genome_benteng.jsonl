@@ -834,3 +834,4 @@
 {"waktu": "2026-11-08T03:57:34.306904+00:00", "simbol": "LSK", "arah": "SELL", "level": "STOP", "level_harga": 0.197624, "harga_kini": 0.1839, "entry": 0.1603, "pelajaran": "LSK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T03:57:34.306913+00:00", "simbol": "FET", "arah": "SELL", "level": "STOP", "level_harga": 0.20101, "harga_kini": 0.1436, "entry": 0.175, "pelajaran": "FET SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T03:57:34.306923+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 89.25, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T04:07:20.335027+00:00", "simbol": "PROVE", "arah": "SELL", "level": "TP", "level_harga": 0.17912978, "harga_kini": 0.1793, "entry": 0.1858, "pelajaran": "PROVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
