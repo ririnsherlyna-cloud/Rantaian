@@ -940,3 +940,4 @@
 {"waktu": "2026-11-08T10:11:22.929344+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.04, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T10:11:22.929390+00:00", "simbol": "ARK", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.157462, "harga_kini": 0.1577, "entry": 0.1587, "pelajaran": "ARK SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T10:21:01.870652+00:00", "simbol": "PROVE", "arah": "SELL", "level": "TP", "level_harga": 0.17912978, "harga_kini": 0.1793, "entry": 0.1858, "pelajaran": "PROVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T10:30:45.388460+00:00", "simbol": "XRP", "arah": "SELL", "level": "STOP", "level_harga": 1.40684, "harga_kini": 1.16, "entry": 1.3092, "pelajaran": "XRP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
