@@ -1122,3 +1122,5 @@
 {"waktu": "2026-11-08T17:42:35.105606+00:00", "simbol": "WLD", "arah": "SELL", "level": "STOP", "level_harga": 0.538153, "harga_kini": 0.3203, "entry": 0.4449, "pelajaran": "WLD SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T17:42:35.105611+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 89.1, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T17:42:35.105615+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "STOP", "level_harga": 1439.89, "harga_kini": 833.88, "entry": 1270.66, "pelajaran": "SNDKB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T17:52:19.835758+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.22, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T17:52:19.835805+00:00", "simbol": "ARK", "arah": "SELL", "level": "TP", "level_harga": 0.15493881, "harga_kini": 0.155, "entry": 0.1587, "pelajaran": "ARK SELL menyentuh TP — vonis pasar datang, catat hasil"}
