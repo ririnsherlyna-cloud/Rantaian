@@ -1162,3 +1162,4 @@
 {"waktu": "2026-11-08T19:48:07.283159+00:00", "simbol": "PUMP", "arah": "SELL", "level": "STOP", "level_harga": 0.00512079, "harga_kini": 0.003731, "entry": 0.004287, "pelajaran": "PUMP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T20:07:42.290080+00:00", "simbol": "DOGE", "arah": "SELL", "level": "STOP", "level_harga": 0.0841651, "harga_kini": 0.07111, "entry": 0.07777, "pelajaran": "DOGE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T20:07:42.290124+00:00", "simbol": "HBAR", "arah": "SELL", "level": "STOP", "level_harga": 0.0854243, "harga_kini": 0.06677, "entry": 0.07735, "pelajaran": "HBAR SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T20:27:15.009477+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.15, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
