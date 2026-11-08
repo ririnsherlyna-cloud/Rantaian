@@ -1087,3 +1087,4 @@
 {"waktu": "2026-11-08T16:25:20.687879+00:00", "simbol": "STRK", "arah": "SELL", "level": "TP", "level_harga": 0.03895835, "harga_kini": 0.03897, "entry": 0.04043, "pelajaran": "STRK SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T16:25:20.687919+00:00", "simbol": "STRK", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.03824931, "harga_kini": 0.03897, "entry": 0.04043, "pelajaran": "STRK SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T16:25:20.687938+00:00", "simbol": "ONDO", "arah": "SELL", "level": "STOP", "level_harga": 0.470029, "harga_kini": 0.3618, "entry": 0.4159, "pelajaran": "ONDO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T16:30:14.544335+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
