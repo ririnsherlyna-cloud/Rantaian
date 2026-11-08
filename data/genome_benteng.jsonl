@@ -1046,3 +1046,4 @@
 {"waktu": "2026-11-08T14:24:27.947919+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 4057.35, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T14:24:27.947929+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "STOP", "level_harga": 1439.89, "harga_kini": 834.73, "entry": 1270.66, "pelajaran": "SNDKB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T14:24:27.947939+00:00", "simbol": "HUMA", "arah": "SELL", "level": "STOP", "level_harga": 0.0295134, "harga_kini": 0.01136, "entry": 0.02274, "pelajaran": "HUMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T14:29:22.150050+00:00", "simbol": "ERA", "arah": "SELL", "level": "STOP", "level_harga": 0.0775656, "harga_kini": 0.0774, "entry": 0.072, "pelajaran": "ERA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
