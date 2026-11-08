@@ -813,3 +813,4 @@
 {"waktu": "2026-11-08T01:31:26.075203+00:00", "simbol": "SCRT", "arah": "SELL", "level": "STOP", "level_harga": 0.0183677, "harga_kini": 0.0071, "entry": 0.0071, "pelajaran": "SCRT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T01:31:26.075212+00:00", "simbol": "SCRT", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 5.917481e-05, "harga_kini": 0.0071, "entry": 0.0071, "pelajaran": "SCRT SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T01:31:26.075219+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 134.82, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T01:46:10.178068+00:00", "simbol": "AAVE", "arah": "SELL", "level": "STOP", "level_harga": 152.307, "harga_kini": 130.37, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
