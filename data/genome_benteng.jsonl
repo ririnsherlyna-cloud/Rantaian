@@ -1144,3 +1144,4 @@
 {"waktu": "2026-11-08T19:04:48.421853+00:00", "simbol": "PUMP", "arah": "SELL", "level": "STOP", "level_harga": 0.00512079, "harga_kini": 0.003727, "entry": 0.004287, "pelajaran": "PUMP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T19:04:48.421860+00:00", "simbol": "AVAX", "arah": "SELL", "level": "STOP", "level_harga": 9.94177, "harga_kini": 8.19, "entry": 8.978, "pelajaran": "AVAX SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T19:04:48.421866+00:00", "simbol": "TAO", "arah": "SELL", "level": "STOP", "level_harga": 280.946, "harga_kini": 224.2, "entry": 251.4, "pelajaran": "TAO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T19:19:06.468205+00:00", "simbol": "ARK", "arah": "SELL", "level": "TP", "level_harga": 0.15493881, "harga_kini": 0.1551, "entry": 0.1587, "pelajaran": "ARK SELL menyentuh TP — vonis pasar datang, catat hasil"}
