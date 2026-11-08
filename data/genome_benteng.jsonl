@@ -818,3 +818,4 @@
 {"waktu": "2026-11-08T02:25:12.147899+00:00", "simbol": "UNI", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 7.09875, "harga_kini": 7.152, "entry": 7.156, "pelajaran": "UNI SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T02:44:49.013881+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 88.9, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T02:59:33.911889+00:00", "simbol": "PROVE", "arah": "SELL", "level": "TP", "level_harga": 0.17912978, "harga_kini": 0.1793, "entry": 0.1858, "pelajaran": "PROVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T03:04:16.326074+00:00", "simbol": "TRUMP", "arah": "SELL", "level": "STOP", "level_harga": 1.91151, "harga_kini": 1.177, "entry": 1.704, "pelajaran": "TRUMP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
