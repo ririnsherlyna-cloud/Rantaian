@@ -1196,3 +1196,4 @@
 {"waktu": "2026-11-08T21:55:13.716938+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T21:55:13.716950+00:00", "simbol": "ASTER", "arah": "BUY", "level": "STOP", "level_harga": 0.665516, "harga_kini": 0.6655, "entry": 0.7131, "pelajaran": "ASTER BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T21:55:13.716960+00:00", "simbol": "PUMP", "arah": "SELL", "level": "STOP", "level_harga": 0.00512079, "harga_kini": 0.00359, "entry": 0.004287, "pelajaran": "PUMP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T22:00:06.727263+00:00", "simbol": "PYTH", "arah": "BUY", "level": "STOP", "level_harga": 0.0599866, "harga_kini": 0.05909, "entry": 0.07532, "pelajaran": "PYTH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
