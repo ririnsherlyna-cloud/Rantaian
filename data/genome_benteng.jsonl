@@ -1083,3 +1083,4 @@
 {"waktu": "2026-11-08T15:56:35.218576+00:00", "simbol": "MUB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 677.2359, "harga_kini": 693.11, "entry": 692.85, "pelajaran": "MUB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T15:56:35.218586+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 135.32, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T15:56:35.218594+00:00", "simbol": "PUMP", "arah": "SELL", "level": "STOP", "level_harga": 0.00512079, "harga_kini": 0.003745, "entry": 0.004287, "pelajaran": "PUMP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T16:15:44.084837+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
