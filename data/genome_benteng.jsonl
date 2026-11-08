@@ -887,3 +887,4 @@
 {"waktu": "2026-11-08T07:26:32.579297+00:00", "simbol": "UNI", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 7.09875, "harga_kini": 7.104, "entry": 7.156, "pelajaran": "UNI SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T07:26:32.579307+00:00", "simbol": "DOGE", "arah": "SELL", "level": "STOP", "level_harga": 0.0841651, "harga_kini": 0.07116, "entry": 0.07777, "pelajaran": "DOGE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-08T07:36:19.206693+00:00", "simbol": "UNI", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 7.09875, "harga_kini": 7.106, "entry": 7.156, "pelajaran": "UNI SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-08T07:41:15.489353+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.21, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
