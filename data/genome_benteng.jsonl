@@ -1896,3 +1896,5 @@
 {"waktu": "2026-11-09T20:49:17.118993+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001525, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T20:54:14.558919+00:00", "simbol": "FIL", "arah": "SELL", "level": "STOP", "level_harga": 1.08525, "harga_kini": 0.7774, "entry": 0.9139, "pelajaran": "FIL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T20:54:14.558960+00:00", "simbol": "ZK", "arah": "SELL", "level": "STOP", "level_harga": 0.0153281, "harga_kini": 0.00907, "entry": 0.01229, "pelajaran": "ZK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T21:08:55.804735+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.06, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T21:08:55.804775+00:00", "simbol": "LTC", "arah": "SELL", "level": "STOP", "level_harga": 61.76, "harga_kini": 51.55, "entry": 56.81, "pelajaran": "LTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
