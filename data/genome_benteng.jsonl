@@ -1391,3 +1391,4 @@
 {"waktu": "2026-11-09T06:37:38.694691+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.03882, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T06:57:03.688693+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 4095.1, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T07:01:59.663616+00:00", "simbol": "PYTH", "arah": "BUY", "level": "STOP", "level_harga": 0.0599866, "harga_kini": 0.05994, "entry": 0.07532, "pelajaran": "PYTH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T07:16:30.303561+00:00", "simbol": "PYTH", "arah": "BUY", "level": "STOP", "level_harga": 0.0599866, "harga_kini": 0.05947, "entry": 0.07532, "pelajaran": "PYTH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
