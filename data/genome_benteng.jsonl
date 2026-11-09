@@ -1409,3 +1409,4 @@
 {"waktu": "2026-11-09T08:54:09.941693+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 130.78, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T09:23:37.961822+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.22, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T09:33:24.355116+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 131.26, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T09:57:44.360390+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.2, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
