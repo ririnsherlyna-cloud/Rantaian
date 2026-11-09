@@ -1370,3 +1370,4 @@
 {"waktu": "2026-11-09T02:42:51.158339+00:00", "simbol": "ZRO", "arah": "SELL", "level": "STOP", "level_harga": 2.01443, "harga_kini": 1.604, "entry": 1.63, "pelajaran": "ZRO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T02:42:51.158349+00:00", "simbol": "PROVE", "arah": "SELL", "level": "TP", "level_harga": 0.17912978, "harga_kini": 0.1794, "entry": 0.1858, "pelajaran": "PROVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T02:42:51.158358+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "STOP", "level_harga": 1439.89, "harga_kini": 842.94, "entry": 1270.66, "pelajaran": "SNDKB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T02:47:44.609046+00:00", "simbol": "INJ", "arah": "BUY", "level": "TP", "level_harga": 8.2538094, "harga_kini": 8.264, "entry": 8.058, "pelajaran": "INJ BUY menyentuh TP — vonis pasar datang, catat hasil"}
