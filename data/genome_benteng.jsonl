@@ -1380,3 +1380,4 @@
 {"waktu": "2026-11-09T04:35:06.514553+00:00", "simbol": "XAUUSDT", "arah": "BUY", "level": "JUAL AMBISIUS", "level_harga": 4126.782649833, "harga_kini": 4130.200195, "entry": 4057.800049, "pelajaran": "XAUUSDT BUY menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T04:39:55.658416+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 130.83, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T04:39:55.658458+00:00", "simbol": "INJ", "arah": "BUY", "level": "TP", "level_harga": 8.2538094, "harga_kini": 8.259, "entry": 8.058, "pelajaran": "INJ BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T04:54:48.144483+00:00", "simbol": "TRUMP", "arah": "SELL", "level": "STOP", "level_harga": 1.91151, "harga_kini": 1.145, "entry": 1.704, "pelajaran": "TRUMP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
