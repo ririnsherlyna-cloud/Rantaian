@@ -1912,3 +1912,4 @@
 {"waktu": "2026-11-09T21:57:39.711720+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001501, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T22:26:54.817424+00:00", "simbol": "ZK", "arah": "SELL", "level": "STOP", "level_harga": 0.0153281, "harga_kini": 0.00902, "entry": 0.01229, "pelajaran": "ZK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T22:26:54.817473+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 142.17, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T22:41:34.057966+00:00", "simbol": "UNI", "arah": "SELL", "level": "POWER MAX AMBISIUS", "level_harga": 7.070125, "harga_kini": 7.075, "entry": 7.156, "pelajaran": "UNI SELL menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
