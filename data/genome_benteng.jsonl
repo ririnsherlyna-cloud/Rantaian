@@ -1520,3 +1520,4 @@
 {"waktu": "2026-11-09T11:21:15.180977+00:00", "simbol": "EUR", "arah": "BUY", "level": "TP", "level_harga": 1.136375, "harga_kini": 1.1368, "entry": 1.1287, "pelajaran": "EUR BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T11:21:15.180988+00:00", "simbol": "AAVE", "arah": "SELL", "level": "TP", "level_harga": 130.76921, "harga_kini": 132.35, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T11:21:15.180994+00:00", "simbol": "ARK", "arah": "SELL", "level": "TP", "level_harga": 0.15493881, "harga_kini": 0.1557, "entry": 0.1587, "pelajaran": "ARK SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T11:26:07.666632+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001526, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
