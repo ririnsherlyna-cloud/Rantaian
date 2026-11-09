@@ -1682,3 +1682,4 @@
 {"waktu": "2026-11-09T16:19:23.710943+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.17, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T16:29:14.043229+00:00", "simbol": "XRP", "arah": "SELL", "level": "STOP", "level_harga": 1.40684, "harga_kini": 1.101, "entry": 1.3092, "pelajaran": "XRP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T16:29:14.043271+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 2125.49, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T16:34:11.919041+00:00", "simbol": "AVAX", "arah": "SELL", "level": "POWER MAX AMBISIUS", "level_harga": 8.83391, "harga_kini": 8.835, "entry": 8.978, "pelajaran": "AVAX SELL menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
