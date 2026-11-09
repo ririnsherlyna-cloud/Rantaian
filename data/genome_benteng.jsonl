@@ -1416,3 +1416,4 @@
 {"waktu": "2026-11-09T10:32:05.162646+00:00", "simbol": "PEPE", "arah": "BUY", "level": "POWER MAX AMBISIUS", "level_harga": 4.67835e-06, "harga_kini": 5.09e-06, "entry": 4.32e-06, "pelajaran": "PEPE BUY menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T10:32:05.162655+00:00", "simbol": "SPYB", "arah": "SELL", "level": "STOP", "level_harga": 779.769, "harga_kini": 740.08, "entry": 767.19, "pelajaran": "SPYB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-09T10:32:05.162662+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001535, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-09T10:51:52.799816+00:00", "simbol": "EUR", "arah": "BUY", "level": "TP", "level_harga": 1.136375, "harga_kini": 1.1395, "entry": 1.1287, "pelajaran": "EUR BUY menyentuh TP — vonis pasar datang, catat hasil"}
