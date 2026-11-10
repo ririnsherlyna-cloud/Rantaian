@@ -2045,3 +2045,5 @@
 {"waktu": "2026-11-10T12:40:53.424605+00:00", "simbol": "FET", "arah": "SELL", "level": "STOP", "level_harga": 0.20101, "harga_kini": 0.1451, "entry": 0.175, "pelajaran": "FET SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T12:45:53.183428+00:00", "simbol": "QI", "arah": "SELL", "level": "TP", "level_harga": 0.002076354, "harga_kini": 0.002087, "entry": 0.002085, "pelajaran": "QI SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T12:50:41.222831+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T13:00:48.533856+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T13:00:48.533900+00:00", "simbol": "QI", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.0020579, "harga_kini": 0.002076, "entry": 0.002085, "pelajaran": "QI SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
