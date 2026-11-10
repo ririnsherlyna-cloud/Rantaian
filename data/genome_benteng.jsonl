@@ -2000,3 +2000,4 @@
 {"waktu": "2026-11-10T08:41:34.253610+00:00", "simbol": "BNB", "arah": "BUY", "level": "STOP", "level_harga": 709.419, "harga_kini": 689.71, "entry": 742.88, "pelajaran": "BNB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T08:51:21.076109+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0009, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T08:51:21.076153+00:00", "simbol": "U", "arah": "BUY", "level": "JUAL AMBISIUS", "level_harga": 1.0009, "harga_kini": 1.0009, "entry": 1.0005, "pelajaran": "U BUY menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T09:01:20.799568+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 4082.83, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
