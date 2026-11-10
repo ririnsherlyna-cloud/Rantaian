@@ -2053,3 +2053,4 @@
 {"waktu": "2026-11-10T13:30:49.132315+00:00", "simbol": "WLD", "arah": "SELL", "level": "STOP", "level_harga": 0.538153, "harga_kini": 0.3078, "entry": 0.4449, "pelajaran": "WLD SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T13:30:49.132353+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T13:30:49.132368+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 51.68, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T13:35:38.174721+00:00", "simbol": "ARB", "arah": "SELL", "level": "TP", "level_harga": 0.162628672, "harga_kini": 0.1635, "entry": 0.1688, "pelajaran": "ARB SELL menyentuh TP — vonis pasar datang, catat hasil"}
