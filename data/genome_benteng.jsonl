@@ -1954,3 +1954,4 @@
 {"waktu": "2026-11-10T02:31:57.878076+00:00", "simbol": "XAUUSDT", "arah": "BUY", "level": "JUAL AMBISIUS", "level_harga": 4126.782649833, "harga_kini": 4127.5, "entry": 4057.800049, "pelajaran": "XAUUSDT BUY menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T02:46:50.201125+00:00", "simbol": "WLD", "arah": "SELL", "level": "STOP", "level_harga": 0.538153, "harga_kini": 0.3164, "entry": 0.4449, "pelajaran": "WLD SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T02:46:50.201175+00:00", "simbol": "XLM", "arah": "SELL", "level": "STOP", "level_harga": 0.183309, "harga_kini": 0.1467, "entry": 0.1695, "pelajaran": "XLM SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T03:11:09.194458+00:00", "simbol": "OP", "arah": "SELL", "level": "STOP", "level_harga": 0.134374, "harga_kini": 0.1013, "entry": 0.1119, "pelajaran": "OP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
