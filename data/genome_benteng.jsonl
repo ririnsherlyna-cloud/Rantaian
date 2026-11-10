@@ -2109,3 +2109,4 @@
 {"waktu": "2026-11-10T17:53:24.258139+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T17:58:10.865140+00:00", "simbol": "ARK", "arah": "SELL", "level": "TP", "level_harga": 0.15493881, "harga_kini": 0.1551, "entry": 0.1587, "pelajaran": "ARK SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T18:03:12.271791+00:00", "simbol": "BABAB", "arah": "BUY", "level": "STOP", "level_harga": 102.7499, "harga_kini": 102.58, "entry": 104.04, "pelajaran": "BABAB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T18:42:16.157070+00:00", "simbol": "ONE", "arah": "BUY", "level": "TP", "level_harga": 0.001746335, "harga_kini": 0.001753, "entry": 0.001572, "pelajaran": "ONE BUY menyentuh TP — vonis pasar datang, catat hasil"}
