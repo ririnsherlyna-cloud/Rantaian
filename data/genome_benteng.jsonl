@@ -1976,3 +1976,4 @@
 {"waktu": "2026-11-10T06:45:04.642004+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T06:59:30.212523+00:00", "simbol": "UNI", "arah": "SELL", "level": "TP", "level_harga": 7.076313, "harga_kini": 7.077, "entry": 7.156, "pelajaran": "UNI SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T06:59:30.212563+00:00", "simbol": "UNI", "arah": "SELL", "level": "POWER MAX AMBISIUS", "level_harga": 7.070125, "harga_kini": 7.077, "entry": 7.156, "pelajaran": "UNI SELL menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T07:04:23.749851+00:00", "simbol": "UNI", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 7.09875, "harga_kini": 7.117, "entry": 7.156, "pelajaran": "UNI SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
