@@ -1973,3 +1973,4 @@
 {"waktu": "2026-11-10T06:06:27.563141+00:00", "simbol": "CRCLB", "arah": "SELL", "level": "STOP", "level_harga": 89.9436, "harga_kini": 67.94, "entry": 80.41, "pelajaran": "CRCLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T06:30:34.930897+00:00", "simbol": "BNB", "arah": "BUY", "level": "STOP", "level_harga": 709.419, "harga_kini": 689.16, "entry": 742.88, "pelajaran": "BNB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T06:30:34.930935+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 85.98, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T06:45:04.642004+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
