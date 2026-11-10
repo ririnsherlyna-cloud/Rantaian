@@ -2003,3 +2003,4 @@
 {"waktu": "2026-11-10T09:01:20.799568+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 4082.83, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T09:11:06.963667+00:00", "simbol": "UNI", "arah": "SELL", "level": "STOP", "level_harga": 8.12697, "harga_kini": 7.022, "entry": 7.156, "pelajaran": "UNI SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T09:20:58.266512+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T09:30:41.086331+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
