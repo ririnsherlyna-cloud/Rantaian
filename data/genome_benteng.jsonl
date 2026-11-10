@@ -1958,3 +1958,4 @@
 {"waktu": "2026-11-10T03:35:45.835625+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.1521, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T03:35:45.835695+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 85.7, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T03:50:21.731267+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 4095.51, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T04:19:37.476814+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.1529, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
