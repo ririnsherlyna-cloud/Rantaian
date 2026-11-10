@@ -2022,3 +2022,5 @@
 {"waktu": "2026-11-10T10:58:38.595880+00:00", "simbol": "WLD", "arah": "SELL", "level": "STOP", "level_harga": 0.538153, "harga_kini": 0.3164, "entry": 0.4449, "pelajaran": "WLD SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T10:58:38.595915+00:00", "simbol": "HUMA", "arah": "SELL", "level": "STOP", "level_harga": 0.0295134, "harga_kini": 0.00989, "entry": 0.02274, "pelajaran": "HUMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T11:03:37.963634+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T11:18:29.939999+00:00", "simbol": "ZAMA", "arah": "SELL", "level": "STOP", "level_harga": 0.085982, "harga_kini": 0.06734, "entry": 0.07187, "pelajaran": "ZAMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T11:18:29.940045+00:00", "simbol": "XLM", "arah": "SELL", "level": "STOP", "level_harga": 0.183309, "harga_kini": 0.146, "entry": 0.1695, "pelajaran": "XLM SELL menyentuh STOP — vonis pasar datang, catat hasil"}
