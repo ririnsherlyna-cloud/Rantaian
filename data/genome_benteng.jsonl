@@ -1928,3 +1928,4 @@
 {"waktu": "2026-11-10T00:10:01.635249+00:00", "simbol": "AAVE", "arah": "SELL", "level": "STOP", "level_harga": 152.307, "harga_kini": 132.18, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T00:10:01.635267+00:00", "simbol": "UNI", "arah": "SELL", "level": "STOP", "level_harga": 8.12697, "harga_kini": 7.004, "entry": 7.156, "pelajaran": "UNI SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-10T00:10:01.635279+00:00", "simbol": "AVAX", "arah": "SELL", "level": "STOP", "level_harga": 9.94177, "harga_kini": 8.691, "entry": 8.978, "pelajaran": "AVAX SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-10T00:14:43.153975+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 47.19, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
