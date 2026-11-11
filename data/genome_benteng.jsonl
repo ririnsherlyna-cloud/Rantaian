@@ -2382,3 +2382,4 @@
 {"waktu": "2026-11-11T19:56:43.933228+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T19:56:43.933266+00:00", "simbol": "ICP", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 2.59857, "harga_kini": 2.6, "entry": 2.632, "pelajaran": "ICP SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T19:56:43.934601+00:00", "simbol": "SUI", "arah": "SELL", "level": "STOP", "level_harga": 1.02541, "harga_kini": 0.8368, "entry": 0.9184, "pelajaran": "SUI SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T20:11:10.720036+00:00", "simbol": "ICP", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 2.59857, "harga_kini": 2.607, "entry": 2.632, "pelajaran": "ICP SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
