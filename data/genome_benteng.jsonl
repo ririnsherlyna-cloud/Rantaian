@@ -2211,3 +2211,5 @@
 {"waktu": "2026-11-11T06:03:26.686940+00:00", "simbol": "INJ", "arah": "BUY", "level": "TP", "level_harga": 8.2538094, "harga_kini": 8.256, "entry": 8.058, "pelajaran": "INJ BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T06:08:22.524157+00:00", "simbol": "ZRO", "arah": "SELL", "level": "STOP", "level_harga": 2.01443, "harga_kini": 1.554, "entry": 1.63, "pelajaran": "ZRO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T06:08:22.524210+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "STOP", "level_harga": 1439.89, "harga_kini": 906.25, "entry": 1270.66, "pelajaran": "SNDKB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T06:32:42.404793+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.546, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T06:32:42.404829+00:00", "simbol": "ICP", "arah": "SELL", "level": "STOP", "level_harga": 2.94173, "harga_kini": 2.546, "entry": 2.632, "pelajaran": "ICP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
