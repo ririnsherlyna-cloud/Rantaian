@@ -2160,3 +2160,4 @@
 {"waktu": "2026-11-11T00:08:37.787106+00:00", "simbol": "ARK", "arah": "SELL", "level": "TP", "level_harga": 0.15493881, "harga_kini": 0.1553, "entry": 0.1587, "pelajaran": "ARK SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T00:37:26.822253+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.559, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T00:37:26.822282+00:00", "simbol": "ARK", "arah": "SELL", "level": "TP", "level_harga": 0.15493881, "harga_kini": 0.155, "entry": 0.1587, "pelajaran": "ARK SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T00:42:14.161888+00:00", "simbol": "XAUUSDT", "arah": "BUY", "level": "STOP", "level_harga": 4037.1052687501, "harga_kini": 4036.800049, "entry": 4057.800049, "pelajaran": "XAUUSDT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
