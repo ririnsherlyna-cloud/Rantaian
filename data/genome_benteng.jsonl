@@ -2266,3 +2266,4 @@
 {"waktu": "2026-11-11T11:50:37.215427+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.547, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T11:50:37.215437+00:00", "simbol": "ICP", "arah": "SELL", "level": "STOP", "level_harga": 2.94173, "harga_kini": 2.547, "entry": 2.632, "pelajaran": "ICP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T11:50:37.215447+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 147.776, "harga_kini": 147.92, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T11:55:30.114902+00:00", "simbol": "AR", "arah": "SELL", "level": "TP", "level_harga": 3.30373568, "harga_kini": 3.305, "entry": 3.422, "pelajaran": "AR SELL menyentuh TP — vonis pasar datang, catat hasil"}
