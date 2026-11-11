@@ -2176,3 +2176,4 @@
 {"waktu": "2026-11-11T01:45:26.323506+00:00", "simbol": "INJ", "arah": "BUY", "level": "TP", "level_harga": 8.2538094, "harga_kini": 8.289, "entry": 8.058, "pelajaran": "INJ BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T01:45:26.323513+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "STOP", "level_harga": 1439.89, "harga_kini": 892.18, "entry": 1270.66, "pelajaran": "SNDKB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T01:45:26.323520+00:00", "simbol": "AVAX", "arah": "SELL", "level": "STOP", "level_harga": 9.94177, "harga_kini": 8.485, "entry": 8.978, "pelajaran": "AVAX SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T01:55:11.204385+00:00", "simbol": "ZEC", "arah": "BUY", "level": "STOP", "level_harga": 1025.11, "harga_kini": 1021.14, "entry": 1233.26, "pelajaran": "ZEC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
