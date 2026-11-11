@@ -2387,3 +2387,4 @@
 {"waktu": "2026-11-11T22:18:34.621867+00:00", "simbol": "NVDAB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 158.0804, "harga_kini": 167.71, "entry": 167.3, "pelajaran": "NVDAB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T22:18:34.621876+00:00", "simbol": "NEAR", "arah": "SELL", "level": "STOP", "level_harga": 5.33607, "harga_kini": 3.702, "entry": 4.51, "pelajaran": "NEAR SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T22:18:34.621882+00:00", "simbol": "ZK", "arah": "SELL", "level": "STOP", "level_harga": 0.0153281, "harga_kini": 0.00928, "entry": 0.01229, "pelajaran": "ZK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T22:42:39.828757+00:00", "simbol": "NVDAB", "arah": "SELL", "level": "TP", "level_harga": 161.0764, "harga_kini": 162.2, "entry": 167.3, "pelajaran": "NVDAB SELL menyentuh TP — vonis pasar datang, catat hasil"}
