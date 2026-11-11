@@ -18,3 +18,5 @@
 {"waktu": "2026-11-04T14:38:15.510122+00:00", "peristiwa": "PULIH", "gap_menit": 2143.4, "lapis_penjinak": "denyut-tubuh", "message_id": 686}
 {"waktu": "2026-11-09T20:43:46.162589+00:00", "peristiwa": "MATI-terdeteksi", "gap_menit": 147.8, "lapis_penjinak": "benteng-abadi", "status_kirim": "menyusul"}
 {"waktu": "2026-11-09T20:44:25.000480+00:00", "peristiwa": "PULIH", "gap_menit": 147.8, "lapis_penjinak": "benteng-abadi", "message_id": 5732}
+{"waktu": "2026-11-11T22:18:09.055694+00:00", "peristiwa": "MATI-terdeteksi", "gap_menit": 122.3, "lapis_penjinak": "benteng-abadi", "status_kirim": "menyusul"}
+{"waktu": "2026-11-11T22:18:35.182280+00:00", "peristiwa": "PULIH", "gap_menit": 122.3, "lapis_penjinak": "benteng-abadi", "message_id": 9526}
