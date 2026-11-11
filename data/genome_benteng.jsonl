@@ -2272,3 +2272,4 @@
 {"waktu": "2026-11-11T12:15:10.527083+00:00", "simbol": "PHA", "arah": "SELL", "level": "TP", "level_harga": 0.0320796, "harga_kini": 0.0335, "entry": 0.0335, "pelajaran": "PHA SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T12:15:10.527119+00:00", "simbol": "PHA", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.03139951, "harga_kini": 0.0335, "entry": 0.0335, "pelajaran": "PHA SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-11T12:15:10.527132+00:00", "simbol": "ONDO", "arah": "SELL", "level": "STOP", "level_harga": 0.470029, "harga_kini": 0.368, "entry": 0.4159, "pelajaran": "ONDO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-11T12:34:57.703226+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001539, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
