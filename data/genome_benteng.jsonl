@@ -2436,3 +2436,4 @@
 {"waktu": "2026-11-12T01:09:26.546943+00:00", "simbol": "XAUT", "arah": "SELL", "level": "POWER MAX AMBISIUS", "level_harga": 3989.38, "harga_kini": 3989.44, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T01:24:02.976495+00:00", "simbol": "NFP", "arah": "SELL", "level": "STOP", "level_harga": 0.0055386, "harga_kini": 0.00181, "entry": 0.00181, "pelajaran": "NFP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T01:24:02.976540+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 2051.42, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-12T01:28:59.915474+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
