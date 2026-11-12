@@ -2423,3 +2423,4 @@
 {"waktu": "2026-11-12T00:30:11.989088+00:00", "simbol": "VIC", "arah": "SELL", "level": "STOP", "level_harga": 0.01534302, "harga_kini": 0.0077, "entry": 0.0077, "pelajaran": "VIC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T00:30:11.989100+00:00", "simbol": "VIC", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.001818471, "harga_kini": 0.0077, "entry": 0.0077, "pelajaran": "VIC SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T00:30:11.989108+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 74104.5, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-12T00:34:58.597120+00:00", "simbol": "QNT", "arah": "BUY", "level": "STOP", "level_harga": 168.571, "harga_kini": 168.51, "entry": 204.01, "pelajaran": "QNT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
