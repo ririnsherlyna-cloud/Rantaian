@@ -2485,3 +2485,4 @@
 {"waktu": "2026-11-12T05:32:30.398793+00:00", "simbol": "INIT", "arah": "SELL", "level": "STOP", "level_harga": 0.3742349, "harga_kini": 0.13987, "entry": 0.12811, "pelajaran": "INIT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T05:32:30.398821+00:00", "simbol": "0G", "arah": "SELL", "level": "STOP", "level_harga": 0.233896, "harga_kini": 0.1533, "entry": 0.2021, "pelajaran": "0G SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T05:32:30.398829+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 60.44, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-12T05:51:47.824601+00:00", "simbol": "XAUT", "arah": "SELL", "level": "TP", "level_harga": 3969.5800495999997, "harga_kini": 3972.33, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh TP — vonis pasar datang, catat hasil"}
