@@ -2609,3 +2609,4 @@
 {"waktu": "2026-11-12T19:43:02.127592+00:00", "simbol": "CYBER", "arah": "SELL", "level": "TP", "level_harga": 0.2374848, "harga_kini": 0.25, "entry": 0.248, "pelajaran": "CYBER SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T19:43:02.127633+00:00", "simbol": "CYBER", "arah": "SELL", "level": "STOP", "level_harga": 0.2647896, "harga_kini": 0.25, "entry": 0.248, "pelajaran": "CYBER SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T19:43:02.127645+00:00", "simbol": "CYBER", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.2324501, "harga_kini": 0.25, "entry": 0.248, "pelajaran": "CYBER SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-12T19:58:06.504008+00:00", "simbol": "ASTER", "arah": "BUY", "level": "STOP", "level_harga": 0.665516, "harga_kini": 0.6653, "entry": 0.7131, "pelajaran": "ASTER BUY menyentuh STOP — vonis pasar datang, catat hasil"}
