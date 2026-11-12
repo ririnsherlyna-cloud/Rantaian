@@ -2613,3 +2613,4 @@
 {"waktu": "2026-11-12T20:07:47.862906+00:00", "simbol": "EIGEN", "arah": "SELL", "level": "TP", "level_harga": 0.1453352, "harga_kini": 0.1545, "entry": 0.1543, "pelajaran": "EIGEN SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T20:07:47.862951+00:00", "simbol": "EIGEN", "arah": "SELL", "level": "STOP", "level_harga": 0.1642061, "harga_kini": 0.1545, "entry": 0.1543, "pelajaran": "EIGEN SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T20:07:47.862969+00:00", "simbol": "EIGEN", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.1411132, "harga_kini": 0.1545, "entry": 0.1543, "pelajaran": "EIGEN SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-12T20:17:33.604076+00:00", "simbol": "PEPE", "arah": "BUY", "level": "TP", "level_harga": 4.4896896e-06, "harga_kini": 4.49e-06, "entry": 4.32e-06, "pelajaran": "PEPE BUY menyentuh TP — vonis pasar datang, catat hasil"}
