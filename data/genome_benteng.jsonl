@@ -2594,3 +2594,4 @@
 {"waktu": "2026-11-12T18:33:55.381566+00:00", "simbol": "GRAM", "arah": "SELL", "level": "STOP", "level_harga": 1.29494, "harga_kini": 1.187, "entry": 1.189, "pelajaran": "GRAM SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T18:33:55.381575+00:00", "simbol": "GRAM", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 1.070301, "harga_kini": 1.187, "entry": 1.189, "pelajaran": "GRAM SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T18:33:55.381582+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.543, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-12T18:38:59.290895+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001542, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
