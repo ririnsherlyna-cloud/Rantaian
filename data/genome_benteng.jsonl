@@ -2598,3 +2598,4 @@
 {"waktu": "2026-11-12T18:48:51.328362+00:00", "simbol": "BCH", "arah": "SELL", "level": "TP", "level_harga": 219.6964, "harga_kini": 225.3, "entry": 225.7, "pelajaran": "BCH SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T18:48:51.328409+00:00", "simbol": "BCH", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 216.7744, "harga_kini": 225.3, "entry": 225.7, "pelajaran": "BCH SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-12T18:48:51.328427+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.04563, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-12T18:58:46.142707+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.543, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
