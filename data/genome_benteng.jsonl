@@ -2697,3 +2697,4 @@
 {"waktu": "2026-11-13T05:07:58.971067+00:00", "simbol": "2Z", "arah": "SELL", "level": "TP", "level_harga": 0.01736266, "harga_kini": 0.01816, "entry": 0.01824, "pelajaran": "2Z SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T05:07:58.971105+00:00", "simbol": "2Z", "arah": "SELL", "level": "STOP", "level_harga": 0.01929062, "harga_kini": 0.01816, "entry": 0.01824, "pelajaran": "2Z SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T05:07:58.971118+00:00", "simbol": "2Z", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.01694508, "harga_kini": 0.01816, "entry": 0.01824, "pelajaran": "2Z SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-13T05:12:57.647344+00:00", "simbol": "PEPE", "arah": "BUY", "level": "TP", "level_harga": 4.4896896e-06, "harga_kini": 4.49e-06, "entry": 4.32e-06, "pelajaran": "PEPE BUY menyentuh TP — vonis pasar datang, catat hasil"}
