@@ -2793,3 +2793,4 @@
 {"waktu": "2026-11-13T12:59:52.827033+00:00", "simbol": "KORUB", "arah": "SELL", "level": "TP", "level_harga": 7.173822, "harga_kini": 7.85, "entry": 7.86, "pelajaran": "KORUB SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T12:59:52.827079+00:00", "simbol": "KORUB", "arah": "SELL", "level": "STOP", "level_harga": 8.833854, "harga_kini": 7.85, "entry": 7.86, "pelajaran": "KORUB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T12:59:52.827089+00:00", "simbol": "KORUB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 6.860685, "harga_kini": 7.85, "entry": 7.86, "pelajaran": "KORUB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-13T13:04:52.509774+00:00", "simbol": "PEPE", "arah": "BUY", "level": "JUAL AMBISIUS", "level_harga": 4.5589e-06, "harga_kini": 4.56e-06, "entry": 4.32e-06, "pelajaran": "PEPE BUY menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
