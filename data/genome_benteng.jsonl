@@ -2816,3 +2816,4 @@
 {"waktu": "2026-11-13T15:18:22.829202+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "TP", "level_harga": 805.3635, "harga_kini": 859.78, "entry": 861.72, "pelajaran": "SNDKB SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T15:18:22.829248+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 779.0281, "harga_kini": 859.78, "entry": 861.72, "pelajaran": "SNDKB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T15:28:14.065929+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-13T15:33:11.063632+00:00", "simbol": "PEPE", "arah": "BUY", "level": "TP", "level_harga": 4.4896896e-06, "harga_kini": 4.49e-06, "entry": 4.32e-06, "pelajaran": "PEPE BUY menyentuh TP — vonis pasar datang, catat hasil"}
