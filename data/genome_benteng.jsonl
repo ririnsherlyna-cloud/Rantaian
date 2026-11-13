@@ -2868,3 +2868,4 @@
 {"waktu": "2026-11-13T19:49:45.994387+00:00", "simbol": "UNI", "arah": "SELL", "level": "TP", "level_harga": 5.173232, "harga_kini": 5.87, "entry": 5.874, "pelajaran": "UNI SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T19:49:45.994426+00:00", "simbol": "UNI", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 4.864649, "harga_kini": 5.87, "entry": 5.874, "pelajaran": "UNI SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-13T19:49:45.994440+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-13T19:59:35.451755+00:00", "simbol": "MAGIC", "arah": "SELL", "level": "TP", "level_harga": 0.07797491999999999, "harga_kini": 0.0782, "entry": 0.0822, "pelajaran": "MAGIC SELL menyentuh TP — vonis pasar datang, catat hasil"}
