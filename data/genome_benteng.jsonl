@@ -2960,3 +2960,4 @@
 {"waktu": "2026-11-14T07:47:32.090129+00:00", "simbol": "AERO", "arah": "SELL", "level": "TP", "level_harga": 0.4462467, "harga_kini": 0.4557, "entry": 0.4803, "pelajaran": "AERO SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-14T07:47:32.090135+00:00", "simbol": "AERO", "arah": "SELL", "level": "STOP", "level_harga": 0.539521, "harga_kini": 0.4557, "entry": 0.4803, "pelajaran": "AERO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-14T07:47:32.090140+00:00", "simbol": "AERO", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.4304273, "harga_kini": 0.4557, "entry": 0.4803, "pelajaran": "AERO SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-14T08:31:38.357652+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
