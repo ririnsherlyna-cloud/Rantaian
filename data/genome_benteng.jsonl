@@ -3069,3 +3069,4 @@
 {"waktu": "2026-11-14T13:19:55.045828+00:00", "simbol": "BABY", "arah": "SELL", "level": "STOP", "level_harga": 0.01031596, "harga_kini": 0.00904, "entry": 0.00959, "pelajaran": "BABY SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-14T13:19:55.045846+00:00", "simbol": "BABY", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.007177592, "harga_kini": 0.00904, "entry": 0.00959, "pelajaran": "BABY SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-14T13:19:55.045860+00:00", "simbol": "PYTH", "arah": "BUY", "level": "STOP", "level_harga": 0.0599866, "harga_kini": 0.05989, "entry": 0.07532, "pelajaran": "PYTH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-14T13:29:42.437228+00:00", "simbol": "PYTH", "arah": "BUY", "level": "STOP", "level_harga": 0.0599866, "harga_kini": 0.05988, "entry": 0.07532, "pelajaran": "PYTH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
