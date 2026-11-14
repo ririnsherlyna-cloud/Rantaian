@@ -2979,3 +2979,4 @@
 {"waktu": "2026-11-14T09:01:10.867975+00:00", "simbol": "BCH", "arah": "SELL", "level": "TP", "level_harga": 210.0855, "harga_kini": 214.8, "entry": 220.1, "pelajaran": "BCH SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-14T09:01:10.867980+00:00", "simbol": "BCH", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 205.306, "harga_kini": 214.8, "entry": 220.1, "pelajaran": "BCH SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-14T09:06:02.203999+00:00", "simbol": "PHA", "arah": "SELL", "level": "TP", "level_harga": 0.03070925, "harga_kini": 0.0308, "entry": 0.0325, "pelajaran": "PHA SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-14T09:40:09.242232+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
