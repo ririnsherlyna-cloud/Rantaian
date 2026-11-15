@@ -3181,3 +3181,5 @@
 {"waktu": "2026-11-15T21:00:41.219109+00:00", "simbol": "AAVE", "arah": "SELL", "level": "STOP", "level_harga": 152.307, "harga_kini": 108.46, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T21:00:41.219149+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1824.65, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T21:15:20.764291+00:00", "simbol": "ASTER", "arah": "BUY", "level": "STOP", "level_harga": 0.665516, "harga_kini": 0.6245, "entry": 0.7131, "pelajaran": "ASTER BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-15T21:25:03.314898+00:00", "simbol": "DOT", "arah": "SELL", "level": "STOP", "level_harga": 1.15446, "harga_kini": 0.731, "entry": 1.012, "pelajaran": "DOT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-15T21:25:03.314944+00:00", "simbol": "FET", "arah": "SELL", "level": "STOP", "level_harga": 0.20101, "harga_kini": 0.1319, "entry": 0.175, "pelajaran": "FET SELL menyentuh STOP — vonis pasar datang, catat hasil"}
