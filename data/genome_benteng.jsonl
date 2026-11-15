@@ -3185,3 +3185,5 @@
 {"waktu": "2026-11-15T21:25:03.314944+00:00", "simbol": "FET", "arah": "SELL", "level": "STOP", "level_harga": 0.20101, "harga_kini": 0.1319, "entry": 0.175, "pelajaran": "FET SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T22:09:19.541048+00:00", "simbol": "NVDAB", "arah": "SELL", "level": "STOP", "level_harga": 227.503, "harga_kini": 164.51, "entry": 216.91, "pelajaran": "NVDAB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T22:28:46.021343+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1828.02, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-15T22:58:04.033989+00:00", "simbol": "QNT", "arah": "BUY", "level": "STOP", "level_harga": 168.571, "harga_kini": 156.01, "entry": 204.01, "pelajaran": "QNT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-15T22:58:04.034051+00:00", "simbol": "NVDAB", "arah": "SELL", "level": "STOP", "level_harga": 227.503, "harga_kini": 165.03, "entry": 216.91, "pelajaran": "NVDAB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
