@@ -3124,3 +3124,4 @@
 {"waktu": "2026-11-15T04:47:46.162451+00:00", "simbol": "OPEN", "arah": "BUY", "level": "STOP", "level_harga": 0.09051408, "harga_kini": 0.0882, "entry": 0.0956, "pelajaran": "OPEN BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T04:47:46.162495+00:00", "simbol": "INJ", "arah": "BUY", "level": "STOP", "level_harga": 7.050689, "harga_kini": 7.001, "entry": 8.024, "pelajaran": "INJ BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T04:47:46.162505+00:00", "simbol": "RSR", "arah": "BUY", "level": "STOP", "level_harga": 0.00139606, "harga_kini": 0.00134, "entry": 0.00145, "pelajaran": "RSR BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-15T04:57:34.367577+00:00", "simbol": "ONE", "arah": "SELL", "level": "POWER MAX AMBISIUS", "level_harga": 0.00127818, "harga_kini": 0.001279, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
