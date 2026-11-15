@@ -3152,3 +3152,4 @@
 {"waktu": "2026-11-15T12:31:38.300431+00:00", "simbol": "INIT", "arah": "BUY", "level": "TP", "level_harga": 0.1318563, "harga_kini": 0.13803, "entry": 0.11538, "pelajaran": "INIT BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T13:10:45.459638+00:00", "simbol": "INIT", "arah": "BUY", "level": "TP", "level_harga": 0.1318563, "harga_kini": 0.13254, "entry": 0.11538, "pelajaran": "INIT BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T14:33:46.593027+00:00", "simbol": "SOPH", "arah": "BUY", "level": "STOP", "level_harga": 0.0014104, "harga_kini": 0.00141, "entry": 0.00215, "pelajaran": "SOPH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-15T14:53:24.265423+00:00", "simbol": "SOPH", "arah": "BUY", "level": "STOP", "level_harga": 0.0014104, "harga_kini": 0.00141, "entry": 0.00215, "pelajaran": "SOPH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
