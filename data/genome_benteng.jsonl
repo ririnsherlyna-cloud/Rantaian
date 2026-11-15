@@ -3115,3 +3115,4 @@
 {"waktu": "2026-11-15T01:46:33.776688+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.04555, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T01:51:25.305916+00:00", "simbol": "ONE", "arah": "SELL", "level": "TP", "level_harga": 0.00125314896, "harga_kini": 0.001261, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T01:56:25.483237+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.04564, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-15T02:01:24.643192+00:00", "simbol": "ONE", "arah": "SELL", "level": "TP", "level_harga": 0.00125314896, "harga_kini": 0.001254, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh TP — vonis pasar datang, catat hasil"}
