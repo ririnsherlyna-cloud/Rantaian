@@ -3354,3 +3354,4 @@
 {"waktu": "2026-11-16T14:43:13.362199+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.0456, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T14:48:25.970467+00:00", "simbol": "TSLAB", "arah": "BUY", "level": "STOP", "level_harga": 383.0454, "harga_kini": 382.9, "entry": 385.28, "pelajaran": "TSLAB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T14:48:25.970511+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T15:03:17.002358+00:00", "simbol": "AMDB", "arah": "BUY", "level": "STOP", "level_harga": 513.5874, "harga_kini": 511.87, "entry": 518.88, "pelajaran": "AMDB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
