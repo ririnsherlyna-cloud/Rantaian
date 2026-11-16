@@ -3209,3 +3209,4 @@
 {"waktu": "2026-11-16T05:30:12.921302+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 3858.84, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T05:35:08.002999+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T05:49:39.216066+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T05:54:31.159782+00:00", "simbol": "AMDB", "arah": "BUY", "level": "STOP", "level_harga": 513.5874, "harga_kini": 513.54, "entry": 518.88, "pelajaran": "AMDB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
