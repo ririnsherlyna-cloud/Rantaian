@@ -3324,3 +3324,5 @@
 {"waktu": "2026-11-16T08:59:12.835947+00:00", "simbol": "XRP", "arah": "SELL", "level": "STOP", "level_harga": 1.40684, "harga_kini": 0.9528, "entry": 1.3092, "pelajaran": "XRP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T08:59:12.835957+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 70.9, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T08:59:12.835963+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1806.39, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T09:04:00.867418+00:00", "simbol": "AMDB", "arah": "BUY", "level": "STOP", "level_harga": 513.5874, "harga_kini": 512.9, "entry": 518.88, "pelajaran": "AMDB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T09:04:00.867456+00:00", "simbol": "ZRO", "arah": "SELL", "level": "STOP", "level_harga": 2.01443, "harga_kini": 1.397, "entry": 1.63, "pelajaran": "ZRO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
