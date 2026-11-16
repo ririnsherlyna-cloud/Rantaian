@@ -3384,3 +3384,4 @@
 {"waktu": "2026-11-16T21:54:01.528573+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.544, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T21:58:50.666605+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.04545, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T22:03:46.158077+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.552, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T22:32:47.994390+00:00", "simbol": "ONDO", "arah": "SELL", "level": "STOP", "level_harga": 0.470029, "harga_kini": 0.3074, "entry": 0.4159, "pelajaran": "ONDO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
