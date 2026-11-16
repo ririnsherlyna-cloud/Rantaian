@@ -3342,3 +3342,4 @@
 {"waktu": "2026-11-16T11:35:01.851647+00:00", "simbol": "ZK", "arah": "SELL", "level": "STOP", "level_harga": 0.0153281, "harga_kini": 0.00792, "entry": 0.01229, "pelajaran": "ZK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T11:35:01.851658+00:00", "simbol": "XRP", "arah": "SELL", "level": "STOP", "level_harga": 1.40684, "harga_kini": 0.9568, "entry": 1.3092, "pelajaran": "XRP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T11:44:52.723767+00:00", "simbol": "MUB", "arah": "BUY", "level": "STOP", "level_harga": 741.4135, "harga_kini": 740.82, "entry": 781.34, "pelajaran": "MUB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T12:04:57.991028+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
