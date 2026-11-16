@@ -3192,3 +3192,5 @@
 {"waktu": "2026-11-16T01:35:22.241918+00:00", "simbol": "AI", "arah": "BUY", "level": "STOP", "level_harga": 0.0143257, "harga_kini": 0.0143, "entry": 0.0152, "pelajaran": "AI BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T01:35:22.241965+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "STOP", "level_harga": 1439.89, "harga_kini": 848.78, "entry": 1270.66, "pelajaran": "SNDKB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T01:49:46.041899+00:00", "simbol": "AI", "arah": "BUY", "level": "STOP", "level_harga": 0.0143257, "harga_kini": 0.0143, "entry": 0.0152, "pelajaran": "AI BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T02:28:31.378889+00:00", "simbol": "AAVE", "arah": "SELL", "level": "STOP", "level_harga": 152.307, "harga_kini": 110.23, "entry": 135.85, "pelajaran": "AAVE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T02:28:31.378938+00:00", "simbol": "SPYB", "arah": "SELL", "level": "STOP", "level_harga": 779.769, "harga_kini": 754.8, "entry": 767.19, "pelajaran": "SPYB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
