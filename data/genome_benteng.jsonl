@@ -3188,3 +3188,4 @@
 {"waktu": "2026-11-15T22:58:04.033989+00:00", "simbol": "QNT", "arah": "BUY", "level": "STOP", "level_harga": 168.571, "harga_kini": 156.01, "entry": 204.01, "pelajaran": "QNT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T22:58:04.034051+00:00", "simbol": "NVDAB", "arah": "SELL", "level": "STOP", "level_harga": 227.503, "harga_kini": 165.03, "entry": 216.91, "pelajaran": "NVDAB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-15T23:47:30.807902+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 65342.01, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T01:20:32.488146+00:00", "simbol": "AI", "arah": "BUY", "level": "STOP", "level_harga": 0.0143257, "harga_kini": 0.0143, "entry": 0.0152, "pelajaran": "AI BUY menyentuh STOP — vonis pasar datang, catat hasil"}
