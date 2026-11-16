@@ -3381,3 +3381,4 @@
 {"waktu": "2026-11-16T21:13:01.500371+00:00", "simbol": "ASTER", "arah": "BUY", "level": "STOP", "level_harga": 0.665516, "harga_kini": 0.5696, "entry": 0.7131, "pelajaran": "ASTER BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T21:13:01.500417+00:00", "simbol": "ZAMA", "arah": "SELL", "level": "STOP", "level_harga": 0.085982, "harga_kini": 0.05652, "entry": 0.07187, "pelajaran": "ZAMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T21:27:46.789694+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.543, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-16T21:54:01.528573+00:00", "simbol": "ICP", "arah": "SELL", "level": "TP", "level_harga": 2.5380376000000004, "harga_kini": 2.544, "entry": 2.632, "pelajaran": "ICP SELL menyentuh TP — vonis pasar datang, catat hasil"}
