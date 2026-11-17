@@ -3517,3 +3517,4 @@
 {"waktu": "2026-11-17T09:14:23.235699+00:00", "simbol": "XRP", "arah": "SELL", "level": "STOP", "level_harga": 1.40684, "harga_kini": 0.9565, "entry": 1.3092, "pelajaran": "XRP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T09:14:23.235705+00:00", "simbol": "ADA", "arah": "SELL", "level": "STOP", "level_harga": 0.227953, "harga_kini": 0.1524, "entry": 0.2067, "pelajaran": "ADA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T09:24:04.249564+00:00", "simbol": "KITE", "arah": "BUY", "level": "TP", "level_harga": 0.1324, "harga_kini": 0.1324, "entry": 0.1276, "pelajaran": "KITE BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T09:33:53.356885+00:00", "simbol": "KITE", "arah": "BUY", "level": "TP", "level_harga": 0.1324, "harga_kini": 0.1329, "entry": 0.1276, "pelajaran": "KITE BUY menyentuh TP — vonis pasar datang, catat hasil"}
