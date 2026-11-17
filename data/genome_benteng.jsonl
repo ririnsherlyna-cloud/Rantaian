@@ -3549,3 +3549,5 @@
 {"waktu": "2026-11-17T12:09:59.809010+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 64873.21, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T12:09:59.809021+00:00", "simbol": "HBAR", "arah": "SELL", "level": "STOP", "level_harga": 0.0854243, "harga_kini": 0.05769, "entry": 0.07735, "pelajaran": "HBAR SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T12:19:45.812060+00:00", "simbol": "MUB", "arah": "BUY", "level": "TP", "level_harga": 735.195, "harga_kini": 738.05, "entry": 725.23, "pelajaran": "MUB BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T12:34:22.532167+00:00", "simbol": "SPYB", "arah": "SELL", "level": "STOP", "level_harga": 779.769, "harga_kini": 740.64, "entry": 767.19, "pelajaran": "SPYB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T12:34:22.532206+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 51.56, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
