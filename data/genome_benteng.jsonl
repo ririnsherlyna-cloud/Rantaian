@@ -3553,3 +3553,4 @@
 {"waktu": "2026-11-17T12:34:22.532206+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 51.56, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T12:58:48.875361+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 65090.62, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T12:58:48.875399+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1823.76, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T13:18:21.831421+00:00", "simbol": "KITE", "arah": "BUY", "level": "TP", "level_harga": 0.1324, "harga_kini": 0.1324, "entry": 0.1276, "pelajaran": "KITE BUY menyentuh TP — vonis pasar datang, catat hasil"}
