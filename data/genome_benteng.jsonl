@@ -3544,3 +3544,4 @@
 {"waktu": "2026-11-17T11:21:27.803023+00:00", "simbol": "AVA", "arah": "SELL", "level": "TP", "level_harga": 0.2046683, "harga_kini": 0.2158, "entry": 0.2161, "pelajaran": "AVA SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T11:21:27.803067+00:00", "simbol": "AVA", "arah": "SELL", "level": "STOP", "level_harga": 0.2309893, "harga_kini": 0.2158, "entry": 0.2161, "pelajaran": "AVA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T11:21:27.803077+00:00", "simbol": "AVA", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.1992548, "harga_kini": 0.2158, "entry": 0.2161, "pelajaran": "AVA SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T11:55:32.861044+00:00", "simbol": "MUB", "arah": "BUY", "level": "TP", "level_harga": 735.195, "harga_kini": 735.23, "entry": 725.23, "pelajaran": "MUB BUY menyentuh TP — vonis pasar datang, catat hasil"}
