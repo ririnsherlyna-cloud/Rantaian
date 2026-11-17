@@ -3429,3 +3429,4 @@
 {"waktu": "2026-11-17T02:50:24.949669+00:00", "simbol": "CHIP", "arah": "SELL", "level": "TP", "level_harga": 0.02645052, "harga_kini": 0.02741, "entry": 0.02739, "pelajaran": "CHIP SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T02:50:24.949717+00:00", "simbol": "CHIP", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.0259969, "harga_kini": 0.02741, "entry": 0.02739, "pelajaran": "CHIP SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T02:50:24.949732+00:00", "simbol": "WLD", "arah": "SELL", "level": "STOP", "level_harga": 0.538153, "harga_kini": 0.2616, "entry": 0.4449, "pelajaran": "WLD SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T03:04:47.275353+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
