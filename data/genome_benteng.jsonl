@@ -3499,3 +3499,4 @@
 {"waktu": "2026-11-17T08:49:44.770440+00:00", "simbol": "LINK", "arah": "SELL", "level": "STOP", "level_harga": 12.5581, "harga_kini": 9.147, "entry": 11.406, "pelajaran": "LINK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T08:49:44.770480+00:00", "simbol": "DOGE", "arah": "SELL", "level": "STOP", "level_harga": 0.0841651, "harga_kini": 0.0588, "entry": 0.07777, "pelajaran": "DOGE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T08:49:44.770490+00:00", "simbol": "HBAR", "arah": "SELL", "level": "STOP", "level_harga": 0.0854243, "harga_kini": 0.0566, "entry": 0.07735, "pelajaran": "HBAR SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T08:59:40.535538+00:00", "simbol": "ONE", "arah": "BUY", "level": "STOP", "level_harga": 0.00126837, "harga_kini": 0.001268, "entry": 0.001314, "pelajaran": "ONE BUY menyentuh STOP — vonis pasar datang, catat hasil"}
