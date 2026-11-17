@@ -3557,3 +3557,4 @@
 {"waktu": "2026-11-17T13:23:16.476027+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 138.62, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T13:23:16.476064+00:00", "simbol": "HUMA", "arah": "SELL", "level": "STOP", "level_harga": 0.0295134, "harga_kini": 0.008, "entry": 0.02274, "pelajaran": "HUMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T13:52:31.856096+00:00", "simbol": "CRCLB", "arah": "SELL", "level": "STOP", "level_harga": 89.9436, "harga_kini": 57.62, "entry": 80.41, "pelajaran": "CRCLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T14:06:59.238097+00:00", "simbol": "KITE", "arah": "BUY", "level": "TP", "level_harga": 0.1324, "harga_kini": 0.1325, "entry": 0.1276, "pelajaran": "KITE BUY menyentuh TP — vonis pasar datang, catat hasil"}
