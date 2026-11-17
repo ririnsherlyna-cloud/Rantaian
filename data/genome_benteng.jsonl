@@ -3490,3 +3490,4 @@
 {"waktu": "2026-11-17T07:02:59.576642+00:00", "simbol": "RARE", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.007458467, "harga_kini": 0.01567, "entry": 0.01321, "pelajaran": "RARE SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T07:02:59.576648+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1831.68, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-17T07:02:59.576654+00:00", "simbol": "DOGE", "arah": "SELL", "level": "STOP", "level_harga": 0.0841651, "harga_kini": 0.05911, "entry": 0.07777, "pelajaran": "DOGE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T07:27:18.658255+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
