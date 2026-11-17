@@ -3397,3 +3397,4 @@
 {"waktu": "2026-11-16T23:11:36.772224+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T23:26:14.528446+00:00", "simbol": "FIL", "arah": "SELL", "level": "STOP", "level_harga": 1.08525, "harga_kini": 0.6059, "entry": 0.9139, "pelajaran": "FIL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-16T23:26:14.528493+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 71.59, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-17T00:05:04.835415+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
