@@ -3627,3 +3627,4 @@
 {"waktu": "2026-11-18T03:24:27.313908+00:00", "simbol": "OP", "arah": "SELL", "level": "STOP", "level_harga": 0.134374, "harga_kini": 0.0772, "entry": 0.1119, "pelajaran": "OP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-18T03:24:27.313914+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.114, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-18T03:24:27.313920+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1803.1, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-18T03:53:53.666042+00:00", "simbol": "WLD", "arah": "SELL", "level": "STOP", "level_harga": 0.538153, "harga_kini": 0.2651, "entry": 0.4449, "pelajaran": "WLD SELL menyentuh STOP — vonis pasar datang, catat hasil"}
