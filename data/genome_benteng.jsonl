@@ -3714,3 +3714,4 @@
 {"waktu": "2026-11-18T23:02:56.282906+00:00", "simbol": "HUMA", "arah": "SELL", "level": "TP", "level_harga": 0.00595404, "harga_kini": 0.00884, "entry": 0.0074, "pelajaran": "HUMA SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-18T23:02:56.282951+00:00", "simbol": "HUMA", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.00537233, "harga_kini": 0.00884, "entry": 0.0074, "pelajaran": "HUMA SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-18T23:56:26.479669+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 51.14, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-19T00:20:52.196368+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.04563, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
