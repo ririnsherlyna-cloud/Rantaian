@@ -3761,3 +3761,4 @@
 {"waktu": "2026-11-19T09:18:19.219896+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.2061722, "harga_kini": 0.1983, "entry": 0.1979, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-19T09:18:19.219916+00:00", "simbol": "CRV", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.1886474, "harga_kini": 0.1983, "entry": 0.1979, "pelajaran": "CRV SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-19T09:18:19.219930+00:00", "simbol": "NVDAB", "arah": "SELL", "level": "STOP", "level_harga": 227.503, "harga_kini": 153.63, "entry": 216.91, "pelajaran": "NVDAB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-19T09:42:26.168786+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "TP", "level_harga": 146.871275, "harga_kini": 147.0, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh TP — vonis pasar datang, catat hasil"}
