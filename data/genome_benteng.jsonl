@@ -4179,3 +4179,4 @@
 {"waktu": "2026-11-20T15:45:37.873541+00:00", "simbol": "BNCB", "arah": "SELL", "level": "TP", "level_harga": 3.140003, "harga_kini": 3.17, "entry": 3.47, "pelajaran": "BNCB SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T15:45:37.873579+00:00", "simbol": "BNCB", "arah": "SELL", "level": "STOP", "level_harga": 3.607412, "harga_kini": 3.17, "entry": 3.47, "pelajaran": "BNCB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T15:45:37.873591+00:00", "simbol": "BNCB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 2.990696, "harga_kini": 3.17, "entry": 3.47, "pelajaran": "BNCB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-20T15:55:34.434112+00:00", "simbol": "THE", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.02575919, "harga_kini": 0.0258, "entry": 0.0298, "pelajaran": "THE SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
