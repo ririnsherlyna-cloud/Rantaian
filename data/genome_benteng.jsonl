@@ -4292,3 +4292,4 @@
 {"waktu": "2026-11-20T18:23:00.370824+00:00", "simbol": "PEPE", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 3.454997e-06, "harga_kini": 3.47e-06, "entry": 3.8e-06, "pelajaran": "PEPE SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T18:37:31.311365+00:00", "simbol": "BNCB", "arah": "SELL", "level": "TP", "level_harga": 3.140003, "harga_kini": 3.15, "entry": 3.47, "pelajaran": "BNCB SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T19:21:49.927290+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-20T20:29:46.624562+00:00", "simbol": "MEGA", "arah": "BUY", "level": "STOP", "level_harga": 0.05388578, "harga_kini": 0.04771, "entry": 0.0598, "pelajaran": "MEGA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
