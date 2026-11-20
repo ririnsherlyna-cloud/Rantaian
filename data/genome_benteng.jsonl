@@ -4288,3 +4288,4 @@
 {"waktu": "2026-11-20T17:04:00.462756+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001061, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T17:04:00.462761+00:00", "simbol": "XAUUSDT", "arah": "BUY", "level": "STOP", "level_harga": 4037.1052687501, "harga_kini": 3541.149902, "entry": 4057.800049, "pelajaran": "XAUUSDT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T17:38:36.748666+00:00", "simbol": "USUAL", "arah": "BUY", "level": "STOP", "level_harga": 0.01018338, "harga_kini": 0.01016, "entry": 0.01068, "pelajaran": "USUAL BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-20T17:43:33.316264+00:00", "simbol": "BNCB", "arah": "SELL", "level": "TP", "level_harga": 3.140003, "harga_kini": 3.15, "entry": 3.47, "pelajaran": "BNCB SELL menyentuh TP — vonis pasar datang, catat hasil"}
