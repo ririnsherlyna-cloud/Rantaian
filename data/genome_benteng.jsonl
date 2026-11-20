@@ -3962,3 +3962,4 @@
 {"waktu": "2026-11-19T23:43:53.858361+00:00", "simbol": "MSTRB", "arah": "SELL", "level": "STOP", "level_harga": 99.85984, "harga_kini": 86.07, "entry": 92.6, "pelajaran": "MSTRB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-19T23:43:53.858368+00:00", "simbol": "MSTRB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 82.95827, "harga_kini": 86.07, "entry": 92.6, "pelajaran": "MSTRB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T00:13:32.765561+00:00", "simbol": "HUMA", "arah": "SELL", "level": "STOP", "level_harga": 0.0295134, "harga_kini": 0.0096, "entry": 0.02274, "pelajaran": "HUMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-20T01:56:04.179868+00:00", "simbol": "PEPE", "arah": "BUY", "level": "STOP", "level_harga": 3.66943e-06, "harga_kini": 3.58e-06, "entry": 4.32e-06, "pelajaran": "PEPE BUY menyentuh STOP — vonis pasar datang, catat hasil"}
