@@ -4287,3 +4287,4 @@
 {"waktu": "2026-11-20T17:04:00.462750+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 33.03, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T17:04:00.462756+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001061, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T17:04:00.462761+00:00", "simbol": "XAUUSDT", "arah": "BUY", "level": "STOP", "level_harga": 4037.1052687501, "harga_kini": 3541.149902, "entry": 4057.800049, "pelajaran": "XAUUSDT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-20T17:38:36.748666+00:00", "simbol": "USUAL", "arah": "BUY", "level": "STOP", "level_harga": 0.01018338, "harga_kini": 0.01016, "entry": 0.01068, "pelajaran": "USUAL BUY menyentuh STOP — vonis pasar datang, catat hasil"}
