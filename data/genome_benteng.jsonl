@@ -4031,3 +4031,4 @@
 {"waktu": "2026-11-20T09:36:07.943426+00:00", "simbol": "BMT", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.01557142, "harga_kini": 0.02208, "entry": 0.02, "pelajaran": "BMT SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T09:50:49.577309+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T10:00:44.471350+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-20T10:10:30.335917+00:00", "simbol": "HMSTR", "arah": "BUY", "level": "STOP", "level_harga": 0.0001498517, "harga_kini": 0.0001495, "entry": 0.0001629, "pelajaran": "HMSTR BUY menyentuh STOP — vonis pasar datang, catat hasil"}
