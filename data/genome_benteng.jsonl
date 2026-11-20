@@ -4018,3 +4018,4 @@
 {"waktu": "2026-11-20T07:53:37.171182+00:00", "simbol": "JTO", "arah": "SELL", "level": "TP", "level_harga": 0.2307076, "harga_kini": 0.244, "entry": 0.2574, "pelajaran": "JTO SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T07:53:37.171193+00:00", "simbol": "JTO", "arah": "SELL", "level": "STOP", "level_harga": 0.2682365, "harga_kini": 0.244, "entry": 0.2574, "pelajaran": "JTO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-20T07:53:37.171201+00:00", "simbol": "JTO", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.2187454, "harga_kini": 0.244, "entry": 0.2574, "pelajaran": "JTO SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-20T08:13:06.433190+00:00", "simbol": "QNT", "arah": "SELL", "level": "TP", "level_harga": 145.1426, "harga_kini": 145.27, "entry": 151.95, "pelajaran": "QNT SELL menyentuh TP — vonis pasar datang, catat hasil"}
