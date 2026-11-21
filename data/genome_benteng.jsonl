@@ -4349,3 +4349,4 @@
 {"waktu": "2026-11-21T11:02:54.070977+00:00", "simbol": "DODO", "arah": "BUY", "level": "TP", "level_harga": 0.03730866, "harga_kini": 0.03878, "entry": 0.03388, "pelajaran": "DODO BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-21T11:31:58.936068+00:00", "simbol": "DODO", "arah": "BUY", "level": "JUAL AMBISIUS", "level_harga": 0.03919647, "harga_kini": 0.03931, "entry": 0.03388, "pelajaran": "DODO BUY menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-21T11:51:33.798791+00:00", "simbol": "U", "arah": "BUY", "level": "TP", "level_harga": 1.0007001, "harga_kini": 1.0008, "entry": 1.0005, "pelajaran": "U BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-21T12:01:18.773072+00:00", "simbol": "U", "arah": "BUY", "level": "JUAL AMBISIUS", "level_harga": 1.0009, "harga_kini": 1.0009, "entry": 1.0005, "pelajaran": "U BUY menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
