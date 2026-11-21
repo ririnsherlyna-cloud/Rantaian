@@ -4326,3 +4326,4 @@
 {"waktu": "2026-11-21T03:57:53.425782+00:00", "simbol": "SENT", "arah": "BUY", "level": "STOP", "level_harga": 0.01989631, "harga_kini": 0.01949, "entry": 0.02141, "pelajaran": "SENT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-21T04:27:17.197904+00:00", "simbol": "GOOGLB", "arah": "BUY", "level": "STOP", "level_harga": 268.2554, "harga_kini": 264.85, "entry": 279.2, "pelajaran": "GOOGLB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-21T05:36:01.275499+00:00", "simbol": "SENT", "arah": "BUY", "level": "STOP", "level_harga": 0.01989631, "harga_kini": 0.01985, "entry": 0.02141, "pelajaran": "SENT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-21T06:10:20.519898+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.0393603, "harga_kini": 0.03944, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
