@@ -4742,3 +4742,4 @@
 {"waktu": "2026-11-22T10:00:34.919785+00:00", "simbol": "PENGU", "arah": "SELL", "level": "STOP", "level_harga": 0.00845744, "harga_kini": 0.004325, "entry": 0.007546, "pelajaran": "PENGU SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T10:10:15.987487+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "STOP", "level_harga": 82.53876, "harga_kini": 82.53, "entry": 80.62, "pelajaran": "SNDKB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T10:24:48.790671+00:00", "simbol": "INJ", "arah": "BUY", "level": "STOP", "level_harga": 6.54909, "harga_kini": 6.137, "entry": 8.058, "pelajaran": "INJ BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-22T10:54:09.329136+00:00", "simbol": "NIGHT", "arah": "SELL", "level": "STOP", "level_harga": 0.0456799, "harga_kini": 0.04564, "entry": 0.03979, "pelajaran": "NIGHT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
