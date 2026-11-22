@@ -4646,3 +4646,4 @@
 {"waktu": "2026-11-22T01:53:23.706679+00:00", "simbol": "STRK", "arah": "SELL", "level": "STOP", "level_harga": 0.0636113, "harga_kini": 0.03023, "entry": 0.04723, "pelajaran": "STRK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T01:53:23.706686+00:00", "simbol": "HUMA", "arah": "SELL", "level": "STOP", "level_harga": 0.0295134, "harga_kini": 0.00877, "entry": 0.02274, "pelajaran": "HUMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T02:18:02.526811+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "TP", "level_harga": 1.00200051, "harga_kini": 1.0021, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-22T02:37:35.388595+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "TP", "level_harga": 1.00200051, "harga_kini": 1.0021, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh TP — vonis pasar datang, catat hasil"}
