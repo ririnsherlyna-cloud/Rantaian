@@ -4727,3 +4727,4 @@
 {"waktu": "2026-11-22T07:19:49.991036+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 59164.72, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T07:19:49.991043+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1664.65, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T07:19:49.991048+00:00", "simbol": "DOGE", "arah": "SELL", "level": "STOP", "level_harga": 0.0841651, "harga_kini": 0.05416, "entry": 0.07777, "pelajaran": "DOGE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-22T08:27:57.314966+00:00", "simbol": "AIGENSYN", "arah": "BUY", "level": "TP", "level_harga": 0.01649282, "harga_kini": 0.0165, "entry": 0.01517, "pelajaran": "AIGENSYN BUY menyentuh TP — vonis pasar datang, catat hasil"}
