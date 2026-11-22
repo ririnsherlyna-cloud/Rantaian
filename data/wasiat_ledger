@@ -1,4 +1,3 @@
-1793989777 2026-11-07 01:29:37+07 primer=0m wadah2=49m detak=3m sandbox=2m(stamp=?,jembatan=2m) mode=awake | wadah2: stall 49mnt -> bangunkan (HTTP 204)
 1793989864 2026-11-07 01:31:04+07 primer=2m wadah2=1m detak=4m sandbox=3m(stamp=?,jembatan=3m) mode=awake | senyap
 1794007868 2026-11-07 06:31:08+07 primer=2m wadah2=67m detak=2m sandbox=1m(stamp=?,jembatan=1m) mode=awake | wadah2: stall 67mnt -> bangunkan (HTTP 204)
 1794007957 2026-11-07 06:32:37+07 primer=1m wadah2=1m detak=3m sandbox=3m(stamp=?,jembatan=3m) mode=awake | senyap
@@ -98,3 +97,4 @@
 1795288543 2026-11-22 02:15:43+07 primer=1m wadah2=1m detak=1m sandbox=117m(stamp=?,jembatan=117m) mode=asleep | tidur 1234mnt (sudah dikabar)
 1795305357 2026-11-22 06:55:57+07 primer=1m wadah2=33m detak=5m sandbox=397m(stamp=?,jembatan=397m) mode=asleep | tidur 1514mnt (sudah dikabar)
 1795329912 2026-11-22 13:45:12+07 primer=1m wadah2=206m detak=5m sandbox=806m(stamp=?,jembatan=806m) mode=asleep | wadah2: stall 206mnt -> bangunkan (HTTP 204); tidur 1923mnt (sudah dikabar)
+1795329998 2026-11-22 13:46:38+07 primer=3m wadah2=1m detak=1m sandbox=808m(stamp=?,jembatan=808m) mode=asleep | tidur 1925mnt (sudah dikabar)
