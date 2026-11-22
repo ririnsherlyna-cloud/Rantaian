@@ -4746,3 +4746,5 @@
 {"waktu": "2026-11-22T12:21:44.359603+00:00", "simbol": "SOXSB", "arah": "BUY", "level": "STOP", "level_harga": 75.93154, "harga_kini": 74.48, "entry": 78.71, "pelajaran": "SOXSB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T12:21:44.359646+00:00", "simbol": "ZAMA", "arah": "SELL", "level": "STOP", "level_harga": 0.085982, "harga_kini": 0.06067, "entry": 0.07187, "pelajaran": "ZAMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T12:21:44.359657+00:00", "simbol": "TAO", "arah": "SELL", "level": "STOP", "level_harga": 280.946, "harga_kini": 192.5, "entry": 251.4, "pelajaran": "TAO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-22T13:15:10.307167+00:00", "simbol": "SOXSB", "arah": "BUY", "level": "STOP", "level_harga": 75.93154, "harga_kini": 74.92, "entry": 78.71, "pelajaran": "SOXSB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-22T13:15:10.307211+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 35.49, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
