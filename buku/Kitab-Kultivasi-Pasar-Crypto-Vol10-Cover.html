@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: 794px 1123px; margin: 0; }
+    :root {
+      --c-bg: #0a1628;
+      --c-accent: #4da8da;
+      --c-text: #e8f0f8;
+      --c-muted: #7a9bb8;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      width: 794px; height: 1123px;
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+    @media screen {
+      html { height: auto; display: flex; justify-content: center; min-height: 100vh; background: var(--c-bg); }
+      body { transform-origin: top center; scale: min(1, calc(100vw / 794), calc(100vh / 1123)); margin: 0 auto; box-shadow: 0 0 60px rgba(0,0,0,0.35); }
+    }
+    .cover { width: 794px; height: 1123px; position: relative; box-sizing: border-box; }
+    .layer-bg { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+    .glow-a, .glow-b { position: absolute; width: 420px; height: 420px; border-radius: 50%; }
+    .glow-a { top: 40px; left: 60px; background: radial-gradient(circle, rgba(45,122,179,0.08) 0%, rgba(45,122,179,0) 70%); }
+    .glow-b { bottom: 60px; right: 40px; background: radial-gradient(circle, rgba(45,122,179,0.07) 0%, rgba(45,122,179,0) 70%); }
+    .layer-frame { position: absolute; inset: 0; z-index: 2; }
+    .frame {
+      position: absolute; top: 80px; bottom: 80px; left: 60px; right: 60px;
+      border: 2px solid var(--c-accent); pointer-events: none;
+    }
+    .layer-content { position: absolute; inset: 0; z-index: 3; }
+    .kicker {
+      position: absolute; left: 110px; top: 135px;
+      font-size: 11pt; font-weight: 300; letter-spacing: 5px;
+      color: var(--c-accent); text-transform: uppercase;
+    }
+    .title {
+      position: absolute; left: 110px; top: 226px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 48pt; font-weight: 900; line-height: 1.15;
+      color: var(--c-text); max-width: 560px;
+      text-shadow: 0 0 24px rgba(77,168,218,0.25);
+    }
+    .volume {
+      position: absolute; left: 110px; top: 438px;
+      font-size: 13pt; font-weight: 700; letter-spacing: 4px;
+      color: var(--c-accent); text-transform: uppercase;
+    }
+    .summary {
+      position: absolute; left: 110px; top: 496px;
+      font-size: 13.5pt; line-height: 1.6; color: var(--c-muted);
+      max-width: 530px;
+    }
+    .org {
+      position: absolute; left: 110px; top: 830px;
+      font-size: 17pt; font-weight: 500; color: var(--c-text);
+      max-width: 560px; line-height: 1.5;
+    }
+    .org small {
+      display: block; margin-top: 10px;
+      font-size: 11.5pt; font-weight: 300; color: var(--c-muted);
+      letter-spacing: 1px;
+    }
+    .date {
+      position: absolute; left: 110px; bottom: 120px;
+      font-size: 10pt; color: var(--c-muted); letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <div class="layer-bg">
+      <div class="glow-a"></div>
+      <div class="glow-b"></div>
+    </div>
+    <div class="layer-frame">
+      <div class="frame"></div>
+    </div>
+    <div class="layer-content">
+      <div class="kicker">MicroProfita &middot; Edisi Master Trader</div>
+      <div class="title">Kitab Kultivasi<br>Pasar Crypto</div>
+      <div class="volume">Vol. 10 &mdash; Dari Bahasa Mesin ke Mata Manusia</div>
+      <div class="summary">Dua belas asahan menerjemahkan sembilan lantai mesin ke otak manusia: pemindaian pagi 10 koin, menulis dua dunia sebelum membuka chart, papan skor yakin dengan aturan potongan pribadi, hukum luka bertanggal, bobot lima sumber (kerumunan paling kecil), tangga status strategi (pemula tanpa modal), drill pagar dunia paralel, skor ketegasan mingguan, uji buta 20 kasus, hukum satu buku-satu aturan-satu uji, alamat istirahat, dan rutinitas 15 menit yang merangkai semuanya menjadi satu refleks: melihat arah sebelum harga bergerak.</div>
+      <div class="org">Dari Otak Server untuk Otak Manusia
+        <small>MicroProfita Gen-10 &middot; 12 asahan &middot; Rutinitas 15 menit &middot; Jadwal 30 hari &middot; Sertifikasi 10 ujian</small>
+      </div>
+      <div class="date">November 2026 &middot; Ririn Sherlyna Cloud</div>
+    </div>
+  </div>
+</body>
+</html>
