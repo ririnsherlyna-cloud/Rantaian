@@ -4851,3 +4851,5 @@
 {"waktu": "2026-11-22T21:19:02.928406+00:00", "simbol": "QNT", "arah": "BUY", "level": "STOP", "level_harga": 168.571, "harga_kini": 142.98, "entry": 204.01, "pelajaran": "QNT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T21:19:02.928419+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.1016, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-22T21:19:02.928427+00:00", "simbol": "TAO", "arah": "SELL", "level": "STOP", "level_harga": 280.946, "harga_kini": 190.9, "entry": 251.4, "pelajaran": "TAO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-22T22:12:40.481016+00:00", "simbol": "TIA", "arah": "SELL", "level": "STOP", "level_harga": 0.67505, "harga_kini": 0.3331, "entry": 0.5468, "pelajaran": "TIA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-22T22:12:40.481055+00:00", "simbol": "STRK", "arah": "SELL", "level": "STOP", "level_harga": 0.0636113, "harga_kini": 0.03131, "entry": 0.04723, "pelajaran": "STRK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
