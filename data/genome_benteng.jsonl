@@ -4915,3 +4915,5 @@
 {"waktu": "2026-11-23T04:18:30.343183+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.39228, "harga_kini": 0.1814, "entry": 0.3426, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T04:47:59.409130+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 47.2381, "harga_kini": 35.43, "entry": 53.47, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T04:47:59.409174+00:00", "simbol": "NEAR", "arah": "SELL", "level": "STOP", "level_harga": 5.33607, "harga_kini": 3.007, "entry": 4.51, "pelajaran": "NEAR SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T05:12:15.156090+00:00", "simbol": "ENSO", "arah": "BUY", "level": "TP", "level_harga": 0.4935, "harga_kini": 0.494, "entry": 0.478, "pelajaran": "ENSO BUY menyentuh TP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T05:12:15.156133+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.1022, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
