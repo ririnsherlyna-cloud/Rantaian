@@ -5160,3 +5160,4 @@
 {"waktu": "2026-11-23T17:06:21.089947+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.000995, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T17:06:21.089952+00:00", "simbol": "XAUUSDT", "arah": "BUY", "level": "STOP", "level_harga": 4037.1052687501, "harga_kini": 3667.850098, "entry": 4057.800049, "pelajaran": "XAUUSDT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T17:21:21.308817+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T17:26:05.036262+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 136.34, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
