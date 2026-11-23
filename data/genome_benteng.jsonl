@@ -4890,3 +4890,5 @@
 {"waktu": "2026-11-23T00:49:06.457911+00:00", "simbol": "FET", "arah": "SELL", "level": "STOP", "level_harga": 0.20101, "harga_kini": 0.107, "entry": 0.175, "pelajaran": "FET SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T01:18:04.486402+00:00", "simbol": "STRK", "arah": "SELL", "level": "STOP", "level_harga": 0.0636113, "harga_kini": 0.03139, "entry": 0.04723, "pelajaran": "STRK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T01:18:04.486440+00:00", "simbol": "ORCA", "arah": "SELL", "level": "STOP", "level_harga": 1.96031, "harga_kini": 1.202, "entry": 1.679, "pelajaran": "ORCA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T01:42:20.582571+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 61046.01, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T01:42:20.582608+00:00", "simbol": "AVAX", "arah": "SELL", "level": "STOP", "level_harga": 9.94177, "harga_kini": 6.634, "entry": 8.978, "pelajaran": "AVAX SELL menyentuh STOP — vonis pasar datang, catat hasil"}
