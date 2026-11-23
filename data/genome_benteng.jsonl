@@ -4918,3 +4918,5 @@
 {"waktu": "2026-11-23T05:12:15.156090+00:00", "simbol": "ENSO", "arah": "BUY", "level": "TP", "level_harga": 0.4935, "harga_kini": 0.494, "entry": 0.478, "pelajaran": "ENSO BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T05:12:15.156133+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.1022, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T05:36:32.753627+00:00", "simbol": "NEAR", "arah": "SELL", "level": "STOP", "level_harga": 5.33607, "harga_kini": 3.035, "entry": 4.51, "pelajaran": "NEAR SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T06:06:07.011391+00:00", "simbol": "SOXSB", "arah": "BUY", "level": "STOP", "level_harga": 71.1125, "harga_kini": 69.27, "entry": 75.14, "pelajaran": "SOXSB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T06:06:07.011435+00:00", "simbol": "TIA", "arah": "SELL", "level": "STOP", "level_harga": 0.67505, "harga_kini": 0.3385, "entry": 0.5468, "pelajaran": "TIA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
