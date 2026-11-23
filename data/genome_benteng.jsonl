@@ -4974,3 +4974,4 @@
 {"waktu": "2026-11-23T14:48:10.588196+00:00", "simbol": "CHIP", "arah": "BUY", "level": "STOP", "level_harga": 0.0393054, "harga_kini": 0.03025, "entry": 0.05108, "pelajaran": "CHIP BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T14:48:10.588239+00:00", "simbol": "QNT", "arah": "BUY", "level": "STOP", "level_harga": 168.571, "harga_kini": 168.04, "entry": 204.01, "pelajaran": "QNT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T14:48:10.588251+00:00", "simbol": "ASTER", "arah": "BUY", "level": "STOP", "level_harga": 0.665516, "harga_kini": 0.5202, "entry": 0.7131, "pelajaran": "ASTER BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T15:12:49.017599+00:00", "simbol": "TAO", "arah": "SELL", "level": "STOP", "level_harga": 280.946, "harga_kini": 197.7, "entry": 251.4, "pelajaran": "TAO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
