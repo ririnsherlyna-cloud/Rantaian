@@ -4906,3 +4906,4 @@
 {"waktu": "2026-11-23T02:50:48.141150+00:00", "simbol": "AIGENSYN", "arah": "BUY", "level": "TP", "level_harga": 0.01532625, "harga_kini": 0.01535, "entry": 0.01502, "pelajaran": "AIGENSYN BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T03:00:29.165821+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.0995, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T03:00:29.165865+00:00", "simbol": "BNB", "arah": "BUY", "level": "STOP", "level_harga": 709.419, "harga_kini": 553.39, "entry": 742.88, "pelajaran": "BNB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T03:10:16.384014+00:00", "simbol": "AIGENSYN", "arah": "BUY", "level": "TP", "level_harga": 0.01532625, "harga_kini": 0.01541, "entry": 0.01502, "pelajaran": "AIGENSYN BUY menyentuh TP — vonis pasar datang, catat hasil"}
