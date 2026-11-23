@@ -4928,3 +4928,4 @@
 {"waktu": "2026-11-23T06:54:37.295674+00:00", "simbol": "TIA", "arah": "SELL", "level": "STOP", "level_harga": 0.67505, "harga_kini": 0.3384, "entry": 0.5468, "pelajaran": "TIA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T06:54:37.295684+00:00", "simbol": "TAO", "arah": "SELL", "level": "STOP", "level_harga": 280.946, "harga_kini": 191.8, "entry": 251.4, "pelajaran": "TAO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-23T07:14:33.506212+00:00", "simbol": "SOXSB", "arah": "BUY", "level": "STOP", "level_harga": 71.1125, "harga_kini": 70.74, "entry": 75.14, "pelajaran": "SOXSB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-23T07:24:17.363600+00:00", "simbol": "HUMA", "arah": "SELL", "level": "STOP", "level_harga": 0.0295134, "harga_kini": 0.00859, "entry": 0.02274, "pelajaran": "HUMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
