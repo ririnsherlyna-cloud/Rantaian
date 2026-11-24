@@ -5341,3 +5341,4 @@
 {"waktu": "2026-11-24T19:39:09.177860+00:00", "simbol": "U", "arah": "BUY", "level": "POWER MAX AMBISIUS", "level_harga": 1.0011, "harga_kini": 1.0011, "entry": 1.0005, "pelajaran": "U BUY menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T19:43:59.848702+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12145, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T19:48:58.665723+00:00", "simbol": "U", "arah": "BUY", "level": "POWER MAX AMBISIUS", "level_harga": 1.0011, "harga_kini": 1.0011, "entry": 1.0005, "pelajaran": "U BUY menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T20:03:35.579621+00:00", "simbol": "BNB", "arah": "BUY", "level": "STOP", "level_harga": 547.877, "harga_kini": 547.26, "entry": 561.26, "pelajaran": "BNB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
