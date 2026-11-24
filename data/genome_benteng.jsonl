@@ -5283,3 +5283,4 @@
 {"waktu": "2026-11-24T08:29:56.148132+00:00", "simbol": "XPL", "arah": "SELL", "level": "STOP", "level_harga": 0.0841827, "harga_kini": 0.046, "entry": 0.07297, "pelajaran": "XPL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T08:54:27.370903+00:00", "simbol": "LSK", "arah": "SELL", "level": "STOP", "level_harga": 0.197624, "harga_kini": 0.1517, "entry": 0.1603, "pelajaran": "LSK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T09:04:09.160066+00:00", "simbol": "STRK", "arah": "BUY", "level": "STOP", "level_harga": 0.0308551, "harga_kini": 0.03079, "entry": 0.03202, "pelajaran": "STRK BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T09:08:57.759850+00:00", "simbol": "BNB", "arah": "BUY", "level": "STOP", "level_harga": 547.877, "harga_kini": 547.68, "entry": 561.26, "pelajaran": "BNB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
