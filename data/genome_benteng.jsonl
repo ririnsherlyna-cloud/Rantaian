@@ -5329,3 +5329,4 @@
 {"waktu": "2026-11-24T17:27:53.057687+00:00", "simbol": "FTM", "arah": "SELL", "level": "TP", "level_harga": 0.6821948, "harga_kini": 0.6994, "entry": 0.6994, "pelajaran": "FTM SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T17:27:53.057733+00:00", "simbol": "FTM", "arah": "SELL", "level": "STOP", "level_harga": 0.7181439, "harga_kini": 0.6994, "entry": 0.6994, "pelajaran": "FTM SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T17:27:53.057749+00:00", "simbol": "FTM", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.6738038, "harga_kini": 0.6994, "entry": 0.6994, "pelajaran": "FTM SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T18:11:39.779033+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12113, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
