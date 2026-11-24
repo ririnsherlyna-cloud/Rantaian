@@ -5359,3 +5359,4 @@
 {"waktu": "2026-11-24T22:41:24.235196+00:00", "simbol": "LSK", "arah": "SELL", "level": "STOP", "level_harga": 0.197624, "harga_kini": 0.1501, "entry": 0.1603, "pelajaran": "LSK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T22:46:14.922120+00:00", "simbol": "U", "arah": "BUY", "level": "POWER MAX AMBISIUS", "level_harga": 1.0011, "harga_kini": 1.0011, "entry": 1.0005, "pelajaran": "U BUY menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T22:55:58.351886+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 34.746, "harga_kini": 34.74, "entry": 35.97, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T23:10:45.773597+00:00", "simbol": "QNT", "arah": "BUY", "level": "STOP", "level_harga": 168.571, "harga_kini": 148.15, "entry": 204.01, "pelajaran": "QNT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
