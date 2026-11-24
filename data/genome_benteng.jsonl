@@ -5295,3 +5295,4 @@
 {"waktu": "2026-11-24T10:41:30.187260+00:00", "simbol": "ZAMA", "arah": "SELL", "level": "STOP", "level_harga": 0.085982, "harga_kini": 0.05775, "entry": 0.07187, "pelajaran": "ZAMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T10:46:30.260764+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12142, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T11:11:08.860178+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12145, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T11:20:50.547325+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.1212, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
