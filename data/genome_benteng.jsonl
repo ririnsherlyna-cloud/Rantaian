@@ -5247,3 +5247,4 @@
 {"waktu": "2026-11-24T05:04:54.690795+00:00", "simbol": "LSK", "arah": "SELL", "level": "STOP", "level_harga": 0.197624, "harga_kini": 0.1549, "entry": 0.1603, "pelajaran": "LSK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T05:04:54.690811+00:00", "simbol": "XRP", "arah": "SELL", "level": "STOP", "level_harga": 1.40684, "harga_kini": 0.9542, "entry": 1.3092, "pelajaran": "XRP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T05:04:54.690822+00:00", "simbol": "TAO", "arah": "SELL", "level": "STOP", "level_harga": 280.946, "harga_kini": 190.8, "entry": 251.4, "pelajaran": "TAO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T05:14:39.442364+00:00", "simbol": "U", "arah": "BUY", "level": "POWER MAX AMBISIUS", "level_harga": 1.0011, "harga_kini": 1.0011, "entry": 1.0005, "pelajaran": "U BUY menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
