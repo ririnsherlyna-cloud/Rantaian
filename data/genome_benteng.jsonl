@@ -5226,3 +5226,4 @@
 {"waktu": "2026-11-24T02:33:43.097619+00:00", "simbol": "LSK", "arah": "SELL", "level": "POWER MAX AMBISIUS", "level_harga": 0.155803, "harga_kini": 0.156, "entry": 0.1603, "pelajaran": "LSK SELL menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T03:02:44.696995+00:00", "simbol": "ENSO", "arah": "BUY", "level": "STOP", "level_harga": 0.4233648, "harga_kini": 0.412, "entry": 0.457, "pelajaran": "ENSO BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T03:02:44.697039+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 3631.32, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T03:07:38.979111+00:00", "simbol": "BNB", "arah": "BUY", "level": "STOP", "level_harga": 547.877, "harga_kini": 546.72, "entry": 561.26, "pelajaran": "BNB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
