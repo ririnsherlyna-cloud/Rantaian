@@ -5318,3 +5318,4 @@
 {"waktu": "2026-11-24T14:45:55.911884+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.1214, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T15:05:37.723254+00:00", "simbol": "DASH", "arah": "BUY", "level": "STOP", "level_harga": 34.746, "harga_kini": 34.7, "entry": 35.97, "pelajaran": "DASH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T15:05:37.723298+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12081, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T15:20:24.127259+00:00", "simbol": "BNB", "arah": "BUY", "level": "STOP", "level_harga": 547.877, "harga_kini": 545.41, "entry": 561.26, "pelajaran": "BNB BUY menyentuh STOP — vonis pasar datang, catat hasil"}
