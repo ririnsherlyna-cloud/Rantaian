@@ -5214,3 +5214,4 @@
 {"waktu": "2026-11-24T01:40:14.775948+00:00", "simbol": "STRK", "arah": "SELL", "level": "STOP", "level_harga": 0.0636113, "harga_kini": 0.03177, "entry": 0.04723, "pelajaran": "STRK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T01:40:14.775955+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 134.69, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-24T01:49:53.369813+00:00", "simbol": "ENSO", "arah": "BUY", "level": "STOP", "level_harga": 0.4233648, "harga_kini": 0.419, "entry": 0.457, "pelajaran": "ENSO BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-24T01:54:48.992421+00:00", "simbol": "U", "arah": "BUY", "level": "POWER MAX AMBISIUS", "level_harga": 1.0011, "harga_kini": 1.0011, "entry": 1.0005, "pelajaran": "U BUY menyentuh POWER MAX AMBISIUS — vonis pasar datang, catat hasil"}
