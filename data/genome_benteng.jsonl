@@ -5380,3 +5380,4 @@
 {"waktu": "2026-11-25T20:27:35.859242+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.1214, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-25T20:52:03.895203+00:00", "simbol": "SPCXB", "arah": "SELL", "level": "STOP", "level_harga": 162.538, "harga_kini": 127.32, "entry": 148.25, "pelajaran": "SPCXB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-25T21:31:18.812349+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12145, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-25T22:00:49.704039+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12141, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
