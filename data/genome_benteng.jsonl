@@ -5377,3 +5377,4 @@
 {"waktu": "2026-11-25T15:31:03.975029+00:00", "simbol": "SOXSB", "arah": "BUY", "level": "TP", "level_harga": 72.77067, "harga_kini": 73.83, "entry": 62.55, "pelajaran": "SOXSB BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-25T20:22:47.287519+00:00", "simbol": "TRX", "arah": "SELL", "level": "STOP", "level_harga": 0.335414, "harga_kini": 0.3035, "entry": 0.3295, "pelajaran": "TRX SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-25T20:22:47.287562+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 31.27, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-25T20:27:35.859242+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.1214, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
