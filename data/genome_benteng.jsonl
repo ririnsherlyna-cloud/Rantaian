@@ -5368,3 +5368,4 @@
 {"waktu": "2026-11-25T06:23:36.281130+00:00", "simbol": "BIGTIME", "arah": "BUY", "level": "TP", "level_harga": 0.009120228, "harga_kini": 0.01011, "entry": 0.00663, "pelajaran": "BIGTIME BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-25T06:53:04.492830+00:00", "simbol": "USUAL", "arah": "BUY", "level": "TP", "level_harga": 0.01251431, "harga_kini": 0.01253, "entry": 0.01194, "pelajaran": "USUAL BUY menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-25T10:57:20.493208+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12146, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-25T11:16:56.110513+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12131, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
