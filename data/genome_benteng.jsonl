@@ -5506,3 +5506,4 @@
 {"waktu": "2026-11-26T22:32:18.737928+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 3568.19, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T22:32:18.737939+00:00", "simbol": "XLM", "arah": "SELL", "level": "STOP", "level_harga": 0.183309, "harga_kini": 0.1275, "entry": 0.1695, "pelajaran": "XLM SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T22:32:18.737948+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001001, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-26T23:40:09.232698+00:00", "simbol": "DODO", "arah": "BUY", "level": "STOP", "level_harga": 0.03934585, "harga_kini": 0.03924, "entry": 0.04328, "pelajaran": "DODO BUY menyentuh STOP — vonis pasar datang, catat hasil"}
