@@ -5389,3 +5389,4 @@
 {"waktu": "2026-11-26T00:52:46.443874+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12113, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T01:07:27.414458+00:00", "simbol": "QNT", "arah": "BUY", "level": "STOP", "level_harga": 168.571, "harga_kini": 144.75, "entry": 204.01, "pelajaran": "QNT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T01:07:27.414495+00:00", "simbol": "SPYB", "arah": "SELL", "level": "STOP", "level_harga": 779.769, "harga_kini": 721.36, "entry": 767.19, "pelajaran": "SPYB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-26T01:36:42.220857+00:00", "simbol": "HUMA", "arah": "SELL", "level": "STOP", "level_harga": 0.0295134, "harga_kini": 0.00736, "entry": 0.02274, "pelajaran": "HUMA SELL menyentuh STOP — vonis pasar datang, catat hasil"}
