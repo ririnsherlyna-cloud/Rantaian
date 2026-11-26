@@ -5454,3 +5454,5 @@
 {"waktu": "2026-11-26T15:58:23.718091+00:00", "simbol": "APT", "arah": "SELL", "level": "STOP", "level_harga": 0.815946, "harga_kini": 0.3848, "entry": 0.6982, "pelajaran": "APT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T15:58:23.718096+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.1001, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T15:58:23.718102+00:00", "simbol": "UNI", "arah": "SELL", "level": "STOP", "level_harga": 8.12697, "harga_kini": 4.626, "entry": 7.156, "pelajaran": "UNI SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-26T16:27:31.921314+00:00", "simbol": "BCH", "arah": "BUY", "level": "STOP", "level_harga": 256.219, "harga_kini": 207.6, "entry": 281.2, "pelajaran": "BCH BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-26T16:27:31.921355+00:00", "simbol": "ANIME", "arah": "SELL", "level": "STOP", "level_harga": 0.003553, "harga_kini": 0.002307, "entry": 0.00277, "pelajaran": "ANIME SELL menyentuh STOP — vonis pasar datang, catat hasil"}
