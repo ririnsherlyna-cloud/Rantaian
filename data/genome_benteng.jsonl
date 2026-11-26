@@ -5395,3 +5395,4 @@
 {"waktu": "2026-11-26T02:01:18.510626+00:00", "simbol": "TRX", "arah": "SELL", "level": "STOP", "level_harga": 0.335414, "harga_kini": 0.3035, "entry": 0.3295, "pelajaran": "TRX SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T02:25:38.492382+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.39228, "harga_kini": 0.1749, "entry": 0.3426, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T02:25:38.492420+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "STOP", "level_harga": 114.687, "harga_kini": 33.51, "entry": 92.88, "pelajaran": "SOXLB SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-26T03:09:25.721194+00:00", "simbol": "TRX", "arah": "SELL", "level": "STOP", "level_harga": 0.335414, "harga_kini": 0.3041, "entry": 0.3295, "pelajaran": "TRX SELL menyentuh STOP — vonis pasar datang, catat hasil"}
