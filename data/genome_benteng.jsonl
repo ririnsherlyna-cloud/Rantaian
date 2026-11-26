@@ -5484,3 +5484,4 @@
 {"waktu": "2026-11-26T19:32:24.213374+00:00", "simbol": "XAUT", "arah": "SELL", "level": "STOP", "level_harga": 4095.96, "harga_kini": 3564.83, "entry": 4007.41, "pelajaran": "XAUT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T19:56:20.697965+00:00", "simbol": "MMT", "arah": "BUY", "level": "STOP", "level_harga": 0.207167, "harga_kini": 0.2069, "entry": 0.3174, "pelajaran": "MMT BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-26T19:56:20.698002+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1705.55, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-26T20:20:43.509914+00:00", "simbol": "ANIME", "arah": "SELL", "level": "STOP", "level_harga": 0.003553, "harga_kini": 0.002306, "entry": 0.00277, "pelajaran": "ANIME SELL menyentuh STOP — vonis pasar datang, catat hasil"}
