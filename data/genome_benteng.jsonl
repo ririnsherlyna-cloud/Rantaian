@@ -5707,3 +5707,4 @@
 {"waktu": "2026-11-27T19:04:59.912564+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T19:04:59.912611+00:00", "simbol": "ICP", "arah": "SELL", "level": "STOP", "level_harga": 2.94173, "harga_kini": 2.003, "entry": 2.632, "pelajaran": "ICP SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T19:04:59.912622+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1672.31, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-27T19:29:23.657420+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 59960.16, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
