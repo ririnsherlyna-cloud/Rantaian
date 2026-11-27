@@ -5637,3 +5637,4 @@
 {"waktu": "2026-11-27T09:05:31.714106+00:00", "simbol": "LINK", "arah": "SELL", "level": "STOP", "level_harga": 12.5581, "harga_kini": 9.626, "entry": 11.406, "pelajaran": "LINK SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T09:29:51.497063+00:00", "simbol": "SAND", "arah": "SELL", "level": "STOP", "level_harga": 0.0579181, "harga_kini": 0.03479, "entry": 0.04885, "pelajaran": "SAND SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T09:29:51.497112+00:00", "simbol": "SOL", "arah": "SELL", "level": "STOP", "level_harga": 108.705, "harga_kini": 73.67, "entry": 100.95, "pelajaran": "SOL SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-27T09:44:33.303059+00:00", "simbol": "INJ", "arah": "BUY", "level": "STOP", "level_harga": 6.54909, "harga_kini": 6.512, "entry": 8.058, "pelajaran": "INJ BUY menyentuh STOP — vonis pasar datang, catat hasil"}
