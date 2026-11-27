@@ -5730,3 +5730,4 @@
 {"waktu": "2026-11-27T22:10:33.425671+00:00", "simbol": "ATM", "arah": "BUY", "level": "STOP", "level_harga": 0.8177368, "harga_kini": 0.805, "entry": 0.856, "pelajaran": "ATM BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T22:15:30.739571+00:00", "simbol": "0G", "arah": "SELL", "level": "STOP", "level_harga": 0.1071186, "harga_kini": 0.107, "entry": 0.1047, "pelajaran": "0G SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T22:15:30.739615+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-27T22:44:33.469451+00:00", "simbol": "0G", "arah": "SELL", "level": "STOP", "level_harga": 0.1071186, "harga_kini": 0.107, "entry": 0.1047, "pelajaran": "0G SELL menyentuh STOP — vonis pasar datang, catat hasil"}
