@@ -5702,3 +5702,4 @@
 {"waktu": "2026-11-27T17:47:12.356901+00:00", "simbol": "BTC", "arah": "SELL", "level": "STOP", "level_harga": 83868.5, "harga_kini": 59556.01, "entry": 80150.56, "pelajaran": "BTC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T17:47:12.356920+00:00", "simbol": "ETH", "arah": "SELL", "level": "STOP", "level_harga": 2499.21, "harga_kini": 1658.65, "entry": 2324.55, "pelajaran": "ETH SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T17:47:12.356931+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.000974, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-27T18:16:34.803236+00:00", "simbol": "MAGIC", "arah": "SELL", "level": "STOP", "level_harga": 0.100753, "harga_kini": 0.0739, "entry": 0.0822, "pelajaran": "MAGIC SELL menyentuh STOP — vonis pasar datang, catat hasil"}
