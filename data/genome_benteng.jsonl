@@ -5622,3 +5622,4 @@
 {"waktu": "2026-11-27T05:35:58.878618+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001081, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T06:00:24.898154+00:00", "simbol": "SAND", "arah": "SELL", "level": "STOP", "level_harga": 0.0579181, "harga_kini": 0.03488, "entry": 0.04885, "pelajaran": "SAND SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T06:00:24.898200+00:00", "simbol": "ZRO", "arah": "SELL", "level": "STOP", "level_harga": 2.01443, "harga_kini": 1.148, "entry": 1.63, "pelajaran": "ZRO SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-27T06:54:12.730045+00:00", "simbol": "SAND", "arah": "SELL", "level": "STOP", "level_harga": 0.0579181, "harga_kini": 0.03481, "entry": 0.04885, "pelajaran": "SAND SELL menyentuh STOP — vonis pasar datang, catat hasil"}
