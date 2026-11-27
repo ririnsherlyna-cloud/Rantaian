@@ -5619,3 +5619,4 @@
 {"waktu": "2026-11-27T04:42:38.124371+00:00", "simbol": "CHIP", "arah": "BUY", "level": "STOP", "level_harga": 0.0393054, "harga_kini": 0.02823, "entry": 0.05108, "pelajaran": "CHIP BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T04:42:38.124378+00:00", "simbol": "APT", "arah": "SELL", "level": "STOP", "level_harga": 0.815946, "harga_kini": 0.3901, "entry": 0.6982, "pelajaran": "APT SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-27T04:42:38.124384+00:00", "simbol": "NEAR", "arah": "SELL", "level": "STOP", "level_harga": 5.33607, "harga_kini": 3.11, "entry": 4.51, "pelajaran": "NEAR SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-27T05:35:58.878618+00:00", "simbol": "ONE", "arah": "SELL", "level": "STOP", "level_harga": 0.00154397, "harga_kini": 0.001081, "entry": 0.001302, "pelajaran": "ONE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
