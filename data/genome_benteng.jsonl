@@ -5776,3 +5776,4 @@
 {"waktu": "2026-11-28T09:02:43.879160+00:00", "simbol": "MUUB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 8.333589, "harga_kini": 10.7, "entry": 10.7, "pelajaran": "MUUB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T09:02:43.879168+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T09:07:31.161850+00:00", "simbol": "GTC", "arah": "BUY", "level": "STOP", "level_harga": 0.121474, "harga_kini": 0.12084, "entry": 0.23908, "pelajaran": "GTC BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-28T09:17:11.108527+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
