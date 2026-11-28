@@ -5842,3 +5842,4 @@
 {"waktu": "2026-11-28T15:52:05.973064+00:00", "simbol": "SNDKB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 78.49405, "harga_kini": 85.25, "entry": 85.13, "pelajaran": "SNDKB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T15:52:05.973079+00:00", "simbol": "ENA", "arah": "BUY", "level": "STOP", "level_harga": 0.171856, "harga_kini": 0.0997, "entry": 0.2072, "pelajaran": "ENA BUY menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T15:52:05.973089+00:00", "simbol": "CRV", "arah": "SELL", "level": "STOP", "level_harga": 0.39228, "harga_kini": 0.1701, "entry": 0.3426, "pelajaran": "CRV SELL menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-28T15:56:59.200677+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
