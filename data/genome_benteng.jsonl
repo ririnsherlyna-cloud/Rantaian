@@ -5812,3 +5812,4 @@
 {"waktu": "2026-11-28T13:15:58.693969+00:00", "simbol": "ACE", "arah": "SELL", "level": "TP", "level_harga": 0.05310464, "harga_kini": 0.1031, "entry": 0.1024, "pelajaran": "ACE SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T13:15:58.694007+00:00", "simbol": "ACE", "arah": "SELL", "level": "STOP", "level_harga": 0.1182003, "harga_kini": 0.1031, "entry": 0.1024, "pelajaran": "ACE SELL menyentuh STOP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T13:15:58.694025+00:00", "simbol": "ACE", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 0.04032235, "harga_kini": 0.1031, "entry": 0.1024, "pelajaran": "ACE SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-28T13:20:54.632852+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
