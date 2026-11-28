@@ -5854,3 +5854,4 @@
 {"waktu": "2026-11-28T16:45:40.562881+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "TP", "level_harga": 31.9909, "harga_kini": 35.82, "entry": 35.76, "pelajaran": "SOXLB SELL menyentuh TP — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T16:45:40.562924+00:00", "simbol": "SOXLB", "arah": "SELL", "level": "JUAL AMBISIUS", "level_harga": 30.30498, "harga_kini": 35.82, "entry": 35.76, "pelajaran": "SOXLB SELL menyentuh JUAL AMBISIUS — vonis pasar datang, catat hasil"}
 {"waktu": "2026-11-28T16:45:40.562935+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
+{"waktu": "2026-11-28T17:05:13.790998+00:00", "simbol": "RLUSD", "arah": "BUY", "level": "STOP", "level_harga": 1.0008, "harga_kini": 1.0008, "entry": 1.0017, "pelajaran": "RLUSD BUY menyentuh STOP — vonis pasar datang, catat hasil"}
